@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              counting
+              <small>
+                1.0.0
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <em>2014-10-29 16:55:33 UTC</em>
+            <h2>Dry installation</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install --root=.opam_run -y --json=output.json --dry-run coq:counting.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:counting.1.0.0
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:counting.1.0.0:
+  ./configure.sh
+  make -j4
+  make install
+Installing coq:counting.1.0.0.
+</pre></dd>
+              <dt><code>output.json</code></dt>
+              <dd><pre>[
+  {
+    &quot;to-remove&quot;: [],
+    &quot;to-proceed&quot;: [
+      {
+        &quot;install&quot;: {
+          &quot;name&quot;: &quot;coq:counting&quot;,
+          &quot;version&quot;: &quot;1.0.0&quot;
+        }
+      }
+    ]
+  }
+]</pre></dd>
+            </dl>
+            <h2>Installation of dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install --root=.opam_run -y --deps-only coq:counting.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Installation</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install --root=.opam_run -y --verbose coq:counting.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>4 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:counting.1.0.0
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:counting.1.0.0] Downloading https://github.com/coq-contribs/counting/archive/1.0.0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   128    0   128    0     0    213      0 --:--:-- --:--:-- --:--:--   213
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0  3158    0     0   2559      0 --:--:--  0:00:01 --:--:--  7193
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:counting.1.0.0:
+  ./configure.sh
+  make -j4
+  make install
+Warning:
+Please now use &quot;-extra[-phony] result deps command&quot; instead of &quot;-custom command deps result&quot;.
+It follows makefile target declaration order and has a clearer semantic.
+Warning:
+Please now use &quot;-extra[-phony] result deps command&quot; instead of &quot;-custom command deps result&quot;.
+It follows makefile target declaration order and has a clearer semantic.
+Warning:
+Please now use &quot;-extra[-phony] result deps command&quot; instead of &quot;-custom command deps result&quot;.
+It follows makefile target declaration order and has a clearer semantic.
+ocamldep -slash -I &quot;src&quot; &quot;src/counting_plugin_mod.ml&quot; &gt; &quot;src/counting_plugin_mod.ml.d&quot; || ( RV=$?; rm -f &quot;src/counting_plugin_mod.ml.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I &quot;src&quot; &quot;src/counting.ml4&quot; &gt; &quot;src/counting.ml4.d&quot; || ( RV=$?; rm -f &quot;src/counting.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;theories&quot; Counting -I &quot;src&quot; &quot;theories/Counting.v&quot; &gt; &quot;theories/Counting.v.d&quot; || ( RV=$?; rm -f &quot;theories/Counting.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;theories&quot; Counting -I &quot;src&quot; &quot;tests/TestCounting.v&quot; &gt; &quot;tests/TestCounting.v.d&quot; || ( RV=$?; rm -f &quot;tests/TestCounting.v.d&quot;; exit ${RV} )
+*** Warning: in file theories/Counting.v, declared ML module counting_plugin has not been found!
+*** Warning: in file theories/Counting.v, declared ML module counting_plugin has not been found!
+&quot;coqc&quot;  -q  -R &quot;theories&quot; Counting -I &quot;src&quot;   theories/Counting
+ocamlc -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 -pp 'camlp5o -I /usr/lib/ocaml/ -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo grammar.cma -loc loc -impl' -impl src/counting.ml4
+ocamlc -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 src/counting_plugin_mod.ml
+ocamlopt -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 -pp 'camlp5o -I /usr/lib/ocaml/ -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo grammar.cma -loc loc -impl' -impl src/counting.ml4
+ocamlopt -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 src/counting_plugin_mod.ml
+Warning: Vernac entry &quot;StartCounting&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND StartCounting CLASSIFIED AS QUERY ...' if the new
+  vernacular command does not alter the system state;
+- Use '... EXTEND StartCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND StartCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;StartCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+ocamlopt -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 -shared -o src/counting_plugin_mod.cmxs src/counting_plugin_mod.cmx
+Warning: Vernac entry &quot;StopCounting&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND StopCounting CLASSIFIED AS QUERY ...' if the new vernacular
+  command does not alter the system state;
+- Use '... EXTEND StopCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND StopCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;StopCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+Warning: Vernac entry &quot;ResetCounting&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND ResetCounting CLASSIFIED AS QUERY ...' if the new
+  vernacular command does not alter the system state;
+- Use '... EXTEND ResetCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND ResetCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;ResetCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+File &quot;./theories/Counting.v&quot;, line 1, characters 0-36:
+Error: File not found on loadpath : counting_plugin.cmxs
+Loadpath: src:theories:.:/.opam/system/share/coq:/root/run/.opam_run/system/lib/coq/user-contrib:/root/run/.opam_run/system/lib/coq/plugins/omega:/root/run/.opam_run/system/lib/coq/plugins/romega:/root/run/.opam_run/system/lib/coq/plugins/micromega:/root/run/.opam_run/system/lib/coq/plugins/btauto:/root/run/.opam_run/system/lib/coq/plugins/fourier:/root/run/.opam_run/system/lib/coq/plugins/decl_mode:/root/run/.opam_run/system/lib/coq/plugins/firstorder:/root/run/.opam_run/system/lib/coq/plugins/extraction:/root/run/.opam_run/system/lib/coq/plugins/setoid_ring:/root/run/.opam_run/system/lib/coq/plugins/funind:/root/run/.opam_run/system/lib/coq/plugins/quote:/root/run/.opam_run/system/lib/coq/plugins/syntax:/root/run/.opam_run/system/lib/coq/plugins/cc:/root/run/.opam_run/system/lib/coq/plugins/nsatz:/root/run/.opam_run/system/lib/coq/plugins/rtauto:/root/run/.opam_run/system/lib/coq/plugins/Derive:/root/run/.opam_run/system/lib/coq/plugins:/root/run/.opam_run/system/lib/coq/theories:/root/run/.opam_run/system/lib/coq/toploop
+Warning: Vernac entry &quot;DisplayCounting&quot; misses a classifier. A classifier is
+a function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND DisplayCounting CLASSIFIED AS QUERY ...' if the new
+  vernacular command does not alter the system state;
+- Use '... EXTEND DisplayCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND DisplayCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;DisplayCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+Makefile:348: recipe for target 'theories/Counting.vo' failed
+make: *** [theories/Counting.vo] Error 1
+make: *** Waiting for unfinished jobs....
+Warning: Vernac entry &quot;SizeOf&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND SizeOf CLASSIFIED AS QUERY ...' if the new vernacular
+  command does not alter the system state;
+- Use '... EXTEND SizeOf CLASSIFIED AS SIDEFF ...' if the new vernacular
+  command alters the system state but not the parser nor it starts a proof or
+  ends one;
+- Use '... EXTEND SizeOf CLASSIFIED BY f ...' to specify a global function f.
+   The function f will be called passing &quot;SizeOf&quot; as the only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+Warning: Vernac entry &quot;StartCounting&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND StartCounting CLASSIFIED AS QUERY ...' if the new
+  vernacular command does not alter the system state;
+- Use '... EXTEND StartCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND StartCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;StartCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+Warning: Vernac entry &quot;StopCounting&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND StopCounting CLASSIFIED AS QUERY ...' if the new vernacular
+  command does not alter the system state;
+- Use '... EXTEND StopCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND StopCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;StopCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+Warning: Vernac entry &quot;ResetCounting&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND ResetCounting CLASSIFIED AS QUERY ...' if the new
+  vernacular command does not alter the system state;
+- Use '... EXTEND ResetCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND ResetCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;ResetCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+Warning: Vernac entry &quot;DisplayCounting&quot; misses a classifier. A classifier is
+a function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND DisplayCounting CLASSIFIED AS QUERY ...' if the new
+  vernacular command does not alter the system state;
+- Use '... EXTEND DisplayCounting CLASSIFIED AS SIDEFF ...' if the new
+  vernacular command alters the system state but not the parser nor it starts
+  a proof or ends one;
+- Use '... EXTEND DisplayCounting CLASSIFIED BY f ...' to specify a global
+  function f.  The function f will be called passing &quot;DisplayCounting&quot; as the
+  only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+File &quot;src/counting.ml4&quot;, line 11, characters 2-1012:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a value that is not matched:
+Proj (_, _)
+Warning: Vernac entry &quot;SizeOf&quot; misses a classifier. A classifier is a
+function that returns an expression of type vernac_classification (see
+Vernacexpr). You can:
+- Use '... EXTEND SizeOf CLASSIFIED AS QUERY ...' if the new vernacular
+  command does not alter the system state;
+- Use '... EXTEND SizeOf CLASSIFIED AS SIDEFF ...' if the new vernacular
+  command alters the system state but not the parser nor it starts a proof or
+  ends one;
+- Use '... EXTEND SizeOf CLASSIFIED BY f ...' to specify a global function f.
+   The function f will be called passing &quot;SizeOf&quot; as the only argument;
+- Add a specific classifier in each clause using the syntax:
+  '[...] =&gt; [ f ] -&gt; [...]'. 
+Specific classifiers have precedence over global classifiers. Only one
+classifier is called.
+File &quot;src/counting.ml4&quot;, line 59, characters 54-55:
+Error: This expression has type
+         Entries.const_entry_body = Entries.proof_output Future.computation
+       but an expression was expected of type Term.constr = Constr.t
+Makefile:324: recipe for target 'src/counting.cmo' failed
+make: *** [src/counting.cmo] Error 2
+File &quot;src/counting.ml4&quot;, line 11, characters 2-1012:
+Warning 8: this pattern-matching is not exhaustive.
+Here is an example of a value that is not matched:
+Proj (_, _)
+File &quot;src/counting.ml4&quot;, line 59, characters 54-55:
+Error: This expression has type
+         Entries.const_entry_body = Entries.proof_output Future.computation
+       but an expression was expected of type Term.constr = Constr.t
+Makefile:327: recipe for target 'src/counting.cmx' failed
+make: *** [src/counting.cmx] Error 2
+[ERROR] The compilation of coq:counting.1.0.0 failed.
+Removing coq:counting.1.0.0.
+  rm -R /.opam/system/lib/coq/user-contrib/Counting
+rm: cannot remove '/.opam/system/lib/coq/user-contrib/Counting': No such file or directory
+#=== ERROR while installing coq:counting.1.0.0 ================================#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /root/run/.opam_run/system/build/coq:counting.1.0.0
+# compiler             system (4.01.0)
+# exit-code            2
+# env-file             /root/run/.opam_run/system/build/coq:counting.1.0.0/coq:counting-1573-ffb3fd.env
+# stdout-file          /root/run/.opam_run/system/build/coq:counting.1.0.0/coq:counting-1573-ffb3fd.out
+# stderr-file          /root/run/.opam_run/system/build/coq:counting.1.0.0/coq:counting-1573-ffb3fd.err
+### stdout ###
+# ...[truncated]
+# &quot;coqdep&quot; -c -R &quot;theories&quot; Counting -I &quot;src&quot; &quot;tests/TestCounting.v&quot; &gt; &quot;tests/TestCounting.v.d&quot; || ( RV=$?; rm -f &quot;tests/TestCounting.v.d&quot;; exit ${RV} )
+# &quot;coqc&quot;  -q  -R &quot;theories&quot; Counting -I &quot;src&quot;   theories/Counting
+# ocamlc -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 -pp 'camlp5o -I /usr/lib/ocaml/ -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo grammar.cma -loc loc -impl' -impl src/counting.ml4
+# ocamlc -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 src/counting_plugin_mod.ml
+# ocamlopt -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 -pp 'camlp5o -I /usr/lib/ocaml/ -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo grammar.cma -loc loc -impl' -impl src/counting.ml4
+# ocamlopt -c -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 src/counting_plugin_mod.ml
+# ocamlopt -rectypes -thread  -I &quot;src&quot; -I &quot;/root/run/.opam_run/system/lib/coq/kernel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/lib&quot; -I &quot;/root/run/.opam_run/system/lib/coq/library&quot; -I &quot;/root/run/.opam_run/system/lib/coq/parsing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/pretyping&quot; -I &quot;/root/run/.opam_run/system/lib/coq/interp&quot; -I &quot;/root/run/.opam_run/system/lib/coq/printing&quot; -I &quot;/root/run/.opam_run/system/lib/coq/intf&quot; -I &quot;/root/run/.opam_run/system/lib/coq/proofs&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tactics&quot; -I &quot;/root/run/.opam_run/system/lib/coq/tools&quot; -I &quot;/root/run/.opam_run/system/lib/coq/toplevel&quot; -I &quot;/root/run/.opam_run/system/lib/coq/stm&quot; -I &quot;/root/run/.opam_run/system/lib/coq/grammar&quot; -I &quot;/root/run/.opam_run/system/lib/coq/config&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/Derive&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/btauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/cc&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/decl_mode&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/extraction&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/firstorder&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/fourier&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/funind&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/micromega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/nsatz&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/omega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/quote&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/romega&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/rtauto&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/syntax&quot; -I &quot;/root/run/.opam_run/system/lib/coq//plugins/xml&quot; -I /.opam/system/lib/camlp5 -shared -o src/counting_plugin_mod.cmxs src/counting_plugin_mod.cmx
+# Makefile:348: recipe for target 'theories/Counting.vo' failed
+# Makefile:324: recipe for target 'src/counting.cmo' failed
+# Makefile:327: recipe for target 'src/counting.cmx' failed
+### stderr ###
+# ...[truncated]
+# make: *** [src/counting.cmo] Error 2
+# File &quot;src/counting.ml4&quot;, line 11, characters 2-1012:
+# Warning 8: this pattern-matching is not exhaustive.
+# Here is an example of a value that is not matched:
+# Proj (_, _)
+# File &quot;src/counting.ml4&quot;, line 59, characters 54-55:
+# Error: This expression has type
+#          Entries.const_entry_body = Entries.proof_output Future.computation
+#        but an expression was expected of type Term.constr = Constr.t
+# make: *** [src/counting.cmx] Error 2
+'opam install --root=.opam_run -y --verbose coq:counting.1.0.0' failed.
+</pre></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
