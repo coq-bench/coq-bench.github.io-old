@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              error-handlers
+              <small>
+                dev
+                <span class="label label-success">4 s</span>
+              </small>
+            </h1>
+            <em>2014-10-29 17:30:05 UTC</em>
+            <h2>Dry installation</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install --root=.opam_run -y --json=output.json --dry-run coq:error-handlers.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:error-handlers.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:error-handlers.dev:
+  ./configure.sh
+  make -j4
+  make install
+Installing coq:error-handlers.dev.
+</pre></dd>
+              <dt><code>output.json</code></dt>
+              <dd><pre>[
+  {
+    &quot;to-remove&quot;: [],
+    &quot;to-proceed&quot;: [
+      {
+        &quot;install&quot;: {
+          &quot;name&quot;: &quot;coq:error-handlers&quot;,
+          &quot;version&quot;: &quot;dev&quot;
+        }
+      }
+    ]
+  }
+]</pre></dd>
+            </dl>
+            <h2>Installation of dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install --root=.opam_run -y --deps-only coq:error-handlers.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>3 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Installation</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install --root=.opam_run -y --verbose coq:error-handlers.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>4 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:error-handlers.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:error-handlers.dev] Downloading https://github.com/clarus/coq-error-handlers/archive/master.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   133    0   133    0     0    214      0 --:--:-- --:--:-- --:--:--   214
+  0     0    0  1604    0     0   1327      0 --:--:--  0:00:01 --:--:--  1327
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:error-handlers.dev:
+  ./configure.sh
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; ErrorHandlers &quot;All.v&quot; &gt; &quot;All.v.d&quot; || ( RV=$?; rm -f &quot;All.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; ErrorHandlers   All
+cd &quot;.&quot; &amp;&amp; for i in All.vo   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/root/run/.opam_run/system/lib/coq/user-contrib&quot;/ErrorHandlers/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/root/run/.opam_run/system/lib/coq/user-contrib&quot;/ErrorHandlers/$i; \
+done
+Installing coq:error-handlers.dev.
+</pre></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
