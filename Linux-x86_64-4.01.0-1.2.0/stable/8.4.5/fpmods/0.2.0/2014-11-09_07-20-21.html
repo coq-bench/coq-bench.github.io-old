@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Stable</a></li>
+              <li><a href=".">8.4.5 / fpmods 0.2.0</a></li>
+              <li class="active"><a href="">2014-11-09 07:20:21</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              fpmods
+              <small>
+                0.2.0
+                <span class="label label-success">25 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-09 07:20:21 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-09 07:20:21 UTC)</em>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:fpmods.0.2.0 coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:ssreflect.1.5.0                   [required by coq:math-comp]
+ - install   coq:math-comp.1.5.0                   [required by coq:eal:theory]
+ - install   coq:eal:theory.0.9.1                  [required by coq:fpmods]
+ - install   coq:fpmods.0.2.0
+=== 4 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:ssreflect.1.5.0:
+  make -j4
+  make install
+Installing coq:ssreflect.1.5.0.
+Building coq:math-comp.1.5.0:
+  make -j4
+  make install
+Installing coq:math-comp.1.5.0.
+Building coq:eal:theory.0.9.1:
+  make -j4
+  make install
+Installing coq:eal:theory.0.9.1.
+Building coq:fpmods.0.2.0:
+  make -j4
+  make install
+Installing coq:fpmods.0.2.0.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:fpmods.0.2.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>24 m 49 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:ssreflect.1.5.0                   [required by coq:math-comp]
+ - install   coq:math-comp.1.5.0                   [required by coq:eal:theory]
+ - install   coq:eal:theory.0.9.1                  [required by coq:fpmods]
+=== 3 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:eal:theory.0.9.1] Downloading https://github.com/Barbichu/CoqEAL/raw/master/release/CoqEAL_theory.0.9.1.tgz
+[coq:math-comp.1.5.0] Downloading http://ssr.msr-inria.inria.fr/FTP/mathcomp-1.5.tar.gz
+[coq:ssreflect.1.5.0] Downloading http://ssr.msr-inria.inria.fr/FTP/ssreflect-1.5.tar.gz
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:ssreflect.1.5.0:
+  make -j4
+  make install
+Installing coq:ssreflect.1.5.0.
+Building coq:math-comp.1.5.0:
+  make -j4
+  make install
+Installing coq:math-comp.1.5.0.
+Building coq:eal:theory.0.9.1:
+  make -j4
+  make install
+Installing coq:eal:theory.0.9.1.
+</pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:fpmods.0.2.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>25 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:fpmods.0.2.0
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:fpmods.0.2.0] Downloading http://perso.crans.org/cohen/work/fpmods/code/fpmods.0.2.tgz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100 22081  100 22081    0     0  21692      0  0:00:01  0:00:01 --:--:-- 21711
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:fpmods.0.2.0:
+  make -j4
+  make install
+coq_makefile -f Make -o Makefile.coq
+make -f Makefile.coq Makefile
+make[1]: Entering directory '/.opam/system/build/coq:fpmods.0.2.0'
+&quot;coqdep&quot; -c -slash -R . fpmods &quot;coherent.v&quot; &gt; &quot;coherent.v.d&quot; || ( RV=$?; rm -f &quot;coherent.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . fpmods &quot;fpmod.v&quot; &gt; &quot;fpmod.v.d&quot; || ( RV=$?; rm -f &quot;fpmod.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . fpmods &quot;stronglydiscrete.v&quot; &gt; &quot;stronglydiscrete.v.d&quot; || ( RV=$?; rm -f &quot;stronglydiscrete.v.d&quot;; exit ${RV} )
+make[1]: Nothing to be done for 'Makefile'.
+make[1]: Leaving directory '/.opam/system/build/coq:fpmods.0.2.0'
+make -f Makefile.coq all
+make[1]: Entering directory '/.opam/system/build/coq:fpmods.0.2.0'
+&quot;coqc&quot;  -q  -R . fpmods   stronglydiscrete
+&quot;coqc&quot;  -q  -R . fpmods   coherent
+&quot;coqc&quot;  -q  -R . fpmods   fpmod
+make[1]: Leaving directory '/.opam/system/build/coq:fpmods.0.2.0'
+make -f Makefile.coq Makefile
+make[1]: Entering directory '/.opam/system/build/coq:fpmods.0.2.0'
+make[1]: Nothing to be done for 'Makefile'.
+make[1]: Leaving directory '/.opam/system/build/coq:fpmods.0.2.0'
+make -f Makefile.coq install
+make[1]: Entering directory '/.opam/system/build/coq:fpmods.0.2.0'
+for i in stronglydiscrete.vo fpmod.vo coherent.vo; do \
+ install -d `dirname &quot;/.opam/system/lib/coq/user-contrib&quot;/fpmods/$i`; \
+ install -m 0644 $i &quot;/.opam/system/lib/coq/user-contrib&quot;/fpmods/$i; \
+done
+make[1]: Leaving directory '/.opam/system/build/coq:fpmods.0.2.0'
+Installing coq:fpmods.0.2.0.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:fpmods.0.2.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:fpmods.0.2.0
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:fpmods.0.2.0] fpmods.0.2.tgz is in the local cache, using it.
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:fpmods.0.2.0.
+  rm -R /.opam/system/lib/coq/user-contrib/fpmods
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

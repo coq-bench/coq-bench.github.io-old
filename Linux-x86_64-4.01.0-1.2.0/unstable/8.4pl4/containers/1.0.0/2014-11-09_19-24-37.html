@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4pl4 / containers 1.0.0</a></li>
+              <li class="active"><a href="">2014-11-09 19:24:37</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              containers
+              <small>
+                1.0.0
+                <span class="label label-success">1 m 1 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-09 19:24:37 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-09 19:24:37 UTC)</em>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:containers.1.0.0 coq.8.4pl4</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4pl4).
+The following actions will be performed:
+ - install   coq:containers.1.0.0
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:containers.1.0.0:
+  ./configure.sh
+  make -j4
+  make install
+Installing coq:containers.1.0.0.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:containers.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:containers.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 m 1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:containers.1.0.0
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:containers.1.0.0] Downloading https://github.com/coq-contribs/containers/archive/1.0.0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   130    0   130    0     0    195      0 --:--:-- --:--:-- --:--:--   194
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0 69011    0     0  21186      0 --:--:--  0:00:03 --:--:-- 48428  0     0    0  159k    0     0  39279      0 --:--:--  0:00:04 --:--:-- 70365  0     0    0  162k    0     0  40006      0 --:--:--  0:00:04 --:--:-- 71671
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:containers.1.0.0:
+  ./configure.sh
+  make -j4
+  make install
+ocamldep -slash -I src &quot;src/printing.mli&quot; &gt; &quot;src/printing.mli.d&quot; || ( RV=$?; rm -f &quot;src/printing.mli.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin -c &quot;src/containers_plugin.mllib&quot; &gt; &quot;src/containers_plugin.mllib.d&quot; || ( RV=$?; rm -f &quot;src/containers_plugin.mllib.d&quot;; exit ${RV} )
+ocamldep -slash -I src &quot;src/printing.ml&quot; &gt; &quot;src/printing.ml.d&quot; || ( RV=$?; rm -f &quot;src/printing.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I src &quot;src/containers_plugin_mod.ml&quot; &gt; &quot;src/containers_plugin_mod.ml.d&quot; || ( RV=$?; rm -f &quot;src/containers_plugin_mod.ml.d&quot;; exit ${RV} )
+coqdep -c -slash -I src &quot;src/generate.ml4&quot; &gt; &quot;src/generate.ml4.d&quot; || ( RV=$?; rm -f &quot;src/generate.ml4.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/OrderedType.v&quot; &gt; &quot;theories/OrderedType.v.d&quot; || ( RV=$?; rm -f &quot;theories/OrderedType.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/Tactics.v&quot; &gt; &quot;theories/Tactics.v.d&quot; || ( RV=$?; rm -f &quot;theories/Tactics.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/OrderedTypeEx.v&quot; &gt; &quot;theories/OrderedTypeEx.v.d&quot; || ( RV=$?; rm -f &quot;theories/OrderedTypeEx.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/Bridge.v&quot; &gt; &quot;theories/Bridge.v.d&quot; || ( RV=$?; rm -f &quot;theories/Bridge.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetInterface.v&quot; &gt; &quot;theories/SetInterface.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetInterface.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetFacts.v&quot; &gt; &quot;theories/SetFacts.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetFacts.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetDecide.v&quot; &gt; &quot;theories/SetDecide.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetDecide.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetProperties.v&quot; &gt; &quot;theories/SetProperties.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetProperties.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetEqProperties.v&quot; &gt; &quot;theories/SetEqProperties.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetEqProperties.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetList.v&quot; &gt; &quot;theories/SetList.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetList.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetListInstance.v&quot; &gt; &quot;theories/SetListInstance.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetListInstance.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetAVL.v&quot; &gt; &quot;theories/SetAVL.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetAVL.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetAVLInstance.v&quot; &gt; &quot;theories/SetAVLInstance.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetAVLInstance.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/Sets.v&quot; &gt; &quot;theories/Sets.v.d&quot; || ( RV=$?; rm -f &quot;theories/Sets.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapInterface.v&quot; &gt; &quot;theories/MapInterface.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapInterface.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapNotations.v&quot; &gt; &quot;theories/MapNotations.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapNotations.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapFacts.v&quot; &gt; &quot;theories/MapFacts.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapFacts.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapList.v&quot; &gt; &quot;theories/MapList.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapList.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapListInstance.v&quot; &gt; &quot;theories/MapListInstance.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapListInstance.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapAVL.v&quot; &gt; &quot;theories/MapAVL.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapAVL.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapAVLInstance.v&quot; &gt; &quot;theories/MapAVLInstance.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapAVLInstance.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapPositive.v&quot; &gt; &quot;theories/MapPositive.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapPositive.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/MapPositiveInstance.v&quot; &gt; &quot;theories/MapPositiveInstance.v.d&quot; || ( RV=$?; rm -f &quot;theories/MapPositiveInstance.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/CMapPositive.v&quot; &gt; &quot;theories/CMapPositive.v.d&quot; || ( RV=$?; rm -f &quot;theories/CMapPositive.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/CMapPositiveInstance.v&quot; &gt; &quot;theories/CMapPositiveInstance.v.d&quot; || ( RV=$?; rm -f &quot;theories/CMapPositiveInstance.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/Maps.v&quot; &gt; &quot;theories/Maps.v.d&quot; || ( RV=$?; rm -f &quot;theories/Maps.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/Generate.v&quot; &gt; &quot;theories/Generate.v.d&quot; || ( RV=$?; rm -f &quot;theories/Generate.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R theories Containers -R src Containers.Plugin &quot;theories/SetConstructs.v&quot; &gt; &quot;theories/SetConstructs.v.d&quot; || ( RV=$?; rm -f &quot;theories/SetConstructs.v.d&quot;; exit ${RV} )
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/OrderedType
+ocamlc -c -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 src/printing.mli
+ocamlc -c -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 src/containers_plugin_mod.ml
+ocamlopt -c -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 src/containers_plugin_mod.ml
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/Bridge
+ocamlc -c -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 src/printing.ml
+ocamlc -c -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 -pp &quot;/.opam/system/bin/camlp5o -I /usr/local/lib/ocaml/ -I . -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl&quot; -impl src/generate.ml4
+ocamlopt -c -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 src/printing.ml
+ocamlopt -c -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 -pp &quot;/.opam/system/bin/camlp5o -I /usr/local/lib/ocaml/ -I . -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl&quot; -impl src/generate.ml4
+Identifier 'UsualOrderedType' now a keyword
+ocamlc -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 -a -o src/containers_plugin.cma src/printing.cmo src/generate.cmo src/containers_plugin_mod.cmo
+ocamlopt -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 -a -o src/containers_plugin.cmxa src/printing.cmx src/generate.cmx src/containers_plugin_mod.cmx
+ocamlopt -rectypes  -I src -I /.opam/system/lib/coq/kernel -I /.opam/system/lib/coq/lib -I /.opam/system/lib/coq/library -I /.opam/system/lib/coq/parsing -I /.opam/system/lib/coq/pretyping -I /.opam/system/lib/coq/interp -I /.opam/system/lib/coq/proofs -I /.opam/system/lib/coq/tactics -I /.opam/system/lib/coq/toplevel -I /.opam/system/lib/coq/plugins/cc -I /.opam/system/lib/coq/plugins/decl_mode -I /.opam/system/lib/coq/plugins/extraction -I /.opam/system/lib/coq/plugins/field -I /.opam/system/lib/coq/plugins/firstorder -I /.opam/system/lib/coq/plugins/fourier -I /.opam/system/lib/coq/plugins/funind -I /.opam/system/lib/coq/plugins/micromega -I /.opam/system/lib/coq/plugins/nsatz -I /.opam/system/lib/coq/plugins/omega -I /.opam/system/lib/coq/plugins/quote -I /.opam/system/lib/coq/plugins/ring -I /.opam/system/lib/coq/plugins/romega -I /.opam/system/lib/coq/plugins/rtauto -I /.opam/system/lib/coq/plugins/setoid_ring -I /.opam/system/lib/coq/plugins/subtac -I /.opam/system/lib/coq/plugins/subtac/test -I /.opam/system/lib/coq/plugins/syntax -I /.opam/system/lib/coq/plugins/xml -I /.opam/system/lib/camlp5 -linkall -shared -o src/containers_plugin.cmxs src/containers_plugin.cmxa
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetInterface
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/Tactics
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapInterface
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/OrderedTypeEx
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/Generate
+Identifier 'Map' now a keyword
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapNotations
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetFacts
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetDecide
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetProperties
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetList
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapFacts
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapList
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/CMapPositive
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapPositive
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetListInstance
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetEqProperties
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetAVL
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/CMapPositiveInstance
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapPositiveInstance
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapAVL
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapListInstance
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetAVLInstance
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/SetConstructs
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/Sets
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/MapAVLInstance
+coqc  -q  -R theories Containers -R src Containers.Plugin   theories/Maps
+cd src; for i in containers_plugin.cmxs; do \
+ install -d `dirname /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i`; \
+ install -m 0644 $i /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i; \
+done
+install -d /.opam/system/lib/coq//user-contrib/Containers/Plugin/
+install src/containers_plugin.cma src/containers_plugin.cmxs /.opam/system/lib/coq//user-contrib/Containers/Plugin/
+cd theories; for i in SetConstructs.vo Generate.vo Maps.vo CMapPositiveInstance.vo CMapPositive.vo MapPositiveInstance.vo MapPositive.vo MapAVLInstance.vo MapAVL.vo MapListInstance.vo MapList.vo MapFacts.vo MapNotations.vo MapInterface.vo Sets.vo SetAVLInstance.vo SetAVL.vo SetListInstance.vo SetList.vo SetEqProperties.vo SetProperties.vo SetDecide.vo SetFacts.vo SetInterface.vo Bridge.vo OrderedTypeEx.vo Tactics.vo OrderedType.vo; do \
+ install -d `dirname /.opam/system/lib/coq/user-contrib/Containers/$i`; \
+ install -m 0644 $i /.opam/system/lib/coq/user-contrib/Containers/$i; \
+done
+cd src; for i in ; do \
+ install -d `dirname /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i`; \
+ install -m 0644 $i /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i; \
+done
+cd src; for i in containers_plugin_mod.cmi generate.cmi printing.cmi; do \
+ install -d `dirname /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i`; \
+ install -m 0644 $i /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i; \
+done
+cd src; for i in containers_plugin.cma; do \
+ install -d `dirname /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i`; \
+ install -m 0644 $i /.opam/system/lib/coq/user-contrib/Containers/Plugin/$i; \
+done
+Installing coq:containers.1.0.0.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:containers.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:containers.1.0.0
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:containers.1.0.0] 1.0.0.tar.gz is in the local cache, using it.
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:containers.1.0.0.
+  rm -R /.opam/system/lib/coq/user-contrib/Containers
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
