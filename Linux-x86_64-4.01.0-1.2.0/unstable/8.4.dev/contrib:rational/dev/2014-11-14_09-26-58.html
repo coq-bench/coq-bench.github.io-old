@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.dev / contrib:rational dev</a></li>
+              <li class="active"><a href="">2014-11-14 09:26:58</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:rational
+              <small>
+                dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-14 09:26:58 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-14 09:26:58 UTC)</em>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:rational.dev coq.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.dev).
+The following actions will be performed:
+ - install   coq:contrib:rational.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:rational.dev:
+  make -j4
+  make install
+Installing coq:contrib:rational.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:rational.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:rational.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:rational.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:rational] Fetching git://ns360531.ip-91-121-163.eu/rational.git
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:rational.dev/.git/
+[master (root-commit) 16b5ac8] opam-git-init
+warning: no common commits
+From git://ns360531.ip-91-121-163.eu/rational
+ * [new ref]                    -&gt; opam-ref
+Integer/Absz.v
+Integer/MultZ.v
+Integer/PlusZ.v
+Integer/int.v
+Integer/integer.v
+Integer/integer_defs.v
+Integer/intnumbers.v
+Integer/leZ.v
+Integer/leZproperties.v
+LICENSE
+Make
+Makefile
+Natural/NATURAL.v
+Natural/nat.v
+Quotient/extensionality.v
+Quotient/quotient.v
+README
+Rational/MultQ.v
+Rational/PlusQ.v
+Rational/Z_to_Q.v
+Rational/minus.v
+Rational/rat.v
+Rational/rational.v
+Rational/rational_defs.v
+Rewrite/GenericRewrite/HeadSimpl/HeadSimpl.v
+Rewrite/GenericRewrite/HeadSimpl/main.ml
+Rewrite/GenericRewrite/HeadSimpl/tacentry.ml4
+Rewrite/GenericRewrite/genMLstuff/basic.ml
+Rewrite/GenericRewrite/genMLstuff/frame.ml
+Rewrite/LeibnizRewrite/AC/AC.v
+Rewrite/LeibnizRewrite/AC/aC.ml
+Rewrite/LeibnizRewrite/AC/aC_tac.ml4
+Rewrite/LeibnizRewrite/HS/HS.v
+Rewrite/LeibnizRewrite/HS/hS.ml
+Rewrite/LeibnizRewrite/HS/hS_tac.ml4
+Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml
+Rewrite/LeibnizRewrite/MLstuff/struct.ml
+Subset/subset.v
+Util/productSyntax.v
+description
+HEAD is now at 996079f Adapting to &quot;introduction&quot; in the new proof engine.
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:rational.dev:
+  make -j4
+  make install
+ocamldep -slash -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/LeibnizRewrite/HS/hS.ml&quot; &gt; &quot;Rewrite/LeibnizRewrite/HS/hS.ml.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/HS/hS.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/LeibnizRewrite/AC/aC.ml&quot; &gt; &quot;Rewrite/LeibnizRewrite/AC/aC.ml.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/AC/aC.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml&quot; &gt; &quot;Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/LeibnizRewrite/MLstuff/struct.ml&quot; &gt; &quot;Rewrite/LeibnizRewrite/MLstuff/struct.ml.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/MLstuff/struct.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/GenericRewrite/genMLstuff/frame.ml&quot; &gt; &quot;Rewrite/GenericRewrite/genMLstuff/frame.ml.d&quot; || ( RV=$?; rm -f &quot;Rewrite/GenericRewrite/genMLstuff/frame.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/GenericRewrite/genMLstuff/basic.ml&quot; &gt; &quot;Rewrite/GenericRewrite/genMLstuff/basic.ml.d&quot; || ( RV=$?; rm -f &quot;Rewrite/GenericRewrite/genMLstuff/basic.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/GenericRewrite/HeadSimpl/main.ml&quot; &gt; &quot;Rewrite/GenericRewrite/HeadSimpl/main.ml.d&quot; || ( RV=$?; rm -f &quot;Rewrite/GenericRewrite/HeadSimpl/main.ml.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/LeibnizRewrite/HS/hS_tac.ml4&quot; &gt; &quot;Rewrite/LeibnizRewrite/HS/hS_tac.ml4.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/HS/hS_tac.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/LeibnizRewrite/AC/aC_tac.ml4&quot; &gt; &quot;Rewrite/LeibnizRewrite/AC/aC_tac.ml4.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/AC/aC_tac.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff &quot;Rewrite/GenericRewrite/HeadSimpl/tacentry.ml4&quot; &gt; &quot;Rewrite/GenericRewrite/HeadSimpl/tacentry.ml4.d&quot; || ( RV=$?; rm -f &quot;Rewrite/GenericRewrite/HeadSimpl/tacentry.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Natural/NATURAL.v&quot; &gt; &quot;Natural/NATURAL.v.d&quot; || ( RV=$?; rm -f &quot;Natural/NATURAL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Natural/nat.v&quot; &gt; &quot;Natural/nat.v.d&quot; || ( RV=$?; rm -f &quot;Natural/nat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rewrite/GenericRewrite/HeadSimpl/HeadSimpl.v&quot; &gt; &quot;Rewrite/GenericRewrite/HeadSimpl/HeadSimpl.v.d&quot; || ( RV=$?; rm -f &quot;Rewrite/GenericRewrite/HeadSimpl/HeadSimpl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rewrite/LeibnizRewrite/HS/HS.v&quot; &gt; &quot;Rewrite/LeibnizRewrite/HS/HS.v.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/HS/HS.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rewrite/LeibnizRewrite/AC/AC.v&quot; &gt; &quot;Rewrite/LeibnizRewrite/AC/AC.v.d&quot; || ( RV=$?; rm -f &quot;Rewrite/LeibnizRewrite/AC/AC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Subset/subset.v&quot; &gt; &quot;Subset/subset.v.d&quot; || ( RV=$?; rm -f &quot;Subset/subset.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rational/minus.v&quot; &gt; &quot;Rational/minus.v.d&quot; || ( RV=$?; rm -f &quot;Rational/minus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rational/rational.v&quot; &gt; &quot;Rational/rational.v.d&quot; || ( RV=$?; rm -f &quot;Rational/rational.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rational/PlusQ.v&quot; &gt; &quot;Rational/PlusQ.v.d&quot; || ( RV=$?; rm -f &quot;Rational/PlusQ.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rational/rat.v&quot; &gt; &quot;Rational/rat.v.d&quot; || ( RV=$?; rm -f &quot;Rational/rat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rational/MultQ.v&quot; &gt; &quot;Rational/MultQ.v.d&quot; || ( RV=$?; rm -f &quot;Rational/MultQ.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rational/rational_defs.v&quot; &gt; &quot;Rational/rational_defs.v.d&quot; || ( RV=$?; rm -f &quot;Rational/rational_defs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Rational/Z_to_Q.v&quot; &gt; &quot;Rational/Z_to_Q.v.d&quot; || ( RV=$?; rm -f &quot;Rational/Z_to_Q.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Util/productSyntax.v&quot; &gt; &quot;Util/productSyntax.v.d&quot; || ( RV=$?; rm -f &quot;Util/productSyntax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Quotient/quotient.v&quot; &gt; &quot;Quotient/quotient.v.d&quot; || ( RV=$?; rm -f &quot;Quotient/quotient.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Quotient/extensionality.v&quot; &gt; &quot;Quotient/extensionality.v.d&quot; || ( RV=$?; rm -f &quot;Quotient/extensionality.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/int.v&quot; &gt; &quot;Integer/int.v.d&quot; || ( RV=$?; rm -f &quot;Integer/int.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/intnumbers.v&quot; &gt; &quot;Integer/intnumbers.v.d&quot; || ( RV=$?; rm -f &quot;Integer/intnumbers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/leZproperties.v&quot; &gt; &quot;Integer/leZproperties.v.d&quot; || ( RV=$?; rm -f &quot;Integer/leZproperties.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/integer.v&quot; &gt; &quot;Integer/integer.v.d&quot; || ( RV=$?; rm -f &quot;Integer/integer.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/PlusZ.v&quot; &gt; &quot;Integer/PlusZ.v.d&quot; || ( RV=$?; rm -f &quot;Integer/PlusZ.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/leZ.v&quot; &gt; &quot;Integer/leZ.v.d&quot; || ( RV=$?; rm -f &quot;Integer/leZ.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/integer_defs.v&quot; &gt; &quot;Integer/integer_defs.v.d&quot; || ( RV=$?; rm -f &quot;Integer/integer_defs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/Absz.v&quot; &gt; &quot;Integer/Absz.v.d&quot; || ( RV=$?; rm -f &quot;Integer/Absz.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational &quot;Integer/MultZ.v&quot; &gt; &quot;Integer/MultZ.v.d&quot; || ( RV=$?; rm -f &quot;Integer/MultZ.v.d&quot;; exit ${RV} )
+ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/LeibnizRewrite/MLstuff/struct.ml
+ocamlopt -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/LeibnizRewrite/MLstuff/struct.ml
+&quot;coqc&quot;  -q  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational   Quotient/quotient
+&quot;coqc&quot;  -q  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational   Util/productSyntax
+&quot;coqc&quot;  -q  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational   Subset/subset
+ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/genMLstuff/frame.ml
+ocamlopt -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/genMLstuff/frame.ml
+ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/genMLstuff/basic.ml
+ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/HeadSimpl/main.ml
+ocamlopt -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -shared -o Rewrite/LeibnizRewrite/MLstuff/struct.cmxs Rewrite/LeibnizRewrite/MLstuff/struct.cmx
+File &quot;Rewrite/GenericRewrite/genMLstuff/basic.ml&quot;, line 6, characters 0-14:
+Error: Unbound module Globnamesocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml
+Did you mean Libnames?
+Makefile:334: recipe for target 'Rewrite/GenericRewrite/genMLstuff/basic.cmo' failed
+make: *** [Rewrite/GenericRewrite/genMLstuff/basic.cmo] Error 2
+make: *** Waiting for unfinished jobs....
+File &quot;Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml&quot;, line 8, characters 0-14:
+Error: Unbound module Globnames
+Did you mean Libnames?
+Makefile:334: recipe for target 'Rewrite/LeibnizRewrite/MLstuff/sort_tac.cmo' failed
+make: *** [Rewrite/LeibnizRewrite/MLstuff/sort_tac.cmo] Error 2
+[ERROR] The compilation of coq:contrib:rational.dev failed.
+Removing coq:contrib:rational.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Rational
+rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/Rational': No such file or directory
+#=== ERROR while installing coq:contrib:rational.dev ==========================#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /home/bench/.opam/system/build/coq:contrib:rational.dev
+# compiler             system (4.01.0)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:contrib:rational.dev/coq:contrib:rational-18814-d2c37b.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:rational.dev/coq:contrib:rational-18814-d2c37b.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:rational.dev/coq:contrib:rational-18814-d2c37b.err
+### stdout ###
+# ...[truncated]
+# &quot;coqc&quot;  -q  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational   Util/productSyntax
+# &quot;coqc&quot;  -q  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -R . Rational   Subset/subset
+# ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/genMLstuff/frame.ml
+# ocamlopt -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/genMLstuff/frame.ml
+# ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/genMLstuff/basic.ml
+# ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/GenericRewrite/HeadSimpl/main.ml
+# ocamlopt -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -shared -o Rewrite/LeibnizRewrite/MLstuff/struct.cmxs Rewrite/LeibnizRewrite/MLstuff/struct.cmx
+# ocamlc -c -rectypes  -I Rewrite/GenericRewrite/HeadSimpl -I Rewrite/LeibnizRewrite/HS -I Rewrite/LeibnizRewrite/AC -I Rewrite/GenericRewrite/genMLstuff -I Rewrite/LeibnizRewrite/MLstuff -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml
+# Makefile:334: recipe for target 'Rewrite/GenericRewrite/genMLstuff/basic.cmo' failed
+# Makefile:334: recipe for target 'Rewrite/LeibnizRewrite/MLstuff/sort_tac.cmo' failed
+### stderr ###
+# File &quot;Rewrite/GenericRewrite/genMLstuff/basic.ml&quot;, line 6, characters 0-14:
+# Error: Unbound module Globnames
+# Did you mean Libnames?
+# make: *** [Rewrite/GenericRewrite/genMLstuff/basic.cmo] Error 2
+# make: *** Waiting for unfinished jobs....
+# File &quot;Rewrite/LeibnizRewrite/MLstuff/sort_tac.ml&quot;, line 8, characters 0-14:
+# Error: Unbound module Globnames
+# Did you mean Libnames?
+# make: *** [Rewrite/LeibnizRewrite/MLstuff/sort_tac.cmo] Error 2
+'opam install -y --verbose coq:contrib:rational.dev' failed.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
