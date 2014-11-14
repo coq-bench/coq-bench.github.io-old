@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:continuations 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-14 17:48:53</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:continuations
+              <small>
+                8.4.dev
+                <span class="label label-danger">Uninstallation error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-14 17:48:53 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-14 17:48:53 UTC)</em>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:continuations.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:continuations.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:continuations.8.4.dev:
+  make -j4
+  make install
+Installing coq:contrib:continuations.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:continuations.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:continuations.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>21 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:continuations.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:continuations] Fetching git://clarus.io/continuations#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:continuations.8.4.dev/.git/
+[master (root-commit) 3e17106] opam-git-init
+warning: no common commits
+From git://clarus.io/continuations
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+FOUnify_cps/deb_term_unif.v
+FOUnify_cps/end_term_unif.v
+FOUnify_cps/is_in_quasiterm_term_subst.v
+FOUnify_cps/listv_is_in_lv.v
+FOUnify_cps/nat_complements.v
+FOUnify_cps/nat_term_eq_quasiterm.v
+Make
+Makefile
+README
+bench.log
+cps/DeclareN.v
+cps/DeclareNmx.v
+cps/DeclareNx.v
+cps/applytac.ml4
+cps/applytac.v
+cps/cps_N.v
+cps/cps_Nmx.v
+cps/cps_Nx.v
+description
+mpc.dvi.gz
+polycont/.cvsignore
+polycont/Mx_defs.v
+polycont/README
+polycont/copy.v
+polycont/copy_cheat.v
+polycont/copy_cheat_extr_corr.ml
+polycont/copy_extr_corr.ml
+polycont/huff_extr_corr.ml
+polycont/huffman.v
+weight/Naccu_cc.v
+weight/Nmxaccu_ex.v
+weight/Nxaccu_ex.v
+weight/decl_exc.v
+weight/specif.v
+weight/tests.v
+weight/tree.v
+weight/tree_plus.v
+HEAD is now at 11d1c34 Compilation des contribs
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:continuations.8.4.dev:
+  make -j4
+  make install
+coqdep -c -slash -R . Continuations &quot;FOUnify_cps/nat_complements.v&quot; &gt; &quot;FOUnify_cps/nat_complements.v.d&quot; || ( RV=$?; rm -f &quot;FOUnify_cps/nat_complements.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;FOUnify_cps/end_term_unif.v&quot; &gt; &quot;FOUnify_cps/end_term_unif.v.d&quot; || ( RV=$?; rm -f &quot;FOUnify_cps/end_term_unif.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;FOUnify_cps/deb_term_unif.v&quot; &gt; &quot;FOUnify_cps/deb_term_unif.v.d&quot; || ( RV=$?; rm -f &quot;FOUnify_cps/deb_term_unif.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;FOUnify_cps/is_in_quasiterm_term_subst.v&quot; &gt; &quot;FOUnify_cps/is_in_quasiterm_term_subst.v.d&quot; || ( RV=$?; rm -f &quot;FOUnify_cps/is_in_quasiterm_term_subst.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;FOUnify_cps/nat_term_eq_quasiterm.v&quot; &gt; &quot;FOUnify_cps/nat_term_eq_quasiterm.v.d&quot; || ( RV=$?; rm -f &quot;FOUnify_cps/nat_term_eq_quasiterm.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;FOUnify_cps/listv_is_in_lv.v&quot; &gt; &quot;FOUnify_cps/listv_is_in_lv.v.d&quot; || ( RV=$?; rm -f &quot;FOUnify_cps/listv_is_in_lv.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/tree_plus.v&quot; &gt; &quot;weight/tree_plus.v.d&quot; || ( RV=$?; rm -f &quot;weight/tree_plus.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/Nxaccu_ex.v&quot; &gt; &quot;weight/Nxaccu_ex.v.d&quot; || ( RV=$?; rm -f &quot;weight/Nxaccu_ex.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/tests.v&quot; &gt; &quot;weight/tests.v.d&quot; || ( RV=$?; rm -f &quot;weight/tests.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/Nmxaccu_ex.v&quot; &gt; &quot;weight/Nmxaccu_ex.v.d&quot; || ( RV=$?; rm -f &quot;weight/Nmxaccu_ex.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/decl_exc.v&quot; &gt; &quot;weight/decl_exc.v.d&quot; || ( RV=$?; rm -f &quot;weight/decl_exc.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/Naccu_cc.v&quot; &gt; &quot;weight/Naccu_cc.v.d&quot; || ( RV=$?; rm -f &quot;weight/Naccu_cc.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/tree.v&quot; &gt; &quot;weight/tree.v.d&quot; || ( RV=$?; rm -f &quot;weight/tree.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;weight/specif.v&quot; &gt; &quot;weight/specif.v.d&quot; || ( RV=$?; rm -f &quot;weight/specif.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;polycont/copy.v&quot; &gt; &quot;polycont/copy.v.d&quot; || ( RV=$?; rm -f &quot;polycont/copy.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;polycont/huffman.v&quot; &gt; &quot;polycont/huffman.v.d&quot; || ( RV=$?; rm -f &quot;polycont/huffman.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;polycont/Mx_defs.v&quot; &gt; &quot;polycont/Mx_defs.v.d&quot; || ( RV=$?; rm -f &quot;polycont/Mx_defs.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;polycont/copy_cheat.v&quot; &gt; &quot;polycont/copy_cheat.v.d&quot; || ( RV=$?; rm -f &quot;polycont/copy_cheat.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;cps/applytac.v&quot; &gt; &quot;cps/applytac.v.d&quot; || ( RV=$?; rm -f &quot;cps/applytac.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;cps/cps_Nx.v&quot; &gt; &quot;cps/cps_Nx.v.d&quot; || ( RV=$?; rm -f &quot;cps/cps_Nx.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;cps/cps_N.v&quot; &gt; &quot;cps/cps_N.v.d&quot; || ( RV=$?; rm -f &quot;cps/cps_N.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . Continuations &quot;cps/cps_Nmx.v&quot; &gt; &quot;cps/cps_Nmx.v.d&quot; || ( RV=$?; rm -f &quot;cps/cps_Nmx.v.d&quot;; exit ${RV} )
+coqc  -q -byte -R . Continuations -impredicative-set  cps/cps_Nmx
+ocamlc.opt -c -rectypes   -I /home/bench/.opam/system/lib/coq/kernel -I /home/bench/.opam/system/lib/coq/lib -I /home/bench/.opam/system/lib/coq/library -I /home/bench/.opam/system/lib/coq/parsing -I /home/bench/.opam/system/lib/coq/pretyping -I /home/bench/.opam/system/lib/coq/interp -I /home/bench/.opam/system/lib/coq/proofs -I /home/bench/.opam/system/lib/coq/tactics -I /home/bench/.opam/system/lib/coq/toplevel -I /home/bench/.opam/system/lib/coq/plugins/cc -I /home/bench/.opam/system/lib/coq/plugins/dp -I /home/bench/.opam/system/lib/coq/plugins/extraction -I /home/bench/.opam/system/lib/coq/plugins/field -I /home/bench/.opam/system/lib/coq/plugins/firstorder -I /home/bench/.opam/system/lib/coq/plugins/fourier -I /home/bench/.opam/system/lib/coq/plugins/funind -I /home/bench/.opam/system/lib/coq/plugins/groebner -I /home/bench/.opam/system/lib/coq/plugins/interface -I /home/bench/.opam/system/lib/coq/plugins/micromega -I /home/bench/.opam/system/lib/coq/plugins/omega -I /home/bench/.opam/system/lib/coq/plugins/quote -I /home/bench/.opam/system/lib/coq/plugins/ring -I /home/bench/.opam/system/lib/coq/plugins/romega -I /home/bench/.opam/system/lib/coq/plugins/rtauto -I /home/bench/.opam/system/lib/coq/plugins/setoid_ring -I /home/bench/.opam/system/lib/coq/plugins/subtac -I /home/bench/.opam/system/lib/coq/plugins/subtac/test -I /home/bench/.opam/system/lib/coq/plugins/syntax -I /home/bench/.opam/system/lib/coq/plugins/xml -I /home/bench/.opam/system/lib/camlp5 -pp &quot;&quot;camlp5&quot;o -I . -I /home/bench/.opam/system/lib/coq/kernel -I /home/bench/.opam/system/lib/coq/lib -I /home/bench/.opam/system/lib/coq/library -I /home/bench/.opam/system/lib/coq/parsing -I /home/bench/.opam/system/lib/coq/pretyping -I /home/bench/.opam/system/lib/coq/interp -I /home/bench/.opam/system/lib/coq/proofs -I /home/bench/.opam/system/lib/coq/tactics -I /home/bench/.opam/system/lib/coq/toplevel -I /home/bench/.opam/system/lib/coq/plugins/cc -I /home/bench/.opam/system/lib/coq/plugins/dp -I /home/bench/.opam/system/lib/coq/plugins/extraction -I /home/bench/.opam/system/lib/coq/plugins/field -I /home/bench/.opam/system/lib/coq/plugins/firstorder -I /home/bench/.opam/system/lib/coq/plugins/fourier -I /home/bench/.opam/system/lib/coq/plugins/funind -I /home/bench/.opam/system/lib/coq/plugins/groebner -I /home/bench/.opam/system/lib/coq/plugins/interface -I /home/bench/.opam/system/lib/coq/plugins/micromega -I /home/bench/.opam/system/lib/coq/plugins/omega -I /home/bench/.opam/system/lib/coq/plugins/quote -I /home/bench/.opam/system/lib/coq/plugins/ring -I /home/bench/.opam/system/lib/coq/plugins/romega -I /home/bench/.opam/system/lib/coq/plugins/rtauto -I /home/bench/.opam/system/lib/coq/plugins/setoid_ring -I /home/bench/.opam/system/lib/coq/plugins/subtac -I /home/bench/.opam/system/lib/coq/plugins/subtac/test -I /home/bench/.opam/system/lib/coq/plugins/syntax -I /home/bench/.opam/system/lib/coq/plugins/xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma  -impl&quot; -impl cps/applytac.ml4
+ocamlopt.opt -rectypes   -I /home/bench/.opam/system/lib/coq/kernel -I /home/bench/.opam/system/lib/coq/lib -I /home/bench/.opam/system/lib/coq/library -I /home/bench/.opam/system/lib/coq/parsing -I /home/bench/.opam/system/lib/coq/pretyping -I /home/bench/.opam/system/lib/coq/interp -I /home/bench/.opam/system/lib/coq/proofs -I /home/bench/.opam/system/lib/coq/tactics -I /home/bench/.opam/system/lib/coq/toplevel -I /home/bench/.opam/system/lib/coq/plugins/cc -I /home/bench/.opam/system/lib/coq/plugins/dp -I /home/bench/.opam/system/lib/coq/plugins/extraction -I /home/bench/.opam/system/lib/coq/plugins/field -I /home/bench/.opam/system/lib/coq/plugins/firstorder -I /home/bench/.opam/system/lib/coq/plugins/fourier -I /home/bench/.opam/system/lib/coq/plugins/funind -I /home/bench/.opam/system/lib/coq/plugins/groebner -I /home/bench/.opam/system/lib/coq/plugins/interface -I /home/bench/.opam/system/lib/coq/plugins/micromega -I /home/bench/.opam/system/lib/coq/plugins/omega -I /home/bench/.opam/system/lib/coq/plugins/quote -I /home/bench/.opam/system/lib/coq/plugins/ring -I /home/bench/.opam/system/lib/coq/plugins/romega -I /home/bench/.opam/system/lib/coq/plugins/rtauto -I /home/bench/.opam/system/lib/coq/plugins/setoid_ring -I /home/bench/.opam/system/lib/coq/plugins/subtac -I /home/bench/.opam/system/lib/coq/plugins/subtac/test -I /home/bench/.opam/system/lib/coq/plugins/syntax -I /home/bench/.opam/system/lib/coq/plugins/xml -I /home/bench/.opam/system/lib/camlp5 -shared -o cps/applytac.cmxs -pp &quot;&quot;camlp5&quot;o -I . -I /home/bench/.opam/system/lib/coq/kernel -I /home/bench/.opam/system/lib/coq/lib -I /home/bench/.opam/system/lib/coq/library -I /home/bench/.opam/system/lib/coq/parsing -I /home/bench/.opam/system/lib/coq/pretyping -I /home/bench/.opam/system/lib/coq/interp -I /home/bench/.opam/system/lib/coq/proofs -I /home/bench/.opam/system/lib/coq/tactics -I /home/bench/.opam/system/lib/coq/toplevel -I /home/bench/.opam/system/lib/coq/plugins/cc -I /home/bench/.opam/system/lib/coq/plugins/dp -I /home/bench/.opam/system/lib/coq/plugins/extraction -I /home/bench/.opam/system/lib/coq/plugins/field -I /home/bench/.opam/system/lib/coq/plugins/firstorder -I /home/bench/.opam/system/lib/coq/plugins/fourier -I /home/bench/.opam/system/lib/coq/plugins/funind -I /home/bench/.opam/system/lib/coq/plugins/groebner -I /home/bench/.opam/system/lib/coq/plugins/interface -I /home/bench/.opam/system/lib/coq/plugins/micromega -I /home/bench/.opam/system/lib/coq/plugins/omega -I /home/bench/.opam/system/lib/coq/plugins/quote -I /home/bench/.opam/system/lib/coq/plugins/ring -I /home/bench/.opam/system/lib/coq/plugins/romega -I /home/bench/.opam/system/lib/coq/plugins/rtauto -I /home/bench/.opam/system/lib/coq/plugins/setoid_ring -I /home/bench/.opam/system/lib/coq/plugins/subtac -I /home/bench/.opam/system/lib/coq/plugins/subtac/test -I /home/bench/.opam/system/lib/coq/plugins/syntax -I /home/bench/.opam/system/lib/coq/plugins/xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma  -impl&quot; -impl cps/applytac.ml4
+coqc  -q -byte -R . Continuations -impredicative-set  cps/cps_Nx
+coqc  -q -byte -R . Continuations -impredicative-set  polycont/Mx_defs
+coqc  -q -byte -R . Continuations -impredicative-set  weight/tree
+coqc  -q -byte -R . Continuations -impredicative-set  weight/tests
+coqc  -q -byte -R . Continuations -impredicative-set  weight/decl_exc
+coqc  -q -byte -R . Continuations -impredicative-set  FOUnify_cps/nat_complements
+coqc  -q -byte -R . Continuations -impredicative-set  cps/applytac
+coqc  -q -byte -R . Continuations -impredicative-set  polycont/copy_cheat
+coqc  -q -byte -R . Continuations -impredicative-set  polycont/huffman
+coqc  -q -byte -R . Continuations -impredicative-set  polycont/copy
+coqc  -q -byte -R . Continuations -impredicative-set  weight/tree_plus
+coqc  -q -byte -R . Continuations -impredicative-set  cps/cps_N
+coqc  -q -byte -R . Continuations -impredicative-set  weight/specif
+coqc  -q -byte -R . Continuations -impredicative-set  weight/Naccu_cc
+coqc  -q -byte -R . Continuations -impredicative-set  weight/Nmxaccu_ex
+coqc  -q -byte -R . Continuations -impredicative-set  weight/Nxaccu_ex
+Identifier 'Vm' now a keyword
+Identifier 'Vm' now a keyword
+coqc  -q -byte -R . Continuations -impredicative-set  FOUnify_cps/nat_term_eq_quasiterm
+coqc  -q -byte -R . Continuations -impredicative-set  FOUnify_cps/is_in_quasiterm_term_subst
+coqc  -q -byte -R . Continuations -impredicative-set  FOUnify_cps/listv_is_in_lv
+coqc  -q -byte -R . Continuations -impredicative-set  FOUnify_cps/deb_term_unif
+coqc  -q -byte -R . Continuations -impredicative-set  FOUnify_cps/end_term_unif
+mkdir -p /home/bench/.opam/system/lib/coq/user-contrib
+(for i in cps/cps_Nmx.vo cps/cps_N.vo cps/cps_Nx.vo cps/applytac.vo polycont/copy_cheat.vo polycont/Mx_defs.vo polycont/huffman.vo polycont/copy.vo weight/specif.vo weight/tree.vo weight/Naccu_cc.vo weight/decl_exc.vo weight/Nmxaccu_ex.vo weight/tests.vo weight/Nxaccu_ex.vo weight/tree_plus.vo FOUnify_cps/listv_is_in_lv.vo FOUnify_cps/nat_term_eq_quasiterm.vo FOUnify_cps/is_in_quasiterm_term_subst.vo FOUnify_cps/deb_term_unif.vo FOUnify_cps/end_term_unif.vo FOUnify_cps/nat_complements.vo; do \
+ install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i`; \
+ install $i /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i; \
+ done)
+(for i in cps/applytac.cmo; do \
+ install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i`; \
+ install $i /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i; \
+ done)
+(for i in cps/applytac.cmi; do \
+ install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i`; \
+ install $i /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i; \
+ done)
+(for i in cps/applytac.cmxs; do \
+ install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i`; \
+ install $i /home/bench/.opam/system/lib/coq/user-contrib/Continuations/$i; \
+ done)
+Installing coq:contrib:continuations.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:continuations.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:continuations.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:continuations] Fetching git://clarus.io/continuations#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:continuations.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/continuations
+[WARNING] failure in package uninstall script, some files may remain:
+# opam-version         1.2.0
+# os                   linux
+# command              rm -R /home/bench/.opam/system/lib/coq/user-contrib/continuations
+# path                 /home/bench/.opam/system/build/coq:contrib:continuations.8.4.dev
+# compiler             system (4.02.1)
+# exit-code            1
+# env-file             /home/bench/.opam/system/build/coq:contrib:continuations.8.4.dev/coq:contrib:continuations-4192-1872ec.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:continuations.8.4.dev/coq:contrib:continuations-4192-1872ec.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:continuations.8.4.dev/coq:contrib:continuations-4192-1872ec.err
+### stderr ###
+# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/continuations': No such file or directory
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                <ul>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/FOUnify_cps</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/FOUnify_cps/nat_term_eq_quasiterm.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/FOUnify_cps/end_term_unif.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/FOUnify_cps/listv_is_in_lv.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/FOUnify_cps/is_in_quasiterm_term_subst.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/FOUnify_cps/deb_term_unif.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/FOUnify_cps/nat_complements.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/tree.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/tests.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/Nxaccu_ex.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/specif.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/Naccu_cc.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/decl_exc.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/tree_plus.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/weight/Nmxaccu_ex.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps/applytac.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps/applytac.cmo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps/applytac.cmxs</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps/cps_N.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps/applytac.cmi</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps/cps_Nmx.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/cps/cps_Nx.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/polycont</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/polycont/huffman.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/polycont/Mx_defs.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/polycont/copy_cheat.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Continuations/polycont/copy.vo</code></li>
+                </ul>
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

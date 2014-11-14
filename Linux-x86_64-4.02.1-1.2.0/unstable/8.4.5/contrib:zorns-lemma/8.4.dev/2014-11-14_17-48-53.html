@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:zorns-lemma 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-14 17:48:53</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:zorns-lemma
+              <small>
+                8.4.dev
+                <span class="label label-danger">Uninstallation error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-14 17:48:53 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-14 17:48:53 UTC)</em>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:zorns-lemma.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:zorns-lemma.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:zorns-lemma.8.4.dev:
+  make -j4
+  make install
+Installing coq:contrib:zorns-lemma.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:zorns-lemma.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:zorns-lemma.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>9 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:zorns-lemma.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:zorns-lemma] Fetching git://clarus.io/zorns-lemma#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:zorns-lemma.8.4.dev/.git/
+[master (root-commit) 3c438c5] opam-git-init
+warning: no common commits
+From git://clarus.io/zorns-lemma
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+COPYING
+CSB.v
+Cardinals.v
+Classical_Wf.v
+CountableTypes.v
+DecidableDec.v
+DependentTypeChoice.v
+EnsemblesImplicit.v
+EnsemblesSpec.v
+EnsemblesUtf8.v
+Families.v
+FiniteIntersections.v
+FiniteTypes.v
+FunctionProperties.v
+ImageImplicit.v
+IndexedFamilies.v
+InfiniteTypes.v
+InverseImage.v
+Make
+Makefile
+Ordinals.v
+Proj1SigInjective.v
+Quotients.v
+README
+Relation_Definitions_Implicit.v
+WellOrders.v
+ZornsLemma.v
+description
+HEAD is now at f4a4ddc Fix scripts.
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:zorns-lemma.8.4.dev:
+  make -j4
+  make install
+coqdep -c -slash -R . ZornsLemma &quot;ZornsLemma.v&quot; &gt; &quot;ZornsLemma.v.d&quot; || ( RV=$?; rm -f &quot;ZornsLemma.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;WellOrders.v&quot; &gt; &quot;WellOrders.v.d&quot; || ( RV=$?; rm -f &quot;WellOrders.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;Relation_Definitions_Implicit.v&quot; &gt; &quot;Relation_Definitions_Implicit.v.d&quot; || ( RV=$?; rm -f &quot;Relation_Definitions_Implicit.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;Quotients.v&quot; &gt; &quot;Quotients.v.d&quot; || ( RV=$?; rm -f &quot;Quotients.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;Proj1SigInjective.v&quot; &gt; &quot;Proj1SigInjective.v.d&quot; || ( RV=$?; rm -f &quot;Proj1SigInjective.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;Ordinals.v&quot; &gt; &quot;Ordinals.v.d&quot; || ( RV=$?; rm -f &quot;Ordinals.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;InverseImage.v&quot; &gt; &quot;InverseImage.v.d&quot; || ( RV=$?; rm -f &quot;InverseImage.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;InfiniteTypes.v&quot; &gt; &quot;InfiniteTypes.v.d&quot; || ( RV=$?; rm -f &quot;InfiniteTypes.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;IndexedFamilies.v&quot; &gt; &quot;IndexedFamilies.v.d&quot; || ( RV=$?; rm -f &quot;IndexedFamilies.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;ImageImplicit.v&quot; &gt; &quot;ImageImplicit.v.d&quot; || ( RV=$?; rm -f &quot;ImageImplicit.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;FunctionProperties.v&quot; &gt; &quot;FunctionProperties.v.d&quot; || ( RV=$?; rm -f &quot;FunctionProperties.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;FiniteTypes.v&quot; &gt; &quot;FiniteTypes.v.d&quot; || ( RV=$?; rm -f &quot;FiniteTypes.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;FiniteIntersections.v&quot; &gt; &quot;FiniteIntersections.v.d&quot; || ( RV=$?; rm -f &quot;FiniteIntersections.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;Families.v&quot; &gt; &quot;Families.v.d&quot; || ( RV=$?; rm -f &quot;Families.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;EnsemblesUtf8.v&quot; &gt; &quot;EnsemblesUtf8.v.d&quot; || ( RV=$?; rm -f &quot;EnsemblesUtf8.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;EnsemblesSpec.v&quot; &gt; &quot;EnsemblesSpec.v.d&quot; || ( RV=$?; rm -f &quot;EnsemblesSpec.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;EnsemblesImplicit.v&quot; &gt; &quot;EnsemblesImplicit.v.d&quot; || ( RV=$?; rm -f &quot;EnsemblesImplicit.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;DependentTypeChoice.v&quot; &gt; &quot;DependentTypeChoice.v.d&quot; || ( RV=$?; rm -f &quot;DependentTypeChoice.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;DecidableDec.v&quot; &gt; &quot;DecidableDec.v.d&quot; || ( RV=$?; rm -f &quot;DecidableDec.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;CSB.v&quot; &gt; &quot;CSB.v.d&quot; || ( RV=$?; rm -f &quot;CSB.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;CountableTypes.v&quot; &gt; &quot;CountableTypes.v.d&quot; || ( RV=$?; rm -f &quot;CountableTypes.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;Classical_Wf.v&quot; &gt; &quot;Classical_Wf.v.d&quot; || ( RV=$?; rm -f &quot;Classical_Wf.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ZornsLemma &quot;Cardinals.v&quot; &gt; &quot;Cardinals.v.d&quot; || ( RV=$?; rm -f &quot;Cardinals.v.d&quot;; exit ${RV} )
+coqc  -q  -R . ZornsLemma   FunctionProperties
+coqc  -q  -R . ZornsLemma   Relation_Definitions_Implicit
+coqc  -q  -R . ZornsLemma   DecidableDec
+coqc  -q  -R . ZornsLemma   EnsemblesImplicit
+coqc  -q  -R . ZornsLemma   Proj1SigInjective
+coqc  -q  -R . ZornsLemma   ImageImplicit
+coqc  -q  -R . ZornsLemma   Families
+coqc  -q  -R . ZornsLemma   DependentTypeChoice
+coqc  -q  -R . ZornsLemma   Ordinals
+coqc  -q  -R . ZornsLemma   EnsemblesSpec
+coqc  -q  -R . ZornsLemma   IndexedFamilies
+coqc  -q  -R . ZornsLemma   Quotients
+coqc  -q  -R . ZornsLemma   InverseImage
+coqc  -q  -R . ZornsLemma   Classical_Wf
+coqc  -q  -R . ZornsLemma   EnsemblesUtf8
+coqc  -q  -R . ZornsLemma   CSB
+coqc  -q  -R . ZornsLemma   FiniteTypes
+coqc  -q  -R . ZornsLemma   ZornsLemma
+coqc  -q  -R . ZornsLemma   Cardinals
+coqc  -q  -R . ZornsLemma   WellOrders
+coqc  -q  -R . ZornsLemma   InfiniteTypes
+coqc  -q  -R . ZornsLemma   FiniteIntersections
+coqc  -q  -R . ZornsLemma   CountableTypes
+mkdir -p /home/bench/.opam/system/lib/coq/user-contrib
+(for i in Cardinals.vo Classical_Wf.vo CountableTypes.vo CSB.vo DecidableDec.vo DependentTypeChoice.vo EnsemblesImplicit.vo EnsemblesSpec.vo EnsemblesUtf8.vo Families.vo FiniteIntersections.vo FiniteTypes.vo FunctionProperties.vo ImageImplicit.vo IndexedFamilies.vo InfiniteTypes.vo InverseImage.vo Ordinals.vo Proj1SigInjective.vo Quotients.vo Relation_Definitions_Implicit.vo WellOrders.vo ZornsLemma.vo; do \
+ install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/$i`; \
+ install $i /home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/$i; \
+ done)
+Installing coq:contrib:zorns-lemma.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:zorns-lemma.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:zorns-lemma.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:zorns-lemma] Fetching git://clarus.io/zorns-lemma#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:zorns-lemma.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/zorns-lemma
+[WARNING] failure in package uninstall script, some files may remain:
+# opam-version         1.2.0
+# os                   linux
+# command              rm -R /home/bench/.opam/system/lib/coq/user-contrib/zorns-lemma
+# path                 /home/bench/.opam/system/build/coq:contrib:zorns-lemma.8.4.dev
+# compiler             system (4.02.1)
+# exit-code            1
+# env-file             /home/bench/.opam/system/build/coq:contrib:zorns-lemma.8.4.dev/coq:contrib:zorns-lemma-25740-1872ec.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:zorns-lemma.8.4.dev/coq:contrib:zorns-lemma-25740-1872ec.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:zorns-lemma.8.4.dev/coq:contrib:zorns-lemma-25740-1872ec.err
+### stderr ###
+# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/zorns-lemma': No such file or directory
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                <ul>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/ImageImplicit.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/Cardinals.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/DependentTypeChoice.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/EnsemblesSpec.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/Families.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/ZornsLemma.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/CSB.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/DecidableDec.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/CountableTypes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/EnsemblesImplicit.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/Ordinals.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/EnsemblesUtf8.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/FiniteTypes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/Proj1SigInjective.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/FiniteIntersections.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/InverseImage.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/WellOrders.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/Relation_Definitions_Implicit.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/IndexedFamilies.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/Classical_Wf.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/FunctionProperties.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/InfiniteTypes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/ZornsLemma/Quotients.vo</code></li>
+                </ul>
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

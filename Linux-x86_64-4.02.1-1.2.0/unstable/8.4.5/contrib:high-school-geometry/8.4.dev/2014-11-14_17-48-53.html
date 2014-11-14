@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:high-school-geometry 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-14 17:48:53</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:high-school-geometry
+              <small>
+                8.4.dev
+                <span class="label label-danger">Uninstallation error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-14 17:48:53 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-14 17:48:53 UTC)</em>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:high-school-geometry.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:high-school-geometry.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:high-school-geometry.8.4.dev:
+  make -j4
+  make install
+Installing coq:contrib:high-school-geometry.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:high-school-geometry.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:high-school-geometry.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 m 58 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:high-school-geometry.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:high-school-geometry] Fetching git://clarus.io/high-school-geometry#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:high-school-geometry.8.4.dev/.git/
+[master (root-commit) d094a70] opam-git-init
+warning: no common commits
+From git://clarus.io/high-school-geometry
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Droite_espace.v
+Droite_plan_espace.v
+Field_affine.v
+LICENSE
+Make
+Makefile
+Plan_espace.v
+Plans_paralleles.v
+README
+Rutile.v
+affine_classiques.v
+aire_signee.v
+alignement.v
+angles_droites.v
+angles_vecteurs.v
+applications_cocyclicite.v
+barycentre.v
+bench.log
+cercle.v
+cocyclicite.v
+complements_cercle.v
+complexes.v
+complexes_analytique.v
+complexes_conjugaison.v
+complexes_dilatations.v
+complexes_exercice.v
+complexes_inversion.v
+complexes_similitudes.v
+complexes_transformations.v
+composee_dilatations.v
+composee_reflexions.v
+composee_transformations.v
+composee_translation_rotation.v
+contact.v
+coplanarite.v
+description
+determinant.v
+dilatations.v
+distance_euclidienne.v
+droite_Euler.v
+equations_cercles.v
+equations_droites.v
+euclidien_classiques.v
+exercice_espace.v
+field.patch
+formes_complexes.v
+geometrie_complexes.v
+geometrie_plane.v
+geometrie_spaciale.v
+homoth_Euler.v
+homothetie_plane.v
+inversion.v
+isocele.v
+mediatrice.v
+mesure_algebrique.v
+metrique_triangle.v
+milieu.v
+operations_complexes.v
+orthocentre.v
+orthogonalite.v
+orthogonalite_espace.v
+parallelisme_concours.v
+produit_scalaire.v
+projection_orthogonale.v
+puissance_cercle.v
+reflexion_plane.v
+repere_ortho_plan.v
+repere_plan.v
+representant_unitaire.v
+rotation_plane.v
+similitudes_directes.v
+tactiques_construction.v
+transformations_contact.v
+trigo.v
+vecteur.v
+HEAD is now at 5b07f6b Sauvegarde des bench.log
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:high-school-geometry.8.4.dev:
+  make -j4
+  make install
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complements_cercle.v&quot; &gt; &quot;complements_cercle.v.d&quot; || ( RV=$?; rm -f &quot;complements_cercle.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes_analytique.v&quot; &gt; &quot;complexes_analytique.v.d&quot; || ( RV=$?; rm -f &quot;complexes_analytique.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes_inversion.v&quot; &gt; &quot;complexes_inversion.v.d&quot; || ( RV=$?; rm -f &quot;complexes_inversion.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;contact.v&quot; &gt; &quot;contact.v.d&quot; || ( RV=$?; rm -f &quot;contact.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;equations_cercles.v&quot; &gt; &quot;equations_cercles.v.d&quot; || ( RV=$?; rm -f &quot;equations_cercles.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;inversion.v&quot; &gt; &quot;inversion.v.d&quot; || ( RV=$?; rm -f &quot;inversion.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;puissance_cercle.v&quot; &gt; &quot;puissance_cercle.v.d&quot; || ( RV=$?; rm -f &quot;puissance_cercle.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;transformations_contact.v&quot; &gt; &quot;transformations_contact.v.d&quot; || ( RV=$?; rm -f &quot;transformations_contact.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;vecteur.v&quot; &gt; &quot;vecteur.v.d&quot; || ( RV=$?; rm -f &quot;vecteur.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;trigo.v&quot; &gt; &quot;trigo.v.d&quot; || ( RV=$?; rm -f &quot;trigo.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;similitudes_directes.v&quot; &gt; &quot;similitudes_directes.v.d&quot; || ( RV=$?; rm -f &quot;similitudes_directes.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;Rutile.v&quot; &gt; &quot;Rutile.v.d&quot; || ( RV=$?; rm -f &quot;Rutile.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;rotation_plane.v&quot; &gt; &quot;rotation_plane.v.d&quot; || ( RV=$?; rm -f &quot;rotation_plane.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;representant_unitaire.v&quot; &gt; &quot;representant_unitaire.v.d&quot; || ( RV=$?; rm -f &quot;representant_unitaire.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;repere_plan.v&quot; &gt; &quot;repere_plan.v.d&quot; || ( RV=$?; rm -f &quot;repere_plan.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;repere_ortho_plan.v&quot; &gt; &quot;repere_ortho_plan.v.d&quot; || ( RV=$?; rm -f &quot;repere_ortho_plan.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;reflexion_plane.v&quot; &gt; &quot;reflexion_plane.v.d&quot; || ( RV=$?; rm -f &quot;reflexion_plane.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;projection_orthogonale.v&quot; &gt; &quot;projection_orthogonale.v.d&quot; || ( RV=$?; rm -f &quot;projection_orthogonale.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;produit_scalaire.v&quot; &gt; &quot;produit_scalaire.v.d&quot; || ( RV=$?; rm -f &quot;produit_scalaire.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;Plans_paralleles.v&quot; &gt; &quot;Plans_paralleles.v.d&quot; || ( RV=$?; rm -f &quot;Plans_paralleles.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;Plan_espace.v&quot; &gt; &quot;Plan_espace.v.d&quot; || ( RV=$?; rm -f &quot;Plan_espace.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;parallelisme_concours.v&quot; &gt; &quot;parallelisme_concours.v.d&quot; || ( RV=$?; rm -f &quot;parallelisme_concours.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;orthogonalite.v&quot; &gt; &quot;orthogonalite.v.d&quot; || ( RV=$?; rm -f &quot;orthogonalite.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;orthogonalite_espace.v&quot; &gt; &quot;orthogonalite_espace.v.d&quot; || ( RV=$?; rm -f &quot;orthogonalite_espace.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;orthocentre.v&quot; &gt; &quot;orthocentre.v.d&quot; || ( RV=$?; rm -f &quot;orthocentre.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;operations_complexes.v&quot; &gt; &quot;operations_complexes.v.d&quot; || ( RV=$?; rm -f &quot;operations_complexes.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;milieu.v&quot; &gt; &quot;milieu.v.d&quot; || ( RV=$?; rm -f &quot;milieu.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;metrique_triangle.v&quot; &gt; &quot;metrique_triangle.v.d&quot; || ( RV=$?; rm -f &quot;metrique_triangle.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;mesure_algebrique.v&quot; &gt; &quot;mesure_algebrique.v.d&quot; || ( RV=$?; rm -f &quot;mesure_algebrique.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;mediatrice.v&quot; &gt; &quot;mediatrice.v.d&quot; || ( RV=$?; rm -f &quot;mediatrice.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;isocele.v&quot; &gt; &quot;isocele.v.d&quot; || ( RV=$?; rm -f &quot;isocele.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;homoth_Euler.v&quot; &gt; &quot;homoth_Euler.v.d&quot; || ( RV=$?; rm -f &quot;homoth_Euler.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;homothetie_plane.v&quot; &gt; &quot;homothetie_plane.v.d&quot; || ( RV=$?; rm -f &quot;homothetie_plane.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;formes_complexes.v&quot; &gt; &quot;formes_complexes.v.d&quot; || ( RV=$?; rm -f &quot;formes_complexes.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;Field_affine.v&quot; &gt; &quot;Field_affine.v.d&quot; || ( RV=$?; rm -f &quot;Field_affine.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;exercice_espace.v&quot; &gt; &quot;exercice_espace.v.d&quot; || ( RV=$?; rm -f &quot;exercice_espace.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;euclidien_classiques.v&quot; &gt; &quot;euclidien_classiques.v.d&quot; || ( RV=$?; rm -f &quot;euclidien_classiques.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;equations_droites.v&quot; &gt; &quot;equations_droites.v.d&quot; || ( RV=$?; rm -f &quot;equations_droites.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;Droite_plan_espace.v&quot; &gt; &quot;Droite_plan_espace.v.d&quot; || ( RV=$?; rm -f &quot;Droite_plan_espace.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;droite_Euler.v&quot; &gt; &quot;droite_Euler.v.d&quot; || ( RV=$?; rm -f &quot;droite_Euler.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;Droite_espace.v&quot; &gt; &quot;Droite_espace.v.d&quot; || ( RV=$?; rm -f &quot;Droite_espace.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;distance_euclidienne.v&quot; &gt; &quot;distance_euclidienne.v.d&quot; || ( RV=$?; rm -f &quot;distance_euclidienne.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;dilatations.v&quot; &gt; &quot;dilatations.v.d&quot; || ( RV=$?; rm -f &quot;dilatations.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;determinant.v&quot; &gt; &quot;determinant.v.d&quot; || ( RV=$?; rm -f &quot;determinant.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;coplanarite.v&quot; &gt; &quot;coplanarite.v.d&quot; || ( RV=$?; rm -f &quot;coplanarite.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;composee_translation_rotation.v&quot; &gt; &quot;composee_translation_rotation.v.d&quot; || ( RV=$?; rm -f &quot;composee_translation_rotation.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;composee_transformations.v&quot; &gt; &quot;composee_transformations.v.d&quot; || ( RV=$?; rm -f &quot;composee_transformations.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;composee_reflexions.v&quot; &gt; &quot;composee_reflexions.v.d&quot; || ( RV=$?; rm -f &quot;composee_reflexions.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;composee_dilatations.v&quot; &gt; &quot;composee_dilatations.v.d&quot; || ( RV=$?; rm -f &quot;composee_dilatations.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes.v&quot; &gt; &quot;complexes.v.d&quot; || ( RV=$?; rm -f &quot;complexes.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes_transformations.v&quot; &gt; &quot;complexes_transformations.v.d&quot; || ( RV=$?; rm -f &quot;complexes_transformations.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes_similitudes.v&quot; &gt; &quot;complexes_similitudes.v.d&quot; || ( RV=$?; rm -f &quot;complexes_similitudes.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes_exercice.v&quot; &gt; &quot;complexes_exercice.v.d&quot; || ( RV=$?; rm -f &quot;complexes_exercice.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes_dilatations.v&quot; &gt; &quot;complexes_dilatations.v.d&quot; || ( RV=$?; rm -f &quot;complexes_dilatations.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;complexes_conjugaison.v&quot; &gt; &quot;complexes_conjugaison.v.d&quot; || ( RV=$?; rm -f &quot;complexes_conjugaison.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;cocyclicite.v&quot; &gt; &quot;cocyclicite.v.d&quot; || ( RV=$?; rm -f &quot;cocyclicite.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;cercle.v&quot; &gt; &quot;cercle.v.d&quot; || ( RV=$?; rm -f &quot;cercle.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;barycentre.v&quot; &gt; &quot;barycentre.v.d&quot; || ( RV=$?; rm -f &quot;barycentre.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;applications_cocyclicite.v&quot; &gt; &quot;applications_cocyclicite.v.d&quot; || ( RV=$?; rm -f &quot;applications_cocyclicite.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;angles_vecteurs.v&quot; &gt; &quot;angles_vecteurs.v.d&quot; || ( RV=$?; rm -f &quot;angles_vecteurs.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;angles_droites.v&quot; &gt; &quot;angles_droites.v.d&quot; || ( RV=$?; rm -f &quot;angles_droites.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;alignement.v&quot; &gt; &quot;alignement.v.d&quot; || ( RV=$?; rm -f &quot;alignement.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;aire_signee.v&quot; &gt; &quot;aire_signee.v.d&quot; || ( RV=$?; rm -f &quot;aire_signee.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . HighSchoolGeometry &quot;affine_classiques.v&quot; &gt; &quot;affine_classiques.v.d&quot; || ( RV=$?; rm -f &quot;affine_classiques.v.d&quot;; exit ${RV} )
+coqc -dump-glob Rutile.glob  -q  -R . HighSchoolGeometry   Rutile
+coqc -dump-glob Field_affine.glob  -q  -R . HighSchoolGeometry   Field_affine
+coqc -dump-glob vecteur.glob  -q  -R . HighSchoolGeometry   vecteur
+coqc -dump-glob alignement.glob  -q  -R . HighSchoolGeometry   alignement
+coqc -dump-glob barycentre.glob  -q  -R . HighSchoolGeometry   barycentre
+coqc -dump-glob coplanarite.glob  -q  -R . HighSchoolGeometry   coplanarite
+coqc -dump-glob milieu.glob  -q  -R . HighSchoolGeometry   milieu
+coqc -dump-glob repere_plan.glob  -q  -R . HighSchoolGeometry   repere_plan
+coqc -dump-glob mesure_algebrique.glob  -q  -R . HighSchoolGeometry   mesure_algebrique
+coqc -dump-glob parallelisme_concours.glob  -q  -R . HighSchoolGeometry   parallelisme_concours
+coqc -dump-glob affine_classiques.glob  -q  -R . HighSchoolGeometry   affine_classiques
+coqc -dump-glob produit_scalaire.glob  -q  -R . HighSchoolGeometry   produit_scalaire
+coqc -dump-glob Droite_espace.glob  -q  -R . HighSchoolGeometry   Droite_espace
+coqc -dump-glob dilatations.glob  -q  -R . HighSchoolGeometry   dilatations
+coqc -dump-glob Droite_plan_espace.glob  -q  -R . HighSchoolGeometry   Droite_plan_espace
+coqc -dump-glob orthogonalite.glob  -q  -R . HighSchoolGeometry   orthogonalite
+coqc -dump-glob composee_dilatations.glob  -q  -R . HighSchoolGeometry   composee_dilatations
+coqc -dump-glob representant_unitaire.glob  -q  -R . HighSchoolGeometry   representant_unitaire
+coqc -dump-glob projection_orthogonale.glob  -q  -R . HighSchoolGeometry   projection_orthogonale
+coqc -dump-glob Plans_paralleles.glob  -q  -R . HighSchoolGeometry   Plans_paralleles
+coqc -dump-glob Plan_espace.glob  -q  -R . HighSchoolGeometry   Plan_espace
+coqc -dump-glob orthogonalite_espace.glob  -q  -R . HighSchoolGeometry   orthogonalite_espace
+coqc -dump-glob distance_euclidienne.glob  -q  -R . HighSchoolGeometry   distance_euclidienne
+coqc -dump-glob exercice_espace.glob  -q  -R . HighSchoolGeometry   exercice_espace
+coqc -dump-glob repere_ortho_plan.glob  -q  -R . HighSchoolGeometry   repere_ortho_plan
+coqc -dump-glob euclidien_classiques.glob  -q  -R . HighSchoolGeometry   euclidien_classiques
+coqc -dump-glob angles_vecteurs.glob  -q  -R . HighSchoolGeometry   angles_vecteurs
+coqc -dump-glob trigo.glob  -q  -R . HighSchoolGeometry   trigo
+coqc -dump-glob angles_droites.glob  -q  -R . HighSchoolGeometry   angles_droites
+coqc -dump-glob aire_signee.glob  -q  -R . HighSchoolGeometry   aire_signee
+coqc -dump-glob metrique_triangle.glob  -q  -R . HighSchoolGeometry   metrique_triangle
+coqc -dump-glob complexes.glob  -q  -R . HighSchoolGeometry   complexes
+coqc -dump-glob orthocentre.glob  -q  -R . HighSchoolGeometry   orthocentre
+coqc -dump-glob formes_complexes.glob  -q  -R . HighSchoolGeometry   formes_complexes
+coqc -dump-glob operations_complexes.glob  -q  -R . HighSchoolGeometry   operations_complexes
+coqc -dump-glob mediatrice.glob  -q  -R . HighSchoolGeometry   mediatrice
+coqc -dump-glob rotation_plane.glob  -q  -R . HighSchoolGeometry   rotation_plane
+coqc -dump-glob determinant.glob  -q  -R . HighSchoolGeometry   determinant
+coqc -dump-glob complexes_dilatations.glob  -q  -R . HighSchoolGeometry   complexes_dilatations
+coqc -dump-glob equations_droites.glob  -q  -R . HighSchoolGeometry   equations_droites
+coqc -dump-glob isocele.glob  -q  -R . HighSchoolGeometry   isocele
+coqc -dump-glob cercle.glob  -q  -R . HighSchoolGeometry   cercle
+coqc -dump-glob reflexion_plane.glob  -q  -R . HighSchoolGeometry   reflexion_plane
+coqc -dump-glob cocyclicite.glob  -q  -R . HighSchoolGeometry   cocyclicite
+coqc -dump-glob homothetie_plane.glob  -q  -R . HighSchoolGeometry   homothetie_plane
+coqc -dump-glob similitudes_directes.glob  -q  -R . HighSchoolGeometry   similitudes_directes
+coqc -dump-glob composee_reflexions.glob  -q  -R . HighSchoolGeometry   composee_reflexions
+coqc -dump-glob applications_cocyclicite.glob  -q  -R . HighSchoolGeometry   applications_cocyclicite
+coqc -dump-glob droite_Euler.glob  -q  -R . HighSchoolGeometry   droite_Euler
+coqc -dump-glob complements_cercle.glob  -q  -R . HighSchoolGeometry   complements_cercle
+coqc -dump-glob complexes_conjugaison.glob  -q  -R . HighSchoolGeometry   complexes_conjugaison
+coqc -dump-glob complexes_similitudes.glob  -q  -R . HighSchoolGeometry   complexes_similitudes
+coqc -dump-glob composee_translation_rotation.glob  -q  -R . HighSchoolGeometry   composee_translation_rotation
+coqc -dump-glob contact.glob  -q  -R . HighSchoolGeometry   contact
+coqc -dump-glob composee_transformations.glob  -q  -R . HighSchoolGeometry   composee_transformations
+coqc -dump-glob homoth_Euler.glob  -q  -R . HighSchoolGeometry   homoth_Euler
+coqc -dump-glob transformations_contact.glob  -q  -R . HighSchoolGeometry   transformations_contact
+coqc -dump-glob puissance_cercle.glob  -q  -R . HighSchoolGeometry   puissance_cercle
+coqc -dump-glob equations_cercles.glob  -q  -R . HighSchoolGeometry   equations_cercles
+coqc -dump-glob inversion.glob  -q  -R . HighSchoolGeometry   inversion
+coqc -dump-glob complexes_exercice.glob  -q  -R . HighSchoolGeometry   complexes_exercice
+coqc -dump-glob complexes_transformations.glob  -q  -R . HighSchoolGeometry   complexes_transformations
+coqc -dump-glob complexes_inversion.glob  -q  -R . HighSchoolGeometry   complexes_inversion
+coqc -dump-glob complexes_analytique.glob  -q  -R . HighSchoolGeometry   complexes_analytique
+mkdir -p `coqc -where`/user-contrib
+cp -f affine_classiques.vo aire_signee.vo alignement.vo angles_droites.vo angles_vecteurs.vo applications_cocyclicite.vo barycentre.vo cercle.vo cocyclicite.vo complexes_conjugaison.vo complexes_dilatations.vo complexes_exercice.vo complexes_similitudes.vo complexes_transformations.vo complexes.vo composee_dilatations.vo composee_reflexions.vo composee_transformations.vo composee_translation_rotation.vo coplanarite.vo determinant.vo dilatations.vo distance_euclidienne.vo Droite_espace.vo droite_Euler.vo Droite_plan_espace.vo equations_droites.vo euclidien_classiques.vo exercice_espace.vo Field_affine.vo formes_complexes.vo homothetie_plane.vo homoth_Euler.vo isocele.vo mediatrice.vo mesure_algebrique.vo metrique_triangle.vo milieu.vo operations_complexes.vo orthocentre.vo orthogonalite_espace.vo orthogonalite.vo parallelisme_concours.vo Plan_espace.vo Plans_paralleles.vo produit_scalaire.vo projection_orthogonale.vo reflexion_plane.vo repere_ortho_plan.vo repere_plan.vo representant_unitaire.vo rotation_plane.vo Rutile.vo similitudes_directes.vo trigo.vo vecteur.vo transformations_contact.vo puissance_cercle.vo inversion.vo equations_cercles.vo contact.vo complexes_inversion.vo complexes_analytique.vo complements_cercle.vo `coqc -where`/user-contrib
+Installing coq:contrib:high-school-geometry.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:high-school-geometry.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:high-school-geometry.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:high-school-geometry] Fetching git://clarus.io/high-school-geometry#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:high-school-geometry.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/high-school-geometry
+[WARNING] failure in package uninstall script, some files may remain:
+# opam-version         1.2.0
+# os                   linux
+# command              rm -R /home/bench/.opam/system/lib/coq/user-contrib/high-school-geometry
+# path                 /home/bench/.opam/system/build/coq:contrib:high-school-geometry.8.4.dev
+# compiler             system (4.02.1)
+# exit-code            1
+# env-file             /home/bench/.opam/system/build/coq:contrib:high-school-geometry.8.4.dev/coq:contrib:high-school-geometry-19921-1872ec.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:high-school-geometry.8.4.dev/coq:contrib:high-school-geometry-19921-1872ec.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:high-school-geometry.8.4.dev/coq:contrib:high-school-geometry-19921-1872ec.err
+### stderr ###
+# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/high-school-geometry': No such file or directory
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                <ul>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/parallelisme_concours.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/homothetie_plane.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/puissance_cercle.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/inversion.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes_dilatations.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/repere_ortho_plan.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/isocele.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/trigo.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/aire_signee.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/operations_complexes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/rotation_plane.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/repere_plan.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/barycentre.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/applications_cocyclicite.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes_conjugaison.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Plan_espace.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/composee_reflexions.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Plans_paralleles.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/distance_euclidienne.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Droite_espace.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/transformations_contact.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/metrique_triangle.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/composee_translation_rotation.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes_transformations.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Rutile.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/cercle.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/composee_transformations.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/composee_dilatations.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/droite_Euler.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/equations_droites.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/angles_droites.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/determinant.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/alignement.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/orthocentre.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/cocyclicite.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes_analytique.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/mesure_algebrique.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/mediatrice.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complements_cercle.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/equations_cercles.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/projection_orthogonale.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/representant_unitaire.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/milieu.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/orthogonalite.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/similitudes_directes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Field_affine.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/dilatations.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/coplanarite.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/exercice_espace.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes_inversion.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes_exercice.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Droite_plan_espace.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/formes_complexes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes_similitudes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/reflexion_plane.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/complexes.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/produit_scalaire.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/euclidien_classiques.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/vecteur.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/angles_vecteurs.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/affine_classiques.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/homoth_Euler.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/contact.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/orthogonalite_espace.vo</code></li>
+                </ul>
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

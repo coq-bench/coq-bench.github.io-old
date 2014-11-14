@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:hardware 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-14 17:48:53</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:hardware
+              <small>
+                8.4.dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-14 17:48:53 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-14 17:48:53 UTC)</em>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:hardware.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:hardware.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:hardware.8.4.dev:
+  make -j4
+  make install
+Installing coq:contrib:hardware.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:hardware.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:hardware.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>4 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:hardware.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:hardware] Fetching git://clarus.io/hardware#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:hardware.8.4.dev/.git/
+[master (root-commit) 497097d] opam-git-init
+warning: no common commits
+From git://clarus.io/hardware
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Factorization/Comparator/.cvsignore
+Factorization/Comparator/Comp_Prog.v
+Factorization/Comparator/Comp_Simpl.v
+Factorization/Comparator/Comp_Synth.v
+Factorization/Comparator/Comp_Verif.v
+Factorization/Comparator/Comparator_Relation.v
+Factorization/Comparator/extract.v
+Factorization/Comparator/main.ml
+Factorization/Factorization.v
+Factorization/Factorization_Prog.v
+Factorization/Factorization_Synth.v
+Factorization/Factorization_Verif.v
+Factorization/Lib_Numerals/Compare_Nat.v
+Factorization/Lib_Numerals/Compare_Num.v
+Factorization/Lib_Numerals/Lists_of_Numerals.v
+Factorization/Lib_Numerals/Numerals.v
+Factorization/Linear_Structures.v
+LICENSE
+Libraries/Lib_Arithmetic/Lib_Arith.v
+Libraries/Lib_Arithmetic/Lib_Dec.v
+Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v
+Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v
+Libraries/Lib_Arithmetic/Lib_Exp.v
+Libraries/Lib_Arithmetic/Lib_Fact.v
+Libraries/Lib_Arithmetic/Lib_Minus.v
+Libraries/Lib_Arithmetic/Lib_Mult.v
+Libraries/Lib_Arithmetic/Lib_Plus.v
+Libraries/Lib_Arithmetic/Lib_Pred.v
+Libraries/Lib_Arithmetic/Lib_Square.v
+Libraries/Lib_Boolean/Lib_Bool.v
+Libraries/Lib_Boolean/Lib_Zerob.v
+Libraries/Lib_Lists/Dependent_lists.v
+Libraries/Lib_Lists/Lists_of_lists.v
+Libraries/Lib_Prop.v
+Libraries/Lib_Set_Products.v
+Make
+Makefile
+README
+bench.log
+description
+HEAD is now at 5f708a2 Hardware: some Defined instead of Qed (for extraction)
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:hardware.8.4.dev:
+  make -j4
+  make install
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Comparator/Comp_Prog.v&quot; &gt; &quot;Factorization/Comparator/Comp_Prog.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Comparator/Comp_Prog.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Comparator/Comp_Verif.v&quot; &gt; &quot;Factorization/Comparator/Comp_Verif.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Comparator/Comp_Verif.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Comparator/Comp_Synth.v&quot; &gt; &quot;Factorization/Comparator/Comp_Synth.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Comparator/Comp_Synth.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Comparator/Comp_Simpl.v&quot; &gt; &quot;Factorization/Comparator/Comp_Simpl.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Comparator/Comp_Simpl.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Comparator/extract.v&quot; &gt; &quot;Factorization/Comparator/extract.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Comparator/extract.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Comparator/Comparator_Relation.v&quot; &gt; &quot;Factorization/Comparator/Comparator_Relation.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Comparator/Comparator_Relation.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Linear_Structures.v&quot; &gt; &quot;Factorization/Linear_Structures.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Linear_Structures.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Factorization.v&quot; &gt; &quot;Factorization/Factorization.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Factorization.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Factorization_Verif.v&quot; &gt; &quot;Factorization/Factorization_Verif.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Factorization_Verif.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Factorization_Synth.v&quot; &gt; &quot;Factorization/Factorization_Synth.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Factorization_Synth.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Lib_Numerals/Lists_of_Numerals.v&quot; &gt; &quot;Factorization/Lib_Numerals/Lists_of_Numerals.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Lib_Numerals/Lists_of_Numerals.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Lib_Numerals/Numerals.v&quot; &gt; &quot;Factorization/Lib_Numerals/Numerals.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Lib_Numerals/Numerals.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Lib_Numerals/Compare_Nat.v&quot; &gt; &quot;Factorization/Lib_Numerals/Compare_Nat.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Lib_Numerals/Compare_Nat.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Lib_Numerals/Compare_Num.v&quot; &gt; &quot;Factorization/Lib_Numerals/Compare_Num.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Lib_Numerals/Compare_Num.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Factorization/Factorization_Prog.v&quot; &gt; &quot;Factorization/Factorization_Prog.v.d&quot; || ( RV=$?; rm -f &quot;Factorization/Factorization_Prog.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Minus.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Minus.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Minus.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Dec.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Dec.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Dec.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Mult.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Mult.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Mult.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Exp.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Exp.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Exp.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Fact.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Fact.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Fact.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Arith.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Arith.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Arith.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Square.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Square.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Square.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Plus.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Plus.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Plus.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Pred.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Pred.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Pred.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Lists/Lists_of_lists.v&quot; &gt; &quot;Libraries/Lib_Lists/Lists_of_lists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Lists_of_lists.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Lists/Dependent_lists.v&quot; &gt; &quot;Libraries/Lib_Lists/Dependent_lists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Dependent_lists.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Set_Products.v&quot; &gt; &quot;Libraries/Lib_Set_Products.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Set_Products.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Prop.v&quot; &gt; &quot;Libraries/Lib_Prop.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Prop.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Boolean/Lib_Zerob.v&quot; &gt; &quot;Libraries/Lib_Boolean/Lib_Zerob.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Boolean/Lib_Zerob.v.d&quot;; exit ${RV} )
+coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Boolean/Lib_Bool.v&quot; &gt; &quot;Libraries/Lib_Boolean/Lib_Bool.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Boolean/Lib_Bool.v.d&quot;; exit ${RV} )
+coqc -dump-glob Libraries/Lib_Boolean/Lib_Bool.glob  -q  -R . Hardware   Libraries/Lib_Boolean/Lib_Bool
+coqc -dump-glob Libraries/Lib_Prop.glob  -q  -R . Hardware   Libraries/Lib_Prop
+coqc -dump-glob Libraries/Lib_Set_Products.glob  -q  -R . Hardware   Libraries/Lib_Set_Products
+coqc -dump-glob Libraries/Lib_Lists/Dependent_lists.glob  -q  -R . Hardware   Libraries/Lib_Lists/Dependent_lists
+coqc -dump-glob Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.glob  -q  -R . Hardware   Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt
+coqc -dump-glob Libraries/Lib_Arithmetic/Lib_Fact.glob  -q  -R . Hardware   Libraries/Lib_Arithmetic/Lib_Fact
+coqc -dump-glob Factorization/Lib_Numerals/Compare_Nat.glob  -q  -R . Hardware   Factorization/Lib_Numerals/Compare_Nat
+coqc -dump-glob Factorization/Linear_Structures.glob  -q  -R . Hardware   Factorization/Linear_Structures
+make: *** No rule to make target 'Factorization/Comparator/comp.mli', needed by 'Factorization/Comparator/comp.cmi'.  Stop.
+make: *** Waiting for unfinished jobs....
+[ERROR] The compilation of coq:contrib:hardware.8.4.dev failed.
+Removing coq:contrib:hardware.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/hardware
+rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/hardware': No such file or directory
+#=== ERROR while installing coq:contrib:hardware.8.4.dev ======================#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /home/bench/.opam/system/build/coq:contrib:hardware.8.4.dev
+# compiler             system (4.02.1)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:contrib:hardware.8.4.dev/coq:contrib:hardware-19029-d2c37b.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:hardware.8.4.dev/coq:contrib:hardware-19029-d2c37b.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:hardware.8.4.dev/coq:contrib:hardware-19029-d2c37b.err
+### stdout ###
+# ...[truncated]
+# coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Boolean/Lib_Zerob.v&quot; &gt; &quot;Libraries/Lib_Boolean/Lib_Zerob.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Boolean/Lib_Zerob.v.d&quot;; exit ${RV} )
+# coqdep -c -glob -slash -R . Hardware &quot;Libraries/Lib_Boolean/Lib_Bool.v&quot; &gt; &quot;Libraries/Lib_Boolean/Lib_Bool.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Boolean/Lib_Bool.v.d&quot;; exit ${RV} )
+# coqc -dump-glob Libraries/Lib_Boolean/Lib_Bool.glob  -q  -R . Hardware   Libraries/Lib_Boolean/Lib_Bool
+# coqc -dump-glob Libraries/Lib_Prop.glob  -q  -R . Hardware   Libraries/Lib_Prop
+# coqc -dump-glob Libraries/Lib_Set_Products.glob  -q  -R . Hardware   Libraries/Lib_Set_Products
+# coqc -dump-glob Libraries/Lib_Lists/Dependent_lists.glob  -q  -R . Hardware   Libraries/Lib_Lists/Dependent_lists
+# coqc -dump-glob Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.glob  -q  -R . Hardware   Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt
+# coqc -dump-glob Libraries/Lib_Arithmetic/Lib_Fact.glob  -q  -R . Hardware   Libraries/Lib_Arithmetic/Lib_Fact
+# coqc -dump-glob Factorization/Lib_Numerals/Compare_Nat.glob  -q  -R . Hardware   Factorization/Lib_Numerals/Compare_Nat
+# coqc -dump-glob Factorization/Linear_Structures.glob  -q  -R . Hardware   Factorization/Linear_Structures
+### stderr ###
+# make: *** No rule to make target 'Factorization/Comparator/comp.mli', needed by 'Factorization/Comparator/comp.cmi'.  Stop.
+# make: *** Waiting for unfinished jobs....
+'opam install -y --verbose coq:contrib:hardware.8.4.dev' failed.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
