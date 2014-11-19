@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:float 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-19 06:10:31</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:float
+              <small>
+                8.4.dev
+                <span class="label label-danger">Uninstallation error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-19 06:10:31 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-19 06:10:31 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:float/coq:contrib:float.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:float.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:float.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:float.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:float.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:float.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:float.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>53 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:float.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:float] Fetching git://clarus.io/float#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:float.8.4.dev/.git/
+[master (root-commit) dc0ab04] opam-git-init
+warning: no common commits
+From git://clarus.io/float
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+.cvsignore
+AllFloat.v
+Closest.v
+Closest2Plus.v
+Closest2Prop.v
+ClosestMult.v
+ClosestPlus.v
+ClosestProp.v
+Digit.v
+FPred.v
+FSucc.v
+Faux.v
+Fbound.v
+Fcomp.v
+Finduct.v
+Float.v
+Fmin.v
+Fnorm.v
+Fodd.v
+Fop.v
+Fprop.v
+Fround.v
+FroundMult.v
+FroundPlus.v
+FroundProp.v
+LICENSE
+MSB.v
+MSBProp.v
+Make
+Makefile
+Option.v
+Paux.v
+Power.v
+README
+Rpow.v
+Zdivides.v
+Zenum.v
+bench.log
+description
+sTactic.v
+HEAD is now at 3df9388 Float: adaptation to stronger omega
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:float.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . Float &quot;AllFloat.v&quot; &gt; &quot;AllFloat.v.d&quot; || ( RV=$?; rm -f &quot;AllFloat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Closest.v&quot; &gt; &quot;Closest.v.d&quot; || ( RV=$?; rm -f &quot;Closest.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Closest2Plus.v&quot; &gt; &quot;Closest2Plus.v.d&quot; || ( RV=$?; rm -f &quot;Closest2Plus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Closest2Prop.v&quot; &gt; &quot;Closest2Prop.v.d&quot; || ( RV=$?; rm -f &quot;Closest2Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;ClosestMult.v&quot; &gt; &quot;ClosestMult.v.d&quot; || ( RV=$?; rm -f &quot;ClosestMult.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;ClosestPlus.v&quot; &gt; &quot;ClosestPlus.v.d&quot; || ( RV=$?; rm -f &quot;ClosestPlus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;ClosestProp.v&quot; &gt; &quot;ClosestProp.v.d&quot; || ( RV=$?; rm -f &quot;ClosestProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Digit.v&quot; &gt; &quot;Digit.v.d&quot; || ( RV=$?; rm -f &quot;Digit.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;FPred.v&quot; &gt; &quot;FPred.v.d&quot; || ( RV=$?; rm -f &quot;FPred.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;FSucc.v&quot; &gt; &quot;FSucc.v.d&quot; || ( RV=$?; rm -f &quot;FSucc.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Faux.v&quot; &gt; &quot;Faux.v.d&quot; || ( RV=$?; rm -f &quot;Faux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fbound.v&quot; &gt; &quot;Fbound.v.d&quot; || ( RV=$?; rm -f &quot;Fbound.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fcomp.v&quot; &gt; &quot;Fcomp.v.d&quot; || ( RV=$?; rm -f &quot;Fcomp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Finduct.v&quot; &gt; &quot;Finduct.v.d&quot; || ( RV=$?; rm -f &quot;Finduct.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Float.v&quot; &gt; &quot;Float.v.d&quot; || ( RV=$?; rm -f &quot;Float.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fmin.v&quot; &gt; &quot;Fmin.v.d&quot; || ( RV=$?; rm -f &quot;Fmin.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fnorm.v&quot; &gt; &quot;Fnorm.v.d&quot; || ( RV=$?; rm -f &quot;Fnorm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fodd.v&quot; &gt; &quot;Fodd.v.d&quot; || ( RV=$?; rm -f &quot;Fodd.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fop.v&quot; &gt; &quot;Fop.v.d&quot; || ( RV=$?; rm -f &quot;Fop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fprop.v&quot; &gt; &quot;Fprop.v.d&quot; || ( RV=$?; rm -f &quot;Fprop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Fround.v&quot; &gt; &quot;Fround.v.d&quot; || ( RV=$?; rm -f &quot;Fround.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;FroundMult.v&quot; &gt; &quot;FroundMult.v.d&quot; || ( RV=$?; rm -f &quot;FroundMult.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;FroundPlus.v&quot; &gt; &quot;FroundPlus.v.d&quot; || ( RV=$?; rm -f &quot;FroundPlus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;FroundProp.v&quot; &gt; &quot;FroundProp.v.d&quot; || ( RV=$?; rm -f &quot;FroundProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;MSB.v&quot; &gt; &quot;MSB.v.d&quot; || ( RV=$?; rm -f &quot;MSB.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;MSBProp.v&quot; &gt; &quot;MSBProp.v.d&quot; || ( RV=$?; rm -f &quot;MSBProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Option.v&quot; &gt; &quot;Option.v.d&quot; || ( RV=$?; rm -f &quot;Option.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Paux.v&quot; &gt; &quot;Paux.v.d&quot; || ( RV=$?; rm -f &quot;Paux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Power.v&quot; &gt; &quot;Power.v.d&quot; || ( RV=$?; rm -f &quot;Power.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Zdivides.v&quot; &gt; &quot;Zdivides.v.d&quot; || ( RV=$?; rm -f &quot;Zdivides.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Zenum.v&quot; &gt; &quot;Zenum.v.d&quot; || ( RV=$?; rm -f &quot;Zenum.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;sTactic.v&quot; &gt; &quot;sTactic.v.d&quot; || ( RV=$?; rm -f &quot;sTactic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Float &quot;Rpow.v&quot; &gt; &quot;Rpow.v.d&quot; || ( RV=$?; rm -f &quot;Rpow.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . Float   sTactic
+&quot;coqc&quot;  -q  -R . Float   Option
+&quot;coqc&quot;  -q  -R . Float   Faux
+&quot;coqc&quot;  -q  -R . Float   Digit
+&quot;coqc&quot;  -q  -R . Float   Zenum
+&quot;coqc&quot;  -q  -R . Float   Rpow
+&quot;coqc&quot;  -q  -R . Float   Paux
+&quot;coqc&quot;  -q  -R . Float   Power
+&quot;coqc&quot;  -q  -R . Float   Float
+&quot;coqc&quot;  -q  -R . Float   Zdivides
+&quot;coqc&quot;  -q  -R . Float   Fcomp
+&quot;coqc&quot;  -q  -R . Float   Fop
+&quot;coqc&quot;  -q  -R . Float   Fbound
+&quot;coqc&quot;  -q  -R . Float   Fprop
+&quot;coqc&quot;  -q  -R . Float   Fnorm
+&quot;coqc&quot;  -q  -R . Float   MSB
+&quot;coqc&quot;  -q  -R . Float   FSucc
+&quot;coqc&quot;  -q  -R . Float   MSBProp
+&quot;coqc&quot;  -q  -R . Float   FPred
+&quot;coqc&quot;  -q  -R . Float   Fmin
+&quot;coqc&quot;  -q  -R . Float   Finduct
+&quot;coqc&quot;  -q  -R . Float   Fodd
+&quot;coqc&quot;  -q  -R . Float   Fround
+&quot;coqc&quot;  -q  -R . Float   FroundProp
+&quot;coqc&quot;  -q  -R . Float   Closest
+&quot;coqc&quot;  -q  -R . Float   FroundPlus
+&quot;coqc&quot;  -q  -R . Float   FroundMult
+&quot;coqc&quot;  -q  -R . Float   ClosestProp
+&quot;coqc&quot;  -q  -R . Float   Closest2Prop
+&quot;coqc&quot;  -q  -R . Float   ClosestPlus
+&quot;coqc&quot;  -q  -R . Float   ClosestMult
+&quot;coqc&quot;  -q  -R . Float   Closest2Plus
+&quot;coqc&quot;  -q  -R . Float   AllFloat
+for i in Rpow.vo sTactic.vo Zenum.vo Zdivides.vo Power.vo Paux.vo Option.vo MSBProp.vo MSB.vo FroundProp.vo FroundPlus.vo FroundMult.vo Fround.vo Fprop.vo Fop.vo Fodd.vo Fnorm.vo Fmin.vo Float.vo Finduct.vo Fcomp.vo Fbound.vo Faux.vo FSucc.vo FPred.vo Digit.vo ClosestProp.vo ClosestPlus.vo ClosestMult.vo Closest2Prop.vo Closest2Plus.vo Closest.vo AllFloat.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Float/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Float/$i; \
+done
+Installing coq:contrib:float.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:float.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:float.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:float] Fetching git://clarus.io/float#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:float.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/float
+[WARNING] failure in package uninstall script, some files may remain:
+# opam-version         1.2.0
+# os                   linux
+# command              rm -R /home/bench/.opam/system/lib/coq/user-contrib/float
+# path                 /home/bench/.opam/system/build/coq:contrib:float.8.4.dev
+# compiler             system (4.01.0)
+# exit-code            1
+# env-file             /home/bench/.opam/system/build/coq:contrib:float.8.4.dev/coq:contrib:float-2172-1872ec.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:float.8.4.dev/coq:contrib:float-2172-1872ec.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:float.8.4.dev/coq:contrib:float-2172-1872ec.err
+### stderr ###
+# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/float': No such file or directory
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                <ul>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/FroundProp.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/sTactic.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/MSB.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Float.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/FroundPlus.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fop.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Closest.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Paux.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Rpow.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Faux.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/ClosestProp.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Closest2Plus.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Zdivides.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Closest2Prop.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/FSucc.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Finduct.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Zenum.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Digit.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/FroundMult.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/FPred.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fbound.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/ClosestPlus.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fnorm.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/MSBProp.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fmin.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fodd.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fround.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/ClosestMult.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/AllFloat.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fprop.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Option.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Fcomp.vo</code></li>
+                  <li><code>/home/bench/.opam/system/lib/coq/user-contrib/Float/Power.vo</code></li>
+                </ul>
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

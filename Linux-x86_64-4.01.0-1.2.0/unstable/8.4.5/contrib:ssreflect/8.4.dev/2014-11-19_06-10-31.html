@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:ssreflect 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-19 06:10:31</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:ssreflect
+              <small>
+                8.4.dev
+                <span class="label label-success">1 h 10 m</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-19 06:10:31 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-19 06:10:31 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:ssreflect/coq:contrib:ssreflect.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:ssreflect.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:ssreflect.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:ssreflect.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:ssreflect.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:ssreflect.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:ssreflect.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 h 10 m</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:ssreflect.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:ssreflect] Fetching git://clarus.io/ssreflect#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:ssreflect.8.4.dev/.git/
+[master (root-commit) b045276] opam-git-init
+warning: no common commits
+From git://clarus.io/ssreflect
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+.gitignore
+CeCILL-B
+Make
+Makefile
+README
+description
+src/ssreflect.ml4
+src/ssreflect.mllib
+src/ssrmatching.ml4
+src/ssrmatching.mli
+test/Make
+test/Makefile
+test/absevarprop.v
+test/binders.v
+test/binders_of.v
+test/caseview.v
+test/congr.v
+test/deferclear.v
+test/dependent_type_err.v
+test/elim.v
+test/elim2.v
+test/elim_pattern.v
+test/first_n.v
+test/gen_have.v
+test/gen_pattern.v
+test/have_TC.v
+test/have_transp.v
+test/have_view_idiom.v
+test/havesuff.v
+test/if_isnt.v
+test/indetLHS.v
+test/intro_beta.v
+test/intro_noop.v
+test/ipatalternation.v
+test/ltac_have.v
+test/ltac_in.v
+test/move_after.v
+test/multiview.v
+test/occarrow.v
+test/patnoX.v
+test/rewpatterns.v
+test/set_lamda.v
+test/set_pattern.v
+test/ssrsyntax1.v
+test/ssrsyntax2.v
+test/tc.v
+test/testmx.v
+test/typeof.v
+test/unkeyed.v
+test/view_case.v
+test/wlog_suff.v
+test/wlogletin.v
+test/wlong_intro.v
+theories/BGappendixAB.v
+theories/BGappendixC.v
+theories/BGsection1.v
+theories/BGsection10.v
+theories/BGsection11.v
+theories/BGsection12.v
+theories/BGsection13.v
+theories/BGsection14.v
+theories/BGsection15.v
+theories/BGsection16.v
+theories/BGsection2.v
+theories/BGsection3.v
+theories/BGsection4.v
+theories/BGsection5.v
+theories/BGsection6.v
+theories/BGsection7.v
+theories/BGsection8.v
+theories/BGsection9.v
+theories/PFsection1.v
+theories/PFsection10.v
+theories/PFsection11.v
+theories/PFsection12.v
+theories/PFsection13.v
+theories/PFsection14.v
+theories/PFsection2.v
+theories/PFsection3.v
+theories/PFsection4.v
+theories/PFsection5.v
+theories/PFsection6.v
+theories/PFsection7.v
+theories/PFsection8.v
+theories/PFsection9.v
+theories/abelian.v
+theories/action.v
+theories/algC.v
+theories/algebraics_fundamentals.v
+theories/algnum.v
+theories/alt.v
+theories/amodule.v
+theories/automorphism.v
+theories/bigenough.v
+theories/bigop.v
+theories/binomial.v
+theories/burnside_app.v
+theories/cauchyreals.v
+theories/center.v
+theories/character.v
+theories/choice.v
+theories/classfun.v
+theories/closed_field.v
+theories/commutator.v
+theories/complex.v
+theories/countalg.v
+theories/cyclic.v
+theories/cyclotomic.v
+theories/div.v
+theories/eqtype.v
+theories/extraspecial.v
+theories/extremal.v
+theories/falgebra.v
+theories/fib.v
+theories/fieldext.v
+theories/finalg.v
+theories/finfield.v
+theories/finfun.v
+theories/fingraph.v
+theories/fingroup.v
+theories/finmodule.v
+theories/finset.v
+theories/fintype.v
+theories/fraction.v
+theories/frobenius.v
+theories/galgebra.v
+theories/galois.v
+theories/generic_quotient.v
+theories/gfunctor.v
+theories/gproduct.v
+theories/gseries.v
+theories/hall.v
+theories/inertia.v
+theories/intdiv.v
+theories/integral_char.v
+theories/interval.v
+theories/jordanholder.v
+theories/matrix.v
+theories/maximal.v
+theories/morphism.v
+theories/multinom.v
+theories/mxabelem.v
+theories/mxalgebra.v
+theories/mxpoly.v
+theories/mxrepresentation.v
+theories/mxtens.v
+theories/nilpotent.v
+theories/ordered_qelim.v
+theories/path.v
+theories/perm.v
+theories/pgroup.v
+theories/poly.v
+theories/polyXY.v
+theories/polydiv.v
+theories/polyorder.v
+theories/polyrcf.v
+theories/presentation.v
+theories/prime.v
+theories/primitive_action.v
+theories/qe_rcf.v
+theories/qe_rcf_th.v
+theories/quotient.v
+theories/rat.v
+theories/realalg.v
+theories/ring_quotient.v
+theories/separable.v
+theories/seq.v
+theories/ssralg.v
+theories/ssrbool.v
+theories/ssreflect.mllib
+theories/ssreflect.v
+theories/ssrfun.v
+theories/ssrint.v
+theories/ssrmatching.v
+theories/ssrnat.v
+theories/ssrnum.v
+theories/stripped_odd_order_theorem.v
+theories/sylow.v
+theories/tuple.v
+theories/vcharacter.v
+theories/vector.v
+theories/wielandt_fixpoint.v
+theories/zmodp.v
+HEAD is now at 3547565 Ssreflect/jenkins: push  4753 on v8.4/
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:ssreflect.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+ocamldep -slash -I src &quot;src/ssrmatching.mli&quot; &gt; &quot;src/ssrmatching.mli.d&quot; || ( RV=$?; rm -f &quot;src/ssrmatching.mli.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect -c &quot;src/ssreflect.mllib&quot; &gt; &quot;src/ssreflect.mllib.d&quot; || ( RV=$?; rm -f &quot;src/ssreflect.mllib.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src &quot;src/ssreflect.ml4&quot; &gt; &quot;src/ssreflect.ml4.d&quot; || ( RV=$?; rm -f &quot;src/ssreflect.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src &quot;src/ssrmatching.ml4&quot; &gt; &quot;src/ssrmatching.ml4.d&quot; || ( RV=$?; rm -f &quot;src/ssrmatching.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssrmatching.v&quot; &gt; &quot;theories/ssrmatching.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssrmatching.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssreflect.v&quot; &gt; &quot;theories/ssreflect.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssreflect.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssrfun.v&quot; &gt; &quot;theories/ssrfun.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssrfun.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssrbool.v&quot; &gt; &quot;theories/ssrbool.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssrbool.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/eqtype.v&quot; &gt; &quot;theories/eqtype.v.d&quot; || ( RV=$?; rm -f &quot;theories/eqtype.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssrnat.v&quot; &gt; &quot;theories/ssrnat.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssrnat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/seq.v&quot; &gt; &quot;theories/seq.v.d&quot; || ( RV=$?; rm -f &quot;theories/seq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/choice.v&quot; &gt; &quot;theories/choice.v.d&quot; || ( RV=$?; rm -f &quot;theories/choice.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/path.v&quot; &gt; &quot;theories/path.v.d&quot; || ( RV=$?; rm -f &quot;theories/path.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/div.v&quot; &gt; &quot;theories/div.v.d&quot; || ( RV=$?; rm -f &quot;theories/div.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/fintype.v&quot; &gt; &quot;theories/fintype.v.d&quot; || ( RV=$?; rm -f &quot;theories/fintype.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/fingraph.v&quot; &gt; &quot;theories/fingraph.v.d&quot; || ( RV=$?; rm -f &quot;theories/fingraph.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/tuple.v&quot; &gt; &quot;theories/tuple.v.d&quot; || ( RV=$?; rm -f &quot;theories/tuple.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/finfun.v&quot; &gt; &quot;theories/finfun.v.d&quot; || ( RV=$?; rm -f &quot;theories/finfun.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/bigop.v&quot; &gt; &quot;theories/bigop.v.d&quot; || ( RV=$?; rm -f &quot;theories/bigop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/prime.v&quot; &gt; &quot;theories/prime.v.d&quot; || ( RV=$?; rm -f &quot;theories/prime.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/finset.v&quot; &gt; &quot;theories/finset.v.d&quot; || ( RV=$?; rm -f &quot;theories/finset.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/binomial.v&quot; &gt; &quot;theories/binomial.v.d&quot; || ( RV=$?; rm -f &quot;theories/binomial.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/fingroup.v&quot; &gt; &quot;theories/fingroup.v.d&quot; || ( RV=$?; rm -f &quot;theories/fingroup.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/morphism.v&quot; &gt; &quot;theories/morphism.v.d&quot; || ( RV=$?; rm -f &quot;theories/morphism.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/presentation.v&quot; &gt; &quot;theories/presentation.v.d&quot; || ( RV=$?; rm -f &quot;theories/presentation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/perm.v&quot; &gt; &quot;theories/perm.v.d&quot; || ( RV=$?; rm -f &quot;theories/perm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/automorphism.v&quot; &gt; &quot;theories/automorphism.v.d&quot; || ( RV=$?; rm -f &quot;theories/automorphism.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/quotient.v&quot; &gt; &quot;theories/quotient.v.d&quot; || ( RV=$?; rm -f &quot;theories/quotient.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/action.v&quot; &gt; &quot;theories/action.v.d&quot; || ( RV=$?; rm -f &quot;theories/action.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/gproduct.v&quot; &gt; &quot;theories/gproduct.v.d&quot; || ( RV=$?; rm -f &quot;theories/gproduct.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/gfunctor.v&quot; &gt; &quot;theories/gfunctor.v.d&quot; || ( RV=$?; rm -f &quot;theories/gfunctor.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/commutator.v&quot; &gt; &quot;theories/commutator.v.d&quot; || ( RV=$?; rm -f &quot;theories/commutator.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssralg.v&quot; &gt; &quot;theories/ssralg.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssralg.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/finalg.v&quot; &gt; &quot;theories/finalg.v.d&quot; || ( RV=$?; rm -f &quot;theories/finalg.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/poly.v&quot; &gt; &quot;theories/poly.v.d&quot; || ( RV=$?; rm -f &quot;theories/poly.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/multinom.v&quot; &gt; &quot;theories/multinom.v.d&quot; || ( RV=$?; rm -f &quot;theories/multinom.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/zmodp.v&quot; &gt; &quot;theories/zmodp.v.d&quot; || ( RV=$?; rm -f &quot;theories/zmodp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/matrix.v&quot; &gt; &quot;theories/matrix.v.d&quot; || ( RV=$?; rm -f &quot;theories/matrix.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/mxalgebra.v&quot; &gt; &quot;theories/mxalgebra.v.d&quot; || ( RV=$?; rm -f &quot;theories/mxalgebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/mxpoly.v&quot; &gt; &quot;theories/mxpoly.v.d&quot; || ( RV=$?; rm -f &quot;theories/mxpoly.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/cyclic.v&quot; &gt; &quot;theories/cyclic.v.d&quot; || ( RV=$?; rm -f &quot;theories/cyclic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/pgroup.v&quot; &gt; &quot;theories/pgroup.v.d&quot; || ( RV=$?; rm -f &quot;theories/pgroup.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/center.v&quot; &gt; &quot;theories/center.v.d&quot; || ( RV=$?; rm -f &quot;theories/center.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/mxrepresentation.v&quot; &gt; &quot;theories/mxrepresentation.v.d&quot; || ( RV=$?; rm -f &quot;theories/mxrepresentation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/gseries.v&quot; &gt; &quot;theories/gseries.v.d&quot; || ( RV=$?; rm -f &quot;theories/gseries.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/jordanholder.v&quot; &gt; &quot;theories/jordanholder.v.d&quot; || ( RV=$?; rm -f &quot;theories/jordanholder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/nilpotent.v&quot; &gt; &quot;theories/nilpotent.v.d&quot; || ( RV=$?; rm -f &quot;theories/nilpotent.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/finmodule.v&quot; &gt; &quot;theories/finmodule.v.d&quot; || ( RV=$?; rm -f &quot;theories/finmodule.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/sylow.v&quot; &gt; &quot;theories/sylow.v.d&quot; || ( RV=$?; rm -f &quot;theories/sylow.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/abelian.v&quot; &gt; &quot;theories/abelian.v.d&quot; || ( RV=$?; rm -f &quot;theories/abelian.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/maximal.v&quot; &gt; &quot;theories/maximal.v.d&quot; || ( RV=$?; rm -f &quot;theories/maximal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/hall.v&quot; &gt; &quot;theories/hall.v.d&quot; || ( RV=$?; rm -f &quot;theories/hall.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/extremal.v&quot; &gt; &quot;theories/extremal.v.d&quot; || ( RV=$?; rm -f &quot;theories/extremal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/extraspecial.v&quot; &gt; &quot;theories/extraspecial.v.d&quot; || ( RV=$?; rm -f &quot;theories/extraspecial.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/primitive_action.v&quot; &gt; &quot;theories/primitive_action.v.d&quot; || ( RV=$?; rm -f &quot;theories/primitive_action.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/frobenius.v&quot; &gt; &quot;theories/frobenius.v.d&quot; || ( RV=$?; rm -f &quot;theories/frobenius.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/mxabelem.v&quot; &gt; &quot;theories/mxabelem.v.d&quot; || ( RV=$?; rm -f &quot;theories/mxabelem.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/wielandt_fixpoint.v&quot; &gt; &quot;theories/wielandt_fixpoint.v.d&quot; || ( RV=$?; rm -f &quot;theories/wielandt_fixpoint.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection1.v&quot; &gt; &quot;theories/BGsection1.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection1.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection2.v&quot; &gt; &quot;theories/BGsection2.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection3.v&quot; &gt; &quot;theories/BGsection3.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection4.v&quot; &gt; &quot;theories/BGsection4.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection4.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection5.v&quot; &gt; &quot;theories/BGsection5.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection5.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGappendixAB.v&quot; &gt; &quot;theories/BGappendixAB.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGappendixAB.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection6.v&quot; &gt; &quot;theories/BGsection6.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection6.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection7.v&quot; &gt; &quot;theories/BGsection7.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection7.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection8.v&quot; &gt; &quot;theories/BGsection8.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection8.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection9.v&quot; &gt; &quot;theories/BGsection9.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection9.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection10.v&quot; &gt; &quot;theories/BGsection10.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection10.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection11.v&quot; &gt; &quot;theories/BGsection11.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection11.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection12.v&quot; &gt; &quot;theories/BGsection12.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection12.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection13.v&quot; &gt; &quot;theories/BGsection13.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection13.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection14.v&quot; &gt; &quot;theories/BGsection14.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection14.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection15.v&quot; &gt; &quot;theories/BGsection15.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection15.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGsection16.v&quot; &gt; &quot;theories/BGsection16.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGsection16.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/BGappendixC.v&quot; &gt; &quot;theories/BGappendixC.v.d&quot; || ( RV=$?; rm -f &quot;theories/BGappendixC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/polydiv.v&quot; &gt; &quot;theories/polydiv.v.d&quot; || ( RV=$?; rm -f &quot;theories/polydiv.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/alt.v&quot; &gt; &quot;theories/alt.v.d&quot; || ( RV=$?; rm -f &quot;theories/alt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/burnside_app.v&quot; &gt; &quot;theories/burnside_app.v.d&quot; || ( RV=$?; rm -f &quot;theories/burnside_app.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/vector.v&quot; &gt; &quot;theories/vector.v.d&quot; || ( RV=$?; rm -f &quot;theories/vector.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/falgebra.v&quot; &gt; &quot;theories/falgebra.v.d&quot; || ( RV=$?; rm -f &quot;theories/falgebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/amodule.v&quot; &gt; &quot;theories/amodule.v.d&quot; || ( RV=$?; rm -f &quot;theories/amodule.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/galgebra.v&quot; &gt; &quot;theories/galgebra.v.d&quot; || ( RV=$?; rm -f &quot;theories/galgebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/generic_quotient.v&quot; &gt; &quot;theories/generic_quotient.v.d&quot; || ( RV=$?; rm -f &quot;theories/generic_quotient.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ring_quotient.v&quot; &gt; &quot;theories/ring_quotient.v.d&quot; || ( RV=$?; rm -f &quot;theories/ring_quotient.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/fieldext.v&quot; &gt; &quot;theories/fieldext.v.d&quot; || ( RV=$?; rm -f &quot;theories/fieldext.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/separable.v&quot; &gt; &quot;theories/separable.v.d&quot; || ( RV=$?; rm -f &quot;theories/separable.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/galois.v&quot; &gt; &quot;theories/galois.v.d&quot; || ( RV=$?; rm -f &quot;theories/galois.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/finfield.v&quot; &gt; &quot;theories/finfield.v.d&quot; || ( RV=$?; rm -f &quot;theories/finfield.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssrnum.v&quot; &gt; &quot;theories/ssrnum.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssrnum.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ssrint.v&quot; &gt; &quot;theories/ssrint.v.d&quot; || ( RV=$?; rm -f &quot;theories/ssrint.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/rat.v&quot; &gt; &quot;theories/rat.v.d&quot; || ( RV=$?; rm -f &quot;theories/rat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/intdiv.v&quot; &gt; &quot;theories/intdiv.v.d&quot; || ( RV=$?; rm -f &quot;theories/intdiv.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/interval.v&quot; &gt; &quot;theories/interval.v.d&quot; || ( RV=$?; rm -f &quot;theories/interval.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/closed_field.v&quot; &gt; &quot;theories/closed_field.v.d&quot; || ( RV=$?; rm -f &quot;theories/closed_field.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/countalg.v&quot; &gt; &quot;theories/countalg.v.d&quot; || ( RV=$?; rm -f &quot;theories/countalg.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/algebraics_fundamentals.v&quot; &gt; &quot;theories/algebraics_fundamentals.v.d&quot; || ( RV=$?; rm -f &quot;theories/algebraics_fundamentals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/algC.v&quot; &gt; &quot;theories/algC.v.d&quot; || ( RV=$?; rm -f &quot;theories/algC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/classfun.v&quot; &gt; &quot;theories/classfun.v.d&quot; || ( RV=$?; rm -f &quot;theories/classfun.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/character.v&quot; &gt; &quot;theories/character.v.d&quot; || ( RV=$?; rm -f &quot;theories/character.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/vcharacter.v&quot; &gt; &quot;theories/vcharacter.v.d&quot; || ( RV=$?; rm -f &quot;theories/vcharacter.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/mxtens.v&quot; &gt; &quot;theories/mxtens.v.d&quot; || ( RV=$?; rm -f &quot;theories/mxtens.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/polyorder.v&quot; &gt; &quot;theories/polyorder.v.d&quot; || ( RV=$?; rm -f &quot;theories/polyorder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/polyrcf.v&quot; &gt; &quot;theories/polyrcf.v.d&quot; || ( RV=$?; rm -f &quot;theories/polyrcf.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/qe_rcf_th.v&quot; &gt; &quot;theories/qe_rcf_th.v.d&quot; || ( RV=$?; rm -f &quot;theories/qe_rcf_th.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/inertia.v&quot; &gt; &quot;theories/inertia.v.d&quot; || ( RV=$?; rm -f &quot;theories/inertia.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/cyclotomic.v&quot; &gt; &quot;theories/cyclotomic.v.d&quot; || ( RV=$?; rm -f &quot;theories/cyclotomic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/algnum.v&quot; &gt; &quot;theories/algnum.v.d&quot; || ( RV=$?; rm -f &quot;theories/algnum.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/integral_char.v&quot; &gt; &quot;theories/integral_char.v.d&quot; || ( RV=$?; rm -f &quot;theories/integral_char.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection1.v&quot; &gt; &quot;theories/PFsection1.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection1.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection2.v&quot; &gt; &quot;theories/PFsection2.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection3.v&quot; &gt; &quot;theories/PFsection3.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection4.v&quot; &gt; &quot;theories/PFsection4.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection4.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection5.v&quot; &gt; &quot;theories/PFsection5.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection5.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection6.v&quot; &gt; &quot;theories/PFsection6.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection6.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection7.v&quot; &gt; &quot;theories/PFsection7.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection7.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection8.v&quot; &gt; &quot;theories/PFsection8.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection8.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection9.v&quot; &gt; &quot;theories/PFsection9.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection9.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection10.v&quot; &gt; &quot;theories/PFsection10.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection10.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection11.v&quot; &gt; &quot;theories/PFsection11.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection11.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection12.v&quot; &gt; &quot;theories/PFsection12.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection12.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection13.v&quot; &gt; &quot;theories/PFsection13.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection13.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/PFsection14.v&quot; &gt; &quot;theories/PFsection14.v.d&quot; || ( RV=$?; rm -f &quot;theories/PFsection14.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/stripped_odd_order_theorem.v&quot; &gt; &quot;theories/stripped_odd_order_theorem.v.d&quot; || ( RV=$?; rm -f &quot;theories/stripped_odd_order_theorem.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/fib.v&quot; &gt; &quot;theories/fib.v.d&quot; || ( RV=$?; rm -f &quot;theories/fib.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/fraction.v&quot; &gt; &quot;theories/fraction.v.d&quot; || ( RV=$?; rm -f &quot;theories/fraction.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/bigenough.v&quot; &gt; &quot;theories/bigenough.v.d&quot; || ( RV=$?; rm -f &quot;theories/bigenough.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/cauchyreals.v&quot; &gt; &quot;theories/cauchyreals.v.d&quot; || ( RV=$?; rm -f &quot;theories/cauchyreals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/polyXY.v&quot; &gt; &quot;theories/polyXY.v.d&quot; || ( RV=$?; rm -f &quot;theories/polyXY.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/realalg.v&quot; &gt; &quot;theories/realalg.v.d&quot; || ( RV=$?; rm -f &quot;theories/realalg.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/complex.v&quot; &gt; &quot;theories/complex.v.d&quot; || ( RV=$?; rm -f &quot;theories/complex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/ordered_qelim.v&quot; &gt; &quot;theories/ordered_qelim.v.d&quot; || ( RV=$?; rm -f &quot;theories/ordered_qelim.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I src -R theories Ssreflect &quot;theories/qe_rcf.v&quot; &gt; &quot;theories/qe_rcf.v.d&quot; || ( RV=$?; rm -f &quot;theories/qe_rcf.v.d&quot;; exit ${RV} )
+ocamlc -c -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 src/ssrmatching.mli
+ocamlc -c -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 -pp '&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl' -impl src/ssrmatching.ml4
+ocamlc -c -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 -pp '&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl' -impl src/ssreflect.ml4
+ocamlopt -c -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 -pp '&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl' -impl src/ssrmatching.ml4
+ocamlopt -c -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 -pp '&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl' -impl src/ssreflect.ml4
+ocamlc -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 -a -o src/ssreflect.cma src/ssrmatching.cmo src/ssreflect.cmo
+ocamlopt -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 -a -o src/ssreflect.cmxa src/ssrmatching.cmx src/ssreflect.cmx
+ocamlopt -rectypes  -I src -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml -I /home/bench/.opam/system/lib/camlp5 -linkall -shared -o src/ssreflect.cmxs src/ssreflect.cmxa
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssrmatching
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssreflect
+Identifier 'is' now a keyword
+Identifier 'of' now a keyword
+Identifier 'isn't' now a keyword
+Identifier 'SsrSyntax_is_Imported' now a keyword
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssrfun
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssrbool
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/eqtype
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssrnat
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/seq
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/choice
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/path
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/div
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/fintype
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/tuple
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/generic_quotient
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/bigenough
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/fingraph
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/finfun
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/bigop
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/prime
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/finset
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/binomial
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/fingroup
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssralg
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/morphism
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/perm
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/poly
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ring_quotient
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/automorphism
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/presentation
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/quotient
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/polydiv
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/multinom
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/action
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/finalg
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/gproduct
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/zmodp
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/matrix
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssrnum
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/closed_field
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/fraction
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/gfunctor
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ssrint
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/ordered_qelim
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/cyclic
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/fib
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/commutator
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/interval
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/mxalgebra
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/mxtens
+Warning: Not interpreting &quot;*)&quot; as the end of current non-terminated comment because it occurs in a non-terminated string of the comment.
+Warning: Nothing to inject.
+Warning: Nothing to inject.
+Warning: Nothing to inject.
+Warning: Nothing to inject.
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/rat
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/center
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/pgroup
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/finmodule
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/polyorder
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/polyrcf
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/gseries
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/mxpoly
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/vector
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/nilpotent
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/primitive_action
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/jordanholder
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/polyXY
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/sylow
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/mxrepresentation
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/intdiv
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/burnside_app
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/qe_rcf_th
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/cauchyreals
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/falgebra
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/abelian
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/countalg
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/alt
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/qe_rcf
+Identifier 'bind' now a keyword
+Identifier 'If' now a keyword
+Identifier 'Then' now a keyword
+Identifier 'Else' now a keyword
+Identifier 'If' now a keyword
+Identifier 'Then' now a keyword
+Identifier 'Else' now a keyword
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/maximal
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/fieldext
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/galgebra
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/hall
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/extremal
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/amodule
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/frobenius
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/separable
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/extraspecial
+Warning: Nothing to inject.
+Warning: Nothing to inject.
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/realalg
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/galois
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/mxabelem
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/complex
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection1
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/wielandt_fixpoint
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection2
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGappendixAB
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection4
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection3
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection6
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection7
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/algebraics_fundamentals
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection5
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection8
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection9
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection10
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection11
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection12
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/algC
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection13
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/cyclotomic
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/finfield
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/algnum
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection14
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/classfun
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/character
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection15
+Warning: Nothing to inject.
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGsection16
+Warning: Nothing to inject.
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/integral_char
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/inertia
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/BGappendixC
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/vcharacter
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection1
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection2
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection3
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection4
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection5
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection6
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection8
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection7
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection9
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection10
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection11
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection12
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection13
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/PFsection14
+Warning: Nothing to inject.
+&quot;coqc&quot;  -q  -I src -R theories Ssreflect   theories/stripped_odd_order_theorem
+install -d &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect; \
+for i in src/ssreflect.cmxs ; do \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect/`basename $i`; \
+done
+cd &quot;theories&quot;; for i in qe_rcf.vo ordered_qelim.vo complex.vo realalg.vo polyXY.vo cauchyreals.vo bigenough.vo fraction.vo fib.vo stripped_odd_order_theorem.vo PFsection14.vo PFsection13.vo PFsection12.vo PFsection11.vo PFsection10.vo PFsection9.vo PFsection8.vo PFsection7.vo PFsection6.vo PFsection5.vo PFsection4.vo PFsection3.vo PFsection2.vo PFsection1.vo integral_char.vo algnum.vo cyclotomic.vo inertia.vo qe_rcf_th.vo polyrcf.vo polyorder.vo mxtens.vo vcharacter.vo character.vo classfun.vo algC.vo algebraics_fundamentals.vo countalg.vo closed_field.vo interval.vo intdiv.vo rat.vo ssrint.vo ssrnum.vo finfield.vo galois.vo separable.vo fieldext.vo ring_quotient.vo generic_quotient.vo galgebra.vo amodule.vo falgebra.vo vector.vo burnside_app.vo alt.vo polydiv.vo BGappendixC.vo BGsection16.vo BGsection15.vo BGsection14.vo BGsection13.vo BGsection12.vo BGsection11.vo BGsection10.vo BGsection9.vo BGsection8.vo BGsection7.vo BGsection6.vo BGappendixAB.vo BGsection5.vo BGsection4.vo BGsection3.vo BGsection2.vo BGsection1.vo wielandt_fixpoint.vo mxabelem.vo frobenius.vo primitive_action.vo extraspecial.vo extremal.vo hall.vo maximal.vo abelian.vo sylow.vo finmodule.vo nilpotent.vo jordanholder.vo gseries.vo mxrepresentation.vo center.vo pgroup.vo cyclic.vo mxpoly.vo mxalgebra.vo matrix.vo zmodp.vo multinom.vo poly.vo finalg.vo ssralg.vo commutator.vo gfunctor.vo gproduct.vo action.vo quotient.vo automorphism.vo perm.vo presentation.vo morphism.vo fingroup.vo binomial.vo finset.vo prime.vo bigop.vo finfun.vo tuple.vo fingraph.vo fintype.vo div.vo path.vo choice.vo seq.vo ssrnat.vo eqtype.vo ssrbool.vo ssrfun.vo ssreflect.vo ssrmatching.vo; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect/$i; \
+done
+install -d &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect; \
+for i in  ; do \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect/`basename $i`; \
+done
+install -d &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect; \
+for i in src/ssreflect.cmi src/ssrmatching.cmi ; do \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect/`basename $i`; \
+done
+install -d &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect; \
+for i in src/ssreflect.cma ; do \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Ssreflect/`basename $i`; \
+done
+Installing coq:contrib:ssreflect.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:ssreflect.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:ssreflect.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:ssreflect] Fetching git://clarus.io/ssreflect#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:ssreflect.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Ssreflect
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
