@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:huffman dev</a></li>
+              <li class="active"><a href="">2014-11-20 08:04:42</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:huffman
+              <small>
+                dev
+                <span class="label label-success">23 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-20 08:04:42 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-20 08:04:42 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:huffman/coq:contrib:huffman.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:huffman.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:huffman.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:huffman.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:huffman.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:huffman.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:huffman.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>23 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:huffman.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:huffman] Fetching git://clarus.io/huffman#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:huffman.dev/.git/
+[master (root-commit) 3dd5661] opam-git-init
+warning: no common commits
+From git://clarus.io/huffman
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.cvsignore
+Aux.v
+BTree.v
+Build.v
+Code.v
+Cover.v
+CoverMin.v
+Extraction.v
+Frequency.v
+HeightPred.v
+Huffman.v
+ISort.v
+LICENSE
+Make
+Makefile
+OneStep.v
+Ordered.v
+OrderedCover.v
+PBTree.v
+PBTree2BTree.v
+Permutation.v
+Prod2List.v
+README
+Restrict.v
+SameSumLeaves.v
+SubstPred.v
+UList.v
+UniqueKey.v
+Weight.v
+WeightTree.v
+description
+ex1.ml
+ex2.ml
+sTactic.v
+HEAD is now at bf22e14 Revert &quot;Regenerating Makefiles.&quot; We will be able to do so when we have access
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:huffman.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Warning:
+Please now use &quot;-extra[-phony] result deps command&quot; instead of &quot;-custom command deps result&quot;.
+It follows makefile target declaration order and has a clearer semantic.
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Aux.v&quot; &gt; &quot;Aux.v.d&quot; || ( RV=$?; rm -f &quot;Aux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Cover.v&quot; &gt; &quot;Cover.v.d&quot; || ( RV=$?; rm -f &quot;Cover.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;HeightPred.v&quot; &gt; &quot;HeightPred.v.d&quot; || ( RV=$?; rm -f &quot;HeightPred.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Ordered.v&quot; &gt; &quot;Ordered.v.d&quot; || ( RV=$?; rm -f &quot;Ordered.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;SubstPred.v&quot; &gt; &quot;SubstPred.v.d&quot; || ( RV=$?; rm -f &quot;SubstPred.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;sTactic.v&quot; &gt; &quot;sTactic.v.d&quot; || ( RV=$?; rm -f &quot;sTactic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;OrderedCover.v&quot; &gt; &quot;OrderedCover.v.d&quot; || ( RV=$?; rm -f &quot;OrderedCover.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;UList.v&quot; &gt; &quot;UList.v.d&quot; || ( RV=$?; rm -f &quot;UList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;BTree.v&quot; &gt; &quot;BTree.v.d&quot; || ( RV=$?; rm -f &quot;BTree.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;CoverMin.v&quot; &gt; &quot;CoverMin.v.d&quot; || ( RV=$?; rm -f &quot;CoverMin.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;ISort.v&quot; &gt; &quot;ISort.v.d&quot; || ( RV=$?; rm -f &quot;ISort.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;PBTree.v&quot; &gt; &quot;PBTree.v.d&quot; || ( RV=$?; rm -f &quot;PBTree.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;UniqueKey.v&quot; &gt; &quot;UniqueKey.v.d&quot; || ( RV=$?; rm -f &quot;UniqueKey.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Huffman.v&quot; &gt; &quot;Huffman.v.d&quot; || ( RV=$?; rm -f &quot;Huffman.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Restrict.v&quot; &gt; &quot;Restrict.v.d&quot; || ( RV=$?; rm -f &quot;Restrict.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Build.v&quot; &gt; &quot;Build.v.d&quot; || ( RV=$?; rm -f &quot;Build.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;PBTree2BTree.v&quot; &gt; &quot;PBTree2BTree.v.d&quot; || ( RV=$?; rm -f &quot;PBTree2BTree.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Weight.v&quot; &gt; &quot;Weight.v.d&quot; || ( RV=$?; rm -f &quot;Weight.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Code.v&quot; &gt; &quot;Code.v.d&quot; || ( RV=$?; rm -f &quot;Code.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Frequency.v&quot; &gt; &quot;Frequency.v.d&quot; || ( RV=$?; rm -f &quot;Frequency.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;OneStep.v&quot; &gt; &quot;OneStep.v.d&quot; || ( RV=$?; rm -f &quot;OneStep.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Permutation.v&quot; &gt; &quot;Permutation.v.d&quot; || ( RV=$?; rm -f &quot;Permutation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Prod2List.v&quot; &gt; &quot;Prod2List.v.d&quot; || ( RV=$?; rm -f &quot;Prod2List.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;SameSumLeaves.v&quot; &gt; &quot;SameSumLeaves.v.d&quot; || ( RV=$?; rm -f &quot;SameSumLeaves.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;WeightTree.v&quot; &gt; &quot;WeightTree.v.d&quot; || ( RV=$?; rm -f &quot;WeightTree.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Huffman &quot;Extraction.v&quot; &gt; &quot;Extraction.v.d&quot; || ( RV=$?; rm -f &quot;Extraction.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   sTactic
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Aux
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Permutation
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   UList
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Ordered
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   ISort
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   UniqueKey
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Frequency
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Code
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Weight
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   BTree
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   WeightTree
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Cover
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Prod2List
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   SameSumLeaves
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   OrderedCover
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   CoverMin
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   OneStep
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   HeightPred
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   SubstPred
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Build
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   PBTree
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   PBTree2BTree
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Restrict
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Huffman
+&quot;coqc&quot;  -q  -R &quot;.&quot; Huffman   Extraction
+cat ex1.ml huffman.ml ex2.ml &gt; run_huffman.ml
+cd &quot;.&quot; &amp;&amp; for i in Extraction.vo WeightTree.vo SameSumLeaves.vo Prod2List.vo Permutation.vo OneStep.vo Frequency.vo Code.vo Weight.vo PBTree2BTree.vo Build.vo Restrict.vo Huffman.vo UniqueKey.vo PBTree.vo ISort.vo CoverMin.vo BTree.vo UList.vo OrderedCover.vo sTactic.vo SubstPred.vo Ordered.vo HeightPred.vo Cover.vo Aux.vo   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Huffman/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Huffman/$i; \
+done
+Installing coq:contrib:huffman.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:huffman.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:huffman.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:huffman] Fetching git://clarus.io/huffman#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:huffman.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Huffman
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
