@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i>  Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4pl4 / contrib:int-map 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-21 12:12:52</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:int-map
+              <small>
+                8.4.dev
+                <span class="label label-success">16 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-21 12:12:52 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-21 12:12:52 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:int-map/coq:contrib:int-map.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:int-map.8.4.dev coq.8.4pl4</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4pl4).
+The following actions will be performed:
+ - install   coq:contrib:int-map.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:int-map.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:int-map.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:int-map.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:int-map.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>16 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:int-map.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:int-map] Fetching git://clarus.io/int-map#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:int-map.8.4.dev/.git/
+[master (root-commit) 1019f65] opam-git-init
+warning: no common commits
+From git://clarus.io/int-map
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Adalloc.v
+Allmaps.v
+FMapIntMap.v
+Fset.v
+Lsort.v
+Make
+Makefile
+Map.v
+Mapaxioms.v
+Mapc.v
+Mapcanon.v
+Mapcard.v
+Mapfold.v
+Mapiter.v
+Maplists.v
+Mapsubset.v
+bench.log
+description
+HEAD is now at c9053f6 IntMap : remove a red now useless
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:int-map.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+coqdep -c -slash -R . IntMap &quot;Adalloc.v&quot; &gt; &quot;Adalloc.v.d&quot; || ( RV=$?; rm -f &quot;Adalloc.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Allmaps.v&quot; &gt; &quot;Allmaps.v.d&quot; || ( RV=$?; rm -f &quot;Allmaps.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Fset.v&quot; &gt; &quot;Fset.v.d&quot; || ( RV=$?; rm -f &quot;Fset.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Lsort.v&quot; &gt; &quot;Lsort.v.d&quot; || ( RV=$?; rm -f &quot;Lsort.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Mapaxioms.v&quot; &gt; &quot;Mapaxioms.v.d&quot; || ( RV=$?; rm -f &quot;Mapaxioms.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Mapcanon.v&quot; &gt; &quot;Mapcanon.v.d&quot; || ( RV=$?; rm -f &quot;Mapcanon.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Mapcard.v&quot; &gt; &quot;Mapcard.v.d&quot; || ( RV=$?; rm -f &quot;Mapcard.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Mapc.v&quot; &gt; &quot;Mapc.v.d&quot; || ( RV=$?; rm -f &quot;Mapc.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Mapfold.v&quot; &gt; &quot;Mapfold.v.d&quot; || ( RV=$?; rm -f &quot;Mapfold.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Mapiter.v&quot; &gt; &quot;Mapiter.v.d&quot; || ( RV=$?; rm -f &quot;Mapiter.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Maplists.v&quot; &gt; &quot;Maplists.v.d&quot; || ( RV=$?; rm -f &quot;Maplists.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Mapsubset.v&quot; &gt; &quot;Mapsubset.v.d&quot; || ( RV=$?; rm -f &quot;Mapsubset.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;Map.v&quot; &gt; &quot;Map.v.d&quot; || ( RV=$?; rm -f &quot;Map.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . IntMap &quot;FMapIntMap.v&quot; &gt; &quot;FMapIntMap.v.d&quot; || ( RV=$?; rm -f &quot;FMapIntMap.v.d&quot;; exit ${RV} )
+coqc  -q  -R . IntMap   Map
+coqc  -q  -R . IntMap   Fset
+coqc  -q  -R . IntMap   Mapaxioms
+coqc  -q  -R . IntMap   Adalloc
+coqc  -q  -R . IntMap   Mapiter
+coqc  -q  -R . IntMap   Mapsubset
+coqc  -q  -R . IntMap   Lsort
+coqc  -q  -R . IntMap   Mapfold
+coqc  -q  -R . IntMap   Mapcard
+coqc  -q  -R . IntMap   Mapcanon
+coqc  -q  -R . IntMap   Mapc
+coqc  -q  -R . IntMap   Maplists
+coqc  -q  -R . IntMap   Allmaps
+coqc  -q  -R . IntMap   FMapIntMap
+for i in FMapIntMap.vo Map.vo Mapsubset.vo Maplists.vo Mapiter.vo Mapfold.vo Mapc.vo Mapcard.vo Mapcanon.vo Mapaxioms.vo Lsort.vo Fset.vo Allmaps.vo Adalloc.vo; do \
+ install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/IntMap/$i`; \
+ install -m 0644 $i /home/bench/.opam/system/lib/coq/user-contrib/IntMap/$i; \
+done
+Installing coq:contrib:int-map.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:int-map.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:int-map.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:int-map] Fetching git://clarus.io/int-map#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:int-map.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/IntMap
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
