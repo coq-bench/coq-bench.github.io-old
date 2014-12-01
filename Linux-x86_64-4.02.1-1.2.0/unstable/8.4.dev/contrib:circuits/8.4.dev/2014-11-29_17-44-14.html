@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.dev / contrib:circuits 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-29 17:44:14</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:circuits
+              <small>
+                8.4.dev
+                <span class="label label-success">4 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-29 17:44:14 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-29 17:44:14 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:circuits/coq:contrib:circuits.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:circuits.8.4.dev coq.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.dev).
+The following actions will be performed:
+ - install   coq:contrib:circuits.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:circuits.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:circuits.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:circuits.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:circuits.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>4 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:circuits.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:circuits] Fetching https://gforge.inria.fr/git/coq-contribs/circuits.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:circuits.8.4.dev/.git/
+[master (root-commit) 6970f5b] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/circuits
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+ADDER/Adder.v
+ADDER/AdderProof.v
+ADDER/FullAdder.v
+ADDER/HalfAdder.v
+ADDER/IncrDecr.v
+BLOCK/Fill_defs.v
+BLOCK/Fill_impl.v
+BLOCK/Fill_proof.v
+BLOCK/Fill_spec.v
+GENE/Arith_compl.v
+GENE/BV.v
+GENE/Bool_compl.v
+GENE/Lists_compl.v
+GENE/Lists_field.v
+GENE/Lists_replace.v
+GENE/Memo.v
+LICENSE
+MULTIPLIER/Definitions.v
+MULTIPLIER/LemPrelim.v
+MULTIPLIER/MultSeq.v
+Make
+Makefile
+README
+bench.log
+description
+HEAD is now at d84f507 Fix contribs broken by addition of eta-expansion
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:circuits.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;MULTIPLIER/MultSeq.v&quot; &gt; &quot;MULTIPLIER/MultSeq.v.d&quot; || ( RV=$?; rm -f &quot;MULTIPLIER/MultSeq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;MULTIPLIER/Definitions.v&quot; &gt; &quot;MULTIPLIER/Definitions.v.d&quot; || ( RV=$?; rm -f &quot;MULTIPLIER/Definitions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;MULTIPLIER/LemPrelim.v&quot; &gt; &quot;MULTIPLIER/LemPrelim.v.d&quot; || ( RV=$?; rm -f &quot;MULTIPLIER/LemPrelim.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;GENE/Lists_compl.v&quot; &gt; &quot;GENE/Lists_compl.v.d&quot; || ( RV=$?; rm -f &quot;GENE/Lists_compl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;GENE/Lists_replace.v&quot; &gt; &quot;GENE/Lists_replace.v.d&quot; || ( RV=$?; rm -f &quot;GENE/Lists_replace.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;GENE/BV.v&quot; &gt; &quot;GENE/BV.v.d&quot; || ( RV=$?; rm -f &quot;GENE/BV.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;GENE/Lists_field.v&quot; &gt; &quot;GENE/Lists_field.v.d&quot; || ( RV=$?; rm -f &quot;GENE/Lists_field.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;GENE/Memo.v&quot; &gt; &quot;GENE/Memo.v.d&quot; || ( RV=$?; rm -f &quot;GENE/Memo.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;GENE/Bool_compl.v&quot; &gt; &quot;GENE/Bool_compl.v.d&quot; || ( RV=$?; rm -f &quot;GENE/Bool_compl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;GENE/Arith_compl.v&quot; &gt; &quot;GENE/Arith_compl.v.d&quot; || ( RV=$?; rm -f &quot;GENE/Arith_compl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;BLOCK/Fill_defs.v&quot; &gt; &quot;BLOCK/Fill_defs.v.d&quot; || ( RV=$?; rm -f &quot;BLOCK/Fill_defs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;BLOCK/Fill_proof.v&quot; &gt; &quot;BLOCK/Fill_proof.v.d&quot; || ( RV=$?; rm -f &quot;BLOCK/Fill_proof.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;BLOCK/Fill_impl.v&quot; &gt; &quot;BLOCK/Fill_impl.v.d&quot; || ( RV=$?; rm -f &quot;BLOCK/Fill_impl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;BLOCK/Fill_spec.v&quot; &gt; &quot;BLOCK/Fill_spec.v.d&quot; || ( RV=$?; rm -f &quot;BLOCK/Fill_spec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;ADDER/HalfAdder.v&quot; &gt; &quot;ADDER/HalfAdder.v.d&quot; || ( RV=$?; rm -f &quot;ADDER/HalfAdder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;ADDER/AdderProof.v&quot; &gt; &quot;ADDER/AdderProof.v.d&quot; || ( RV=$?; rm -f &quot;ADDER/AdderProof.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;ADDER/IncrDecr.v&quot; &gt; &quot;ADDER/IncrDecr.v.d&quot; || ( RV=$?; rm -f &quot;ADDER/IncrDecr.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;ADDER/FullAdder.v&quot; &gt; &quot;ADDER/FullAdder.v.d&quot; || ( RV=$?; rm -f &quot;ADDER/FullAdder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Circuits &quot;ADDER/Adder.v&quot; &gt; &quot;ADDER/Adder.v.d&quot; || ( RV=$?; rm -f &quot;ADDER/Adder.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . Circuits   GENE/Arith_compl
+&quot;coqc&quot;  -q  -R . Circuits   GENE/Bool_compl
+&quot;coqc&quot;  -q  -R . Circuits   GENE/Lists_compl
+&quot;coqc&quot;  -q  -R . Circuits   ADDER/HalfAdder
+&quot;coqc&quot;  -q  -R . Circuits   ADDER/FullAdder
+&quot;coqc&quot;  -q  -R . Circuits   GENE/Lists_field
+&quot;coqc&quot;  -q  -R . Circuits   GENE/Lists_replace
+&quot;coqc&quot;  -q  -R . Circuits   GENE/BV
+&quot;coqc&quot;  -q  -R . Circuits   ADDER/Adder
+&quot;coqc&quot;  -q  -R . Circuits   GENE/Memo
+&quot;coqc&quot;  -q  -R . Circuits   ADDER/AdderProof
+&quot;coqc&quot;  -q  -R . Circuits   MULTIPLIER/Definitions
+&quot;coqc&quot;  -q  -R . Circuits   MULTIPLIER/LemPrelim
+&quot;coqc&quot;  -q  -R . Circuits   ADDER/IncrDecr
+&quot;coqc&quot;  -q  -R . Circuits   MULTIPLIER/MultSeq
+&quot;coqc&quot;  -q  -R . Circuits   BLOCK/Fill_defs
+&quot;coqc&quot;  -q  -R . Circuits   BLOCK/Fill_spec
+&quot;coqc&quot;  -q  -R . Circuits   BLOCK/Fill_impl
+&quot;coqc&quot;  -q  -R . Circuits   BLOCK/Fill_proof
+for i in ADDER/Adder.vo ADDER/FullAdder.vo ADDER/IncrDecr.vo ADDER/AdderProof.vo ADDER/HalfAdder.vo BLOCK/Fill_spec.vo BLOCK/Fill_impl.vo BLOCK/Fill_proof.vo BLOCK/Fill_defs.vo GENE/Arith_compl.vo GENE/Bool_compl.vo GENE/Memo.vo GENE/Lists_field.vo GENE/BV.vo GENE/Lists_replace.vo GENE/Lists_compl.vo MULTIPLIER/LemPrelim.vo MULTIPLIER/Definitions.vo MULTIPLIER/MultSeq.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Circuits/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Circuits/$i; \
+done
+Installing coq:contrib:circuits.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:circuits.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:circuits.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:circuits] Fetching https://gforge.inria.fr/git/coq-contribs/circuits.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:circuits.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Circuits
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

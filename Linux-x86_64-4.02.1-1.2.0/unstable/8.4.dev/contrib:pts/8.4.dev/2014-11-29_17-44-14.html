@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.dev / contrib:pts 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-29 17:44:14</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:pts
+              <small>
+                8.4.dev
+                <span class="label label-success">13 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-29 17:44:14 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-29 17:44:14 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:pts/coq:contrib:pts.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:pts.8.4.dev coq.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.dev).
+The following actions will be performed:
+ - install   coq:contrib:pts.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:pts.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:pts.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:pts.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:pts.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>13 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:pts.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:pts] Fetching https://gforge.inria.fr/git/coq-contribs/pts.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:pts.8.4.dev/.git/
+[master (root-commit) f39c09f] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/pts
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Acumul.v
+Alambda.v
+Arules.v
+Atermes.v
+Atyping.v
+BD.v
+Beta.v
+CTS_spec.v
+Confluence.v
+Conv.v
+CoqV6.v
+CoqV6Beta.v
+Cumul.v
+CumulDec.v
+CumulInfer.v
+ECC.v
+ECC_Meta.v
+Env.v
+Errors.v
+ExtractV6.v
+General.v
+GenericSort.v
+Infer.v
+LambdaSound.v
+Lambda_Rules.v
+Lcumul.v
+Llambda.v
+Lrules.v
+Ltermes.v
+Ltyping.v
+Main.v
+Make
+Makefile
+Meta.v
+Metatheory.v
+MlExtract.v
+MyList.v
+MyRelations.v
+Normal.v
+PTS_spec.v
+Rules.v
+SortECC.v
+SortV6.v
+Soundness.v
+Subtyping_rule.v
+Termes.v
+bench.log
+bench.ml
+bench_ax.ml
+checker.ml
+description
+examples/newm.v
+examples/newman.coc
+examples/newman.v
+examples/newman_def.v
+examples/test_ax
+examples/test_def
+kernel.ml
+kernel.mli
+load.ml
+main.html.tpl
+style.css
+HEAD is now at 379e838 PTS: fix deps of extracted code (for newbench)
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:pts.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . PTS &quot;Main.v&quot; &gt; &quot;Main.v.d&quot; || ( RV=$?; rm -f &quot;Main.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;GenericSort.v&quot; &gt; &quot;GenericSort.v.d&quot; || ( RV=$?; rm -f &quot;GenericSort.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;SortECC.v&quot; &gt; &quot;SortECC.v.d&quot; || ( RV=$?; rm -f &quot;SortECC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;SortV6.v&quot; &gt; &quot;SortV6.v.d&quot; || ( RV=$?; rm -f &quot;SortV6.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;CoqV6.v&quot; &gt; &quot;CoqV6.v.d&quot; || ( RV=$?; rm -f &quot;CoqV6.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;ECC.v&quot; &gt; &quot;ECC.v.d&quot; || ( RV=$?; rm -f &quot;ECC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;CoqV6Beta.v&quot; &gt; &quot;CoqV6Beta.v.d&quot; || ( RV=$?; rm -f &quot;CoqV6Beta.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;ExtractV6.v&quot; &gt; &quot;ExtractV6.v.d&quot; || ( RV=$?; rm -f &quot;ExtractV6.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;MlExtract.v&quot; &gt; &quot;MlExtract.v.d&quot; || ( RV=$?; rm -f &quot;MlExtract.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;MyList.v&quot; &gt; &quot;MyList.v.d&quot; || ( RV=$?; rm -f &quot;MyList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;MyRelations.v&quot; &gt; &quot;MyRelations.v.d&quot; || ( RV=$?; rm -f &quot;MyRelations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . PTS &quot;General.v&quot; &gt; &quot;General.v.d&quot; || ( RV=$?; rm -f &quot;General.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . PTS   MyList
+&quot;coqc&quot;  -q  -R . PTS   MyRelations
+&quot;coqc&quot;  -q  -R . PTS   MlExtract
+&quot;coqc&quot;  -q  -R . PTS   GenericSort
+&quot;coqc&quot;  -q  -R . PTS   General
+&quot;coqc&quot;  -q  -R . PTS   Main
+&quot;coqc&quot;  -q  -R . PTS   SortV6
+&quot;coqc&quot;  -q  -R . PTS   SortECC
+&quot;coqc&quot;  -q  -R . PTS   CoqV6
+&quot;coqc&quot;  -q  -R . PTS   CoqV6Beta
+&quot;coqc&quot;  -q  -R . PTS   ECC
+&quot;coqc&quot;  -q  -R . PTS   ExtractV6
+coqtop -R . PTS -q  -R . PTS   -load-vernac-source ExtractV6.v
+Welcome to Coq 8.4pl5 (November 2014)
+Skipping rcfile loading.
+Warning: The extraction is currently set to bypass opacity,
+the following opaque constant bodies have been accessed :
+ CR_WHNF_convert_hn CR_WHNF_cumul_dec CR_WHNF_inv_cumul_dec add_def add_type
+ bd_conv_hnf bd_whnf_rec beta_delta_whnf calc_dec check_type check_wf_type
+ cts_prim_algos cumul_infer_axiom cumul_infer_rule cumul_least_prod
+ cumul_least_sort delta_reduce infer_ref infer_type is_a_sort not_topsort
+ tmp_add_typ tmp_check_typ_when_wf tmp_check_wf_type univ_v6_dec v6_inf_axiom
+ v6_inf_rule v6_is_norm_sound v6_is_subtype_dec v6_sort_dec whnf.
+Warning: The extraction is currently set to bypass opacity,
+the following opaque constant bodies have been accessed :
+ CR_WHNF_convert_hn CR_WHNF_cumul_dec CR_WHNF_inv_cumul_dec add_def add_type
+ bd_conv_hnf bd_whnf_rec beta_delta_whnf calc_dec check_type check_wf_type
+ cts_prim_algos cumul_infer_axiom cumul_infer_rule cumul_least_prod
+ cumul_least_sort delta_reduce infer_ref infer_type is_a_sort not_topsort
+ tmp_add_typ tmp_check_typ_when_wf tmp_check_wf_type univ_v6_dec v6_inf_axiom
+ v6_inf_rule v6_is_norm_sound v6_is_subtype_dec v6_sort_dec whnf.
+Coq &lt; 
+true
+ocamlc -c -rectypes kernel.mli
+ocamlc -c -rectypes -pp '&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl' checker.ml
+ocamlc -c -rectypes -pp '&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl' kernel.ml
+File &quot;checker.ml&quot;, line 52, characters 19-62:
+Warning 3: deprecated: Pervasives.&amp;
+Use (&amp;&amp;) instead.
+File &quot;checker.ml&quot;, line 52, characters 39-61:
+Warning 3: deprecated: Pervasives.or
+Use (||) instead.
+File &quot;checker.ml&quot;, line 53, characters 16-49:
+Warning 3: deprecated: Pervasives.&amp;
+Use (&amp;&amp;) instead.
+File &quot;checker.ml&quot;, line 54, characters 20-63:
+Warning 3: deprecated: Pervasives.&amp;
+Use (&amp;&amp;) instead.
+File &quot;checker.ml&quot;, line 54, characters 40-62:
+Warning 3: deprecated: Pervasives.or
+Use (||) instead.
+ocamlc -rectypes -o eccd kernel.cmo checker.cmo
+(cd examples; ./test_def ../eccd)
+Ecc &lt; A admis.
+Ecc &lt; R admis.
+Ecc &lt; Rstar defini.
+Ecc &lt; Rstar' defini.
+Ecc &lt; coherence defini.
+Ecc &lt; Hyp1 admis.
+Ecc &lt; Hyp2 admis.
+Ecc &lt; Rstar_reflexive defini.
+Ecc &lt; Rstar_R defini.
+Ecc &lt; Rstar_transitive defini.
+Ecc &lt; Rstar'_reflexive defini.
+Ecc &lt; Rstar'_R defini.
+Ecc &lt; Rstar'_Rstar defini.
+Ecc &lt; Rstar_Rstar' defini.
+Ecc &lt; coherence_intro defini.
+Ecc &lt; Rstar_coherence defini.
+Ecc &lt; coherence_sym defini.
+Ecc &lt; Diagram defini.
+Ecc &lt; caseRxy defini.
+Ecc &lt; Ind_proof defini.
+Ecc &lt; Newman defini.
+Ecc &lt; 
+Au revoir...
+for i in General.vo MyRelations.vo MyList.vo MlExtract.vo ExtractV6.vo CoqV6Beta.vo ECC.vo CoqV6.vo SortV6.vo SortECC.vo GenericSort.vo Main.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/PTS/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/PTS/$i; \
+done
+Installing coq:contrib:pts.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:pts.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:pts.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:pts] Fetching https://gforge.inria.fr/git/coq-contribs/pts.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:pts.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/PTS
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

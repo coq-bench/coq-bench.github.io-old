@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:cats-in-zfc 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-28 19:15:36</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:cats-in-zfc
+              <small>
+                8.4.dev
+                <span class="label label-success">1 m 8 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-28 19:15:36 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-28 19:15:36 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:cats-in-zfc/coq:contrib:cats-in-zfc.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:cats-in-zfc.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:cats-in-zfc.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:cats-in-zfc.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:cats-in-zfc.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:cats-in-zfc.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:cats-in-zfc.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 m 8 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:cats-in-zfc.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:cats-in-zfc] Fetching https://gforge.inria.fr/git/coq-contribs/cats-in-zfc.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:cats-in-zfc.8.4.dev/.git/
+[master (root-commit) 926c7dc] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/cats-in-zfc
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+LICENSE
+Make
+Makefile
+axioms.v
+bench.log
+cardinal.v
+cat_examples.v
+category.v
+colimits.v
+description
+equalizer.v
+fc_limits.v
+fiprod.v
+fmachine.v
+fpccpag.pdf
+functions.v
+functor.v
+functor_cat.v
+limits.v
+little_cat.v
+nat_trans.v
+notation.v
+order.v
+ordinal.v
+set_theory.v
+tactics.v
+transfinite.v
+universe.v
+HEAD is now at 9c3423f Consequences of Fixing bug #3228
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:cats-in-zfc.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;axioms.v&quot; &gt; &quot;axioms.v.d&quot; || ( RV=$?; rm -f &quot;axioms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;cardinal.v&quot; &gt; &quot;cardinal.v.d&quot; || ( RV=$?; rm -f &quot;cardinal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;category.v&quot; &gt; &quot;category.v.d&quot; || ( RV=$?; rm -f &quot;category.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;cat_examples.v&quot; &gt; &quot;cat_examples.v.d&quot; || ( RV=$?; rm -f &quot;cat_examples.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;colimits.v&quot; &gt; &quot;colimits.v.d&quot; || ( RV=$?; rm -f &quot;colimits.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;equalizer.v&quot; &gt; &quot;equalizer.v.d&quot; || ( RV=$?; rm -f &quot;equalizer.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;fc_limits.v&quot; &gt; &quot;fc_limits.v.d&quot; || ( RV=$?; rm -f &quot;fc_limits.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;fiprod.v&quot; &gt; &quot;fiprod.v.d&quot; || ( RV=$?; rm -f &quot;fiprod.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;fmachine.v&quot; &gt; &quot;fmachine.v.d&quot; || ( RV=$?; rm -f &quot;fmachine.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;functions.v&quot; &gt; &quot;functions.v.d&quot; || ( RV=$?; rm -f &quot;functions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;functor_cat.v&quot; &gt; &quot;functor_cat.v.d&quot; || ( RV=$?; rm -f &quot;functor_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;functor.v&quot; &gt; &quot;functor.v.d&quot; || ( RV=$?; rm -f &quot;functor.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;limits.v&quot; &gt; &quot;limits.v.d&quot; || ( RV=$?; rm -f &quot;limits.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;little_cat.v&quot; &gt; &quot;little_cat.v.d&quot; || ( RV=$?; rm -f &quot;little_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;nat_trans.v&quot; &gt; &quot;nat_trans.v.d&quot; || ( RV=$?; rm -f &quot;nat_trans.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;notation.v&quot; &gt; &quot;notation.v.d&quot; || ( RV=$?; rm -f &quot;notation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;order.v&quot; &gt; &quot;order.v.d&quot; || ( RV=$?; rm -f &quot;order.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;ordinal.v&quot; &gt; &quot;ordinal.v.d&quot; || ( RV=$?; rm -f &quot;ordinal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;set_theory.v&quot; &gt; &quot;set_theory.v.d&quot; || ( RV=$?; rm -f &quot;set_theory.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;tactics.v&quot; &gt; &quot;tactics.v.d&quot; || ( RV=$?; rm -f &quot;tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;transfinite.v&quot; &gt; &quot;transfinite.v.d&quot; || ( RV=$?; rm -f &quot;transfinite.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CatsInZFC &quot;universe.v&quot; &gt; &quot;universe.v.d&quot; || ( RV=$?; rm -f &quot;universe.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . CatsInZFC   axioms
+&quot;coqc&quot;  -q  -R . CatsInZFC   fmachine
+&quot;coqc&quot;  -q  -R . CatsInZFC   tactics
+Identifier 'IMP' now a keyword
+Identifier 'EQU' now a keyword
+Identifier 'AND' now a keyword
+Identifier 'LOOK' now a keyword
+&quot;coqc&quot;  -q  -R . CatsInZFC   set_theory
+&quot;coqc&quot;  -q  -R . CatsInZFC   functions
+&quot;coqc&quot;  -q  -R . CatsInZFC   notation
+&quot;coqc&quot;  -q  -R . CatsInZFC   universe
+&quot;coqc&quot;  -q  -R . CatsInZFC   order
+&quot;coqc&quot;  -q  -R . CatsInZFC   category
+&quot;coqc&quot;  -q  -R . CatsInZFC   transfinite
+&quot;coqc&quot;  -q  -R . CatsInZFC   functor
+&quot;coqc&quot;  -q  -R . CatsInZFC   ordinal
+&quot;coqc&quot;  -q  -R . CatsInZFC   cardinal
+&quot;coqc&quot;  -q  -R . CatsInZFC   nat_trans
+&quot;coqc&quot;  -q  -R . CatsInZFC   cat_examples
+&quot;coqc&quot;  -q  -R . CatsInZFC   limits
+&quot;coqc&quot;  -q  -R . CatsInZFC   functor_cat
+&quot;coqc&quot;  -q  -R . CatsInZFC   colimits
+&quot;coqc&quot;  -q  -R . CatsInZFC   fc_limits
+&quot;coqc&quot;  -q  -R . CatsInZFC   little_cat
+&quot;coqc&quot;  -q  -R . CatsInZFC   fiprod
+&quot;coqc&quot;  -q  -R . CatsInZFC   equalizer
+for i in universe.vo transfinite.vo tactics.vo set_theory.vo ordinal.vo order.vo notation.vo nat_trans.vo little_cat.vo limits.vo functor.vo functor_cat.vo functions.vo fmachine.vo fiprod.vo fc_limits.vo equalizer.vo colimits.vo cat_examples.vo category.vo cardinal.vo axioms.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/CatsInZFC/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/CatsInZFC/$i; \
+done
+Installing coq:contrib:cats-in-zfc.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:cats-in-zfc.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:cats-in-zfc.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:cats-in-zfc] Fetching https://gforge.inria.fr/git/coq-contribs/cats-in-zfc.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:cats-in-zfc.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/CatsInZFC
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

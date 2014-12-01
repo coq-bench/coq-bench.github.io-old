@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:corn dev</a></li>
+              <li class="active"><a href="">2014-11-28 21:50:38</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:corn
+              <small>
+                dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-28 21:50:38 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-28 21:50:38 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:corn/coq:contrib:corn.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:corn.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:corn.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:corn.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:corn.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:corn.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:corn.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:corn.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:corn] Fetching https://gforge.inria.fr/git/coq-contribs/corn.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:corn.dev/.git/
+[master (root-commit) 6f596a3] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/corn
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.gitignore
+LICENSE
+Makefile
+Makefile.common
+Makefile.realpath
+PreDot.hs
+README
+algebra/Basics.v
+algebra/Bernstein.v
+algebra/CAbGroups.v
+algebra/CAbMonoids.v
+algebra/CFields.v
+algebra/CGroups.v
+algebra/CHomomorphism_Theorems.v
+algebra/CIdeals.v
+algebra/CModule_Homomorphisms.v
+algebra/CModules.v
+algebra/CMonoidCyc.v
+algebra/CMonoids.v
+algebra/COrdAbs.v
+algebra/COrdCauchy.v
+algebra/COrdFields.v
+algebra/COrdFields2.v
+algebra/CPoly_ApZero.v
+algebra/CPoly_Degree.v
+algebra/CPoly_NthCoeff.v
+algebra/CPolynomials.v
+algebra/CQuotient_Modules.v
+algebra/CQuotient_Rings.v
+algebra/CRing_Homomorphisms.v
+algebra/CRings.v
+algebra/CSemiGroups.v
+algebra/CSetoidFun.v
+algebra/CSetoidInc.v
+algebra/CSetoids.v
+algebra/CSums.v
+algebra/CVectorSpace.v
+algebra/Cauchy_COF.v
+algebra/Expon.v
+algebra/RSetoid.v
+complex/AbsCC.v
+complex/CComplex.v
+complex/Complex_Exponential.v
+complex/NRootCC.v
+coq_reals/Rreals.v
+coq_reals/Rreals_iso.v
+coq_reals/Rsign.v
+description
+doc/doc_coqdocpre.tex
+doc/extradeps
+doc/skel/CComplex.tex
+doc/skel/CFields.tex
+doc/skel/CGroups.tex
+doc/skel/CIntDomains.tex
+doc/skel/CPolynomials.tex
+doc/skel/CReals.tex
+doc/skel/CRings.tex
+doc/skel/CSetoids.tex
+doc/skel/CVectorSpace.tex
+doc/skel/FTA.tex
+doc/skel/FTAreg.tex
+doc/skel/IVT.tex
+doc/skel/LinearAlgebra.tex
+doc/skel/Makefile
+doc/skel/NRootCC.tex
+doc/skel/algorithm.tex
+doc/skel/bibliography.tex
+doc/skel/header.tex
+doc/skel/skel.tex
+doc/skel/split.tex
+doc/style.css
+doc/www/download.html
+doc/www/history.html
+doc/www/index.html
+doc/www/info.html
+doc/www/lib.html
+doc/www/library/alghier.html
+doc/www/library/fastreal.html
+doc/www/library/fta.html
+doc/www/library/metric2.html
+doc/www/library/model.html
+doc/www/library/realcalc.html
+doc/www/people.html
+doc/www/pub.html
+examples/IntegrationExamples.v
+examples/PlotExamples.v
+examples/RealFast.v
+fta/CC_Props.v
+fta/CPoly_Contin1.v
+fta/CPoly_Rev.v
+fta/CPoly_Shift.v
+fta/FTA.v
+fta/FTAreg.v
+fta/KeyLemma.v
+fta/KneserLemma.v
+fta/MainLemma.v
+ftc/COrdLemmas.v
+ftc/CalculusTheorems.v
+ftc/Composition.v
+ftc/Continuity.v
+ftc/Derivative.v
+ftc/DerivativeOps.v
+ftc/Differentiability.v
+ftc/FTC.v
+ftc/FunctSequence.v
+ftc/FunctSeries.v
+ftc/FunctSums.v
+ftc/Integral.v
+ftc/IntegrationRules.v
+ftc/IntervalFunct.v
+ftc/MoreFunSeries.v
+ftc/MoreFunctions.v
+ftc/MoreIntegrals.v
+ftc/MoreIntervals.v
+ftc/NthDerivative.v
+ftc/PartFunEquality.v
+ftc/PartInterval.v
+ftc/Partitions.v
+ftc/RefLemma.v
+ftc/RefSepRef.v
+ftc/RefSeparated.v
+ftc/RefSeparating.v
+ftc/Rolle.v
+ftc/StrongIVT.v
+ftc/Taylor.v
+ftc/TaylorLemma.v
+ftc/WeakIVT.v
+logic/CLogic.v
+logic/Classic.v
+logic/PropDecid.v
+metric2/Classification.v
+metric2/Compact.v
+metric2/Complete.v
+metric2/CompleteProduct.v
+metric2/FinEnum.v
+metric2/Graph.v
+metric2/Hausdorff.v
+metric2/Limit.v
+metric2/Metric.v
+metric2/Prelength.v
+metric2/ProductMetric.v
+metric2/StepFunction.v
+metric2/StepFunctionMonad.v
+metric2/StepFunctionSetoid.v
+metric2/UniformContinuity.v
+metrics/CMetricSpaces.v
+metrics/CPMSTheory.v
+metrics/CPseudoMSpaces.v
+metrics/ContFunctions.v
+metrics/Equiv.v
+metrics/IR_CPMSpace.v
+metrics/LipExt.v
+metrics/Prod_Sub.v
+model/Zmod/Cmod.v
+model/Zmod/IrrCrit.v
+model/Zmod/ZBasics.v
+model/Zmod/ZDivides.v
+model/Zmod/ZGcd.v
+model/Zmod/ZMod.v
+model/Zmod/Zm.v
+model/abgroups/CRabgroup.v
+model/abgroups/QSposabgroup.v
+model/abgroups/Qabgroup.v
+model/abgroups/Qposabgroup.v
+model/abgroups/Zabgroup.v
+model/fields/CRfield.v
+model/fields/Qfield.v
+model/groups/CRgroup.v
+model/groups/QSposgroup.v
+model/groups/Qgroup.v
+model/groups/Qposgroup.v
+model/groups/Zgroup.v
+model/lattice/CRlattice.v
+model/metric2/BoundedFunction.v
+model/metric2/CRmetric.v
+model/metric2/IntegrableFunction.v
+model/metric2/L1metric.v
+model/metric2/LinfDistMonad.v
+model/metric2/LinfMetric.v
+model/metric2/LinfMetricMonad.v
+model/metric2/Qmetric.v
+model/monoids/CRmonoid.v
+model/monoids/Nm_to_cycm.v
+model/monoids/Nm_to_freem.v
+model/monoids/Nmonoid.v
+model/monoids/Nposmonoid.v
+model/monoids/QSposmonoid.v
+model/monoids/Qmonoid.v
+model/monoids/Qposmonoid.v
+model/monoids/Zmonoid.v
+model/monoids/freem_to_Nm.v
+model/monoids/twoelemmonoid.v
+model/non_examples/N_no_group.v
+model/non_examples/Npos_no_group.v
+model/non_examples/Npos_no_monoid.v
+model/ordfields/CRordfield.v
+model/ordfields/Qordfield.v
+model/partialorder/CRpartialorder.v
+model/reals/CRreal.v
+model/reals/Cauchy_IR.v
+model/rings/CRring.v
+model/rings/Qring.v
+model/rings/Zring.v
+model/semigroups/CRsemigroup.v
+model/semigroups/Npossemigroup.v
+model/semigroups/Nsemigroup.v
+model/semigroups/QSpossemigroup.v
+model/semigroups/Qpossemigroup.v
+model/semigroups/Qsemigroup.v
+model/semigroups/Zsemigroup.v
+model/semigroups/twoelemsemigroup.v
+model/setoids/CRsetoid.v
+model/setoids/Nfinsetoid.v
+model/setoids/Npossetoid.v
+model/setoids/Nsetoid.v
+model/setoids/Qpossetoid.v
+model/setoids/Qsetoid.v
+model/setoids/Zfinsetoid.v
+model/setoids/Zsetoid.v
+model/setoids/twoelemsetoid.v
+model/structures/Npossec.v
+model/structures/Nsec.v
+model/structures/OpenUnit.v
+model/structures/QposInf.v
+model/structures/Qpossec.v
+model/structures/Qsec.v
+model/structures/StepQsec.v
+model/structures/Zsec.v
+model/totalorder/QMinMax.v
+model/totalorder/QposMinMax.v
+model/totalorder/ZMinMax.v
+order/Lattice.v
+order/PartialOrder.v
+order/SemiLattice.v
+order/TotalOrder.v
+raster/Raster.v
+reals/Bridges_LUB.v
+reals/Bridges_iso.v
+reals/CMetricFields.v
+reals/CPoly_Contin.v
+reals/CReals.v
+reals/CReals1.v
+reals/CSumsReals.v
+reals/CauchySeq.v
+reals/Cauchy_CReals.v
+reals/Cesaro.v
+reals/IVT.v
+reals/Intervals.v
+reals/Max_AbsIR.v
+reals/NRootIR.v
+reals/OddPolyRootIR.v
+reals/PosSeq.v
+reals/Q_dense.v
+reals/Q_in_CReals.v
+reals/R_morphism.v
+reals/RealCount.v
+reals/RealFuncts.v
+reals/RealLists.v
+reals/Series.v
+reals/fast/CRAlternatingSum.v
+reals/fast/CRArith.v
+reals/fast/CRFieldOps.v
+reals/fast/CRGeometricSum.v
+reals/fast/CRGroupOps.v
+reals/fast/CRIR.v
+reals/fast/CRabs.v
+reals/fast/CRarctan.v
+reals/fast/CRarctan_small.v
+reals/fast/CRartanh_slow.v
+reals/fast/CRcorrect.v
+reals/fast/CRcos.v
+reals/fast/CRexp.v
+reals/fast/CRln.v
+reals/fast/CRpi.v
+reals/fast/CRpi_fast.v
+reals/fast/CRpi_slow.v
+reals/fast/CRpower.v
+reals/fast/CRroot.v
+reals/fast/CRseries.v
+reals/fast/CRsign.v
+reals/fast/CRsin.v
+reals/fast/CRsum.v
+reals/fast/CRtrans.v
+reals/fast/Compress.v
+reals/fast/ContinuousCorrect.v
+reals/fast/Integration.v
+reals/fast/Interval.v
+reals/fast/LazyNat.v
+reals/fast/ModulusDerivative.v
+reals/fast/MultivariatePolynomials.v
+reals/fast/Plot.v
+reals/fast/PowerBound.v
+reals/fast/RasterQ.v
+reals/fast/RasterizeQ.v
+reals/iso_CReals.v
+tactics/AlgReflection.v
+tactics/CornTac.v
+tactics/DiffTactics1.v
+tactics/DiffTactics2.v
+tactics/DiffTactics3.v
+tactics/FieldReflection.v
+tactics/GroupReflection.v
+tactics/Opaque_algebra.v
+tactics/Qauto.v
+tactics/Rational.v
+tactics/RingReflection.v
+tactics/Step.v
+tactics/Transparent_algebra.v
+tactics/csetoid_rewrite.v
+tactics/rational.ml
+tools/COPYING
+tools/depend/Makefile
+tools/depend/common.ml
+tools/depend/full_depend.ml
+tools/depend/lexer.mll
+tools/depend/parser.mly
+tools/depend/types.ml
+tools/realpath.c
+transc/ArTanH.v
+transc/Exponential.v
+transc/InvTrigonom.v
+transc/MoreArcTan.v
+transc/Pi.v
+transc/PowerSeries.v
+transc/RealPowers.v
+transc/SinCos.v
+transc/TaylorSeries.v
+transc/TrigMon.v
+transc/Trigonometric.v
+HEAD is now at 513234a Fixing CoRN.
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:corn.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Uncaught exception: Sys_error(&quot;Make: No such file or directory&quot;)
+[ERROR] The compilation of coq:contrib:corn.dev failed.
+Removing coq:contrib:corn.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/corn
+rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/corn': No such file or directory
+#=== ERROR while installing coq:contrib:corn.dev ==============================#
+# opam-version         1.2.0
+# os                   linux
+# command              coq_makefile -f Make -o Makefile
+# path                 /home/bench/.opam/system/build/coq:contrib:corn.dev
+# compiler             system (4.01.0)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:contrib:corn.dev/coq:contrib:corn-2663-d2c37b.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:corn.dev/coq:contrib:corn-2663-d2c37b.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:corn.dev/coq:contrib:corn-2663-d2c37b.err
+### stderr ###
+# Uncaught exception: Sys_error(&quot;Make: No such file or directory&quot;)
+'opam install -y --verbose coq:contrib:corn.dev' failed.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

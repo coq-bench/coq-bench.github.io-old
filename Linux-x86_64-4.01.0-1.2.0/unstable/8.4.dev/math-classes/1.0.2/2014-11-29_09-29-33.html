@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.dev / math-classes 1.0.2</a></li>
+              <li class="active"><a href="">2014-11-29 09:29:33</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              math-classes
+              <small>
+                1.0.2
+                <span class="label label-success">2 m 50 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-29 09:29:33 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-29 09:29:33 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb stable ../stable/packages/coq:math-classes/coq:math-classes.1.0.2</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:math-classes.1.0.2 coq.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.dev).
+The following actions will be performed:
+ - install   coq:math-classes.1.0.2
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:math-classes.1.0.2:
+  ./configure.sh
+  make -j4
+  make install
+Installing coq:math-classes.1.0.2.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:math-classes.1.0.2</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:math-classes.1.0.2</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 m 50 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:math-classes.1.0.2
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:math-classes.1.0.2] Downloading https://github.com/clarus/math-classes/archive/1.0.2.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   126    0   126    0     0    356      0 --:--:-- --:--:-- --:--:--   355
+  0     0    0  125k    0     0   108k      0 --:--:--  0:00:01 --:--:--  108k  0     0    0  153k    0     0   131k      0 --:--:--  0:00:01 --:--:-- 13.4M
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:math-classes.1.0.2:
+  ./configure.sh
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/fields.v&quot; &gt; &quot;theory/fields.v.d&quot; || ( RV=$?; rm -f &quot;theory/fields.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_congruence.v&quot; &gt; &quot;theory/ua_congruence.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_congruence.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/sequences.v&quot; &gt; &quot;theory/sequences.v.d&quot; || ( RV=$?; rm -f &quot;theory/sequences.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/rings.v&quot; &gt; &quot;theory/rings.v.d&quot; || ( RV=$?; rm -f &quot;theory/rings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/rationals.v&quot; &gt; &quot;theory/rationals.v.d&quot; || ( RV=$?; rm -f &quot;theory/rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/groups.v&quot; &gt; &quot;theory/groups.v.d&quot; || ( RV=$?; rm -f &quot;theory/groups.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/quote_monoid.v&quot; &gt; &quot;theory/quote_monoid.v.d&quot; || ( RV=$?; rm -f &quot;theory/quote_monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_packed.v&quot; &gt; &quot;theory/ua_packed.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_packed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/int_abs.v&quot; &gt; &quot;theory/int_abs.v.d&quot; || ( RV=$?; rm -f &quot;theory/int_abs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/monoid_normalization.v&quot; &gt; &quot;theory/monoid_normalization.v.d&quot; || ( RV=$?; rm -f &quot;theory/monoid_normalization.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_homomorphisms.v&quot; &gt; &quot;theory/ua_homomorphisms.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_homomorphisms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ring_ideals.v&quot; &gt; &quot;theory/ring_ideals.v.d&quot; || ( RV=$?; rm -f &quot;theory/ring_ideals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_subalgebra.v&quot; &gt; &quot;theory/ua_subalgebra.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_subalgebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/series.v&quot; &gt; &quot;theory/series.v.d&quot; || ( RV=$?; rm -f &quot;theory/series.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/jections.v&quot; &gt; &quot;theory/jections.v.d&quot; || ( RV=$?; rm -f &quot;theory/jections.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/integers.v&quot; &gt; &quot;theory/integers.v.d&quot; || ( RV=$?; rm -f &quot;theory/integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_subvariety.v&quot; &gt; &quot;theory/ua_subvariety.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_subvariety.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/forget_algebra.v&quot; &gt; &quot;theory/forget_algebra.v.d&quot; || ( RV=$?; rm -f &quot;theory/forget_algebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/streams.v&quot; &gt; &quot;theory/streams.v.d&quot; || ( RV=$?; rm -f &quot;theory/streams.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/monads.v&quot; &gt; &quot;theory/monads.v.d&quot; || ( RV=$?; rm -f &quot;theory/monads.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_term_monad.v&quot; &gt; &quot;theory/ua_term_monad.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_term_monad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_products.v&quot; &gt; &quot;theory/ua_products.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_products.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/nat_distance.v&quot; &gt; &quot;theory/nat_distance.v.d&quot; || ( RV=$?; rm -f &quot;theory/nat_distance.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/adjunctions.v&quot; &gt; &quot;theory/adjunctions.v.d&quot; || ( RV=$?; rm -f &quot;theory/adjunctions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/setoids.v&quot; &gt; &quot;theory/setoids.v.d&quot; || ( RV=$?; rm -f &quot;theory/setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/products.v&quot; &gt; &quot;theory/products.v.d&quot; || ( RV=$?; rm -f &quot;theory/products.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/shiftl.v&quot; &gt; &quot;theory/shiftl.v.d&quot; || ( RV=$?; rm -f &quot;theory/shiftl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/abs.v&quot; &gt; &quot;theory/abs.v.d&quot; || ( RV=$?; rm -f &quot;theory/abs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/categories.v&quot; &gt; &quot;theory/categories.v.d&quot; || ( RV=$?; rm -f &quot;theory/categories.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/int_to_nat.v&quot; &gt; &quot;theory/int_to_nat.v.d&quot; || ( RV=$?; rm -f &quot;theory/int_to_nat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/strong_setoids.v&quot; &gt; &quot;theory/strong_setoids.v.d&quot; || ( RV=$?; rm -f &quot;theory/strong_setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/lattices.v&quot; &gt; &quot;theory/lattices.v.d&quot; || ( RV=$?; rm -f &quot;theory/lattices.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/int_pow.v&quot; &gt; &quot;theory/int_pow.v.d&quot; || ( RV=$?; rm -f &quot;theory/int_pow.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/dec_fields.v&quot; &gt; &quot;theory/dec_fields.v.d&quot; || ( RV=$?; rm -f &quot;theory/dec_fields.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_transference.v&quot; &gt; &quot;theory/ua_transference.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_transference.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/cut_minus.v&quot; &gt; &quot;theory/cut_minus.v.d&quot; || ( RV=$?; rm -f &quot;theory/cut_minus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ring_congruence.v&quot; &gt; &quot;theory/ring_congruence.v.d&quot; || ( RV=$?; rm -f &quot;theory/ring_congruence.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_subalgebraT.v&quot; &gt; &quot;theory/ua_subalgebraT.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_subalgebraT.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/functors.v&quot; &gt; &quot;theory/functors.v.d&quot; || ( RV=$?; rm -f &quot;theory/functors.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/finite_sets.v&quot; &gt; &quot;theory/finite_sets.v.d&quot; || ( RV=$?; rm -f &quot;theory/finite_sets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/forget_variety.v&quot; &gt; &quot;theory/forget_variety.v.d&quot; || ( RV=$?; rm -f &quot;theory/forget_variety.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/nat_pow.v&quot; &gt; &quot;theory/nat_pow.v.d&quot; || ( RV=$?; rm -f &quot;theory/nat_pow.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/naturals.v&quot; &gt; &quot;theory/naturals.v.d&quot; || ( RV=$?; rm -f &quot;theory/naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/hom_functor.v&quot; &gt; &quot;theory/hom_functor.v.d&quot; || ( RV=$?; rm -f &quot;theory/hom_functor.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;theory/ua_mapped_operations.v&quot; &gt; &quot;theory/ua_mapped_operations.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_mapped_operations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;functors/constant.v&quot; &gt; &quot;functors/constant.v.d&quot; || ( RV=$?; rm -f &quot;functors/constant.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/fast_naturals.v&quot; &gt; &quot;implementations/fast_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/fast_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/ZType_integers.v&quot; &gt; &quot;implementations/ZType_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/ZType_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/positive_semiring_elements.v&quot; &gt; &quot;implementations/positive_semiring_elements.v.d&quot; || ( RV=$?; rm -f &quot;implementations/positive_semiring_elements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/dyadics.v&quot; &gt; &quot;implementations/dyadics.v.d&quot; || ( RV=$?; rm -f &quot;implementations/dyadics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/option.v&quot; &gt; &quot;implementations/option.v.d&quot; || ( RV=$?; rm -f &quot;implementations/option.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/QType_rationals.v&quot; &gt; &quot;implementations/QType_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/QType_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/NType_naturals.v&quot; &gt; &quot;implementations/NType_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/NType_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/peano_naturals.v&quot; &gt; &quot;implementations/peano_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/peano_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/mset_finite_set.v&quot; &gt; &quot;implementations/mset_finite_set.v.d&quot; || ( RV=$?; rm -f &quot;implementations/mset_finite_set.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/fast_rationals.v&quot; &gt; &quot;implementations/fast_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/fast_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/intfrac_rationals.v&quot; &gt; &quot;implementations/intfrac_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/intfrac_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/fast_integers.v&quot; &gt; &quot;implementations/fast_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/fast_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/list_finite_set.v&quot; &gt; &quot;implementations/list_finite_set.v.d&quot; || ( RV=$?; rm -f &quot;implementations/list_finite_set.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/nonzero_field_elements.v&quot; &gt; &quot;implementations/nonzero_field_elements.v.d&quot; || ( RV=$?; rm -f &quot;implementations/nonzero_field_elements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/modular_ring.v&quot; &gt; &quot;implementations/modular_ring.v.d&quot; || ( RV=$?; rm -f &quot;implementations/modular_ring.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/stdlib_rationals.v&quot; &gt; &quot;implementations/stdlib_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/stdlib_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/semiring_pairs.v&quot; &gt; &quot;implementations/semiring_pairs.v.d&quot; || ( RV=$?; rm -f &quot;implementations/semiring_pairs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/stdlib_binary_integers.v&quot; &gt; &quot;implementations/stdlib_binary_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/stdlib_binary_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/list.v&quot; &gt; &quot;implementations/list.v.d&quot; || ( RV=$?; rm -f &quot;implementations/list.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/field_of_fractions.v&quot; &gt; &quot;implementations/field_of_fractions.v.d&quot; || ( RV=$?; rm -f &quot;implementations/field_of_fractions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/polynomials.v&quot; &gt; &quot;implementations/polynomials.v.d&quot; || ( RV=$?; rm -f &quot;implementations/polynomials.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/ne_list.v&quot; &gt; &quot;implementations/ne_list.v.d&quot; || ( RV=$?; rm -f &quot;implementations/ne_list.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/bool.v&quot; &gt; &quot;implementations/bool.v.d&quot; || ( RV=$?; rm -f &quot;implementations/bool.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/stdlib_binary_naturals.v&quot; &gt; &quot;implementations/stdlib_binary_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/stdlib_binary_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/nonneg_integers_naturals.v&quot; &gt; &quot;implementations/nonneg_integers_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/nonneg_integers_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/natpair_integers.v&quot; &gt; &quot;implementations/natpair_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/natpair_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;implementations/nonneg_semiring_elements.v&quot; &gt; &quot;implementations/nonneg_semiring_elements.v.d&quot; || ( RV=$?; rm -f &quot;implementations/nonneg_semiring_elements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/varieties.v&quot; &gt; &quot;categories/varieties.v.d&quot; || ( RV=$?; rm -f &quot;categories/varieties.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/orders.v&quot; &gt; &quot;categories/orders.v.d&quot; || ( RV=$?; rm -f &quot;categories/orders.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/JMcat.v&quot; &gt; &quot;categories/JMcat.v.d&quot; || ( RV=$?; rm -f &quot;categories/JMcat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/algebras.v&quot; &gt; &quot;categories/algebras.v.d&quot; || ( RV=$?; rm -f &quot;categories/algebras.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/setoids.v&quot; &gt; &quot;categories/setoids.v.d&quot; || ( RV=$?; rm -f &quot;categories/setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/categories.v&quot; &gt; &quot;categories/categories.v.d&quot; || ( RV=$?; rm -f &quot;categories/categories.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/unit.v&quot; &gt; &quot;categories/unit.v.d&quot; || ( RV=$?; rm -f &quot;categories/unit.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/empty.v&quot; &gt; &quot;categories/empty.v.d&quot; || ( RV=$?; rm -f &quot;categories/empty.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/functors.v&quot; &gt; &quot;categories/functors.v.d&quot; || ( RV=$?; rm -f &quot;categories/functors.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/dual.v&quot; &gt; &quot;categories/dual.v.d&quot; || ( RV=$?; rm -f &quot;categories/dual.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;categories/product.v&quot; &gt; &quot;categories/product.v.d&quot; || ( RV=$?; rm -f &quot;categories/product.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/setoid_tactics.v&quot; &gt; &quot;misc/setoid_tactics.v.d&quot; || ( RV=$?; rm -f &quot;misc/setoid_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/decision.v&quot; &gt; &quot;misc/decision.v.d&quot; || ( RV=$?; rm -f &quot;misc/decision.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/workaround_tactics.v&quot; &gt; &quot;misc/workaround_tactics.v.d&quot; || ( RV=$?; rm -f &quot;misc/workaround_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/JMrelation.v&quot; &gt; &quot;misc/JMrelation.v.d&quot; || ( RV=$?; rm -f &quot;misc/JMrelation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/stdlib_hints.v&quot; &gt; &quot;misc/stdlib_hints.v.d&quot; || ( RV=$?; rm -f &quot;misc/stdlib_hints.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/workarounds.v&quot; &gt; &quot;misc/workarounds.v.d&quot; || ( RV=$?; rm -f &quot;misc/workarounds.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/util.v&quot; &gt; &quot;misc/util.v.d&quot; || ( RV=$?; rm -f &quot;misc/util.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;misc/propholds.v&quot; &gt; &quot;misc/propholds.v.d&quot; || ( RV=$?; rm -f &quot;misc/propholds.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/rings.v&quot; &gt; &quot;orders/rings.v.d&quot; || ( RV=$?; rm -f &quot;orders/rings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/rationals.v&quot; &gt; &quot;orders/rationals.v.d&quot; || ( RV=$?; rm -f &quot;orders/rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/semirings.v&quot; &gt; &quot;orders/semirings.v.d&quot; || ( RV=$?; rm -f &quot;orders/semirings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/integers.v&quot; &gt; &quot;orders/integers.v.d&quot; || ( RV=$?; rm -f &quot;orders/integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/minmax.v&quot; &gt; &quot;orders/minmax.v.d&quot; || ( RV=$?; rm -f &quot;orders/minmax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/orders.v&quot; &gt; &quot;orders/orders.v.d&quot; || ( RV=$?; rm -f &quot;orders/orders.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/maps.v&quot; &gt; &quot;orders/maps.v.d&quot; || ( RV=$?; rm -f &quot;orders/maps.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/lattices.v&quot; &gt; &quot;orders/lattices.v.d&quot; || ( RV=$?; rm -f &quot;orders/lattices.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/dec_fields.v&quot; &gt; &quot;orders/dec_fields.v.d&quot; || ( RV=$?; rm -f &quot;orders/dec_fields.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/nat_int.v&quot; &gt; &quot;orders/nat_int.v.d&quot; || ( RV=$?; rm -f &quot;orders/nat_int.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;orders/naturals.v&quot; &gt; &quot;orders/naturals.v.d&quot; || ( RV=$?; rm -f &quot;orders/naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;quote/classquote.v&quot; &gt; &quot;quote/classquote.v.d&quot; || ( RV=$?; rm -f &quot;quote/classquote.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/sequences.v&quot; &gt; &quot;interfaces/sequences.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/sequences.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/rationals.v&quot; &gt; &quot;interfaces/rationals.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/ua_basic.v&quot; &gt; &quot;interfaces/ua_basic.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/ua_basic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/canonical_names.v&quot; &gt; &quot;interfaces/canonical_names.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/canonical_names.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/integers.v&quot; &gt; &quot;interfaces/integers.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/orders.v&quot; &gt; &quot;interfaces/orders.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/orders.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/monads.v&quot; &gt; &quot;interfaces/monads.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/monads.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/universal_algebra.v&quot; &gt; &quot;interfaces/universal_algebra.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/universal_algebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/abstract_algebra.v&quot; &gt; &quot;interfaces/abstract_algebra.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/abstract_algebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/vectorspace.v&quot; &gt; &quot;interfaces/vectorspace.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/vectorspace.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/functors.v&quot; &gt; &quot;interfaces/functors.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/functors.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/additional_operations.v&quot; &gt; &quot;interfaces/additional_operations.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/additional_operations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/finite_sets.v&quot; &gt; &quot;interfaces/finite_sets.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/finite_sets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;interfaces/naturals.v&quot; &gt; &quot;interfaces/naturals.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/abgroup.v&quot; &gt; &quot;varieties/abgroup.v.d&quot; || ( RV=$?; rm -f &quot;varieties/abgroup.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/rings.v&quot; &gt; &quot;varieties/rings.v.d&quot; || ( RV=$?; rm -f &quot;varieties/rings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/groups.v&quot; &gt; &quot;varieties/groups.v.d&quot; || ( RV=$?; rm -f &quot;varieties/groups.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/semirings.v&quot; &gt; &quot;varieties/semirings.v.d&quot; || ( RV=$?; rm -f &quot;varieties/semirings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/semigroups.v&quot; &gt; &quot;varieties/semigroups.v.d&quot; || ( RV=$?; rm -f &quot;varieties/semigroups.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/monoids.v&quot; &gt; &quot;varieties/monoids.v.d&quot; || ( RV=$?; rm -f &quot;varieties/monoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/closed_terms.v&quot; &gt; &quot;varieties/closed_terms.v.d&quot; || ( RV=$?; rm -f &quot;varieties/closed_terms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/setoids.v&quot; &gt; &quot;varieties/setoids.v.d&quot; || ( RV=$?; rm -f &quot;varieties/setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/empty.v&quot; &gt; &quot;varieties/empty.v.d&quot; || ( RV=$?; rm -f &quot;varieties/empty.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . MathClasses &quot;varieties/open_terms.v&quot; &gt; &quot;varieties/open_terms.v.d&quot; || ( RV=$?; rm -f &quot;varieties/open_terms.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . MathClasses   misc/stdlib_hints
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/ne_list
+&quot;coqc&quot;  -q  -R . MathClasses   misc/workaround_tactics
+&quot;coqc&quot;  -q  -R . MathClasses   quote/classquote
+&quot;coqc&quot;  -q  -R . MathClasses   misc/JMrelation
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/canonical_names
+&quot;coqc&quot;  -q  -R . MathClasses   misc/util
+&quot;coqc&quot;  -q  -R . MathClasses   misc/propholds
+&quot;coqc&quot;  -q  -R . MathClasses   misc/workarounds
+&quot;coqc&quot;  -q  -R . MathClasses   misc/setoid_tactics
+&quot;coqc&quot;  -q  -R . MathClasses   misc/decision
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/abstract_algebra
+&quot;coqc&quot;  -q  -R . MathClasses   theory/products
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/ua_basic
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/orders
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/additional_operations
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/bool
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/polynomials
+&quot;coqc&quot;  -q  -R . MathClasses   theory/setoids
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/finite_sets
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/vectorspace
+&quot;coqc&quot;  -q  -R . MathClasses   theory/jections
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/functors
+&quot;coqc&quot;  -q  -R . MathClasses   theory/groups
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/monads
+&quot;coqc&quot;  -q  -R . MathClasses   categories/empty
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/universal_algebra
+&quot;coqc&quot;  -q  -R . MathClasses   theory/categories
+&quot;coqc&quot;  -q  -R . MathClasses   theory/strong_setoids
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_homomorphisms
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_mapped_operations
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_term_monad
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_packed
+&quot;coqc&quot;  -q  -R . MathClasses   categories/varieties
+&quot;coqc&quot;  -q  -R . MathClasses   orders/orders
+&quot;coqc&quot;  -q  -R . MathClasses   categories/dual
+&quot;coqc&quot;  -q  -R . MathClasses   categories/functors
+&quot;coqc&quot;  -q  -R . MathClasses   categories/JMcat
+&quot;coqc&quot;  -q  -R . MathClasses   functors/constant
+&quot;coqc&quot;  -q  -R . MathClasses   theory/adjunctions
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_products
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/open_terms
+&quot;coqc&quot;  -q  -R . MathClasses   categories/categories
+&quot;coqc&quot;  -q  -R . MathClasses   categories/setoids
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/setoids
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/closed_terms
+&quot;coqc&quot;  -q  -R . MathClasses   orders/maps
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_transference
+&quot;coqc&quot;  -q  -R . MathClasses   theory/functors
+&quot;coqc&quot;  -q  -R . MathClasses   theory/hom_functor
+&quot;coqc&quot;  -q  -R . MathClasses   categories/orders
+&quot;coqc&quot;  -q  -R . MathClasses   theory/monads
+&quot;coqc&quot;  -q  -R . MathClasses   categories/product
+&quot;coqc&quot;  -q  -R . MathClasses   categories/unit
+&quot;coqc&quot;  -q  -R . MathClasses   categories/algebras
+&quot;coqc&quot;  -q  -R . MathClasses   theory/forget_algebra
+&quot;coqc&quot;  -q  -R . MathClasses   theory/forget_variety
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_subalgebraT
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_congruence
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/monoids
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/semigroups
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/groups
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/abgroup
+&quot;coqc&quot;  -q  -R . MathClasses   theory/lattices
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_subalgebra
+&quot;coqc&quot;  -q  -R . MathClasses   theory/monoid_normalization
+&quot;coqc&quot;  -q  -R . MathClasses   theory/rings
+&quot;coqc&quot;  -q  -R . MathClasses   orders/lattices
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/list
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ring_congruence
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/option
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ua_subvariety
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/empty
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/semirings
+&quot;coqc&quot;  -q  -R . MathClasses   varieties/rings
+&quot;coqc&quot;  -q  -R . MathClasses   theory/fields
+&quot;coqc&quot;  -q  -R . MathClasses   orders/semirings
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/sequences
+&quot;coqc&quot;  -q  -R . MathClasses   orders/minmax
+&quot;coqc&quot;  -q  -R . MathClasses   theory/ring_ideals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/list_finite_set
+&quot;coqc&quot;  -q  -R . MathClasses   theory/quote_monoid
+&quot;coqc&quot;  -q  -R . MathClasses   theory/sequences
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/naturals
+&quot;coqc&quot;  -q  -R . MathClasses   theory/dec_fields
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/nonzero_field_elements
+&quot;coqc&quot;  -q  -R . MathClasses   theory/cut_minus
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/integers
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/peano_naturals
+&quot;coqc&quot;  -q  -R . MathClasses   orders/rings
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/nonneg_semiring_elements
+&quot;coqc&quot;  -q  -R . MathClasses   theory/finite_sets
+&quot;coqc&quot;  -q  -R . MathClasses   theory/streams
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/field_of_fractions
+&quot;coqc&quot;  -q  -R . MathClasses   theory/naturals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/semiring_pairs
+&quot;coqc&quot;  -q  -R . MathClasses   orders/dec_fields
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/stdlib_binary_naturals
+&quot;coqc&quot;  -q  -R . MathClasses   theory/nat_pow
+&quot;coqc&quot;  -q  -R . MathClasses   theory/abs
+&quot;coqc&quot;  -q  -R . MathClasses   orders/nat_int
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/natpair_integers
+&quot;coqc&quot;  -q  -R . MathClasses   orders/naturals
+&quot;coqc&quot;  -q  -R . MathClasses   theory/nat_distance
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/mset_finite_set
+&quot;coqc&quot;  -q  -R . MathClasses   theory/integers
+&quot;coqc&quot;  -q  -R . MathClasses   interfaces/rationals
+&quot;coqc&quot;  -q  -R . MathClasses   theory/int_abs
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/modular_ring
+&quot;coqc&quot;  -q  -R . MathClasses   theory/int_to_nat
+&quot;coqc&quot;  -q  -R . MathClasses   theory/rationals
+&quot;coqc&quot;  -q  -R . MathClasses   orders/integers
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/nonneg_integers_naturals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/intfrac_rationals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/stdlib_binary_integers
+&quot;coqc&quot;  -q  -R . MathClasses   orders/rationals
+&quot;coqc&quot;  -q  -R . MathClasses   theory/shiftl
+&quot;coqc&quot;  -q  -R . MathClasses   theory/int_pow
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/stdlib_rationals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/NType_naturals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/ZType_integers
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/fast_naturals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/fast_integers
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/QType_rationals
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/dyadics
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/positive_semiring_elements
+&quot;coqc&quot;  -q  -R . MathClasses   theory/series
+&quot;coqc&quot;  -q  -R . MathClasses   implementations/fast_rationals
+for i in varieties/open_terms.vo varieties/empty.vo varieties/setoids.vo varieties/closed_terms.vo varieties/monoids.vo varieties/semigroups.vo varieties/semirings.vo varieties/groups.vo varieties/rings.vo varieties/abgroup.vo interfaces/naturals.vo interfaces/finite_sets.vo interfaces/additional_operations.vo interfaces/functors.vo interfaces/vectorspace.vo interfaces/abstract_algebra.vo interfaces/universal_algebra.vo interfaces/monads.vo interfaces/orders.vo interfaces/integers.vo interfaces/canonical_names.vo interfaces/ua_basic.vo interfaces/rationals.vo interfaces/sequences.vo quote/classquote.vo orders/naturals.vo orders/nat_int.vo orders/dec_fields.vo orders/lattices.vo orders/maps.vo orders/orders.vo orders/minmax.vo orders/integers.vo orders/semirings.vo orders/rationals.vo orders/rings.vo misc/propholds.vo misc/util.vo misc/workarounds.vo misc/stdlib_hints.vo misc/JMrelation.vo misc/workaround_tactics.vo misc/decision.vo misc/setoid_tactics.vo categories/product.vo categories/dual.vo categories/functors.vo categories/empty.vo categories/unit.vo categories/categories.vo categories/setoids.vo categories/algebras.vo categories/JMcat.vo categories/orders.vo categories/varieties.vo implementations/nonneg_semiring_elements.vo implementations/natpair_integers.vo implementations/nonneg_integers_naturals.vo implementations/stdlib_binary_naturals.vo implementations/bool.vo implementations/ne_list.vo implementations/polynomials.vo implementations/field_of_fractions.vo implementations/list.vo implementations/stdlib_binary_integers.vo implementations/semiring_pairs.vo implementations/stdlib_rationals.vo implementations/modular_ring.vo implementations/nonzero_field_elements.vo implementations/list_finite_set.vo implementations/fast_integers.vo implementations/intfrac_rationals.vo implementations/fast_rationals.vo implementations/mset_finite_set.vo implementations/peano_naturals.vo implementations/NType_naturals.vo implementations/QType_rationals.vo implementations/option.vo implementations/dyadics.vo implementations/positive_semiring_elements.vo implementations/ZType_integers.vo implementations/fast_naturals.vo functors/constant.vo theory/ua_mapped_operations.vo theory/hom_functor.vo theory/naturals.vo theory/nat_pow.vo theory/forget_variety.vo theory/finite_sets.vo theory/functors.vo theory/ua_subalgebraT.vo theory/ring_congruence.vo theory/cut_minus.vo theory/ua_transference.vo theory/dec_fields.vo theory/int_pow.vo theory/lattices.vo theory/strong_setoids.vo theory/int_to_nat.vo theory/categories.vo theory/abs.vo theory/shiftl.vo theory/products.vo theory/setoids.vo theory/adjunctions.vo theory/nat_distance.vo theory/ua_products.vo theory/ua_term_monad.vo theory/monads.vo theory/streams.vo theory/forget_algebra.vo theory/ua_subvariety.vo theory/integers.vo theory/jections.vo theory/series.vo theory/ua_subalgebra.vo theory/ring_ideals.vo theory/ua_homomorphisms.vo theory/monoid_normalization.vo theory/int_abs.vo theory/ua_packed.vo theory/quote_monoid.vo theory/groups.vo theory/rationals.vo theory/rings.vo theory/sequences.vo theory/ua_congruence.vo theory/fields.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/MathClasses/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/MathClasses/$i; \
+done
+Installing coq:math-classes.1.0.2.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:math-classes.1.0.2</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:math-classes.1.0.2
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:math-classes.1.0.2] 1.0.2.tar.gz is in the local cache, using it.
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:math-classes.1.0.2.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/MathClasses
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

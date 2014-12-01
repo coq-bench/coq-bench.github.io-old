@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:random dev</a></li>
+              <li class="active"><a href="">2014-11-28 21:50:38</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:random
+              <small>
+                dev
+                <span class="label label-success">26 s</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-28 21:50:38 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-28 21:50:38 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:random/coq:contrib:random.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:random.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:random.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:random.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:random.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:random.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:random.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>26 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:random.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:random] Fetching https://gforge.inria.fr/git/coq-contribs/random.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:random.dev/.git/
+[master (root-commit) 3db70b2] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/random
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+Bernoulli.v
+Carac.v
+Choice.v
+IterFlip.v
+LICENSE
+Libwp.v
+Make
+Makefile
+Monads.v
+Nelist.v
+Prelude.v
+Probas.v
+Prog.v
+Sets.v
+Transitions.v
+Ubase.v
+Uprop.v
+Ycart.v
+description
+random.pdf
+HEAD is now at ccc113b Applying &quot;Unset Standard Proposition Elimination Names&quot; for
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:random.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Prelude.v&quot; &gt; &quot;Prelude.v.d&quot; || ( RV=$?; rm -f &quot;Prelude.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Ubase.v&quot; &gt; &quot;Ubase.v.d&quot; || ( RV=$?; rm -f &quot;Ubase.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Uprop.v&quot; &gt; &quot;Uprop.v.d&quot; || ( RV=$?; rm -f &quot;Uprop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Monads.v&quot; &gt; &quot;Monads.v.d&quot; || ( RV=$?; rm -f &quot;Monads.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Probas.v&quot; &gt; &quot;Probas.v.d&quot; || ( RV=$?; rm -f &quot;Probas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Prog.v&quot; &gt; &quot;Prog.v.d&quot; || ( RV=$?; rm -f &quot;Prog.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;IterFlip.v&quot; &gt; &quot;IterFlip.v.d&quot; || ( RV=$?; rm -f &quot;IterFlip.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Choice.v&quot; &gt; &quot;Choice.v.d&quot; || ( RV=$?; rm -f &quot;Choice.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Nelist.v&quot; &gt; &quot;Nelist.v.d&quot; || ( RV=$?; rm -f &quot;Nelist.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Sets.v&quot; &gt; &quot;Sets.v.d&quot; || ( RV=$?; rm -f &quot;Sets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Carac.v&quot; &gt; &quot;Carac.v.d&quot; || ( RV=$?; rm -f &quot;Carac.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Bernoulli.v&quot; &gt; &quot;Bernoulli.v.d&quot; || ( RV=$?; rm -f &quot;Bernoulli.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Ycart.v&quot; &gt; &quot;Ycart.v.d&quot; || ( RV=$?; rm -f &quot;Ycart.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Random &quot;Transitions.v&quot; &gt; &quot;Transitions.v.d&quot; || ( RV=$?; rm -f &quot;Transitions.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Prelude
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Nelist
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Sets
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Ubase
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Uprop
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Monads
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Probas
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Prog
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Transitions
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Carac
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Bernoulli
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Choice
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   IterFlip
+&quot;coqc&quot;  -q  -R &quot;.&quot; Random   Ycart
+cd &quot;.&quot; &amp;&amp; for i in Transitions.vo Ycart.vo Bernoulli.vo Carac.vo Sets.vo Nelist.vo Choice.vo IterFlip.vo Prog.vo Probas.vo Monads.vo Uprop.vo Ubase.vo Prelude.vo   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Random/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Random/$i; \
+done
+Installing coq:contrib:random.dev.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:random.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:random.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:random] Fetching https://gforge.inria.fr/git/coq-contribs/random.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:random.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Random
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:coinductive-reals 8.4.dev</a></li>
+              <li class="active"><a href="">2014-11-29 23:17:27</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:coinductive-reals
+              <small>
+                8.4.dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <em><script>document.write(moment("2014-11-29 23:17:27 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-11-29 23:17:27 UTC)</em>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:coinductive-reals/coq:contrib:coinductive-reals.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:coinductive-reals.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:coinductive-reals.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:coinductive-reals.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:coinductive-reals.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:coinductive-reals.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:coinductive-reals.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:coinductive-reals.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:coinductive-reals] Fetching https://gforge.inria.fr/git/coq-contribs/coinductive-reals.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:coinductive-reals.8.4.dev/.git/
+[master (root-commit) 6669828] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/coinductive-reals
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Bounded_M.v
+Bounded_T.v
+Cauchy_stream.v
+Fourier_solvable_ineqs.v
+Incl_M.v
+Incl_T.v
+LICENSE
+LNP_Digit.v
+Make
+Makefile
+README
+Refining_M.v
+Refining_T.v
+Streams_addenda.v
+bench.log
+description
+digits.v
+hcorrectness.v
+homographic.v
+lb.v
+productivity_M.v
+productivity_T.v
+qcorrectness.v
+quadratic.v
+rep.v
+ub.v
+HEAD is now at 0f37d4a Adaptation of contributions to new policy for automatic introduction (continued)
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:coinductive-reals.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Warning: in option -R, ../QArithSternBrocot is not a subdirectory of the current directory
+Warning: install rule assumes that -R . _ is the only -R optionWarning: -R options don't have a correct common prefix,
+ install-doc will put anything in $INSTALLDEFAULTROOT
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;qcorrectness.v&quot; &gt; &quot;qcorrectness.v.d&quot; || ( RV=$?; rm -f &quot;qcorrectness.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Streams_addenda.v&quot; &gt; &quot;Streams_addenda.v.d&quot; || ( RV=$?; rm -f &quot;Streams_addenda.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;productivity_M.v&quot; &gt; &quot;productivity_M.v.d&quot; || ( RV=$?; rm -f &quot;productivity_M.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;lb.v&quot; &gt; &quot;lb.v.d&quot; || ( RV=$?; rm -f &quot;lb.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Refining_M.v&quot; &gt; &quot;Refining_M.v.d&quot; || ( RV=$?; rm -f &quot;Refining_M.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;quadratic.v&quot; &gt; &quot;quadratic.v.d&quot; || ( RV=$?; rm -f &quot;quadratic.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Cauchy_stream.v&quot; &gt; &quot;Cauchy_stream.v.d&quot; || ( RV=$?; rm -f &quot;Cauchy_stream.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Incl_T.v&quot; &gt; &quot;Incl_T.v.d&quot; || ( RV=$?; rm -f &quot;Incl_T.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Incl_M.v&quot; &gt; &quot;Incl_M.v.d&quot; || ( RV=$?; rm -f &quot;Incl_M.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Fourier_solvable_ineqs.v&quot; &gt; &quot;Fourier_solvable_ineqs.v.d&quot; || ( RV=$?; rm -f &quot;Fourier_solvable_ineqs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Bounded_T.v&quot; &gt; &quot;Bounded_T.v.d&quot; || ( RV=$?; rm -f &quot;Bounded_T.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;rep.v&quot; &gt; &quot;rep.v.d&quot; || ( RV=$?; rm -f &quot;rep.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Refining_T.v&quot; &gt; &quot;Refining_T.v.d&quot; || ( RV=$?; rm -f &quot;Refining_T.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;productivity_T.v&quot; &gt; &quot;productivity_T.v.d&quot; || ( RV=$?; rm -f &quot;productivity_T.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;digits.v&quot; &gt; &quot;digits.v.d&quot; || ( RV=$?; rm -f &quot;digits.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;hcorrectness.v&quot; &gt; &quot;hcorrectness.v.d&quot; || ( RV=$?; rm -f &quot;hcorrectness.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;ub.v&quot; &gt; &quot;ub.v.d&quot; || ( RV=$?; rm -f &quot;ub.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;Bounded_M.v&quot; &gt; &quot;Bounded_M.v.d&quot; || ( RV=$?; rm -f &quot;Bounded_M.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;LNP_Digit.v&quot; &gt; &quot;LNP_Digit.v.d&quot; || ( RV=$?; rm -f &quot;LNP_Digit.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals &quot;homographic.v&quot; &gt; &quot;homographic.v.d&quot; || ( RV=$?; rm -f &quot;homographic.v.d&quot;; exit ${RV} )
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+&quot;coqc&quot;  -q  -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals   homographic
+&quot;coqc&quot;  -q  -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals   LNP_Digit
+&quot;coqc&quot;  -q  -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals   Bounded_M
+&quot;coqc&quot;  -q  -R ../QArithSternBrocot QArithSternBrocot -R . CoinductiveReals   ub
+Warning: Cannot open ../QArithSternBrocot
+Warning: Cannot open ../QArithSternBrocot
+Warning: Cannot open ../QArithSternBrocot
+Warning: Cannot open ../QArithSternBrocot
+File &quot;/home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/Bounded_M.v&quot;, line 9, characters 0-22:
+Error: Cannot find library digits in loadpath
+File &quot;/home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/ub.v&quot;, line 9, characters 0-22:
+Error: Cannot find library digits in loadpath
+File &quot;/home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/homographic.v&quot;, line 22, characters 0-22:
+Error: Cannot find library digits in loadpath
+Makefile:219: recipe for target 'homographic.vo' failed
+make: *** [homographic.vo] Error 1
+make: *** Waiting for unfinished jobs....
+Makefile:219: recipe for target 'Bounded_M.vo' failed
+make: *** [Bounded_M.vo] Error 1
+Makefile:219: recipe for target 'ub.vo' failed
+make: *** [ub.vo] Error 1
+File &quot;/home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/LNP_Digit.v&quot;, line 10, characters 0-22:
+Error: Cannot find library digits in loadpath
+Makefile:219: recipe for target 'LNP_Digit.vo' failed
+make: *** [LNP_Digit.vo] Error 1
+[ERROR] The compilation of coq:contrib:coinductive-reals.8.4.dev failed.
+Removing coq:contrib:coinductive-reals.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/coinductive-reals
+rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/coinductive-reals': No such file or directory
+#=== ERROR while installing coq:contrib:coinductive-reals.8.4.dev =============#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev
+# compiler             system (4.02.1)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/coq:contrib:coinductive-reals-31154-d2c37b.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/coq:contrib:coinductive-reals-31154-d2c37b.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/coq:contrib:coinductive-reals-31154-d2c37b.err
+### stdout ###
+# ...[truncated]
+# File &quot;/home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/ub.v&quot;, line 9, characters 0-22:
+# Error: Cannot find library digits in loadpath
+# File &quot;/home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/homographic.v&quot;, line 22, characters 0-22:
+# Error: Cannot find library digits in loadpath
+# Makefile:219: recipe for target 'homographic.vo' failed
+# Makefile:219: recipe for target 'Bounded_M.vo' failed
+# Makefile:219: recipe for target 'ub.vo' failed
+# File &quot;/home/bench/.opam/system/build/coq:contrib:coinductive-reals.8.4.dev/LNP_Digit.v&quot;, line 10, characters 0-22:
+# Error: Cannot find library digits in loadpath
+# Makefile:219: recipe for target 'LNP_Digit.vo' failed
+### stderr ###
+# ...[truncated]
+# coqdep: &quot;opendir&quot; failed on &quot;../QArithSternBrocot&quot;: No such file or directory
+# Warning: Cannot open ../QArithSternBrocot
+# Warning: Cannot open ../QArithSternBrocot
+# Warning: Cannot open ../QArithSternBrocot
+# Warning: Cannot open ../QArithSternBrocot
+# make: *** [homographic.vo] Error 1
+# make: *** Waiting for unfinished jobs....
+# make: *** [Bounded_M.vo] Error 1
+# make: *** [ub.vo] Error 1
+# make: *** [LNP_Digit.vo] Error 1
+'opam install -y --verbose coq:contrib:coinductive-reals.8.4.dev' failed.
+</pre></dd>
+            </dl>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
