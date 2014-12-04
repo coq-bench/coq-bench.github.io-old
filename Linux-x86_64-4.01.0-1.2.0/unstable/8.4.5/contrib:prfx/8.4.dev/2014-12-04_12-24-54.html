@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:prfx 8.4.dev</a></li>
+              <li class="active"><a href="">2014-12-04 12:24:54</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:prfx
+              <small>
+                8.4.dev
+                <span class="label label-success">14 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-04 12:24:54 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-04 12:24:54 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:prfx/coq:contrib:prfx.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:prfx.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:prfx.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:prfx.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:prfx.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:prfx.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:prfx.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>14 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:prfx.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:prfx] Fetching https://gforge.inria.fr/git/coq-contribs/prfx.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:prfx.8.4.dev/.git/
+[master (root-commit) 21ce26e] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/prfx
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Make
+Makefile
+ND.v
+ND_contr.v
+ND_exch.v
+ND_lift_lems.v
+ND_sound.v
+ND_subst_lems.v
+ND_unique_types.v
+README
+bench.log
+check.v
+check_sound.v
+contr.v
+description
+eval.v
+eval_lift_lems.v
+eval_subst_lems.v
+exch.v
+indices.v
+inv_lems.v
+lift.v
+lift_lems.v
+list.v
+nat_eqb.v
+objects.v
+prfx.v
+prfx_tree.dot
+red.v
+subj_red.v
+subst.v
+subst_lems.v
+thesis.bib
+thesis.pdf
+thesis.ps
+HEAD is now at 888620e avoid Reset in compiled scripts
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:prfx.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;ND.v&quot; &gt; &quot;ND.v.d&quot; || ( RV=$?; rm -f &quot;ND.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;ND_contr.v&quot; &gt; &quot;ND_contr.v.d&quot; || ( RV=$?; rm -f &quot;ND_contr.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;ND_exch.v&quot; &gt; &quot;ND_exch.v.d&quot; || ( RV=$?; rm -f &quot;ND_exch.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;ND_lift_lems.v&quot; &gt; &quot;ND_lift_lems.v.d&quot; || ( RV=$?; rm -f &quot;ND_lift_lems.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;ND_sound.v&quot; &gt; &quot;ND_sound.v.d&quot; || ( RV=$?; rm -f &quot;ND_sound.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;ND_subst_lems.v&quot; &gt; &quot;ND_subst_lems.v.d&quot; || ( RV=$?; rm -f &quot;ND_subst_lems.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;ND_unique_types.v&quot; &gt; &quot;ND_unique_types.v.d&quot; || ( RV=$?; rm -f &quot;ND_unique_types.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;check.v&quot; &gt; &quot;check.v.d&quot; || ( RV=$?; rm -f &quot;check.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;check_sound.v&quot; &gt; &quot;check_sound.v.d&quot; || ( RV=$?; rm -f &quot;check_sound.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;contr.v&quot; &gt; &quot;contr.v.d&quot; || ( RV=$?; rm -f &quot;contr.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;eval.v&quot; &gt; &quot;eval.v.d&quot; || ( RV=$?; rm -f &quot;eval.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;eval_lift_lems.v&quot; &gt; &quot;eval_lift_lems.v.d&quot; || ( RV=$?; rm -f &quot;eval_lift_lems.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;eval_subst_lems.v&quot; &gt; &quot;eval_subst_lems.v.d&quot; || ( RV=$?; rm -f &quot;eval_subst_lems.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;exch.v&quot; &gt; &quot;exch.v.d&quot; || ( RV=$?; rm -f &quot;exch.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;indices.v&quot; &gt; &quot;indices.v.d&quot; || ( RV=$?; rm -f &quot;indices.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;inv_lems.v&quot; &gt; &quot;inv_lems.v.d&quot; || ( RV=$?; rm -f &quot;inv_lems.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;lift.v&quot; &gt; &quot;lift.v.d&quot; || ( RV=$?; rm -f &quot;lift.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;lift_lems.v&quot; &gt; &quot;lift_lems.v.d&quot; || ( RV=$?; rm -f &quot;lift_lems.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;list.v&quot; &gt; &quot;list.v.d&quot; || ( RV=$?; rm -f &quot;list.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;nat_eqb.v&quot; &gt; &quot;nat_eqb.v.d&quot; || ( RV=$?; rm -f &quot;nat_eqb.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;objects.v&quot; &gt; &quot;objects.v.d&quot; || ( RV=$?; rm -f &quot;objects.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;prfx.v&quot; &gt; &quot;prfx.v.d&quot; || ( RV=$?; rm -f &quot;prfx.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;red.v&quot; &gt; &quot;red.v.d&quot; || ( RV=$?; rm -f &quot;red.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;subj_red.v&quot; &gt; &quot;subj_red.v.d&quot; || ( RV=$?; rm -f &quot;subj_red.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;subst.v&quot; &gt; &quot;subst.v.d&quot; || ( RV=$?; rm -f &quot;subst.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Prfx &quot;subst_lems.v&quot; &gt; &quot;subst_lems.v.d&quot; || ( RV=$?; rm -f &quot;subst_lems.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . Prfx   nat_eqb
+&quot;coqc&quot;  -q  -R . Prfx   list
+&quot;coqc&quot;  -q  -R . Prfx   indices
+&quot;coqc&quot;  -q  -R . Prfx   objects
+&quot;coqc&quot;  -q  -R . Prfx   lift
+&quot;coqc&quot;  -q  -R . Prfx   eval
+&quot;coqc&quot;  -q  -R . Prfx   contr
+&quot;coqc&quot;  -q  -R . Prfx   exch
+&quot;coqc&quot;  -q  -R . Prfx   subst
+&quot;coqc&quot;  -q  -R . Prfx   eval_lift_lems
+&quot;coqc&quot;  -q  -R . Prfx   lift_lems
+&quot;coqc&quot;  -q  -R . Prfx   red
+&quot;coqc&quot;  -q  -R . Prfx   ND
+&quot;coqc&quot;  -q  -R . Prfx   check
+&quot;coqc&quot;  -q  -R . Prfx   eval_subst_lems
+&quot;coqc&quot;  -q  -R . Prfx   subst_lems
+&quot;coqc&quot;  -q  -R . Prfx   inv_lems
+&quot;coqc&quot;  -q  -R . Prfx   check_sound
+&quot;coqc&quot;  -q  -R . Prfx   ND_sound
+&quot;coqc&quot;  -q  -R . Prfx   ND_unique_types
+&quot;coqc&quot;  -q  -R . Prfx   ND_lift_lems
+&quot;coqc&quot;  -q  -R . Prfx   ND_contr
+&quot;coqc&quot;  -q  -R . Prfx   ND_subst_lems
+&quot;coqc&quot;  -q  -R . Prfx   subj_red
+&quot;coqc&quot;  -q  -R . Prfx   ND_exch
+&quot;coqc&quot;  -q  -R . Prfx   prfx
+for i in subst_lems.vo subst.vo subj_red.vo red.vo prfx.vo objects.vo nat_eqb.vo list.vo lift_lems.vo lift.vo inv_lems.vo indices.vo exch.vo eval_subst_lems.vo eval_lift_lems.vo eval.vo contr.vo check_sound.vo check.vo ND_unique_types.vo ND_subst_lems.vo ND_sound.vo ND_lift_lems.vo ND_exch.vo ND_contr.vo ND.vo; do \
+	 install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Prfx/$i`; \
+	 install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Prfx/$i; \
+	done
+Installing coq:contrib:prfx.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 976 K</p>
+            <ul>
+              <li>149 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/inv_lems.vo</code></li>
+              <li>75 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/red.vo</code></li>
+              <li>61 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/check_sound.vo</code></li>
+              <li>58 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/objects.vo</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/ND.vo</code></li>
+              <li>51 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/subj_red.vo</code></li>
+              <li>48 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/ND_subst_lems.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/lift_lems.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/subst_lems.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/eval_lift_lems.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/ND_lift_lems.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/indices.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/list.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/ND_exch.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/ND_contr.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/eval_subst_lems.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/eval.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/check.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/subst.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/lift.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/ND_sound.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/exch.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/ND_unique_types.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/contr.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/prfx.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Prfx/nat_eqb.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:prfx/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:prfx.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:prfx.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:prfx.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:prfx] Fetching https://gforge.inria.fr/git/coq-contribs/prfx.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:prfx.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Prfx
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

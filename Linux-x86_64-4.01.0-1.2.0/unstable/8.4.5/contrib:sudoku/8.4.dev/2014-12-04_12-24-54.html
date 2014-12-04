@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:sudoku 8.4.dev</a></li>
+              <li class="active"><a href="">2014-12-04 12:24:54</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:sudoku
+              <small>
+                8.4.dev
+                <span class="label label-success">41 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-04 12:24:54 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-04 12:24:54 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:sudoku/coq:contrib:sudoku.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:sudoku.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:sudoku.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:sudoku.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:sudoku.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:sudoku.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:sudoku.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>41 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:sudoku.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:sudoku] Fetching https://gforge.inria.fr/git/coq-contribs/sudoku.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:sudoku.8.4.dev/.git/
+[master (root-commit) 0863bee] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/sudoku
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Div.v
+LICENSE
+ListAux.v
+ListOp.v
+Make
+Makefile
+Note.pdf
+OrderedList.v
+Permutation.v
+README
+Sudoku.v
+Tactic.v
+Test.v
+UList.v
+bench.log
+description
+HEAD is now at 71a653c Removing useless calls to injection.
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:sudoku.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;Div.v&quot; &gt; &quot;Div.v.d&quot; || ( RV=$?; rm -f &quot;Div.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;ListAux.v&quot; &gt; &quot;ListAux.v.d&quot; || ( RV=$?; rm -f &quot;ListAux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;ListOp.v&quot; &gt; &quot;ListOp.v.d&quot; || ( RV=$?; rm -f &quot;ListOp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;OrderedList.v&quot; &gt; &quot;OrderedList.v.d&quot; || ( RV=$?; rm -f &quot;OrderedList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;Permutation.v&quot; &gt; &quot;Permutation.v.d&quot; || ( RV=$?; rm -f &quot;Permutation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;Sudoku.v&quot; &gt; &quot;Sudoku.v.d&quot; || ( RV=$?; rm -f &quot;Sudoku.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;Tactic.v&quot; &gt; &quot;Tactic.v.d&quot; || ( RV=$?; rm -f &quot;Tactic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;Test.v&quot; &gt; &quot;Test.v.d&quot; || ( RV=$?; rm -f &quot;Test.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Sudoku &quot;UList.v&quot; &gt; &quot;UList.v.d&quot; || ( RV=$?; rm -f &quot;UList.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . Sudoku   Tactic
+&quot;coqc&quot;  -q  -R . Sudoku   ListAux
+&quot;coqc&quot;  -q  -R . Sudoku   Div
+&quot;coqc&quot;  -q  -R . Sudoku   Permutation
+&quot;coqc&quot;  -q  -R . Sudoku   UList
+&quot;coqc&quot;  -q  -R . Sudoku   OrderedList
+&quot;coqc&quot;  -q  -R . Sudoku   ListOp
+&quot;coqc&quot;  -q  -R . Sudoku   Sudoku
+&quot;coqc&quot;  -q  -R . Sudoku   Test
+     = 288
+     : nat
+     = 2 :: 5 :: 8 :: 1 :: 6 :: 4 :: 9 :: 7 :: 3 :: nil
+     : list nat
+     = 6 :: 3 :: 4 :: 9 :: 5 :: 7 :: 2 :: 1 :: 8 :: nil
+     : list nat
+     = 9 :: 7 :: 1 :: 2 :: 3 :: 8 :: 6 :: 4 :: 5 :: nil
+     : list nat
+     = 7 :: 4 :: 5 :: 3 :: 9 :: 1 :: 8 :: 2 :: 6 :: nil
+     : list nat
+     = 8 :: 9 :: 6 :: 4 :: 2 :: 5 :: 1 :: 3 :: 7 :: nil
+     : list nat
+     = 1 :: 2 :: 3 :: 7 :: 8 :: 6 :: 4 :: 5 :: 9 :: nil
+     : list nat
+     = 3 :: 6 :: 9 :: 5 :: 1 :: 2 :: 7 :: 8 :: 4 :: nil
+     : list nat
+     = 4 :: 8 :: 2 :: 6 :: 7 :: 3 :: 5 :: 9 :: 1 :: nil
+     : list nat
+     = 5 :: 1 :: 7 :: 8 :: 4 :: 9 :: 3 :: 6 :: 2 :: nil
+     : list nat
+     = 1
+     : nat
+     = 4 :: 5 :: 6 :: 9 :: 8 :: 7 :: 2 :: 1 :: 3 :: nil
+     : list nat
+     = 8 :: 3 :: 9 :: 2 :: 1 :: 5 :: 7 :: 6 :: 4 :: nil
+     : list nat
+     = 1 :: 2 :: 7 :: 6 :: 4 :: 3 :: 8 :: 5 :: 9 :: nil
+     : list nat
+     = 7 :: 4 :: 2 :: 3 :: 6 :: 9 :: 5 :: 8 :: 1 :: nil
+     : list nat
+     = 5 :: 6 :: 3 :: 8 :: 2 :: 1 :: 4 :: 9 :: 7 :: nil
+     : list nat
+     = 9 :: 8 :: 1 :: 7 :: 5 :: 4 :: 6 :: 3 :: 2 :: nil
+     : list nat
+     = 2 :: 7 :: 8 :: 1 :: 3 :: 6 :: 9 :: 4 :: 5 :: nil
+     : list nat
+     = 6 :: 1 :: 5 :: 4 :: 9 :: 2 :: 3 :: 7 :: 8 :: nil
+     : list nat
+     = 3 :: 9 :: 4 :: 5 :: 7 :: 8 :: 1 :: 2 :: 6 :: nil
+     : list nat
+     = 1 :: 2 :: 3 :: 4 :: 5 :: 6 :: 7 :: 8 :: 9 :: nil
+     : list nat
+     = 7 :: 8 :: 9 :: 1 :: 2 :: 3 :: 4 :: 5 :: 6 :: nil
+     : list nat
+     = 4 :: 5 :: 6 :: 9 :: 7 :: 8 :: 1 :: 2 :: 3 :: nil
+     : list nat
+     = 9 :: 1 :: 2 :: 8 :: 6 :: 5 :: 3 :: 4 :: 7 :: nil
+     : list nat
+     = 8 :: 3 :: 4 :: 7 :: 1 :: 2 :: 9 :: 6 :: 5 :: nil
+     : list nat
+     = 5 :: 6 :: 7 :: 3 :: 4 :: 9 :: 8 :: 1 :: 2 :: nil
+     : list nat
+     = 2 :: 9 :: 1 :: 5 :: 3 :: 4 :: 6 :: 7 :: 8 :: nil
+     : list nat
+     = 3 :: 7 :: 5 :: 6 :: 8 :: 1 :: 2 :: 9 :: 4 :: nil
+     : list nat
+     = 6 :: 4 :: 8 :: 2 :: 9 :: 7 :: 5 :: 3 :: 1 :: nil
+     : list nat
+     = Some (1 :: nil)
+     : option (list nat)
+     = Some (1 :: 2 :: 2 :: 1 :: nil)
+     : option (list nat)
+     = Some
+         (1
+          :: 2
+             :: 3
+                :: 4
+                   :: 3
+                      :: 4
+                         :: 1
+                            :: 2
+                               :: 2 :: 1 :: 4 :: 3 :: 4 :: 3 :: 2 :: 1 :: nil)
+     : option (list nat)
+     = Some
+         (1
+          :: 2
+             :: 3
+                :: 4
+                   :: 5
+                      :: 6
+                         :: 5
+                            :: 6
+                               :: 1
+                                  :: 2
+                                     :: 3
+                                        :: 4
+                                           :: 3
+                                              :: 4
+                                                 :: 
+                                                 5
+                                                 :: 
+                                                 6
+                                                 :: 
+                                                 1
+                                                 :: 
+                                                 2
+                                                 :: 
+                                                 2
+                                                 :: 
+                                                 1
+                                                 :: 
+                                                 4
+                                                 :: 
+                                                 3
+                                                 :: 
+                                                 6
+                                                 :: 
+                                                 5
+                                                 :: 
+                                                 6
+                                                 :: 
+                                                 5
+                                                 :: 
+                                                 2
+                                                 :: 
+                                                 1
+                                                 :: 
+                                                 4
+                                                 :: 
+                                                 3
+                                                 :: 
+                                                 4
+                                                 :: 
+                                                 3 :: 
+                                                 6 :: 5 :: 2 :: 1 :: nil)
+     : option (list nat)
+     = Some
+         (1
+          :: 2
+             :: 3
+                :: 4
+                   :: 5
+                      :: 6
+                         :: 7
+                            :: 8
+                               :: 9
+                                  :: 7
+                                     :: 8
+                                        :: 9
+                                           :: 1
+                                              :: 2
+                                                 :: 
+                                                 3
+                                                 :: 
+                                                 4
+                                                 :: 
+                                                 5
+                                                 :: 
+                                                 6
+                                                 :: 
+                                                 4
+                                                 :: 
+                                                 5
+                                                 :: 
+                                                 6
+                                                 :: 
+                                                 9
+                                                 :: 
+                                                 7
+                                                 :: 
+                                                 8
+                                                 :: 
+                                                 1
+                                                 :: 
+                                                 2
+                                                 :: 
+                                                 3
+                                                 :: 
+                                                 9
+                                                 :: 
+                                                 1
+                                                 :: 
+                                                 2
+                                                 :: 
+                                                 8
+                                                 :: 
+                                                 6
+                                                 :: 
+                                                 5
+                                                 :: 
+                                                 3
+                                                 :: 
+                                                 4
+                                                 :: 
+                                                 7
+                                                 :: 
+                                                 8
+                                                 :: 
+                                                 3
+                                                 :: 
+                                                 4
+                                                 :: 
+                                                 7
+                                                 :: 
+                                                 1
+                                                 :: 
+                                                 2 :: 
+                                                 9 :: 6 :: 5 :: 5 :: ..)
+     : option (list nat)
+Finished transaction in 2. secs (1.808902u,0.003986s)
+     = 7 :: 2 :: 4 :: 9 :: 6 :: 5 :: 8 :: 3 :: 1 :: nil
+     : list nat
+     = 6 :: 3 :: 5 :: 1 :: 4 :: 8 :: 9 :: 2 :: 7 :: nil
+     : list nat
+     = 1 :: 8 :: 9 :: 2 :: 7 :: 3 :: 4 :: 5 :: 6 :: nil
+     : list nat
+     = 2 :: 6 :: 1 :: 4 :: 8 :: 9 :: 3 :: 7 :: 5 :: nil
+     : list nat
+     = 9 :: 5 :: 8 :: 6 :: 3 :: 7 :: 1 :: 4 :: 2 :: nil
+     : list nat
+     = 3 :: 4 :: 7 :: 5 :: 2 :: 1 :: 6 :: 9 :: 8 :: nil
+     : list nat
+     = 5 :: 7 :: 6 :: 3 :: 1 :: 4 :: 2 :: 8 :: 9 :: nil
+     : list nat
+     = 4 :: 9 :: 2 :: 8 :: 5 :: 6 :: 7 :: 1 :: 3 :: nil
+     : list nat
+     = 8 :: 1 :: 3 :: 7 :: 9 :: 2 :: 5 :: 6 :: 4 :: nil
+     : list nat
+     = 25
+     : nat
+Finished transaction in 6. secs (6.261436u,0.s)
+Finished transaction in 3. secs (3.299624u,0.s)
+     = 5 :: 8 :: 6 :: 2 :: 3 :: 7 :: 9 :: 1 :: 4 :: nil
+     : list nat
+     = 7 :: 4 :: 2 :: 8 :: 1 :: 9 :: 3 :: 5 :: 6 :: nil
+     : list nat
+     = 1 :: 9 :: 3 :: 4 :: 6 :: 5 :: 7 :: 8 :: 2 :: nil
+     : list nat
+     = 6 :: 5 :: 7 :: 9 :: 8 :: 1 :: 2 :: 4 :: 3 :: nil
+     : list nat
+     = 9 :: 1 :: 4 :: 7 :: 2 :: 3 :: 5 :: 6 :: 8 :: nil
+     : list nat
+     = 2 :: 3 :: 8 :: 5 :: 4 :: 6 :: 1 :: 7 :: 9 :: nil
+     : list nat
+     = 3 :: 6 :: 5 :: 1 :: 9 :: 8 :: 4 :: 2 :: 7 :: nil
+     : list nat
+     = 4 :: 7 :: 9 :: 6 :: 5 :: 2 :: 8 :: 3 :: 1 :: nil
+     : list nat
+     = 8 :: 2 :: 1 :: 3 :: 7 :: 4 :: 6 :: 9 :: 5 :: nil
+     : list nat
+     = 1
+     : nat
+Finished transaction in 3. secs (3.332684u,0.s)
+for i in UList.vo Test.vo Tactic.vo Sudoku.vo Permutation.vo OrderedList.vo ListOp.vo ListAux.vo Div.vo; do \
+	 install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Sudoku/$i`; \
+	 install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Sudoku/$i; \
+	done
+Installing coq:contrib:sudoku.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 963 K</p>
+            <ul>
+              <li>413 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/Sudoku.vo</code></li>
+              <li>167 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/Permutation.vo</code></li>
+              <li>111 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/OrderedList.vo</code></li>
+              <li>87 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/ListAux.vo</code></li>
+              <li>69 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/UList.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/ListOp.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/Test.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/Div.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Sudoku/Tactic.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:sudoku/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:sudoku.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:sudoku.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:sudoku.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:sudoku] Fetching https://gforge.inria.fr/git/coq-contribs/sudoku.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:sudoku.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Sudoku
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
