@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:firing-squad dev</a></li>
+              <li class="active"><a href="">2014-12-04 06:17:00</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:firing-squad
+              <small>
+                dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-04 06:17:00 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-04 06:17:00 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:firing-squad/coq:contrib:firing-squad.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:firing-squad.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:firing-squad.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:firing-squad.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:firing-squad.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:firing-squad.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:firing-squad.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>16 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:firing-squad.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:firing-squad] Fetching https://gforge.inria.fr/git/coq-contribs/firing-squad.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:firing-squad.dev/.git/
+[master (root-commit) 5009aad] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/firing-squad
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.cvsignore
+LICENSE
+Make
+Makefile
+README
+algo.v
+autom.v
+basic.v
+bib.v
+bord.v
+constr.v
+description
+double_diag.v
+extract.v
+final.v
+fire.ml
+geom.v
+nmax.ml
+reflection.v
+sommet.v
+trapeze.v
+vertical.v
+HEAD is now at f1c4371 FiringSquad : update extraction test (no more Extraction Library)
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:firing-squad.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;autom.v&quot; &gt; &quot;autom.v.d&quot; || ( RV=$?; rm -f &quot;autom.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;basic.v&quot; &gt; &quot;basic.v.d&quot; || ( RV=$?; rm -f &quot;basic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;bib.v&quot; &gt; &quot;bib.v.d&quot; || ( RV=$?; rm -f &quot;bib.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;bord.v&quot; &gt; &quot;bord.v.d&quot; || ( RV=$?; rm -f &quot;bord.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;constr.v&quot; &gt; &quot;constr.v.d&quot; || ( RV=$?; rm -f &quot;constr.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;double_diag.v&quot; &gt; &quot;double_diag.v.d&quot; || ( RV=$?; rm -f &quot;double_diag.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;final.v&quot; &gt; &quot;final.v.d&quot; || ( RV=$?; rm -f &quot;final.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;geom.v&quot; &gt; &quot;geom.v.d&quot; || ( RV=$?; rm -f &quot;geom.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;reflection.v&quot; &gt; &quot;reflection.v.d&quot; || ( RV=$?; rm -f &quot;reflection.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;sommet.v&quot; &gt; &quot;sommet.v.d&quot; || ( RV=$?; rm -f &quot;sommet.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;trapeze.v&quot; &gt; &quot;trapeze.v.d&quot; || ( RV=$?; rm -f &quot;trapeze.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;vertical.v&quot; &gt; &quot;vertical.v.d&quot; || ( RV=$?; rm -f &quot;vertical.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; FiringSquad &quot;algo.v&quot; &gt; &quot;algo.v.d&quot; || ( RV=$?; rm -f &quot;algo.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   bib
+Debug: (* info auto : *)
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   autom
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   geom
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   constr
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   basic
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   reflection
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   bord
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   double_diag
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   vertical
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   trapeze
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   sommet
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   final
+&quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   algo
+coqtop -q  -R &quot;.&quot; FiringSquad   -silent -batch -load-vernac-source extract.v
+coqtop -q  -R &quot;.&quot; FiringSquad   -silent -batch -load-vernac-source extract.v
+/usr/local/bin/ocamlopt -o fire unix.cmxa graphics.cmxa extracted.mli extracted.ml fire.ml
+File &quot;fire.ml&quot;, line 65, characters 5-13:
+Error: Unbound module Graphics
+make: *** [fire] Error 2
+[ERROR] The compilation of coq:contrib:firing-squad.dev failed.
+Removing coq:contrib:firing-squad.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/firing-squad
+rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/firing-squad': No such file or directory
+#=== ERROR while installing coq:contrib:firing-squad.dev ======================#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /home/bench/.opam/system/build/coq:contrib:firing-squad.dev
+# compiler             system (4.02.1)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:contrib:firing-squad.dev/coq:contrib:firing-squad-14814-7afd23.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:firing-squad.dev/coq:contrib:firing-squad-14814-7afd23.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:firing-squad.dev/coq:contrib:firing-squad-14814-7afd23.err
+### stdout ###
+# ...[truncated]
+# &quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   bord
+# &quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   double_diag
+# &quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   vertical
+# &quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   trapeze
+# &quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   sommet
+# &quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   final
+# &quot;coqc&quot;  -q  -R &quot;.&quot; FiringSquad   algo
+# coqtop -q  -R &quot;.&quot; FiringSquad   -silent -batch -load-vernac-source extract.v
+# coqtop -q  -R &quot;.&quot; FiringSquad   -silent -batch -load-vernac-source extract.v
+# /usr/local/bin/ocamlopt -o fire unix.cmxa graphics.cmxa extracted.mli extracted.ml fire.ml
+### stderr ###
+# File &quot;fire.ml&quot;, line 65, characters 5-13:
+# Error: Unbound module Graphics
+# make: *** [fire] Error 2
+'opam install -y --verbose coq:contrib:firing-squad.dev' failed.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>No files were installed.</p>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

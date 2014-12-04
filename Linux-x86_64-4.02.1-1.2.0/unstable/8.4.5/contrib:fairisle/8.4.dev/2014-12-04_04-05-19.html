@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:fairisle 8.4.dev</a></li>
+              <li class="active"><a href="">2014-12-04 04:05:19</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:fairisle
+              <small>
+                8.4.dev
+                <span class="label label-success">1 m 14 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-04 04:05:19 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-04 04:05:19 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:fairisle/coq:contrib:fairisle.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:fairisle.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:fairisle.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:fairisle.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:fairisle.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:fairisle.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:fairisle.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 m 14 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:fairisle.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:fairisle] Fetching https://gforge.inria.fr/git/coq-contribs/fairisle.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:fairisle.8.4.dev/.git/
+[master (root-commit) 0540a0f] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/fairisle
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Fairisle/PROOFS/Arbiter4_Proof.v
+Fairisle/PROOFS/Arbiter4_Proof_lemmas.v
+Fairisle/PROOFS/Arbiter4_Specif.v
+Fairisle/PROOFS/Arbitration_Proof.v
+Fairisle/PROOFS/Arbitration_Specif.v
+Fairisle/PROOFS/Arbitration_beh_sc.v
+Fairisle/PROOFS/Behaviour_Struct_lemmas.v
+Fairisle/PROOFS/Equiv_Struct_Beh_Arbitration.v
+Fairisle/PROOFS/Invariant_a4_S.v
+Fairisle/PROOFS/Lemmas_Comb_Behaviour.v
+Fairisle/PROOFS/Lemmas_for_Arbitration.v
+Fairisle/PROOFS/PriorityDecode_Proof.v
+Fairisle/PROOFS/Timing_Arbiter.v
+Fairisle/PROOFS/Timing_Proof.v
+Fairisle/SPECIF/ELEMENT/Arbitration.v
+Fairisle/SPECIF/ELEMENT/Base_Behaviour.v
+Fairisle/SPECIF/ELEMENT/ElementComb.v
+Fairisle/SPECIF/ELEMENT/ElementComb_Behaviour.v
+Fairisle/SPECIF/ELEMENT/ElementTemp.v
+Fairisle/SPECIF/ELEMENT/ElementTemp_Behaviour.v
+Fairisle/SPECIF/ELEMENT/Tools_Inf.v
+Fairisle/SPECIF/GATES_AND_LATCHES/Base_Struct.v
+Fairisle/SPECIF/GATES_AND_LATCHES/Gates.v
+Fairisle/SPECIF/GATES_AND_LATCHES/Gates_Del.v
+Fairisle/SPECIF/GATES_AND_LATCHES/Gen_Gates_Del.v
+Fairisle/SPECIF/GATES_AND_LATCHES/Lemmas_Struct.v
+Fairisle/SPECIF/ROUND_ROBIN/Lemmas_on_fcts.v
+Fairisle/SPECIF/ROUND_ROBIN/NextPort.v
+Fairisle/SPECIF/ROUND_ROBIN/PickSuccessfulInput.v
+Fairisle/SPECIF/ROUND_ROBIN/PortsCompl.v
+Fairisle/SPECIF/ROUND_ROBIN/RoundRobin.v
+Fairisle/SPECIF/ROUND_ROBIN/SuccessfulInput.v
+Fairisle/SPECIF/ROUND_ROBIN/TypePorts.v
+LICENSE
+Libraries/Lib_Arithmetic/Arith_Compl.v
+Libraries/Lib_Arithmetic/Compare_Nat.v
+Libraries/Lib_Arithmetic/Lib_Dec.v
+Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v
+Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v
+Libraries/Lib_Arithmetic/Lib_Exp.v
+Libraries/Lib_Arithmetic/Lib_Fact.v
+Libraries/Lib_Arithmetic/Lib_Minus.v
+Libraries/Lib_Arithmetic/Lib_Mult.v
+Libraries/Lib_Arithmetic/Lib_Plus.v
+Libraries/Lib_Arithmetic/Lib_Pred.v
+Libraries/Lib_Arithmetic/Lib_Square.v
+Libraries/Lib_Arithmetic/Syntactic_Def.v
+Libraries/Lib_Automata/Basic_composition_rules.v
+Libraries/Lib_Automata/Derived_composition_rules.v
+Libraries/Lib_Automata/Identity.v
+Libraries/Lib_Automata/Lemmas_on_Basic_rules.v
+Libraries/Lib_Automata/Mealy.v
+Libraries/Lib_Automata/Moore.v
+Libraries/Lib_Automata/Moore_Mealy.v
+Libraries/Lib_Basis/Injections.v
+Libraries/Lib_Basis/Lib_Prop.v
+Libraries/Lib_Basis/Lib_Set_Products.v
+Libraries/Lib_Basis/Product.v
+Libraries/Lib_Boolean/Bool_Compl.v
+Libraries/Lib_Boolean/Lib_Bool.v
+Libraries/Lib_Boolean/Lib_Zerob.v
+Libraries/Lib_Lists/Conversions.v
+Libraries/Lib_Lists/Dependent_lists.v
+Libraries/Lib_Lists/Dependent_lists_Compl.v
+Libraries/Lib_Lists/Fixed_dLists.v
+Libraries/Lib_Lists/Infinite_lists.v
+Libraries/Lib_Lists/Lists_of_lists.v
+Libraries/Lib_Lists/Manip_BoolLists.v
+Libraries/Lib_Lists/PolyList_dlist.v
+Libraries/Lib_Lists/Proj_lists.v
+Libraries/Lib_Lists/Tests_in_d_lists.v
+Libraries/Lib_Lists/dlist_Compl.v
+Make
+Makefile
+README
+bench.log
+description
+HEAD is now at 04e5b3b Remove dependencies on legacy TheoryList
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:fairisle.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Basis/Lib_Prop.v&quot; &gt; &quot;Libraries/Lib_Basis/Lib_Prop.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Basis/Lib_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Basis/Lib_Set_Products.v&quot; &gt; &quot;Libraries/Lib_Basis/Lib_Set_Products.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Basis/Lib_Set_Products.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Basis/Product.v&quot; &gt; &quot;Libraries/Lib_Basis/Product.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Basis/Product.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Basis/Injections.v&quot; &gt; &quot;Libraries/Lib_Basis/Injections.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Basis/Injections.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Automata/Moore.v&quot; &gt; &quot;Libraries/Lib_Automata/Moore.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Automata/Moore.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Automata/Derived_composition_rules.v&quot; &gt; &quot;Libraries/Lib_Automata/Derived_composition_rules.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Automata/Derived_composition_rules.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Automata/Lemmas_on_Basic_rules.v&quot; &gt; &quot;Libraries/Lib_Automata/Lemmas_on_Basic_rules.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Automata/Lemmas_on_Basic_rules.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Automata/Identity.v&quot; &gt; &quot;Libraries/Lib_Automata/Identity.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Automata/Identity.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Automata/Moore_Mealy.v&quot; &gt; &quot;Libraries/Lib_Automata/Moore_Mealy.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Automata/Moore_Mealy.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Automata/Basic_composition_rules.v&quot; &gt; &quot;Libraries/Lib_Automata/Basic_composition_rules.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Automata/Basic_composition_rules.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Automata/Mealy.v&quot; &gt; &quot;Libraries/Lib_Automata/Mealy.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Automata/Mealy.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Boolean/Lib_Bool.v&quot; &gt; &quot;Libraries/Lib_Boolean/Lib_Bool.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Boolean/Lib_Bool.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Boolean/Bool_Compl.v&quot; &gt; &quot;Libraries/Lib_Boolean/Bool_Compl.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Boolean/Bool_Compl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Boolean/Lib_Zerob.v&quot; &gt; &quot;Libraries/Lib_Boolean/Lib_Zerob.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Boolean/Lib_Zerob.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Proj_lists.v&quot; &gt; &quot;Libraries/Lib_Lists/Proj_lists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Proj_lists.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Infinite_lists.v&quot; &gt; &quot;Libraries/Lib_Lists/Infinite_lists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Infinite_lists.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/PolyList_dlist.v&quot; &gt; &quot;Libraries/Lib_Lists/PolyList_dlist.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/PolyList_dlist.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Tests_in_d_lists.v&quot; &gt; &quot;Libraries/Lib_Lists/Tests_in_d_lists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Tests_in_d_lists.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Dependent_lists.v&quot; &gt; &quot;Libraries/Lib_Lists/Dependent_lists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Dependent_lists.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/dlist_Compl.v&quot; &gt; &quot;Libraries/Lib_Lists/dlist_Compl.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/dlist_Compl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Conversions.v&quot; &gt; &quot;Libraries/Lib_Lists/Conversions.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Conversions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Fixed_dLists.v&quot; &gt; &quot;Libraries/Lib_Lists/Fixed_dLists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Fixed_dLists.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Manip_BoolLists.v&quot; &gt; &quot;Libraries/Lib_Lists/Manip_BoolLists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Manip_BoolLists.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Dependent_lists_Compl.v&quot; &gt; &quot;Libraries/Lib_Lists/Dependent_lists_Compl.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Dependent_lists_Compl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Lists/Lists_of_lists.v&quot; &gt; &quot;Libraries/Lib_Lists/Lists_of_lists.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Lists/Lists_of_lists.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Pred.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Pred.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Pred.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Plus.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Plus.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Plus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Square.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Square.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Square.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Compare_Nat.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Compare_Nat.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Compare_Nat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Fact.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Fact.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Fact.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Syntactic_Def.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Syntactic_Def.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Syntactic_Def.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Exp.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Exp.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Exp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Arith_Compl.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Arith_Compl.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Arith_Compl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Mult.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Mult.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Mult.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Dec.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Dec.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Dec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Libraries/Lib_Arithmetic/Lib_Minus.v&quot; &gt; &quot;Libraries/Lib_Arithmetic/Lib_Minus.v.d&quot; || ( RV=$?; rm -f &quot;Libraries/Lib_Arithmetic/Lib_Minus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ROUND_ROBIN/TypePorts.v&quot; &gt; &quot;Fairisle/SPECIF/ROUND_ROBIN/TypePorts.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ROUND_ROBIN/TypePorts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ROUND_ROBIN/PickSuccessfulInput.v&quot; &gt; &quot;Fairisle/SPECIF/ROUND_ROBIN/PickSuccessfulInput.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ROUND_ROBIN/PickSuccessfulInput.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ROUND_ROBIN/PortsCompl.v&quot; &gt; &quot;Fairisle/SPECIF/ROUND_ROBIN/PortsCompl.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ROUND_ROBIN/PortsCompl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ROUND_ROBIN/SuccessfulInput.v&quot; &gt; &quot;Fairisle/SPECIF/ROUND_ROBIN/SuccessfulInput.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ROUND_ROBIN/SuccessfulInput.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ROUND_ROBIN/RoundRobin.v&quot; &gt; &quot;Fairisle/SPECIF/ROUND_ROBIN/RoundRobin.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ROUND_ROBIN/RoundRobin.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ROUND_ROBIN/NextPort.v&quot; &gt; &quot;Fairisle/SPECIF/ROUND_ROBIN/NextPort.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ROUND_ROBIN/NextPort.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ROUND_ROBIN/Lemmas_on_fcts.v&quot; &gt; &quot;Fairisle/SPECIF/ROUND_ROBIN/Lemmas_on_fcts.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ROUND_ROBIN/Lemmas_on_fcts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ELEMENT/Tools_Inf.v&quot; &gt; &quot;Fairisle/SPECIF/ELEMENT/Tools_Inf.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ELEMENT/Tools_Inf.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ELEMENT/ElementTemp.v&quot; &gt; &quot;Fairisle/SPECIF/ELEMENT/ElementTemp.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ELEMENT/ElementTemp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ELEMENT/Arbitration.v&quot; &gt; &quot;Fairisle/SPECIF/ELEMENT/Arbitration.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ELEMENT/Arbitration.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ELEMENT/ElementTemp_Behaviour.v&quot; &gt; &quot;Fairisle/SPECIF/ELEMENT/ElementTemp_Behaviour.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ELEMENT/ElementTemp_Behaviour.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ELEMENT/Base_Behaviour.v&quot; &gt; &quot;Fairisle/SPECIF/ELEMENT/Base_Behaviour.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ELEMENT/Base_Behaviour.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ELEMENT/ElementComb_Behaviour.v&quot; &gt; &quot;Fairisle/SPECIF/ELEMENT/ElementComb_Behaviour.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ELEMENT/ElementComb_Behaviour.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/ELEMENT/ElementComb.v&quot; &gt; &quot;Fairisle/SPECIF/ELEMENT/ElementComb.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/ELEMENT/ElementComb.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gates_Del.v&quot; &gt; &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gates_Del.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gates_Del.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Base_Struct.v&quot; &gt; &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Base_Struct.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Base_Struct.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gen_Gates_Del.v&quot; &gt; &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gen_Gates_Del.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gen_Gates_Del.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Lemmas_Struct.v&quot; &gt; &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Lemmas_Struct.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Lemmas_Struct.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gates.v&quot; &gt; &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gates.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/SPECIF/GATES_AND_LATCHES/Gates.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/PriorityDecode_Proof.v&quot; &gt; &quot;Fairisle/PROOFS/PriorityDecode_Proof.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/PriorityDecode_Proof.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Arbiter4_Proof.v&quot; &gt; &quot;Fairisle/PROOFS/Arbiter4_Proof.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Arbiter4_Proof.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Lemmas_for_Arbitration.v&quot; &gt; &quot;Fairisle/PROOFS/Lemmas_for_Arbitration.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Lemmas_for_Arbitration.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Arbiter4_Proof_lemmas.v&quot; &gt; &quot;Fairisle/PROOFS/Arbiter4_Proof_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Arbiter4_Proof_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Behaviour_Struct_lemmas.v&quot; &gt; &quot;Fairisle/PROOFS/Behaviour_Struct_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Behaviour_Struct_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Arbiter4_Specif.v&quot; &gt; &quot;Fairisle/PROOFS/Arbiter4_Specif.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Arbiter4_Specif.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Arbitration_Proof.v&quot; &gt; &quot;Fairisle/PROOFS/Arbitration_Proof.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Arbitration_Proof.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Arbitration_beh_sc.v&quot; &gt; &quot;Fairisle/PROOFS/Arbitration_beh_sc.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Arbitration_beh_sc.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Timing_Arbiter.v&quot; &gt; &quot;Fairisle/PROOFS/Timing_Arbiter.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Timing_Arbiter.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Timing_Proof.v&quot; &gt; &quot;Fairisle/PROOFS/Timing_Proof.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Timing_Proof.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Invariant_a4_S.v&quot; &gt; &quot;Fairisle/PROOFS/Invariant_a4_S.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Invariant_a4_S.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Equiv_Struct_Beh_Arbitration.v&quot; &gt; &quot;Fairisle/PROOFS/Equiv_Struct_Beh_Arbitration.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Equiv_Struct_Beh_Arbitration.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Arbitration_Specif.v&quot; &gt; &quot;Fairisle/PROOFS/Arbitration_Specif.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Arbitration_Specif.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Fairisle &quot;Fairisle/PROOFS/Lemmas_Comb_Behaviour.v&quot; &gt; &quot;Fairisle/PROOFS/Lemmas_Comb_Behaviour.v.d&quot; || ( RV=$?; rm -f &quot;Fairisle/PROOFS/Lemmas_Comb_Behaviour.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Basis/Lib_Prop
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Dependent_lists
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Syntactic_Def
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Basis/Injections
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ROUND_ROBIN/TypePorts
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Boolean/Lib_Bool
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/GATES_AND_LATCHES/Gates
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Boolean/Bool_Compl
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Basis/Product
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Fact
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Compare_Nat
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Basis/Lib_Set_Products
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Pred
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Tests_in_d_lists
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Dec
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/PolyList_dlist
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Boolean/Lib_Zerob
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Minus
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Plus
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Arith_Compl
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Dependent_lists_Compl
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Mult
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/dlist_Compl
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Lists_of_lists
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Exp
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Div_Even_Odd
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Infinite_lists
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Arithmetic/Lib_Square
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Proj_lists
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/GATES_AND_LATCHES/Gen_Gates_Del
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Automata/Mealy
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Automata/Moore
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/GATES_AND_LATCHES/Gates_Del
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Fixed_dLists
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Automata/Moore_Mealy
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Automata/Basic_composition_rules
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Automata/Identity
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ELEMENT/Base_Behaviour
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/GATES_AND_LATCHES/Base_Struct
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Automata/Lemmas_on_Basic_rules
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Automata/Derived_composition_rules
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Conversions
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ROUND_ROBIN/PortsCompl
+&quot;coqc&quot;  -q  -R . Fairisle   Libraries/Lib_Lists/Manip_BoolLists
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/GATES_AND_LATCHES/Lemmas_Struct
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ELEMENT/ElementComb
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ELEMENT/Tools_Inf
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ELEMENT/ElementComb_Behaviour
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ROUND_ROBIN/NextPort
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ELEMENT/Arbitration
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ELEMENT/ElementTemp
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ELEMENT/ElementTemp_Behaviour
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Timing_Proof
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ROUND_ROBIN/RoundRobin
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ROUND_ROBIN/SuccessfulInput
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ROUND_ROBIN/Lemmas_on_fcts
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/SPECIF/ROUND_ROBIN/PickSuccessfulInput
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/PriorityDecode_Proof
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Lemmas_Comb_Behaviour
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Arbiter4_Proof_lemmas
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Arbiter4_Specif
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Invariant_a4_S
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Arbitration_beh_sc
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Arbiter4_Proof
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Behaviour_Struct_lemmas
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Timing_Arbiter
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Arbitration_Specif
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Arbitration_Proof
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Lemmas_for_Arbitration
+&quot;coqc&quot;  -q  -R . Fairisle   Fairisle/PROOFS/Equiv_Struct_Beh_Arbitration
+for i in Fairisle/PROOFS/Lemmas_Comb_Behaviour.vo Fairisle/PROOFS/Arbitration_Specif.vo Fairisle/PROOFS/Equiv_Struct_Beh_Arbitration.vo Fairisle/PROOFS/Invariant_a4_S.vo Fairisle/PROOFS/Timing_Proof.vo Fairisle/PROOFS/Timing_Arbiter.vo Fairisle/PROOFS/Arbitration_beh_sc.vo Fairisle/PROOFS/Arbitration_Proof.vo Fairisle/PROOFS/Arbiter4_Specif.vo Fairisle/PROOFS/Behaviour_Struct_lemmas.vo Fairisle/PROOFS/Arbiter4_Proof_lemmas.vo Fairisle/PROOFS/Lemmas_for_Arbitration.vo Fairisle/PROOFS/Arbiter4_Proof.vo Fairisle/PROOFS/PriorityDecode_Proof.vo Fairisle/SPECIF/GATES_AND_LATCHES/Gates.vo Fairisle/SPECIF/GATES_AND_LATCHES/Lemmas_Struct.vo Fairisle/SPECIF/GATES_AND_LATCHES/Gen_Gates_Del.vo Fairisle/SPECIF/GATES_AND_LATCHES/Base_Struct.vo Fairisle/SPECIF/GATES_AND_LATCHES/Gates_Del.vo Fairisle/SPECIF/ELEMENT/ElementComb.vo Fairisle/SPECIF/ELEMENT/ElementComb_Behaviour.vo Fairisle/SPECIF/ELEMENT/Base_Behaviour.vo Fairisle/SPECIF/ELEMENT/ElementTemp_Behaviour.vo Fairisle/SPECIF/ELEMENT/Arbitration.vo Fairisle/SPECIF/ELEMENT/ElementTemp.vo Fairisle/SPECIF/ELEMENT/Tools_Inf.vo Fairisle/SPECIF/ROUND_ROBIN/Lemmas_on_fcts.vo Fairisle/SPECIF/ROUND_ROBIN/NextPort.vo Fairisle/SPECIF/ROUND_ROBIN/RoundRobin.vo Fairisle/SPECIF/ROUND_ROBIN/SuccessfulInput.vo Fairisle/SPECIF/ROUND_ROBIN/PortsCompl.vo Fairisle/SPECIF/ROUND_ROBIN/PickSuccessfulInput.vo Fairisle/SPECIF/ROUND_ROBIN/TypePorts.vo Libraries/Lib_Arithmetic/Lib_Minus.vo Libraries/Lib_Arithmetic/Lib_Dec.vo Libraries/Lib_Arithmetic/Lib_Mult.vo Libraries/Lib_Arithmetic/Arith_Compl.vo Libraries/Lib_Arithmetic/Lib_Exp.vo Libraries/Lib_Arithmetic/Syntactic_Def.vo Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.vo Libraries/Lib_Arithmetic/Lib_Fact.vo Libraries/Lib_Arithmetic/Compare_Nat.vo Libraries/Lib_Arithmetic/Lib_Square.vo Libraries/Lib_Arithmetic/Lib_Plus.vo Libraries/Lib_Arithmetic/Lib_Pred.vo Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.vo Libraries/Lib_Lists/Lists_of_lists.vo Libraries/Lib_Lists/Dependent_lists_Compl.vo Libraries/Lib_Lists/Manip_BoolLists.vo Libraries/Lib_Lists/Fixed_dLists.vo Libraries/Lib_Lists/Conversions.vo Libraries/Lib_Lists/dlist_Compl.vo Libraries/Lib_Lists/Dependent_lists.vo Libraries/Lib_Lists/Tests_in_d_lists.vo Libraries/Lib_Lists/PolyList_dlist.vo Libraries/Lib_Lists/Infinite_lists.vo Libraries/Lib_Lists/Proj_lists.vo Libraries/Lib_Boolean/Lib_Zerob.vo Libraries/Lib_Boolean/Bool_Compl.vo Libraries/Lib_Boolean/Lib_Bool.vo Libraries/Lib_Automata/Mealy.vo Libraries/Lib_Automata/Basic_composition_rules.vo Libraries/Lib_Automata/Moore_Mealy.vo Libraries/Lib_Automata/Identity.vo Libraries/Lib_Automata/Lemmas_on_Basic_rules.vo Libraries/Lib_Automata/Derived_composition_rules.vo Libraries/Lib_Automata/Moore.vo Libraries/Lib_Basis/Injections.vo Libraries/Lib_Basis/Product.vo Libraries/Lib_Basis/Lib_Set_Products.vo Libraries/Lib_Basis/Lib_Prop.vo; do \
+	 install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Fairisle/$i`; \
+	 install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Fairisle/$i; \
+	done
+Installing coq:contrib:fairisle.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 2.620 K</p>
+            <ul>
+              <li>201 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Invariant_a4_S.vo</code></li>
+              <li>124 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Timing_Arbiter.vo</code></li>
+              <li>107 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Arbiter4_Proof.vo</code></li>
+              <li>104 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ELEMENT/ElementTemp.vo</code></li>
+              <li>99 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Fixed_dLists.vo</code></li>
+              <li>90 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Equiv_Struct_Beh_Arbitration.vo</code></li>
+              <li>90 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/GATES_AND_LATCHES/Lemmas_Struct.vo</code></li>
+              <li>88 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ELEMENT/Arbitration.vo</code></li>
+              <li>86 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ROUND_ROBIN/Lemmas_on_fcts.vo</code></li>
+              <li>78 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Arbitration_Proof.vo</code></li>
+              <li>65 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Infinite_lists.vo</code></li>
+              <li>64 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Lemmas_for_Arbitration.vo</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Lemmas_Comb_Behaviour.vo</code></li>
+              <li>58 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Automata/Lemmas_on_Basic_rules.vo</code></li>
+              <li>51 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Arbitration_beh_sc.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Arbiter4_Specif.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Arbitration_Specif.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Dependent_lists_Compl.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Automata/Mealy.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/PriorityDecode_Proof.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Automata/Basic_composition_rules.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Dependent_lists.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Timing_Proof.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ELEMENT/ElementComb.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Div_Even_Odd.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Proj_lists.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Arbiter4_Proof_lemmas.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/PROOFS/Behaviour_Struct_lemmas.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Mult.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/dlist_Compl.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ELEMENT/Tools_Inf.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Compare_Nat.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ELEMENT/ElementComb_Behaviour.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ROUND_ROBIN/PortsCompl.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Minus.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Manip_BoolLists.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Exp.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Automata/Derived_composition_rules.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Automata/Moore_Mealy.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/GATES_AND_LATCHES/Gen_Gates_Del.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Boolean/Lib_Bool.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/GATES_AND_LATCHES/Base_Struct.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Tests_in_d_lists.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ELEMENT/ElementTemp_Behaviour.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Plus.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Conversions.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Arith_Compl.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Pred.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Automata/Moore.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Boolean/Lib_Zerob.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ELEMENT/Base_Behaviour.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ROUND_ROBIN/PickSuccessfulInput.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/Lists_of_lists.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Automata/Identity.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ROUND_ROBIN/SuccessfulInput.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Lists/PolyList_dlist.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ROUND_ROBIN/RoundRobin.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Square.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Dec.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Eq_Le_Lt.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/GATES_AND_LATCHES/Gates_Del.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ROUND_ROBIN/NextPort.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Syntactic_Def.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Arithmetic/Lib_Fact.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Basis/Lib_Prop.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/GATES_AND_LATCHES/Gates.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Basis/Lib_Set_Products.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Basis/Product.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Boolean/Bool_Compl.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Libraries/Lib_Basis/Injections.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Fairisle/Fairisle/SPECIF/ROUND_ROBIN/TypePorts.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:fairisle/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:fairisle.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:fairisle.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:fairisle.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:fairisle] Fetching https://gforge.inria.fr/git/coq-contribs/fairisle.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:fairisle.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Fairisle
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

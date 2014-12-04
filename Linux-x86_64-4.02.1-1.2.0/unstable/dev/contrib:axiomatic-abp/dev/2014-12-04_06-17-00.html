@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:axiomatic-abp dev</a></li>
+              <li class="active"><a href="">2014-12-04 06:17:00</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:axiomatic-abp
+              <small>
+                dev
+                <span class="label label-success">7 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-04 06:17:00 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-04 06:17:00 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:axiomatic-abp/coq:contrib:axiomatic-abp.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:axiomatic-abp.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:axiomatic-abp.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:axiomatic-abp.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:axiomatic-abp.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:axiomatic-abp.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:axiomatic-abp.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>7 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:axiomatic-abp.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:axiomatic-abp] Fetching https://gforge.inria.fr/git/coq-contribs/axiomatic-abp.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:axiomatic-abp.dev/.git/
+[master (root-commit) 9327be6] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/axiomatic-abp
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+Make
+Makefile
+abp_base.v
+abp_defs.v
+abp_lem1.v
+abp_lem2.v
+abp_lem25.v
+abp_lem3.v
+abp_proc.v
+description
+HEAD is now at 81d157b Revert &quot;Regenerating Makefiles.&quot; We will be able to do so when we have access
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:axiomatic-abp.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; AxiomaticABP &quot;abp_proc.v&quot; &gt; &quot;abp_proc.v.d&quot; || ( RV=$?; rm -f &quot;abp_proc.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; AxiomaticABP &quot;abp_lem3.v&quot; &gt; &quot;abp_lem3.v.d&quot; || ( RV=$?; rm -f &quot;abp_lem3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; AxiomaticABP &quot;abp_lem25.v&quot; &gt; &quot;abp_lem25.v.d&quot; || ( RV=$?; rm -f &quot;abp_lem25.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; AxiomaticABP &quot;abp_lem2.v&quot; &gt; &quot;abp_lem2.v.d&quot; || ( RV=$?; rm -f &quot;abp_lem2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; AxiomaticABP &quot;abp_lem1.v&quot; &gt; &quot;abp_lem1.v.d&quot; || ( RV=$?; rm -f &quot;abp_lem1.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; AxiomaticABP &quot;abp_defs.v&quot; &gt; &quot;abp_defs.v.d&quot; || ( RV=$?; rm -f &quot;abp_defs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; AxiomaticABP &quot;abp_base.v&quot; &gt; &quot;abp_base.v.d&quot; || ( RV=$?; rm -f &quot;abp_base.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; AxiomaticABP   abp_base
+&quot;coqc&quot;  -q  -R &quot;.&quot; AxiomaticABP   abp_defs
+&quot;coqc&quot;  -q  -R &quot;.&quot; AxiomaticABP   abp_lem1
+&quot;coqc&quot;  -q  -R &quot;.&quot; AxiomaticABP   abp_lem2
+&quot;coqc&quot;  -q  -R &quot;.&quot; AxiomaticABP   abp_lem25
+&quot;coqc&quot;  -q  -R &quot;.&quot; AxiomaticABP   abp_lem3
+&quot;coqc&quot;  -q  -R &quot;.&quot; AxiomaticABP   abp_proc
+cd &quot;.&quot; &amp;&amp; for i in abp_base.vo abp_defs.vo abp_lem1.vo abp_lem2.vo abp_lem25.vo abp_lem3.vo abp_proc.vo   ; do \
+	 install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/AxiomaticABP/$i`&quot;; \
+	 install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/AxiomaticABP/$i; \
+	done
+Installing coq:contrib:axiomatic-abp.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 438 K</p>
+            <ul>
+              <li>127 K <code>/home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP/abp_defs.vo</code></li>
+              <li>101 K <code>/home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP/abp_lem1.vo</code></li>
+              <li>64 K <code>/home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP/abp_lem3.vo</code></li>
+              <li>52 K <code>/home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP/abp_base.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP/abp_lem25.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP/abp_lem2.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP/abp_proc.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:axiomatic-abp/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:axiomatic-abp.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:axiomatic-abp.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:axiomatic-abp.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:axiomatic-abp] Fetching https://gforge.inria.fr/git/coq-contribs/axiomatic-abp.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:axiomatic-abp.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/AxiomaticABP
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

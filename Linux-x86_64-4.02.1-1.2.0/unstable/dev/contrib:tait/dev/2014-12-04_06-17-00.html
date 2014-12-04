@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:tait dev</a></li>
+              <li class="active"><a href="">2014-12-04 06:17:00</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:tait
+              <small>
+                dev
+                <span class="label label-success">49 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-04 06:17:00 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-04 06:17:00 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:tait/coq:contrib:tait.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:tait.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:tait.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:tait.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:tait.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:tait.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:tait.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>49 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:tait.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:tait] Fetching https://gforge.inria.fr/git/coq-contribs/tait.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:tait.dev/.git/
+[master (root-commit) 8e53e13] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/tait
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.cvsignore
+.dump
+Apps.v
+Eta.v
+Extract.v
+LICENSE
+Make
+Makefile
+MoreList.v
+README
+Subst.v
+Subst2.v
+TaitCore.v
+TaitCoreNc.v
+TaitEtaExp.v
+TaitEtaRed.v
+Term.v
+Typing.v
+WN.v
+betaetaexp_main.ml
+betaetaexp_nc_main.ml
+betaetared_main.ml
+betaetared_nc_main.ml
+description
+doc.html
+doc.ps.gz
+doc.v
+minlog_mode.v
+nc.v
+style.css
+HEAD is now at 7d3a34e Applying &quot;Unset Standard Proposition Elimination Names&quot; for
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:tait.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;minlog_mode.v&quot; &gt; &quot;minlog_mode.v.d&quot; || ( RV=$?; rm -f &quot;minlog_mode.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;MoreList.v&quot; &gt; &quot;MoreList.v.d&quot; || ( RV=$?; rm -f &quot;MoreList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;Term.v&quot; &gt; &quot;Term.v.d&quot; || ( RV=$?; rm -f &quot;Term.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;Subst.v&quot; &gt; &quot;Subst.v.d&quot; || ( RV=$?; rm -f &quot;Subst.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;Subst2.v&quot; &gt; &quot;Subst2.v.d&quot; || ( RV=$?; rm -f &quot;Subst2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;Typing.v&quot; &gt; &quot;Typing.v.d&quot; || ( RV=$?; rm -f &quot;Typing.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;Apps.v&quot; &gt; &quot;Apps.v.d&quot; || ( RV=$?; rm -f &quot;Apps.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;Eta.v&quot; &gt; &quot;Eta.v.d&quot; || ( RV=$?; rm -f &quot;Eta.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;WN.v&quot; &gt; &quot;WN.v.d&quot; || ( RV=$?; rm -f &quot;WN.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;TaitCore.v&quot; &gt; &quot;TaitCore.v.d&quot; || ( RV=$?; rm -f &quot;TaitCore.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;nc.v&quot; &gt; &quot;nc.v.d&quot; || ( RV=$?; rm -f &quot;nc.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;TaitCoreNc.v&quot; &gt; &quot;TaitCoreNc.v.d&quot; || ( RV=$?; rm -f &quot;TaitCoreNc.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;TaitEtaRed.v&quot; &gt; &quot;TaitEtaRed.v.d&quot; || ( RV=$?; rm -f &quot;TaitEtaRed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;TaitEtaExp.v&quot; &gt; &quot;TaitEtaExp.v.d&quot; || ( RV=$?; rm -f &quot;TaitEtaExp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Tait &quot;Extract.v&quot; &gt; &quot;Extract.v.d&quot; || ( RV=$?; rm -f &quot;Extract.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   minlog_mode
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   MoreList
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   nc
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   Term
+nc1
+     : forall A B : Set, (A -&gt; B) -&gt; forallnc _ : A, B !
+nc1 Nat.pred
+     : forallnc _ : nat, nat !
+nc2
+     : forall A B C : Set,
+       (A -&gt; B -&gt; C) -&gt; forallnc _ : A, (forallnc _ : B, C !)
+nc2 Nat.add
+     : forallnc _ : nat, (forallnc _ : nat, nat !)
+nc2 Nat.add (nc 0) (nc 3)
+     : nat !
+     = nc 3
+     : nat !
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   Subst
+     = \ Iota, (((0; 8); 1); 2)
+     : term
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   Subst2
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   Typing
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   TaitCore
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   Apps
+     = fun r r1 r2 : type =&gt; r1 --&gt; r2 --&gt; r
+     : type -&gt; type -&gt; type -&gt; type
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   Eta
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   WN
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   TaitCoreNc
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   TaitEtaRed
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   TaitEtaExp
+&quot;coqc&quot;  -q  -R &quot;.&quot; Tait   Extract
+Fetching opaque proofs from disk for Tait.TaitCore
+Fetching opaque proofs from disk for Tait.Term
+Fetching opaque proofs from disk for Tait.TaitCoreNc
+cd &quot;.&quot; &amp;&amp; for i in Extract.vo TaitEtaExp.vo TaitEtaRed.vo TaitCoreNc.vo nc.vo TaitCore.vo WN.vo Eta.vo Apps.vo Typing.vo Subst2.vo Subst.vo Term.vo MoreList.vo minlog_mode.vo   ; do \
+	 install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Tait/$i`&quot;; \
+	 install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Tait/$i; \
+	done
+Installing coq:contrib:tait.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 3.23 K</p>
+            <ul>
+              <li>758 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/TaitEtaExp.vo</code></li>
+              <li>713 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/TaitEtaRed.vo</code></li>
+              <li>596 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/TaitCoreNc.vo</code></li>
+              <li>133 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/Subst2.vo</code></li>
+              <li>131 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/Typing.vo</code></li>
+              <li>117 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/Term.vo</code></li>
+              <li>109 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/TaitCore.vo</code></li>
+              <li>107 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/Subst.vo</code></li>
+              <li>103 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/Eta.vo</code></li>
+              <li>56 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/MoreList.vo</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/WN.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/Apps.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/minlog_mode.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/Extract.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Tait/nc.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:tait/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:tait.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:tait.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:tait.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:tait] Fetching https://gforge.inria.fr/git/coq-contribs/tait.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:tait.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Tait
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

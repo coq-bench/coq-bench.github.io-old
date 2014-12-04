@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:lambek dev</a></li>
+              <li class="active"><a href="">2014-12-04 06:17:00</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:lambek
+              <small>
+                dev
+                <span class="label label-success">9 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-04 06:17:00 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-04 06:17:00 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:lambek/coq:contrib:lambek.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:lambek.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:lambek.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:lambek.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:lambek.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:lambek.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:lambek.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>9 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:lambek.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:lambek] Fetching https://gforge.inria.fr/git/coq-contribs/lambek.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:lambek.dev/.git/
+[master (root-commit) 3ac8dbc] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/lambek
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+ArrowDed.v
+ArrowGentzen.v
+CutSequent.v
+ExampleNatDed.v
+ExampleNatDed2.v
+ExampleNatDed3.v
+ExamplePol.v
+Filters.v
+Form.v
+GentzenDed.v
+LICENSE
+LSeqProp.v
+Make
+Makefile
+NaturalDeduction.v
+Polarity.v
+README
+ReplaceProp.v
+Semantics.v
+Sequent.v
+Tactics.v
+Terms.v
+description
+HEAD is now at fa64d60 Revert &quot;Regenerating Makefiles.&quot; We will be able to do so when we have access
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:lambek.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;ArrowDed.v&quot; &gt; &quot;ArrowDed.v.d&quot; || ( RV=$?; rm -f &quot;ArrowDed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;ArrowGentzen.v&quot; &gt; &quot;ArrowGentzen.v.d&quot; || ( RV=$?; rm -f &quot;ArrowGentzen.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;CutSequent.v&quot; &gt; &quot;CutSequent.v.d&quot; || ( RV=$?; rm -f &quot;CutSequent.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;ExampleNatDed2.v&quot; &gt; &quot;ExampleNatDed2.v.d&quot; || ( RV=$?; rm -f &quot;ExampleNatDed2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;ExampleNatDed3.v&quot; &gt; &quot;ExampleNatDed3.v.d&quot; || ( RV=$?; rm -f &quot;ExampleNatDed3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;ExampleNatDed.v&quot; &gt; &quot;ExampleNatDed.v.d&quot; || ( RV=$?; rm -f &quot;ExampleNatDed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;ExamplePol.v&quot; &gt; &quot;ExamplePol.v.d&quot; || ( RV=$?; rm -f &quot;ExamplePol.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;Filters.v&quot; &gt; &quot;Filters.v.d&quot; || ( RV=$?; rm -f &quot;Filters.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;Form.v&quot; &gt; &quot;Form.v.d&quot; || ( RV=$?; rm -f &quot;Form.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;GentzenDed.v&quot; &gt; &quot;GentzenDed.v.d&quot; || ( RV=$?; rm -f &quot;GentzenDed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;LSeqProp.v&quot; &gt; &quot;LSeqProp.v.d&quot; || ( RV=$?; rm -f &quot;LSeqProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;NaturalDeduction.v&quot; &gt; &quot;NaturalDeduction.v.d&quot; || ( RV=$?; rm -f &quot;NaturalDeduction.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;Polarity.v&quot; &gt; &quot;Polarity.v.d&quot; || ( RV=$?; rm -f &quot;Polarity.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;ReplaceProp.v&quot; &gt; &quot;ReplaceProp.v.d&quot; || ( RV=$?; rm -f &quot;ReplaceProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;Semantics.v&quot; &gt; &quot;Semantics.v.d&quot; || ( RV=$?; rm -f &quot;Semantics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;Sequent.v&quot; &gt; &quot;Sequent.v.d&quot; || ( RV=$?; rm -f &quot;Sequent.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;Tactics.v&quot; &gt; &quot;Tactics.v.d&quot; || ( RV=$?; rm -f &quot;Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Lambek &quot;Terms.v&quot; &gt; &quot;Terms.v.d&quot; || ( RV=$?; rm -f &quot;Terms.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   Form
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   Terms
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   Semantics
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   Filters
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   ReplaceProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   Sequent
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   NaturalDeduction
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   Polarity
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   LSeqProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   GentzenDed
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   ExampleNatDed
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   CutSequent
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   ArrowGentzen
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   ExamplePol
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   ExampleNatDed3
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   ExampleNatDed2
+&quot;coqc&quot;  -q  -R &quot;.&quot; Lambek   ArrowDed
+cd &quot;.&quot; &amp;&amp; for i in Terms.vo Tactics.vo Sequent.vo Semantics.vo ReplaceProp.vo Polarity.vo NaturalDeduction.vo LSeqProp.vo GentzenDed.vo Form.vo Filters.vo ExamplePol.vo ExampleNatDed.vo ExampleNatDed3.vo ExampleNatDed2.vo CutSequent.vo ArrowGentzen.vo ArrowDed.vo   ; do \
+	 install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Lambek/$i`&quot;; \
+	 install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Lambek/$i; \
+	done
+Installing coq:contrib:lambek.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 623 K</p>
+            <ul>
+              <li>92 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/CutSequent.vo</code></li>
+              <li>74 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/GentzenDed.vo</code></li>
+              <li>71 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/Sequent.vo</code></li>
+              <li>59 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/ReplaceProp.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/Semantics.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/Form.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/Filters.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/Polarity.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/LSeqProp.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/Tactics.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/ExamplePol.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/ArrowGentzen.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/Terms.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/ExampleNatDed2.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/NaturalDeduction.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/ExampleNatDed3.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/ExampleNatDed.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Lambek/ArrowDed.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:lambek/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:lambek.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:lambek.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:lambek.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:lambek] Fetching https://gforge.inria.fr/git/coq-contribs/lambek.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:lambek.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Lambek
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
