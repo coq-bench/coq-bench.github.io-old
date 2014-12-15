@@ -154,8 +154,8 @@ It follows makefile target declaration order and has a clearer semantic.
 Warning:
 Please now use &quot;-extra[-phony] result deps command&quot; instead of &quot;-custom command deps result&quot;.
 It follows makefile target declaration order and has a clearer semantic.
-Makefile:246: warning: overriding recipe for target 'Hurkens_Set.vo'
-Makefile:175: warning: ignoring old recipe for target 'Hurkens_Set.vo'
+Makefile:246: warning: overriding recipe for target &#39;Hurkens_Set.vo&#39;
+Makefile:175: warning: ignoring old recipe for target &#39;Hurkens_Set.vo&#39;
 &quot;coqdep&quot; -c -R &quot;.&quot; Paradoxes &quot;BuraliForti.v&quot; &gt; &quot;BuraliForti.v.d&quot; || ( RV=$?; rm -f &quot;BuraliForti.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -R &quot;.&quot; Paradoxes &quot;Logics.v&quot; &gt; &quot;Logics.v.d&quot; || ( RV=$?; rm -f &quot;Logics.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -R &quot;.&quot; Paradoxes &quot;Reynolds1.v&quot; &gt; &quot;Reynolds1.v.d&quot; || ( RV=$?; rm -f &quot;Reynolds1.v.d&quot;; exit ${RV} )
@@ -164,8 +164,8 @@ Makefile:175: warning: ignoring old recipe for target 'Hurkens_Set.vo'
 &quot;coqdep&quot; -c -R &quot;.&quot; Paradoxes &quot;diaconescu.v&quot; &gt; &quot;diaconescu.v.d&quot; || ( RV=$?; rm -f &quot;diaconescu.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -R &quot;.&quot; Paradoxes &quot;Hurkens_Set.v&quot; &gt; &quot;Hurkens_Set.v.d&quot; || ( RV=$?; rm -f &quot;Hurkens_Set.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -R &quot;.&quot; Paradoxes &quot;BuraliForti_ex.v&quot; &gt; &quot;BuraliForti_ex.v.d&quot; || ( RV=$?; rm -f &quot;BuraliForti_ex.v.d&quot;; exit ${RV} )
-Makefile:246: warning: overriding recipe for target 'Hurkens_Set.vo'
-Makefile:175: warning: ignoring old recipe for target 'Hurkens_Set.vo'
+Makefile:246: warning: overriding recipe for target &#39;Hurkens_Set.vo&#39;
+Makefile:175: warning: ignoring old recipe for target &#39;Hurkens_Set.vo&#39;
 &quot;coqc&quot;  -q  -R &quot;.&quot; Paradoxes   BuraliForti_ex
 &quot;coqc&quot;  -q  -R &quot;.&quot; Paradoxes   Hurkens_Set
 &quot;coqc&quot;  -q  -R &quot;.&quot; Paradoxes   diaconescu
@@ -178,13 +178,13 @@ cannot be applied to the terms
  &quot;le&quot; : &quot;(U -&gt; bool) -&gt; U -&gt; bool&quot;
 The 1st term has type &quot;Type&quot; which should be coercible to 
 &quot;Set&quot;.
-Makefile:246: recipe for target 'Hurkens_Set.vo' failed
+Makefile:246: recipe for target &#39;Hurkens_Set.vo&#39; failed
 make: *** [Hurkens_Set.vo] Error 1
 make: *** Waiting for unfinished jobs....
 [ERROR] The compilation of coq:contrib:paradoxes.dev failed.
 Removing coq:contrib:paradoxes.dev.
   rm -R /home/bench/.opam/system/lib/coq/user-contrib/Paradoxes
-rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/Paradoxes': No such file or directory
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/Paradoxes&#39;: No such file or directory
 #=== ERROR while installing coq:contrib:paradoxes.dev =========================#
 # opam-version         1.2.0
 # os                   linux
@@ -206,7 +206,7 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/Paradoxes': No 
 # &quot;coqc&quot;  -q  -R &quot;.&quot; Paradoxes   Hurkens_Set
 # &quot;coqc&quot;  -q  -R &quot;.&quot; Paradoxes   diaconescu
 # &quot;coqc&quot;  -q  -R &quot;.&quot; Paradoxes   Log_Rel
-# Makefile:246: recipe for target 'Hurkens_Set.vo' failed
+# Makefile:246: recipe for target &#39;Hurkens_Set.vo&#39; failed
 ### stderr ###
 # ...[truncated]
 # File &quot;./Hurkens_Set.v&quot;, line 67, characters 0-52:
@@ -219,7 +219,7 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/Paradoxes': No 
 # &quot;Set&quot;.
 # make: *** [Hurkens_Set.vo] Error 1
 # make: *** Waiting for unfinished jobs....
-'opam install -y --verbose coq:contrib:paradoxes.dev' failed.
+&#39;opam install -y --verbose coq:contrib:paradoxes.dev&#39; failed.
 </pre></dd>
             </dl>
             <h2>Installation size</h2>

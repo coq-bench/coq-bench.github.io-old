@@ -265,14 +265,14 @@ parse_done
   Hn : 0 &lt;= n
   Hex : exec ((&quot;x&quot;, 0) :: (&quot;y&quot;, 0) :: (&quot;n&quot;, n) :: nil)
           (str.un_annot
-             (parse_instr'
+             (parse_instr&#39;
                 &quot;while x &lt; n do [le(x,n) /\ pp(y,x)] x:=x+1;y:=x+y done&quot;)) r2
   ============================
    i_a ex_m (((&quot;x&quot;, 0) :: (&quot;y&quot;, 0) :: (&quot;n&quot;, n) :: nil) @ g)
      (pc
-        (parse_instr'
+        (parse_instr&#39;
            &quot;while x &lt; n do [le(x,n) /\ pp(y,x)] x:=x+1;y:=x+y done&quot;)
-        (parse_assert' &quot;pp(y,n)&quot;))
+        (parse_assert&#39; &quot;pp(y,n)&quot;))
 parse_done
 1 subgoal
   r2 : env
@@ -281,7 +281,7 @@ parse_done
   Hn : 0 &lt;= n
   Hex : exec ((&quot;x&quot;, 0) :: (&quot;y&quot;, 0) :: (&quot;n&quot;, n) :: nil)
           (str.un_annot
-             (parse_instr'
+             (parse_instr&#39;
                 &quot;while x &lt; n do [le(x,n) /\ pp(y,x)] x:=x+1;y:=x+y done&quot;)) r2
   ============================
    0 &lt;= n /\ 0 = 0
@@ -322,7 +322,7 @@ Removing coq:contrib:semantics.dev.
 # stdout-file          /home/bench/.opam/system/build/coq:contrib:semantics.dev/coq:contrib:semantics-8207-1872ec.out
 # stderr-file          /home/bench/.opam/system/build/coq:contrib:semantics.dev/coq:contrib:semantics-8207-1872ec.err
 ### stderr ###
-# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/semantics': No such file or directory
+# rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/semantics&#39;: No such file or directory
 </pre></dd>
               <dt>Missing removes</dt>
               <dd>

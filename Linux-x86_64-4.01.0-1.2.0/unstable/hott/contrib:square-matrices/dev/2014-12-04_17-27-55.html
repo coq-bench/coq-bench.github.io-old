@@ -145,12 +145,12 @@ half_inv =
 fun (x p : nat) (h : half_dom x) =&gt;
 match h in (half_dom n) return (n = S p -&gt; half_dom (half (S p))) with
 | half_0 =&gt;
-    fun h' : 0 = S p =&gt;
+    fun h&#39; : 0 = S p =&gt;
     (fun H : False =&gt; False_ind (half_dom (half (S p))) H)
       (eq_ind 0 (fun e : nat =&gt; match e with
                                 | 0 =&gt; True
                                 | S _ =&gt; False
-                                end) I (S p) h')
+                                end) I (S p) h&#39;)
 | half_2 p0 H =&gt;
     fun H0 : p0 = S p =&gt;
     eq_ind p0 (fun n : nat =&gt; half_dom (half n)) H (S p) H0
@@ -244,10 +244,10 @@ abcde is not universe polymorphic
                (tt, (tt, 11, (12, 13)),
                (tt, 21, (22, 24), (tt, 31, (32, 33))))))
      : square nat
-type ('v, 'w) vector_ =
-| Vzero of 'v
-| Veven of ('v, ('w, 'w) prod) vector_
-| Vodd of (('v, 'w) prod, ('w, 'w) prod) vector_
+type (&#39;v, &#39;w) vector_ =
+| Vzero of &#39;v
+| Veven of (&#39;v, (&#39;w, &#39;w) prod) vector_
+| Vodd of ((&#39;v, &#39;w) prod, (&#39;w, &#39;w) prod) vector_
 cd &quot;.&quot; &amp;&amp; for i in SquareMatrices.vo   ; do \
  install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/SquareMatrices/$i`&quot;; \
  install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/SquareMatrices/$i; \

@@ -142,7 +142,7 @@ Building coq:contrib:ptsf.dev:
   coq_makefile -f Make -o Makefile
   make -j4
   make install
-Warning: install rule assumes that -R/-Q . _ is the only -R/-Q optionWarning: install rule assumes that -R/-Q . _ is the only -R/-Q optionWarning: -R/-Q options don't have a correct common prefix,
+Warning: install rule assumes that -R/-Q . _ is the only -R/-Q optionWarning: install rule assumes that -R/-Q . _ is the only -R/-Q optionWarning: -R/-Q options don&#39;t have a correct common prefix,
  install-doc will put anything in $INSTALLDEFAULTROOT
 &quot;coqdep&quot; -c -R . PTSF -R ../../Paris/PTSATR/ PTSATR &quot;f_env.v&quot; &gt; &quot;f_env.v.d&quot; || ( RV=$?; rm -f &quot;f_env.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -R . PTSF -R ../../Paris/PTSATR/ PTSATR &quot;f_equivalence.v&quot; &gt; &quot;f_equivalence.v.d&quot; || ( RV=$?; rm -f &quot;f_equivalence.v.d&quot;; exit ${RV} )
@@ -166,23 +166,23 @@ File &quot;./f_equivalence.v&quot;, line 2, characters 0-20:
 Error: Cannot find library base in loadpath
 File &quot;./f_typ2.v&quot;, line 2, characters 0-34:
 Error: Cannot find library f_term in loadpath
-Makefile:229: recipe for target 'f_equivalence.vo' failed
+Makefile:229: recipe for target &#39;f_equivalence.vo&#39; failed
 make: *** [f_equivalence.vo] Error 1
 make: *** Waiting for unfinished jobs....
-Makefile:229: recipe for target 'f_typ2.vo' failed
+Makefile:229: recipe for target &#39;f_typ2.vo&#39; failed
 make: *** [f_typ2.vo] Error 1
 File &quot;./f_term.v&quot;, line 3, characters 0-20:
 Error: Cannot find library base in loadpath
 File &quot;./f_typ.v&quot;, line 2, characters 0-28:
 Error: Cannot find library f_term in loadpath
 make: *** [f_term.vo] Error 1
-Makefile:229: recipe for target 'f_term.vo' failed
+Makefile:229: recipe for target &#39;f_term.vo&#39; failed
 make: *** [f_typ.vo] Error 1
-Makefile:229: recipe for target 'f_typ.vo' failed
+Makefile:229: recipe for target &#39;f_typ.vo&#39; failed
 [ERROR] The compilation of coq:contrib:ptsf.dev failed.
 Removing coq:contrib:ptsf.dev.
   rm -R /home/bench/.opam/system/lib/coq/user-contrib/ptsf
-rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/ptsf': No such file or directory
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/ptsf&#39;: No such file or directory
 #=== ERROR while installing coq:contrib:ptsf.dev ==============================#
 # opam-version         1.2.0
 # os                   linux
@@ -201,10 +201,10 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/ptsf': No such 
 # &quot;coqc&quot;  -q  -R . PTSF -R ../../Paris/PTSATR/ PTSATR   f_typ2
 # &quot;coqc&quot;  -q  -R . PTSF -R ../../Paris/PTSATR/ PTSATR   f_term
 # &quot;coqc&quot;  -q  -R . PTSF -R ../../Paris/PTSATR/ PTSATR   f_equivalence
-# Makefile:229: recipe for target 'f_equivalence.vo' failed
-# Makefile:229: recipe for target 'f_typ2.vo' failed
-# Makefile:229: recipe for target 'f_term.vo' failed
-# Makefile:229: recipe for target 'f_typ.vo' failed
+# Makefile:229: recipe for target &#39;f_equivalence.vo&#39; failed
+# Makefile:229: recipe for target &#39;f_typ2.vo&#39; failed
+# Makefile:229: recipe for target &#39;f_term.vo&#39; failed
+# Makefile:229: recipe for target &#39;f_typ.vo&#39; failed
 ### stderr ###
 # ...[truncated]
 # Error: Cannot find library f_term in loadpath
@@ -217,7 +217,7 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/ptsf': No such 
 # Error: Cannot find library f_term in loadpath
 # make: *** [f_term.vo] Error 1
 # make: *** [f_typ.vo] Error 1
-'opam install -y --verbose coq:contrib:ptsf.dev' failed.
+&#39;opam install -y --verbose coq:contrib:ptsf.dev&#39; failed.
 </pre></dd>
             </dl>
             <h2>Installation size</h2>

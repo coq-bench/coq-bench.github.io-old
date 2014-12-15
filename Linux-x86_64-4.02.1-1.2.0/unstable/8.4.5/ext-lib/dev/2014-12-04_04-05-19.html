@@ -132,9 +132,9 @@ Building coq:ext-lib.dev:
   make -j4
   make install
 make -C theories
-make[1]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[1]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 make -f Makefile.coq
-make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 &quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics.v&quot; &gt; &quot;Tactics.v.d&quot; || ( RV=$?; rm -f &quot;Tactics.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -slash -R . ExtLib &quot;ExtLib.v&quot; &gt; &quot;ExtLib.v.d&quot; || ( RV=$?; rm -f &quot;ExtLib.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -slash -R . ExtLib &quot;Recur/Relation.v&quot; &gt; &quot;Recur/Relation.v.d&quot; || ( RV=$?; rm -f &quot;Recur/Relation.v.d&quot;; exit ${RV} )
@@ -247,8 +247,8 @@ make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theo
 &quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/EquivDec.v&quot; &gt; &quot;Core/EquivDec.v.d&quot; || ( RV=$?; rm -f &quot;Core/EquivDec.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/CmpDec.v&quot; &gt; &quot;Core/CmpDec.v.d&quot; || ( RV=$?; rm -f &quot;Core/CmpDec.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/Any.v&quot; &gt; &quot;Core/Any.v.d&quot; || ( RV=$?; rm -f &quot;Core/Any.v.d&quot;; exit ${RV} )
-make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
-make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 &quot;coqc&quot;  -q  -R . ExtLib   Core/Any
 &quot;coqc&quot;  -q  -R . ExtLib   Core/RelDec
 &quot;coqc&quot;  -q  -R . ExtLib   Core/EquivDec
@@ -317,7 +317,7 @@ make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theo
 &quot;coqc&quot;  -q  -R . ExtLib   Data/Lazy
 &quot;coqc&quot;  -q  -R . ExtLib   Tactics/EqDep
 &quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadWriter
-Identifier 'lazy' now a keyword
+Identifier &#39;lazy&#39; now a keyword
 &quot;coqc&quot;  -q  -R . ExtLib   Data/Fun
 &quot;coqc&quot;  -q  -R . ExtLib   Data/Set/SetMap
 &quot;coqc&quot;  -q  -R . ExtLib   Structures/Monads
@@ -350,7 +350,7 @@ Identifier 'lazy' now a keyword
 &quot;coqc&quot;  -q  -R . ExtLib   Data/Map/FMapTwoThreeK
 &quot;coqc&quot;  -q  -R . ExtLib   Data/Graph/BuildGraph
 &quot;coqc&quot;  -q  -R . ExtLib   Data/Graph/GraphAlgos
-Identifier 'begin' now a keyword
+Identifier &#39;begin&#39; now a keyword
 &quot;coqc&quot;  -q  -R . ExtLib   Generic/Ind
 &quot;coqc&quot;  -q  -R . ExtLib   Tactics/Parametric
      = &quot;-(5,-(6,-(7,-())))&quot;
@@ -365,16 +365,16 @@ Identifier 'begin' now a keyword
 &quot;coqc&quot;  -q  -R . ExtLib   Data/HList
 &quot;coqc&quot;  -q  -R . ExtLib   Data/SumN
 &quot;coqc&quot;  -q  -R . ExtLib   Generic/Data
-make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
-make[1]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make[1]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 make -C examples
-make[1]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples'
+make[1]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
 coq_makefile -R ../theories ExtLib ConsiderDemo.v EvalWithExc.v MonadReasoning.v UsingSets.v WithDemo.v \
-          | sed -re 's/-R ([^ ]+) ExtLib/-I \1 -as ExtLib/g' \
+          | sed -re &#39;s/-R ([^ ]+) ExtLib/-I \1 -as ExtLib/g&#39; \
           &gt; Makefile.coq
 Warning: in option -R, ../theories is not a subdirectory of the current directory
 make -f Makefile.coq
-make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples'
+make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
 &quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;WithDemo.v&quot; &gt; &quot;WithDemo.v.d&quot; || ( RV=$?; rm -f &quot;WithDemo.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;UsingSets.v&quot; &gt; &quot;UsingSets.v.d&quot; || ( RV=$?; rm -f &quot;UsingSets.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;MonadReasoning.v&quot; &gt; &quot;MonadReasoning.v.d&quot; || ( RV=$?; rm -f &quot;MonadReasoning.v.d&quot;; exit ${RV} )
@@ -394,8 +394,8 @@ make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/exam
 *** Warning: in file EvalWithExc.v, library ExtLib.Data.Monads.EitherMonad.v is required and has not been found in loadpath!
 *** Warning: in file ConsiderDemo.v, library ExtLib.Tactics.Consider.v is required and has not been found in loadpath!
 *** Warning: in file ConsiderDemo.v, library ExtLib.Data.Nat.v is required and has not been found in loadpath!
-make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples'
-make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples'
+make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
+make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
 &quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   ConsiderDemo
 &quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   EvalWithExc
 &quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   MonadReasoning
@@ -421,22 +421,22 @@ make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/exam
          ((let (_, _, _, _, _, _, _, _, add, _) := ?34 in add) true
             (let (_, empty, _, _, _, _, _, _, _, _) := ?37 in empty))
      : ?28 bool
-make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples'
-make[1]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples'
+make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
+make[1]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
 make -C theories install
-make[1]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[1]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 make -f Makefile.coq
-make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make[2]: Nothing to be done for `all&#39;.
+make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 make -f Makefile.coq install
-make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[2]: Entering directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 for i in Core/Any.vo Core/CmpDec.vo Core/EquivDec.vo Core/RelDec.vo Core/Type.vo Tactics/BoolTac.vo Tactics/Cases.vo Tactics/Consider.vo Tactics/EqDep.vo Tactics/Equality.vo Tactics/Forward.vo Tactics/Injection.vo Tactics/MonadTac.vo Tactics/Parametric.vo Tactics/Reify.vo Tactics/TypeTac.vo Structures/Applicative.vo Structures/BinOps.vo Structures/CoFunctor.vo Structures/CoMonad.vo Structures/EqDep.vo Structures/Foldable.vo Structures/Functor.vo Structures/FunctorLaws.vo Structures/Identity.vo Structures/Maps.vo Structures/Monad.vo Structures/MonadCont.vo Structures/MonadExc.vo Structures/MonadFix.vo Structures/MonadLaws.vo Structures/MonadPlus.vo Structures/MonadReader.vo Structures/MonadState.vo Structures/MonadTrans.vo Structures/MonadWriter.vo Structures/MonadZero.vo Structures/Monads.vo Structures/Monoid.vo Structures/Proper.vo Structures/Reducible.vo Structures/Sets.vo Structures/Traversable.vo Data/Bool.vo Data/Char.vo Data/Checked.vo Data/Eq.vo Data/Fin.vo Data/Fun.vo Data/HList.vo Data/Lazy.vo Data/LazyList.vo Data/List.vo Data/ListFirstnSkipn.vo Data/ListNth.vo Data/Member.vo Data/N.vo Data/Nat.vo Data/Option.vo Data/Pair.vo Data/Positive.vo Data/PreFun.vo Data/Prop.vo Data/SigT.vo Data/Stream.vo Data/String.vo Data/Sum.vo Data/SumN.vo Data/Tuple.vo Data/Unit.vo Data/Vector.vo Data/Z.vo Data/Monads/ContMonad.vo Data/Monads/EitherMonad.vo Data/Monads/FuelMonad.vo Data/Monads/FuelMonadLaws.vo Data/Monads/IdentityMonad.vo Data/Monads/IdentityMonadLaws.vo Data/Monads/ListMonad.vo Data/Monads/OptionMonad.vo Data/Monads/OptionMonadLaws.vo Data/Monads/ReaderMonad.vo Data/Monads/ReaderMonadLaws.vo Data/Monads/StateMonad.vo Data/Monads/WriterMonad.vo Data/Set/ListSet.vo Data/Set/SetMap.vo Data/Set/TwoThreeTrees.vo Data/Map/FMapAList.vo Data/Map/FMapPositive.vo Data/Map/FMapTwoThreeK.vo Data/Graph/BuildGraph.vo Data/Graph/Graph.vo Data/Graph/GraphAdjList.vo Data/Graph/GraphAlgos.vo Generic/Data.vo Generic/Func.vo Generic/Ind.vo Relations/Compose.vo Relations/TransitiveClosure.vo Programming/Eqv.vo Programming/Extras.vo Programming/Injection.vo Programming/Le.vo Programming/Show.vo Programming/With.vo Recur/Facts.vo Recur/GenRec.vo Recur/Measure.vo Recur/Relation.vo ExtLib.vo ExtLib.vo Tactics.vo; do \
 	 install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/ExtLib/$i`; \
 	 install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/ExtLib/$i; \
 	done
-make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
-make[1]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories'
+make[2]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make[1]: Leaving directory `/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
 Installing coq:ext-lib.dev.
 </pre></dd>
             </dl>

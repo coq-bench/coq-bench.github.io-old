@@ -500,7 +500,7 @@ Finished transaction in 0.019 secs (0.017u,0.001s) (successful)
                                                  68 :: 69 :: 70 :: ..
      : list M.elt
 Finished transaction in 0.01 secs (0.009u,0.s) (successful)
-type 'x compare =
+type &#39;x compare =
 | LT
 | EQ
 | GT
@@ -516,12 +516,12 @@ let negb = function
 type nat =
 | O
 | S of nat
-type ('a, 'b) prod =
-| Pair of 'a * 'b
-(** val fst : ('a1, 'a2) prod -&gt; 'a1 **)
+type (&#39;a, &#39;b) prod =
+| Pair of &#39;a * &#39;b
+(** val fst : (&#39;a1, &#39;a2) prod -&gt; &#39;a1 **)
 let fst = function
 | Pair (x, y) -&gt; x
-(** val snd : ('a1, 'a2) prod -&gt; 'a2 **)
+(** val snd : (&#39;a1, &#39;a2) prod -&gt; &#39;a2 **)
 let snd = function
 | Pair (x, y) -&gt; y
 type comparison =
@@ -542,18 +542,18 @@ let compareSpec2Type = function
 | Eq -&gt; CompEqT
 | Lt -&gt; CompLtT
 | Gt -&gt; CompGtT
-type 'a compSpecT = compareSpecT
-(** val compSpec2Type : 'a1 -&gt; 'a1 -&gt; comparison -&gt; 'a1 compSpecT **)
+type &#39;a compSpecT = compareSpecT
+(** val compSpec2Type : &#39;a1 -&gt; &#39;a1 -&gt; comparison -&gt; &#39;a1 compSpecT **)
 let compSpec2Type x y c =
   compareSpec2Type c
-type 'a sig0 =
-  'a
+type &#39;a sig0 =
+  &#39;a
   (* singleton inductive, whose constructor was exist *)
 type sumbool =
 | Left
 | Right
-type 'a sumor =
-| Inleft of 'a
+type &#39;a sumor =
+| Inleft of &#39;a
 | Inright
 module Coq__1 = struct 
  (** val add : nat -&gt; nat -&gt; nat **)
@@ -644,12 +644,12 @@ module Pos =
   | IsNul
   | IsPos of positive
   | IsNeg
-  (** val mask_rect : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rect f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
   | IsNeg -&gt; f1
-  (** val mask_rec : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rec f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
@@ -717,10 +717,10 @@ module Pos =
     | XI p -&gt; add y (XO (mul p y))
     | XO p -&gt; XO (mul p y)
     | XH -&gt; y
-  (** val iter : ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; positive -&gt; 'a1 **)
+  (** val iter : (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; positive -&gt; &#39;a1 **)
   let rec iter f x = function
-  | XI n' -&gt; f (iter f (iter f x n') n')
-  | XO n' -&gt; iter f (iter f x n') n'
+  | XI n&#39; -&gt; f (iter f (iter f x n&#39;) n&#39;)
+  | XO n&#39; -&gt; iter f (iter f x n&#39;) n&#39;
   | XH -&gt; f x
   (** val pow : positive -&gt; positive -&gt; positive **)
   let pow x =
@@ -771,15 +771,15 @@ module Pos =
   let compare =
     compare_cont Eq
   (** val min : positive -&gt; positive -&gt; positive **)
-  let min p p' =
-    match compare p p' with
-    | Gt -&gt; p'
+  let min p p&#39; =
+    match compare p p&#39; with
+    | Gt -&gt; p&#39;
     | _ -&gt; p
   (** val max : positive -&gt; positive -&gt; positive **)
-  let max p p' =
-    match compare p p' with
+  let max p p&#39; =
+    match compare p p&#39; with
     | Gt -&gt; p
-    | _ -&gt; p'
+    | _ -&gt; p&#39;
   (** val eqb : positive -&gt; positive -&gt; bool **)
   let rec eqb p q =
     match p with
@@ -812,11 +812,11 @@ module Pos =
   | Pair (s, y) -&gt;
     (match y with
      | IsPos r -&gt;
-       let s' = XI (XO s) in
-       let r' = g (f r) in
-       (match leb s' r' with
-        | True -&gt; Pair ((XI s), (sub_mask r' s'))
-        | False -&gt; Pair ((XO s), (IsPos r')))
+       let s&#39; = XI (XO s) in
+       let r&#39; = g (f r) in
+       (match leb s&#39; r&#39; with
+        | True -&gt; Pair ((XI s), (sub_mask r&#39; s&#39;))
+        | False -&gt; Pair ((XO s), (IsPos r&#39;)))
      | _ -&gt; Pair ((XO s), (sub_mask (g (f XH)) (XO (XO XH)))))
   (** val sqrtrem : positive -&gt; (positive, mask) prod **)
   let rec sqrtrem = function
@@ -840,13 +840,13 @@ module Pos =
     | O -&gt; XH
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; a
-             | Lt -&gt; gcdn n1 (sub b' a') a
-             | Gt -&gt; gcdn n1 (sub a' b') b)
+             | Lt -&gt; gcdn n1 (sub b&#39; a&#39;) a
+             | Gt -&gt; gcdn n1 (sub a&#39; b&#39;) b)
           | XO b0 -&gt; gcdn n1 a b0
           | XH -&gt; XH)
        | XO a0 -&gt;
@@ -866,17 +866,17 @@ module Pos =
     | O -&gt; Pair (XH, (Pair (a, b)))
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; Pair (a, (Pair (XH, XH)))
              | Lt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub b' a') a in
+               let Pair (g, p) = ggcdn n1 (sub b&#39; a&#39;) a in
                let Pair (ba, aa) = p in
                Pair (g, (Pair (aa, (add aa (XO ba)))))
              | Gt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub a' b') b in
+               let Pair (g, p) = ggcdn n1 (sub a&#39; b&#39;) b in
                let Pair (ab, bb) = p in
                Pair (g, (Pair ((add bb (XO ab)), bb))))
           | XO b0 -&gt;
@@ -994,11 +994,11 @@ module Pos =
     | XI p0 -&gt;
       (match n0 with
        | O -&gt; True
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XO p0 -&gt;
       (match n0 with
        | O -&gt; False
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XH -&gt;
       (match n0 with
        | O -&gt; True
@@ -1018,7 +1018,7 @@ module Pos =
       (match n0 with
        | N0 -&gt; True
        | Npos p0 -&gt; False)
-  (** val iter_op : ('a1 -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter_op : (&#39;a1 -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 **)
   let rec iter_op op p a =
     match p with
     | XI p0 -&gt; op a (iter_op op p0 (op a a))
@@ -1102,12 +1102,12 @@ module Coq_Pos =
   | IsNul
   | IsPos of positive
   | IsNeg
-  (** val mask_rect : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rect f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
   | IsNeg -&gt; f1
-  (** val mask_rec : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rec f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
@@ -1175,10 +1175,10 @@ module Coq_Pos =
     | XI p -&gt; add y (XO (mul p y))
     | XO p -&gt; XO (mul p y)
     | XH -&gt; y
-  (** val iter : ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; positive -&gt; 'a1 **)
+  (** val iter : (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; positive -&gt; &#39;a1 **)
   let rec iter f x = function
-  | XI n' -&gt; f (iter f (iter f x n') n')
-  | XO n' -&gt; iter f (iter f x n') n'
+  | XI n&#39; -&gt; f (iter f (iter f x n&#39;) n&#39;)
+  | XO n&#39; -&gt; iter f (iter f x n&#39;) n&#39;
   | XH -&gt; f x
   (** val pow : positive -&gt; positive -&gt; positive **)
   let pow x =
@@ -1229,15 +1229,15 @@ module Coq_Pos =
   let compare =
     compare_cont Eq
   (** val min : positive -&gt; positive -&gt; positive **)
-  let min p p' =
-    match compare p p' with
-    | Gt -&gt; p'
+  let min p p&#39; =
+    match compare p p&#39; with
+    | Gt -&gt; p&#39;
     | _ -&gt; p
   (** val max : positive -&gt; positive -&gt; positive **)
-  let max p p' =
-    match compare p p' with
+  let max p p&#39; =
+    match compare p p&#39; with
     | Gt -&gt; p
-    | _ -&gt; p'
+    | _ -&gt; p&#39;
   (** val eqb : positive -&gt; positive -&gt; bool **)
   let rec eqb p q =
     match p with
@@ -1270,11 +1270,11 @@ module Coq_Pos =
   | Pair (s, y) -&gt;
     (match y with
      | IsPos r -&gt;
-       let s' = XI (XO s) in
-       let r' = g (f r) in
-       (match leb s' r' with
-        | True -&gt; Pair ((XI s), (sub_mask r' s'))
-        | False -&gt; Pair ((XO s), (IsPos r')))
+       let s&#39; = XI (XO s) in
+       let r&#39; = g (f r) in
+       (match leb s&#39; r&#39; with
+        | True -&gt; Pair ((XI s), (sub_mask r&#39; s&#39;))
+        | False -&gt; Pair ((XO s), (IsPos r&#39;)))
      | _ -&gt; Pair ((XO s), (sub_mask (g (f XH)) (XO (XO XH)))))
   (** val sqrtrem : positive -&gt; (positive, mask) prod **)
   let rec sqrtrem = function
@@ -1298,13 +1298,13 @@ module Coq_Pos =
     | O -&gt; XH
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; a
-             | Lt -&gt; gcdn n1 (sub b' a') a
-             | Gt -&gt; gcdn n1 (sub a' b') b)
+             | Lt -&gt; gcdn n1 (sub b&#39; a&#39;) a
+             | Gt -&gt; gcdn n1 (sub a&#39; b&#39;) b)
           | XO b0 -&gt; gcdn n1 a b0
           | XH -&gt; XH)
        | XO a0 -&gt;
@@ -1324,17 +1324,17 @@ module Coq_Pos =
     | O -&gt; Pair (XH, (Pair (a, b)))
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; Pair (a, (Pair (XH, XH)))
              | Lt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub b' a') a in
+               let Pair (g, p) = ggcdn n1 (sub b&#39; a&#39;) a in
                let Pair (ba, aa) = p in
                Pair (g, (Pair (aa, (add aa (XO ba)))))
              | Gt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub a' b') b in
+               let Pair (g, p) = ggcdn n1 (sub a&#39; b&#39;) b in
                let Pair (ab, bb) = p in
                Pair (g, (Pair ((add bb (XO ab)), bb))))
           | XO b0 -&gt;
@@ -1452,11 +1452,11 @@ module Coq_Pos =
     | XI p0 -&gt;
       (match n0 with
        | O -&gt; True
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XO p0 -&gt;
       (match n0 with
        | O -&gt; False
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XH -&gt;
       (match n0 with
        | O -&gt; True
@@ -1476,7 +1476,7 @@ module Coq_Pos =
       (match n0 with
        | N0 -&gt; True
        | Npos p0 -&gt; False)
-  (** val iter_op : ('a1 -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter_op : (&#39;a1 -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 **)
   let rec iter_op op p a =
     match p with
     | XI p0 -&gt; op a (iter_op op p0 (op a a))
@@ -1511,7 +1511,7 @@ module Coq_Pos =
       (match y0 with
        | XH -&gt; Left
        | _ -&gt; Right)
-  (** val peano_rect : 'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 **)
+  (** val peano_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 **)
   let rec peano_rect a f p =
     let f2 = peano_rect (f XH a) (fun p0 x -&gt; f (succ (XO p0)) (f (XO p0) x))
     in
@@ -1519,21 +1519,21 @@ module Coq_Pos =
      | XI q -&gt; f (XO q) (f2 q)
      | XO q -&gt; f2 q
      | XH -&gt; a)
-  (** val peano_rec : 'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 **)
+  (** val peano_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 **)
   let peano_rec =
     peano_rect
   type coq_PeanoView =
   | PeanoOne
   | PeanoSucc of positive * coq_PeanoView
   (** val coq_PeanoView_rect :
-      'a1 -&gt; (positive -&gt; coq_PeanoView -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt;
-      coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; coq_PeanoView -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt;
+      coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_rect f f0 p = function
   | PeanoOne -&gt; f
   | PeanoSucc (p1, p2) -&gt; f0 p1 p2 (coq_PeanoView_rect f f0 p1 p2)
   (** val coq_PeanoView_rec :
-      'a1 -&gt; (positive -&gt; coq_PeanoView -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt;
-      coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; coq_PeanoView -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt;
+      coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_rec f f0 p = function
   | PeanoOne -&gt; f
   | PeanoSucc (p1, p2) -&gt; f0 p1 p2 (coq_PeanoView_rec f f0 p1 p2)
@@ -1553,7 +1553,7 @@ module Coq_Pos =
   | XO p0 -&gt; peanoView_xO p0 (peanoView p0)
   | XH -&gt; PeanoOne
   (** val coq_PeanoView_iter :
-      'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_iter a f p = function
   | PeanoOne -&gt; a
   | PeanoSucc (p0, q0) -&gt; f p0 (coq_PeanoView_iter a f p0 q0)
@@ -1581,32 +1581,32 @@ module Coq_Pos =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        'a1 -&gt; 'a1 -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : positive -&gt; positive -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        'a1 -&gt; 'a1 -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : positive -&gt; positive -&gt; sumbool **)
@@ -1614,20 +1614,20 @@ module Coq_Pos =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
   (** val max_case_strong :
-      positive -&gt; positive -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+      positive -&gt; positive -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : positive -&gt; positive -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : positive -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : positive -&gt; positive -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
   (** val min_case_strong :
-      positive -&gt; positive -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+      positive -&gt; positive -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : positive -&gt; positive -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : positive -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : positive -&gt; positive -&gt; sumbool **)
@@ -1678,11 +1678,11 @@ module N =
   let sub n0 m =
     match n0 with
     | N0 -&gt; N0
-    | Npos n' -&gt;
+    | Npos n&#39; -&gt;
       (match m with
        | N0 -&gt; n0
-       | Npos m' -&gt;
-         (match Coq_Pos.sub_mask n' m' with
+       | Npos m&#39; -&gt;
+         (match Coq_Pos.sub_mask n&#39; m&#39; with
           | Coq_Pos.IsPos p -&gt; Npos p
           | _ -&gt; N0))
   (** val mul : n -&gt; n -&gt; n **)
@@ -1699,11 +1699,11 @@ module N =
     | N0 -&gt;
       (match m with
        | N0 -&gt; Eq
-       | Npos m' -&gt; Lt)
-    | Npos n' -&gt;
+       | Npos m&#39; -&gt; Lt)
+    | Npos n&#39; -&gt;
       (match m with
        | N0 -&gt; Gt
-       | Npos m' -&gt; Coq_Pos.compare n' m')
+       | Npos m&#39; -&gt; Coq_Pos.compare n&#39; m&#39;)
   (** val eqb : n -&gt; n -&gt; bool **)
   let rec eqb n0 m =
     match n0 with
@@ -1726,15 +1726,15 @@ module N =
     | Lt -&gt; True
     | _ -&gt; False
   (** val min : n -&gt; n -&gt; n **)
-  let min n0 n' =
-    match compare n0 n' with
-    | Gt -&gt; n'
+  let min n0 n&#39; =
+    match compare n0 n&#39; with
+    | Gt -&gt; n&#39;
     | _ -&gt; n0
   (** val max : n -&gt; n -&gt; n **)
-  let max n0 n' =
-    match compare n0 n' with
+  let max n0 n&#39; =
+    match compare n0 n&#39; with
     | Gt -&gt; n0
-    | _ -&gt; n'
+    | _ -&gt; n&#39;
   (** val div2 : n -&gt; n **)
   let div2 = function
   | N0 -&gt; N0
@@ -1783,18 +1783,18 @@ module N =
   (** val pos_div_eucl : positive -&gt; n -&gt; (n, n) prod **)
   let rec pos_div_eucl a b =
     match a with
-    | XI a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = succ_double r in
-      (match leb b r' with
-       | True -&gt; Pair ((succ_double q), (sub r' b))
-       | False -&gt; Pair ((double q), r'))
-    | XO a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = double r in
-      (match leb b r' with
-       | True -&gt; Pair ((succ_double q), (sub r' b))
-       | False -&gt; Pair ((double q), r'))
+    | XI a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = succ_double r in
+      (match leb b r&#39; with
+       | True -&gt; Pair ((succ_double q), (sub r&#39; b))
+       | False -&gt; Pair ((double q), r&#39;))
+    | XO a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = double r in
+      (match leb b r&#39; with
+       | True -&gt; Pair ((succ_double q), (sub r&#39; b))
+       | False -&gt; Pair ((double q), r&#39;))
     | XH -&gt;
       (match b with
        | N0 -&gt; Pair (N0, (Npos XH))
@@ -1912,8 +1912,8 @@ module N =
   (** val of_nat : nat -&gt; n **)
   let of_nat = function
   | O -&gt; N0
-  | S n' -&gt; Npos (Coq_Pos.of_succ_nat n')
-  (** val iter : n -&gt; ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 **)
+  | S n&#39; -&gt; Npos (Coq_Pos.of_succ_nat n&#39;)
+  (** val iter : n -&gt; (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 **)
   let iter n0 f x =
     match n0 with
     | N0 -&gt; x
@@ -1934,32 +1934,32 @@ module N =
   | N0 -&gt; Inright
   | Npos p -&gt; Inleft p
   (** val binary_rect :
-      'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+      &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let binary_rect f0 f2 fS2 n0 =
-    let f2' = fun p -&gt; f2 (Npos p) in
-    let fS2' = fun p -&gt; fS2 (Npos p) in
+    let f2&#39; = fun p -&gt; f2 (Npos p) in
+    let fS2&#39; = fun p -&gt; fS2 (Npos p) in
     (match n0 with
      | N0 -&gt; f0
      | Npos p -&gt;
        let rec f = function
-       | XI p1 -&gt; fS2' p1 (f p1)
-       | XO p1 -&gt; f2' p1 (f p1)
+       | XI p1 -&gt; fS2&#39; p1 (f p1)
+       | XO p1 -&gt; f2&#39; p1 (f p1)
        | XH -&gt; fS2 N0 f0
        in f p)
   (** val binary_rec :
-      'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+      &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let binary_rec =
     binary_rect
-  (** val peano_rect : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+  (** val peano_rect : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let peano_rect f0 f n0 =
-    let f' = fun p -&gt; f (Npos p) in
+    let f&#39; = fun p -&gt; f (Npos p) in
     (match n0 with
      | N0 -&gt; f0
-     | Npos p -&gt; Coq_Pos.peano_rect (f N0 f0) f' p)
-  (** val peano_rec : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+     | Npos p -&gt; Coq_Pos.peano_rect (f N0 f0) f&#39; p)
+  (** val peano_rec : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let peano_rec =
     peano_rect
-  (** val recursion : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+  (** val recursion : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let recursion x =
     peano_rect x
   (** val leb_spec0 : n -&gt; n -&gt; reflect **)
@@ -1983,49 +1983,49 @@ module N =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : n -&gt; n -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : n -&gt; n -&gt; sumbool **)
     let min_dec n0 m =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
-  (** val max_case_strong : n -&gt; n -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val max_case_strong : n -&gt; n -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : n -&gt; n -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : n -&gt; n -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : n -&gt; n -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
-  (** val min_case_strong : n -&gt; n -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val min_case_strong : n -&gt; n -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : n -&gt; n -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : n -&gt; n -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : n -&gt; n -&gt; sumbool **)
@@ -2122,16 +2122,16 @@ module Z =
   let add x y =
     match x with
     | Z0 -&gt; y
-    | Zpos x' -&gt;
+    | Zpos x&#39; -&gt;
       (match y with
        | Z0 -&gt; x
-       | Zpos y' -&gt; Zpos (Coq_Pos.add x' y')
-       | Zneg y' -&gt; pos_sub x' y')
-    | Zneg x' -&gt;
+       | Zpos y&#39; -&gt; Zpos (Coq_Pos.add x&#39; y&#39;)
+       | Zneg y&#39; -&gt; pos_sub x&#39; y&#39;)
+    | Zneg x&#39; -&gt;
       (match y with
        | Z0 -&gt; x
-       | Zpos y' -&gt; pos_sub y' x'
-       | Zneg y' -&gt; Zneg (Coq_Pos.add x' y'))
+       | Zpos y&#39; -&gt; pos_sub y&#39; x&#39;
+       | Zneg y&#39; -&gt; Zneg (Coq_Pos.add x&#39; y&#39;))
   (** val opp : z -&gt; z **)
   let opp = function
   | Z0 -&gt; Z0
@@ -2150,16 +2150,16 @@ module Z =
   let mul x y =
     match x with
     | Z0 -&gt; Z0
-    | Zpos x' -&gt;
+    | Zpos x&#39; -&gt;
       (match y with
        | Z0 -&gt; Z0
-       | Zpos y' -&gt; Zpos (Coq_Pos.mul x' y')
-       | Zneg y' -&gt; Zneg (Coq_Pos.mul x' y'))
-    | Zneg x' -&gt;
+       | Zpos y&#39; -&gt; Zpos (Coq_Pos.mul x&#39; y&#39;)
+       | Zneg y&#39; -&gt; Zneg (Coq_Pos.mul x&#39; y&#39;))
+    | Zneg x&#39; -&gt;
       (match y with
        | Z0 -&gt; Z0
-       | Zpos y' -&gt; Zneg (Coq_Pos.mul x' y')
-       | Zneg y' -&gt; Zpos (Coq_Pos.mul x' y'))
+       | Zpos y&#39; -&gt; Zneg (Coq_Pos.mul x&#39; y&#39;)
+       | Zneg y&#39; -&gt; Zpos (Coq_Pos.mul x&#39; y&#39;))
   (** val pow_pos : z -&gt; positive -&gt; z **)
   let pow_pos z0 =
     Coq_Pos.iter (mul z0) (Zpos XH)
@@ -2179,15 +2179,15 @@ module Z =
     | Z0 -&gt;
       (match y with
        | Z0 -&gt; Eq
-       | Zpos y' -&gt; Lt
-       | Zneg y' -&gt; Gt)
-    | Zpos x' -&gt;
+       | Zpos y&#39; -&gt; Lt
+       | Zneg y&#39; -&gt; Gt)
+    | Zpos x&#39; -&gt;
       (match y with
-       | Zpos y' -&gt; Coq_Pos.compare x' y'
+       | Zpos y&#39; -&gt; Coq_Pos.compare x&#39; y&#39;
        | _ -&gt; Gt)
-    | Zneg x' -&gt;
+    | Zneg x&#39; -&gt;
       (match y with
-       | Zneg y' -&gt; compOpp (Coq_Pos.compare x' y')
+       | Zneg y&#39; -&gt; compOpp (Coq_Pos.compare x&#39; y&#39;)
        | _ -&gt; Lt)
   (** val sgn : z -&gt; z **)
   let sgn = function
@@ -2273,7 +2273,7 @@ module Z =
   let to_pos = function
   | Zpos p -&gt; p
   | _ -&gt; XH
-  (** val iter : z -&gt; ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter : z -&gt; (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 **)
   let iter n0 f x =
     match n0 with
     | Zpos p -&gt; Coq_Pos.iter f x p
@@ -2281,18 +2281,18 @@ module Z =
   (** val pos_div_eucl : positive -&gt; z -&gt; (z, z) prod **)
   let rec pos_div_eucl a b =
     match a with
-    | XI a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = add (mul (Zpos (XO XH)) r) (Zpos XH) in
-      (match ltb r' b with
-       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r')
-       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r' b)))
-    | XO a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = mul (Zpos (XO XH)) r in
-      (match ltb r' b with
-       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r')
-       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r' b)))
+    | XI a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = add (mul (Zpos (XO XH)) r) (Zpos XH) in
+      (match ltb r&#39; b with
+       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r&#39;)
+       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r&#39; b)))
+    | XO a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = mul (Zpos (XO XH)) r in
+      (match ltb r&#39; b with
+       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r&#39;)
+       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r&#39; b)))
     | XH -&gt;
       (match leb (Zpos (XO XH)) b with
        | True -&gt; Pair (Z0, (Zpos XH))
@@ -2301,25 +2301,25 @@ module Z =
   let div_eucl a b =
     match a with
     | Z0 -&gt; Pair (Z0, Z0)
-    | Zpos a' -&gt;
+    | Zpos a&#39; -&gt;
       (match b with
        | Z0 -&gt; Pair (Z0, Z0)
-       | Zpos p -&gt; pos_div_eucl a' b
-       | Zneg b' -&gt;
-         let Pair (q, r) = pos_div_eucl a' (Zpos b') in
+       | Zpos p -&gt; pos_div_eucl a&#39; b
+       | Zneg b&#39; -&gt;
+         let Pair (q, r) = pos_div_eucl a&#39; (Zpos b&#39;) in
          (match r with
           | Z0 -&gt; Pair ((opp q), Z0)
           | _ -&gt; Pair ((opp (add q (Zpos XH))), (add b r))))
-    | Zneg a' -&gt;
+    | Zneg a&#39; -&gt;
       (match b with
        | Z0 -&gt; Pair (Z0, Z0)
        | Zpos p -&gt;
-         let Pair (q, r) = pos_div_eucl a' b in
+         let Pair (q, r) = pos_div_eucl a&#39; b in
          (match r with
           | Z0 -&gt; Pair ((opp q), Z0)
           | _ -&gt; Pair ((opp (add q (Zpos XH))), (sub b r)))
-       | Zneg b' -&gt;
-         let Pair (q, r) = pos_div_eucl a' (Zpos b') in Pair (q, (opp r)))
+       | Zneg b&#39; -&gt;
+         let Pair (q, r) = pos_div_eucl a&#39; (Zpos b&#39;) in Pair (q, (opp r)))
   (** val div : z -&gt; z -&gt; z **)
   let div a b =
     let Pair (q, x) = div_eucl a b in q
@@ -2574,49 +2574,49 @@ module Z =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : z -&gt; z -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : z -&gt; z -&gt; sumbool **)
     let min_dec n0 m =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
-  (** val max_case_strong : z -&gt; z -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val max_case_strong : z -&gt; z -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : z -&gt; z -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : z -&gt; z -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : z -&gt; z -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
-  (** val min_case_strong : z -&gt; z -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val min_case_strong : z -&gt; z -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : z -&gt; z -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : z -&gt; z -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : z -&gt; z -&gt; sumbool **)
@@ -2810,12 +2810,12 @@ let negb = function
 type nat =
 | O
 | S of nat
-type ('a, 'b) prod =
-| Pair of 'a * 'b
-(** val fst : ('a1, 'a2) prod -&gt; 'a1 **)
+type (&#39;a, &#39;b) prod =
+| Pair of &#39;a * &#39;b
+(** val fst : (&#39;a1, &#39;a2) prod -&gt; &#39;a1 **)
 let fst = function
 | Pair (x, y) -&gt; x
-(** val snd : ('a1, 'a2) prod -&gt; 'a2 **)
+(** val snd : (&#39;a1, &#39;a2) prod -&gt; &#39;a2 **)
 let snd = function
 | Pair (x, y) -&gt; y
 type comparison =
@@ -2836,18 +2836,18 @@ let compareSpec2Type = function
 | Eq -&gt; CompEqT
 | Lt -&gt; CompLtT
 | Gt -&gt; CompGtT
-type 'a compSpecT = compareSpecT
-(** val compSpec2Type : 'a1 -&gt; 'a1 -&gt; comparison -&gt; 'a1 compSpecT **)
+type &#39;a compSpecT = compareSpecT
+(** val compSpec2Type : &#39;a1 -&gt; &#39;a1 -&gt; comparison -&gt; &#39;a1 compSpecT **)
 let compSpec2Type x y c =
   compareSpec2Type c
-type 'a sig0 =
-  'a
+type &#39;a sig0 =
+  &#39;a
   (* singleton inductive, whose constructor was exist *)
 type sumbool =
 | Left
 | Right
-type 'a sumor =
-| Inleft of 'a
+type &#39;a sumor =
+| Inleft of &#39;a
 | Inright
 module Coq__1 = struct 
  (** val add : nat -&gt; nat -&gt; nat **)
@@ -2938,12 +2938,12 @@ module Pos =
   | IsNul
   | IsPos of positive
   | IsNeg
-  (** val mask_rect : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rect f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
   | IsNeg -&gt; f1
-  (** val mask_rec : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rec f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
@@ -3011,10 +3011,10 @@ module Pos =
     | XI p -&gt; add y (XO (mul p y))
     | XO p -&gt; XO (mul p y)
     | XH -&gt; y
-  (** val iter : ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; positive -&gt; 'a1 **)
+  (** val iter : (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; positive -&gt; &#39;a1 **)
   let rec iter f x = function
-  | XI n' -&gt; f (iter f (iter f x n') n')
-  | XO n' -&gt; iter f (iter f x n') n'
+  | XI n&#39; -&gt; f (iter f (iter f x n&#39;) n&#39;)
+  | XO n&#39; -&gt; iter f (iter f x n&#39;) n&#39;
   | XH -&gt; f x
   (** val pow : positive -&gt; positive -&gt; positive **)
   let pow x =
@@ -3065,15 +3065,15 @@ module Pos =
   let compare =
     compare_cont Eq
   (** val min : positive -&gt; positive -&gt; positive **)
-  let min p p' =
-    match compare p p' with
-    | Gt -&gt; p'
+  let min p p&#39; =
+    match compare p p&#39; with
+    | Gt -&gt; p&#39;
     | _ -&gt; p
   (** val max : positive -&gt; positive -&gt; positive **)
-  let max p p' =
-    match compare p p' with
+  let max p p&#39; =
+    match compare p p&#39; with
     | Gt -&gt; p
-    | _ -&gt; p'
+    | _ -&gt; p&#39;
   (** val eqb : positive -&gt; positive -&gt; bool **)
   let rec eqb p q =
     match p with
@@ -3106,11 +3106,11 @@ module Pos =
   | Pair (s, y) -&gt;
     (match y with
      | IsPos r -&gt;
-       let s' = XI (XO s) in
-       let r' = g (f r) in
-       (match leb s' r' with
-        | True -&gt; Pair ((XI s), (sub_mask r' s'))
-        | False -&gt; Pair ((XO s), (IsPos r')))
+       let s&#39; = XI (XO s) in
+       let r&#39; = g (f r) in
+       (match leb s&#39; r&#39; with
+        | True -&gt; Pair ((XI s), (sub_mask r&#39; s&#39;))
+        | False -&gt; Pair ((XO s), (IsPos r&#39;)))
      | _ -&gt; Pair ((XO s), (sub_mask (g (f XH)) (XO (XO XH)))))
   (** val sqrtrem : positive -&gt; (positive, mask) prod **)
   let rec sqrtrem = function
@@ -3134,13 +3134,13 @@ module Pos =
     | O -&gt; XH
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; a
-             | Lt -&gt; gcdn n1 (sub b' a') a
-             | Gt -&gt; gcdn n1 (sub a' b') b)
+             | Lt -&gt; gcdn n1 (sub b&#39; a&#39;) a
+             | Gt -&gt; gcdn n1 (sub a&#39; b&#39;) b)
           | XO b0 -&gt; gcdn n1 a b0
           | XH -&gt; XH)
        | XO a0 -&gt;
@@ -3160,17 +3160,17 @@ module Pos =
     | O -&gt; Pair (XH, (Pair (a, b)))
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; Pair (a, (Pair (XH, XH)))
              | Lt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub b' a') a in
+               let Pair (g, p) = ggcdn n1 (sub b&#39; a&#39;) a in
                let Pair (ba, aa) = p in
                Pair (g, (Pair (aa, (add aa (XO ba)))))
              | Gt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub a' b') b in
+               let Pair (g, p) = ggcdn n1 (sub a&#39; b&#39;) b in
                let Pair (ab, bb) = p in
                Pair (g, (Pair ((add bb (XO ab)), bb))))
           | XO b0 -&gt;
@@ -3288,11 +3288,11 @@ module Pos =
     | XI p0 -&gt;
       (match n0 with
        | O -&gt; True
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XO p0 -&gt;
       (match n0 with
        | O -&gt; False
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XH -&gt;
       (match n0 with
        | O -&gt; True
@@ -3312,7 +3312,7 @@ module Pos =
       (match n0 with
        | N0 -&gt; True
        | Npos p0 -&gt; False)
-  (** val iter_op : ('a1 -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter_op : (&#39;a1 -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 **)
   let rec iter_op op p a =
     match p with
     | XI p0 -&gt; op a (iter_op op p0 (op a a))
@@ -3396,12 +3396,12 @@ module Coq_Pos =
   | IsNul
   | IsPos of positive
   | IsNeg
-  (** val mask_rect : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rect f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
   | IsNeg -&gt; f1
-  (** val mask_rec : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rec f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
@@ -3469,10 +3469,10 @@ module Coq_Pos =
     | XI p -&gt; add y (XO (mul p y))
     | XO p -&gt; XO (mul p y)
     | XH -&gt; y
-  (** val iter : ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; positive -&gt; 'a1 **)
+  (** val iter : (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; positive -&gt; &#39;a1 **)
   let rec iter f x = function
-  | XI n' -&gt; f (iter f (iter f x n') n')
-  | XO n' -&gt; iter f (iter f x n') n'
+  | XI n&#39; -&gt; f (iter f (iter f x n&#39;) n&#39;)
+  | XO n&#39; -&gt; iter f (iter f x n&#39;) n&#39;
   | XH -&gt; f x
   (** val pow : positive -&gt; positive -&gt; positive **)
   let pow x =
@@ -3523,15 +3523,15 @@ module Coq_Pos =
   let compare =
     compare_cont Eq
   (** val min : positive -&gt; positive -&gt; positive **)
-  let min p p' =
-    match compare p p' with
-    | Gt -&gt; p'
+  let min p p&#39; =
+    match compare p p&#39; with
+    | Gt -&gt; p&#39;
     | _ -&gt; p
   (** val max : positive -&gt; positive -&gt; positive **)
-  let max p p' =
-    match compare p p' with
+  let max p p&#39; =
+    match compare p p&#39; with
     | Gt -&gt; p
-    | _ -&gt; p'
+    | _ -&gt; p&#39;
   (** val eqb : positive -&gt; positive -&gt; bool **)
   let rec eqb p q =
     match p with
@@ -3564,11 +3564,11 @@ module Coq_Pos =
   | Pair (s, y) -&gt;
     (match y with
      | IsPos r -&gt;
-       let s' = XI (XO s) in
-       let r' = g (f r) in
-       (match leb s' r' with
-        | True -&gt; Pair ((XI s), (sub_mask r' s'))
-        | False -&gt; Pair ((XO s), (IsPos r')))
+       let s&#39; = XI (XO s) in
+       let r&#39; = g (f r) in
+       (match leb s&#39; r&#39; with
+        | True -&gt; Pair ((XI s), (sub_mask r&#39; s&#39;))
+        | False -&gt; Pair ((XO s), (IsPos r&#39;)))
      | _ -&gt; Pair ((XO s), (sub_mask (g (f XH)) (XO (XO XH)))))
   (** val sqrtrem : positive -&gt; (positive, mask) prod **)
   let rec sqrtrem = function
@@ -3592,13 +3592,13 @@ module Coq_Pos =
     | O -&gt; XH
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; a
-             | Lt -&gt; gcdn n1 (sub b' a') a
-             | Gt -&gt; gcdn n1 (sub a' b') b)
+             | Lt -&gt; gcdn n1 (sub b&#39; a&#39;) a
+             | Gt -&gt; gcdn n1 (sub a&#39; b&#39;) b)
           | XO b0 -&gt; gcdn n1 a b0
           | XH -&gt; XH)
        | XO a0 -&gt;
@@ -3618,17 +3618,17 @@ module Coq_Pos =
     | O -&gt; Pair (XH, (Pair (a, b)))
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; Pair (a, (Pair (XH, XH)))
              | Lt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub b' a') a in
+               let Pair (g, p) = ggcdn n1 (sub b&#39; a&#39;) a in
                let Pair (ba, aa) = p in
                Pair (g, (Pair (aa, (add aa (XO ba)))))
              | Gt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub a' b') b in
+               let Pair (g, p) = ggcdn n1 (sub a&#39; b&#39;) b in
                let Pair (ab, bb) = p in
                Pair (g, (Pair ((add bb (XO ab)), bb))))
           | XO b0 -&gt;
@@ -3746,11 +3746,11 @@ module Coq_Pos =
     | XI p0 -&gt;
       (match n0 with
        | O -&gt; True
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XO p0 -&gt;
       (match n0 with
        | O -&gt; False
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XH -&gt;
       (match n0 with
        | O -&gt; True
@@ -3770,7 +3770,7 @@ module Coq_Pos =
       (match n0 with
        | N0 -&gt; True
        | Npos p0 -&gt; False)
-  (** val iter_op : ('a1 -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter_op : (&#39;a1 -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 **)
   let rec iter_op op p a =
     match p with
     | XI p0 -&gt; op a (iter_op op p0 (op a a))
@@ -3805,7 +3805,7 @@ module Coq_Pos =
       (match y0 with
        | XH -&gt; Left
        | _ -&gt; Right)
-  (** val peano_rect : 'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 **)
+  (** val peano_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 **)
   let rec peano_rect a f p =
     let f2 = peano_rect (f XH a) (fun p0 x -&gt; f (succ (XO p0)) (f (XO p0) x))
     in
@@ -3813,21 +3813,21 @@ module Coq_Pos =
      | XI q -&gt; f (XO q) (f2 q)
      | XO q -&gt; f2 q
      | XH -&gt; a)
-  (** val peano_rec : 'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 **)
+  (** val peano_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 **)
   let peano_rec =
     peano_rect
   type coq_PeanoView =
   | PeanoOne
   | PeanoSucc of positive * coq_PeanoView
   (** val coq_PeanoView_rect :
-      'a1 -&gt; (positive -&gt; coq_PeanoView -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt;
-      coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; coq_PeanoView -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt;
+      coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_rect f f0 p = function
   | PeanoOne -&gt; f
   | PeanoSucc (p1, p2) -&gt; f0 p1 p2 (coq_PeanoView_rect f f0 p1 p2)
   (** val coq_PeanoView_rec :
-      'a1 -&gt; (positive -&gt; coq_PeanoView -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt;
-      coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; coq_PeanoView -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt;
+      coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_rec f f0 p = function
   | PeanoOne -&gt; f
   | PeanoSucc (p1, p2) -&gt; f0 p1 p2 (coq_PeanoView_rec f f0 p1 p2)
@@ -3847,7 +3847,7 @@ module Coq_Pos =
   | XO p0 -&gt; peanoView_xO p0 (peanoView p0)
   | XH -&gt; PeanoOne
   (** val coq_PeanoView_iter :
-      'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_iter a f p = function
   | PeanoOne -&gt; a
   | PeanoSucc (p0, q0) -&gt; f p0 (coq_PeanoView_iter a f p0 q0)
@@ -3875,32 +3875,32 @@ module Coq_Pos =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        'a1 -&gt; 'a1 -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : positive -&gt; positive -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        'a1 -&gt; 'a1 -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : positive -&gt; positive -&gt; sumbool **)
@@ -3908,20 +3908,20 @@ module Coq_Pos =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
   (** val max_case_strong :
-      positive -&gt; positive -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+      positive -&gt; positive -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : positive -&gt; positive -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : positive -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : positive -&gt; positive -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
   (** val min_case_strong :
-      positive -&gt; positive -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+      positive -&gt; positive -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : positive -&gt; positive -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : positive -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : positive -&gt; positive -&gt; sumbool **)
@@ -3972,11 +3972,11 @@ module N =
   let sub n0 m =
     match n0 with
     | N0 -&gt; N0
-    | Npos n' -&gt;
+    | Npos n&#39; -&gt;
       (match m with
        | N0 -&gt; n0
-       | Npos m' -&gt;
-         (match Coq_Pos.sub_mask n' m' with
+       | Npos m&#39; -&gt;
+         (match Coq_Pos.sub_mask n&#39; m&#39; with
           | Coq_Pos.IsPos p -&gt; Npos p
           | _ -&gt; N0))
   (** val mul : n -&gt; n -&gt; n **)
@@ -3993,11 +3993,11 @@ module N =
     | N0 -&gt;
       (match m with
        | N0 -&gt; Eq
-       | Npos m' -&gt; Lt)
-    | Npos n' -&gt;
+       | Npos m&#39; -&gt; Lt)
+    | Npos n&#39; -&gt;
       (match m with
        | N0 -&gt; Gt
-       | Npos m' -&gt; Coq_Pos.compare n' m')
+       | Npos m&#39; -&gt; Coq_Pos.compare n&#39; m&#39;)
   (** val eqb : n -&gt; n -&gt; bool **)
   let rec eqb n0 m =
     match n0 with
@@ -4020,15 +4020,15 @@ module N =
     | Lt -&gt; True
     | _ -&gt; False
   (** val min : n -&gt; n -&gt; n **)
-  let min n0 n' =
-    match compare n0 n' with
-    | Gt -&gt; n'
+  let min n0 n&#39; =
+    match compare n0 n&#39; with
+    | Gt -&gt; n&#39;
     | _ -&gt; n0
   (** val max : n -&gt; n -&gt; n **)
-  let max n0 n' =
-    match compare n0 n' with
+  let max n0 n&#39; =
+    match compare n0 n&#39; with
     | Gt -&gt; n0
-    | _ -&gt; n'
+    | _ -&gt; n&#39;
   (** val div2 : n -&gt; n **)
   let div2 = function
   | N0 -&gt; N0
@@ -4077,18 +4077,18 @@ module N =
   (** val pos_div_eucl : positive -&gt; n -&gt; (n, n) prod **)
   let rec pos_div_eucl a b =
     match a with
-    | XI a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = succ_double r in
-      (match leb b r' with
-       | True -&gt; Pair ((succ_double q), (sub r' b))
-       | False -&gt; Pair ((double q), r'))
-    | XO a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = double r in
-      (match leb b r' with
-       | True -&gt; Pair ((succ_double q), (sub r' b))
-       | False -&gt; Pair ((double q), r'))
+    | XI a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = succ_double r in
+      (match leb b r&#39; with
+       | True -&gt; Pair ((succ_double q), (sub r&#39; b))
+       | False -&gt; Pair ((double q), r&#39;))
+    | XO a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = double r in
+      (match leb b r&#39; with
+       | True -&gt; Pair ((succ_double q), (sub r&#39; b))
+       | False -&gt; Pair ((double q), r&#39;))
     | XH -&gt;
       (match b with
        | N0 -&gt; Pair (N0, (Npos XH))
@@ -4206,8 +4206,8 @@ module N =
   (** val of_nat : nat -&gt; n **)
   let of_nat = function
   | O -&gt; N0
-  | S n' -&gt; Npos (Coq_Pos.of_succ_nat n')
-  (** val iter : n -&gt; ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 **)
+  | S n&#39; -&gt; Npos (Coq_Pos.of_succ_nat n&#39;)
+  (** val iter : n -&gt; (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 **)
   let iter n0 f x =
     match n0 with
     | N0 -&gt; x
@@ -4228,32 +4228,32 @@ module N =
   | N0 -&gt; Inright
   | Npos p -&gt; Inleft p
   (** val binary_rect :
-      'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+      &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let binary_rect f0 f2 fS2 n0 =
-    let f2' = fun p -&gt; f2 (Npos p) in
-    let fS2' = fun p -&gt; fS2 (Npos p) in
+    let f2&#39; = fun p -&gt; f2 (Npos p) in
+    let fS2&#39; = fun p -&gt; fS2 (Npos p) in
     (match n0 with
      | N0 -&gt; f0
      | Npos p -&gt;
        let rec f = function
-       | XI p1 -&gt; fS2' p1 (f p1)
-       | XO p1 -&gt; f2' p1 (f p1)
+       | XI p1 -&gt; fS2&#39; p1 (f p1)
+       | XO p1 -&gt; f2&#39; p1 (f p1)
        | XH -&gt; fS2 N0 f0
        in f p)
   (** val binary_rec :
-      'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+      &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let binary_rec =
     binary_rect
-  (** val peano_rect : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+  (** val peano_rect : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let peano_rect f0 f n0 =
-    let f' = fun p -&gt; f (Npos p) in
+    let f&#39; = fun p -&gt; f (Npos p) in
     (match n0 with
      | N0 -&gt; f0
-     | Npos p -&gt; Coq_Pos.peano_rect (f N0 f0) f' p)
-  (** val peano_rec : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+     | Npos p -&gt; Coq_Pos.peano_rect (f N0 f0) f&#39; p)
+  (** val peano_rec : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let peano_rec =
     peano_rect
-  (** val recursion : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+  (** val recursion : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let recursion x =
     peano_rect x
   (** val leb_spec0 : n -&gt; n -&gt; reflect **)
@@ -4277,49 +4277,49 @@ module N =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : n -&gt; n -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : n -&gt; n -&gt; sumbool **)
     let min_dec n0 m =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
-  (** val max_case_strong : n -&gt; n -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val max_case_strong : n -&gt; n -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : n -&gt; n -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : n -&gt; n -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : n -&gt; n -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
-  (** val min_case_strong : n -&gt; n -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val min_case_strong : n -&gt; n -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : n -&gt; n -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : n -&gt; n -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : n -&gt; n -&gt; sumbool **)
@@ -4416,16 +4416,16 @@ module Z =
   let add x y =
     match x with
     | Z0 -&gt; y
-    | Zpos x' -&gt;
+    | Zpos x&#39; -&gt;
       (match y with
        | Z0 -&gt; x
-       | Zpos y' -&gt; Zpos (Coq_Pos.add x' y')
-       | Zneg y' -&gt; pos_sub x' y')
-    | Zneg x' -&gt;
+       | Zpos y&#39; -&gt; Zpos (Coq_Pos.add x&#39; y&#39;)
+       | Zneg y&#39; -&gt; pos_sub x&#39; y&#39;)
+    | Zneg x&#39; -&gt;
       (match y with
        | Z0 -&gt; x
-       | Zpos y' -&gt; pos_sub y' x'
-       | Zneg y' -&gt; Zneg (Coq_Pos.add x' y'))
+       | Zpos y&#39; -&gt; pos_sub y&#39; x&#39;
+       | Zneg y&#39; -&gt; Zneg (Coq_Pos.add x&#39; y&#39;))
   (** val opp : z -&gt; z **)
   let opp = function
   | Z0 -&gt; Z0
@@ -4444,16 +4444,16 @@ module Z =
   let mul x y =
     match x with
     | Z0 -&gt; Z0
-    | Zpos x' -&gt;
+    | Zpos x&#39; -&gt;
       (match y with
        | Z0 -&gt; Z0
-       | Zpos y' -&gt; Zpos (Coq_Pos.mul x' y')
-       | Zneg y' -&gt; Zneg (Coq_Pos.mul x' y'))
-    | Zneg x' -&gt;
+       | Zpos y&#39; -&gt; Zpos (Coq_Pos.mul x&#39; y&#39;)
+       | Zneg y&#39; -&gt; Zneg (Coq_Pos.mul x&#39; y&#39;))
+    | Zneg x&#39; -&gt;
       (match y with
        | Z0 -&gt; Z0
-       | Zpos y' -&gt; Zneg (Coq_Pos.mul x' y')
-       | Zneg y' -&gt; Zpos (Coq_Pos.mul x' y'))
+       | Zpos y&#39; -&gt; Zneg (Coq_Pos.mul x&#39; y&#39;)
+       | Zneg y&#39; -&gt; Zpos (Coq_Pos.mul x&#39; y&#39;))
   (** val pow_pos : z -&gt; positive -&gt; z **)
   let pow_pos z0 =
     Coq_Pos.iter (mul z0) (Zpos XH)
@@ -4473,15 +4473,15 @@ module Z =
     | Z0 -&gt;
       (match y with
        | Z0 -&gt; Eq
-       | Zpos y' -&gt; Lt
-       | Zneg y' -&gt; Gt)
-    | Zpos x' -&gt;
+       | Zpos y&#39; -&gt; Lt
+       | Zneg y&#39; -&gt; Gt)
+    | Zpos x&#39; -&gt;
       (match y with
-       | Zpos y' -&gt; Coq_Pos.compare x' y'
+       | Zpos y&#39; -&gt; Coq_Pos.compare x&#39; y&#39;
        | _ -&gt; Gt)
-    | Zneg x' -&gt;
+    | Zneg x&#39; -&gt;
       (match y with
-       | Zneg y' -&gt; compOpp (Coq_Pos.compare x' y')
+       | Zneg y&#39; -&gt; compOpp (Coq_Pos.compare x&#39; y&#39;)
        | _ -&gt; Lt)
   (** val sgn : z -&gt; z **)
   let sgn = function
@@ -4567,7 +4567,7 @@ module Z =
   let to_pos = function
   | Zpos p -&gt; p
   | _ -&gt; XH
-  (** val iter : z -&gt; ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter : z -&gt; (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 **)
   let iter n0 f x =
     match n0 with
     | Zpos p -&gt; Coq_Pos.iter f x p
@@ -4575,18 +4575,18 @@ module Z =
   (** val pos_div_eucl : positive -&gt; z -&gt; (z, z) prod **)
   let rec pos_div_eucl a b =
     match a with
-    | XI a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = add (mul (Zpos (XO XH)) r) (Zpos XH) in
-      (match ltb r' b with
-       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r')
-       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r' b)))
-    | XO a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = mul (Zpos (XO XH)) r in
-      (match ltb r' b with
-       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r')
-       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r' b)))
+    | XI a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = add (mul (Zpos (XO XH)) r) (Zpos XH) in
+      (match ltb r&#39; b with
+       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r&#39;)
+       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r&#39; b)))
+    | XO a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = mul (Zpos (XO XH)) r in
+      (match ltb r&#39; b with
+       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r&#39;)
+       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r&#39; b)))
     | XH -&gt;
       (match leb (Zpos (XO XH)) b with
        | True -&gt; Pair (Z0, (Zpos XH))
@@ -4595,25 +4595,25 @@ module Z =
   let div_eucl a b =
     match a with
     | Z0 -&gt; Pair (Z0, Z0)
-    | Zpos a' -&gt;
+    | Zpos a&#39; -&gt;
       (match b with
        | Z0 -&gt; Pair (Z0, Z0)
-       | Zpos p -&gt; pos_div_eucl a' b
-       | Zneg b' -&gt;
-         let Pair (q, r) = pos_div_eucl a' (Zpos b') in
+       | Zpos p -&gt; pos_div_eucl a&#39; b
+       | Zneg b&#39; -&gt;
+         let Pair (q, r) = pos_div_eucl a&#39; (Zpos b&#39;) in
          (match r with
           | Z0 -&gt; Pair ((opp q), Z0)
           | _ -&gt; Pair ((opp (add q (Zpos XH))), (add b r))))
-    | Zneg a' -&gt;
+    | Zneg a&#39; -&gt;
       (match b with
        | Z0 -&gt; Pair (Z0, Z0)
        | Zpos p -&gt;
-         let Pair (q, r) = pos_div_eucl a' b in
+         let Pair (q, r) = pos_div_eucl a&#39; b in
          (match r with
           | Z0 -&gt; Pair ((opp q), Z0)
           | _ -&gt; Pair ((opp (add q (Zpos XH))), (sub b r)))
-       | Zneg b' -&gt;
-         let Pair (q, r) = pos_div_eucl a' (Zpos b') in Pair (q, (opp r)))
+       | Zneg b&#39; -&gt;
+         let Pair (q, r) = pos_div_eucl a&#39; (Zpos b&#39;) in Pair (q, (opp r)))
   (** val div : z -&gt; z -&gt; z **)
   let div a b =
     let Pair (q, x) = div_eucl a b in q
@@ -4868,49 +4868,49 @@ module Z =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : z -&gt; z -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : z -&gt; z -&gt; sumbool **)
     let min_dec n0 m =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
-  (** val max_case_strong : z -&gt; z -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val max_case_strong : z -&gt; z -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : z -&gt; z -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : z -&gt; z -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : z -&gt; z -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
-  (** val min_case_strong : z -&gt; z -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val min_case_strong : z -&gt; z -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : z -&gt; z -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : z -&gt; z -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : z -&gt; z -&gt; sumbool **)
@@ -4969,20 +4969,20 @@ module Z =
  end
 module LOCAL = 
  struct 
-  type 'x coq_Compare =
+  type &#39;x coq_Compare =
   | LT
   | EQ
   | GT
   (** val coq_Compare_rect :
-      'a1 -&gt; 'a1 -&gt; (__ -&gt; 'a2) -&gt; (__ -&gt; 'a2) -&gt; (__ -&gt; 'a2) -&gt; 'a1
-      coq_Compare -&gt; 'a2 **)
+      &#39;a1 -&gt; &#39;a1 -&gt; (__ -&gt; &#39;a2) -&gt; (__ -&gt; &#39;a2) -&gt; (__ -&gt; &#39;a2) -&gt; &#39;a1
+      coq_Compare -&gt; &#39;a2 **)
   let coq_Compare_rect x y f f0 f1 = function
   | LT -&gt; f __
   | EQ -&gt; f0 __
   | GT -&gt; f1 __
   (** val coq_Compare_rec :
-      'a1 -&gt; 'a1 -&gt; (__ -&gt; 'a2) -&gt; (__ -&gt; 'a2) -&gt; (__ -&gt; 'a2) -&gt; 'a1
-      coq_Compare -&gt; 'a2 **)
+      &#39;a1 -&gt; &#39;a1 -&gt; (__ -&gt; &#39;a2) -&gt; (__ -&gt; &#39;a2) -&gt; (__ -&gt; &#39;a2) -&gt; &#39;a1
+      coq_Compare -&gt; &#39;a2 **)
   let coq_Compare_rec x y f f0 f1 = function
   | LT -&gt; f __
   | EQ -&gt; f0 __
@@ -5213,21 +5213,21 @@ let negb = function
 type nat =
 | O
 | S of nat
-type 'a option =
-| Some of 'a
+type &#39;a option =
+| Some of &#39;a
 | None
-type ('a, 'b) prod =
-| Pair of 'a * 'b
-(** val fst : ('a1, 'a2) prod -&gt; 'a1 **)
+type (&#39;a, &#39;b) prod =
+| Pair of &#39;a * &#39;b
+(** val fst : (&#39;a1, &#39;a2) prod -&gt; &#39;a1 **)
 let fst = function
 | Pair (x, y) -&gt; x
-(** val snd : ('a1, 'a2) prod -&gt; 'a2 **)
+(** val snd : (&#39;a1, &#39;a2) prod -&gt; &#39;a2 **)
 let snd = function
 | Pair (x, y) -&gt; y
-type 'a list =
+type &#39;a list =
 | Nil
-| Cons of 'a * 'a list
-(** val app : 'a1 list -&gt; 'a1 list -&gt; 'a1 list **)
+| Cons of &#39;a * &#39;a list
+(** val app : &#39;a1 list -&gt; &#39;a1 list -&gt; &#39;a1 list **)
 let rec app l m =
   match l with
   | Nil -&gt; m
@@ -5250,18 +5250,18 @@ let compareSpec2Type = function
 | Eq -&gt; CompEqT
 | Lt -&gt; CompLtT
 | Gt -&gt; CompGtT
-type 'a compSpecT = compareSpecT
-(** val compSpec2Type : 'a1 -&gt; 'a1 -&gt; comparison -&gt; 'a1 compSpecT **)
+type &#39;a compSpecT = compareSpecT
+(** val compSpec2Type : &#39;a1 -&gt; &#39;a1 -&gt; comparison -&gt; &#39;a1 compSpecT **)
 let compSpec2Type x y c =
   compareSpec2Type c
-type 'a sig0 =
-  'a
+type &#39;a sig0 =
+  &#39;a
   (* singleton inductive, whose constructor was exist *)
 type sumbool =
 | Left
 | Right
-type 'a sumor =
-| Inleft of 'a
+type &#39;a sumor =
+| Inleft of &#39;a
 | Inright
 module Coq__1 = struct 
  (** val add : nat -&gt; nat -&gt; nat **)
@@ -5275,18 +5275,18 @@ let add = Coq__1.add
 let rec max n0 m =
   match n0 with
   | O -&gt; m
-  | S n' -&gt;
+  | S n&#39; -&gt;
     (match m with
      | O -&gt; n0
-     | S m' -&gt; S (max n' m'))
+     | S m&#39; -&gt; S (max n&#39; m&#39;))
 (** val min : nat -&gt; nat -&gt; nat **)
 let rec min n0 m =
   match n0 with
   | O -&gt; O
-  | S n' -&gt;
+  | S n&#39; -&gt;
     (match m with
      | O -&gt; O
-     | S m' -&gt; S (min n' m'))
+     | S m&#39; -&gt; S (min n&#39; m&#39;))
 type reflect =
 | ReflectT
 | ReflectF
@@ -5300,14 +5300,14 @@ module type OrderedType =
   val compare : t -&gt; t -&gt; comparison
   val eq_dec : t -&gt; t -&gt; sumbool
  end
-module type OrderedType' = 
+module type OrderedType&#39; = 
  sig 
   type t 
   val compare : t -&gt; t -&gt; comparison
   val eq_dec : t -&gt; t -&gt; sumbool
  end
 module OT_to_Full = 
- functor (O:OrderedType') -&gt;
+ functor (O:OrderedType&#39;) -&gt;
  struct 
   type t = O.t
   (** val compare : t -&gt; t -&gt; comparison **)
@@ -5333,7 +5333,7 @@ module OT_to_OrderTac =
    end
  end
 module OrderedTypeFacts = 
- functor (O:OrderedType') -&gt;
+ functor (O:OrderedType&#39;) -&gt;
  struct 
   module OrderTac = OT_to_OrderTac(O)
   (** val eq_dec : O.t -&gt; O.t -&gt; sumbool **)
@@ -5351,7 +5351,7 @@ module OrderedTypeFacts =
     | Left -&gt; True
     | Right -&gt; False
  end
-type 'x compare0 =
+type &#39;x compare0 =
 | LT
 | EQ
 | GT
@@ -5435,12 +5435,12 @@ module Pos =
   | IsNul
   | IsPos of positive
   | IsNeg
-  (** val mask_rect : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rect f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
   | IsNeg -&gt; f1
-  (** val mask_rec : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rec f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
@@ -5508,10 +5508,10 @@ module Pos =
     | XI p -&gt; add y (XO (mul p y))
     | XO p -&gt; XO (mul p y)
     | XH -&gt; y
-  (** val iter : ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; positive -&gt; 'a1 **)
+  (** val iter : (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; positive -&gt; &#39;a1 **)
   let rec iter f x = function
-  | XI n' -&gt; f (iter f (iter f x n') n')
-  | XO n' -&gt; iter f (iter f x n') n'
+  | XI n&#39; -&gt; f (iter f (iter f x n&#39;) n&#39;)
+  | XO n&#39; -&gt; iter f (iter f x n&#39;) n&#39;
   | XH -&gt; f x
   (** val pow : positive -&gt; positive -&gt; positive **)
   let pow x =
@@ -5562,15 +5562,15 @@ module Pos =
   let compare =
     compare_cont Eq
   (** val min : positive -&gt; positive -&gt; positive **)
-  let min p p' =
-    match compare p p' with
-    | Gt -&gt; p'
+  let min p p&#39; =
+    match compare p p&#39; with
+    | Gt -&gt; p&#39;
     | _ -&gt; p
   (** val max : positive -&gt; positive -&gt; positive **)
-  let max p p' =
-    match compare p p' with
+  let max p p&#39; =
+    match compare p p&#39; with
     | Gt -&gt; p
-    | _ -&gt; p'
+    | _ -&gt; p&#39;
   (** val eqb : positive -&gt; positive -&gt; bool **)
   let rec eqb p q =
     match p with
@@ -5603,11 +5603,11 @@ module Pos =
   | Pair (s, y) -&gt;
     (match y with
      | IsPos r -&gt;
-       let s' = XI (XO s) in
-       let r' = g (f r) in
-       (match leb s' r' with
-        | True -&gt; Pair ((XI s), (sub_mask r' s'))
-        | False -&gt; Pair ((XO s), (IsPos r')))
+       let s&#39; = XI (XO s) in
+       let r&#39; = g (f r) in
+       (match leb s&#39; r&#39; with
+        | True -&gt; Pair ((XI s), (sub_mask r&#39; s&#39;))
+        | False -&gt; Pair ((XO s), (IsPos r&#39;)))
      | _ -&gt; Pair ((XO s), (sub_mask (g (f XH)) (XO (XO XH)))))
   (** val sqrtrem : positive -&gt; (positive, mask) prod **)
   let rec sqrtrem = function
@@ -5631,13 +5631,13 @@ module Pos =
     | O -&gt; XH
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; a
-             | Lt -&gt; gcdn n1 (sub b' a') a
-             | Gt -&gt; gcdn n1 (sub a' b') b)
+             | Lt -&gt; gcdn n1 (sub b&#39; a&#39;) a
+             | Gt -&gt; gcdn n1 (sub a&#39; b&#39;) b)
           | XO b0 -&gt; gcdn n1 a b0
           | XH -&gt; XH)
        | XO a0 -&gt;
@@ -5657,17 +5657,17 @@ module Pos =
     | O -&gt; Pair (XH, (Pair (a, b)))
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; Pair (a, (Pair (XH, XH)))
              | Lt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub b' a') a in
+               let Pair (g, p) = ggcdn n1 (sub b&#39; a&#39;) a in
                let Pair (ba, aa) = p in
                Pair (g, (Pair (aa, (add aa (XO ba)))))
              | Gt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub a' b') b in
+               let Pair (g, p) = ggcdn n1 (sub a&#39; b&#39;) b in
                let Pair (ab, bb) = p in
                Pair (g, (Pair ((add bb (XO ab)), bb))))
           | XO b0 -&gt;
@@ -5785,11 +5785,11 @@ module Pos =
     | XI p0 -&gt;
       (match n0 with
        | O -&gt; True
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XO p0 -&gt;
       (match n0 with
        | O -&gt; False
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XH -&gt;
       (match n0 with
        | O -&gt; True
@@ -5809,7 +5809,7 @@ module Pos =
       (match n0 with
        | N0 -&gt; True
        | Npos p0 -&gt; False)
-  (** val iter_op : ('a1 -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter_op : (&#39;a1 -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 **)
   let rec iter_op op p a =
     match p with
     | XI p0 -&gt; op a (iter_op op p0 (op a a))
@@ -5893,12 +5893,12 @@ module Coq_Pos =
   | IsNul
   | IsPos of positive
   | IsNeg
-  (** val mask_rect : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rect f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
   | IsNeg -&gt; f1
-  (** val mask_rec : 'a1 -&gt; (positive -&gt; 'a1) -&gt; 'a1 -&gt; mask -&gt; 'a1 **)
+  (** val mask_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1) -&gt; &#39;a1 -&gt; mask -&gt; &#39;a1 **)
   let mask_rec f f0 f1 = function
   | IsNul -&gt; f
   | IsPos x -&gt; f0 x
@@ -5966,10 +5966,10 @@ module Coq_Pos =
     | XI p -&gt; add y (XO (mul p y))
     | XO p -&gt; XO (mul p y)
     | XH -&gt; y
-  (** val iter : ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; positive -&gt; 'a1 **)
+  (** val iter : (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; positive -&gt; &#39;a1 **)
   let rec iter f x = function
-  | XI n' -&gt; f (iter f (iter f x n') n')
-  | XO n' -&gt; iter f (iter f x n') n'
+  | XI n&#39; -&gt; f (iter f (iter f x n&#39;) n&#39;)
+  | XO n&#39; -&gt; iter f (iter f x n&#39;) n&#39;
   | XH -&gt; f x
   (** val pow : positive -&gt; positive -&gt; positive **)
   let pow x =
@@ -6020,15 +6020,15 @@ module Coq_Pos =
   let compare =
     compare_cont Eq
   (** val min : positive -&gt; positive -&gt; positive **)
-  let min p p' =
-    match compare p p' with
-    | Gt -&gt; p'
+  let min p p&#39; =
+    match compare p p&#39; with
+    | Gt -&gt; p&#39;
     | _ -&gt; p
   (** val max : positive -&gt; positive -&gt; positive **)
-  let max p p' =
-    match compare p p' with
+  let max p p&#39; =
+    match compare p p&#39; with
     | Gt -&gt; p
-    | _ -&gt; p'
+    | _ -&gt; p&#39;
   (** val eqb : positive -&gt; positive -&gt; bool **)
   let rec eqb p q =
     match p with
@@ -6061,11 +6061,11 @@ module Coq_Pos =
   | Pair (s, y) -&gt;
     (match y with
      | IsPos r -&gt;
-       let s' = XI (XO s) in
-       let r' = g (f r) in
-       (match leb s' r' with
-        | True -&gt; Pair ((XI s), (sub_mask r' s'))
-        | False -&gt; Pair ((XO s), (IsPos r')))
+       let s&#39; = XI (XO s) in
+       let r&#39; = g (f r) in
+       (match leb s&#39; r&#39; with
+        | True -&gt; Pair ((XI s), (sub_mask r&#39; s&#39;))
+        | False -&gt; Pair ((XO s), (IsPos r&#39;)))
      | _ -&gt; Pair ((XO s), (sub_mask (g (f XH)) (XO (XO XH)))))
   (** val sqrtrem : positive -&gt; (positive, mask) prod **)
   let rec sqrtrem = function
@@ -6089,13 +6089,13 @@ module Coq_Pos =
     | O -&gt; XH
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; a
-             | Lt -&gt; gcdn n1 (sub b' a') a
-             | Gt -&gt; gcdn n1 (sub a' b') b)
+             | Lt -&gt; gcdn n1 (sub b&#39; a&#39;) a
+             | Gt -&gt; gcdn n1 (sub a&#39; b&#39;) b)
           | XO b0 -&gt; gcdn n1 a b0
           | XH -&gt; XH)
        | XO a0 -&gt;
@@ -6115,17 +6115,17 @@ module Coq_Pos =
     | O -&gt; Pair (XH, (Pair (a, b)))
     | S n1 -&gt;
       (match a with
-       | XI a' -&gt;
+       | XI a&#39; -&gt;
          (match b with
-          | XI b' -&gt;
-            (match compare a' b' with
+          | XI b&#39; -&gt;
+            (match compare a&#39; b&#39; with
              | Eq -&gt; Pair (a, (Pair (XH, XH)))
              | Lt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub b' a') a in
+               let Pair (g, p) = ggcdn n1 (sub b&#39; a&#39;) a in
                let Pair (ba, aa) = p in
                Pair (g, (Pair (aa, (add aa (XO ba)))))
              | Gt -&gt;
-               let Pair (g, p) = ggcdn n1 (sub a' b') b in
+               let Pair (g, p) = ggcdn n1 (sub a&#39; b&#39;) b in
                let Pair (ab, bb) = p in
                Pair (g, (Pair ((add bb (XO ab)), bb))))
           | XO b0 -&gt;
@@ -6243,11 +6243,11 @@ module Coq_Pos =
     | XI p0 -&gt;
       (match n0 with
        | O -&gt; True
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XO p0 -&gt;
       (match n0 with
        | O -&gt; False
-       | S n' -&gt; testbit_nat p0 n')
+       | S n&#39; -&gt; testbit_nat p0 n&#39;)
     | XH -&gt;
       (match n0 with
        | O -&gt; True
@@ -6267,7 +6267,7 @@ module Coq_Pos =
       (match n0 with
        | N0 -&gt; True
        | Npos p0 -&gt; False)
-  (** val iter_op : ('a1 -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter_op : (&#39;a1 -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 **)
   let rec iter_op op p a =
     match p with
     | XI p0 -&gt; op a (iter_op op p0 (op a a))
@@ -6302,7 +6302,7 @@ module Coq_Pos =
       (match y0 with
        | XH -&gt; Left
        | _ -&gt; Right)
-  (** val peano_rect : 'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 **)
+  (** val peano_rect : &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 **)
   let rec peano_rect a f p =
     let f2 = peano_rect (f XH a) (fun p0 x -&gt; f (succ (XO p0)) (f (XO p0) x))
     in
@@ -6310,21 +6310,21 @@ module Coq_Pos =
      | XI q -&gt; f (XO q) (f2 q)
      | XO q -&gt; f2 q
      | XH -&gt; a)
-  (** val peano_rec : 'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; 'a1 **)
+  (** val peano_rec : &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; &#39;a1 **)
   let peano_rec =
     peano_rect
   type coq_PeanoView =
   | PeanoOne
   | PeanoSucc of positive * coq_PeanoView
   (** val coq_PeanoView_rect :
-      'a1 -&gt; (positive -&gt; coq_PeanoView -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt;
-      coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; coq_PeanoView -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt;
+      coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_rect f f0 p = function
   | PeanoOne -&gt; f
   | PeanoSucc (p1, p2) -&gt; f0 p1 p2 (coq_PeanoView_rect f f0 p1 p2)
   (** val coq_PeanoView_rec :
-      'a1 -&gt; (positive -&gt; coq_PeanoView -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt;
-      coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; coq_PeanoView -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt;
+      coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_rec f f0 p = function
   | PeanoOne -&gt; f
   | PeanoSucc (p1, p2) -&gt; f0 p1 p2 (coq_PeanoView_rec f f0 p1 p2)
@@ -6344,7 +6344,7 @@ module Coq_Pos =
   | XO p0 -&gt; peanoView_xO p0 (peanoView p0)
   | XH -&gt; PeanoOne
   (** val coq_PeanoView_iter :
-      'a1 -&gt; (positive -&gt; 'a1 -&gt; 'a1) -&gt; positive -&gt; coq_PeanoView -&gt; 'a1 **)
+      &#39;a1 -&gt; (positive -&gt; &#39;a1 -&gt; &#39;a1) -&gt; positive -&gt; coq_PeanoView -&gt; &#39;a1 **)
   let rec coq_PeanoView_iter a f p = function
   | PeanoOne -&gt; a
   | PeanoSucc (p0, q0) -&gt; f p0 (coq_PeanoView_iter a f p0 q0)
@@ -6372,32 +6372,32 @@ module Coq_Pos =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        'a1 -&gt; 'a1 -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : positive -&gt; positive -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt;
-        'a1 -&gt; 'a1 -&gt; 'a1 **)
+        positive -&gt; positive -&gt; (positive -&gt; positive -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt;
+        &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : positive -&gt; positive -&gt; sumbool **)
@@ -6405,20 +6405,20 @@ module Coq_Pos =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
   (** val max_case_strong :
-      positive -&gt; positive -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+      positive -&gt; positive -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : positive -&gt; positive -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : positive -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : positive -&gt; positive -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
   (** val min_case_strong :
-      positive -&gt; positive -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+      positive -&gt; positive -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : positive -&gt; positive -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : positive -&gt; positive -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : positive -&gt; positive -&gt; sumbool **)
@@ -6469,11 +6469,11 @@ module N =
   let sub n0 m =
     match n0 with
     | N0 -&gt; N0
-    | Npos n' -&gt;
+    | Npos n&#39; -&gt;
       (match m with
        | N0 -&gt; n0
-       | Npos m' -&gt;
-         (match Coq_Pos.sub_mask n' m' with
+       | Npos m&#39; -&gt;
+         (match Coq_Pos.sub_mask n&#39; m&#39; with
           | Coq_Pos.IsPos p -&gt; Npos p
           | _ -&gt; N0))
   (** val mul : n -&gt; n -&gt; n **)
@@ -6490,11 +6490,11 @@ module N =
     | N0 -&gt;
       (match m with
        | N0 -&gt; Eq
-       | Npos m' -&gt; Lt)
-    | Npos n' -&gt;
+       | Npos m&#39; -&gt; Lt)
+    | Npos n&#39; -&gt;
       (match m with
        | N0 -&gt; Gt
-       | Npos m' -&gt; Coq_Pos.compare n' m')
+       | Npos m&#39; -&gt; Coq_Pos.compare n&#39; m&#39;)
   (** val eqb : n -&gt; n -&gt; bool **)
   let rec eqb n0 m =
     match n0 with
@@ -6517,15 +6517,15 @@ module N =
     | Lt -&gt; True
     | _ -&gt; False
   (** val min : n -&gt; n -&gt; n **)
-  let min n0 n' =
-    match compare n0 n' with
-    | Gt -&gt; n'
+  let min n0 n&#39; =
+    match compare n0 n&#39; with
+    | Gt -&gt; n&#39;
     | _ -&gt; n0
   (** val max : n -&gt; n -&gt; n **)
-  let max n0 n' =
-    match compare n0 n' with
+  let max n0 n&#39; =
+    match compare n0 n&#39; with
     | Gt -&gt; n0
-    | _ -&gt; n'
+    | _ -&gt; n&#39;
   (** val div2 : n -&gt; n **)
   let div2 = function
   | N0 -&gt; N0
@@ -6574,18 +6574,18 @@ module N =
   (** val pos_div_eucl : positive -&gt; n -&gt; (n, n) prod **)
   let rec pos_div_eucl a b =
     match a with
-    | XI a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = succ_double r in
-      (match leb b r' with
-       | True -&gt; Pair ((succ_double q), (sub r' b))
-       | False -&gt; Pair ((double q), r'))
-    | XO a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = double r in
-      (match leb b r' with
-       | True -&gt; Pair ((succ_double q), (sub r' b))
-       | False -&gt; Pair ((double q), r'))
+    | XI a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = succ_double r in
+      (match leb b r&#39; with
+       | True -&gt; Pair ((succ_double q), (sub r&#39; b))
+       | False -&gt; Pair ((double q), r&#39;))
+    | XO a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = double r in
+      (match leb b r&#39; with
+       | True -&gt; Pair ((succ_double q), (sub r&#39; b))
+       | False -&gt; Pair ((double q), r&#39;))
     | XH -&gt;
       (match b with
        | N0 -&gt; Pair (N0, (Npos XH))
@@ -6703,8 +6703,8 @@ module N =
   (** val of_nat : nat -&gt; n **)
   let of_nat = function
   | O -&gt; N0
-  | S n' -&gt; Npos (Coq_Pos.of_succ_nat n')
-  (** val iter : n -&gt; ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 **)
+  | S n&#39; -&gt; Npos (Coq_Pos.of_succ_nat n&#39;)
+  (** val iter : n -&gt; (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 **)
   let iter n0 f x =
     match n0 with
     | N0 -&gt; x
@@ -6725,32 +6725,32 @@ module N =
   | N0 -&gt; Inright
   | Npos p -&gt; Inleft p
   (** val binary_rect :
-      'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+      &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let binary_rect f0 f2 fS2 n0 =
-    let f2' = fun p -&gt; f2 (Npos p) in
-    let fS2' = fun p -&gt; fS2 (Npos p) in
+    let f2&#39; = fun p -&gt; f2 (Npos p) in
+    let fS2&#39; = fun p -&gt; fS2 (Npos p) in
     (match n0 with
      | N0 -&gt; f0
      | Npos p -&gt;
        let rec f = function
-       | XI p1 -&gt; fS2' p1 (f p1)
-       | XO p1 -&gt; f2' p1 (f p1)
+       | XI p1 -&gt; fS2&#39; p1 (f p1)
+       | XO p1 -&gt; f2&#39; p1 (f p1)
        | XH -&gt; fS2 N0 f0
        in f p)
   (** val binary_rec :
-      'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+      &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let binary_rec =
     binary_rect
-  (** val peano_rect : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+  (** val peano_rect : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let peano_rect f0 f n0 =
-    let f' = fun p -&gt; f (Npos p) in
+    let f&#39; = fun p -&gt; f (Npos p) in
     (match n0 with
      | N0 -&gt; f0
-     | Npos p -&gt; Coq_Pos.peano_rect (f N0 f0) f' p)
-  (** val peano_rec : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+     | Npos p -&gt; Coq_Pos.peano_rect (f N0 f0) f&#39; p)
+  (** val peano_rec : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let peano_rec =
     peano_rect
-  (** val recursion : 'a1 -&gt; (n -&gt; 'a1 -&gt; 'a1) -&gt; n -&gt; 'a1 **)
+  (** val recursion : &#39;a1 -&gt; (n -&gt; &#39;a1 -&gt; &#39;a1) -&gt; n -&gt; &#39;a1 **)
   let recursion x =
     peano_rect x
   (** val leb_spec0 : n -&gt; n -&gt; reflect **)
@@ -6774,49 +6774,49 @@ module N =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : n -&gt; n -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        n -&gt; n -&gt; (n -&gt; n -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : n -&gt; n -&gt; sumbool **)
     let min_dec n0 m =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
-  (** val max_case_strong : n -&gt; n -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val max_case_strong : n -&gt; n -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : n -&gt; n -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : n -&gt; n -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : n -&gt; n -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
-  (** val min_case_strong : n -&gt; n -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val min_case_strong : n -&gt; n -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : n -&gt; n -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : n -&gt; n -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : n -&gt; n -&gt; sumbool **)
@@ -6913,16 +6913,16 @@ module Z =
   let add x y =
     match x with
     | Z0 -&gt; y
-    | Zpos x' -&gt;
+    | Zpos x&#39; -&gt;
       (match y with
        | Z0 -&gt; x
-       | Zpos y' -&gt; Zpos (Coq_Pos.add x' y')
-       | Zneg y' -&gt; pos_sub x' y')
-    | Zneg x' -&gt;
+       | Zpos y&#39; -&gt; Zpos (Coq_Pos.add x&#39; y&#39;)
+       | Zneg y&#39; -&gt; pos_sub x&#39; y&#39;)
+    | Zneg x&#39; -&gt;
       (match y with
        | Z0 -&gt; x
-       | Zpos y' -&gt; pos_sub y' x'
-       | Zneg y' -&gt; Zneg (Coq_Pos.add x' y'))
+       | Zpos y&#39; -&gt; pos_sub y&#39; x&#39;
+       | Zneg y&#39; -&gt; Zneg (Coq_Pos.add x&#39; y&#39;))
   (** val opp : z -&gt; z **)
   let opp = function
   | Z0 -&gt; Z0
@@ -6941,16 +6941,16 @@ module Z =
   let mul x y =
     match x with
     | Z0 -&gt; Z0
-    | Zpos x' -&gt;
+    | Zpos x&#39; -&gt;
       (match y with
        | Z0 -&gt; Z0
-       | Zpos y' -&gt; Zpos (Coq_Pos.mul x' y')
-       | Zneg y' -&gt; Zneg (Coq_Pos.mul x' y'))
-    | Zneg x' -&gt;
+       | Zpos y&#39; -&gt; Zpos (Coq_Pos.mul x&#39; y&#39;)
+       | Zneg y&#39; -&gt; Zneg (Coq_Pos.mul x&#39; y&#39;))
+    | Zneg x&#39; -&gt;
       (match y with
        | Z0 -&gt; Z0
-       | Zpos y' -&gt; Zneg (Coq_Pos.mul x' y')
-       | Zneg y' -&gt; Zpos (Coq_Pos.mul x' y'))
+       | Zpos y&#39; -&gt; Zneg (Coq_Pos.mul x&#39; y&#39;)
+       | Zneg y&#39; -&gt; Zpos (Coq_Pos.mul x&#39; y&#39;))
   (** val pow_pos : z -&gt; positive -&gt; z **)
   let pow_pos z0 =
     Coq_Pos.iter (mul z0) (Zpos XH)
@@ -6970,15 +6970,15 @@ module Z =
     | Z0 -&gt;
       (match y with
        | Z0 -&gt; Eq
-       | Zpos y' -&gt; Lt
-       | Zneg y' -&gt; Gt)
-    | Zpos x' -&gt;
+       | Zpos y&#39; -&gt; Lt
+       | Zneg y&#39; -&gt; Gt)
+    | Zpos x&#39; -&gt;
       (match y with
-       | Zpos y' -&gt; Coq_Pos.compare x' y'
+       | Zpos y&#39; -&gt; Coq_Pos.compare x&#39; y&#39;
        | _ -&gt; Gt)
-    | Zneg x' -&gt;
+    | Zneg x&#39; -&gt;
       (match y with
-       | Zneg y' -&gt; compOpp (Coq_Pos.compare x' y')
+       | Zneg y&#39; -&gt; compOpp (Coq_Pos.compare x&#39; y&#39;)
        | _ -&gt; Lt)
   (** val sgn : z -&gt; z **)
   let sgn = function
@@ -7064,7 +7064,7 @@ module Z =
   let to_pos = function
   | Zpos p -&gt; p
   | _ -&gt; XH
-  (** val iter : z -&gt; ('a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 **)
+  (** val iter : z -&gt; (&#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 **)
   let iter n0 f x =
     match n0 with
     | Zpos p -&gt; Coq_Pos.iter f x p
@@ -7072,18 +7072,18 @@ module Z =
   (** val pos_div_eucl : positive -&gt; z -&gt; (z, z) prod **)
   let rec pos_div_eucl a b =
     match a with
-    | XI a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = add (mul (Zpos (XO XH)) r) (Zpos XH) in
-      (match ltb r' b with
-       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r')
-       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r' b)))
-    | XO a' -&gt;
-      let Pair (q, r) = pos_div_eucl a' b in
-      let r' = mul (Zpos (XO XH)) r in
-      (match ltb r' b with
-       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r')
-       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r' b)))
+    | XI a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = add (mul (Zpos (XO XH)) r) (Zpos XH) in
+      (match ltb r&#39; b with
+       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r&#39;)
+       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r&#39; b)))
+    | XO a&#39; -&gt;
+      let Pair (q, r) = pos_div_eucl a&#39; b in
+      let r&#39; = mul (Zpos (XO XH)) r in
+      (match ltb r&#39; b with
+       | True -&gt; Pair ((mul (Zpos (XO XH)) q), r&#39;)
+       | False -&gt; Pair ((add (mul (Zpos (XO XH)) q) (Zpos XH)), (sub r&#39; b)))
     | XH -&gt;
       (match leb (Zpos (XO XH)) b with
        | True -&gt; Pair (Z0, (Zpos XH))
@@ -7092,25 +7092,25 @@ module Z =
   let div_eucl a b =
     match a with
     | Z0 -&gt; Pair (Z0, Z0)
-    | Zpos a' -&gt;
+    | Zpos a&#39; -&gt;
       (match b with
        | Z0 -&gt; Pair (Z0, Z0)
-       | Zpos p -&gt; pos_div_eucl a' b
-       | Zneg b' -&gt;
-         let Pair (q, r) = pos_div_eucl a' (Zpos b') in
+       | Zpos p -&gt; pos_div_eucl a&#39; b
+       | Zneg b&#39; -&gt;
+         let Pair (q, r) = pos_div_eucl a&#39; (Zpos b&#39;) in
          (match r with
           | Z0 -&gt; Pair ((opp q), Z0)
           | _ -&gt; Pair ((opp (add q (Zpos XH))), (add b r))))
-    | Zneg a' -&gt;
+    | Zneg a&#39; -&gt;
       (match b with
        | Z0 -&gt; Pair (Z0, Z0)
        | Zpos p -&gt;
-         let Pair (q, r) = pos_div_eucl a' b in
+         let Pair (q, r) = pos_div_eucl a&#39; b in
          (match r with
           | Z0 -&gt; Pair ((opp q), Z0)
           | _ -&gt; Pair ((opp (add q (Zpos XH))), (sub b r)))
-       | Zneg b' -&gt;
-         let Pair (q, r) = pos_div_eucl a' (Zpos b') in Pair (q, (opp r)))
+       | Zneg b&#39; -&gt;
+         let Pair (q, r) = pos_div_eucl a&#39; (Zpos b&#39;) in Pair (q, (opp r)))
   (** val div : z -&gt; z -&gt; z **)
   let div a b =
     let Pair (q, x) = div_eucl a b in q
@@ -7365,49 +7365,49 @@ module Z =
   module Private_Dec = 
    struct 
     (** val max_case_strong :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let max_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat n0 (max n0 m) __ (hl __)
        | _ -&gt; compat m (max n0 m) __ (hr __))
     (** val max_case :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let max_case n0 m x x0 x1 =
       max_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val max_dec : z -&gt; z -&gt; sumbool **)
     let max_dec n0 m =
       max_case n0 m (fun x y _ h0 -&gt; h0) Left Right
     (** val min_case_strong :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1)
-        -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1)
+        -&gt; &#39;a1 **)
     let min_case_strong n0 m compat hl hr =
       let c = compSpec2Type n0 m (compare n0 m) in
       (match c with
        | CompGtT -&gt; compat m (min n0 m) __ (hr __)
        | _ -&gt; compat n0 (min n0 m) __ (hl __))
     (** val min_case :
-        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; 'a1 -&gt; 'a1) -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+        z -&gt; z -&gt; (z -&gt; z -&gt; __ -&gt; &#39;a1 -&gt; &#39;a1) -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
     let min_case n0 m x x0 x1 =
       min_case_strong n0 m x (fun _ -&gt; x0) (fun _ -&gt; x1)
     (** val min_dec : z -&gt; z -&gt; sumbool **)
     let min_dec n0 m =
       min_case n0 m (fun x y _ h0 -&gt; h0) Left Right
    end
-  (** val max_case_strong : z -&gt; z -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val max_case_strong : z -&gt; z -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let max_case_strong n0 m x x0 =
     Private_Dec.max_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val max_case : z -&gt; z -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val max_case : z -&gt; z -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let max_case n0 m x x0 =
     max_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val max_dec : z -&gt; z -&gt; sumbool **)
   let max_dec =
     Private_Dec.max_dec
-  (** val min_case_strong : z -&gt; z -&gt; (__ -&gt; 'a1) -&gt; (__ -&gt; 'a1) -&gt; 'a1 **)
+  (** val min_case_strong : z -&gt; z -&gt; (__ -&gt; &#39;a1) -&gt; (__ -&gt; &#39;a1) -&gt; &#39;a1 **)
   let min_case_strong n0 m x x0 =
     Private_Dec.min_case_strong n0 m (fun x1 y _ x2 -&gt; x2) x x0
-  (** val min_case : z -&gt; z -&gt; 'a1 -&gt; 'a1 -&gt; 'a1 **)
+  (** val min_case : z -&gt; z -&gt; &#39;a1 -&gt; &#39;a1 -&gt; &#39;a1 **)
   let min_case n0 m x x0 =
     min_case_strong n0 m (fun _ -&gt; x) (fun _ -&gt; x0)
   (** val min_dec : z -&gt; z -&gt; sumbool **)
@@ -7614,7 +7614,7 @@ module MakeRaw =
   (** val choose : tree -&gt; elt option **)
   let choose =
     min_elt
-  (** val fold : (elt -&gt; 'a1 -&gt; 'a1) -&gt; tree -&gt; 'a1 -&gt; 'a1 **)
+  (** val fold : (elt -&gt; &#39;a1 -&gt; &#39;a1) -&gt; tree -&gt; &#39;a1 -&gt; &#39;a1 **)
   let rec fold f t0 base =
     match t0 with
     | Leaf -&gt; base
@@ -7814,7 +7814,7 @@ module MakeRaw =
     match l with
     | Leaf -&gt; Pair (r, x)
     | Node (lh, ll, lx, lr) -&gt;
-      let Pair (l', m) = remove_min ll lx lr in Pair ((bal l' x r), m)
+      let Pair (l&#39;, m) = remove_min ll lx lr in Pair ((bal l&#39; x r), m)
   (** val merge : tree -&gt; tree -&gt; tree **)
   let merge s1 s2 =
     match s1 with
@@ -7823,7 +7823,7 @@ module MakeRaw =
       (match s2 with
        | Leaf -&gt; s1
        | Node (t4, l2, x2, r2) -&gt;
-         let Pair (s2', m) = remove_min l2 x2 r2 in bal s1 m s2')
+         let Pair (s2&#39;, m) = remove_min l2 x2 r2 in bal s1 m s2&#39;)
   (** val remove : X.t -&gt; tree -&gt; tree **)
   let rec remove x = function
   | Leaf -&gt; Leaf
@@ -7840,7 +7840,7 @@ module MakeRaw =
       (match s2 with
        | Leaf -&gt; s1
        | Node (t4, l2, x2, r2) -&gt;
-         let Pair (s2', m) = remove_min l2 x2 r2 in join s1 m s2')
+         let Pair (s2&#39;, m) = remove_min l2 x2 r2 in join s1 m s2&#39;)
   type triple = { t_left : t; t_in : bool; t_right : t }
   (** val t_left : triple -&gt; t **)
   let t_left t0 =
@@ -7871,10 +7871,10 @@ module MakeRaw =
       (match s2 with
        | Leaf -&gt; Leaf
        | Node (t1, t2, t3, t4) -&gt;
-         let { t_left = l2'; t_in = pres; t_right = r2' } = split x1 s2 in
+         let { t_left = l2&#39;; t_in = pres; t_right = r2&#39; } = split x1 s2 in
          (match pres with
-          | True -&gt; join (inter l1 l2') x1 (inter r1 r2')
-          | False -&gt; concat (inter l1 l2') (inter r1 r2')))
+          | True -&gt; join (inter l1 l2&#39;) x1 (inter r1 r2&#39;)
+          | False -&gt; concat (inter l1 l2&#39;) (inter r1 r2&#39;)))
   (** val diff : tree -&gt; tree -&gt; tree **)
   let rec diff s1 s2 =
     match s1 with
@@ -7883,10 +7883,10 @@ module MakeRaw =
       (match s2 with
        | Leaf -&gt; s1
        | Node (t1, t2, t3, t4) -&gt;
-         let { t_left = l2'; t_in = pres; t_right = r2' } = split x1 s2 in
+         let { t_left = l2&#39;; t_in = pres; t_right = r2&#39; } = split x1 s2 in
          (match pres with
-          | True -&gt; concat (diff l1 l2') (diff r1 r2')
-          | False -&gt; join (diff l1 l2') x1 (diff r1 r2')))
+          | True -&gt; concat (diff l1 l2&#39;) (diff r1 r2&#39;)
+          | False -&gt; join (diff l1 l2&#39;) x1 (diff r1 r2&#39;)))
   (** val union : tree -&gt; tree -&gt; tree **)
   let rec union s1 s2 =
     match s1 with
@@ -7895,17 +7895,17 @@ module MakeRaw =
       (match s2 with
        | Leaf -&gt; s1
        | Node (t1, t2, t3, t4) -&gt;
-         let { t_left = l2'; t_in = x; t_right = r2' } = split x1 s2 in
-         join (union l1 l2') x1 (union r1 r2'))
+         let { t_left = l2&#39;; t_in = x; t_right = r2&#39; } = split x1 s2 in
+         join (union l1 l2&#39;) x1 (union r1 r2&#39;))
   (** val filter : (elt -&gt; bool) -&gt; tree -&gt; tree **)
   let rec filter f = function
   | Leaf -&gt; Leaf
   | Node (t0, l, x, r) -&gt;
-    let l' = filter f l in
-    let r' = filter f r in
+    let l&#39; = filter f l in
+    let r&#39; = filter f r in
     (match f x with
-     | True -&gt; join l' x r'
-     | False -&gt; concat l' r')
+     | True -&gt; join l&#39; x r&#39;
+     | False -&gt; concat l&#39; r&#39;)
   (** val partition : (elt -&gt; bool) -&gt; t -&gt; (t, t) prod **)
   let rec partition f = function
   | Leaf -&gt; Pair (Leaf, Leaf)
@@ -8044,20 +8044,20 @@ module IntMake =
   let singleton x =
     Raw.singleton x
   (** val union : t -&gt; t -&gt; t **)
-  let union s s' =
-    Raw.union (this s) (this s')
+  let union s s&#39; =
+    Raw.union (this s) (this s&#39;)
   (** val inter : t -&gt; t -&gt; t **)
-  let inter s s' =
-    Raw.inter (this s) (this s')
+  let inter s s&#39; =
+    Raw.inter (this s) (this s&#39;)
   (** val diff : t -&gt; t -&gt; t **)
-  let diff s s' =
-    Raw.diff (this s) (this s')
+  let diff s s&#39; =
+    Raw.diff (this s) (this s&#39;)
   (** val equal : t -&gt; t -&gt; bool **)
-  let equal s s' =
-    Raw.equal (this s) (this s')
+  let equal s s&#39; =
+    Raw.equal (this s) (this s&#39;)
   (** val subset : t -&gt; t -&gt; bool **)
-  let subset s s' =
-    Raw.subset (this s) (this s')
+  let subset s s&#39; =
+    Raw.subset (this s) (this s&#39;)
   (** val empty : t **)
   let empty =
     Raw.empty
@@ -8070,7 +8070,7 @@ module IntMake =
   (** val choose : t -&gt; elt option **)
   let choose s =
     Raw.choose (this s)
-  (** val fold : (elt -&gt; 'a1 -&gt; 'a1) -&gt; t -&gt; 'a1 -&gt; 'a1 **)
+  (** val fold : (elt -&gt; &#39;a1 -&gt; &#39;a1) -&gt; t -&gt; &#39;a1 -&gt; &#39;a1 **)
   let fold f s =
     Raw.fold f (this s)
   (** val cardinal : t -&gt; nat **)
@@ -8089,14 +8089,14 @@ module IntMake =
   let partition f s =
     let p = Raw.partition f (this s) in Pair ((fst p), (snd p))
   (** val eq_dec : t -&gt; t -&gt; sumbool **)
-  let eq_dec s s' =
-    let b = Raw.equal s s' in
+  let eq_dec s s&#39; =
+    let b = Raw.equal s s&#39; in
     (match b with
      | True -&gt; Left
      | False -&gt; Right)
   (** val compare : t -&gt; t -&gt; comparison **)
-  let compare s s' =
-    Raw.compare (this s) (this s')
+  let compare s s&#39; =
+    Raw.compare (this s) (this s&#39;)
   (** val min_elt : t -&gt; elt option **)
   let min_elt s =
     Raw.min_elt (this s)
@@ -8108,8 +8108,8 @@ module Coq_IntMake =
  functor (I:Int) -&gt;
  functor (X:Coq_OrderedType) -&gt;
  struct 
-  module X' = Update_OT(X)
-  module MSet = IntMake(I)(X')
+  module X&#39; = Update_OT(X)
+  module MSet = IntMake(I)(X&#39;)
   type elt = X.t
   type t = MSet.t
   (** val empty : t **)
@@ -8148,7 +8148,7 @@ module Coq_IntMake =
   (** val subset : t -&gt; t -&gt; bool **)
   let subset =
     MSet.subset
-  (** val fold : (elt -&gt; 'a1 -&gt; 'a1) -&gt; t -&gt; 'a1 -&gt; 'a1 **)
+  (** val fold : (elt -&gt; &#39;a1 -&gt; &#39;a1) -&gt; t -&gt; &#39;a1 -&gt; &#39;a1 **)
   let fold x x0 x1 =
     MSet.fold x x0 x1
   (** val for_all : (elt -&gt; bool) -&gt; t -&gt; bool **)
@@ -8187,8 +8187,8 @@ module Coq_IntMake =
   let max_elt =
     MSet.max_elt
   (** val compare : t -&gt; t -&gt; t compare0 **)
-  let compare s s' =
-    let c = compSpec2Type s s' (MSet.compare s s') in
+  let compare s s&#39; =
+    let c = compSpec2Type s s&#39; (MSet.compare s s&#39;) in
     (match c with
      | CompEqT -&gt; EQ
      | CompLtT -&gt; LT
@@ -8625,14 +8625,14 @@ MF.add_b
      : forall (s : M.t) (x y : M.elt),
        M.mem y (M.add x s) = MF.eqb x y || M.mem y s
 MP.union_inter_1
-     : forall s s' s'' : M.t,
-       M.Equal (M.inter (M.union s s') s'')
-         (M.union (M.inter s s'') (M.inter s' s''))
+     : forall s s&#39; s&#39;&#39; : M.t,
+       M.Equal (M.inter (M.union s s&#39;) s&#39;&#39;)
+         (M.union (M.inter s s&#39;&#39;) (M.inter s&#39; s&#39;&#39;))
 MP.set_induction
      : forall P : M.t -&gt; Type,
        (forall s : M.t, M.Empty s -&gt; P s) -&gt;
-       (forall s s' : M.t,
-        P s -&gt; forall x : M.elt, ~ M.In x s -&gt; MP.Add x s s' -&gt; P s') -&gt;
+       (forall s s&#39; : M.t,
+        P s -&gt; forall x : M.elt, ~ M.In x s -&gt; MP.Add x s s&#39; -&gt; P s&#39;) -&gt;
        forall s : M.t, P s
 MP.fold_add
      : forall (A : Type) (eqA : A -&gt; A -&gt; Prop),
@@ -8643,9 +8643,9 @@ MP.fold_add
        forall (i : A) (s : M.t) (x : M.elt),
        ~ M.In x s -&gt; eqA (M.fold f (M.add x s) i) (f x (M.fold f s i))
 MP.union_inter_cardinal
-     : forall s s' : M.t,
-       (M.cardinal (M.union s s') + M.cardinal (M.inter s s'))%nat =
-       (M.cardinal s + M.cardinal s')%nat
+     : forall s s&#39; : M.t,
+       (M.cardinal (M.union s s&#39;) + M.cardinal (M.inter s s&#39;))%nat =
+       (M.cardinal s + M.cardinal s&#39;)%nat
 Inductive tree : Type :=
     Leaf : R.tree | Node : Int.Z_as_Int.t -&gt; R.tree -&gt; Z -&gt; R.tree -&gt; R.tree
 For Node: Argument scopes are [_ _ Z_scope _]
@@ -8819,14 +8819,14 @@ MF.add_b
      : forall (s : M.t) (x y : M.elt),
        M.mem y (M.add x s) = MF.eqb x y || M.mem y s
 MP.union_inter_1
-     : forall s s' s'' : M.t,
-       M.Equal (M.inter (M.union s s') s'')
-         (M.union (M.inter s s'') (M.inter s' s''))
+     : forall s s&#39; s&#39;&#39; : M.t,
+       M.Equal (M.inter (M.union s s&#39;) s&#39;&#39;)
+         (M.union (M.inter s s&#39;&#39;) (M.inter s&#39; s&#39;&#39;))
 MP.set_induction
      : forall P : M.t -&gt; Type,
        (forall s : M.t, M.Empty s -&gt; P s) -&gt;
-       (forall s s' : M.t,
-        P s -&gt; forall x : M.elt, ~ M.In x s -&gt; MP.Add x s s' -&gt; P s') -&gt;
+       (forall s s&#39; : M.t,
+        P s -&gt; forall x : M.elt, ~ M.In x s -&gt; MP.Add x s s&#39; -&gt; P s&#39;) -&gt;
        forall s : M.t, P s
 MP.fold_add
      : forall (A : Type) (eqA : A -&gt; A -&gt; Prop),
@@ -8837,9 +8837,9 @@ MP.fold_add
        forall (i : A) (s : M.t) (x : M.elt),
        ~ M.In x s -&gt; eqA (M.fold f (M.add x s) i) (f x (M.fold f s i))
 MP.union_inter_cardinal
-     : forall s s' : M.t,
-       (M.cardinal (M.union s s') + M.cardinal (M.inter s s'))%nat =
-       (M.cardinal s + M.cardinal s')%nat
+     : forall s s&#39; : M.t,
+       (M.cardinal (M.union s s&#39;) + M.cardinal (M.inter s s&#39;))%nat =
+       (M.cardinal s + M.cardinal s&#39;)%nat
 F.add
      : forall elt : Type, F.key -&gt; elt -&gt; F.t elt -&gt; F.t elt
      = Some (0 :: nil)
@@ -8853,9 +8853,9 @@ F.add
      = (1, 1%nat) :: (2, 2%nat) :: (3, 0%nat) :: nil
      : list (F.key * nat)
 F.map2
-     : forall elt elt' elt'' : Type,
-       (option elt -&gt; option elt' -&gt; option elt'') -&gt;
-       F.t elt -&gt; F.t elt' -&gt; F.t elt''
+     : forall elt elt&#39; elt&#39;&#39; : Type,
+       (option elt -&gt; option elt&#39; -&gt; option elt&#39;&#39;) -&gt;
+       F.t elt -&gt; F.t elt&#39; -&gt; F.t elt&#39;&#39;
 F.equal
      : forall elt : Type, (elt -&gt; elt -&gt; bool) -&gt; F.t elt -&gt; F.t elt -&gt; bool
 Inductive tree : Type :=
@@ -8869,10 +8869,10 @@ For Node: Argument scopes are [_ _ Z_scope _]
      = (1, 4%positive) :: (2, 7%positive) :: (3, 11%positive) :: nil
      : list (Ma.key * positive)
 elements_Equal_eqlistA
-     : forall (elt : Type) (m m' : t elt),
-       Equal m m' -&gt;
+     : forall (elt : Type) (m m&#39; : t elt),
+       Equal m m&#39; -&gt;
        eqlistA (O.eqke (elt:=elt)) (elements (elt:=elt) m)
-         (elements (elt:=elt) m')
+         (elements (elt:=elt) m&#39;)
 &quot;coqc&quot;  -q  -R &quot;.&quot; FSets   MapFunction
 &quot;coqc&quot;  -q  -R &quot;.&quot; FSets   UsualFacts
 &quot;coqc&quot;  -q  -R &quot;.&quot; FSets   PrecedenceGraph/PrecedenceGraph

@@ -146,7 +146,7 @@ Building coq:contrib:coqoban.dev:
 &quot;coqdep&quot; -c -R &quot;.&quot; Coqoban &quot;Coqoban_engine.v&quot; &gt; &quot;Coqoban_engine.v.d&quot; || ( RV=$?; rm -f &quot;Coqoban_engine.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -R &quot;.&quot; Coqoban &quot;Coqoban_levels.v&quot; &gt; &quot;Coqoban_levels.v.d&quot; || ( RV=$?; rm -f &quot;Coqoban_levels.v.d&quot;; exit ${RV} )
 &quot;coqc&quot;  -q  -R &quot;.&quot; Coqoban   Coqoban_engine
-solution'_b = 
+solution&#39;_b = 
 STEP
   (b:=|&gt; # # # # # # # &lt;|
       |&gt; # _ _ _ _ _ # &lt;|
@@ -253,7 +253,7 @@ STEP
                                                   (conj I (conj I (conj I I)))))))
                                          I)))))))))))))
      : solvable b
-solution'_b is not universe polymorphic
+solution&#39;_b is not universe polymorphic
 microban_1_solution = 
 STEP
   (b:=|&gt; # # # # &lt;|

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:algebra 8.4.dev</a></li>
+              <li class="active"><a href="">2014-12-12 14:48:39</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:algebra
+              <small>
+                8.4.dev
+                <span class="label label-success">15 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-12 14:48:39 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-12 14:48:39 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:algebra/coq:contrib:algebra.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:algebra.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:algebra.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:algebra.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:algebra.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:algebra.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:algebra.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>15 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:algebra.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:algebra] Fetching https://gforge.inria.fr/git/coq-contribs/algebra.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:algebra.8.4.dev/.git/
+[master (root-commit) 0f4d1bc] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/algebra
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Abelian_group_cat.v
+Abelian_group_facts.v
+Algebra.v
+Algebra_facts.v
+Cantor_Bernstein.v
+Cartesian.v
+Categories.v
+Categories2.v
+Cfield_cat.v
+Cfield_facts.v
+Complex_field.v
+Diff.v
+Endo_set.v
+Field_cat.v
+Field_facts.v
+Fmap.v
+Fpart.v
+Fpart2.v
+Fraction_field.v
+Free_abelian_group.v
+Free_abelian_monoid.v
+Free_group.v
+Free_module.v
+Free_monoid.v
+Generated_group.v
+Generated_module.v
+Generated_monoid.v
+Group_cat.v
+Group_facts.v
+Group_hom_factor.v
+Group_kernel.v
+Group_of_group_hom.v
+Group_power.v
+Group_quotient.v
+Group_util.v
+Hom_module.v
+Ideal.v
+Integral_domain_cat.v
+Integral_domain_facts.v
+Inter.v
+LICENSE
+Make
+Makefile
+Module_cat.v
+Module_facts.v
+Module_kernel.v
+Module_util.v
+Monoid_cat.v
+Monoid_facts.v
+Monoid_kernel.v
+Monoid_util.v
+Operation_of_monoid.v
+Parts.v
+Parts2.v
+Parts3.v
+Qfield.v
+Ring_cat.v
+Ring_facts.v
+Ring_util.v
+Set_cat.v
+Sets.v
+Sgroup_cat.v
+Sgroup_facts.v
+Singleton.v
+Sub_group.v
+Sub_module.v
+Sub_monoid.v
+Sub_sgroup.v
+Subcat.v
+Tiroirs.v
+Union.v
+ZUP.v
+Z_group.v
+Z_group_facts.v
+Zring.v
+bench.log
+description
+HEAD is now at bd4248b Adaptations to the new modular organisation of PArith/NArith/ZArith
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:algebra.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Abelian_group_cat.v&quot; &gt; &quot;Abelian_group_cat.v.d&quot; || ( RV=$?; rm -f &quot;Abelian_group_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Abelian_group_facts.v&quot; &gt; &quot;Abelian_group_facts.v.d&quot; || ( RV=$?; rm -f &quot;Abelian_group_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Algebra_facts.v&quot; &gt; &quot;Algebra_facts.v.d&quot; || ( RV=$?; rm -f &quot;Algebra_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Algebra.v&quot; &gt; &quot;Algebra.v.d&quot; || ( RV=$?; rm -f &quot;Algebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Cantor_Bernstein.v&quot; &gt; &quot;Cantor_Bernstein.v.d&quot; || ( RV=$?; rm -f &quot;Cantor_Bernstein.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Cartesian.v&quot; &gt; &quot;Cartesian.v.d&quot; || ( RV=$?; rm -f &quot;Cartesian.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Categories2.v&quot; &gt; &quot;Categories2.v.d&quot; || ( RV=$?; rm -f &quot;Categories2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Categories.v&quot; &gt; &quot;Categories.v.d&quot; || ( RV=$?; rm -f &quot;Categories.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Cfield_cat.v&quot; &gt; &quot;Cfield_cat.v.d&quot; || ( RV=$?; rm -f &quot;Cfield_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Cfield_facts.v&quot; &gt; &quot;Cfield_facts.v.d&quot; || ( RV=$?; rm -f &quot;Cfield_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Complex_field.v&quot; &gt; &quot;Complex_field.v.d&quot; || ( RV=$?; rm -f &quot;Complex_field.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Diff.v&quot; &gt; &quot;Diff.v.d&quot; || ( RV=$?; rm -f &quot;Diff.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Endo_set.v&quot; &gt; &quot;Endo_set.v.d&quot; || ( RV=$?; rm -f &quot;Endo_set.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Field_cat.v&quot; &gt; &quot;Field_cat.v.d&quot; || ( RV=$?; rm -f &quot;Field_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Field_facts.v&quot; &gt; &quot;Field_facts.v.d&quot; || ( RV=$?; rm -f &quot;Field_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Fmap.v&quot; &gt; &quot;Fmap.v.d&quot; || ( RV=$?; rm -f &quot;Fmap.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Fpart2.v&quot; &gt; &quot;Fpart2.v.d&quot; || ( RV=$?; rm -f &quot;Fpart2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Fpart.v&quot; &gt; &quot;Fpart.v.d&quot; || ( RV=$?; rm -f &quot;Fpart.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Fraction_field.v&quot; &gt; &quot;Fraction_field.v.d&quot; || ( RV=$?; rm -f &quot;Fraction_field.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Free_abelian_group.v&quot; &gt; &quot;Free_abelian_group.v.d&quot; || ( RV=$?; rm -f &quot;Free_abelian_group.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Free_abelian_monoid.v&quot; &gt; &quot;Free_abelian_monoid.v.d&quot; || ( RV=$?; rm -f &quot;Free_abelian_monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Free_group.v&quot; &gt; &quot;Free_group.v.d&quot; || ( RV=$?; rm -f &quot;Free_group.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Free_module.v&quot; &gt; &quot;Free_module.v.d&quot; || ( RV=$?; rm -f &quot;Free_module.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Free_monoid.v&quot; &gt; &quot;Free_monoid.v.d&quot; || ( RV=$?; rm -f &quot;Free_monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Generated_group.v&quot; &gt; &quot;Generated_group.v.d&quot; || ( RV=$?; rm -f &quot;Generated_group.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Generated_module.v&quot; &gt; &quot;Generated_module.v.d&quot; || ( RV=$?; rm -f &quot;Generated_module.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Generated_monoid.v&quot; &gt; &quot;Generated_monoid.v.d&quot; || ( RV=$?; rm -f &quot;Generated_monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_cat.v&quot; &gt; &quot;Group_cat.v.d&quot; || ( RV=$?; rm -f &quot;Group_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_facts.v&quot; &gt; &quot;Group_facts.v.d&quot; || ( RV=$?; rm -f &quot;Group_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_hom_factor.v&quot; &gt; &quot;Group_hom_factor.v.d&quot; || ( RV=$?; rm -f &quot;Group_hom_factor.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_kernel.v&quot; &gt; &quot;Group_kernel.v.d&quot; || ( RV=$?; rm -f &quot;Group_kernel.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_of_group_hom.v&quot; &gt; &quot;Group_of_group_hom.v.d&quot; || ( RV=$?; rm -f &quot;Group_of_group_hom.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_power.v&quot; &gt; &quot;Group_power.v.d&quot; || ( RV=$?; rm -f &quot;Group_power.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_quotient.v&quot; &gt; &quot;Group_quotient.v.d&quot; || ( RV=$?; rm -f &quot;Group_quotient.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Group_util.v&quot; &gt; &quot;Group_util.v.d&quot; || ( RV=$?; rm -f &quot;Group_util.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Hom_module.v&quot; &gt; &quot;Hom_module.v.d&quot; || ( RV=$?; rm -f &quot;Hom_module.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Ideal.v&quot; &gt; &quot;Ideal.v.d&quot; || ( RV=$?; rm -f &quot;Ideal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Integral_domain_cat.v&quot; &gt; &quot;Integral_domain_cat.v.d&quot; || ( RV=$?; rm -f &quot;Integral_domain_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Integral_domain_facts.v&quot; &gt; &quot;Integral_domain_facts.v.d&quot; || ( RV=$?; rm -f &quot;Integral_domain_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Inter.v&quot; &gt; &quot;Inter.v.d&quot; || ( RV=$?; rm -f &quot;Inter.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Module_cat.v&quot; &gt; &quot;Module_cat.v.d&quot; || ( RV=$?; rm -f &quot;Module_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Module_facts.v&quot; &gt; &quot;Module_facts.v.d&quot; || ( RV=$?; rm -f &quot;Module_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Module_kernel.v&quot; &gt; &quot;Module_kernel.v.d&quot; || ( RV=$?; rm -f &quot;Module_kernel.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Module_util.v&quot; &gt; &quot;Module_util.v.d&quot; || ( RV=$?; rm -f &quot;Module_util.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Monoid_cat.v&quot; &gt; &quot;Monoid_cat.v.d&quot; || ( RV=$?; rm -f &quot;Monoid_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Monoid_facts.v&quot; &gt; &quot;Monoid_facts.v.d&quot; || ( RV=$?; rm -f &quot;Monoid_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Monoid_kernel.v&quot; &gt; &quot;Monoid_kernel.v.d&quot; || ( RV=$?; rm -f &quot;Monoid_kernel.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Monoid_util.v&quot; &gt; &quot;Monoid_util.v.d&quot; || ( RV=$?; rm -f &quot;Monoid_util.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Operation_of_monoid.v&quot; &gt; &quot;Operation_of_monoid.v.d&quot; || ( RV=$?; rm -f &quot;Operation_of_monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Parts2.v&quot; &gt; &quot;Parts2.v.d&quot; || ( RV=$?; rm -f &quot;Parts2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Parts3.v&quot; &gt; &quot;Parts3.v.d&quot; || ( RV=$?; rm -f &quot;Parts3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Parts.v&quot; &gt; &quot;Parts.v.d&quot; || ( RV=$?; rm -f &quot;Parts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Qfield.v&quot; &gt; &quot;Qfield.v.d&quot; || ( RV=$?; rm -f &quot;Qfield.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Ring_cat.v&quot; &gt; &quot;Ring_cat.v.d&quot; || ( RV=$?; rm -f &quot;Ring_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Ring_facts.v&quot; &gt; &quot;Ring_facts.v.d&quot; || ( RV=$?; rm -f &quot;Ring_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Ring_util.v&quot; &gt; &quot;Ring_util.v.d&quot; || ( RV=$?; rm -f &quot;Ring_util.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Set_cat.v&quot; &gt; &quot;Set_cat.v.d&quot; || ( RV=$?; rm -f &quot;Set_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Sets.v&quot; &gt; &quot;Sets.v.d&quot; || ( RV=$?; rm -f &quot;Sets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Sgroup_cat.v&quot; &gt; &quot;Sgroup_cat.v.d&quot; || ( RV=$?; rm -f &quot;Sgroup_cat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Sgroup_facts.v&quot; &gt; &quot;Sgroup_facts.v.d&quot; || ( RV=$?; rm -f &quot;Sgroup_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Singleton.v&quot; &gt; &quot;Singleton.v.d&quot; || ( RV=$?; rm -f &quot;Singleton.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Subcat.v&quot; &gt; &quot;Subcat.v.d&quot; || ( RV=$?; rm -f &quot;Subcat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Sub_group.v&quot; &gt; &quot;Sub_group.v.d&quot; || ( RV=$?; rm -f &quot;Sub_group.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Sub_module.v&quot; &gt; &quot;Sub_module.v.d&quot; || ( RV=$?; rm -f &quot;Sub_module.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Sub_monoid.v&quot; &gt; &quot;Sub_monoid.v.d&quot; || ( RV=$?; rm -f &quot;Sub_monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Sub_sgroup.v&quot; &gt; &quot;Sub_sgroup.v.d&quot; || ( RV=$?; rm -f &quot;Sub_sgroup.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Tiroirs.v&quot; &gt; &quot;Tiroirs.v.d&quot; || ( RV=$?; rm -f &quot;Tiroirs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Union.v&quot; &gt; &quot;Union.v.d&quot; || ( RV=$?; rm -f &quot;Union.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Z_group_facts.v&quot; &gt; &quot;Z_group_facts.v.d&quot; || ( RV=$?; rm -f &quot;Z_group_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Z_group.v&quot; &gt; &quot;Z_group.v.d&quot; || ( RV=$?; rm -f &quot;Z_group.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;Zring.v&quot; &gt; &quot;Zring.v.d&quot; || ( RV=$?; rm -f &quot;Zring.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . Algebra &quot;ZUP.v&quot; &gt; &quot;ZUP.v.d&quot; || ( RV=$?; rm -f &quot;ZUP.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . Algebra   Sets
+&quot;coqc&quot;  -q  -R . Algebra   Cartesian
+&quot;coqc&quot;  -q  -R . Algebra   Parts
+&quot;coqc&quot;  -q  -R . Algebra   Categories
+&quot;coqc&quot;  -q  -R . Algebra   Parts2
+&quot;coqc&quot;  -q  -R . Algebra   Union
+&quot;coqc&quot;  -q  -R . Algebra   Singleton
+&quot;coqc&quot;  -q  -R . Algebra   Diff
+&quot;coqc&quot;  -q  -R . Algebra   Categories2
+&quot;coqc&quot;  -q  -R . Algebra   Subcat
+&quot;coqc&quot;  -q  -R . Algebra   Set_cat
+&quot;coqc&quot;  -q  -R . Algebra   Fpart
+&quot;coqc&quot;  -q  -R . Algebra   Inter
+&quot;coqc&quot;  -q  -R . Algebra   Parts3
+&quot;coqc&quot;  -q  -R . Algebra   Cantor_Bernstein
+&quot;coqc&quot;  -q  -R . Algebra   Sgroup_cat
+&quot;coqc&quot;  -q  -R . Algebra   Sgroup_facts
+&quot;coqc&quot;  -q  -R . Algebra   Monoid_cat
+&quot;coqc&quot;  -q  -R . Algebra   Sub_sgroup
+&quot;coqc&quot;  -q  -R . Algebra   Monoid_facts
+&quot;coqc&quot;  -q  -R . Algebra   Group_cat
+&quot;coqc&quot;  -q  -R . Algebra   Fpart2
+&quot;coqc&quot;  -q  -R . Algebra   Endo_set
+&quot;coqc&quot;  -q  -R . Algebra   Sub_monoid
+&quot;coqc&quot;  -q  -R . Algebra   Group_facts
+&quot;coqc&quot;  -q  -R . Algebra   Abelian_group_cat
+&quot;coqc&quot;  -q  -R . Algebra   Operation_of_monoid
+&quot;coqc&quot;  -q  -R . Algebra   Sub_group
+&quot;coqc&quot;  -q  -R . Algebra   Monoid_util
+&quot;coqc&quot;  -q  -R . Algebra   Ring_cat
+&quot;coqc&quot;  -q  -R . Algebra   Abelian_group_facts
+&quot;coqc&quot;  -q  -R . Algebra   Monoid_kernel
+&quot;coqc&quot;  -q  -R . Algebra   Free_monoid
+&quot;coqc&quot;  -q  -R . Algebra   Group_util
+&quot;coqc&quot;  -q  -R . Algebra   Integral_domain_cat
+&quot;coqc&quot;  -q  -R . Algebra   Ring_facts
+&quot;coqc&quot;  -q  -R . Algebra   Module_cat
+&quot;coqc&quot;  -q  -R . Algebra   Field_cat
+&quot;coqc&quot;  -q  -R . Algebra   Group_of_group_hom
+&quot;coqc&quot;  -q  -R . Algebra   Generated_monoid
+&quot;coqc&quot;  -q  -R . Algebra   Free_group
+&quot;coqc&quot;  -q  -R . Algebra   Free_abelian_monoid
+&quot;coqc&quot;  -q  -R . Algebra   Free_abelian_group
+&quot;coqc&quot;  -q  -R . Algebra   Field_facts
+&quot;coqc&quot;  -q  -R . Algebra   Ring_util
+&quot;coqc&quot;  -q  -R . Algebra   Integral_domain_facts
+&quot;coqc&quot;  -q  -R . Algebra   Group_quotient
+&quot;coqc&quot;  -q  -R . Algebra   Tiroirs
+&quot;coqc&quot;  -q  -R . Algebra   Module_facts
+&quot;coqc&quot;  -q  -R . Algebra   Module_util
+&quot;coqc&quot;  -q  -R . Algebra   Cfield_cat
+&quot;coqc&quot;  -q  -R . Algebra   Zring
+&quot;coqc&quot;  -q  -R . Algebra   Group_kernel
+&quot;coqc&quot;  -q  -R . Algebra   Fraction_field
+&quot;coqc&quot;  -q  -R . Algebra   Free_module
+&quot;coqc&quot;  -q  -R . Algebra   Hom_module
+&quot;coqc&quot;  -q  -R . Algebra   Group_hom_factor
+&quot;coqc&quot;  -q  -R . Algebra   Generated_group
+&quot;coqc&quot;  -q  -R . Algebra   Fmap
+&quot;coqc&quot;  -q  -R . Algebra   Cfield_facts
+&quot;coqc&quot;  -q  -R . Algebra   Z_group
+&quot;coqc&quot;  -q  -R . Algebra   Sub_module
+&quot;coqc&quot;  -q  -R . Algebra   Qfield
+&quot;coqc&quot;  -q  -R . Algebra   Module_kernel
+&quot;coqc&quot;  -q  -R . Algebra   Group_power
+&quot;coqc&quot;  -q  -R . Algebra   Complex_field
+&quot;coqc&quot;  -q  -R . Algebra   Generated_module
+&quot;coqc&quot;  -q  -R . Algebra   Z_group_facts
+&quot;coqc&quot;  -q  -R . Algebra   Ideal
+&quot;coqc&quot;  -q  -R . Algebra   Algebra
+&quot;coqc&quot;  -q  -R . Algebra   Algebra_facts
+&quot;coqc&quot;  -q  -R . Algebra   ZUP
+for i in ZUP.vo Zring.vo Z_group.vo Z_group_facts.vo Union.vo Tiroirs.vo Sub_sgroup.vo Sub_monoid.vo Sub_module.vo Sub_group.vo Subcat.vo Singleton.vo Sgroup_facts.vo Sgroup_cat.vo Sets.vo Set_cat.vo Ring_util.vo Ring_facts.vo Ring_cat.vo Qfield.vo Parts.vo Parts3.vo Parts2.vo Operation_of_monoid.vo Monoid_util.vo Monoid_kernel.vo Monoid_facts.vo Monoid_cat.vo Module_util.vo Module_kernel.vo Module_facts.vo Module_cat.vo Inter.vo Integral_domain_facts.vo Integral_domain_cat.vo Ideal.vo Hom_module.vo Group_util.vo Group_quotient.vo Group_power.vo Group_of_group_hom.vo Group_kernel.vo Group_hom_factor.vo Group_facts.vo Group_cat.vo Generated_monoid.vo Generated_module.vo Generated_group.vo Free_monoid.vo Free_module.vo Free_group.vo Free_abelian_monoid.vo Free_abelian_group.vo Fraction_field.vo Fpart.vo Fpart2.vo Fmap.vo Field_facts.vo Field_cat.vo Endo_set.vo Diff.vo Complex_field.vo Cfield_facts.vo Cfield_cat.vo Categories.vo Categories2.vo Cartesian.vo Cantor_Bernstein.vo Algebra.vo Algebra_facts.vo Abelian_group_facts.vo Abelian_group_cat.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Algebra/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Algebra/$i; \
+done
+Installing coq:contrib:algebra.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 2.693 K</p>
+            <ul>
+              <li>484 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Complex_field.vo</code></li>
+              <li>135 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Fraction_field.vo</code></li>
+              <li>99 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Z_group.vo</code></li>
+              <li>70 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Ring_cat.vo</code></li>
+              <li>67 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_of_group_hom.vo</code></li>
+              <li>65 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Hom_module.vo</code></li>
+              <li>64 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Sub_module.vo</code></li>
+              <li>61 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/ZUP.vo</code></li>
+              <li>58 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Module_cat.vo</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_quotient.vo</code></li>
+              <li>52 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Parts.vo</code></li>
+              <li>52 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Categories2.vo</code></li>
+              <li>51 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Free_module.vo</code></li>
+              <li>49 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Ideal.vo</code></li>
+              <li>49 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Module_util.vo</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Sets.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Fpart.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Fpart2.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Fmap.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_kernel.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Algebra.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Z_group_facts.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Ring_util.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Subcat.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_util.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_hom_factor.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Field_facts.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Free_abelian_group.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Ring_facts.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Generated_module.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Module_kernel.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Free_group.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Free_abelian_monoid.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Parts2.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Zring.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Categories.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Free_monoid.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Field_cat.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Tiroirs.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Monoid_cat.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Sub_sgroup.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Integral_domain_facts.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Cartesian.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Algebra_facts.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Module_facts.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Monoid_util.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Sgroup_cat.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_power.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Abelian_group_cat.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Cfield_facts.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Generated_group.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Sub_group.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Monoid_kernel.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Qfield.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Parts3.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Generated_monoid.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_cat.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Group_facts.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Abelian_group_facts.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Cantor_Bernstein.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Inter.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Union.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Sub_monoid.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Integral_domain_cat.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Operation_of_monoid.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Monoid_facts.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Sgroup_facts.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Endo_set.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Diff.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Cfield_cat.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Singleton.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Algebra/Set_cat.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:algebra/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:algebra.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:algebra.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:algebra.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:algebra] Fetching https://gforge.inria.fr/git/coq-contribs/algebra.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:algebra.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Algebra
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

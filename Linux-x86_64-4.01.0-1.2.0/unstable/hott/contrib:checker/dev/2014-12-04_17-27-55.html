@@ -144,7 +144,7 @@ Building coq:contrib:checker.dev:
 &quot;coqdep&quot; -c -R . Checker &quot;Functions.v&quot; &gt; &quot;Functions.v.d&quot; || ( RV=$?; rm -f &quot;Functions.v.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -R . Checker &quot;Checker.v&quot; &gt; &quot;Checker.v.d&quot; || ( RV=$?; rm -f &quot;Checker.v.d&quot;; exit ${RV} )
 &quot;coqc&quot;  -q  -R . Checker   Functions
-Identifier 'o' now a keyword
+Identifier &#39;o&#39; now a keyword
 &quot;coqc&quot;  -q  -R . Checker   Checker
 cd &quot;.&quot; &amp;&amp; for i in Checker.vo Functions.vo   ; do \
  install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Checker/$i`&quot;; \

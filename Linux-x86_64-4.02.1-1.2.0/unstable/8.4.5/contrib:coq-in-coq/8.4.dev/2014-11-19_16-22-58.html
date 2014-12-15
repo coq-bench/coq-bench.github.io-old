@@ -216,7 +216,7 @@ Welcome to Coq 8.4pl5 (November 2014)
 Skipping rcfile loading.
 ocamlopt -c -rectypes core.mli
 ocamlopt -c -rectypes core.ml
-ocamlopt -c -rectypes -pp '&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl' top.ml
+ocamlopt -c -rectypes -pp &#39;&quot;/home/bench/.opam/system/bin/camlp5o&quot; -I &quot;/usr/local/lib/ocaml/&quot; -I . -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;cc -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;decl_mode -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;extraction -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;field -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;firstorder -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;fourier -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;funind -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;micromega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;nsatz -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;omega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;quote -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;romega -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;rtauto -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;setoid_ring -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;subtac/test -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;syntax -I &quot;/home/bench/.opam/system/lib/coq/plugins/&quot;xml pa_extend.cmo pa_macro.cmo q_MLast.cmo grammar.cma -loc loc -impl&#39; top.ml
 ocamlopt -rectypes -o coc core.cmx top.cmx
 ***** test: checking the proof of the Newman lemma *****
 ./coc &lt; newman.coc
@@ -224,8 +224,8 @@ Coc &lt; A admis.
 Coc &lt; R admis.
 Coc &lt; Rstar admis.
 Coc &lt; unfold_Rstar admis.
-Coc &lt; Rstar' admis.
-Coc &lt; unfold_Rstar' admis.
+Coc &lt; Rstar&#39; admis.
+Coc &lt; unfold_Rstar&#39; admis.
 Coc &lt; coherence admis.
 Coc &lt; unfold_coherence admis.
 Coc &lt; Hyp1 admis.
@@ -270,7 +270,7 @@ Removing coq:contrib:coq-in-coq.8.4.dev.
 # stdout-file          /home/bench/.opam/system/build/coq:contrib:coq-in-coq.8.4.dev/coq:contrib:coq-in-coq-2667-1872ec.out
 # stderr-file          /home/bench/.opam/system/build/coq:contrib:coq-in-coq.8.4.dev/coq:contrib:coq-in-coq-2667-1872ec.err
 ### stderr ###
-# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/coq-in-coq': No such file or directory
+# rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/coq-in-coq&#39;: No such file or directory
 </pre></dd>
               <dt>Missing removes</dt>
               <dd>

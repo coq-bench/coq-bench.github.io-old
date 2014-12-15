@@ -192,16 +192,16 @@ may lead to incorrect or non-terminating ML terms.
 Warning: The identifier Transition__G_L contains __ which is reserved for the extraction
 Warning: The identifier Transition__G_G contains __ which is reserved for the extraction
 rm *.mli *.cm* *.o; /usr/local/bin/ocamlopt -o fire unix.cmxa graphics.cmxa Datatypes.ml Peano.ml Specif.ml Peano_dec.ml nmax.ml bib.ml autom.ml algo.ml fire.ml
-rm: cannot remove '*.cm*': No such file or directory
-rm: cannot remove '*.o': No such file or directory
+rm: cannot remove &#39;*.cm*&#39;: No such file or directory
+rm: cannot remove &#39;*.o&#39;: No such file or directory
 File &quot;fire.ml&quot;, line 69, characters 5-13:
 Error: Unbound module Graphics
 make: *** [fire] Error 2
-Makefile:203: recipe for target 'fire' failed
+Makefile:203: recipe for target &#39;fire&#39; failed
 [ERROR] The compilation of coq:contrib:firing-squad.8.4.dev failed.
 Removing coq:contrib:firing-squad.8.4.dev.
   rm -R /home/bench/.opam/system/lib/coq/user-contrib/firing-squad
-rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/firing-squad': No such file or directory
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/firing-squad&#39;: No such file or directory
 #=== ERROR while installing coq:contrib:firing-squad.8.4.dev ==================#
 # opam-version         1.2.0
 # os                   linux
@@ -223,7 +223,7 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/firing-squad': 
 # &quot;coqc&quot;  -q  -R . FiringSquad   algo
 # coqtop -q  -R . FiringSquad   -silent -batch -load-vernac-source extract.v
 # rm *.mli *.cm* *.o; /usr/local/bin/ocamlopt -o fire unix.cmxa graphics.cmxa Datatypes.ml Peano.ml Specif.ml Peano_dec.ml nmax.ml bib.ml autom.ml algo.ml fire.ml
-# Makefile:203: recipe for target 'fire' failed
+# Makefile:203: recipe for target &#39;fire&#39; failed
 ### stderr ###
 # ...[truncated]
 # Having invalid logical axiom in the environment when extracting
@@ -231,12 +231,12 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/firing-squad': 
 # 
 # Warning: The identifier Transition__G_L contains __ which is reserved for the extraction
 # Warning: The identifier Transition__G_G contains __ which is reserved for the extraction
-# rm: cannot remove '*.cm*': No such file or directory
-# rm: cannot remove '*.o': No such file or directory
+# rm: cannot remove &#39;*.cm*&#39;: No such file or directory
+# rm: cannot remove &#39;*.o&#39;: No such file or directory
 # File &quot;fire.ml&quot;, line 69, characters 5-13:
 # Error: Unbound module Graphics
 # make: *** [fire] Error 2
-'opam install -y --verbose coq:contrib:firing-squad.8.4.dev' failed.
+&#39;opam install -y --verbose coq:contrib:firing-squad.8.4.dev&#39; failed.
 </pre></dd>
             </dl>
             <h2>Installation size</h2>

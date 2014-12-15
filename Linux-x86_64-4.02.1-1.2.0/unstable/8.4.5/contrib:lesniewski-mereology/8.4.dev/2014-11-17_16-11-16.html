@@ -141,7 +141,7 @@ Building coq:contrib:lesniewski-mereology.8.4.dev:
   make install
 &quot;coqdep&quot; -c -slash -R . LesniewskiMereology &quot;mereo_core3.v&quot; &gt; &quot;mereo_core3.v.d&quot; || ( RV=$?; rm -f &quot;mereo_core3.v.d&quot;; exit ${RV} )
 &quot;coqc&quot;  -q  -R . LesniewskiMereology   mereo_core3
-Identifier 'ε' now a keyword
+Identifier &#39;ε&#39; now a keyword
 for i in mereo_core3.vo; do \
  install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/LesniewskiMereology/$i`; \
  install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/LesniewskiMereology/$i; \
@@ -179,7 +179,7 @@ Removing coq:contrib:lesniewski-mereology.8.4.dev.
 # stdout-file          /home/bench/.opam/system/build/coq:contrib:lesniewski-mereology.8.4.dev/coq:contrib:lesniewski-mereology-16002-1872ec.out
 # stderr-file          /home/bench/.opam/system/build/coq:contrib:lesniewski-mereology.8.4.dev/coq:contrib:lesniewski-mereology-16002-1872ec.err
 ### stderr ###
-# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/lesniewski-mereology': No such file or directory
+# rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/lesniewski-mereology&#39;: No such file or directory
 </pre></dd>
               <dt>Missing removes</dt>
               <dd>

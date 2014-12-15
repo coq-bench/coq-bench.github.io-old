@@ -133,7 +133,7 @@ Building coq:ssreflect.1.5.0:
 coq_makefile -f Make &gt; Makefile.coq
 mkdir -p bin
 make -f Makefile.coq all
-make[1]: Entering directory '/home/bench/.opam/system/build/coq:ssreflect.1.5.0'
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:ssreflect.1.5.0&#39;
 ocamldep -slash -I &quot;src&quot; &quot;src/ssrmatching.mli&quot; &gt; &quot;src/ssrmatching.mli.d&quot; || ( RV=$?; rm -f &quot;src/ssrmatching.mli.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -I &quot;src&quot; &quot;theories/ssreflect.mllib&quot; &gt; &quot;theories/ssreflect.mllib.d&quot; || ( RV=$?; rm -f &quot;theories/ssreflect.mllib.d&quot;; exit ${RV} )
 &quot;coqdep&quot; -c -I &quot;src&quot; &quot;src/ssrmatching.ml4&quot; &gt; &quot;src/ssrmatching.ml4.d&quot; || ( RV=$?; rm -f &quot;src/ssrmatching.ml4.d&quot;; exit ${RV} )
@@ -150,15 +150,15 @@ ocamldep -slash -I &quot;src&quot; &quot;src/ssrmatching.mli&quot; &gt; &quot;sr
 ocamlc -c -rectypes -thread  -I &quot;src&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 src/ssrmatching.mli
 File &quot;src/ssrmatching.mli&quot;, line 76, characters 14-34:
 Error: Unbound type constructor glob_constr_and_expr
-Makefile.coq:337: recipe for target 'src/ssrmatching.cmi' failed
-make[1]: Leaving directory '/home/bench/.opam/system/build/coq:ssreflect.1.5.0'
+Makefile.coq:337: recipe for target &#39;src/ssrmatching.cmi&#39; failed
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ssreflect.1.5.0&#39;
 make[1]: *** [src/ssrmatching.cmi] Error 2
 make: *** [all] Error 2
-Makefile:8: recipe for target 'all' failed
+Makefile:8: recipe for target &#39;all&#39; failed
 [ERROR] The compilation of coq:ssreflect.1.5.0 failed.
 Removing coq:ssreflect.1.5.0.
   rm -R /home/bench/.opam/system/lib/coq/user-contrib/Ssreflect
-rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/Ssreflect': No such file or directory
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/Ssreflect&#39;: No such file or directory
 #=== ERROR while installing coq:ssreflect.1.5.0 ===============================#
 # opam-version         1.2.0
 # os                   linux
@@ -178,15 +178,15 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/Ssreflect': No 
 # &quot;coqdep&quot; -c -R &quot;theories&quot; Ssreflect -I &quot;src&quot; &quot;theories/choice.v&quot; &gt; &quot;theories/choice.v.d&quot; || ( RV=$?; rm -f &quot;theories/choice.v.d&quot;; exit ${RV} )
 # &quot;coqdep&quot; -c -R &quot;theories&quot; Ssreflect -I &quot;src&quot; &quot;theories/fintype.v&quot; &gt; &quot;theories/fintype.v.d&quot; || ( RV=$?; rm -f &quot;theories/fintype.v.d&quot;; exit ${RV} )
 # ocamlc -c -rectypes -thread  -I &quot;src&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/Derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 src/ssrmatching.mli
-# Makefile.coq:337: recipe for target 'src/ssrmatching.cmi' failed
-# make[1]: Leaving directory '/home/bench/.opam/system/build/coq:ssreflect.1.5.0'
-# Makefile:8: recipe for target 'all' failed
+# Makefile.coq:337: recipe for target &#39;src/ssrmatching.cmi&#39; failed
+# make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ssreflect.1.5.0&#39;
+# Makefile:8: recipe for target &#39;all&#39; failed
 ### stderr ###
 # File &quot;src/ssrmatching.mli&quot;, line 76, characters 14-34:
 # Error: Unbound type constructor glob_constr_and_expr
 # make[1]: *** [src/ssrmatching.cmi] Error 2
 # make: *** [all] Error 2
-'opam install -y --verbose coq:ssreflect.1.5.0' failed.
+&#39;opam install -y --verbose coq:ssreflect.1.5.0&#39; failed.
 </pre></dd>
             </dl>
             <h2>Installation size</h2>

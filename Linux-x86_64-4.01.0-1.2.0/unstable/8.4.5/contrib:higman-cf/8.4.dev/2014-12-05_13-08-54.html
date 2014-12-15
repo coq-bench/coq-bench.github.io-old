@@ -149,12 +149,12 @@ Building coq:contrib:higman-cf.8.4.dev:
 &quot;coqdep&quot; -c -slash -R . HigmanCF &quot;Higman2.v&quot; &gt; &quot;Higman2.v.d&quot; || ( RV=$?; rm -f &quot;Higman2.v.d&quot;; exit ${RV} )
 &quot;coqc&quot;  -q  -R . HigmanCF   Higman2
 &quot;coqc&quot;  -q  -R . HigmanCF   Higman
-make: *** No rule to make target 'higman2.ml', needed by 'higman'.  Stop.
+make: *** No rule to make target &#39;higman2.ml&#39;, needed by &#39;higman&#39;.  Stop.
 make: *** Waiting for unfinished jobs....
 [ERROR] The compilation of coq:contrib:higman-cf.8.4.dev failed.
 Removing coq:contrib:higman-cf.8.4.dev.
   rm -R /home/bench/.opam/system/lib/coq/user-contrib/higman-cf
-rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/higman-cf': No such file or directory
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/higman-cf&#39;: No such file or directory
 #=== ERROR while installing coq:contrib:higman-cf.8.4.dev =====================#
 # opam-version         1.2.0
 # os                   linux
@@ -171,9 +171,9 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/higman-cf': No 
 # &quot;coqc&quot;  -q  -R . HigmanCF   Higman2
 # &quot;coqc&quot;  -q  -R . HigmanCF   Higman
 ### stderr ###
-# make: *** No rule to make target 'higman2.ml', needed by 'higman'.  Stop.
+# make: *** No rule to make target &#39;higman2.ml&#39;, needed by &#39;higman&#39;.  Stop.
 # make: *** Waiting for unfinished jobs....
-'opam install -y --verbose coq:contrib:higman-cf.8.4.dev' failed.
+&#39;opam install -y --verbose coq:contrib:higman-cf.8.4.dev&#39; failed.
 </pre></dd>
             </dl>
             <h2>Installation size</h2>

@@ -178,10 +178,10 @@ coqc  -q  -R . MutualExclusion   binary/version2/Def
 coqc  -q  -R . MutualExclusion   binary/version1/Soundness
 coqc  -q  -R . MutualExclusion   binary/version1/Correctness
 coqc  -q  -R . MutualExclusion   binary/version2/Correctness
-ghcxmake binary/version1/Mutex_prog &amp;&amp; strip binary/version1/Mutex_prog || echo 'Unsuccessful compilation of Haskell extracted program'
+ghcxmake binary/version1/Mutex_prog &amp;&amp; strip binary/version1/Mutex_prog || echo &#39;Unsuccessful compilation of Haskell extracted program&#39;
 /bin/sh: 1: ghcxmake: not found
 Unsuccessful compilation of Haskell extracted program
-ocamlopt -rectypes -ccopt -s -o binary/version1/mutex_prog -I +labltk labltk.cmxa -I ./binary/version1/ ./binary/version1/mutex.mli ./binary/version1/mutex.ml ./binary/version1/mutex_prog.ml || echo 'Unsuccessful compilation of Ocaml extracted program'
+ocamlopt -rectypes -ccopt -s -o binary/version1/mutex_prog -I +labltk labltk.cmxa -I ./binary/version1/ ./binary/version1/mutex.mli ./binary/version1/mutex.ml ./binary/version1/mutex_prog.ml || echo &#39;Unsuccessful compilation of Ocaml extracted program&#39;
 File &quot;./binary/version1/mutex.mli&quot;, line 1:
 Error: I/O error: ./binary/version1/mutex.mli: No such file or directory
 Unsuccessful compilation of Ocaml extracted program
@@ -222,7 +222,7 @@ Removing coq:contrib:mutual-exclusion.8.4.dev.
 # stdout-file          /home/bench/.opam/system/build/coq:contrib:mutual-exclusion.8.4.dev/coq:contrib:mutual-exclusion-18487-1872ec.out
 # stderr-file          /home/bench/.opam/system/build/coq:contrib:mutual-exclusion.8.4.dev/coq:contrib:mutual-exclusion-18487-1872ec.err
 ### stderr ###
-# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/mutual-exclusion': No such file or directory
+# rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/mutual-exclusion&#39;: No such file or directory
 </pre></dd>
               <dt>Missing removes</dt>
               <dd>

@@ -169,17 +169,17 @@ the following opaque constant bodies have been accessed :
  one_only_succes proof_unif nat_term_eq_quasiterm.quasiterm_eq_decS
  sig_elem_subst sig_elem_subst0 sym_Unification two_succes unif_proof
  nat_term_eq_quasiterm.var_eq_decS.
-ocamlopt -rectypes -pp '/usr/local/bin/camlp5o' -o unif unif.mli unif.ml main.ml
+ocamlopt -rectypes -pp &#39;/usr/local/bin/camlp5o&#39; -o unif unif.mli unif.ml main.ml
 sh: 1: /usr/local/bin/camlp5o: not found
 File &quot;unif.mli&quot;, line 1:
 Error: Error while running external preprocessor
-Command line: /usr/local/bin/camlp5o 'unif.mli' &gt; /tmp/ocamlpp80bc6e
+Command line: /usr/local/bin/camlp5o &#39;unif.mli&#39; &gt; /tmp/ocamlpp80bc6e
 make: *** [unif] Error 2
-Makefile:195: recipe for target 'unif' failed
+Makefile:195: recipe for target &#39;unif&#39; failed
 [ERROR] The compilation of coq:contrib:founify.8.4.dev failed.
 Removing coq:contrib:founify.8.4.dev.
   rm -R /home/bench/.opam/system/lib/coq/user-contrib/founify
-rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/founify': No such file or directory
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/founify&#39;: No such file or directory
 #=== ERROR while installing coq:contrib:founify.8.4.dev =======================#
 # opam-version         1.2.0
 # os                   linux
@@ -200,8 +200,8 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/founify': No su
 # &quot;coqc&quot;  -q  -R . FOUnify   listv_is_in_lv
 # &quot;coqc&quot;  -q  -R . FOUnify   term_unif
 # coqtop -q  -R . FOUnify   -silent -batch -load-vernac-source extract.v
-# ocamlopt -rectypes -pp '/usr/local/bin/camlp5o' -o unif unif.mli unif.ml main.ml
-# Makefile:195: recipe for target 'unif' failed
+# ocamlopt -rectypes -pp &#39;/usr/local/bin/camlp5o&#39; -o unif unif.mli unif.ml main.ml
+# Makefile:195: recipe for target &#39;unif&#39; failed
 ### stderr ###
 # ...[truncated]
 #  one_only_succes proof_unif nat_term_eq_quasiterm.quasiterm_eq_decS
@@ -211,10 +211,10 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/founify': No su
 # sh: 1: /usr/local/bin/camlp5o: not found
 # File &quot;unif.mli&quot;, line 1:
 # Error: Error while running external preprocessor
-# Command line: /usr/local/bin/camlp5o 'unif.mli' &gt; /tmp/ocamlpp80bc6e
+# Command line: /usr/local/bin/camlp5o &#39;unif.mli&#39; &gt; /tmp/ocamlpp80bc6e
 # 
 # make: *** [unif] Error 2
-'opam install -y --verbose coq:contrib:founify.8.4.dev' failed.
+&#39;opam install -y --verbose coq:contrib:founify.8.4.dev&#39; failed.
 </pre></dd>
             </dl>
             <h2>Installation size</h2>

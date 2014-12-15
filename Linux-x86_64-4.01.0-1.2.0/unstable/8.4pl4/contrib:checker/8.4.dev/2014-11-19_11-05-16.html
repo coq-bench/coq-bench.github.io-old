@@ -146,7 +146,7 @@ Building coq:contrib:checker.8.4.dev:
 coqdep -c -slash -R . Checker &quot;Functions.v&quot; &gt; &quot;Functions.v.d&quot; || ( RV=$?; rm -f &quot;Functions.v.d&quot;; exit ${RV} )
 coqdep -c -slash -R . Checker &quot;Checker.v&quot; &gt; &quot;Checker.v.d&quot; || ( RV=$?; rm -f &quot;Checker.v.d&quot;; exit ${RV} )
 coqc  -q  -R . Checker   Functions
-Identifier 'o' now a keyword
+Identifier &#39;o&#39; now a keyword
 coqc  -q  -R . Checker   Checker
 for i in Checker.vo Functions.vo; do \
  install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/Checker/$i`; \
@@ -185,7 +185,7 @@ Removing coq:contrib:checker.8.4.dev.
 # stdout-file          /home/bench/.opam/system/build/coq:contrib:checker.8.4.dev/coq:contrib:checker-21121-1872ec.out
 # stderr-file          /home/bench/.opam/system/build/coq:contrib:checker.8.4.dev/coq:contrib:checker-21121-1872ec.err
 ### stderr ###
-# rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/checker': No such file or directory
+# rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/checker&#39;: No such file or directory
 </pre></dd>
               <dt>Missing removes</dt>
               <dd>

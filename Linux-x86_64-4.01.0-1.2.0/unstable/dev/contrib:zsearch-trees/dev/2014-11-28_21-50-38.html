@@ -155,7 +155,7 @@ File &quot;test.ml&quot;, line 9, characters 9-11:
 Error: Unbound constructor XH
 make: *** [test] Error 2
 make: *** Waiting for unfinished jobs....
-Makefile:165: recipe for target 'test' failed
+Makefile:165: recipe for target &#39;test&#39; failed
 (** val naive_sch : z -&gt; z_btree -&gt; sumbool **)
 let rec naive_sch n0 = function
 | Z_leaf -&gt; Right
@@ -190,7 +190,7 @@ let rec insert n0 = function
 let rec list2trees_aux l t0 =
   match l with
   | Nil -&gt; t0
-  | Cons (p, l') -&gt; list2trees_aux l' (insert p t0)
+  | Cons (p, l&#39;) -&gt; list2trees_aux l&#39; (insert p t0)
 (** val list2trees : z list -&gt; list2trees_spec **)
 let list2trees l =
   list2trees_aux l Z_leaf
@@ -205,14 +205,14 @@ let rec rm n0 = function
       | Right -&gt;
         (match t1 with
          | Z_leaf -&gt; t2
-         | Z_bnode (p', t'1, t'2) -&gt;
-           let ExistT (q, r) = rmax (Z_bnode (p', t'1, t'2)) in
+         | Z_bnode (p&#39;, t&#39;1, t&#39;2) -&gt;
+           let ExistT (q, r) = rmax (Z_bnode (p&#39;, t&#39;1, t&#39;2)) in
            Z_bnode (q, r, t2)))
    | Right -&gt; Z_bnode (p, t1, (rm n0 t2)))
 [ERROR] The compilation of coq:contrib:zsearch-trees.dev failed.
 Removing coq:contrib:zsearch-trees.dev.
   rm -R /home/bench/.opam/system/lib/coq/user-contrib/zsearch-trees
-rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/zsearch-trees': No such file or directory
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/zsearch-trees&#39;: No such file or directory
 #=== ERROR while installing coq:contrib:zsearch-trees.dev =====================#
 # opam-version         1.2.0
 # os                   linux
@@ -231,8 +231,8 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/zsearch-trees':
 #       | Right -&gt;
 #         (match t1 with
 #          | Z_leaf -&gt; t2
-#          | Z_bnode (p', t'1, t'2) -&gt;
-#            let ExistT (q, r) = rmax (Z_bnode (p', t'1, t'2)) in
+#          | Z_bnode (p&#39;, t&#39;1, t&#39;2) -&gt;
+#            let ExistT (q, r) = rmax (Z_bnode (p&#39;, t&#39;1, t&#39;2)) in
 #            Z_bnode (q, r, t2)))
 #    | Right -&gt; Z_bnode (p, t1, (rm n0 t2)))
 ### stderr ###
@@ -243,7 +243,7 @@ rm: cannot remove '/home/bench/.opam/system/lib/coq/user-contrib/zsearch-trees':
 # Error: Unbound constructor XH
 # make: *** [test] Error 2
 # make: *** Waiting for unfinished jobs....
-'opam install -y --verbose coq:contrib:zsearch-trees.dev' failed.
+&#39;opam install -y --verbose coq:contrib:zsearch-trees.dev&#39; failed.
 </pre></dd>
             </dl>
             <h2>Installation size</h2>

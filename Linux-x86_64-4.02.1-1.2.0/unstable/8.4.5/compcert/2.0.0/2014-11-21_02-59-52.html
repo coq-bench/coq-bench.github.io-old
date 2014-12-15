@@ -149,7 +149,7 @@ CompCert configuration:
     cchecklink tool supported..... false
 If anything above looks wrong, please edit file ./Makefile.config to correct.
 make proof
-make[1]: Entering directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 COQC lib/Axioms.v
 COQC lib/Coqlib.v
 ocamlopt -o tools/ndfun str.cmxa tools/ndfun.ml
@@ -176,8 +176,8 @@ COQC lib/UnionFind.v
 COQC lib/Postorder.v
 COQC lib/FSetAVLplus.v
 COQC common/Errors.v
-Identifier 'do' now a keyword
-Identifier 'assertion' now a keyword
+Identifier &#39;do&#39; now a keyword
+Identifier &#39;assertion&#39; now a keyword
 COQC lib/Lattice.v
 COQC flocq/Core/Fcore_float_prop.v
 COQC flocq/Core/Fcore_rnd.v
@@ -222,12 +222,12 @@ COQC cfrontend/Initializers.v
 COQC common/Events.v
 COQC common/Smallstep.v
 COQC ia32/Op.v
-Identifier 'Step' now a keyword
-Identifier 'Star' now a keyword
-Identifier 'Plus' now a keyword
-Identifier 'Forever_silent' now a keyword
-Identifier 'Forever_reactive' now a keyword
-Identifier 'Nostep' now a keyword
+Identifier &#39;Step&#39; now a keyword
+Identifier &#39;Star&#39; now a keyword
+Identifier &#39;Plus&#39; now a keyword
+Identifier &#39;Forever_silent&#39; now a keyword
+Identifier &#39;Forever_reactive&#39; now a keyword
+Identifier &#39;Nostep&#39; now a keyword
 COQC common/Behaviors.v
 COQC backend/Cminor.v
 COQC cfrontend/Csem.v
@@ -254,7 +254,7 @@ COQC cfrontend/Cminorgen.v
 COQC ia32/SelectOp.v
 COQC backend/RTLgen.v
 COQC ia32/standard/Conventions1.v
-Identifier 'do' now a keyword
+Identifier &#39;do&#39; now a keyword
 COQC backend/Inliningspec.v
 COQC backend/Renumberproof.v
 COQC backend/Constprop.v
@@ -262,7 +262,7 @@ COQC ia32/CombineOp.v
 COQC cfrontend/Cexec.v
 COQC cfrontend/SimplExprproof.v
 COQC cfrontend/Cshmgenproof.v
-Identifier 'check' now a keyword
+Identifier &#39;check&#39; now a keyword
 COQC cfrontend/Cminorgenproof.v
 COQC backend/SelectLong.v
 COQC ia32/SelectOpproof.v
@@ -304,9 +304,9 @@ COQC ia32/Asmgenproof1.v
 COQC ia32/Asmgenproof.v
 COQC driver/Compiler.v
 COQC driver/Complements.v
-make[1]: Leaving directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 make extraction
-make[1]: Entering directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 rm -f extraction/*.ml extraction/*.mli
 coqtop  -R lib -as compcert.lib  -R common -as compcert.common  -R backend -as compcert.backend  -R cfrontend -as compcert.cfrontend  -R driver -as compcert.driver  -R flocq -as compcert.flocq  -R exportclight -as compcert.exportclight -I ia32/standard -as compcert.ia32.standard -I ia32 -as compcert.ia32 -batch -load-vernac-source extraction/extraction.v
 Welcome to Coq 8.4pl5 (November 2014)
@@ -314,9 +314,9 @@ Warning: The extraction is currently set to bypass opacity,
 the following opaque constant bodies have been accessed :
  solve_constraints_rect solve_constraints_terminate.
 touch extraction/STAMP
-make[1]: Leaving directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 make ccomp
-make[1]: Entering directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 (echo let stdlib_path = &quot;\&quot;/usr/local/lib/compcert\&quot;&quot;; \
          echo let prepro = &quot;\&quot;gcc -m32 -U__GNUC__ -E\&quot;&quot;; \
          echo let asm = &quot;\&quot;gcc -m32 -c\&quot;&quot;; \
@@ -981,11 +981,11 @@ File &quot;cparser/Lexer.mll&quot;, line 25, character 75: unescaped newline in 
 /usr/local/bin/ocamlopt.opt -a cparser/Cerrors.cmx cparser/Cabs.cmx cparser/Cabshelper.cmx cparser/Parse_aux.cmx cparser/Parser.cmx cparser/Lexer.cmx cparser/Machine.cmx cparser/Env.cmx cparser/Cprint.cmx cparser/Cutil.cmx cparser/Ceval.cmx cparser/Cleanup.cmx cparser/Builtins.cmx cparser/Elab.cmx cparser/Rename.cmx cparser/Transform.cmx cparser/Unblock.cmx cparser/StructReturn.cmx cparser/Bitfields.cmx cparser/PackedStructs.cmx cparser/Parse.cmx -o cparser/Cparser.cmxa
 /usr/local/bin/ocamlopt.opt unix.cmxa str.cmxa driver/Configuration.cmx common/Memdataaux.cmx extraction/BinNums.cmx extraction/Datatypes.cmx extraction/Peano.cmx extraction/BinPosDef.cmx extraction/Bool.cmx extraction/BinPos.cmx extraction/BinNat.cmx extraction/BinInt.cmx extraction/Specif.cmx extraction/List0.cmx extraction/ZArith_dec.cmx extraction/Coqlib.cmx extraction/Errors.cmx extraction/Fcore_Zaux.cmx extraction/Zbool.cmx extraction/Fcalc_bracket.cmx extraction/Fcalc_round.cmx extraction/Fcore_FLT.cmx extraction/Fcore_digits.cmx extraction/Zpower.cmx extraction/Fappli_IEEE.cmx extraction/Fappli_IEEE_bits.cmx extraction/Integers.cmx extraction/Floats.cmx lib/Camlcoq.cmx extraction/AST.cmx extraction/EqNat.cmx extraction/EquivDec.cmx extraction/Maps.cmx extraction/Values.cmx extraction/Memdata.cmx extraction/Memtype.cmx extraction/Memory.cmx extraction/Globalenvs.cmx extraction/Cminor.cmx backend/CMparser.cmx backend/CMlexer.cmx common/PrintAST.cmx backend/PrintCminor.cmx backend/CMtypecheck.cmx extraction/Events.cmx extraction/Int0.cmx extraction/Orders.cmx extraction/OrdersTac.cmx extraction/OrdersFacts.cmx extraction/MSetInterface.cmx extraction/MSetAVL.cmx extraction/OrderedType.cmx extraction/OrdersAlt.cmx extraction/FSetAVL.cmx extraction/Op.cmx extraction/Machregs.cmx extraction/Ordered.cmx extraction/Locations.cmx extraction/Registers.cmx backend/XTL.cmx extraction/Conventions1.cmx ia32/Machregsaux.cmx ia32/PrintOp.cmx backend/PrintXTL.cmx extraction/Conventions.cmx backend/IRC.cmx cparser/Cparser.cmxa driver/Clflags.cmx common/Sections.cmx extraction/Ctypes.cmx extraction/Cop.cmx extraction/Csyntax.cmx extraction/Initializers.cmx ia32/CBuiltins.cmx cfrontend/C2C.cmx extraction/RTL.cmx backend/Inliningaux.cmx extraction/Equalities.cmx extraction/DecidableType.cmx extraction/FSetInterface.cmx extraction/Heaps.cmx extraction/Iteration.cmx extraction/Lattice.cmx extraction/Kildall.cmx extraction/LTL.cmx backend/Linearizeaux.cmx extraction/Asm.cmx backend/PrintAnnot.cmx backend/PrintLTL.cmx extraction/Mach.cmx backend/PrintMach.cmx backend/PrintRTL.cmx extraction/Compare_dec.cmx extraction/CminorSel.cmx extraction/Switch.cmx backend/RTLgenaux.cmx backend/Splitting.cmx extraction/Subtyping.cmx extraction/RTLtyping.cmx backend/Regalloc.cmx ia32/Unusedglob1.cmx backend/Unusedglob.cmx cfrontend/CPragmas.cmx cfrontend/PrintCsyntax.cmx extraction/Clight.cmx cfrontend/PrintClight.cmx extraction/Csem.cmx extraction/Determinism.cmx extraction/Cexec.cmx driver/Interp.cmx extraction/FSetAVLplus.cmx extraction/Allocation.cmx extraction/Asmgen.cmx extraction/Linear.cmx extraction/Bounds.cmx extraction/SelectOp.cmx extraction/CombineOp.cmx extraction/CSE.cmx extraction/CleanupLabels.cmx extraction/Csharpminor.cmx extraction/Mergesort.cmx extraction/Cminorgen.cmx extraction/ConstpropOp.cmx extraction/Liveness.cmx extraction/Constprop.cmx extraction/Cshmgen.cmx extraction/Inlining.cmx extraction/Linearize.cmx extraction/Lineartyping.cmx extraction/Postorder.cmx extraction/RTLgen.cmx extraction/Renumber.cmx extraction/SelectLong.cmx extraction/Selection.cmx extraction/SimplExpr.cmx extraction/SimplLocals.cmx extraction/Stacklayout.cmx extraction/Stacking.cmx extraction/Tailcall.cmx extraction/UnionFind.cmx extraction/Tunneling.cmx extraction/Compiler.cmx ia32/PrintAsm.cmx driver/Driver.cmx -o driver/Driver.native
 # Parallel statistics: { count(total): 49(502), max: 20, min: 2, average(total): 3.571(1.251) }
-make[1]: Leaving directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 make runtime
-make[1]: Entering directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 make -C runtime
-make[2]: Entering directory '/home/bench/.opam/system/build/coq:compcert.2.0.0/runtime'
+make[2]: Entering directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0/runtime&#39;
 gcc -m32 -c -DVARIANT_standard -DSYS_linux -o i64_dtos.o ia32/i64_dtos.S
 gcc -m32 -c -DVARIANT_standard -DSYS_linux -o i64_dtou.o ia32/i64_dtou.S
 gcc -m32 -c -DVARIANT_standard -DSYS_linux -o i64_sar.o ia32/i64_sar.S
@@ -1002,8 +1002,8 @@ gcc -m32 -c -DVARIANT_standard -DSYS_linux -o i64_utod.o ia32/i64_utod.S
 gcc -m32 -c -DVARIANT_standard -DSYS_linux -o i64_utof.o ia32/i64_utof.S
 rm -f libcompcert.a
 ar rcs libcompcert.a i64_dtos.o i64_dtou.o i64_sar.o i64_sdiv.o i64_shl.o i64_shr.o i64_smod.o i64_stod.o i64_stof.o i64_udivmod.o i64_udiv.o i64_umod.o i64_utod.o i64_utof.o
-make[2]: Leaving directory '/home/bench/.opam/system/build/coq:compcert.2.0.0/runtime'
-make[1]: Leaving directory '/home/bench/.opam/system/build/coq:compcert.2.0.0'
+make[2]: Leaving directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0/runtime&#39;
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:compcert.2.0.0&#39;
 Installing coq:compcert.2.0.0.
 </pre></dd>
             </dl>

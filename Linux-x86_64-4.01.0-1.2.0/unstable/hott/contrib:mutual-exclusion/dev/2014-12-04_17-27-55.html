@@ -191,10 +191,10 @@ It follows makefile target declaration order and has a clearer semantic.
 &quot;coqc&quot;  -q  -R . MutualExclusion   binary/version1/Soundness
 &quot;coqc&quot;  -q  -R . MutualExclusion   binary/version1/Correctness
 &quot;coqc&quot;  -q  -R . MutualExclusion   binary/version2/Correctness
-ghcxmake binary/version1/Mutex_prog &amp;&amp; strip binary/version1/Mutex_prog || echo 'Unsuccessful compilation of Haskell extracted program'
+ghcxmake binary/version1/Mutex_prog &amp;&amp; strip binary/version1/Mutex_prog || echo &#39;Unsuccessful compilation of Haskell extracted program&#39;
 /bin/sh: 1: Unsuccessful compilation of Haskell extracted program
 ghcxmake: not found
-ocamlopt -rectypes -ccopt -s -o binary/version1/mutex_prog -I +labltk labltk.cmxa -I ./binary/version1/ ./binary/version1/mutex.mli ./binary/version1/mutex.ml ./binary/version1/mutex_prog.ml || echo 'Unsuccessful compilation of Ocaml extracted program'
+ocamlopt -rectypes -ccopt -s -o binary/version1/mutex_prog -I +labltk labltk.cmxa -I ./binary/version1/ ./binary/version1/mutex.mli ./binary/version1/mutex.ml ./binary/version1/mutex_prog.ml || echo &#39;Unsuccessful compilation of Ocaml extracted program&#39;
 File &quot;./binary/version1/mutex.mli&quot;, line 1:
 Error: I/O error: ./binary/version1/mutex.mli: No such file or directory
 Unsuccessful compilation of Ocaml extracted program

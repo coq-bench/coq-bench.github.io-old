@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / coq-of-ocaml dev</a></li>
+              <li class="active"><a href="">2014-12-13 14:28:53</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              coq-of-ocaml
+              <small>
+                dev
+                <span class="label label-success">28 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-13 14:28:53 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-13 14:28:53 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:coq-of-ocaml/coq:coq-of-ocaml.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:coq-of-ocaml.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   ocamlfind.1.5.5                       [required by yojson, smart-print]
+ - install   smart-print.0.2.0                     [required by coq:coq-of-ocaml]
+ - install   easy-format.1.0.2                     [required by yojson]
+ - install   cppo.1.1.2                            [required by yojson]
+ - install   biniou.1.0.9                          [required by yojson]
+ - install   yojson.1.1.8                          [required by coq:coq-of-ocaml]
+ - install   coq:coq-of-ocaml.dev
+=== 7 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building ocamlfind.1.5.5:
+  ./configure -bindir /home/bench/.opam/system/bin -sitelib /home/bench/.opam/system/lib -mandir /home/bench/.opam/system/man -config /home/bench/.opam/system/lib/findlib.conf -no-topfind
+  make all
+  make opt
+  make install
+Installing ocamlfind.1.5.5.
+Building cppo.1.1.2:
+  make
+  make install-lib
+Installing cppo.1.1.2.
+Building easy-format.1.0.2:
+  make
+  make install
+Installing easy-format.1.0.2.
+Building smart-print.0.2.0:
+  make
+  make install
+Installing smart-print.0.2.0.
+Building biniou.1.0.9:
+  make
+  make install
+Installing biniou.1.0.9.
+Building yojson.1.1.8:
+  make
+  make install
+Installing yojson.1.1.8.
+Building coq:coq-of-ocaml.dev:
+  sh -c cd CoqOfOCaml &amp;&amp; ./configure.sh
+  sh -c cd CoqOfOCaml &amp;&amp; make -j4
+  sh -c cd CoqOfOCaml &amp;&amp; make install
+  make -j4
+Installing coq:coq-of-ocaml.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:coq-of-ocaml.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>15 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   ocamlfind.1.5.5                       [required by yojson, smart-print]
+ - install   smart-print.0.2.0                     [required by coq:coq-of-ocaml]
+ - install   easy-format.1.0.2                     [required by yojson]
+ - install   cppo.1.1.2                            [required by yojson]
+ - install   biniou.1.0.9                          [required by yojson]
+ - install   yojson.1.1.8                          [required by coq:coq-of-ocaml]
+=== 6 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[default] Downloading https://opam.ocaml.org/archives/biniou.1.0.9+opam.tar.gz
+[default] Downloading https://opam.ocaml.org/archives/cppo.1.1.2+opam.tar.gz
+[default] Downloading https://opam.ocaml.org/archives/easy-format.1.0.2+opam.tar.gz
+[default] Downloading https://opam.ocaml.org/archives/ocamlfind.1.5.5+opam.tar.gz
+[default] Downloading https://opam.ocaml.org/archives/smart-print.0.2.0+opam.tar.gz
+[default] Downloading https://opam.ocaml.org/archives/yojson.1.1.8+opam.tar.gz
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building ocamlfind.1.5.5:
+  ./configure -bindir /home/bench/.opam/system/bin -sitelib /home/bench/.opam/system/lib -mandir /home/bench/.opam/system/man -config /home/bench/.opam/system/lib/findlib.conf -no-topfind
+  make all
+  make opt
+  make install
+Installing ocamlfind.1.5.5.
+Building cppo.1.1.2:
+  make
+  make install-lib
+Building easy-format.1.0.2:
+  make
+  make install
+Building smart-print.0.2.0:
+  make
+  make install
+Installing smart-print.0.2.0.
+Installing easy-format.1.0.2.
+Building biniou.1.0.9:
+  make
+  make install
+Installing biniou.1.0.9.
+Installing cppo.1.1.2.
+Building yojson.1.1.8:
+  make
+  make install
+Installing yojson.1.1.8.
+</pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:coq-of-ocaml.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>28 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:coq-of-ocaml.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:coq-of-ocaml.dev] Downloading https://github.com/clarus/coq-of-ocaml/archive/master.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   127    0   127    0     0    260      0 --:--:-- --:--:-- --:--:--   260
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0 20038    0     0   9365      0 --:--:--  0:00:02 --:--:-- 20615  0     0    0 56678    0     0  18236      0 --:--:--  0:00:03 --:--:-- 29215  0     0    0  103k    0     0  26006      0 --:--:--  0:00:04 --:--:-- 36440  0     0    0  162k    0     0  32270      0 --:--:--  0:00:05 --:--:-- 41742  0     0    0  198k    0     0  33169      0 --:--:--  0:00:06 --:--:-- 40985  0     0    0  234k    0     0  34303      0 --:--:--  0:00:06 --:--:-- 45313
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:coq-of-ocaml.dev:
+  sh -c cd CoqOfOCaml &amp;&amp; ./configure.sh
+  sh -c cd CoqOfOCaml &amp;&amp; make -j4
+  sh -c cd CoqOfOCaml &amp;&amp; make install
+  make -j4
+&quot;coqdep&quot; -c -slash -R . CoqOfOCaml &quot;Basics.v&quot; &gt; &quot;Basics.v.d&quot; || ( RV=$?; rm -f &quot;Basics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoqOfOCaml &quot;Effect.v&quot; &gt; &quot;Effect.v.d&quot; || ( RV=$?; rm -f &quot;Effect.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoqOfOCaml &quot;Libraries.v&quot; &gt; &quot;Libraries.v.d&quot; || ( RV=$?; rm -f &quot;Libraries.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoqOfOCaml &quot;List.v&quot; &gt; &quot;List.v.d&quot; || ( RV=$?; rm -f &quot;List.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoqOfOCaml &quot;OCaml.v&quot; &gt; &quot;OCaml.v.d&quot; || ( RV=$?; rm -f &quot;OCaml.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . CoqOfOCaml   Libraries
+&quot;coqc&quot;  -q  -R . CoqOfOCaml   Effect
+&quot;coqc&quot;  -q  -R . CoqOfOCaml   Basics
+&quot;coqc&quot;  -q  -R . CoqOfOCaml   List
+&quot;coqc&quot;  -q  -R . CoqOfOCaml   OCaml
+for i in OCaml.vo List.vo Libraries.vo Effect.vo Basics.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/CoqOfOCaml/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/CoqOfOCaml/$i; \
+done
+ocamlbuild src/coqOfOCaml.native -lflags -I,+compiler-libs,ocamlcommon.cmxa -use-ocamlfind -package smart_print,compiler-libs,yojson,str
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/coqOfOCaml.ml &gt; src/coqOfOCaml.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/effect.ml &gt; src/effect.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/boundName.ml &gt; src/boundName.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/name.ml &gt; src/name.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/error.ml &gt; src/error.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/loc.ml &gt; src/loc.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/loc.cmo src/loc.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/loc.cmo src/loc.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/error.cmo src/error.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/error.cmo src/error.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/pathName.ml &gt; src/pathName.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/name.cmo src/name.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/name.cmo src/name.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pathName.cmo src/pathName.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pathName.cmo src/pathName.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/boundName.cmo src/boundName.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/boundName.cmo src/boundName.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/interface.ml &gt; src/interface.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/effect.cmo src/effect.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/effect.cmo src/effect.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/envi.ml &gt; src/envi.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/exception.ml &gt; src/exception.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/fullEnvi.ml &gt; src/fullEnvi.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/envi.cmo src/envi.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/envi.cmo src/envi.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/type.ml &gt; src/type.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/fullEnvi.cmo src/fullEnvi.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/fullEnvi.cmo src/fullEnvi.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/pp.ml &gt; src/pp.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pp.cmo src/pp.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pp.cmo src/pp.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/type.cmo src/type.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/type.cmo src/type.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/exp.ml &gt; src/exp.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/attribute.ml &gt; src/attribute.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/constant.ml &gt; src/constant.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/pattern.ml &gt; src/pattern.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/constant.cmo src/constant.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/constant.cmo src/constant.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/recursivity.ml &gt; src/recursivity.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/attribute.cmo src/attribute.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/attribute.cmo src/attribute.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pattern.cmo src/pattern.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pattern.cmo src/pattern.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/recursivity.cmo src/recursivity.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/recursivity.cmo src/recursivity.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/reference.ml &gt; src/reference.ml.depends
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/structure.ml &gt; src/structure.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/exception.cmo src/exception.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/exception.cmo src/exception.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/exp.cmo src/exp.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/exp.cmo src/exp.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/open.ml &gt; src/open.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/reference.cmo src/reference.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/reference.cmo src/reference.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/typeDefinition.ml &gt; src/typeDefinition.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/open.cmo src/open.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/open.cmo src/open.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/typeDefinition.cmo src/typeDefinition.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/typeDefinition.cmo src/typeDefinition.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/structure.cmo src/structure.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/structure.cmo src/structure.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamldep -package smart_print,compiler-libs,yojson,str -modules src/pervasivesModule.ml &gt; src/pervasivesModule.ml.depends
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/interface.cmo src/interface.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/interface.cmo src/interface.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pervasivesModule.cmo src/pervasivesModule.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/pervasivesModule.cmo src/pervasivesModule.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/coqOfOCaml.cmo src/coqOfOCaml.ml
++ ocamlfind ocamlc -c -package smart_print,compiler-libs,yojson,str -I src -o src/coqOfOCaml.cmo src/coqOfOCaml.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/loc.cmx src/loc.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/loc.cmx src/loc.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/error.cmx src/error.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/error.cmx src/error.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/name.cmx src/name.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/name.cmx src/name.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pathName.cmx src/pathName.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pathName.cmx src/pathName.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/boundName.cmx src/boundName.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/boundName.cmx src/boundName.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/effect.cmx src/effect.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/effect.cmx src/effect.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/envi.cmx src/envi.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/envi.cmx src/envi.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/fullEnvi.cmx src/fullEnvi.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/fullEnvi.cmx src/fullEnvi.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pp.cmx src/pp.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pp.cmx src/pp.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/type.cmx src/type.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/type.cmx src/type.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/constant.cmx src/constant.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/constant.cmx src/constant.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/attribute.cmx src/attribute.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/attribute.cmx src/attribute.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pattern.cmx src/pattern.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pattern.cmx src/pattern.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/recursivity.cmx src/recursivity.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/recursivity.cmx src/recursivity.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/exception.cmx src/exception.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/exception.cmx src/exception.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/exp.cmx src/exp.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/exp.cmx src/exp.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/reference.cmx src/reference.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/reference.cmx src/reference.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/open.cmx src/open.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/open.cmx src/open.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/typeDefinition.cmx src/typeDefinition.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/typeDefinition.cmx src/typeDefinition.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/structure.cmx src/structure.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/structure.cmx src/structure.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/interface.cmx src/interface.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/interface.cmx src/interface.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pervasivesModule.cmx src/pervasivesModule.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/pervasivesModule.cmx src/pervasivesModule.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/coqOfOCaml.cmx src/coqOfOCaml.ml
++ ocamlfind ocamlopt -c -package smart_print,compiler-libs,yojson,str -I src -o src/coqOfOCaml.cmx src/coqOfOCaml.ml
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+ocamlfind ocamlopt -I +compiler-libs ocamlcommon.cmxa -linkpkg -package smart_print,compiler-libs,yojson,str src/loc.cmx src/error.cmx src/attribute.cmx src/name.cmx src/pathName.cmx src/boundName.cmx src/constant.cmx src/effect.cmx src/envi.cmx src/fullEnvi.cmx src/pp.cmx src/type.cmx src/exception.cmx src/pattern.cmx src/recursivity.cmx src/exp.cmx src/open.cmx src/reference.cmx src/typeDefinition.cmx src/structure.cmx src/interface.cmx src/pervasivesModule.cmx src/coqOfOCaml.cmx -o src/coqOfOCaml.native
++ ocamlfind ocamlopt -I +compiler-libs ocamlcommon.cmxa -linkpkg -package smart_print,compiler-libs,yojson,str src/loc.cmx src/error.cmx src/attribute.cmx src/name.cmx src/pathName.cmx src/boundName.cmx src/constant.cmx src/effect.cmx src/envi.cmx src/fullEnvi.cmx src/pp.cmx src/type.cmx src/exception.cmx src/pattern.cmx src/recursivity.cmx src/exp.cmx src/open.cmx src/reference.cmx src/typeDefinition.cmx src/structure.cmx src/interface.cmx src/pervasivesModule.cmx src/coqOfOCaml.cmx -o src/coqOfOCaml.native
+findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/local/lib/ocaml, /usr/local/lib/ocaml/compiler-libs
+Installing coq:coq-of-ocaml.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 13.635 K</p>
+            <ul>
+              <li>7.891 K <code>/home/bench/.opam/system/lib/coq/user-contrib/CoqOfOCaml/List.vo</code></li>
+              <li>5.506 K <code>/home/bench/.opam/system/bin/coqOfOCaml.native</code></li>
+              <li>94 K <code>/home/bench/.opam/system/lib/coq/user-contrib/CoqOfOCaml/Effect.vo</code></li>
+              <li>72 K <code>/home/bench/.opam/system/lib/coq/user-contrib/CoqOfOCaml/OCaml.vo</code></li>
+              <li>57 K <code>/home/bench/.opam/system/lib/coq/user-contrib/CoqOfOCaml/Basics.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/CoqOfOCaml/Libraries.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:coq-of-ocaml.install</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:coq-of-ocaml/opam.config</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:coq-of-ocaml.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>6 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:coq-of-ocaml.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:coq-of-ocaml.dev] Downloading https://github.com/clarus/coq-of-ocaml/archive/master.tar.gz
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:coq-of-ocaml.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/CoqOfOCaml
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
