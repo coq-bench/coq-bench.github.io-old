@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">hott / contrib:euclidean-geometry dev</a></li>
+              <li class="active"><a href="">2014-12-17 20:19:49</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:euclidean-geometry
+              <small>
+                dev
+                <span class="label label-success">1 m 12 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-17 20:19:49 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-17 20:19:49 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:euclidean-geometry/coq:contrib:euclidean-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:euclidean-geometry.dev coq.hott</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is hott).
+The following actions will be performed:
+ - install   coq:contrib:euclidean-geometry.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:euclidean-geometry.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:euclidean-geometry.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:euclidean-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:euclidean-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 m 12 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:euclidean-geometry.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:euclidean-geometry] Fetching https://gforge.inria.fr/git/coq-contribs/euclidean-geometry.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:euclidean-geometry.dev/.git/
+[master (root-commit) 189dcb9] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/euclidean-geometry
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.DS_Store
+._.DS_Store
+A1_Plan.v
+A2_Orientation.v
+A3_Metrique.v
+A4_Droite.v
+A5_Cercle.v
+A6_Intersection.v
+A7_Tactics.v
+B1_ClockwiseProp.v
+B2_CollinearProp.v
+B3_EquiOrientedProp.v
+B4_RaysProp.v
+B5_BetweenProp.v
+B6_EquiDirectedProp.v
+B7_Tactics.v
+Bolyai.v
+C1_Distance.v
+C2_CircleAndDistance.v
+C3_SumDistance.v
+C4_DistanceLe.v
+C5_TriangularInequality.v
+C6_DistanceTimesN.v
+C7_Tactics.v
+D1_IntersectionCirclesProp.v
+D2_ExistsClockwise.v
+D3_SecondDimension.v
+D4_DistanceLt.v
+D5_Tactics.v
+E1_IntersectionLinesProp.v
+E2_NotEquidirectedIntersection.v
+E3_FourPointsIntersection.v
+E4_Tactics.v
+F1_IntersectionDiameterProp.v
+F2_MarkSegment.v
+F3_Graduation.v
+F4_ArchimedianDistance.v
+F5_Tactics.v
+G1_Angles.v
+G2_AngleProp.v
+G3_ParticularAngle.v
+G4_Tactics.v
+H1_Triangles.v
+H2_ParticularTriangles.v
+H3_BuildingTriangle.v
+H4_Tactics.v
+Hilbert1.v
+Hilbert2.v
+Hilbert3.v
+Hilbert4.v
+Hilbert5.v
+I1_SupplementaryAngle.v
+I2_Supplement.v
+I3_OpposedAngles.v
+I4_Tactics.v
+J1_MidLine.v
+J2_MidPoint.v
+J3_MidProp.v
+J4_Tactics.v
+K1_RightAngle.v
+K2_MidLineandRightAngle.v
+K3_Tactics.v
+L1_Parallelogramm.v
+L2_StrictParallelogramm.v
+L3_EquidirectedParallelogramm.v
+L4_ParallelogrammAngles.v
+L5_nParallelogramm.v
+L6_Tactics.v
+M1_SuperImposedLines.v
+M2_ParallelLines.v
+M3_SecantLines.v
+M4_PerpendicularLines.v
+M5_Tactics.v
+Make
+Makefile
+N1_DrawingPerpendicularLines.v
+N2_DrawingParallelLine.v
+N3_ParallelOpposedLine.v
+N4_DiscreteThales.v
+N5_UniqueParallel.v
+N6_ParallelAndPerpendicularLines.v
+N7_Tactics.v
+Tactics1_Immediate.v
+Tactics2_Step.v
+Tactics3_Others.v
+Tactics4_Constructions.v
+description
+geom.v
+HEAD is now at c7f5a51 Applying &quot;Unset Standard Proposition Elimination Names&quot; for
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:euclidean-geometry.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;A1_Plan.v&quot; &gt; &quot;A1_Plan.v.d&quot; || ( RV=$?; rm -f &quot;A1_Plan.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;A2_Orientation.v&quot; &gt; &quot;A2_Orientation.v.d&quot; || ( RV=$?; rm -f &quot;A2_Orientation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;A3_Metrique.v&quot; &gt; &quot;A3_Metrique.v.d&quot; || ( RV=$?; rm -f &quot;A3_Metrique.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;A4_Droite.v&quot; &gt; &quot;A4_Droite.v.d&quot; || ( RV=$?; rm -f &quot;A4_Droite.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;A5_Cercle.v&quot; &gt; &quot;A5_Cercle.v.d&quot; || ( RV=$?; rm -f &quot;A5_Cercle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;A6_Intersection.v&quot; &gt; &quot;A6_Intersection.v.d&quot; || ( RV=$?; rm -f &quot;A6_Intersection.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;A7_Tactics.v&quot; &gt; &quot;A7_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;A7_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;B1_ClockwiseProp.v&quot; &gt; &quot;B1_ClockwiseProp.v.d&quot; || ( RV=$?; rm -f &quot;B1_ClockwiseProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;B2_CollinearProp.v&quot; &gt; &quot;B2_CollinearProp.v.d&quot; || ( RV=$?; rm -f &quot;B2_CollinearProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;B3_EquiOrientedProp.v&quot; &gt; &quot;B3_EquiOrientedProp.v.d&quot; || ( RV=$?; rm -f &quot;B3_EquiOrientedProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;B4_RaysProp.v&quot; &gt; &quot;B4_RaysProp.v.d&quot; || ( RV=$?; rm -f &quot;B4_RaysProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;B5_BetweenProp.v&quot; &gt; &quot;B5_BetweenProp.v.d&quot; || ( RV=$?; rm -f &quot;B5_BetweenProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;B6_EquiDirectedProp.v&quot; &gt; &quot;B6_EquiDirectedProp.v.d&quot; || ( RV=$?; rm -f &quot;B6_EquiDirectedProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;B7_Tactics.v&quot; &gt; &quot;B7_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;B7_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;C1_Distance.v&quot; &gt; &quot;C1_Distance.v.d&quot; || ( RV=$?; rm -f &quot;C1_Distance.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;C2_CircleAndDistance.v&quot; &gt; &quot;C2_CircleAndDistance.v.d&quot; || ( RV=$?; rm -f &quot;C2_CircleAndDistance.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;C3_SumDistance.v&quot; &gt; &quot;C3_SumDistance.v.d&quot; || ( RV=$?; rm -f &quot;C3_SumDistance.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;C4_DistanceLe.v&quot; &gt; &quot;C4_DistanceLe.v.d&quot; || ( RV=$?; rm -f &quot;C4_DistanceLe.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;C5_TriangularInequality.v&quot; &gt; &quot;C5_TriangularInequality.v.d&quot; || ( RV=$?; rm -f &quot;C5_TriangularInequality.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;C6_DistanceTimesN.v&quot; &gt; &quot;C6_DistanceTimesN.v.d&quot; || ( RV=$?; rm -f &quot;C6_DistanceTimesN.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;C7_Tactics.v&quot; &gt; &quot;C7_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;C7_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;D1_IntersectionCirclesProp.v&quot; &gt; &quot;D1_IntersectionCirclesProp.v.d&quot; || ( RV=$?; rm -f &quot;D1_IntersectionCirclesProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;D2_ExistsClockwise.v&quot; &gt; &quot;D2_ExistsClockwise.v.d&quot; || ( RV=$?; rm -f &quot;D2_ExistsClockwise.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;D3_SecondDimension.v&quot; &gt; &quot;D3_SecondDimension.v.d&quot; || ( RV=$?; rm -f &quot;D3_SecondDimension.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;D4_DistanceLt.v&quot; &gt; &quot;D4_DistanceLt.v.d&quot; || ( RV=$?; rm -f &quot;D4_DistanceLt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;D5_Tactics.v&quot; &gt; &quot;D5_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;D5_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;E1_IntersectionLinesProp.v&quot; &gt; &quot;E1_IntersectionLinesProp.v.d&quot; || ( RV=$?; rm -f &quot;E1_IntersectionLinesProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;E2_NotEquidirectedIntersection.v&quot; &gt; &quot;E2_NotEquidirectedIntersection.v.d&quot; || ( RV=$?; rm -f &quot;E2_NotEquidirectedIntersection.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;E3_FourPointsIntersection.v&quot; &gt; &quot;E3_FourPointsIntersection.v.d&quot; || ( RV=$?; rm -f &quot;E3_FourPointsIntersection.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;E4_Tactics.v&quot; &gt; &quot;E4_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;E4_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;F1_IntersectionDiameterProp.v&quot; &gt; &quot;F1_IntersectionDiameterProp.v.d&quot; || ( RV=$?; rm -f &quot;F1_IntersectionDiameterProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;F2_MarkSegment.v&quot; &gt; &quot;F2_MarkSegment.v.d&quot; || ( RV=$?; rm -f &quot;F2_MarkSegment.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;F3_Graduation.v&quot; &gt; &quot;F3_Graduation.v.d&quot; || ( RV=$?; rm -f &quot;F3_Graduation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;F4_ArchimedianDistance.v&quot; &gt; &quot;F4_ArchimedianDistance.v.d&quot; || ( RV=$?; rm -f &quot;F4_ArchimedianDistance.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;F5_Tactics.v&quot; &gt; &quot;F5_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;F5_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;G1_Angles.v&quot; &gt; &quot;G1_Angles.v.d&quot; || ( RV=$?; rm -f &quot;G1_Angles.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;G2_AngleProp.v&quot; &gt; &quot;G2_AngleProp.v.d&quot; || ( RV=$?; rm -f &quot;G2_AngleProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;G3_ParticularAngle.v&quot; &gt; &quot;G3_ParticularAngle.v.d&quot; || ( RV=$?; rm -f &quot;G3_ParticularAngle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;G4_Tactics.v&quot; &gt; &quot;G4_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;G4_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;H1_Triangles.v&quot; &gt; &quot;H1_Triangles.v.d&quot; || ( RV=$?; rm -f &quot;H1_Triangles.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;H2_ParticularTriangles.v&quot; &gt; &quot;H2_ParticularTriangles.v.d&quot; || ( RV=$?; rm -f &quot;H2_ParticularTriangles.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;H3_BuildingTriangle.v&quot; &gt; &quot;H3_BuildingTriangle.v.d&quot; || ( RV=$?; rm -f &quot;H3_BuildingTriangle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;H4_Tactics.v&quot; &gt; &quot;H4_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;H4_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;I1_SupplementaryAngle.v&quot; &gt; &quot;I1_SupplementaryAngle.v.d&quot; || ( RV=$?; rm -f &quot;I1_SupplementaryAngle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;I2_Supplement.v&quot; &gt; &quot;I2_Supplement.v.d&quot; || ( RV=$?; rm -f &quot;I2_Supplement.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;I3_OpposedAngles.v&quot; &gt; &quot;I3_OpposedAngles.v.d&quot; || ( RV=$?; rm -f &quot;I3_OpposedAngles.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;I4_Tactics.v&quot; &gt; &quot;I4_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;I4_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;J1_MidLine.v&quot; &gt; &quot;J1_MidLine.v.d&quot; || ( RV=$?; rm -f &quot;J1_MidLine.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;J2_MidPoint.v&quot; &gt; &quot;J2_MidPoint.v.d&quot; || ( RV=$?; rm -f &quot;J2_MidPoint.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;J3_MidProp.v&quot; &gt; &quot;J3_MidProp.v.d&quot; || ( RV=$?; rm -f &quot;J3_MidProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;J4_Tactics.v&quot; &gt; &quot;J4_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;J4_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;K1_RightAngle.v&quot; &gt; &quot;K1_RightAngle.v.d&quot; || ( RV=$?; rm -f &quot;K1_RightAngle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;K2_MidLineandRightAngle.v&quot; &gt; &quot;K2_MidLineandRightAngle.v.d&quot; || ( RV=$?; rm -f &quot;K2_MidLineandRightAngle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;K3_Tactics.v&quot; &gt; &quot;K3_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;K3_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;L1_Parallelogramm.v&quot; &gt; &quot;L1_Parallelogramm.v.d&quot; || ( RV=$?; rm -f &quot;L1_Parallelogramm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;L2_StrictParallelogramm.v&quot; &gt; &quot;L2_StrictParallelogramm.v.d&quot; || ( RV=$?; rm -f &quot;L2_StrictParallelogramm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;L3_EquidirectedParallelogramm.v&quot; &gt; &quot;L3_EquidirectedParallelogramm.v.d&quot; || ( RV=$?; rm -f &quot;L3_EquidirectedParallelogramm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;L4_ParallelogrammAngles.v&quot; &gt; &quot;L4_ParallelogrammAngles.v.d&quot; || ( RV=$?; rm -f &quot;L4_ParallelogrammAngles.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;L5_nParallelogramm.v&quot; &gt; &quot;L5_nParallelogramm.v.d&quot; || ( RV=$?; rm -f &quot;L5_nParallelogramm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;L6_Tactics.v&quot; &gt; &quot;L6_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;L6_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;M1_SuperImposedLines.v&quot; &gt; &quot;M1_SuperImposedLines.v.d&quot; || ( RV=$?; rm -f &quot;M1_SuperImposedLines.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;M2_ParallelLines.v&quot; &gt; &quot;M2_ParallelLines.v.d&quot; || ( RV=$?; rm -f &quot;M2_ParallelLines.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;M3_SecantLines.v&quot; &gt; &quot;M3_SecantLines.v.d&quot; || ( RV=$?; rm -f &quot;M3_SecantLines.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;M4_PerpendicularLines.v&quot; &gt; &quot;M4_PerpendicularLines.v.d&quot; || ( RV=$?; rm -f &quot;M4_PerpendicularLines.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;M5_Tactics.v&quot; &gt; &quot;M5_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;M5_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;N1_DrawingPerpendicularLines.v&quot; &gt; &quot;N1_DrawingPerpendicularLines.v.d&quot; || ( RV=$?; rm -f &quot;N1_DrawingPerpendicularLines.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;N2_DrawingParallelLine.v&quot; &gt; &quot;N2_DrawingParallelLine.v.d&quot; || ( RV=$?; rm -f &quot;N2_DrawingParallelLine.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;N3_ParallelOpposedLine.v&quot; &gt; &quot;N3_ParallelOpposedLine.v.d&quot; || ( RV=$?; rm -f &quot;N3_ParallelOpposedLine.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;N4_DiscreteThales.v&quot; &gt; &quot;N4_DiscreteThales.v.d&quot; || ( RV=$?; rm -f &quot;N4_DiscreteThales.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;N5_UniqueParallel.v&quot; &gt; &quot;N5_UniqueParallel.v.d&quot; || ( RV=$?; rm -f &quot;N5_UniqueParallel.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;N6_ParallelAndPerpendicularLines.v&quot; &gt; &quot;N6_ParallelAndPerpendicularLines.v.d&quot; || ( RV=$?; rm -f &quot;N6_ParallelAndPerpendicularLines.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;N7_Tactics.v&quot; &gt; &quot;N7_Tactics.v.d&quot; || ( RV=$?; rm -f &quot;N7_Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; EuclideanGeometry &quot;geom.v&quot; &gt; &quot;geom.v.d&quot; || ( RV=$?; rm -f &quot;geom.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   A1_Plan
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   A2_Orientation
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   A3_Metrique
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   A4_Droite
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   B1_ClockwiseProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   A5_Cercle
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   A6_Intersection
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   A7_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   B2_CollinearProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   E1_IntersectionLinesProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   B3_EquiOrientedProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   B4_RaysProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   B5_BetweenProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   B6_EquiDirectedProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   B7_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   C1_Distance
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   C2_CircleAndDistance
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   C3_SumDistance
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   C4_DistanceLe
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   C5_TriangularInequality
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   C6_DistanceTimesN
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   C7_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   D1_IntersectionCirclesProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   D2_ExistsClockwise
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   D3_SecondDimension
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   D4_DistanceLt
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   D5_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   E2_NotEquidirectedIntersection
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   E3_FourPointsIntersection
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   E4_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   F1_IntersectionDiameterProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   F2_MarkSegment
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   F3_Graduation
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   F4_ArchimedianDistance
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   F5_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   G1_Angles
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   G2_AngleProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   G3_ParticularAngle
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   G4_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   H1_Triangles
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   H2_ParticularTriangles
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   H3_BuildingTriangle
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   H4_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   I1_SupplementaryAngle
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   I2_Supplement
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   I3_OpposedAngles
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   I4_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   J1_MidLine
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   J2_MidPoint
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   J3_MidProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   J4_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   K1_RightAngle
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   K2_MidLineandRightAngle
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   K3_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   L1_Parallelogramm
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   L2_StrictParallelogramm
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   L3_EquidirectedParallelogramm
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   L4_ParallelogrammAngles
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   L5_nParallelogramm
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   L6_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   M1_SuperImposedLines
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   M2_ParallelLines
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   M3_SecantLines
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   M4_PerpendicularLines
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   M5_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   N1_DrawingPerpendicularLines
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   N2_DrawingParallelLine
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   N4_DiscreteThales
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   N3_ParallelOpposedLine
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   N5_UniqueParallel
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   N6_ParallelAndPerpendicularLines
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   N7_Tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; EuclideanGeometry   geom
+cd &quot;.&quot; &amp;&amp; for i in geom.vo N7_Tactics.vo N6_ParallelAndPerpendicularLines.vo N5_UniqueParallel.vo N4_DiscreteThales.vo N3_ParallelOpposedLine.vo N2_DrawingParallelLine.vo N1_DrawingPerpendicularLines.vo M5_Tactics.vo M4_PerpendicularLines.vo M3_SecantLines.vo M2_ParallelLines.vo M1_SuperImposedLines.vo L6_Tactics.vo L5_nParallelogramm.vo L4_ParallelogrammAngles.vo L3_EquidirectedParallelogramm.vo L2_StrictParallelogramm.vo L1_Parallelogramm.vo K3_Tactics.vo K2_MidLineandRightAngle.vo K1_RightAngle.vo J4_Tactics.vo J3_MidProp.vo J2_MidPoint.vo J1_MidLine.vo I4_Tactics.vo I3_OpposedAngles.vo I2_Supplement.vo I1_SupplementaryAngle.vo H4_Tactics.vo H3_BuildingTriangle.vo H2_ParticularTriangles.vo H1_Triangles.vo G4_Tactics.vo G3_ParticularAngle.vo G2_AngleProp.vo G1_Angles.vo F5_Tactics.vo F4_ArchimedianDistance.vo F3_Graduation.vo F2_MarkSegment.vo F1_IntersectionDiameterProp.vo E4_Tactics.vo E3_FourPointsIntersection.vo E2_NotEquidirectedIntersection.vo E1_IntersectionLinesProp.vo D5_Tactics.vo D4_DistanceLt.vo D3_SecondDimension.vo D2_ExistsClockwise.vo D1_IntersectionCirclesProp.vo C7_Tactics.vo C6_DistanceTimesN.vo C5_TriangularInequality.vo C4_DistanceLe.vo C3_SumDistance.vo C2_CircleAndDistance.vo C1_Distance.vo B7_Tactics.vo B6_EquiDirectedProp.vo B5_BetweenProp.vo B4_RaysProp.vo B3_EquiOrientedProp.vo B2_CollinearProp.vo B1_ClockwiseProp.vo A7_Tactics.vo A6_Intersection.vo A5_Cercle.vo A4_Droite.vo A3_Metrique.vo A2_Orientation.vo A1_Plan.vo   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/EuclideanGeometry/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/EuclideanGeometry/$i; \
+done
+Installing coq:contrib:euclidean-geometry.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 5.943 K</p>
+            <ul>
+              <li>727 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/L6_Tactics.vo</code></li>
+              <li>443 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/G4_Tactics.vo</code></li>
+              <li>364 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/K3_Tactics.vo</code></li>
+              <li>325 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/I4_Tactics.vo</code></li>
+              <li>319 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/F5_Tactics.vo</code></li>
+              <li>305 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/H4_Tactics.vo</code></li>
+              <li>305 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/J4_Tactics.vo</code></li>
+              <li>251 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/C7_Tactics.vo</code></li>
+              <li>232 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/D5_Tactics.vo</code></li>
+              <li>217 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/B7_Tactics.vo</code></li>
+              <li>210 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/E4_Tactics.vo</code></li>
+              <li>178 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/N7_Tactics.vo</code></li>
+              <li>164 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/M5_Tactics.vo</code></li>
+              <li>123 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/G1_Angles.vo</code></li>
+              <li>88 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/I2_Supplement.vo</code></li>
+              <li>86 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/N4_DiscreteThales.vo</code></li>
+              <li>70 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/G3_ParticularAngle.vo</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/N1_DrawingPerpendicularLines.vo</code></li>
+              <li>55 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/L3_EquidirectedParallelogramm.vo</code></li>
+              <li>55 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/L4_ParallelogrammAngles.vo</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/L2_StrictParallelogramm.vo</code></li>
+              <li>51 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/H2_ParticularTriangles.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/H1_Triangles.vo</code></li>
+              <li>44 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/J3_MidProp.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/J1_MidLine.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/L1_Parallelogramm.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/N5_UniqueParallel.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/K1_RightAngle.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/C3_SumDistance.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/K2_MidLineandRightAngle.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/H3_BuildingTriangle.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/I1_SupplementaryAngle.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/M2_ParallelLines.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/F2_MarkSegment.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/N6_ParallelAndPerpendicularLines.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/M4_PerpendicularLines.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/N2_DrawingParallelLine.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/E2_NotEquidirectedIntersection.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/L5_nParallelogramm.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/F1_IntersectionDiameterProp.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/M1_SuperImposedLines.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/J2_MidPoint.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/D3_SecondDimension.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/E3_FourPointsIntersection.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/N3_ParallelOpposedLine.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/F3_Graduation.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/I3_OpposedAngles.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/C1_Distance.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/D4_DistanceLt.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/M3_SecantLines.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/F4_ArchimedianDistance.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/G2_AngleProp.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/C5_TriangularInequality.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/geom.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/B3_EquiOrientedProp.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/D2_ExistsClockwise.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/B5_BetweenProp.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/B4_RaysProp.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/E1_IntersectionLinesProp.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/B6_EquiDirectedProp.vo</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/D1_IntersectionCirclesProp.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/A7_Tactics.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/A3_Metrique.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/C2_CircleAndDistance.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/C6_DistanceTimesN.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/B2_CollinearProp.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/A5_Cercle.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/C4_DistanceLe.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/A2_Orientation.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/A4_Droite.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/B1_ClockwiseProp.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/A6_Intersection.vo</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry/A1_Plan.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:euclidean-geometry/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:euclidean-geometry.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:euclidean-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:euclidean-geometry.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:euclidean-geometry] Fetching https://gforge.inria.fr/git/coq-contribs/euclidean-geometry.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:euclidean-geometry.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/EuclideanGeometry
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

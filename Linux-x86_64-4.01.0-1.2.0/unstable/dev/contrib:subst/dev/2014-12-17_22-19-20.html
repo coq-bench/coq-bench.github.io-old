@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:subst dev</a></li>
+              <li class="active"><a href="">2014-12-17 22:19:20</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:subst
+              <small>
+                dev
+                <span class="label label-success">10 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-17 22:19:20 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-17 22:19:20 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:subst/coq:contrib:subst.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:subst.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:subst.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:subst.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:subst.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:subst.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:subst.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>10 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:subst.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:subst] Fetching https://gforge.inria.fr/git/coq-contribs/subst.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:subst.dev/.git/
+[master (root-commit) d405a7d] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/subst
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+BRA-proc.ps.Z.uu
+Make
+Makefile
+Newman.v
+Pol1.v
+Pol2.v
+README
+RR2345.ps.Z.uu
+SLstar_bpar_SLstar.v
+TS.v
+Yokouchi.v
+betapar.v
+commutation.v
+comparith.v
+conf_local_SL.v
+conf_strong_betapar.v
+confluence_LSL.v
+description
+determinePC_SL.v
+egaliteTS.v
+inversionSL.v
+lambda_sigma_lift.v
+resoudPC_SL.v
+sigma_lift.v
+sur_les_relations.v
+terminaison_SL.v
+HEAD is now at e709c3b Revert &quot;Regenerating Makefiles.&quot; We will be able to do so when we have access
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:subst.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;terminaison_SL.v&quot; &gt; &quot;terminaison_SL.v.d&quot; || ( RV=$?; rm -f &quot;terminaison_SL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;sur_les_relations.v&quot; &gt; &quot;sur_les_relations.v.d&quot; || ( RV=$?; rm -f &quot;sur_les_relations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;sigma_lift.v&quot; &gt; &quot;sigma_lift.v.d&quot; || ( RV=$?; rm -f &quot;sigma_lift.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;resoudPC_SL.v&quot; &gt; &quot;resoudPC_SL.v.d&quot; || ( RV=$?; rm -f &quot;resoudPC_SL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;lambda_sigma_lift.v&quot; &gt; &quot;lambda_sigma_lift.v.d&quot; || ( RV=$?; rm -f &quot;lambda_sigma_lift.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;inversionSL.v&quot; &gt; &quot;inversionSL.v.d&quot; || ( RV=$?; rm -f &quot;inversionSL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;egaliteTS.v&quot; &gt; &quot;egaliteTS.v.d&quot; || ( RV=$?; rm -f &quot;egaliteTS.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;determinePC_SL.v&quot; &gt; &quot;determinePC_SL.v.d&quot; || ( RV=$?; rm -f &quot;determinePC_SL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;confluence_LSL.v&quot; &gt; &quot;confluence_LSL.v.d&quot; || ( RV=$?; rm -f &quot;confluence_LSL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;conf_strong_betapar.v&quot; &gt; &quot;conf_strong_betapar.v.d&quot; || ( RV=$?; rm -f &quot;conf_strong_betapar.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;conf_local_SL.v&quot; &gt; &quot;conf_local_SL.v.d&quot; || ( RV=$?; rm -f &quot;conf_local_SL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;comparith.v&quot; &gt; &quot;comparith.v.d&quot; || ( RV=$?; rm -f &quot;comparith.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;commutation.v&quot; &gt; &quot;commutation.v.d&quot; || ( RV=$?; rm -f &quot;commutation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;betapar.v&quot; &gt; &quot;betapar.v.d&quot; || ( RV=$?; rm -f &quot;betapar.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;Yokouchi.v&quot; &gt; &quot;Yokouchi.v.d&quot; || ( RV=$?; rm -f &quot;Yokouchi.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;TS.v&quot; &gt; &quot;TS.v.d&quot; || ( RV=$?; rm -f &quot;TS.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;SLstar_bpar_SLstar.v&quot; &gt; &quot;SLstar_bpar_SLstar.v.d&quot; || ( RV=$?; rm -f &quot;SLstar_bpar_SLstar.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;Pol2.v&quot; &gt; &quot;Pol2.v.d&quot; || ( RV=$?; rm -f &quot;Pol2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;Pol1.v&quot; &gt; &quot;Pol1.v.d&quot; || ( RV=$?; rm -f &quot;Pol1.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Subst &quot;Newman.v&quot; &gt; &quot;Newman.v.d&quot; || ( RV=$?; rm -f &quot;Newman.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   sur_les_relations
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   TS
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   comparith
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   Newman
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   Yokouchi
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   sigma_lift
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   betapar
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   egaliteTS
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   conf_strong_betapar
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   Pol1
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   Pol2
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   lambda_sigma_lift
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   inversionSL
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   SLstar_bpar_SLstar
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   determinePC_SL
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   commutation
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   resoudPC_SL
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   conf_local_SL
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   terminaison_SL
+&quot;coqc&quot;  -q  -R &quot;.&quot; Subst   confluence_LSL
+cd &quot;.&quot; &amp;&amp; for i in Newman.vo Pol1.vo Pol2.vo SLstar_bpar_SLstar.vo TS.vo Yokouchi.vo betapar.vo commutation.vo comparith.vo conf_local_SL.vo conf_strong_betapar.vo confluence_LSL.vo determinePC_SL.vo egaliteTS.vo inversionSL.vo lambda_sigma_lift.vo resoudPC_SL.vo sigma_lift.vo sur_les_relations.vo terminaison_SL.vo   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Subst/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Subst/$i; \
+done
+Installing coq:contrib:subst.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 638 K</p>
+            <ul>
+              <li>120 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/resoudPC_SL.vo</code></li>
+              <li>67 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/determinePC_SL.vo</code></li>
+              <li>52 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/sigma_lift.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/inversionSL.vo</code></li>
+              <li>44 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/commutation.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/conf_local_SL.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/Pol2.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/betapar.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/terminaison_SL.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/sur_les_relations.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/Pol1.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/comparith.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/lambda_sigma_lift.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/SLstar_bpar_SLstar.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/Yokouchi.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/conf_strong_betapar.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/egaliteTS.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/TS.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/confluence_LSL.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Subst/Newman.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:subst/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:subst.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:subst.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:subst.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:subst] Fetching https://gforge.inria.fr/git/coq-contribs/subst.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:subst.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Subst
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

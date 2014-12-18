@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:compcert dev</a></li>
+              <li class="active"><a href="">2014-12-17 22:19:20</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:compcert
+              <small>
+                dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-17 22:19:20 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-17 22:19:20 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:compcert/coq:contrib:compcert.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:compcert.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:compcert.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:compcert.dev:
+  ./configure ia32-linux
+  make -j4
+Installing coq:contrib:compcert.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:compcert.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:compcert.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>6 m 15 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:compcert.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:compcert] Fetching https://gforge.inria.fr/git/coq-contribs/compcert.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:compcert.dev/.git/
+[master (root-commit) 0418042] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/compcert
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.depend
+Changelog
+LICENSE
+Makefile
+Makefile.config
+README
+VERSION
+_tags
+arm/Archi.v
+arm/Asm.v
+arm/Asmgen.v
+arm/Asmgenproof.v
+arm/Asmgenproof1.v
+arm/CBuiltins.ml
+arm/CombineOp.v
+arm/CombineOpproof.v
+arm/ConstpropOp.vp
+arm/ConstpropOpproof.v
+arm/Machregs.v
+arm/Machregsaux.ml
+arm/Machregsaux.mli
+arm/NeedOp.v
+arm/Op.v
+arm/PrintAsm.ml
+arm/PrintAsm.mli
+arm/PrintOp.ml
+arm/SelectOp.vp
+arm/SelectOpproof.v
+arm/Unusedglob1.ml
+arm/ValueAOp.v
+arm/eabi/Conventions1.v
+arm/eabi/Stacklayout.v
+arm/extractionMachdep.v
+backend/Allocation.v
+backend/Allocproof.v
+backend/Asmgenproof0.v
+backend/Bounds.v
+backend/CMlexer.mli
+backend/CMlexer.mll
+backend/CMparser.mly
+backend/CMtypecheck.ml
+backend/CMtypecheck.mli
+backend/CSE.v
+backend/CSEdomain.v
+backend/CSEproof.v
+backend/CleanupLabels.v
+backend/CleanupLabelsproof.v
+backend/Cminor.v
+backend/CminorSel.v
+backend/Constprop.v
+backend/Constpropproof.v
+backend/Conventions.v
+backend/Deadcode.v
+backend/Deadcodeproof.v
+backend/IRC.ml
+backend/IRC.mli
+backend/Inlining.v
+backend/Inliningaux.ml
+backend/Inliningproof.v
+backend/Inliningspec.v
+backend/Kildall.v
+backend/LTL.v
+backend/Linear.v
+backend/Linearize.v
+backend/Linearizeaux.ml
+backend/Linearizeproof.v
+backend/Lineartyping.v
+backend/Liveness.v
+backend/Locations.v
+backend/Mach.v
+backend/NeedDomain.v
+backend/PrintAnnot.ml
+backend/PrintCminor.ml
+backend/PrintLTL.ml
+backend/PrintLTLin.ml
+backend/PrintMach.ml
+backend/PrintRTL.ml
+backend/PrintXTL.ml
+backend/RTL.v
+backend/RTLgen.v
+backend/RTLgenaux.ml
+backend/RTLgenproof.v
+backend/RTLgenspec.v
+backend/RTLtyping.v
+backend/Regalloc.ml
+backend/Registers.v
+backend/Renumber.v
+backend/Renumberproof.v
+backend/SelectDiv.vp
+backend/SelectDivproof.v
+backend/SelectLong.vp
+backend/SelectLongproof.v
+backend/Selection.v
+backend/Selectionproof.v
+backend/Splitting.ml
+backend/Stacking.v
+backend/Stackingproof.v
+backend/Tailcall.v
+backend/Tailcallproof.v
+backend/Tunneling.v
+backend/Tunnelingproof.v
+backend/Unusedglob.ml
+backend/ValueAnalysis.v
+backend/ValueDomain.v
+backend/XTL.ml
+backend/XTL.mli
+cfrontend/C2C.ml
+cfrontend/CPragmas.ml
+cfrontend/Cexec.v
+cfrontend/Clight.v
+cfrontend/ClightBigstep.v
+cfrontend/Cminorgen.v
+cfrontend/Cminorgenproof.v
+cfrontend/Cop.v
+cfrontend/Csem.v
+cfrontend/Csharpminor.v
+cfrontend/Cshmgen.v
+cfrontend/Cshmgenproof.v
+cfrontend/Cstrategy.v
+cfrontend/Csyntax.v
+cfrontend/Ctypes.v
+cfrontend/Initializers.v
+cfrontend/Initializersproof.v
+cfrontend/PrintClight.ml
+cfrontend/PrintCsyntax.ml
+cfrontend/SimplExpr.v
+cfrontend/SimplExprproof.v
+cfrontend/SimplExprspec.v
+cfrontend/SimplLocals.v
+cfrontend/SimplLocalsproof.v
+checklink/Asm_printers.ml
+checklink/Bitstring_utils.ml
+checklink/Check.ml
+checklink/Disassembler.ml
+checklink/ELF_parsers.ml
+checklink/ELF_printers.ml
+checklink/ELF_types.ml
+checklink/ELF_utils.ml
+checklink/Exc.ml
+checklink/Frameworks.ml
+checklink/Fuzz.ml
+checklink/Lens.ml
+checklink/Library.ml
+checklink/Makefile
+checklink/PPC_parsers.ml
+checklink/PPC_printers.ml
+checklink/PPC_types.ml
+checklink/PPC_utils.ml
+checklink/Safe.ml
+checklink/Safe32.ml
+checklink/Validator.ml
+common/AST.v
+common/Behaviors.v
+common/Determinism.v
+common/Errors.v
+common/Events.v
+common/Globalenvs.v
+common/Memdata.v
+common/Memdataaux.ml
+common/Memory.v
+common/Memtype.v
+common/PrintAST.ml
+common/Sections.ml
+common/Sections.mli
+common/Smallstep.v
+common/Subtyping.v
+common/Switch.v
+common/Values.v
+configure
+coq
+cparser/.depend
+cparser/Bitfields.ml
+cparser/Bitfields.mli
+cparser/Builtins.ml
+cparser/Builtins.mli
+cparser/C.mli
+cparser/Cabs.ml
+cparser/Cabshelper.ml
+cparser/Cerrors.ml
+cparser/Cerrors.mli
+cparser/Ceval.ml
+cparser/Ceval.mli
+cparser/Cleanup.ml
+cparser/Cleanup.mli
+cparser/Cparser.mllib
+cparser/Cprint.ml
+cparser/Cprint.mli
+cparser/Cutil.ml
+cparser/Cutil.mli
+cparser/Elab.ml
+cparser/Elab.mli
+cparser/Env.ml
+cparser/Env.mli
+cparser/GCC.ml
+cparser/GCC.mli
+cparser/Lexer.mli
+cparser/Lexer.mll
+cparser/Machine.ml
+cparser/Machine.mli
+cparser/Main.ml
+cparser/Makefile
+cparser/PackedStructs.ml
+cparser/Parse.ml
+cparser/Parse.mli
+cparser/Parse_aux.ml
+cparser/Parse_aux.mli
+cparser/Parser.mly
+cparser/Rename.ml
+cparser/Rename.mli
+cparser/StructReturn.ml
+cparser/StructReturn.mli
+cparser/Transform.ml
+cparser/Transform.mli
+cparser/Unblock.ml
+cparser/Unblock.mli
+description
+doc/coq2html.css
+doc/coq2html.js
+doc/coq2html.mll
+doc/coqdoc.css
+doc/index.html
+doc/style.css
+driver/Clflags.ml
+driver/Compiler.v
+driver/Complements.v
+driver/Compopts.v
+driver/Driver.ml
+driver/Interp.ml
+exportclight/Clightdefs.v
+exportclight/Clightgen.ml
+exportclight/ExportClight.ml
+exportclight/README
+extraction/extraction.v
+flocq/Appli/Fappli_IEEE.v
+flocq/Appli/Fappli_IEEE_bits.v
+flocq/Appli/Fappli_rnd_odd.v
+flocq/Calc/Fcalc_bracket.v
+flocq/Calc/Fcalc_digits.v
+flocq/Calc/Fcalc_div.v
+flocq/Calc/Fcalc_ops.v
+flocq/Calc/Fcalc_round.v
+flocq/Calc/Fcalc_sqrt.v
+flocq/Core/Fcore.v
+flocq/Core/Fcore_FIX.v
+flocq/Core/Fcore_FLT.v
+flocq/Core/Fcore_FLX.v
+flocq/Core/Fcore_FTZ.v
+flocq/Core/Fcore_Raux.v
+flocq/Core/Fcore_Zaux.v
+flocq/Core/Fcore_defs.v
+flocq/Core/Fcore_digits.v
+flocq/Core/Fcore_float_prop.v
+flocq/Core/Fcore_generic_fmt.v
+flocq/Core/Fcore_rnd.v
+flocq/Core/Fcore_rnd_ne.v
+flocq/Core/Fcore_ulp.v
+flocq/Flocq_version.v
+flocq/Prop/Fprop_Sterbenz.v
+flocq/Prop/Fprop_div_sqrt_error.v
+flocq/Prop/Fprop_mult_error.v
+flocq/Prop/Fprop_plus_error.v
+flocq/Prop/Fprop_relative.v
+ia32/Archi.v
+ia32/Asm.v
+ia32/Asmgen.v
+ia32/Asmgenproof.v
+ia32/Asmgenproof1.v
+ia32/CBuiltins.ml
+ia32/CombineOp.v
+ia32/CombineOpproof.v
+ia32/ConstpropOp.vp
+ia32/ConstpropOpproof.v
+ia32/Machregs.v
+ia32/Machregsaux.ml
+ia32/Machregsaux.mli
+ia32/NeedOp.v
+ia32/Op.v
+ia32/PrintAsm.ml
+ia32/PrintAsm.mli
+ia32/PrintOp.ml
+ia32/SelectOp.vp
+ia32/SelectOpproof.v
+ia32/Unusedglob1.ml
+ia32/ValueAOp.v
+ia32/extractionMachdep.v
+ia32/standard/Conventions1.v
+ia32/standard/Stacklayout.v
+lib/Axioms.v
+lib/Camlcoq.ml
+lib/Coqlib.v
+lib/FSetAVLplus.v
+lib/Floats.v
+lib/Heaps.v
+lib/Integers.v
+lib/Intv.v
+lib/IntvSets.v
+lib/Iteration.v
+lib/Lattice.v
+lib/Maps.v
+lib/Ordered.v
+lib/Parmov.v
+lib/Postorder.v
+lib/UnionFind.v
+lib/Wfsimpl.v
+myocamlbuild.ml
+pg
+powerpc/Archi.v
+powerpc/Asm.v
+powerpc/Asmgen.v
+powerpc/Asmgenproof.v
+powerpc/Asmgenproof1.v
+powerpc/CBuiltins.ml
+powerpc/CombineOp.v
+powerpc/CombineOpproof.v
+powerpc/ConstpropOp.vp
+powerpc/ConstpropOpproof.v
+powerpc/Machregs.v
+powerpc/Machregsaux.ml
+powerpc/Machregsaux.mli
+powerpc/NeedOp.v
+powerpc/Op.v
+powerpc/PrintAsm.ml
+powerpc/PrintAsm.mli
+powerpc/PrintOp.ml
+powerpc/SelectOp.vp
+powerpc/SelectOpproof.v
+powerpc/Unusedglob1.ml
+powerpc/ValueAOp.v
+powerpc/eabi/Conventions1.v
+powerpc/eabi/Stacklayout.v
+powerpc/extractionMachdep.v
+runtime/Makefile
+runtime/arm/i64_dtos.S
+runtime/arm/i64_dtou.S
+runtime/arm/i64_sar.s
+runtime/arm/i64_sdiv.s
+runtime/arm/i64_shl.s
+runtime/arm/i64_shr.s
+runtime/arm/i64_smod.s
+runtime/arm/i64_stod.S
+runtime/arm/i64_stof.S
+runtime/arm/i64_udiv.s
+runtime/arm/i64_udivmod.s
+runtime/arm/i64_umod.s
+runtime/arm/i64_utod.S
+runtime/arm/i64_utof.S
+runtime/arm/vararg.S
+runtime/ia32/i64_dtos.S
+runtime/ia32/i64_dtou.S
+runtime/ia32/i64_sar.S
+runtime/ia32/i64_sdiv.S
+runtime/ia32/i64_shl.S
+runtime/ia32/i64_shr.S
+runtime/ia32/i64_smod.S
+runtime/ia32/i64_stod.S
+runtime/ia32/i64_stof.S
+runtime/ia32/i64_udiv.S
+runtime/ia32/i64_udivmod.S
+runtime/ia32/i64_umod.S
+runtime/ia32/i64_utod.S
+runtime/ia32/i64_utof.S
+runtime/ia32/sysdeps.h
+runtime/ia32/vararg.S
+runtime/powerpc/i64_dtos.s
+runtime/powerpc/i64_dtou.s
+runtime/powerpc/i64_sar.s
+runtime/powerpc/i64_sdiv.s
+runtime/powerpc/i64_shl.s
+runtime/powerpc/i64_shr.s
+runtime/powerpc/i64_smod.s
+runtime/powerpc/i64_stod.s
+runtime/powerpc/i64_stof.s
+runtime/powerpc/i64_udiv.s
+runtime/powerpc/i64_udivmod.s
+runtime/powerpc/i64_umod.s
+runtime/powerpc/i64_utod.s
+runtime/powerpc/i64_utof.s
+runtime/powerpc/vararg.s
+runtime/test/test_int64.c
+test/Makefile
+test/c/Makefile
+test/c/Results/aes
+test/c/Results/almabench
+test/c/Results/binarytrees
+test/c/Results/bisect
+test/c/Results/chomp
+test/c/Results/fannkuch
+test/c/Results/fft
+test/c/Results/fftsp
+test/c/Results/fftw
+test/c/Results/fib
+test/c/Results/integr
+test/c/Results/knucleotide
+test/c/Results/knucleotide-input.txt
+test/c/Results/lists
+test/c/Results/mandelbrot
+test/c/Results/nbody
+test/c/Results/nsieve
+test/c/Results/nsievebits
+test/c/Results/perlin
+test/c/Results/qsort
+test/c/Results/sha1
+test/c/Results/sha3
+test/c/Results/siphash24
+test/c/Results/spectral
+test/c/Results/vmach
+test/c/aes.c
+test/c/almabench.c
+test/c/binarytrees.c
+test/c/bisect.c
+test/c/chomp.c
+test/c/fannkuch.c
+test/c/fft.c
+test/c/fftsp.c
+test/c/fftw.c
+test/c/fib.c
+test/c/integr.c
+test/c/knucleotide.c
+test/c/lists.c
+test/c/mandelbrot.c
+test/c/nbody.c
+test/c/nsieve.c
+test/c/nsievebits.c
+test/c/perlin.c
+test/c/qsort.c
+test/c/sha1.c
+test/c/sha3.c
+test/c/siphash24.c
+test/c/spectral.c
+test/c/vmach.c
+test/cminor/Makefile
+test/cminor/aes.cmp
+test/cminor/almabench.cmp
+test/cminor/conversions.cm
+test/cminor/fft.cm
+test/cminor/fib.cm
+test/cminor/integr.cm
+test/cminor/lists.cm
+test/cminor/mainaes.c
+test/cminor/mainalmabench.c
+test/cminor/mainconversions.c
+test/cminor/mainfft.c
+test/cminor/mainfib.c
+test/cminor/maingc.c
+test/cminor/mainintegr.c
+test/cminor/mainlists.c
+test/cminor/mainmanyargs.c
+test/cminor/mainqsort.c
+test/cminor/mainsha1.c
+test/cminor/mainswitchtbl.c
+test/cminor/manyargs.cm
+test/cminor/marksweep.cmp
+test/cminor/marksweepcheck.c
+test/cminor/qsort.cm
+test/cminor/sha1.cmp
+test/cminor/stopcopy.cmp
+test/cminor/switchtbl.cm
+test/compression/.depend
+test/compression/Makefile
+test/compression/arcode.c
+test/compression/arcode.h
+test/compression/armain.c
+test/compression/bitfile.c
+test/compression/bitfile.h
+test/compression/lzdecode.c
+test/compression/lzencode.c
+test/compression/lzhash.c
+test/compression/lzlocal.h
+test/compression/lzss.h
+test/compression/lzssmain.c
+test/compression/lzvars.c
+test/compression/lzw.h
+test/compression/lzwdecode.c
+test/compression/lzwencode.c
+test/compression/lzwmain.c
+test/compression/optlist.c
+test/compression/optlist.h
+test/raytracer/.depend
+test/raytracer/Makefile
+test/raytracer/Results/kal.ppm
+test/raytracer/arrays.c
+test/raytracer/arrays.h
+test/raytracer/config.h
+test/raytracer/eval.c
+test/raytracer/eval.h
+test/raytracer/gml.h
+test/raytracer/gmllexer.c
+test/raytracer/gmllexer.h
+test/raytracer/gmlparser.c
+test/raytracer/gmlparser.h
+test/raytracer/intersect.c
+test/raytracer/intersect.h
+test/raytracer/kal.gml
+test/raytracer/light.c
+test/raytracer/light.h
+test/raytracer/main.c
+test/raytracer/matrix.c
+test/raytracer/matrix.h
+test/raytracer/memory.c
+test/raytracer/object.c
+test/raytracer/object.h
+test/raytracer/point.h
+test/raytracer/render.c
+test/raytracer/render.h
+test/raytracer/simplify.c
+test/raytracer/simplify.h
+test/raytracer/surface.c
+test/raytracer/surface.h
+test/raytracer/vector.c
+test/raytracer/vector.h
+test/regression/Makefile
+test/regression/NaNs.c
+test/regression/Results/alignas
+test/regression/Results/attribs1
+test/regression/Results/binops
+test/regression/Results/bitfields1
+test/regression/Results/bitfields2
+test/regression/Results/bitfields3
+test/regression/Results/bitfields4
+test/regression/Results/bitfields5
+test/regression/Results/bitfields6
+test/regression/Results/bitfields7
+test/regression/Results/bitfields8
+test/regression/Results/bool
+test/regression/Results/builtins-arm
+test/regression/Results/builtins-ia32
+test/regression/Results/builtins-powerpc
+test/regression/Results/casts1
+test/regression/Results/casts2
+test/regression/Results/casts3
+test/regression/Results/char1
+test/regression/Results/compar
+test/regression/Results/expr1
+test/regression/Results/expr5
+test/regression/Results/expr6
+test/regression/Results/floats
+test/regression/Results/floats-basics
+test/regression/Results/for1
+test/regression/Results/funct3
+test/regression/Results/funptr2
+test/regression/Results/initializers
+test/regression/Results/instrsel
+test/regression/Results/int32
+test/regression/Results/int64
+test/regression/Results/packedstruct1
+test/regression/Results/packedstruct2
+test/regression/Results/sizeof1
+test/regression/Results/sizeof2
+test/regression/Results/struct11
+test/regression/Results/struct7
+test/regression/Results/struct8
+test/regression/Results/switch
+test/regression/Results/varargs1
+test/regression/Results/varargs2
+test/regression/Results/volatile1
+test/regression/Results/volatile2
+test/regression/Results/volatile3
+test/regression/alignas.c
+test/regression/annot1.c
+test/regression/attribs1.c
+test/regression/binops.c
+test/regression/bitfields1.c
+test/regression/bitfields2.c
+test/regression/bitfields3.c
+test/regression/bitfields4.c
+test/regression/bitfields5.c
+test/regression/bitfields6.c
+test/regression/bitfields7.c
+test/regression/bitfields8.c
+test/regression/bool.c
+test/regression/builtins-arm.c
+test/regression/builtins-ia32.c
+test/regression/builtins-powerpc.c
+test/regression/casts1.c
+test/regression/casts2.c
+test/regression/casts3.c
+test/regression/char1.c
+test/regression/check-pragmas
+test/regression/commaprec.c
+test/regression/compar.c
+test/regression/expr1.c
+test/regression/expr2.c
+test/regression/expr3.c
+test/regression/expr4.c
+test/regression/expr5.c
+test/regression/expr6.c
+test/regression/extern1.c
+test/regression/floats-basics.c
+test/regression/floats.c
+test/regression/for1.c
+test/regression/funct1.c
+test/regression/funct2.c
+test/regression/funct3.c
+test/regression/funptr1.c
+test/regression/funptr2.c
+test/regression/init1.c
+test/regression/init2.c
+test/regression/init3.c
+test/regression/init4.c
+test/regression/initializers.c
+test/regression/instrsel.c
+test/regression/int32.c
+test/regression/int64.c
+test/regression/packedstruct1.c
+test/regression/packedstruct2.c
+test/regression/pragmas.c
+test/regression/ptrs1.c
+test/regression/ptrs2.c
+test/regression/seqops.c
+test/regression/sizeof1.c
+test/regression/sizeof2.c
+test/regression/struct1.c
+test/regression/struct10.c
+test/regression/struct11.c
+test/regression/struct2.c
+test/regression/struct3.c
+test/regression/struct4.c
+test/regression/struct5.c
+test/regression/struct6.c
+test/regression/struct7.c
+test/regression/struct8.c
+test/regression/struct9.c
+test/regression/switch.c
+test/regression/types1.c
+test/regression/varargs1.c
+test/regression/varargs2.c
+test/regression/volatile1.c
+test/regression/volatile2.c
+test/regression/volatile3.c
+test/spass/.depend
+test/spass/AUTHORS
+test/spass/COPYING
+test/spass/LICENSE.TXT
+test/spass/Makefile
+test/spass/Makefile.bak
+test/spass/README
+test/spass/VERSIONHISTORY
+test/spass/analyze.c
+test/spass/analyze.h
+test/spass/approx.h
+test/spass/clause.c
+test/spass/clause.h
+test/spass/clock.c
+test/spass/clock.h
+test/spass/closure.c
+test/spass/closure.h
+test/spass/cnf.c
+test/spass/cnf.h
+test/spass/component.c
+test/spass/component.h
+test/spass/condensing.c
+test/spass/condensing.h
+test/spass/context.c
+test/spass/context.h
+test/spass/defs.c
+test/spass/defs.h
+test/spass/dfg.h
+test/spass/dfgparser.c
+test/spass/dfgparser.h
+test/spass/dfgscanner.c
+test/spass/doc-proof.c
+test/spass/doc-proof.h
+test/spass/flags.c
+test/spass/flags.h
+test/spass/foldfg.c
+test/spass/foldfg.h
+test/spass/graph.c
+test/spass/graph.h
+test/spass/hash.c
+test/spass/hash.h
+test/spass/hasharray.c
+test/spass/hasharray.h
+test/spass/ia.h
+test/spass/iaparser.c
+test/spass/iaparser.h
+test/spass/iascanner.c
+test/spass/kbo.c
+test/spass/kbo.h
+test/spass/list.c
+test/spass/list.h
+test/spass/memory.c
+test/spass/memory.h
+test/spass/misc.c
+test/spass/misc.h
+test/spass/options.c
+test/spass/options.h
+test/spass/order.c
+test/spass/order.h
+test/spass/partition.c
+test/spass/partition.h
+test/spass/problem.dfg
+test/spass/proofcheck.c
+test/spass/proofcheck.h
+test/spass/ras.h
+test/spass/renaming.c
+test/spass/renaming.h
+test/spass/resolution.c
+test/spass/resolution.h
+test/spass/rpos.c
+test/spass/rpos.h
+test/spass/rules-inf.c
+test/spass/rules-inf.h
+test/spass/rules-red.c
+test/spass/rules-red.h
+test/spass/rules-sort.c
+test/spass/rules-sort.h
+test/spass/rules-split.c
+test/spass/rules-split.h
+test/spass/rules-ur.c
+test/spass/rules-ur.h
+test/spass/search.c
+test/spass/search.h
+test/spass/sharing.c
+test/spass/sharing.h
+test/spass/small_problem.dfg
+test/spass/sort.c
+test/spass/sort.h
+test/spass/st.c
+test/spass/st.h
+test/spass/stack.c
+test/spass/stack.h
+test/spass/strings.c
+test/spass/stringsx.h
+test/spass/subst.c
+test/spass/subst.h
+test/spass/subsumption.c
+test/spass/subsumption.h
+test/spass/symbol.c
+test/spass/symbol.h
+test/spass/table.c
+test/spass/table.h
+test/spass/tableau.c
+test/spass/tableau.h
+test/spass/term.c
+test/spass/term.h
+test/spass/terminator.c
+test/spass/terminator.h
+test/spass/top.c
+test/spass/unify.c
+test/spass/unify.h
+test/spass/vector.c
+test/spass/vector.h
+tools/ndfun.ml
+HEAD is now at 5808176 Fixing Compcert after selection of subterm from partially applied
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Copying ~/.opam/repo/unstable/packages/coq:contrib:compcert/coq:contrib:compcert.dev/files/coq:contrib:compcert.install to ~/.opam/system/build/coq:contrib:compcert.dev/
+Building coq:contrib:compcert.dev:
+  ./configure ia32-linux
+  make -j4
+Testing assembler support for CFI directives... yes
+CompCert configuration:
+    Target architecture........... ia32
+    Application binary interface.. standard
+    OS and development env........ linux
+    C compiler.................... gcc -m32
+    C preprocessor................ gcc -m32 -U__GNUC__ -E
+    Assembler..................... gcc -m32 -c
+    Assembler supports CFI........ true
+    Assembler for runtime lib..... gcc -m32 -c
+    Linker........................ gcc -m32
+    Math library.................. -lm
+    Binaries installed in......... /usr/local/bin
+    Runtime library provided...... true
+    Library files installed in.... /usr/local/lib/compcert
+    cchecklink tool supported..... false
+If anything above looks wrong, please edit file ./Makefile.config to correct.
+make proof
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:contrib:compcert.dev&#39;
+COQC lib/Axioms.v
+COQC lib/Coqlib.v
+ocamlopt -o tools/ndfun str.cmxa tools/ndfun.ml
+COQC flocq/Core/Fcore_Zaux.v
+COQC driver/Compopts.v
+COQC lib/Wfsimpl.v
+Preprocessing ia32/SelectOp.vp
+Preprocessing backend/SelectDiv.vp
+Preprocessing backend/SelectLong.vp
+Preprocessing ia32/ConstpropOp.vp
+COQC flocq/Core/Fcore_Raux.v
+COQC flocq/Core/Fcore_digits.v
+COQC lib/Intv.v
+COQC lib/Maps.v
+COQC lib/Integers.v
+COQC lib/Iteration.v
+COQC flocq/Core/Fcore_defs.v
+COQC lib/Parmov.v
+COQC lib/UnionFind.v
+COQC lib/Postorder.v
+COQC lib/FSetAVLplus.v
+COQC lib/IntvSets.v
+COQC common/Errors.v
+COQC lib/Lattice.v
+COQC flocq/Core/Fcore_float_prop.v
+COQC flocq/Core/Fcore_rnd.v
+COQC common/Switch.v
+COQC common/Subtyping.v
+COQC lib/Ordered.v
+COQC flocq/Calc/Fcalc_digits.v
+COQC flocq/Calc/Fcalc_bracket.v
+COQC flocq/Calc/Fcalc_ops.v
+COQC lib/Heaps.v
+COQC flocq/Core/Fcore_generic_fmt.v
+COQC flocq/Calc/Fcalc_div.v
+COQC flocq/Calc/Fcalc_sqrt.v
+COQC flocq/Core/Fcore_ulp.v
+COQC flocq/Prop/Fprop_Sterbenz.v
+COQC flocq/Prop/Fprop_plus_error.v
+COQC flocq/Core/Fcore_rnd_ne.v
+COQC flocq/Core/Fcore_FIX.v
+COQC flocq/Core/Fcore_FLX.v
+COQC flocq/Core/Fcore_FLT.v
+COQC flocq/Core/Fcore_FTZ.v
+COQC flocq/Core/Fcore.v
+COQC flocq/Calc/Fcalc_round.v
+COQC flocq/Prop/Fprop_mult_error.v
+COQC flocq/Prop/Fprop_relative.v
+COQC flocq/Appli/Fappli_rnd_odd.v
+COQC flocq/Appli/Fappli_IEEE.v
+COQC flocq/Prop/Fprop_div_sqrt_error.v
+COQC flocq/Appli/Fappli_IEEE_bits.v
+COQC ia32/Archi.v
+COQC lib/Floats.v
+COQC backend/Kildall.v
+COQC common/AST.v
+COQC common/Values.v
+COQC cfrontend/Ctypes.v
+COQC backend/Registers.v
+COQC common/Memdata.v
+COQC common/Memtype.v
+COQC common/Memory.v
+COQC common/Globalenvs.v
+COQC cfrontend/Cop.v
+COQC cfrontend/Csyntax.v
+COQC common/Events.v
+COQC cfrontend/Initializers.v
+COQC common/Smallstep.v
+COQC ia32/Op.v
+COQC common/Behaviors.v
+COQC cfrontend/Csem.v
+COQC backend/Cminor.v
+COQC cfrontend/Clight.v
+COQC common/Determinism.v
+COQC cfrontend/Cstrategy.v
+COQC cfrontend/Initializersproof.v
+COQC cfrontend/SimplExpr.v
+COQC cfrontend/ClightBigstep.v
+COQC cfrontend/SimplLocals.v
+COQC cfrontend/Csharpminor.v
+COQC backend/CminorSel.v
+COQC backend/RTL.v
+COQC ia32/Machregs.v
+COQC cfrontend/SimplExprspec.v
+COQC cfrontend/SimplLocalsproof.v
+COQC cfrontend/Cshmgen.v
+COQC cfrontend/Cminorgen.v
+COQC ia32/SelectOp.v
+COQC backend/RTLgen.v
+COQC backend/Locations.v
+COQC backend/Inlining.v
+COQC backend/Renumber.v
+COQC backend/Liveness.v
+COQC backend/ValueDomain.v
+COQC backend/CSEdomain.v
+COQC cfrontend/Cexec.v
+COQC cfrontend/SimplExprproof.v
+COQC cfrontend/Cshmgenproof.v
+COQC cfrontend/Cminorgenproof.v
+COQC backend/RTLgenspec.v
+File &quot;./cfrontend/Cminorgenproof.v&quot;, line 774, characters 0-4:
+Error: Attempt to save an incomplete proof
+make[1]: *** [cfrontend/Cminorgenproof.vo] Error 1
+Makefile:201: recipe for target &#39;cfrontend/Cminorgenproof.vo&#39; failed
+make[1]: *** Waiting for unfinished jobs....
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:contrib:compcert.dev&#39;
+Makefile:129: recipe for target &#39;all&#39; failed
+make: *** [all] Error 2
+[ERROR] The compilation of coq:contrib:compcert.dev failed.
+Removing coq:contrib:compcert.dev.
+  Nothing to do.
+#=== ERROR while installing coq:contrib:compcert.dev ==========================#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /home/bench/.opam/system/build/coq:contrib:compcert.dev
+# compiler             system (4.01.0)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:contrib:compcert.dev/coq:contrib:compcert-23378-e7966f.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:compcert.dev/coq:contrib:compcert-23378-e7966f.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:compcert.dev/coq:contrib:compcert-23378-e7966f.err
+### stdout ###
+# ...[truncated]
+# COQC backend/ValueDomain.v
+# COQC backend/CSEdomain.v
+# COQC cfrontend/Cexec.v
+# COQC cfrontend/SimplExprproof.v
+# COQC cfrontend/Cshmgenproof.v
+# COQC cfrontend/Cminorgenproof.v
+# COQC backend/RTLgenspec.v
+# Makefile:201: recipe for target &#39;cfrontend/Cminorgenproof.vo&#39; failed
+# make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:contrib:compcert.dev&#39;
+# Makefile:129: recipe for target &#39;all&#39; failed
+### stderr ###
+# File &quot;./cfrontend/Cminorgenproof.v&quot;, line 774, characters 0-4:
+# Error: Attempt to save an incomplete proof
+# make[1]: *** [cfrontend/Cminorgenproof.vo] Error 1
+# make[1]: *** Waiting for unfinished jobs....
+# make: *** [all] Error 2
+&#39;opam install -y --verbose coq:contrib:compcert.dev&#39; failed.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>No files were installed.</p>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

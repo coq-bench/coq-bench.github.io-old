@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:ruler-compass-geometry dev</a></li>
+              <li class="active"><a href="">2014-12-17 17:32:45</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:ruler-compass-geometry
+              <small>
+                dev
+                <span class="label label-success">44 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2014-12-17 17:32:45 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2014-12-17 17:32:45 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:ruler-compass-geometry/coq:contrib:ruler-compass-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:ruler-compass-geometry.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:ruler-compass-geometry.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:ruler-compass-geometry.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:ruler-compass-geometry.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:contrib:ruler-compass-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:contrib:ruler-compass-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>44 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:ruler-compass-geometry.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:ruler-compass-geometry] Fetching https://gforge.inria.fr/git/coq-contribs/ruler-compass-geometry.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:ruler-compass-geometry.dev/.git/
+[master (root-commit) f1fb237] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/ruler-compass-geometry
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+A1_Plan.v
+A2_Orientation.v
+A3_Metrique.v
+A4_Droite.v
+A5_Cercle.v
+A6_Intersection.v
+B10_Longueur_Prop.v
+B11_Angle_prop.v
+B12_Tacticques_base.v
+B1_Confondu_Prop.v
+B2_Orient_Prop.v
+B3_Alignes_Prop.v
+B4_Droite_Def.v
+B5_Entre_Prel.v
+B6_Cercle_Def.v
+B7_Triangle_Equilateral.v
+B8_Point_Def.v
+B9_Inegalite_Triang.v
+C10_Milieu.v
+C11_Mediatrice.v
+C12_Angles_Opposes.v
+C13_Angles_Supplem.v
+C14_Angle_Droit.v
+C15_Parallelogramm.v
+C1_DemiDroite_Prop.v
+C2_Entre_Prop.v
+C3_Triangles_Egaux.v
+C4_Triangles_non_degeneres_egaux.v
+C5_Droite_Prop.v
+C6_Parallele_Prop.v
+C7_DroitesSecantesProp.v
+C8_DroitesConfondues.v
+C9_Triangles_Emboites.v
+D1_DistanceProp.v
+D2_Axe.v
+D3_Triangle_Prop.v
+D4_CongruenceProp.v
+D5_ParalleleConst.v
+D6_SumAnglesProp.v
+D7_NonParalleles_Secantes.v
+E1_Incidence.v
+E2_Ordre.v
+E3_Congruence.v
+E4_Continuite.v
+E5_Parallelisme.v
+Make
+Makefile
+description
+HEAD is now at dba33f5 Applying &quot;Unset Standard Proposition Elimination Names&quot; for
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:ruler-compass-geometry.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;A1_Plan.v&quot; &gt; &quot;A1_Plan.v.d&quot; || ( RV=$?; rm -f &quot;A1_Plan.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;A2_Orientation.v&quot; &gt; &quot;A2_Orientation.v.d&quot; || ( RV=$?; rm -f &quot;A2_Orientation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;A3_Metrique.v&quot; &gt; &quot;A3_Metrique.v.d&quot; || ( RV=$?; rm -f &quot;A3_Metrique.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;A4_Droite.v&quot; &gt; &quot;A4_Droite.v.d&quot; || ( RV=$?; rm -f &quot;A4_Droite.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;A5_Cercle.v&quot; &gt; &quot;A5_Cercle.v.d&quot; || ( RV=$?; rm -f &quot;A5_Cercle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;A6_Intersection.v&quot; &gt; &quot;A6_Intersection.v.d&quot; || ( RV=$?; rm -f &quot;A6_Intersection.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B10_Longueur_Prop.v&quot; &gt; &quot;B10_Longueur_Prop.v.d&quot; || ( RV=$?; rm -f &quot;B10_Longueur_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B11_Angle_prop.v&quot; &gt; &quot;B11_Angle_prop.v.d&quot; || ( RV=$?; rm -f &quot;B11_Angle_prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B12_Tacticques_base.v&quot; &gt; &quot;B12_Tacticques_base.v.d&quot; || ( RV=$?; rm -f &quot;B12_Tacticques_base.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B1_Confondu_Prop.v&quot; &gt; &quot;B1_Confondu_Prop.v.d&quot; || ( RV=$?; rm -f &quot;B1_Confondu_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B2_Orient_Prop.v&quot; &gt; &quot;B2_Orient_Prop.v.d&quot; || ( RV=$?; rm -f &quot;B2_Orient_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B3_Alignes_Prop.v&quot; &gt; &quot;B3_Alignes_Prop.v.d&quot; || ( RV=$?; rm -f &quot;B3_Alignes_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B4_Droite_Def.v&quot; &gt; &quot;B4_Droite_Def.v.d&quot; || ( RV=$?; rm -f &quot;B4_Droite_Def.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B5_Entre_Prel.v&quot; &gt; &quot;B5_Entre_Prel.v.d&quot; || ( RV=$?; rm -f &quot;B5_Entre_Prel.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B6_Cercle_Def.v&quot; &gt; &quot;B6_Cercle_Def.v.d&quot; || ( RV=$?; rm -f &quot;B6_Cercle_Def.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B7_Triangle_Equilateral.v&quot; &gt; &quot;B7_Triangle_Equilateral.v.d&quot; || ( RV=$?; rm -f &quot;B7_Triangle_Equilateral.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B8_Point_Def.v&quot; &gt; &quot;B8_Point_Def.v.d&quot; || ( RV=$?; rm -f &quot;B8_Point_Def.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;B9_Inegalite_Triang.v&quot; &gt; &quot;B9_Inegalite_Triang.v.d&quot; || ( RV=$?; rm -f &quot;B9_Inegalite_Triang.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C10_Milieu.v&quot; &gt; &quot;C10_Milieu.v.d&quot; || ( RV=$?; rm -f &quot;C10_Milieu.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C11_Mediatrice.v&quot; &gt; &quot;C11_Mediatrice.v.d&quot; || ( RV=$?; rm -f &quot;C11_Mediatrice.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C12_Angles_Opposes.v&quot; &gt; &quot;C12_Angles_Opposes.v.d&quot; || ( RV=$?; rm -f &quot;C12_Angles_Opposes.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C13_Angles_Supplem.v&quot; &gt; &quot;C13_Angles_Supplem.v.d&quot; || ( RV=$?; rm -f &quot;C13_Angles_Supplem.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C14_Angle_Droit.v&quot; &gt; &quot;C14_Angle_Droit.v.d&quot; || ( RV=$?; rm -f &quot;C14_Angle_Droit.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C15_Parallelogramm.v&quot; &gt; &quot;C15_Parallelogramm.v.d&quot; || ( RV=$?; rm -f &quot;C15_Parallelogramm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C1_DemiDroite_Prop.v&quot; &gt; &quot;C1_DemiDroite_Prop.v.d&quot; || ( RV=$?; rm -f &quot;C1_DemiDroite_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C2_Entre_Prop.v&quot; &gt; &quot;C2_Entre_Prop.v.d&quot; || ( RV=$?; rm -f &quot;C2_Entre_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C3_Triangles_Egaux.v&quot; &gt; &quot;C3_Triangles_Egaux.v.d&quot; || ( RV=$?; rm -f &quot;C3_Triangles_Egaux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C4_Triangles_non_degeneres_egaux.v&quot; &gt; &quot;C4_Triangles_non_degeneres_egaux.v.d&quot; || ( RV=$?; rm -f &quot;C4_Triangles_non_degeneres_egaux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C5_Droite_Prop.v&quot; &gt; &quot;C5_Droite_Prop.v.d&quot; || ( RV=$?; rm -f &quot;C5_Droite_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C6_Parallele_Prop.v&quot; &gt; &quot;C6_Parallele_Prop.v.d&quot; || ( RV=$?; rm -f &quot;C6_Parallele_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C7_DroitesSecantesProp.v&quot; &gt; &quot;C7_DroitesSecantesProp.v.d&quot; || ( RV=$?; rm -f &quot;C7_DroitesSecantesProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C8_DroitesConfondues.v&quot; &gt; &quot;C8_DroitesConfondues.v.d&quot; || ( RV=$?; rm -f &quot;C8_DroitesConfondues.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;C9_Triangles_Emboites.v&quot; &gt; &quot;C9_Triangles_Emboites.v.d&quot; || ( RV=$?; rm -f &quot;C9_Triangles_Emboites.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;D1_DistanceProp.v&quot; &gt; &quot;D1_DistanceProp.v.d&quot; || ( RV=$?; rm -f &quot;D1_DistanceProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;D2_Axe.v&quot; &gt; &quot;D2_Axe.v.d&quot; || ( RV=$?; rm -f &quot;D2_Axe.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;D3_Triangle_Prop.v&quot; &gt; &quot;D3_Triangle_Prop.v.d&quot; || ( RV=$?; rm -f &quot;D3_Triangle_Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;D4_CongruenceProp.v&quot; &gt; &quot;D4_CongruenceProp.v.d&quot; || ( RV=$?; rm -f &quot;D4_CongruenceProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;D5_ParalleleConst.v&quot; &gt; &quot;D5_ParalleleConst.v.d&quot; || ( RV=$?; rm -f &quot;D5_ParalleleConst.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;D6_SumAnglesProp.v&quot; &gt; &quot;D6_SumAnglesProp.v.d&quot; || ( RV=$?; rm -f &quot;D6_SumAnglesProp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;D7_NonParalleles_Secantes.v&quot; &gt; &quot;D7_NonParalleles_Secantes.v.d&quot; || ( RV=$?; rm -f &quot;D7_NonParalleles_Secantes.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;E1_Incidence.v&quot; &gt; &quot;E1_Incidence.v.d&quot; || ( RV=$?; rm -f &quot;E1_Incidence.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;E2_Ordre.v&quot; &gt; &quot;E2_Ordre.v.d&quot; || ( RV=$?; rm -f &quot;E2_Ordre.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;E3_Congruence.v&quot; &gt; &quot;E3_Congruence.v.d&quot; || ( RV=$?; rm -f &quot;E3_Congruence.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;E4_Continuite.v&quot; &gt; &quot;E4_Continuite.v.d&quot; || ( RV=$?; rm -f &quot;E4_Continuite.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RulerCompassGeometry &quot;E5_Parallelisme.v&quot; &gt; &quot;E5_Parallelisme.v.d&quot; || ( RV=$?; rm -f &quot;E5_Parallelisme.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   A1_Plan
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   A2_Orientation
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   A3_Metrique
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   A4_Droite
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   A5_Cercle
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   A6_Intersection
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B1_Confondu_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B2_Orient_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B3_Alignes_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B4_Droite_Def
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B5_Entre_Prel
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B6_Cercle_Def
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B7_Triangle_Equilateral
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B8_Point_Def
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B9_Inegalite_Triang
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B10_Longueur_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B11_Angle_prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   B12_Tacticques_base
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C1_DemiDroite_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C2_Entre_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C3_Triangles_Egaux
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C4_Triangles_non_degeneres_egaux
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C5_Droite_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C6_Parallele_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C7_DroitesSecantesProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C8_DroitesConfondues
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C9_Triangles_Emboites
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C10_Milieu
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C11_Mediatrice
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C12_Angles_Opposes
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C13_Angles_Supplem
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C14_Angle_Droit
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   C15_Parallelogramm
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   D1_DistanceProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   D2_Axe
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   D3_Triangle_Prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   D4_CongruenceProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   D5_ParalleleConst
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   D6_SumAnglesProp
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   D7_NonParalleles_Secantes
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   E1_Incidence
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   E2_Ordre
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   E3_Congruence
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   E4_Continuite
+&quot;coqc&quot;  -q  -R &quot;.&quot; RulerCompassGeometry   E5_Parallelisme
+cd &quot;.&quot; &amp;&amp; for i in E5_Parallelisme.vo E4_Continuite.vo E3_Congruence.vo E2_Ordre.vo E1_Incidence.vo D7_NonParalleles_Secantes.vo D6_SumAnglesProp.vo D5_ParalleleConst.vo D4_CongruenceProp.vo D3_Triangle_Prop.vo D2_Axe.vo D1_DistanceProp.vo C9_Triangles_Emboites.vo C8_DroitesConfondues.vo C7_DroitesSecantesProp.vo C6_Parallele_Prop.vo C5_Droite_Prop.vo C4_Triangles_non_degeneres_egaux.vo C3_Triangles_Egaux.vo C2_Entre_Prop.vo C1_DemiDroite_Prop.vo C15_Parallelogramm.vo C14_Angle_Droit.vo C13_Angles_Supplem.vo C12_Angles_Opposes.vo C11_Mediatrice.vo C10_Milieu.vo B9_Inegalite_Triang.vo B8_Point_Def.vo B7_Triangle_Equilateral.vo B6_Cercle_Def.vo B5_Entre_Prel.vo B4_Droite_Def.vo B3_Alignes_Prop.vo B2_Orient_Prop.vo B1_Confondu_Prop.vo B12_Tacticques_base.vo B11_Angle_prop.vo B10_Longueur_Prop.vo A6_Intersection.vo A5_Cercle.vo A4_Droite.vo A3_Metrique.vo A2_Orientation.vo A1_Plan.vo   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/RulerCompassGeometry/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/RulerCompassGeometry/$i; \
+done
+Installing coq:contrib:ruler-compass-geometry.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 926 K</p>
+            <ul>
+              <li>82 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/D7_NonParalleles_Secantes.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/D5_ParalleleConst.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/E3_Congruence.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/D6_SumAnglesProp.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C4_Triangles_non_degeneres_egaux.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C10_Milieu.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/D2_Axe.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/D4_CongruenceProp.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/E2_Ordre.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C13_Angles_Supplem.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/E5_Parallelisme.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/D3_Triangle_Prop.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B12_Tacticques_base.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/E1_Incidence.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B11_Angle_prop.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C7_DroitesSecantesProp.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B10_Longueur_Prop.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/E4_Continuite.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C8_DroitesConfondues.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C2_Entre_Prop.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C11_Mediatrice.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C5_Droite_Prop.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C6_Parallele_Prop.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C9_Triangles_Emboites.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B7_Triangle_Equilateral.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C3_Triangles_Egaux.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C12_Angles_Opposes.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C14_Angle_Droit.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B8_Point_Def.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/D1_DistanceProp.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/A6_Intersection.vo</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C15_Parallelogramm.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B2_Orient_Prop.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/A3_Metrique.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/A2_Orientation.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/A5_Cercle.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B3_Alignes_Prop.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B5_Entre_Prel.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/A4_Droite.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/C1_DemiDroite_Prop.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B1_Confondu_Prop.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B6_Cercle_Def.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/A1_Plan.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B4_Droite_Def.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry/B9_Inegalite_Triang.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:ruler-compass-geometry/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:ruler-compass-geometry.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:ruler-compass-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:ruler-compass-geometry.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:ruler-compass-geometry] Fetching https://gforge.inria.fr/git/coq-contribs/ruler-compass-geometry.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:ruler-compass-geometry.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/RulerCompassGeometry
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
