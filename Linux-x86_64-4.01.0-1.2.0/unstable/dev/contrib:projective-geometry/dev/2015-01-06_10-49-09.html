@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:projective-geometry dev</a></li>
+              <li class="active"><a href="">2015-01-06 10:49:09</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:projective-geometry
+              <small>
+                dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-06 10:49:09 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-06 10:49:09 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:projective-geometry/coq:contrib:projective-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:projective-geometry.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:projective-geometry.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:projective-geometry.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:projective-geometry.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --deps-only coq:contrib:projective-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --verbose coq:contrib:projective-geometry.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>1 m 55 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:projective-geometry.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:projective-geometry] Fetching https://gforge.inria.fr/git/coq-contribs/projective-geometry.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:projective-geometry.dev/.git/
+[master (root-commit) 26c5494] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/projective-geometry
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+Make
+Makefile
+Plane/Heyting_projective_plane_axioms.v
+Plane/P05_almost_pappus.v
+Plane/P06_angle_line.v
+Plane/P07_cevian_lines.v
+Plane/P08_cevian_lines_2.v
+Plane/P09_complete_quadrilateral.v
+Plane/P10_complete_quadrilateral_2.v
+Plane/P11_chasles.v
+Plane/P12_aeolian.v
+Plane/P14_pseudo_midpoint.v
+Plane/back.v
+Plane/basic_facts_plane.v
+Plane/bij.v
+Plane/decidability.v
+Plane/examples.v
+Plane/fano_plane.v
+Plane/fano_plane_desargues.v
+Plane/flat.v
+Plane/forth.v
+Plane/hexamys.v
+Plane/hexamys_desargues.v
+Plane/homogeneous.v
+Plane/moulton.v
+Plane/pg25.v
+Plane/projective_plane_axioms.v
+Plane/projective_plane_duality.v
+Plane/projective_plane_inst.v
+Plane/projective_plane_to_Heyting_projective_plane.v
+Space/basic_facts.v
+Space/desargues2D.v
+Space/desargues2Dlemmas.v
+Space/desargues2Dlemmas2.v
+Space/desargues2Dlemmas3.v
+Space/desargues2Dmore.v
+Space/desargues3D.v
+Space/desargues3Dlemmas.v
+Space/desargues3Dspecial.v
+Space/desarguesxD.v
+Space/matroid_to_matroid_p.v
+Space/matroids_axioms.v
+Space/matroids_properties.v
+Space/projective_space_axioms.v
+Space/projective_space_rank_axioms.v
+Space/projective_space_rank_to_projective_space.v
+Space/rank_properties.v
+Space/sets_of_points.v
+description
+field_variable_isolation_tactic.v
+general_tactics.v
+HEAD is now at 5e6a670 Fixing ProjectiveGeometry
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:projective-geometry.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;general_tactics.v&quot; &gt; &quot;general_tactics.v.d&quot; || ( RV=$?; rm -f &quot;general_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;field_variable_isolation_tactic.v&quot; &gt; &quot;field_variable_isolation_tactic.v.d&quot; || ( RV=$?; rm -f &quot;field_variable_isolation_tactic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/back.v&quot; &gt; &quot;Plane/back.v.d&quot; || ( RV=$?; rm -f &quot;Plane/back.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/projective_plane_axioms.v&quot; &gt; &quot;Plane/projective_plane_axioms.v.d&quot; || ( RV=$?; rm -f &quot;Plane/projective_plane_axioms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/decidability.v&quot; &gt; &quot;Plane/decidability.v.d&quot; || ( RV=$?; rm -f &quot;Plane/decidability.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/flat.v&quot; &gt; &quot;Plane/flat.v.d&quot; || ( RV=$?; rm -f &quot;Plane/flat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/moulton.v&quot; &gt; &quot;Plane/moulton.v.d&quot; || ( RV=$?; rm -f &quot;Plane/moulton.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/pg25.v&quot; &gt; &quot;Plane/pg25.v.d&quot; || ( RV=$?; rm -f &quot;Plane/pg25.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/forth.v&quot; &gt; &quot;Plane/forth.v.d&quot; || ( RV=$?; rm -f &quot;Plane/forth.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/basic_facts_plane.v&quot; &gt; &quot;Plane/basic_facts_plane.v.d&quot; || ( RV=$?; rm -f &quot;Plane/basic_facts_plane.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/projective_plane_inst.v&quot; &gt; &quot;Plane/projective_plane_inst.v.d&quot; || ( RV=$?; rm -f &quot;Plane/projective_plane_inst.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/homogeneous.v&quot; &gt; &quot;Plane/homogeneous.v.d&quot; || ( RV=$?; rm -f &quot;Plane/homogeneous.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/bij.v&quot; &gt; &quot;Plane/bij.v.d&quot; || ( RV=$?; rm -f &quot;Plane/bij.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/examples.v&quot; &gt; &quot;Plane/examples.v.d&quot; || ( RV=$?; rm -f &quot;Plane/examples.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P05_almost_pappus.v&quot; &gt; &quot;Plane/P05_almost_pappus.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P05_almost_pappus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P06_angle_line.v&quot; &gt; &quot;Plane/P06_angle_line.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P06_angle_line.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P07_cevian_lines.v&quot; &gt; &quot;Plane/P07_cevian_lines.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P07_cevian_lines.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P08_cevian_lines_2.v&quot; &gt; &quot;Plane/P08_cevian_lines_2.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P08_cevian_lines_2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P09_complete_quadrilateral.v&quot; &gt; &quot;Plane/P09_complete_quadrilateral.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P09_complete_quadrilateral.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P10_complete_quadrilateral_2.v&quot; &gt; &quot;Plane/P10_complete_quadrilateral_2.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P10_complete_quadrilateral_2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P11_chasles.v&quot; &gt; &quot;Plane/P11_chasles.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P11_chasles.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P12_aeolian.v&quot; &gt; &quot;Plane/P12_aeolian.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P12_aeolian.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/P14_pseudo_midpoint.v&quot; &gt; &quot;Plane/P14_pseudo_midpoint.v.d&quot; || ( RV=$?; rm -f &quot;Plane/P14_pseudo_midpoint.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/hexamys.v&quot; &gt; &quot;Plane/hexamys.v.d&quot; || ( RV=$?; rm -f &quot;Plane/hexamys.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/hexamys_desargues.v&quot; &gt; &quot;Plane/hexamys_desargues.v.d&quot; || ( RV=$?; rm -f &quot;Plane/hexamys_desargues.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/fano_plane.v&quot; &gt; &quot;Plane/fano_plane.v.d&quot; || ( RV=$?; rm -f &quot;Plane/fano_plane.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/fano_plane_desargues.v&quot; &gt; &quot;Plane/fano_plane_desargues.v.d&quot; || ( RV=$?; rm -f &quot;Plane/fano_plane_desargues.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/Heyting_projective_plane_axioms.v&quot; &gt; &quot;Plane/Heyting_projective_plane_axioms.v.d&quot; || ( RV=$?; rm -f &quot;Plane/Heyting_projective_plane_axioms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/projective_plane_to_Heyting_projective_plane.v&quot; &gt; &quot;Plane/projective_plane_to_Heyting_projective_plane.v.d&quot; || ( RV=$?; rm -f &quot;Plane/projective_plane_to_Heyting_projective_plane.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Plane/projective_plane_duality.v&quot; &gt; &quot;Plane/projective_plane_duality.v.d&quot; || ( RV=$?; rm -f &quot;Plane/projective_plane_duality.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues3Dlemmas.v&quot; &gt; &quot;Space/desargues3Dlemmas.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues3Dlemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/matroids_axioms.v&quot; &gt; &quot;Space/matroids_axioms.v.d&quot; || ( RV=$?; rm -f &quot;Space/matroids_axioms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/matroid_to_matroid_p.v&quot; &gt; &quot;Space/matroid_to_matroid_p.v.d&quot; || ( RV=$?; rm -f &quot;Space/matroid_to_matroid_p.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues2Dlemmas.v&quot; &gt; &quot;Space/desargues2Dlemmas.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues2Dlemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/projective_space_rank_axioms.v&quot; &gt; &quot;Space/projective_space_rank_axioms.v.d&quot; || ( RV=$?; rm -f &quot;Space/projective_space_rank_axioms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/sets_of_points.v&quot; &gt; &quot;Space/sets_of_points.v.d&quot; || ( RV=$?; rm -f &quot;Space/sets_of_points.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/rank_properties.v&quot; &gt; &quot;Space/rank_properties.v.d&quot; || ( RV=$?; rm -f &quot;Space/rank_properties.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues2Dlemmas3.v&quot; &gt; &quot;Space/desargues2Dlemmas3.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues2Dlemmas3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues3Dspecial.v&quot; &gt; &quot;Space/desargues3Dspecial.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues3Dspecial.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/projective_space_rank_to_projective_space.v&quot; &gt; &quot;Space/projective_space_rank_to_projective_space.v.d&quot; || ( RV=$?; rm -f &quot;Space/projective_space_rank_to_projective_space.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues2Dmore.v&quot; &gt; &quot;Space/desargues2Dmore.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues2Dmore.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desarguesxD.v&quot; &gt; &quot;Space/desarguesxD.v.d&quot; || ( RV=$?; rm -f &quot;Space/desarguesxD.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/basic_facts.v&quot; &gt; &quot;Space/basic_facts.v.d&quot; || ( RV=$?; rm -f &quot;Space/basic_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/matroids_properties.v&quot; &gt; &quot;Space/matroids_properties.v.d&quot; || ( RV=$?; rm -f &quot;Space/matroids_properties.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues2D.v&quot; &gt; &quot;Space/desargues2D.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues2D.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues3D.v&quot; &gt; &quot;Space/desargues3D.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues3D.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/projective_space_axioms.v&quot; &gt; &quot;Space/projective_space_axioms.v.d&quot; || ( RV=$?; rm -f &quot;Space/projective_space_axioms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; ProjectiveGeometry &quot;Space/desargues2Dlemmas2.v&quot; &gt; &quot;Space/desargues2Dlemmas2.v.d&quot; || ( RV=$?; rm -f &quot;Space/desargues2Dlemmas2.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/sets_of_points
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/projective_space_axioms
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   general_tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/Heyting_projective_plane_axioms
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/projective_plane_axioms
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   field_variable_isolation_tactic
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/basic_facts_plane
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/fano_plane_desargues
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/fano_plane
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/pg25
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/moulton
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/matroids_axioms
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/basic_facts
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/forth
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/back
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/homogeneous
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/projective_space_rank_axioms
+&quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/matroid_to_matroid_p
+File &quot;./Space/basic_facts.v&quot;, line 271, characters 0-22:
+Error: Require is not allowed inside a module or a module type
+make: *** [Space/basic_facts.vo] Error 1
+make: *** Waiting for unfinished jobs....
+Makefile:271: recipe for target &#39;Space/basic_facts.vo&#39; failed
+[ERROR] The compilation of coq:contrib:projective-geometry.dev failed.
+Removing coq:contrib:projective-geometry.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/ProjectiveGeometry
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/ProjectiveGeometry&#39;: No such file or directory
+#=== ERROR while installing coq:contrib:projective-geometry.dev ===============#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /home/bench/.opam/system/build/coq:contrib:projective-geometry.dev
+# compiler             system (4.01.0)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:contrib:projective-geometry.dev/coq:contrib:projective-geometry-15646-d2c37b.env
+# stdout-file          /home/bench/.opam/system/build/coq:contrib:projective-geometry.dev/coq:contrib:projective-geometry-15646-d2c37b.out
+# stderr-file          /home/bench/.opam/system/build/coq:contrib:projective-geometry.dev/coq:contrib:projective-geometry-15646-d2c37b.err
+### stdout ###
+# ...[truncated]
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/pg25
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/moulton
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/matroids_axioms
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/basic_facts
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/forth
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/back
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Plane/homogeneous
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/projective_space_rank_axioms
+# &quot;coqc&quot;  -q  -R &quot;.&quot; ProjectiveGeometry   Space/matroid_to_matroid_p
+# Makefile:271: recipe for target &#39;Space/basic_facts.vo&#39; failed
+### stderr ###
+# File &quot;./Space/basic_facts.v&quot;, line 271, characters 0-22:
+# Error: Require is not allowed inside a module or a module type
+# make: *** [Space/basic_facts.vo] Error 1
+# make: *** Waiting for unfinished jobs....
+&#39;opam install -y --verbose coq:contrib:projective-geometry.dev&#39; failed.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>No files were installed.</p>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

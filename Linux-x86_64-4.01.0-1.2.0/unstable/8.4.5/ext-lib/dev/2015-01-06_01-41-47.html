@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / ext-lib dev</a></li>
+              <li class="active"><a href="">2015-01-06 01:41:47</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              ext-lib
+              <small>
+                dev
+                <span class="label label-success">19 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-06 01:41:47 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-06 01:41:47 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:ext-lib/coq:ext-lib.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:ext-lib.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:ext-lib.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:ext-lib.dev:
+  make -j4
+  make install
+Installing coq:ext-lib.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --deps-only coq:ext-lib.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --verbose coq:ext-lib.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>19 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:ext-lib.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:ext-lib.dev] Downloading https://github.com/coq-ext-lib/coq-ext-lib/archive/master.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   131    0   131    0     0    278      0 --:--:-- --:--:-- --:--:--   279
+  0     0    0   859    0     0    893      0 --:--:-- --:--:-- --:--:--   893  0     0    0 71302    0     0  51421      0 --:--:--  0:00:01 --:--:--  161k
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:ext-lib.dev:
+  make -j4
+  make install
+make -C theories
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make -f Makefile.coq
+make[2]: Entering directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics.v&quot; &gt; &quot;Tactics.v.d&quot; || ( RV=$?; rm -f &quot;Tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;ExtLib.v&quot; &gt; &quot;ExtLib.v.d&quot; || ( RV=$?; rm -f &quot;ExtLib.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Recur/Relation.v&quot; &gt; &quot;Recur/Relation.v.d&quot; || ( RV=$?; rm -f &quot;Recur/Relation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Recur/Facts.v&quot; &gt; &quot;Recur/Facts.v.d&quot; || ( RV=$?; rm -f &quot;Recur/Facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Recur/Measure.v&quot; &gt; &quot;Recur/Measure.v.d&quot; || ( RV=$?; rm -f &quot;Recur/Measure.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Recur/GenRec.v&quot; &gt; &quot;Recur/GenRec.v.d&quot; || ( RV=$?; rm -f &quot;Recur/GenRec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Programming/With.v&quot; &gt; &quot;Programming/With.v.d&quot; || ( RV=$?; rm -f &quot;Programming/With.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Programming/Injection.v&quot; &gt; &quot;Programming/Injection.v.d&quot; || ( RV=$?; rm -f &quot;Programming/Injection.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Programming/Extras.v&quot; &gt; &quot;Programming/Extras.v.d&quot; || ( RV=$?; rm -f &quot;Programming/Extras.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Programming/Eqv.v&quot; &gt; &quot;Programming/Eqv.v.d&quot; || ( RV=$?; rm -f &quot;Programming/Eqv.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Programming/Le.v&quot; &gt; &quot;Programming/Le.v.d&quot; || ( RV=$?; rm -f &quot;Programming/Le.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Programming/Show.v&quot; &gt; &quot;Programming/Show.v.d&quot; || ( RV=$?; rm -f &quot;Programming/Show.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Relations/Compose.v&quot; &gt; &quot;Relations/Compose.v.d&quot; || ( RV=$?; rm -f &quot;Relations/Compose.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Relations/TransitiveClosure.v&quot; &gt; &quot;Relations/TransitiveClosure.v.d&quot; || ( RV=$?; rm -f &quot;Relations/TransitiveClosure.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Generic/Func.v&quot; &gt; &quot;Generic/Func.v.d&quot; || ( RV=$?; rm -f &quot;Generic/Func.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Generic/Ind.v&quot; &gt; &quot;Generic/Ind.v.d&quot; || ( RV=$?; rm -f &quot;Generic/Ind.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Generic/Data.v&quot; &gt; &quot;Generic/Data.v.d&quot; || ( RV=$?; rm -f &quot;Generic/Data.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Graph/Graph.v&quot; &gt; &quot;Data/Graph/Graph.v.d&quot; || ( RV=$?; rm -f &quot;Data/Graph/Graph.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Graph/GraphAlgos.v&quot; &gt; &quot;Data/Graph/GraphAlgos.v.d&quot; || ( RV=$?; rm -f &quot;Data/Graph/GraphAlgos.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Graph/GraphAdjList.v&quot; &gt; &quot;Data/Graph/GraphAdjList.v.d&quot; || ( RV=$?; rm -f &quot;Data/Graph/GraphAdjList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Graph/BuildGraph.v&quot; &gt; &quot;Data/Graph/BuildGraph.v.d&quot; || ( RV=$?; rm -f &quot;Data/Graph/BuildGraph.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Map/FMapAList.v&quot; &gt; &quot;Data/Map/FMapAList.v.d&quot; || ( RV=$?; rm -f &quot;Data/Map/FMapAList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Map/FMapTwoThreeK.v&quot; &gt; &quot;Data/Map/FMapTwoThreeK.v.d&quot; || ( RV=$?; rm -f &quot;Data/Map/FMapTwoThreeK.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Map/FMapPositive.v&quot; &gt; &quot;Data/Map/FMapPositive.v.d&quot; || ( RV=$?; rm -f &quot;Data/Map/FMapPositive.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Set/TwoThreeTrees.v&quot; &gt; &quot;Data/Set/TwoThreeTrees.v.d&quot; || ( RV=$?; rm -f &quot;Data/Set/TwoThreeTrees.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Set/SetMap.v&quot; &gt; &quot;Data/Set/SetMap.v.d&quot; || ( RV=$?; rm -f &quot;Data/Set/SetMap.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Set/ListSet.v&quot; &gt; &quot;Data/Set/ListSet.v.d&quot; || ( RV=$?; rm -f &quot;Data/Set/ListSet.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/OptionMonadLaws.v&quot; &gt; &quot;Data/Monads/OptionMonadLaws.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/OptionMonadLaws.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/EitherMonad.v&quot; &gt; &quot;Data/Monads/EitherMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/EitherMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/StateMonad.v&quot; &gt; &quot;Data/Monads/StateMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/StateMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/ReaderMonad.v&quot; &gt; &quot;Data/Monads/ReaderMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/ReaderMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/FuelMonadLaws.v&quot; &gt; &quot;Data/Monads/FuelMonadLaws.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/FuelMonadLaws.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/FuelMonad.v&quot; &gt; &quot;Data/Monads/FuelMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/FuelMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/WriterMonad.v&quot; &gt; &quot;Data/Monads/WriterMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/WriterMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/OptionMonad.v&quot; &gt; &quot;Data/Monads/OptionMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/OptionMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/IdentityMonadLaws.v&quot; &gt; &quot;Data/Monads/IdentityMonadLaws.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/IdentityMonadLaws.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/ContMonad.v&quot; &gt; &quot;Data/Monads/ContMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/ContMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/ListMonad.v&quot; &gt; &quot;Data/Monads/ListMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/ListMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/ReaderMonadLaws.v&quot; &gt; &quot;Data/Monads/ReaderMonadLaws.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/ReaderMonadLaws.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Monads/IdentityMonad.v&quot; &gt; &quot;Data/Monads/IdentityMonad.v.d&quot; || ( RV=$?; rm -f &quot;Data/Monads/IdentityMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Stream.v&quot; &gt; &quot;Data/Stream.v.d&quot; || ( RV=$?; rm -f &quot;Data/Stream.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Unit.v&quot; &gt; &quot;Data/Unit.v.d&quot; || ( RV=$?; rm -f &quot;Data/Unit.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/SumN.v&quot; &gt; &quot;Data/SumN.v.d&quot; || ( RV=$?; rm -f &quot;Data/SumN.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Lazy.v&quot; &gt; &quot;Data/Lazy.v.d&quot; || ( RV=$?; rm -f &quot;Data/Lazy.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Vector.v&quot; &gt; &quot;Data/Vector.v.d&quot; || ( RV=$?; rm -f &quot;Data/Vector.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Tuple.v&quot; &gt; &quot;Data/Tuple.v.d&quot; || ( RV=$?; rm -f &quot;Data/Tuple.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Member.v&quot; &gt; &quot;Data/Member.v.d&quot; || ( RV=$?; rm -f &quot;Data/Member.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Nat.v&quot; &gt; &quot;Data/Nat.v.d&quot; || ( RV=$?; rm -f &quot;Data/Nat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Prop.v&quot; &gt; &quot;Data/Prop.v.d&quot; || ( RV=$?; rm -f &quot;Data/Prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/ListFirstnSkipn.v&quot; &gt; &quot;Data/ListFirstnSkipn.v.d&quot; || ( RV=$?; rm -f &quot;Data/ListFirstnSkipn.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/LazyList.v&quot; &gt; &quot;Data/LazyList.v.d&quot; || ( RV=$?; rm -f &quot;Data/LazyList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Fun.v&quot; &gt; &quot;Data/Fun.v.d&quot; || ( RV=$?; rm -f &quot;Data/Fun.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Fin.v&quot; &gt; &quot;Data/Fin.v.d&quot; || ( RV=$?; rm -f &quot;Data/Fin.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Pair.v&quot; &gt; &quot;Data/Pair.v.d&quot; || ( RV=$?; rm -f &quot;Data/Pair.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Eq.v&quot; &gt; &quot;Data/Eq.v.d&quot; || ( RV=$?; rm -f &quot;Data/Eq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Bool.v&quot; &gt; &quot;Data/Bool.v.d&quot; || ( RV=$?; rm -f &quot;Data/Bool.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Option.v&quot; &gt; &quot;Data/Option.v.d&quot; || ( RV=$?; rm -f &quot;Data/Option.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Char.v&quot; &gt; &quot;Data/Char.v.d&quot; || ( RV=$?; rm -f &quot;Data/Char.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/ListNth.v&quot; &gt; &quot;Data/ListNth.v.d&quot; || ( RV=$?; rm -f &quot;Data/ListNth.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/String.v&quot; &gt; &quot;Data/String.v.d&quot; || ( RV=$?; rm -f &quot;Data/String.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Sum.v&quot; &gt; &quot;Data/Sum.v.d&quot; || ( RV=$?; rm -f &quot;Data/Sum.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/PreFun.v&quot; &gt; &quot;Data/PreFun.v.d&quot; || ( RV=$?; rm -f &quot;Data/PreFun.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/SigT.v&quot; &gt; &quot;Data/SigT.v.d&quot; || ( RV=$?; rm -f &quot;Data/SigT.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/N.v&quot; &gt; &quot;Data/N.v.d&quot; || ( RV=$?; rm -f &quot;Data/N.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/HList.v&quot; &gt; &quot;Data/HList.v.d&quot; || ( RV=$?; rm -f &quot;Data/HList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/List.v&quot; &gt; &quot;Data/List.v.d&quot; || ( RV=$?; rm -f &quot;Data/List.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Z.v&quot; &gt; &quot;Data/Z.v.d&quot; || ( RV=$?; rm -f &quot;Data/Z.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Checked.v&quot; &gt; &quot;Data/Checked.v.d&quot; || ( RV=$?; rm -f &quot;Data/Checked.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Data/Positive.v&quot; &gt; &quot;Data/Positive.v.d&quot; || ( RV=$?; rm -f &quot;Data/Positive.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Foldable.v&quot; &gt; &quot;Structures/Foldable.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Foldable.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Monads.v&quot; &gt; &quot;Structures/Monads.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Monads.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Monoid.v&quot; &gt; &quot;Structures/Monoid.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/BinOps.v&quot; &gt; &quot;Structures/BinOps.v.d&quot; || ( RV=$?; rm -f &quot;Structures/BinOps.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Functor.v&quot; &gt; &quot;Structures/Functor.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Functor.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadReader.v&quot; &gt; &quot;Structures/MonadReader.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadReader.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadExc.v&quot; &gt; &quot;Structures/MonadExc.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadExc.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadCont.v&quot; &gt; &quot;Structures/MonadCont.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadCont.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadState.v&quot; &gt; &quot;Structures/MonadState.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadState.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadLaws.v&quot; &gt; &quot;Structures/MonadLaws.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadLaws.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadZero.v&quot; &gt; &quot;Structures/MonadZero.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadZero.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Traversable.v&quot; &gt; &quot;Structures/Traversable.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Traversable.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Proper.v&quot; &gt; &quot;Structures/Proper.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Proper.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Applicative.v&quot; &gt; &quot;Structures/Applicative.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Applicative.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Sets.v&quot; &gt; &quot;Structures/Sets.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Sets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadTrans.v&quot; &gt; &quot;Structures/MonadTrans.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadTrans.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Reducible.v&quot; &gt; &quot;Structures/Reducible.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Reducible.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Monad.v&quot; &gt; &quot;Structures/Monad.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Monad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/FunctorLaws.v&quot; &gt; &quot;Structures/FunctorLaws.v.d&quot; || ( RV=$?; rm -f &quot;Structures/FunctorLaws.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/CoMonad.v&quot; &gt; &quot;Structures/CoMonad.v.d&quot; || ( RV=$?; rm -f &quot;Structures/CoMonad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadWriter.v&quot; &gt; &quot;Structures/MonadWriter.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadWriter.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadPlus.v&quot; &gt; &quot;Structures/MonadPlus.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadPlus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Maps.v&quot; &gt; &quot;Structures/Maps.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Maps.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/EqDep.v&quot; &gt; &quot;Structures/EqDep.v.d&quot; || ( RV=$?; rm -f &quot;Structures/EqDep.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/Identity.v&quot; &gt; &quot;Structures/Identity.v.d&quot; || ( RV=$?; rm -f &quot;Structures/Identity.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/CoFunctor.v&quot; &gt; &quot;Structures/CoFunctor.v.d&quot; || ( RV=$?; rm -f &quot;Structures/CoFunctor.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Structures/MonadFix.v&quot; &gt; &quot;Structures/MonadFix.v.d&quot; || ( RV=$?; rm -f &quot;Structures/MonadFix.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/Parametric.v&quot; &gt; &quot;Tactics/Parametric.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/Parametric.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/Consider.v&quot; &gt; &quot;Tactics/Consider.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/Consider.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/Cases.v&quot; &gt; &quot;Tactics/Cases.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/Cases.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/Injection.v&quot; &gt; &quot;Tactics/Injection.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/Injection.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/Equality.v&quot; &gt; &quot;Tactics/Equality.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/Equality.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/Forward.v&quot; &gt; &quot;Tactics/Forward.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/Forward.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/MonadTac.v&quot; &gt; &quot;Tactics/MonadTac.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/MonadTac.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/BoolTac.v&quot; &gt; &quot;Tactics/BoolTac.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/BoolTac.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/TypeTac.v&quot; &gt; &quot;Tactics/TypeTac.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/TypeTac.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/EqDep.v&quot; &gt; &quot;Tactics/EqDep.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/EqDep.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Tactics/Reify.v&quot; &gt; &quot;Tactics/Reify.v.d&quot; || ( RV=$?; rm -f &quot;Tactics/Reify.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/CmpDec.v&quot; &gt; &quot;Core/CmpDec.v.d&quot; || ( RV=$?; rm -f &quot;Core/CmpDec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/RelDec.v&quot; &gt; &quot;Core/RelDec.v.d&quot; || ( RV=$?; rm -f &quot;Core/RelDec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/EquivDec.v&quot; &gt; &quot;Core/EquivDec.v.d&quot; || ( RV=$?; rm -f &quot;Core/EquivDec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/Type.v&quot; &gt; &quot;Core/Type.v.d&quot; || ( RV=$?; rm -f &quot;Core/Type.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExtLib &quot;Core/Any.v&quot; &gt; &quot;Core/Any.v.d&quot; || ( RV=$?; rm -f &quot;Core/Any.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . ExtLib   Core/Any
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Proper
+&quot;coqc&quot;  -q  -R . ExtLib   Core/EquivDec
+&quot;coqc&quot;  -q  -R . ExtLib   Core/RelDec
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/Reify
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Functor
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Applicative
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/CoFunctor
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/BinOps
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/BoolTac
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/Forward
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Eq
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/Injection
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Traversable
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/CoMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Positive
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Checked
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Z
+&quot;coqc&quot;  -q  -R . ExtLib   Data/ListNth
+&quot;coqc&quot;  -q  -R . ExtLib   Data/LazyList
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Stream
+&quot;coqc&quot;  -q  -R . ExtLib   Programming/Eqv
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Graph/Graph
+&quot;coqc&quot;  -q  -R . ExtLib   Programming/Injection
+&quot;coqc&quot;  -q  -R . ExtLib   Relations/TransitiveClosure
+&quot;coqc&quot;  -q  -R . ExtLib   Relations/Compose
+&quot;coqc&quot;  -q  -R . ExtLib   Programming/Le
+&quot;coqc&quot;  -q  -R . ExtLib   Programming/With
+&quot;coqc&quot;  -q  -R . ExtLib   Recur/GenRec
+&quot;coqc&quot;  -q  -R . ExtLib   Recur/Measure
+&quot;coqc&quot;  -q  -R . ExtLib   Recur/Facts
+&quot;coqc&quot;  -q  -R . ExtLib   Recur/Relation
+&quot;coqc&quot;  -q  -R . ExtLib   ExtLib
+&quot;coqc&quot;  -q  -R . ExtLib   Core/Type
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/Consider
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Bool
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Monad
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/Equality
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/Cases
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Sum
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Char
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Pair
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Prop
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Lazy
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/IdentityMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/ContMonad
+Identifier &#39;lazy&#39; now a keyword
+&quot;coqc&quot;  -q  -R . ExtLib   Core/CmpDec
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/EqDep
+&quot;coqc&quot;  -q  -R . ExtLib   Data/PreFun
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Monoid
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadZero
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadPlus
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadReader
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadState
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadTrans
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadFix
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadExc
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadCont
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Unit
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Reducible
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Nat
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Identity
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Sets
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Foldable
+&quot;coqc&quot;  -q  -R . ExtLib   Data/N
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/EqDep
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Fun
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadWriter
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Maps
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Fin
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/TypeTac
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/Monads
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/FunctorLaws
+&quot;coqc&quot;  -q  -R . ExtLib   Data/SigT
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Tuple
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Vector
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/ReaderMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/OptionMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/WriterMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/FuelMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/StateMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/EitherMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Set/SetMap
+&quot;coqc&quot;  -q  -R . ExtLib   Structures/MonadLaws
+&quot;coqc&quot;  -q  -R . ExtLib   Data/List
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Option
+&quot;coqc&quot;  -q  -R . ExtLib   Data/String
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Graph/BuildGraph
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/MonadTac
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Member
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Map/FMapPositive
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/ReaderMonadLaws
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/IdentityMonadLaws
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/FuelMonadLaws
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/OptionMonadLaws
+&quot;coqc&quot;  -q  -R . ExtLib   Generic/Func
+&quot;coqc&quot;  -q  -R . ExtLib   Programming/Show
+&quot;coqc&quot;  -q  -R . ExtLib   Tactics/Parametric
+&quot;coqc&quot;  -q  -R . ExtLib   Data/HList
+&quot;coqc&quot;  -q  -R . ExtLib   Data/ListFirstnSkipn
+&quot;coqc&quot;  -q  -R . ExtLib   Data/SumN
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Monads/ListMonad
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Set/ListSet
+&quot;coqc&quot;  -q  -R . ExtLib   Programming/Extras
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Map/FMapTwoThreeK
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Map/FMapAList
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Graph/GraphAdjList
+Identifier &#39;begin&#39; now a keyword
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Graph/GraphAlgos
+&quot;coqc&quot;  -q  -R . ExtLib   Generic/Data
+&quot;coqc&quot;  -q  -R . ExtLib   Generic/Ind
+&quot;coqc&quot;  -q  -R . ExtLib   Data/Set/TwoThreeTrees
+     = &quot;-(5,-(6,-(7,-())))&quot;
+     : String.string
+make[2]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make -C examples
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
+coq_makefile -R ../theories ExtLib EvalWithExc.v ConsiderDemo.v UsingSets.v WithDemo.v MonadReasoning.v \
+          | sed -re &#39;s/-R ([^ ]+) ExtLib/-I \1 -as ExtLib/g&#39; \
+          &gt; Makefile.coq
+Warning: in option -R, ../theories is not a subdirectory of the current directory
+make -f Makefile.coq
+make[2]: Entering directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
+&quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;MonadReasoning.v&quot; &gt; &quot;MonadReasoning.v.d&quot; || ( RV=$?; rm -f &quot;MonadReasoning.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;WithDemo.v&quot; &gt; &quot;WithDemo.v.d&quot; || ( RV=$?; rm -f &quot;WithDemo.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;UsingSets.v&quot; &gt; &quot;UsingSets.v.d&quot; || ( RV=$?; rm -f &quot;UsingSets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;ConsiderDemo.v&quot; &gt; &quot;ConsiderDemo.v.d&quot; || ( RV=$?; rm -f &quot;ConsiderDemo.v.d&quot;; exit ${RV} )
+*** Warning: in file MonadReasoning.v, library ExtLib.Core.Type.v is required and has not been found in loadpath!
+*** Warning: in file WithDemo.v, library ExtLib.Programming.With.v is required and has not been found in loadpath!
+*** Warning: in file MonadReasoning.v, library ExtLib.Structures.Monad.v is required and has not been found in loadpath!
+*** Warning: in file MonadReasoning.v, library ExtLib.Structures.MonadLaws.v is required and has not been found in loadpath!
+*** Warning: in file MonadReasoning.v, library ExtLib.Data.PreFun.v is required and has not been found in loadpath!
+*** Warning: in file MonadReasoning.v, library ExtLib.Data.Fun.v is required and has not been found in loadpath!
+&quot;coqdep&quot; -c -slash -I . -I ../theories -as ExtLib &quot;EvalWithExc.v&quot; &gt; &quot;EvalWithExc.v.d&quot; || ( RV=$?; rm -f &quot;EvalWithExc.v.d&quot;; exit ${RV} )
+*** Warning: in file UsingSets.v, library ExtLib.Structures.Sets.v is required and has not been found in loadpath!
+*** Warning: in file ConsiderDemo.v, library ExtLib.Tactics.Consider.v is required and has not been found in loadpath!
+*** Warning: in file UsingSets.v, library ExtLib.Structures.Reducible.v is required and has not been found in loadpath!
+*** Warning: in file UsingSets.v, library ExtLib.Structures.Functor.v is required and has not been found in loadpath!
+*** Warning: in file ConsiderDemo.v, library ExtLib.Data.Nat.v is required and has not been found in loadpath!
+*** Warning: in file UsingSets.v, library ExtLib.Data.Set.ListSet.v is required and has not been found in loadpath!
+*** Warning: in file EvalWithExc.v, library ExtLib.Structures.Monads.v is required and has not been found in loadpath!
+*** Warning: in file EvalWithExc.v, library ExtLib.Data.Monads.EitherMonad.v is required and has not been found in loadpath!
+&quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   EvalWithExc
+&quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   ConsiderDemo
+&quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   UsingSets
+&quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   WithDemo
+     = {| a := true; b := 1; c := false |}
+     : RTest
+     = RTest -&gt; false = false
+     : Prop
+&quot;coqc&quot;  -q  -I . -I ../theories -as ExtLib   MonadReasoning
+     = false
+     : bool
+     = ?13 (list ?11) cons nil
+         ((let (_, _, _, _, _, _, _, _, add, _) := ?16 in add) true
+            ((let (_, _, _, _, _, _, _, _, add, _) := ?19 in add) true
+               (let (_, empty, _, _, _, _, _, _, _, _) := ?22 in empty)))
+     : list ?11
+     = (let (fmap) := ?29 in fmap) bool bool
+         (fun b : bool =&gt; if b then false else true)
+         ((let (_, _, _, _, _, _, _, _, add, _) := ?34 in add) true
+            (let (_, empty, _, _, _, _, _, _, _, _) := ?37 in empty))
+     : ?28 bool
+     = inr (Int 3)
+     : string + value
+     = inl &quot;expected integer got bool&quot;%string
+     : string + value
+make[2]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/examples&#39;
+make -C theories install
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make -f Makefile.coq
+make[2]: Entering directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make[2]: Nothing to be done for &#39;all&#39;.
+make[2]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make -f Makefile.coq install
+make[2]: Entering directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+for i in Core/Any.vo Core/Type.vo Core/EquivDec.vo Core/RelDec.vo Core/CmpDec.vo Tactics/Reify.vo Tactics/EqDep.vo Tactics/TypeTac.vo Tactics/BoolTac.vo Tactics/MonadTac.vo Tactics/Forward.vo Tactics/Equality.vo Tactics/Injection.vo Tactics/Cases.vo Tactics/Consider.vo Tactics/Parametric.vo Structures/MonadFix.vo Structures/CoFunctor.vo Structures/Identity.vo Structures/EqDep.vo Structures/Maps.vo Structures/MonadPlus.vo Structures/MonadWriter.vo Structures/CoMonad.vo Structures/FunctorLaws.vo Structures/Monad.vo Structures/Reducible.vo Structures/MonadTrans.vo Structures/Sets.vo Structures/Applicative.vo Structures/Proper.vo Structures/Traversable.vo Structures/MonadZero.vo Structures/MonadLaws.vo Structures/MonadState.vo Structures/MonadCont.vo Structures/MonadExc.vo Structures/MonadReader.vo Structures/Functor.vo Structures/BinOps.vo Structures/Monoid.vo Structures/Monads.vo Structures/Foldable.vo Data/Positive.vo Data/Checked.vo Data/Z.vo Data/List.vo Data/HList.vo Data/N.vo Data/SigT.vo Data/PreFun.vo Data/Sum.vo Data/String.vo Data/ListNth.vo Data/Char.vo Data/Option.vo Data/Bool.vo Data/Eq.vo Data/Pair.vo Data/Fin.vo Data/Fun.vo Data/LazyList.vo Data/ListFirstnSkipn.vo Data/Prop.vo Data/Nat.vo Data/Member.vo Data/Tuple.vo Data/Vector.vo Data/Lazy.vo Data/SumN.vo Data/Unit.vo Data/Stream.vo Data/Monads/IdentityMonad.vo Data/Monads/ReaderMonadLaws.vo Data/Monads/ListMonad.vo Data/Monads/ContMonad.vo Data/Monads/IdentityMonadLaws.vo Data/Monads/OptionMonad.vo Data/Monads/WriterMonad.vo Data/Monads/FuelMonad.vo Data/Monads/FuelMonadLaws.vo Data/Monads/ReaderMonad.vo Data/Monads/StateMonad.vo Data/Monads/EitherMonad.vo Data/Monads/OptionMonadLaws.vo Data/Set/ListSet.vo Data/Set/SetMap.vo Data/Set/TwoThreeTrees.vo Data/Map/FMapPositive.vo Data/Map/FMapTwoThreeK.vo Data/Map/FMapAList.vo Data/Graph/BuildGraph.vo Data/Graph/GraphAdjList.vo Data/Graph/GraphAlgos.vo Data/Graph/Graph.vo Generic/Data.vo Generic/Ind.vo Generic/Func.vo Relations/TransitiveClosure.vo Relations/Compose.vo Programming/Show.vo Programming/Le.vo Programming/Eqv.vo Programming/Extras.vo Programming/Injection.vo Programming/With.vo Recur/GenRec.vo Recur/Measure.vo Recur/Facts.vo Recur/Relation.vo ExtLib.vo ExtLib.vo Tactics.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/ExtLib/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/ExtLib/$i; \
+done
+make[2]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:ext-lib.dev/theories&#39;
+Installing coq:ext-lib.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 2.428 K</p>
+            <ul>
+              <li>184 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadLaws.vo</code></li>
+              <li>154 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/HList.vo</code></li>
+              <li>81 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Sets.vo</code></li>
+              <li>69 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/OptionMonadLaws.vo</code></li>
+              <li>63 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/List.vo</code></li>
+              <li>55 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Set/TwoThreeTrees.vo</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Pair.vo</code></li>
+              <li>50 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Option.vo</code></li>
+              <li>50 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Generic/Ind.vo</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Map/FMapPositive.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Programming/Show.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Map/FMapAList.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/String.vo</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Member.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Map/FMapTwoThreeK.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/Parametric.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/ListFirstnSkipn.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Maps.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Nat.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Generic/Data.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Relations/TransitiveClosure.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/FunctorLaws.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/StateMonad.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Core/Type.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/SumN.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/ReaderMonadLaws.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Vector.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Sum.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Programming/Extras.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/SigT.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Programming/Le.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/WriterMonad.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Programming/With.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Graph/GraphAdjList.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Fin.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/EitherMonad.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/FuelMonadLaws.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Set/ListSet.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/ReaderMonad.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Monad.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Char.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Generic/Func.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Graph/GraphAlgos.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Core/CmpDec.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Foldable.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/OptionMonad.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/Consider.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Core/RelDec.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Tuple.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/ListMonad.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Z.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Eq.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/EqDep.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadFix.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/ListNth.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Programming/Eqv.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Applicative.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Graph/BuildGraph.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Monoid.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Programming/Injection.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/Reify.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Prop.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/FuelMonad.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadWriter.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/PreFun.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/EqDep.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Functor.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/CoFunctor.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/IdentityMonadLaws.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/MonadTac.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Reducible.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Recur/GenRec.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Fun.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadState.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Proper.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadReader.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Positive.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Traversable.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/Cases.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Core/EquivDec.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/BoolTac.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Checked.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadPlus.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/BinOps.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadExc.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/CoMonad.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/Injection.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Graph/Graph.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Recur/Relation.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadCont.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadTrans.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/MonadZero.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/N.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/TypeTac.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/LazyList.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Identity.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Recur/Measure.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/IdentityMonad.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Unit.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Lazy.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Core/Any.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Bool.vo</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Structures/Monads.vo</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/Forward.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Set/SetMap.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Recur/Facts.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Relations/Compose.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Stream.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Tactics/Equality.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/ExtLib.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExtLib/Data/Monads/ContMonad.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:ext-lib/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:ext-lib.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:ext-lib.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>3 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:ext-lib.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:ext-lib.dev] Downloading https://github.com/coq-ext-lib/coq-ext-lib/archive/master.tar.gz
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:ext-lib.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/ExtLib
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
