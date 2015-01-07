@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:ipc dev</a></li>
+              <li class="active"><a href="">2015-01-07 17:10:42</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:ipc
+              <small>
+                dev
+                <span class="label label-success">25 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-07 17:10:42 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-07 17:10:42 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:ipc/coq:contrib:ipc.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:ipc.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:ipc.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:ipc.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:ipc.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --deps-only coq:contrib:ipc.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --verbose coq:contrib:ipc.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>25 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:ipc.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:ipc] Fetching https://gforge.inria.fr/git/coq-contribs/ipc.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:ipc.dev/.git/
+[master (root-commit) 4e53198] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/ipc
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.cvsignore
+AvlTrees.v
+Cons_Counter_Model.v
+Derivable_Def.v
+Derivable_Def_compute_derivations.v
+Derivable_Def_dont_compute_derivations.v
+Derivable_Tools.v
+Derivations.v
+Disjunct.v
+Extr.v
+Forces_Gamma.v
+Forces_NGamma.v
+Forms.v
+In_Gamma.v
+In_NGamma.v
+Kripke_Trees.v
+Le_Ks.v
+Lt_Ks.v
+ML_Int.v
+Make
+Makefile
+Minimal.v
+My_Arith.v
+My_Nth.v
+NDeco_Sound.v
+NMinimal.v
+NRules.v
+NSearch.v
+NSound.v
+NWeight.v
+Normal_Forms.v
+README
+Regular_Avl.v
+Rev_App.v
+Rules.v
+Search.v
+Sound.v
+Trees.v
+Weight.v
+benchmark.ml
+description
+lexer.ml
+parser.ml
+test_formulae.ml
+HEAD is now at 02894bf Revert &quot;Regenerating Makefiles.&quot; We will be able to do so when we have access
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:ipc.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Warning:
+Please now use &quot;-extra[-phony] result deps command&quot; instead of &quot;-custom command deps result&quot;.
+It follows makefile target declaration order and has a clearer semantic.
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;AvlTrees.v&quot; &gt; &quot;AvlTrees.v.d&quot; || ( RV=$?; rm -f &quot;AvlTrees.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Cons_Counter_Model.v&quot; &gt; &quot;Cons_Counter_Model.v.d&quot; || ( RV=$?; rm -f &quot;Cons_Counter_Model.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Derivable_Def_compute_derivations.v&quot; &gt; &quot;Derivable_Def_compute_derivations.v.d&quot; || ( RV=$?; rm -f &quot;Derivable_Def_compute_derivations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Derivable_Def_dont_compute_derivations.v&quot; &gt; &quot;Derivable_Def_dont_compute_derivations.v.d&quot; || ( RV=$?; rm -f &quot;Derivable_Def_dont_compute_derivations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Derivable_Def.v&quot; &gt; &quot;Derivable_Def.v.d&quot; || ( RV=$?; rm -f &quot;Derivable_Def.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Derivable_Tools.v&quot; &gt; &quot;Derivable_Tools.v.d&quot; || ( RV=$?; rm -f &quot;Derivable_Tools.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Derivations.v&quot; &gt; &quot;Derivations.v.d&quot; || ( RV=$?; rm -f &quot;Derivations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Disjunct.v&quot; &gt; &quot;Disjunct.v.d&quot; || ( RV=$?; rm -f &quot;Disjunct.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Extr.v&quot; &gt; &quot;Extr.v.d&quot; || ( RV=$?; rm -f &quot;Extr.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Forces_Gamma.v&quot; &gt; &quot;Forces_Gamma.v.d&quot; || ( RV=$?; rm -f &quot;Forces_Gamma.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Forces_NGamma.v&quot; &gt; &quot;Forces_NGamma.v.d&quot; || ( RV=$?; rm -f &quot;Forces_NGamma.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Forms.v&quot; &gt; &quot;Forms.v.d&quot; || ( RV=$?; rm -f &quot;Forms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;In_Gamma.v&quot; &gt; &quot;In_Gamma.v.d&quot; || ( RV=$?; rm -f &quot;In_Gamma.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;In_NGamma.v&quot; &gt; &quot;In_NGamma.v.d&quot; || ( RV=$?; rm -f &quot;In_NGamma.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Kripke_Trees.v&quot; &gt; &quot;Kripke_Trees.v.d&quot; || ( RV=$?; rm -f &quot;Kripke_Trees.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Le_Ks.v&quot; &gt; &quot;Le_Ks.v.d&quot; || ( RV=$?; rm -f &quot;Le_Ks.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Lt_Ks.v&quot; &gt; &quot;Lt_Ks.v.d&quot; || ( RV=$?; rm -f &quot;Lt_Ks.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Minimal.v&quot; &gt; &quot;Minimal.v.d&quot; || ( RV=$?; rm -f &quot;Minimal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;ML_Int.v&quot; &gt; &quot;ML_Int.v.d&quot; || ( RV=$?; rm -f &quot;ML_Int.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;My_Arith.v&quot; &gt; &quot;My_Arith.v.d&quot; || ( RV=$?; rm -f &quot;My_Arith.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;My_Nth.v&quot; &gt; &quot;My_Nth.v.d&quot; || ( RV=$?; rm -f &quot;My_Nth.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;NDeco_Sound.v&quot; &gt; &quot;NDeco_Sound.v.d&quot; || ( RV=$?; rm -f &quot;NDeco_Sound.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;NMinimal.v&quot; &gt; &quot;NMinimal.v.d&quot; || ( RV=$?; rm -f &quot;NMinimal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Normal_Forms.v&quot; &gt; &quot;Normal_Forms.v.d&quot; || ( RV=$?; rm -f &quot;Normal_Forms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;NRules.v&quot; &gt; &quot;NRules.v.d&quot; || ( RV=$?; rm -f &quot;NRules.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;NSearch.v&quot; &gt; &quot;NSearch.v.d&quot; || ( RV=$?; rm -f &quot;NSearch.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;NSound.v&quot; &gt; &quot;NSound.v.d&quot; || ( RV=$?; rm -f &quot;NSound.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;NWeight.v&quot; &gt; &quot;NWeight.v.d&quot; || ( RV=$?; rm -f &quot;NWeight.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Regular_Avl.v&quot; &gt; &quot;Regular_Avl.v.d&quot; || ( RV=$?; rm -f &quot;Regular_Avl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Rev_App.v&quot; &gt; &quot;Rev_App.v.d&quot; || ( RV=$?; rm -f &quot;Rev_App.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Rules.v&quot; &gt; &quot;Rules.v.d&quot; || ( RV=$?; rm -f &quot;Rules.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Search.v&quot; &gt; &quot;Search.v.d&quot; || ( RV=$?; rm -f &quot;Search.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Sound.v&quot; &gt; &quot;Sound.v.d&quot; || ( RV=$?; rm -f &quot;Sound.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Trees.v&quot; &gt; &quot;Trees.v.d&quot; || ( RV=$?; rm -f &quot;Trees.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; IPC &quot;Weight.v&quot; &gt; &quot;Weight.v.d&quot; || ( RV=$?; rm -f &quot;Weight.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   ML_Int
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   My_Arith
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   My_Nth
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   AvlTrees
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Trees
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Forms
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Derivations
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Normal_Forms
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Derivable_Def_dont_compute_derivations
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Derivable_Def_compute_derivations
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Derivable_Def
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Derivable_Tools
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Kripke_Trees
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Regular_Avl
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   In_NGamma
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   In_Gamma
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Rev_App
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Disjunct
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Le_Ks
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Forces_NGamma
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   NSound
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   NWeight
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Lt_Ks
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Sound
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Forces_Gamma
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   NMinimal
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Minimal
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   NDeco_Sound
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Cons_Counter_Model
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   NRules
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   NSearch
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Rules
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Weight
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Search
+&quot;coqc&quot;  -q  -R &quot;.&quot; IPC   Extr
+Fetching opaque proofs from disk for IPC.Search
+Fetching opaque proofs from disk for IPC.Rules
+Fetching opaque proofs from disk for IPC.NSearch
+Fetching opaque proofs from disk for IPC.NRules
+Fetching opaque proofs from disk for IPC.Cons_Counter_Model
+Fetching opaque proofs from disk for IPC.Lt_Ks
+Fetching opaque proofs from disk for IPC.Le_Ks
+Fetching opaque proofs from disk for IPC.Rev_App
+Fetching opaque proofs from disk for IPC.In_NGamma
+Fetching opaque proofs from disk for IPC.Forms
+Fetching opaque proofs from disk for IPC.AvlTrees
+Fetching opaque proofs from disk for IPC.ML_Int
+/usr/local/bin/ocamlopt -o benchmark search.mli search.ml test_formulae.ml benchmark.ml
+cd &quot;.&quot; &amp;&amp; for i in Weight.vo Trees.vo Sound.vo Search.vo Rules.vo Rev_App.vo Regular_Avl.vo NWeight.vo NSound.vo NSearch.vo NRules.vo Normal_Forms.vo NMinimal.vo NDeco_Sound.vo My_Nth.vo My_Arith.vo ML_Int.vo Minimal.vo Lt_Ks.vo Le_Ks.vo Kripke_Trees.vo In_NGamma.vo In_Gamma.vo Forms.vo Forces_NGamma.vo Forces_Gamma.vo Extr.vo Disjunct.vo Derivations.vo Derivable_Tools.vo Derivable_Def.vo Derivable_Def_dont_compute_derivations.vo Derivable_Def_compute_derivations.vo Cons_Counter_Model.vo AvlTrees.vo   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/IPC/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/IPC/$i; \
+done
+Installing coq:contrib:ipc.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 1.586 K</p>
+            <ul>
+              <li>543 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/AvlTrees.vo</code></li>
+              <li>128 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Derivations.vo</code></li>
+              <li>81 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/In_NGamma.vo</code></li>
+              <li>80 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Le_Ks.vo</code></li>
+              <li>59 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/NRules.vo</code></li>
+              <li>57 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Rules.vo</code></li>
+              <li>48 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Kripke_Trees.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Trees.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Search.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/NDeco_Sound.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/NWeight.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Cons_Counter_Model.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Derivable_Tools.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/NSearch.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Forms.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/My_Nth.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Forces_NGamma.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/NMinimal.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/NSound.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Weight.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/In_Gamma.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Rev_App.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Lt_Ks.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Disjunct.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/My_Arith.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Normal_Forms.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Regular_Avl.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Minimal.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Sound.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Forces_Gamma.vo</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Derivable_Def_compute_derivations.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Extr.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Derivable_Def_dont_compute_derivations.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/ML_Int.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/IPC/Derivable_Def.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:ipc/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:ipc.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:ipc.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:ipc.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:ipc] Fetching https://gforge.inria.fr/git/coq-contribs/ipc.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:ipc.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/IPC
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
