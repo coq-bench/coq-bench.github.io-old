@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.5beta1 / contrib:relation-algebra dev</a></li>
+              <li class="active"><a href="">2015-01-29 00:14:41</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:relation-algebra
+              <small>
+                dev
+                <span class="label label-success">2 m 36 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-29 00:14:41 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-29 00:14:41 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:relation-algebra/coq:contrib:relation-algebra.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:relation-algebra.dev coq.8.5beta1</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.5beta1).
+The following actions will be performed:
+ - install   coq:contrib:relation-algebra.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:relation-algebra.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:relation-algebra.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --deps-only coq:contrib:relation-algebra.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --verbose coq:contrib:relation-algebra.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 m 36 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:relation-algebra.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:relation-algebra] Fetching https://gforge.inria.fr/git/coq-contribs/relation-algebra.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:relation-algebra.dev/.git/
+[master (root-commit) 5cae213] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/relation-algebra
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+CHANGELOG
+COPYING
+COPYING.LESSER
+LICENSE
+Make
+Makefile
+README
+atoms.v
+bmx.v
+boolean.v
+common.v
+comparisons.v
+compiler_opts.v
+denum.v
+deps.sh
+description
+dfa.v
+factors.v
+glang.v
+gregex.v
+imp.v
+index.html
+ka_completeness.v
+kat.v
+kat_completeness.v
+kat_dec.ml
+kat_dec.mli
+kat_reification.ml4
+kat_reification.mllib
+kat_reification.v
+kat_tac.v
+kat_untyping.v
+kleene.v
+lang.v
+lattice.v
+level.v
+lset.v
+lsyntax.v
+matrix.v
+matrix_ext.v
+monoid.v
+move.v
+mrewrite.ml4
+nfa.v
+normalisation.v
+ordinal.v
+pair.v
+paterson.v
+positives.v
+powerfix.v
+prop.v
+ra.png
+ra_common.ml
+ra_fold.ml4
+ra_reification.ml4
+regex.v
+rel.v
+rewriting.v
+rmx.v
+sums.v
+sups.v
+syntax.v
+traces.v
+ugregex.v
+ugregex_dec.v
+untyping.v
+HEAD is now at 59a649b Fixing wrong and ineffective specifications of argument levels in Notation.
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:relation-algebra.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+ocamldep -slash -I &quot;.&quot; &quot;kat_dec.mli&quot; &gt; &quot;kat_dec.mli.d&quot; || ( RV=$?; rm -f &quot;kat_dec.mli.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I &quot;.&quot; &quot;kat_reification.mllib&quot; &gt; &quot;kat_reification.mllib.d&quot; || ( RV=$?; rm -f &quot;kat_reification.mllib.d&quot;; exit ${RV} )
+ocamldep -slash -I &quot;.&quot; &quot;ra_common.ml&quot; &gt; &quot;ra_common.ml.d&quot; || ( RV=$?; rm -f &quot;ra_common.ml.d&quot;; exit ${RV} )
+ocamldep -slash -I &quot;.&quot; &quot;kat_dec.ml&quot; &gt; &quot;kat_dec.ml.d&quot; || ( RV=$?; rm -f &quot;kat_dec.ml.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I &quot;.&quot; &quot;ra_fold.ml4&quot; &gt; &quot;ra_fold.ml4.d&quot; || ( RV=$?; rm -f &quot;ra_fold.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I &quot;.&quot; &quot;mrewrite.ml4&quot; &gt; &quot;mrewrite.ml4.d&quot; || ( RV=$?; rm -f &quot;mrewrite.ml4.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -I &quot;.&quot; &quot;ra_reification.ml4&quot; &gt; &quot;ra_reification.ml4.d&quot; || ( RV=$?; rm -f &quot;ra_reification.ml4.d&quot;; exit ${RV} )
+*** Warning: kat_reification.mllib already found in . (discarding ./kat_reification.mllib)
+&quot;coqdep&quot; -c -I &quot;.&quot; &quot;kat_reification.ml4&quot; &gt; &quot;kat_reification.ml4.d&quot; || ( RV=$?; rm -f &quot;kat_reification.ml4.d&quot;; exit ${RV} )
+*** Warning: ra_fold.ml4 already found in . (discarding ./ra_fold.ml4)
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;common.v&quot; &gt; &quot;common.v.d&quot; || ( RV=$?; rm -f &quot;common.v.d&quot;; exit ${RV} )
+*** Warning: mrewrite.ml4 already found in . (discarding ./mrewrite.ml4)
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;comparisons.v&quot; &gt; &quot;comparisons.v.d&quot; || ( RV=$?; rm -f &quot;comparisons.v.d&quot;; exit ${RV} )
+*** Warning: ra_reification.ml4 already found in . (discarding ./ra_reification.ml4)
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;positives.v&quot; &gt; &quot;positives.v.d&quot; || ( RV=$?; rm -f &quot;positives.v.d&quot;; exit ${RV} )
+*** Warning: kat_reification.ml4 already found in . (discarding ./kat_reification.ml4)
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;ordinal.v&quot; &gt; &quot;ordinal.v.d&quot; || ( RV=$?; rm -f &quot;ordinal.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;denum.v&quot; &gt; &quot;denum.v.d&quot; || ( RV=$?; rm -f &quot;denum.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;pair.v&quot; &gt; &quot;pair.v.d&quot; || ( RV=$?; rm -f &quot;pair.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;powerfix.v&quot; &gt; &quot;powerfix.v.d&quot; || ( RV=$?; rm -f &quot;powerfix.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;level.v&quot; &gt; &quot;level.v.d&quot; || ( RV=$?; rm -f &quot;level.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;lattice.v&quot; &gt; &quot;lattice.v.d&quot; || ( RV=$?; rm -f &quot;lattice.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;monoid.v&quot; &gt; &quot;monoid.v.d&quot; || ( RV=$?; rm -f &quot;monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;kleene.v&quot; &gt; &quot;kleene.v.d&quot; || ( RV=$?; rm -f &quot;kleene.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;factors.v&quot; &gt; &quot;factors.v.d&quot; || ( RV=$?; rm -f &quot;factors.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;kat.v&quot; &gt; &quot;kat.v.d&quot; || ( RV=$?; rm -f &quot;kat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;rewriting.v&quot; &gt; &quot;rewriting.v.d&quot; || ( RV=$?; rm -f &quot;rewriting.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;move.v&quot; &gt; &quot;move.v.d&quot; || ( RV=$?; rm -f &quot;move.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;lsyntax.v&quot; &gt; &quot;lsyntax.v.d&quot; || ( RV=$?; rm -f &quot;lsyntax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;syntax.v&quot; &gt; &quot;syntax.v.d&quot; || ( RV=$?; rm -f &quot;syntax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;normalisation.v&quot; &gt; &quot;normalisation.v.d&quot; || ( RV=$?; rm -f &quot;normalisation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;prop.v&quot; &gt; &quot;prop.v.d&quot; || ( RV=$?; rm -f &quot;prop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;boolean.v&quot; &gt; &quot;boolean.v.d&quot; || ( RV=$?; rm -f &quot;boolean.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;rel.v&quot; &gt; &quot;rel.v.d&quot; || ( RV=$?; rm -f &quot;rel.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;lang.v&quot; &gt; &quot;lang.v.d&quot; || ( RV=$?; rm -f &quot;lang.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;lset.v&quot; &gt; &quot;lset.v.d&quot; || ( RV=$?; rm -f &quot;lset.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;sups.v&quot; &gt; &quot;sups.v.d&quot; || ( RV=$?; rm -f &quot;sups.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;sums.v&quot; &gt; &quot;sums.v.d&quot; || ( RV=$?; rm -f &quot;sums.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;matrix.v&quot; &gt; &quot;matrix.v.d&quot; || ( RV=$?; rm -f &quot;matrix.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;matrix_ext.v&quot; &gt; &quot;matrix_ext.v.d&quot; || ( RV=$?; rm -f &quot;matrix_ext.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;untyping.v&quot; &gt; &quot;untyping.v.d&quot; || ( RV=$?; rm -f &quot;untyping.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;regex.v&quot; &gt; &quot;regex.v.d&quot; || ( RV=$?; rm -f &quot;regex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;rmx.v&quot; &gt; &quot;rmx.v.d&quot; || ( RV=$?; rm -f &quot;rmx.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;bmx.v&quot; &gt; &quot;bmx.v.d&quot; || ( RV=$?; rm -f &quot;bmx.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;dfa.v&quot; &gt; &quot;dfa.v.d&quot; || ( RV=$?; rm -f &quot;dfa.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;nfa.v&quot; &gt; &quot;nfa.v.d&quot; || ( RV=$?; rm -f &quot;nfa.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;ka_completeness.v&quot; &gt; &quot;ka_completeness.v.d&quot; || ( RV=$?; rm -f &quot;ka_completeness.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;atoms.v&quot; &gt; &quot;atoms.v.d&quot; || ( RV=$?; rm -f &quot;atoms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;traces.v&quot; &gt; &quot;traces.v.d&quot; || ( RV=$?; rm -f &quot;traces.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;glang.v&quot; &gt; &quot;glang.v.d&quot; || ( RV=$?; rm -f &quot;glang.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;gregex.v&quot; &gt; &quot;gregex.v.d&quot; || ( RV=$?; rm -f &quot;gregex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;kat_completeness.v&quot; &gt; &quot;kat_completeness.v.d&quot; || ( RV=$?; rm -f &quot;kat_completeness.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;ugregex.v&quot; &gt; &quot;ugregex.v.d&quot; || ( RV=$?; rm -f &quot;ugregex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;ugregex_dec.v&quot; &gt; &quot;ugregex_dec.v.d&quot; || ( RV=$?; rm -f &quot;ugregex_dec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;kat_untyping.v&quot; &gt; &quot;kat_untyping.v.d&quot; || ( RV=$?; rm -f &quot;kat_untyping.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;kat_reification.v&quot; &gt; &quot;kat_reification.v.d&quot; || ( RV=$?; rm -f &quot;kat_reification.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;kat_tac.v&quot; &gt; &quot;kat_tac.v.d&quot; || ( RV=$?; rm -f &quot;kat_tac.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;compiler_opts.v&quot; &gt; &quot;compiler_opts.v.d&quot; || ( RV=$?; rm -f &quot;compiler_opts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;imp.v&quot; &gt; &quot;imp.v.d&quot; || ( RV=$?; rm -f &quot;imp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; RelationAlgebra -I &quot;.&quot; &quot;paterson.v&quot; &gt; &quot;paterson.v.d&quot; || ( RV=$?; rm -f &quot;paterson.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   common
+ocamlc -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 ra_common.ml
+ocamlopt -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 ra_common.ml
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   comparisons
+ocamlc -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 kat_dec.mli
+ocamlc -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl ra_fold.ml4
+ocamlc -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl ra_reification.ml4
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   powerfix
+ocamlc -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl mrewrite.ml4
+ocamlopt -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl mrewrite.ml4
+ocamlc -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 kat_dec.ml
+ocamlc -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl kat_reification.ml4
+ocamlopt -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 kat_dec.ml
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   level
+ocamlopt -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -shared -o ra_common.cmxs ra_common.cmx
+ocamlopt -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl ra_fold.ml4
+ocamlopt -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl ra_reification.ml4
+ocamlopt -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -shared -o mrewrite.cmxs mrewrite.cmx
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   ordinal
+ocamlc -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -a -o kat_reification.cma kat_dec.cmo kat_reification.cmo
+ocamlopt -c -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -pp &#39;camlp5o -I /usr/local/lib/ocaml/ -I /usr/local/lib/ocaml/threads/ -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; compat5.cmo pa_extend.cmo q_MLast.cmo pa_macro.cmo unix.cma threads.cma grammar.cma -loc loc -impl&#39; -impl kat_reification.ml4
+ocamlopt -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -shared -o ra_fold.cmxs ra_fold.cmx
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   positives
+ocamlopt -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -shared -o ra_reification.cmxs ra_reification.cmx
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   lattice
+ocamlopt -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -a -o kat_reification.cmxa kat_dec.cmx kat_reification.cmx
+ocamlopt -rectypes -thread  -I &quot;.&quot; -I &quot;/home/bench/.opam/system/lib/coq/kernel&quot; -I &quot;/home/bench/.opam/system/lib/coq/lib&quot; -I &quot;/home/bench/.opam/system/lib/coq/library&quot; -I &quot;/home/bench/.opam/system/lib/coq/parsing&quot; -I &quot;/home/bench/.opam/system/lib/coq/pretyping&quot; -I &quot;/home/bench/.opam/system/lib/coq/interp&quot; -I &quot;/home/bench/.opam/system/lib/coq/printing&quot; -I &quot;/home/bench/.opam/system/lib/coq/intf&quot; -I &quot;/home/bench/.opam/system/lib/coq/proofs&quot; -I &quot;/home/bench/.opam/system/lib/coq/tactics&quot; -I &quot;/home/bench/.opam/system/lib/coq/tools&quot; -I &quot;/home/bench/.opam/system/lib/coq/toplevel&quot; -I &quot;/home/bench/.opam/system/lib/coq/stm&quot; -I &quot;/home/bench/.opam/system/lib/coq/grammar&quot; -I &quot;/home/bench/.opam/system/lib/coq/config&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/btauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/cc&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/decl_mode&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/derive&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/extraction&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/firstorder&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/fourier&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/funind&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/micromega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/nsatz&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/omega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/quote&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/romega&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/rtauto&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/setoid_ring&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/syntax&quot; -I &quot;/home/bench/.opam/system/lib/coq//plugins/xml&quot; -I /home/bench/.opam/system/lib/camlp5 -linkall -shared -o kat_reification.cmxs kat_reification.cmxa
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   denum
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   pair
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   monoid
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   prop
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   lset
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   sups
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   lsyntax
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   kleene
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   syntax
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   rewriting
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   boolean
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   sums
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   traces
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   atoms
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   lang
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   factors
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   kat
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   glang
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   rel
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   ugregex
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   gregex
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   ugregex_dec
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   normalisation
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   untyping
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   kat_reification
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   kat_untyping
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   matrix
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   regex
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   matrix_ext
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   bmx
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   dfa
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   rmx
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   nfa
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   ka_completeness
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   kat_completeness
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   kat_tac
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   move
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   imp
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   compiler_opts
+&quot;coqc&quot;  -q  -R &quot;.&quot; RelationAlgebra -I &quot;.&quot;   paterson
+cd &quot;.&quot; &amp;&amp; for i in ra_reification.cmxs mrewrite.cmxs ra_fold.cmxs ra_common.cmxs kat_reification.cmxs; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/RelationAlgebra/$i`&quot;; \
+ install -m 0755 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/RelationAlgebra/$i; \
+done
+cd &quot;.&quot; &amp;&amp; for i in paterson.vo imp.vo compiler_opts.vo kat_tac.vo kat_reification.vo kat_untyping.vo ugregex_dec.vo ugregex.vo kat_completeness.vo gregex.vo glang.vo traces.vo atoms.vo ka_completeness.vo nfa.vo dfa.vo bmx.vo rmx.vo regex.vo untyping.vo matrix_ext.vo matrix.vo sums.vo sups.vo lset.vo lang.vo rel.vo boolean.vo prop.vo normalisation.vo syntax.vo lsyntax.vo move.vo rewriting.vo kat.vo factors.vo kleene.vo monoid.vo lattice.vo level.vo powerfix.vo pair.vo denum.vo ordinal.vo positives.vo comparisons.vo common.vo paterson.v imp.v compiler_opts.v kat_tac.v kat_reification.v kat_untyping.v ugregex_dec.v ugregex.v kat_completeness.v gregex.v glang.v traces.v atoms.v ka_completeness.v nfa.v dfa.v bmx.v rmx.v regex.v untyping.v matrix_ext.v matrix.v sums.v sups.v lset.v lang.v rel.v boolean.v prop.v normalisation.v syntax.v lsyntax.v move.v rewriting.v kat.v factors.v kleene.v monoid.v lattice.v level.v powerfix.v pair.v denum.v ordinal.v positives.v comparisons.v common.v paterson.glob imp.glob compiler_opts.glob kat_tac.glob kat_reification.glob kat_untyping.glob ugregex_dec.glob ugregex.glob kat_completeness.glob gregex.glob glang.glob traces.glob atoms.glob ka_completeness.glob nfa.glob dfa.glob bmx.glob rmx.glob regex.glob untyping.glob matrix_ext.glob matrix.glob sums.glob sups.glob lset.glob lang.glob rel.glob boolean.glob prop.glob normalisation.glob syntax.glob lsyntax.glob move.glob rewriting.glob kat.glob factors.glob kleene.glob monoid.glob lattice.glob level.glob powerfix.glob pair.glob denum.glob ordinal.glob positives.glob comparisons.glob common.glob  ./.coq-native/NRelationAlgebra_paterson.cmi  ./.coq-native/NRelationAlgebra_imp.cmi  ./.coq-native/NRelationAlgebra_compiler_opts.cmi  ./.coq-native/NRelationAlgebra_kat_tac.cmi  ./.coq-native/NRelationAlgebra_kat_reification.cmi  ./.coq-native/NRelationAlgebra_kat_untyping.cmi  ./.coq-native/NRelationAlgebra_ugregex_dec.cmi  ./.coq-native/NRelationAlgebra_ugregex.cmi  ./.coq-native/NRelationAlgebra_kat_completeness.cmi  ./.coq-native/NRelationAlgebra_gregex.cmi  ./.coq-native/NRelationAlgebra_glang.cmi  ./.coq-native/NRelationAlgebra_traces.cmi  ./.coq-native/NRelationAlgebra_atoms.cmi  ./.coq-native/NRelationAlgebra_ka_completeness.cmi  ./.coq-native/NRelationAlgebra_nfa.cmi  ./.coq-native/NRelationAlgebra_dfa.cmi  ./.coq-native/NRelationAlgebra_bmx.cmi  ./.coq-native/NRelationAlgebra_rmx.cmi  ./.coq-native/NRelationAlgebra_regex.cmi  ./.coq-native/NRelationAlgebra_untyping.cmi  ./.coq-native/NRelationAlgebra_matrix_ext.cmi  ./.coq-native/NRelationAlgebra_matrix.cmi  ./.coq-native/NRelationAlgebra_sums.cmi  ./.coq-native/NRelationAlgebra_sups.cmi  ./.coq-native/NRelationAlgebra_lset.cmi  ./.coq-native/NRelationAlgebra_lang.cmi  ./.coq-native/NRelationAlgebra_rel.cmi  ./.coq-native/NRelationAlgebra_boolean.cmi  ./.coq-native/NRelationAlgebra_prop.cmi  ./.coq-native/NRelationAlgebra_normalisation.cmi  ./.coq-native/NRelationAlgebra_syntax.cmi  ./.coq-native/NRelationAlgebra_lsyntax.cmi  ./.coq-native/NRelationAlgebra_move.cmi  ./.coq-native/NRelationAlgebra_rewriting.cmi  ./.coq-native/NRelationAlgebra_kat.cmi  ./.coq-native/NRelationAlgebra_factors.cmi  ./.coq-native/NRelationAlgebra_kleene.cmi  ./.coq-native/NRelationAlgebra_monoid.cmi  ./.coq-native/NRelationAlgebra_lattice.cmi  ./.coq-native/NRelationAlgebra_level.cmi  ./.coq-native/NRelationAlgebra_powerfix.cmi  ./.coq-native/NRelationAlgebra_pair.cmi  ./.coq-native/NRelationAlgebra_denum.cmi  ./.coq-native/NRelationAlgebra_ordinal.cmi  ./.coq-native/NRelationAlgebra_positives.cmi  ./.coq-native/NRelationAlgebra_comparisons.cmi  ./.coq-native/NRelationAlgebra_common.cmi                                                                                                ./.coq-native/NRelationAlgebra_paterson.cmx  ./.coq-native/NRelationAlgebra_imp.cmx  ./.coq-native/NRelationAlgebra_compiler_opts.cmx  ./.coq-native/NRelationAlgebra_kat_tac.cmx  ./.coq-native/NRelationAlgebra_kat_reification.cmx  ./.coq-native/NRelationAlgebra_kat_untyping.cmx  ./.coq-native/NRelationAlgebra_ugregex_dec.cmx  ./.coq-native/NRelationAlgebra_ugregex.cmx  ./.coq-native/NRelationAlgebra_kat_completeness.cmx  ./.coq-native/NRelationAlgebra_gregex.cmx  ./.coq-native/NRelationAlgebra_glang.cmx  ./.coq-native/NRelationAlgebra_traces.cmx  ./.coq-native/NRelationAlgebra_atoms.cmx  ./.coq-native/NRelationAlgebra_ka_completeness.cmx  ./.coq-native/NRelationAlgebra_nfa.cmx  ./.coq-native/NRelationAlgebra_dfa.cmx  ./.coq-native/NRelationAlgebra_bmx.cmx  ./.coq-native/NRelationAlgebra_rmx.cmx  ./.coq-native/NRelationAlgebra_regex.cmx  ./.coq-native/NRelationAlgebra_untyping.cmx  ./.coq-native/NRelationAlgebra_matrix_ext.cmx  ./.coq-native/NRelationAlgebra_matrix.cmx  ./.coq-native/NRelationAlgebra_sums.cmx  ./.coq-native/NRelationAlgebra_sups.cmx  ./.coq-native/NRelationAlgebra_lset.cmx  ./.coq-native/NRelationAlgebra_lang.cmx  ./.coq-native/NRelationAlgebra_rel.cmx  ./.coq-native/NRelationAlgebra_boolean.cmx  ./.coq-native/NRelationAlgebra_prop.cmx  ./.coq-native/NRelationAlgebra_normalisation.cmx  ./.coq-native/NRelationAlgebra_syntax.cmx  ./.coq-native/NRelationAlgebra_lsyntax.cmx  ./.coq-native/NRelationAlgebra_move.cmx  ./.coq-native/NRelationAlgebra_rewriting.cmx  ./.coq-native/NRelationAlgebra_kat.cmx  ./.coq-native/NRelationAlgebra_factors.cmx  ./.coq-native/NRelationAlgebra_kleene.cmx  ./.coq-native/NRelationAlgebra_monoid.cmx  ./.coq-native/NRelationAlgebra_lattice.cmx  ./.coq-native/NRelationAlgebra_level.cmx  ./.coq-native/NRelationAlgebra_powerfix.cmx  ./.coq-native/NRelationAlgebra_pair.cmx  ./.coq-native/NRelationAlgebra_denum.cmx  ./.coq-native/NRelationAlgebra_ordinal.cmx  ./.coq-native/NRelationAlgebra_positives.cmx  ./.coq-native/NRelationAlgebra_comparisons.cmx  ./.coq-native/NRelationAlgebra_common.cmx  ./.coq-native/NRelationAlgebra_paterson.cmxs  ./.coq-native/NRelationAlgebra_imp.cmxs  ./.coq-native/NRelationAlgebra_compiler_opts.cmxs  ./.coq-native/NRelationAlgebra_kat_tac.cmxs  ./.coq-native/NRelationAlgebra_kat_reification.cmxs  ./.coq-native/NRelationAlgebra_kat_untyping.cmxs  ./.coq-native/NRelationAlgebra_ugregex_dec.cmxs  ./.coq-native/NRelationAlgebra_ugregex.cmxs  ./.coq-native/NRelationAlgebra_kat_completeness.cmxs  ./.coq-native/NRelationAlgebra_gregex.cmxs  ./.coq-native/NRelationAlgebra_glang.cmxs  ./.coq-native/NRelationAlgebra_traces.cmxs  ./.coq-native/NRelationAlgebra_atoms.cmxs  ./.coq-native/NRelationAlgebra_ka_completeness.cmxs  ./.coq-native/NRelationAlgebra_nfa.cmxs  ./.coq-native/NRelationAlgebra_dfa.cmxs  ./.coq-native/NRelationAlgebra_bmx.cmxs  ./.coq-native/NRelationAlgebra_rmx.cmxs  ./.coq-native/NRelationAlgebra_regex.cmxs  ./.coq-native/NRelationAlgebra_untyping.cmxs  ./.coq-native/NRelationAlgebra_matrix_ext.cmxs  ./.coq-native/NRelationAlgebra_matrix.cmxs  ./.coq-native/NRelationAlgebra_sums.cmxs  ./.coq-native/NRelationAlgebra_sups.cmxs  ./.coq-native/NRelationAlgebra_lset.cmxs  ./.coq-native/NRelationAlgebra_lang.cmxs  ./.coq-native/NRelationAlgebra_rel.cmxs  ./.coq-native/NRelationAlgebra_boolean.cmxs  ./.coq-native/NRelationAlgebra_prop.cmxs  ./.coq-native/NRelationAlgebra_normalisation.cmxs  ./.coq-native/NRelationAlgebra_syntax.cmxs  ./.coq-native/NRelationAlgebra_lsyntax.cmxs  ./.coq-native/NRelationAlgebra_move.cmxs  ./.coq-native/NRelationAlgebra_rewriting.cmxs  ./.coq-native/NRelationAlgebra_kat.cmxs  ./.coq-native/NRelationAlgebra_factors.cmxs  ./.coq-native/NRelationAlgebra_kleene.cmxs  ./.coq-native/NRelationAlgebra_monoid.cmxs  ./.coq-native/NRelationAlgebra_lattice.cmxs  ./.coq-native/NRelationAlgebra_level.cmxs  ./.coq-native/NRelationAlgebra_powerfix.cmxs  ./.coq-native/NRelationAlgebra_pair.cmxs  ./.coq-native/NRelationAlgebra_denum.cmxs  ./.coq-native/NRelationAlgebra_ordinal.cmxs  ./.coq-native/NRelationAlgebra_positives.cmxs  ./.coq-native/NRelationAlgebra_comparisons.cmxs  ./.coq-native/NRelationAlgebra_common.cmxs ra_reification.cmo mrewrite.cmo ra_fold.cmo ra_common.cmo kat_dec.cmi kat_reification.cmi mrewrite.cmi ra_common.cmi ra_fold.cmi ra_reification.cmi kat_reification.cma; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/RelationAlgebra/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/RelationAlgebra/$i; \
+done
+Installing coq:contrib:relation-algebra.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 8,065 K</p>
+            <ul>
+              <li>471 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_completeness.vo</code></li>
+              <li>446 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/normalisation.vo</code></li>
+              <li>444 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/untyping.vo</code></li>
+              <li>343 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/paterson.vo</code></li>
+              <li>341 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_completeness.glob</code></li>
+              <li>230 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/compiler_opts.vo</code></li>
+              <li>193 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/monoid.vo</code></li>
+              <li>192 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/matrix.glob</code></li>
+              <li>182 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/traces.vo</code></li>
+              <li>178 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/matrix.vo</code></li>
+              <li>163 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/paterson.glob</code></li>
+              <li>148 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_reification.cmxs</code></li>
+              <li>146 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/syntax.vo</code></li>
+              <li>137 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/normalisation.glob</code></li>
+              <li>133 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_common.cmxs</code></li>
+              <li>123 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/regex.vo</code></li>
+              <li>120 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/untyping.glob</code></li>
+              <li>120 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lattice.vo</code></li>
+              <li>118 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/monoid.glob</code></li>
+              <li>114 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ugregex_dec.vo</code></li>
+              <li>113 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/regex.glob</code></li>
+              <li>104 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/atoms.glob</code></li>
+              <li>99 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ka_completeness.glob</code></li>
+              <li>93 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rmx.vo</code></li>
+              <li>92 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_fold.cmxs</code></li>
+              <li>88 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ka_completeness.vo</code></li>
+              <li>86 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lattice.glob</code></li>
+              <li>77 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/traces.glob</code></li>
+              <li>75 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ugregex_dec.glob</code></li>
+              <li>75 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/matrix_ext.glob</code></li>
+              <li>73 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/imp.vo</code></li>
+              <li>73 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/compiler_opts.glob</code></li>
+              <li>68 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/matrix_ext.vo</code></li>
+              <li>66 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ordinal.vo</code></li>
+              <li>65 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/gregex.vo</code></li>
+              <li>64 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_reification.cmxs</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rmx.glob</code></li>
+              <li>59 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_reification.vo</code></li>
+              <li>57 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kleene.vo</code></li>
+              <li>57 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ugregex.vo</code></li>
+              <li>56 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kleene.glob</code></li>
+              <li>55 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/nfa.vo</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/sups.vo</code></li>
+              <li>52 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/mrewrite.cmxs</code></li>
+              <li>49 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/comparisons.vo</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/syntax.glob</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lang.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ordinal.glob</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_tac.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/atoms.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/move.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/level.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ugregex.glob</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lsyntax.vo</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/nfa.glob</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/glang.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/dfa.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rel.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/sups.glob</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_completeness.v</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_reification.cma</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/level.glob</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/bmx.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lset.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/boolean.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/imp.glob</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/pair.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/comparisons.glob</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_reification.glob</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/untyping.v</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/normalisation.v</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_tac.glob</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/gregex.glob</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_common.cmi</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_untyping.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rewriting.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/traces.v</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rewriting.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/matrix.v</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_fold.cmo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/dfa.glob</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lattice.v</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/monoid.v</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/paterson.v</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/positives.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_common.cmo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/denum.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/move.glob</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ka_completeness.v</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/bmx.glob</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/factors.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/regex.v</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lang.glob</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lsyntax.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_reification.cmo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/syntax.v</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ugregex_dec.v</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/factors.glob</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rel.glob</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/mrewrite.cmo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ordinal.v</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lset.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/common.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_untyping.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/pair.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/sums.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/glang.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/boolean.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rmx.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_reification.cmi</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/powerfix.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_tac.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/imp.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_reification.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/matrix_ext.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ugregex.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/gregex.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/powerfix.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/common.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/comparisons.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/sups.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/denum.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kleene.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/mrewrite.cmi</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_reification.cmi</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/prop.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lang.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/atoms.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/nfa.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lsyntax.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/compiler_opts.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/dfa.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/level.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rewriting.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/positives.glob</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/sums.glob</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/ra_fold.cmi</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/rel.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/lset.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/glang.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/boolean.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/bmx.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/common.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/pair.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/move.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/powerfix.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_untyping.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/denum.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/positives.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/factors.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/prop.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/sums.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/prop.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra/kat_dec.cmi</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:relation-algebra/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:relation-algebra.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:relation-algebra.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:relation-algebra.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:relation-algebra] Fetching https://gforge.inria.fr/git/coq-contribs/relation-algebra.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:relation-algebra.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/RelationAlgebra
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

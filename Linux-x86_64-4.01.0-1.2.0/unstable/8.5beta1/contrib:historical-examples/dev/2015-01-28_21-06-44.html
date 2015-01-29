@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.5beta1 / contrib:historical-examples dev</a></li>
+              <li class="active"><a href="">2015-01-28 21:06:44</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:historical-examples
+              <small>
+                dev
+                <span class="label label-success">4 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-28 21:06:44 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-28 21:06:44 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:historical-examples/coq:contrib:historical-examples.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:historical-examples.dev coq.8.5beta1</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.5beta1).
+The following actions will be performed:
+ - install   coq:contrib:historical-examples.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:historical-examples.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:historical-examples.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --deps-only coq:contrib:historical-examples.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; opam install -y --verbose coq:contrib:historical-examples.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>4 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:historical-examples.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:historical-examples] Fetching https://gforge.inria.fr/git/coq-contribs/historical-examples.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:historical-examples.dev/.git/
+[master (root-commit) 096358f] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/historical-examples
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+Base.v
+Format.v
+FormatCIC.v
+LICENSE
+Make
+Makefile
+Manna.v
+MannaCIC.v
+Newman.v
+Rstar.v
+Tarski.v
+description
+HEAD is now at 0fd6243 Revert &quot;Regenerating Makefiles.&quot; We will be able to do so when we have access
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:historical-examples.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Warning:
+Please now use &quot;-arg -impredicative-set&quot; instead of &quot;-impredicative-set&quot; alone to be more uniform.
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;Base.v&quot; &gt; &quot;Base.v.d&quot; || ( RV=$?; rm -f &quot;Base.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;FormatCIC.v&quot; &gt; &quot;FormatCIC.v.d&quot; || ( RV=$?; rm -f &quot;FormatCIC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;Format.v&quot; &gt; &quot;Format.v.d&quot; || ( RV=$?; rm -f &quot;Format.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;MannaCIC.v&quot; &gt; &quot;MannaCIC.v.d&quot; || ( RV=$?; rm -f &quot;MannaCIC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;Manna.v&quot; &gt; &quot;Manna.v.d&quot; || ( RV=$?; rm -f &quot;Manna.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;Newman.v&quot; &gt; &quot;Newman.v.d&quot; || ( RV=$?; rm -f &quot;Newman.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;Rstar.v&quot; &gt; &quot;Rstar.v.d&quot; || ( RV=$?; rm -f &quot;Rstar.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; HistoricalExamples &quot;Tarski.v&quot; &gt; &quot;Tarski.v.d&quot; || ( RV=$?; rm -f &quot;Tarski.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  Tarski
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  Rstar
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  Base
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  MannaCIC
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  FormatCIC
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  Newman
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  Manna
+&quot;coqc&quot;  -q  -R &quot;.&quot; HistoricalExamples -impredicative-set  Format
+cd &quot;.&quot; &amp;&amp; for i in Tarski.vo Rstar.vo Newman.vo Manna.vo MannaCIC.vo Format.vo FormatCIC.vo Base.vo Tarski.v Rstar.v Newman.v Manna.v MannaCIC.v Format.v FormatCIC.v Base.v Tarski.glob Rstar.glob Newman.glob Manna.glob MannaCIC.glob Format.glob FormatCIC.glob Base.glob  ./.coq-native/NHistoricalExamples_Tarski.cmi  ./.coq-native/NHistoricalExamples_Rstar.cmi  ./.coq-native/NHistoricalExamples_Newman.cmi  ./.coq-native/NHistoricalExamples_Manna.cmi  ./.coq-native/NHistoricalExamples_MannaCIC.cmi  ./.coq-native/NHistoricalExamples_Format.cmi  ./.coq-native/NHistoricalExamples_FormatCIC.cmi  ./.coq-native/NHistoricalExamples_Base.cmi                  ./.coq-native/NHistoricalExamples_Tarski.cmx  ./.coq-native/NHistoricalExamples_Rstar.cmx  ./.coq-native/NHistoricalExamples_Newman.cmx  ./.coq-native/NHistoricalExamples_Manna.cmx  ./.coq-native/NHistoricalExamples_MannaCIC.cmx  ./.coq-native/NHistoricalExamples_Format.cmx  ./.coq-native/NHistoricalExamples_FormatCIC.cmx  ./.coq-native/NHistoricalExamples_Base.cmx  ./.coq-native/NHistoricalExamples_Tarski.cmxs  ./.coq-native/NHistoricalExamples_Rstar.cmxs  ./.coq-native/NHistoricalExamples_Newman.cmxs  ./.coq-native/NHistoricalExamples_Manna.cmxs  ./.coq-native/NHistoricalExamples_MannaCIC.cmxs  ./.coq-native/NHistoricalExamples_Format.cmxs  ./.coq-native/NHistoricalExamples_FormatCIC.cmxs  ./.coq-native/NHistoricalExamples_Base.cmxs   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/HistoricalExamples/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/HistoricalExamples/$i; \
+done
+Installing coq:contrib:historical-examples.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 518 K</p>
+            <ul>
+              <li>83 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Format.glob</code></li>
+              <li>68 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Manna.glob</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/FormatCIC.glob</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/FormatCIC.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/MannaCIC.glob</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Format.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/MannaCIC.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Manna.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Base.glob</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Format.v</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Newman.glob</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Rstar.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Tarski.glob</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Manna.v</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/FormatCIC.v</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Base.vo</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/MannaCIC.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Tarski.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Newman.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Rstar.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Base.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Newman.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Tarski.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples/Rstar.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:historical-examples/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:historical-examples.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:historical-examples.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:historical-examples.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:historical-examples] Fetching https://gforge.inria.fr/git/coq-contribs/historical-examples.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:historical-examples.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/HistoricalExamples
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
