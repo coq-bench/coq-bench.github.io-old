@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4pl4 / contrib:concat 8.4.dev</a></li>
+              <li class="active"><a href="">2015-01-30 06:22:40</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:concat
+              <small>
+                8.4.dev
+                <span class="label label-success">10 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-30 06:22:40 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-30 06:22:40 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:concat/coq:contrib:concat.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:concat.8.4.dev coq.8.4pl4</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4pl4).
+The following actions will be performed:
+ - install   coq:contrib:concat.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:concat.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:concat.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:contrib:concat.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:contrib:concat.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>10 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:concat.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:concat] Fetching https://gforge.inria.fr/git/coq-contribs/concat.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:concat.8.4.dev/.git/
+[master (root-commit) dbea955] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/concat
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+CATEGORY_THEORY/ADJUNCTION/Adj_FunFreeMon.v
+CATEGORY_THEORY/ADJUNCTION/Adj_UA.v
+CATEGORY_THEORY/ADJUNCTION/Adjunction.v
+CATEGORY_THEORY/ADJUNCTION/Adjunction1.v
+CATEGORY_THEORY/ADJUNCTION/CCC/CCC1.v
+CATEGORY_THEORY/ADJUNCTION/CCC/Cartesian1.v
+CATEGORY_THEORY/ADJUNCTION/CCC/Diagonal.v
+CATEGORY_THEORY/ADJUNCTION/CCC/FunOne.v
+CATEGORY_THEORY/ADJUNCTION/CCC/FunProd.v
+CATEGORY_THEORY/ADJUNCTION/CCC/Terminal1.v
+CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part1.v
+CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof1.v
+CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof2.v
+CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_SSC2.v
+CATEGORY_THEORY/ADJUNCTION/HomFunctor2.v
+CATEGORY_THEORY/ADJUNCTION/LeftAdj_Iso.v
+CATEGORY_THEORY/ADJUNCTION/Limit_Adj.v
+CATEGORY_THEORY/ADJUNCTION/Th_Adjoint.v
+CATEGORY_THEORY/ADJUNCTION/Th_CoAdjoint.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Binary_Products.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CCC.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CatProperty.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Equalizers.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Exponents.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Products.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Pullbacks.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SETProperty.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_BinProds.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_CCC.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Equalizer.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Exponents.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Pullback.v
+CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Terminal.v
+CATEGORY_THEORY/CATEGORY/Category.v
+CATEGORY_THEORY/CATEGORY/Dual.v
+CATEGORY_THEORY/CATEGORY/FullSubCat.v
+CATEGORY_THEORY/CATEGORY/Hom_Equality.v
+CATEGORY_THEORY/CATEGORY/MON.v
+CATEGORY_THEORY/CATEGORY/ONE.v
+CATEGORY_THEORY/CATEGORY/PROD.v
+CATEGORY_THEORY/CATEGORY/PermCat.v
+CATEGORY_THEORY/CATEGORY/SET.v
+CATEGORY_THEORY/FUNCTOR/CAT.v
+CATEGORY_THEORY/FUNCTOR/Category_dup1.v
+CATEGORY_THEORY/FUNCTOR/Comma.v
+CATEGORY_THEORY/FUNCTOR/Comma_proj.v
+CATEGORY_THEORY/FUNCTOR/Dual_Functor.v
+CATEGORY_THEORY/FUNCTOR/FSC_inc.v
+CATEGORY_THEORY/FUNCTOR/FunForget.v
+CATEGORY_THEORY/FUNCTOR/FunFreeMon.v
+CATEGORY_THEORY/FUNCTOR/Functor.v
+CATEGORY_THEORY/FUNCTOR/FunctorProperty.v
+CATEGORY_THEORY/FUNCTOR/HomFunctor.v
+CATEGORY_THEORY/FUNCTOR/IdCAT.v
+CATEGORY_THEORY/FUNCTOR/PROD_proj.v
+CATEGORY_THEORY/FUNCTOR/Setoid_dup1.v
+CATEGORY_THEORY/LIMITS/CoLimit.v
+CATEGORY_THEORY/LIMITS/CoUniversalArrow.v
+CATEGORY_THEORY/LIMITS/Comma_UA.v
+CATEGORY_THEORY/LIMITS/Const.v
+CATEGORY_THEORY/LIMITS/Discr.v
+CATEGORY_THEORY/LIMITS/Equalizers1.v
+CATEGORY_THEORY/LIMITS/FunForget_UA.v
+CATEGORY_THEORY/LIMITS/Iso_Limit.v
+CATEGORY_THEORY/LIMITS/Limit.v
+CATEGORY_THEORY/LIMITS/PA.v
+CATEGORY_THEORY/LIMITS/PULB.v
+CATEGORY_THEORY/LIMITS/Products1.v
+CATEGORY_THEORY/LIMITS/Pullbacks1.v
+CATEGORY_THEORY/LIMITS/UniversalArrow.v
+CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Comma_Complete.v
+CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/HomFunctor_Continuous.v
+CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Pres_Limits.v
+CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/SET_Complete.v
+CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Initial.v
+CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Limits.v
+CATEGORY_THEORY/NT/CatFunct.v
+CATEGORY_THEORY/NT/Category_dup2.v
+CATEGORY_THEORY/NT/HomFunctor_NT.v
+CATEGORY_THEORY/NT/InterChangeLaw.v
+CATEGORY_THEORY/NT/NatIso.v
+CATEGORY_THEORY/NT/Ntransformation.v
+CATEGORY_THEORY/NT/Setoid_dup2.v
+CATEGORY_THEORY/NT/YONEDA_LEMMA/Functor_dup1.v
+CATEGORY_THEORY/NT/YONEDA_LEMMA/Map0_dup1.v
+CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaEmbedding.v
+CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaLemma.v
+LICENSE
+Make
+Makefile
+RELATIONS/CONFLUENCE/Coherence.v
+RELATIONS/CONFLUENCE/Confluence.v
+RELATIONS/CONFLUENCE/NEWMAN/Newman.v
+RELATIONS/CONFLUENCE/NEWMAN/depend
+RELATIONS/CONFLUENCE/TAIT/Tait.v
+RELATIONS/CONFLUENCE/TAIT/depend
+RELATIONS/CONFLUENCE/depend
+RELATIONS/Noetherian.v
+RELATIONS/Relations.v
+SETOID/BasicTypes.v
+SETOID/Map.v
+SETOID/Map2.v
+SETOID/MapProperty.v
+SETOID/STRUCTURE/FreeMonoid.v
+SETOID/STRUCTURE/Group.v
+SETOID/STRUCTURE/Inverses_Group.v
+SETOID/STRUCTURE/Monoid.v
+SETOID/Setoid.v
+SETOID/SetoidPROD.v
+SETOID/Setoid_prop.v
+SETOID/Single.v
+bench.log
+description
+docCatV6.ps
+table-des-matieres
+HEAD is now at 55c2111 Sauvegarde des bench.log
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:concat.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+coqdep -c -slash -R . ConCaT &quot;SETOID/MapProperty.v&quot; &gt; &quot;SETOID/MapProperty.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/MapProperty.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/Map.v&quot; &gt; &quot;SETOID/Map.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/Map.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/STRUCTURE/FreeMonoid.v&quot; &gt; &quot;SETOID/STRUCTURE/FreeMonoid.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/STRUCTURE/FreeMonoid.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/STRUCTURE/Inverses_Group.v&quot; &gt; &quot;SETOID/STRUCTURE/Inverses_Group.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/STRUCTURE/Inverses_Group.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/STRUCTURE/Monoid.v&quot; &gt; &quot;SETOID/STRUCTURE/Monoid.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/STRUCTURE/Monoid.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/STRUCTURE/Group.v&quot; &gt; &quot;SETOID/STRUCTURE/Group.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/STRUCTURE/Group.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/Map2.v&quot; &gt; &quot;SETOID/Map2.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/Map2.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/Single.v&quot; &gt; &quot;SETOID/Single.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/Single.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/Setoid_prop.v&quot; &gt; &quot;SETOID/Setoid_prop.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/Setoid_prop.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/BasicTypes.v&quot; &gt; &quot;SETOID/BasicTypes.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/BasicTypes.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/Setoid.v&quot; &gt; &quot;SETOID/Setoid.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/Setoid.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;SETOID/SetoidPROD.v&quot; &gt; &quot;SETOID/SetoidPROD.v.d&quot; || ( RV=$?; rm -f &quot;SETOID/SetoidPROD.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/Category_dup2.v&quot; &gt; &quot;CATEGORY_THEORY/NT/Category_dup2.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/Category_dup2.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/InterChangeLaw.v&quot; &gt; &quot;CATEGORY_THEORY/NT/InterChangeLaw.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/InterChangeLaw.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/Setoid_dup2.v&quot; &gt; &quot;CATEGORY_THEORY/NT/Setoid_dup2.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/Setoid_dup2.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/HomFunctor_NT.v&quot; &gt; &quot;CATEGORY_THEORY/NT/HomFunctor_NT.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/HomFunctor_NT.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/Ntransformation.v&quot; &gt; &quot;CATEGORY_THEORY/NT/Ntransformation.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/Ntransformation.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/NatIso.v&quot; &gt; &quot;CATEGORY_THEORY/NT/NatIso.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/NatIso.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaEmbedding.v&quot; &gt; &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaEmbedding.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaEmbedding.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/Functor_dup1.v&quot; &gt; &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/Functor_dup1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/Functor_dup1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/Map0_dup1.v&quot; &gt; &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/Map0_dup1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/Map0_dup1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaLemma.v&quot; &gt; &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaLemma.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaLemma.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/NT/CatFunct.v&quot; &gt; &quot;CATEGORY_THEORY/NT/CatFunct.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/NT/CatFunct.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/MON.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/MON.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/MON.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/Dual.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/Dual.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/Dual.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/ONE.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/ONE.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/ONE.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/FullSubCat.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/FullSubCat.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/FullSubCat.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/PROD.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/PROD.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/PROD.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/Hom_Equality.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/Hom_Equality.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/Hom_Equality.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/PermCat.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/PermCat.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/PermCat.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/Category.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/Category.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/Category.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Products.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Products.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Products.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Pullbacks.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Pullbacks.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Pullbacks.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Exponents.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Exponents.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Exponents.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Equalizers.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Equalizers.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Equalizers.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Terminal.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Terminal.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Terminal.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Equalizer.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Equalizer.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Equalizer.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CCC.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CCC.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CCC.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_CCC.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_CCC.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_CCC.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_BinProds.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_BinProds.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_BinProds.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SETProperty.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SETProperty.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SETProperty.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Binary_Products.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Binary_Products.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Binary_Products.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Pullback.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Pullback.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Pullback.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Exponents.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Exponents.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Exponents.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CatProperty.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CatProperty.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CatProperty.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/CATEGORY/SET.v&quot; &gt; &quot;CATEGORY_THEORY/CATEGORY/SET.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/CATEGORY/SET.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/Comma_proj.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/Comma_proj.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/Comma_proj.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/FunForget.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/FunForget.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/FunForget.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/Functor.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/Functor.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/Functor.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/FunFreeMon.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/FunFreeMon.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/FunFreeMon.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/Comma.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/Comma.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/Comma.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/HomFunctor.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/HomFunctor.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/HomFunctor.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/Dual_Functor.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/Dual_Functor.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/Dual_Functor.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/Category_dup1.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/Category_dup1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/Category_dup1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/FSC_inc.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/FSC_inc.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/FSC_inc.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/CAT.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/CAT.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/CAT.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/IdCAT.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/IdCAT.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/IdCAT.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/PROD_proj.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/PROD_proj.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/PROD_proj.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/Setoid_dup1.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/Setoid_dup1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/Setoid_dup1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/FUNCTOR/FunctorProperty.v&quot; &gt; &quot;CATEGORY_THEORY/FUNCTOR/FunctorProperty.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/FUNCTOR/FunctorProperty.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/SET_Complete.v&quot; &gt; &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/SET_Complete.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/SET_Complete.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Pres_Limits.v&quot; &gt; &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Pres_Limits.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Pres_Limits.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Initial.v&quot; &gt; &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Initial.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Initial.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Comma_Complete.v&quot; &gt; &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Comma_Complete.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Comma_Complete.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/HomFunctor_Continuous.v&quot; &gt; &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/HomFunctor_Continuous.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/HomFunctor_Continuous.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Limits.v&quot; &gt; &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Limits.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Limits.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/PULB.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/PULB.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/PULB.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Discr.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Discr.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Discr.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/CoUniversalArrow.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/CoUniversalArrow.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/CoUniversalArrow.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Pullbacks1.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Pullbacks1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Pullbacks1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/UniversalArrow.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/UniversalArrow.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/UniversalArrow.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Comma_UA.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Comma_UA.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Comma_UA.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/CoLimit.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/CoLimit.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/CoLimit.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Equalizers1.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Equalizers1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Equalizers1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/FunForget_UA.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/FunForget_UA.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/FunForget_UA.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Iso_Limit.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Iso_Limit.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Iso_Limit.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Limit.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Limit.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Limit.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Products1.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Products1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Products1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/PA.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/PA.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/PA.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/LIMITS/Const.v&quot; &gt; &quot;CATEGORY_THEORY/LIMITS/Const.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/LIMITS/Const.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Diagonal.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Diagonal.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Diagonal.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Terminal1.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Terminal1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Terminal1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Cartesian1.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Cartesian1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/CCC/Cartesian1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/CCC/FunProd.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/CCC/FunProd.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/CCC/FunProd.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/CCC/CCC1.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/CCC/CCC1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/CCC/CCC1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/CCC/FunOne.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/CCC/FunOne.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/CCC/FunOne.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/LeftAdj_Iso.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/LeftAdj_Iso.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/LeftAdj_Iso.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/Limit_Adj.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/Limit_Adj.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/Limit_Adj.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/Th_Adjoint.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/Th_Adjoint.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/Th_Adjoint.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/Adjunction1.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/Adjunction1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/Adjunction1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/Adj_UA.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/Adj_UA.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/Adj_UA.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/Adj_FunFreeMon.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/Adj_FunFreeMon.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/Adj_FunFreeMon.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof2.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof2.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof2.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof1.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part1.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part1.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part1.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_SSC2.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_SSC2.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_SSC2.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/Th_CoAdjoint.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/Th_CoAdjoint.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/Th_CoAdjoint.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/Adjunction.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/Adjunction.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/Adjunction.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;CATEGORY_THEORY/ADJUNCTION/HomFunctor2.v&quot; &gt; &quot;CATEGORY_THEORY/ADJUNCTION/HomFunctor2.v.d&quot; || ( RV=$?; rm -f &quot;CATEGORY_THEORY/ADJUNCTION/HomFunctor2.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;RELATIONS/Noetherian.v&quot; &gt; &quot;RELATIONS/Noetherian.v.d&quot; || ( RV=$?; rm -f &quot;RELATIONS/Noetherian.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;RELATIONS/CONFLUENCE/TAIT/Tait.v&quot; &gt; &quot;RELATIONS/CONFLUENCE/TAIT/Tait.v.d&quot; || ( RV=$?; rm -f &quot;RELATIONS/CONFLUENCE/TAIT/Tait.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;RELATIONS/CONFLUENCE/Coherence.v&quot; &gt; &quot;RELATIONS/CONFLUENCE/Coherence.v.d&quot; || ( RV=$?; rm -f &quot;RELATIONS/CONFLUENCE/Coherence.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;RELATIONS/CONFLUENCE/NEWMAN/Newman.v&quot; &gt; &quot;RELATIONS/CONFLUENCE/NEWMAN/Newman.v.d&quot; || ( RV=$?; rm -f &quot;RELATIONS/CONFLUENCE/NEWMAN/Newman.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;RELATIONS/CONFLUENCE/Confluence.v&quot; &gt; &quot;RELATIONS/CONFLUENCE/Confluence.v.d&quot; || ( RV=$?; rm -f &quot;RELATIONS/CONFLUENCE/Confluence.v.d&quot;; exit ${RV} )
+coqdep -c -slash -R . ConCaT &quot;RELATIONS/Relations.v&quot; &gt; &quot;RELATIONS/Relations.v.d&quot; || ( RV=$?; rm -f &quot;RELATIONS/Relations.v.d&quot;; exit ${RV} )
+coqc  -q  -R . ConCaT   RELATIONS/Relations
+coqc  -q  -R . ConCaT   SETOID/BasicTypes
+coqc  -q  -R . ConCaT   RELATIONS/CONFLUENCE/Confluence
+coqc  -q  -R . ConCaT   RELATIONS/Noetherian
+coqc  -q  -R . ConCaT   SETOID/Setoid
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/Setoid_dup1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/Setoid_dup2
+coqc  -q  -R . ConCaT   RELATIONS/CONFLUENCE/Coherence
+coqc  -q  -R . ConCaT   SETOID/Map
+coqc  -q  -R . ConCaT   SETOID/Single
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/Category_dup1
+coqc  -q  -R . ConCaT   RELATIONS/CONFLUENCE/NEWMAN/Newman
+Identifier &#39;o_M&#39; now a keyword
+coqc  -q  -R . ConCaT   RELATIONS/CONFLUENCE/TAIT/Tait
+coqc  -q  -R . ConCaT   SETOID/SetoidPROD
+Identifier &#39;o&#39;&#39; now a keyword
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/Category_dup2
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/YONEDA_LEMMA/Map0_dup1
+coqc  -q  -R . ConCaT   SETOID/Setoid_prop
+coqc  -q  -R . ConCaT   SETOID/MapProperty
+Identifier &#39;o&#39;&#39;&#39; now a keyword
+coqc  -q  -R . ConCaT   SETOID/Map2
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/Category
+coqc  -q  -R . ConCaT   SETOID/STRUCTURE/Monoid
+Identifier &#39;o&#39; now a keyword
+Identifier &#39;o&#39; now a keyword
+coqc  -q  -R . ConCaT   SETOID/STRUCTURE/FreeMonoid
+coqc  -q  -R . ConCaT   SETOID/STRUCTURE/Group
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/SET
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/Dual
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/PROD
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/Hom_Equality
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/FullSubCat
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/PULB
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Discr
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Products
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/PA
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/MON
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/ONE
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Binary_Products
+coqc  -q  -R . ConCaT   SETOID/STRUCTURE/Inverses_Group
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/YONEDA_LEMMA/Functor_dup1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/Functor
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CatProperty
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Exponents
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_BinProds
+Identifier &#39;o_F&#39; now a keyword
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/PermCat
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/HomFunctor2
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/Ntransformation
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/UniversalArrow
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/Dual_Functor
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_SSC2
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Const
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/FunctorProperty
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/Comma
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Pullbacks
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Equalizers
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/FunFreeMon
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/FunForget
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/IdCAT
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/CCC/FunOne
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/CCC/Diagonal
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CCC
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/CCC/FunProd
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/HomFunctor
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/PROD_proj
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/CAT
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Exponents
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Pullback
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SETProperty
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Terminal
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Equalizer
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/HomFunctor_NT
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/CatFunct
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/CoUniversalArrow
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/FSC_inc
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/FUNCTOR/Comma_proj
+Identifier &#39;o_NTv&#39; now a keyword
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Comma_UA
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/FunForget_UA
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_CCC
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaLemma
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaEmbedding
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/InterChangeLaw
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/NT/NatIso
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Limit
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/Adjunction
+Identifier &#39;o_NTh&#39; now a keyword
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Pres_Limits
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Pullbacks1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Products1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Equalizers1
+Identifier &#39;o_C&#39; now a keyword
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/Iso_Limit
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMITS/CoLimit
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/HomFunctor_Continuous
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/SET_Complete
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/Adj_UA
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Comma_Complete
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Initial
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Limits
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/Th_CoAdjoint
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/Th_Adjoint
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/Adjunction1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/Limit_Adj
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/CCC/Terminal1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof2
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/Adj_FunFreeMon
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/CCC/Cartesian1
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/LeftAdj_Iso
+coqc  -q  -R . ConCaT   CATEGORY_THEORY/ADJUNCTION/CCC/CCC1
+for i in RELATIONS/Relations.vo RELATIONS/CONFLUENCE/Confluence.vo RELATIONS/CONFLUENCE/NEWMAN/Newman.vo RELATIONS/CONFLUENCE/Coherence.vo RELATIONS/CONFLUENCE/TAIT/Tait.vo RELATIONS/Noetherian.vo CATEGORY_THEORY/ADJUNCTION/HomFunctor2.vo CATEGORY_THEORY/ADJUNCTION/Adjunction.vo CATEGORY_THEORY/ADJUNCTION/Th_CoAdjoint.vo CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_SSC2.vo CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part1.vo CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof1.vo CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof2.vo CATEGORY_THEORY/ADJUNCTION/Adj_FunFreeMon.vo CATEGORY_THEORY/ADJUNCTION/Adj_UA.vo CATEGORY_THEORY/ADJUNCTION/Adjunction1.vo CATEGORY_THEORY/ADJUNCTION/Th_Adjoint.vo CATEGORY_THEORY/ADJUNCTION/Limit_Adj.vo CATEGORY_THEORY/ADJUNCTION/LeftAdj_Iso.vo CATEGORY_THEORY/ADJUNCTION/CCC/FunOne.vo CATEGORY_THEORY/ADJUNCTION/CCC/CCC1.vo CATEGORY_THEORY/ADJUNCTION/CCC/FunProd.vo CATEGORY_THEORY/ADJUNCTION/CCC/Cartesian1.vo CATEGORY_THEORY/ADJUNCTION/CCC/Terminal1.vo CATEGORY_THEORY/ADJUNCTION/CCC/Diagonal.vo CATEGORY_THEORY/LIMITS/Const.vo CATEGORY_THEORY/LIMITS/PA.vo CATEGORY_THEORY/LIMITS/Products1.vo CATEGORY_THEORY/LIMITS/Limit.vo CATEGORY_THEORY/LIMITS/Iso_Limit.vo CATEGORY_THEORY/LIMITS/FunForget_UA.vo CATEGORY_THEORY/LIMITS/Equalizers1.vo CATEGORY_THEORY/LIMITS/CoLimit.vo CATEGORY_THEORY/LIMITS/Comma_UA.vo CATEGORY_THEORY/LIMITS/UniversalArrow.vo CATEGORY_THEORY/LIMITS/Pullbacks1.vo CATEGORY_THEORY/LIMITS/CoUniversalArrow.vo CATEGORY_THEORY/LIMITS/Discr.vo CATEGORY_THEORY/LIMITS/PULB.vo CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Limits.vo CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/HomFunctor_Continuous.vo CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Comma_Complete.vo CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Initial.vo CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Pres_Limits.vo CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/SET_Complete.vo CATEGORY_THEORY/FUNCTOR/FunctorProperty.vo CATEGORY_THEORY/FUNCTOR/Setoid_dup1.vo CATEGORY_THEORY/FUNCTOR/PROD_proj.vo CATEGORY_THEORY/FUNCTOR/IdCAT.vo CATEGORY_THEORY/FUNCTOR/CAT.vo CATEGORY_THEORY/FUNCTOR/FSC_inc.vo CATEGORY_THEORY/FUNCTOR/Category_dup1.vo CATEGORY_THEORY/FUNCTOR/Dual_Functor.vo CATEGORY_THEORY/FUNCTOR/HomFunctor.vo CATEGORY_THEORY/FUNCTOR/Comma.vo CATEGORY_THEORY/FUNCTOR/FunFreeMon.vo CATEGORY_THEORY/FUNCTOR/Functor.vo CATEGORY_THEORY/FUNCTOR/FunForget.vo CATEGORY_THEORY/FUNCTOR/Comma_proj.vo CATEGORY_THEORY/CATEGORY/SET.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CatProperty.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Exponents.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Pullback.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Binary_Products.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SETProperty.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_BinProds.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_CCC.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CCC.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Equalizer.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Terminal.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Equalizers.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Exponents.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Pullbacks.vo CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Products.vo CATEGORY_THEORY/CATEGORY/Category.vo CATEGORY_THEORY/CATEGORY/PermCat.vo CATEGORY_THEORY/CATEGORY/Hom_Equality.vo CATEGORY_THEORY/CATEGORY/PROD.vo CATEGORY_THEORY/CATEGORY/FullSubCat.vo CATEGORY_THEORY/CATEGORY/ONE.vo CATEGORY_THEORY/CATEGORY/Dual.vo CATEGORY_THEORY/CATEGORY/MON.vo CATEGORY_THEORY/NT/CatFunct.vo CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaLemma.vo CATEGORY_THEORY/NT/YONEDA_LEMMA/Map0_dup1.vo CATEGORY_THEORY/NT/YONEDA_LEMMA/Functor_dup1.vo CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaEmbedding.vo CATEGORY_THEORY/NT/NatIso.vo CATEGORY_THEORY/NT/Ntransformation.vo CATEGORY_THEORY/NT/HomFunctor_NT.vo CATEGORY_THEORY/NT/Setoid_dup2.vo CATEGORY_THEORY/NT/InterChangeLaw.vo CATEGORY_THEORY/NT/Category_dup2.vo SETOID/SetoidPROD.vo SETOID/Setoid.vo SETOID/BasicTypes.vo SETOID/Setoid_prop.vo SETOID/Single.vo SETOID/Map2.vo SETOID/STRUCTURE/Group.vo SETOID/STRUCTURE/Monoid.vo SETOID/STRUCTURE/Inverses_Group.vo SETOID/STRUCTURE/FreeMonoid.vo SETOID/Map.vo SETOID/MapProperty.vo; do \
+ install -d `dirname /home/bench/.opam/system/lib/coq/user-contrib/ConCaT/$i`; \
+ install -m 0644 $i /home/bench/.opam/system/lib/coq/user-contrib/ConCaT/$i; \
+done
+Installing coq:contrib:concat.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 2,226 K</p>
+            <ul>
+              <li>317 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof1.vo</code></li>
+              <li>52 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/Adjunction1.vo</code></li>
+              <li>48 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Limits.vo</code></li>
+              <li>44 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Equalizers1.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Th_Initial.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/CoUniversalArrow.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CatProperty.vo</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/UniversalArrow.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Comma_Complete.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/PA.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/PULB.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/Comma.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/Adjunction.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Binary_Products.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_SSC2.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/Th_CoAdjoint.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Pullbacks1.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Pullbacks.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/Th_Adjoint.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Limit.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/CoLimit.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Equalizers.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/Category.vo</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/CCC/Cartesian1.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/Functor.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/YONEDA_LEMMA/Functor_dup1.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/HomFunctor2.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/PROD.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/FunctorProperty.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/STRUCTURE/Monoid.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/CCC/CCC1.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/Setoid_dup2.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/Setoid_dup1.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaLemma.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Exponents.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/Category_dup2.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/Category_dup1.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/NatIso.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/InterChangeLaw.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/STRUCTURE/Inverses_Group.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part1.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/RELATIONS/Relations.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/FREYD_THEOREM/FAFT_Part2_Proof2.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/SET_Complete.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Products1.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/Ntransformation.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/Adj_UA.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Pullback.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/Products.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/Limit_Adj.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/HomFunctor_Continuous.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/Hom_Equality.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Comma_UA.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/STRUCTURE/FreeMonoid.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/CCC.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/RELATIONS/CONFLUENCE/Confluence.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/LeftAdj_Iso.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/Setoid_prop.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/CatFunct.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/Map2.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Equalizer.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/Setoid.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Iso_Limit.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/FunForget_UA.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/Map.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/YONEDA_LEMMA/Map0_dup1.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/MapProperty.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/RELATIONS/CONFLUENCE/Coherence.vo</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Discr.vo</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Exponents.vo</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/ONE.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/FunFreeMon.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/SetoidPROD.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMIT_CONSTRUCTIONS/Pres_Limits.vo</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/YONEDA_LEMMA/YonedaEmbedding.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/CCC/Terminal1.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/MON.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/CCC/FunProd.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/Comma_proj.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/PROD_proj.vo</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_BinProds.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/HomFunctor.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/STRUCTURE/Group.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SETProperty.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/FSC_inc.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/Dual.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/CAT.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/NT/HomFunctor_NT.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/LIMITS/Const.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/FullSubCat.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/CCC/Diagonal.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/CCC/FunOne.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/RELATIONS/CONFLUENCE/TAIT/Tait.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/Dual_Functor.vo</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/RELATIONS/Noetherian.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/ADJUNCTION/Adj_FunFreeMon.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/BasicTypes.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/SET.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/RELATIONS/CONFLUENCE/NEWMAN/Newman.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/FunForget.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/FUNCTOR/IdCAT.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_Terminal.vo</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/PermCat.vo</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/CATEGORY_THEORY/CATEGORY/CONSTRUCTIONS/SET_CCC.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ConCaT/SETOID/Single.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:concat/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:concat.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:concat.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:concat.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:concat] Fetching https://gforge.inria.fr/git/coq-contribs/concat.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:concat.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/ConCaT
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

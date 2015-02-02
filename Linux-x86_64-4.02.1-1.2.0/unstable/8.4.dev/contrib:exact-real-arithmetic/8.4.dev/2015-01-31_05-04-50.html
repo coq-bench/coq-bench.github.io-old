@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.dev / contrib:exact-real-arithmetic 8.4.dev</a></li>
+              <li class="active"><a href="">2015-01-31 05:04:50</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:exact-real-arithmetic
+              <small>
+                8.4.dev
+                <span class="label label-success">30 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-31 05:04:50 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-31 05:04:50 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:exact-real-arithmetic/coq:contrib:exact-real-arithmetic.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:exact-real-arithmetic.8.4.dev coq.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.dev).
+The following actions will be performed:
+ - install   coq:contrib:exact-real-arithmetic.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:exact-real-arithmetic.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:exact-real-arithmetic.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:contrib:exact-real-arithmetic.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:contrib:exact-real-arithmetic.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>30 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:exact-real-arithmetic.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:exact-real-arithmetic] Fetching https://gforge.inria.fr/git/coq-contribs/exact-real-arithmetic.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:exact-real-arithmetic.8.4.dev/.git/
+[master (root-commit) 9afe48f] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/exact-real-arithmetic
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Absolue.v
+Addition.v
+Axiomes.v
+Inverse.v
+LICENSE
+Lemmes.v
+Lemmes_generaux.v
+Make
+Makefile
+Multiplication.v
+Oppose.v
+Rabsolu_complements.v
+Racine.v
+Rbase_doubles_inegalites.v
+Rbase_inegalites.v
+Rbase_operations.v
+Rind_complements.v
+Rlog.v
+Tactiques.v
+Zabs_complements.v
+Zarith_inegalites.v
+Zarith_operations.v
+Zdec_complements.v
+Zdiv2_complements.v
+Zind_complements.v
+Zmax.v
+Zpower_complements.v
+Zsgn_complemnts.v
+Zsqrt_complements.v
+bench.log
+definition.v
+description
+powerRZ_complements.v
+sg.v
+HEAD is now at 3b69467 ExactRealArithmetic: use Z.sqrt instead of trunk-specific Zsqrt or older Zsqrt_plain
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:exact-real-arithmetic.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Absolue.v&quot; &gt; &quot;Absolue.v.d&quot; || ( RV=$?; rm -f &quot;Absolue.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Addition.v&quot; &gt; &quot;Addition.v.d&quot; || ( RV=$?; rm -f &quot;Addition.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Axiomes.v&quot; &gt; &quot;Axiomes.v.d&quot; || ( RV=$?; rm -f &quot;Axiomes.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;definition.v&quot; &gt; &quot;definition.v.d&quot; || ( RV=$?; rm -f &quot;definition.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Inverse.v&quot; &gt; &quot;Inverse.v.d&quot; || ( RV=$?; rm -f &quot;Inverse.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Lemmes_generaux.v&quot; &gt; &quot;Lemmes_generaux.v.d&quot; || ( RV=$?; rm -f &quot;Lemmes_generaux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Lemmes.v&quot; &gt; &quot;Lemmes.v.d&quot; || ( RV=$?; rm -f &quot;Lemmes.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Multiplication.v&quot; &gt; &quot;Multiplication.v.d&quot; || ( RV=$?; rm -f &quot;Multiplication.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Oppose.v&quot; &gt; &quot;Oppose.v.d&quot; || ( RV=$?; rm -f &quot;Oppose.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;powerRZ_complements.v&quot; &gt; &quot;powerRZ_complements.v.d&quot; || ( RV=$?; rm -f &quot;powerRZ_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Rabsolu_complements.v&quot; &gt; &quot;Rabsolu_complements.v.d&quot; || ( RV=$?; rm -f &quot;Rabsolu_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Racine.v&quot; &gt; &quot;Racine.v.d&quot; || ( RV=$?; rm -f &quot;Racine.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Rbase_doubles_inegalites.v&quot; &gt; &quot;Rbase_doubles_inegalites.v.d&quot; || ( RV=$?; rm -f &quot;Rbase_doubles_inegalites.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Rbase_inegalites.v&quot; &gt; &quot;Rbase_inegalites.v.d&quot; || ( RV=$?; rm -f &quot;Rbase_inegalites.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Rbase_operations.v&quot; &gt; &quot;Rbase_operations.v.d&quot; || ( RV=$?; rm -f &quot;Rbase_operations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Rind_complements.v&quot; &gt; &quot;Rind_complements.v.d&quot; || ( RV=$?; rm -f &quot;Rind_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Rlog.v&quot; &gt; &quot;Rlog.v.d&quot; || ( RV=$?; rm -f &quot;Rlog.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;sg.v&quot; &gt; &quot;sg.v.d&quot; || ( RV=$?; rm -f &quot;sg.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Tactiques.v&quot; &gt; &quot;Tactiques.v.d&quot; || ( RV=$?; rm -f &quot;Tactiques.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zabs_complements.v&quot; &gt; &quot;Zabs_complements.v.d&quot; || ( RV=$?; rm -f &quot;Zabs_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zarith_inegalites.v&quot; &gt; &quot;Zarith_inegalites.v.d&quot; || ( RV=$?; rm -f &quot;Zarith_inegalites.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zarith_operations.v&quot; &gt; &quot;Zarith_operations.v.d&quot; || ( RV=$?; rm -f &quot;Zarith_operations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zdec_complements.v&quot; &gt; &quot;Zdec_complements.v.d&quot; || ( RV=$?; rm -f &quot;Zdec_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zdiv2_complements.v&quot; &gt; &quot;Zdiv2_complements.v.d&quot; || ( RV=$?; rm -f &quot;Zdiv2_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zind_complements.v&quot; &gt; &quot;Zind_complements.v.d&quot; || ( RV=$?; rm -f &quot;Zind_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zmax.v&quot; &gt; &quot;Zmax.v.d&quot; || ( RV=$?; rm -f &quot;Zmax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zpower_complements.v&quot; &gt; &quot;Zpower_complements.v.d&quot; || ( RV=$?; rm -f &quot;Zpower_complements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zsgn_complemnts.v&quot; &gt; &quot;Zsgn_complemnts.v.d&quot; || ( RV=$?; rm -f &quot;Zsgn_complemnts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . ExactRealArithmetic &quot;Zsqrt_complements.v&quot; &gt; &quot;Zsqrt_complements.v.d&quot; || ( RV=$?; rm -f &quot;Zsqrt_complements.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zmax
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zarith_operations
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zsgn_complemnts
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zpower_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zdec_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zabs_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zdiv2_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zarith_inegalites
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Rbase_operations
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Rlog
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   definition
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Tactiques
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zsqrt_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Zind_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Rbase_inegalites
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Rbase_doubles_inegalites
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   powerRZ_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Rabsolu_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Axiomes
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   sg
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Rind_complements
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Lemmes
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Absolue
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Lemmes_generaux
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Racine
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Oppose
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Addition
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Inverse
+&quot;coqc&quot;  -q  -R . ExactRealArithmetic   Multiplication
+for i in Zsqrt_complements.vo Zsgn_complemnts.vo Zpower_complements.vo Zmax.vo Zind_complements.vo Zdiv2_complements.vo Zdec_complements.vo Zarith_operations.vo Zarith_inegalites.vo Zabs_complements.vo Tactiques.vo sg.vo Rlog.vo Rind_complements.vo Rbase_operations.vo Rbase_inegalites.vo Rbase_doubles_inegalites.vo Racine.vo Rabsolu_complements.vo powerRZ_complements.vo Oppose.vo Multiplication.vo Lemmes.vo Lemmes_generaux.vo Inverse.vo definition.vo Axiomes.vo Addition.vo Absolue.vo; do \
+ install -d `dirname &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/ExactRealArithmetic/$i`; \
+ install -m 0644 $i &quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/ExactRealArithmetic/$i; \
+done
+Installing coq:contrib:exact-real-arithmetic.8.4.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 1,022 K</p>
+            <ul>
+              <li>158 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Multiplication.vo</code></li>
+              <li>138 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Lemmes_generaux.vo</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Inverse.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Lemmes.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Rbase_inegalites.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Rbase_doubles_inegalites.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/powerRZ_complements.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/sg.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Addition.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Racine.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Axiomes.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zarith_operations.vo</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Rbase_operations.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zind_complements.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Absolue.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/definition.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zsqrt_complements.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zabs_complements.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Rind_complements.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zsgn_complemnts.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Oppose.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Rabsolu_complements.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zpower_complements.vo</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zdiv2_complements.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Rlog.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Tactiques.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zmax.vo</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zdec_complements.vo</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic/Zarith_inegalites.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:exact-real-arithmetic/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:exact-real-arithmetic.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:exact-real-arithmetic.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:exact-real-arithmetic.8.4.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:exact-real-arithmetic] Fetching https://gforge.inria.fr/git/coq-contribs/exact-real-arithmetic.git#v8.4
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:exact-real-arithmetic.8.4.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/ExactRealArithmetic
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

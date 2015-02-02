@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.5.dev / contrib:jordan-curve-theorem dev</a></li>
+              <li class="active"><a href="">2015-01-30 20:36:42</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:jordan-curve-theorem
+              <small>
+                dev
+                <span class="label label-success">4 m 47 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-30 20:36:42 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-30 20:36:42 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:jordan-curve-theorem/coq:contrib:jordan-curve-theorem.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:jordan-curve-theorem.dev coq.8.5.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.5.dev).
+The following actions will be performed:
+ - install   coq:contrib:jordan-curve-theorem.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:jordan-curve-theorem.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:jordan-curve-theorem.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:contrib:jordan-curve-theorem.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>3 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:contrib:jordan-curve-theorem.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>4 m 47 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:jordan-curve-theorem.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:jordan-curve-theorem] Fetching https://gforge.inria.fr/git/coq-contribs/jordan-curve-theorem.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:jordan-curve-theorem.dev/.git/
+[master (root-commit) 2111b09] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/jordan-curve-theorem
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+Jordan1.v
+Jordan10.v
+Jordan2.v
+Jordan3.v
+Jordan4.v
+Jordan5.v
+Jordan6.v
+Jordan7.v
+Jordan8.v
+Jordan9.v
+Make
+Makefile
+README
+description
+HEAD is now at 67977ce Fix contribs now that Require is no longer allowed inside modules.
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:jordan-curve-theorem.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan10.v&quot; &gt; &quot;Jordan10.v.d&quot; || ( RV=$?; rm -f &quot;Jordan10.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan1.v&quot; &gt; &quot;Jordan1.v.d&quot; || ( RV=$?; rm -f &quot;Jordan1.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan2.v&quot; &gt; &quot;Jordan2.v.d&quot; || ( RV=$?; rm -f &quot;Jordan2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan3.v&quot; &gt; &quot;Jordan3.v.d&quot; || ( RV=$?; rm -f &quot;Jordan3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan4.v&quot; &gt; &quot;Jordan4.v.d&quot; || ( RV=$?; rm -f &quot;Jordan4.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan5.v&quot; &gt; &quot;Jordan5.v.d&quot; || ( RV=$?; rm -f &quot;Jordan5.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan6.v&quot; &gt; &quot;Jordan6.v.d&quot; || ( RV=$?; rm -f &quot;Jordan6.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan7.v&quot; &gt; &quot;Jordan7.v.d&quot; || ( RV=$?; rm -f &quot;Jordan7.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan8.v&quot; &gt; &quot;Jordan8.v.d&quot; || ( RV=$?; rm -f &quot;Jordan8.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; JordanCurveTheorem &quot;Jordan9.v&quot; &gt; &quot;Jordan9.v.d&quot; || ( RV=$?; rm -f &quot;Jordan9.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan1
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan2
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan3
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan4
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan5
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan6
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan7
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan8
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan9
+&quot;coqc&quot;  -q  -R &quot;.&quot; JordanCurveTheorem -no-native-compiler  Jordan10
+cd &quot;.&quot; &amp;&amp; for i in Jordan9.vo Jordan8.vo Jordan7.vo Jordan6.vo Jordan5.vo Jordan4.vo Jordan3.vo Jordan2.vo Jordan1.vo Jordan10.vo Jordan9.v Jordan8.v Jordan7.v Jordan6.v Jordan5.v Jordan4.v Jordan3.v Jordan2.v Jordan1.v Jordan10.v Jordan9.glob Jordan8.glob Jordan7.glob Jordan6.glob Jordan5.glob Jordan4.glob Jordan3.glob Jordan2.glob Jordan1.glob Jordan10.glob                                                                                   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/JordanCurveTheorem/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/JordanCurveTheorem/$i; \
+done
+Installing coq:contrib:jordan-curve-theorem.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 18,992 K</p>
+            <ul>
+              <li>3,888 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan6.vo</code></li>
+              <li>2,572 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan7.vo</code></li>
+              <li>2,424 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan8.vo</code></li>
+              <li>2,138 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan2.vo</code></li>
+              <li>804 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan10.vo</code></li>
+              <li>775 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan10.glob</code></li>
+              <li>774 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan5.vo</code></li>
+              <li>517 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan7.glob</code></li>
+              <li>456 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan2.glob</code></li>
+              <li>451 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan9.vo</code></li>
+              <li>441 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan6.glob</code></li>
+              <li>431 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan8.glob</code></li>
+              <li>427 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan1.vo</code></li>
+              <li>414 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan1.glob</code></li>
+              <li>398 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan9.glob</code></li>
+              <li>311 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan5.glob</code></li>
+              <li>270 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan4.vo</code></li>
+              <li>229 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan3.vo</code></li>
+              <li>177 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan10.v</code></li>
+              <li>165 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan3.glob</code></li>
+              <li>131 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan7.v</code></li>
+              <li>130 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan1.v</code></li>
+              <li>123 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan8.v</code></li>
+              <li>104 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan6.v</code></li>
+              <li>98 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan2.v</code></li>
+              <li>98 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan9.v</code></li>
+              <li>96 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan5.v</code></li>
+              <li>76 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan4.glob</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan3.v</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem/Jordan4.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:jordan-curve-theorem/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:jordan-curve-theorem.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:jordan-curve-theorem.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:jordan-curve-theorem.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:jordan-curve-theorem] Fetching https://gforge.inria.fr/git/coq-contribs/jordan-curve-theorem.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:jordan-curve-theorem.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/JordanCurveTheorem
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

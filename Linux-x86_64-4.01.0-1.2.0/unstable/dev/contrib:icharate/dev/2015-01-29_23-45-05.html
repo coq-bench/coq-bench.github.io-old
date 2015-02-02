@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">dev / contrib:icharate dev</a></li>
+              <li class="active"><a href="">2015-01-29 23:45:05</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:icharate
+              <small>
+                dev
+                <span class="label label-success">1 m 22 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-29 23:45:05 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-29 23:45:05 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:icharate/coq:contrib:icharate.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:icharate.dev coq.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is dev).
+The following actions will be performed:
+ - install   coq:contrib:icharate.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:icharate.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:icharate.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:contrib:icharate.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:contrib:icharate.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 m 22 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:icharate.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:icharate] Fetching https://gforge.inria.fr/git/coq-contribs/icharate.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:icharate.dev/.git/
+[master (root-commit) f89e013] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/icharate
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+Examples/cross_depEx.v
+Examples/dep_ex.v
+Examples/ex1.v
+Examples/ex1s.v
+Examples/ex3.v
+Examples/medialEx.v
+Examples/polEx.v
+Kernel/apply_rule_props.v
+Kernel/basics.v
+Kernel/derivSem.v
+Kernel/final_sem.v
+Kernel/interp_coq.v
+Kernel/lambda_bruijn.v
+Kernel/lambda_coq.v
+Kernel/lambda_reduction.v
+Kernel/logic_const.v
+Kernel/natDed.v
+Kernel/natDedGram.v
+Kernel/notations.v
+Kernel/semLex.v
+Kernel/sequent.v
+Kernel/struct_ex.v
+Kernel/struct_props.v
+LICENSE
+Lib/listAux.v
+Lib/permutation.v
+Make
+Makefile
+Meta/crossDep.v
+Meta/derivedRulesNatDed.v
+Meta/medialExtraction.v
+Meta/polarity.v
+Meta/seqNatDed.v
+Meta/unaries.v
+Meta/unbounDep.v
+README
+Tacs/polTac.v
+Tacs/struct_tacs.v
+Tacs/tacticsDed.v
+Tacs/tacticsSeq.v
+description
+HEAD is now at 5327489 Applying &quot;Unset Standard Proposition Elimination Names&quot; for
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:icharate.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Examples/medialEx.v&quot; &gt; &quot;Examples/medialEx.v.d&quot; || ( RV=$?; rm -f &quot;Examples/medialEx.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Examples/polEx.v&quot; &gt; &quot;Examples/polEx.v.d&quot; || ( RV=$?; rm -f &quot;Examples/polEx.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Examples/ex1.v&quot; &gt; &quot;Examples/ex1.v.d&quot; || ( RV=$?; rm -f &quot;Examples/ex1.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Examples/ex3.v&quot; &gt; &quot;Examples/ex3.v.d&quot; || ( RV=$?; rm -f &quot;Examples/ex3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Examples/dep_ex.v&quot; &gt; &quot;Examples/dep_ex.v.d&quot; || ( RV=$?; rm -f &quot;Examples/dep_ex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Examples/ex1s.v&quot; &gt; &quot;Examples/ex1s.v.d&quot; || ( RV=$?; rm -f &quot;Examples/ex1s.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Lib/permutation.v&quot; &gt; &quot;Lib/permutation.v.d&quot; || ( RV=$?; rm -f &quot;Lib/permutation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Lib/listAux.v&quot; &gt; &quot;Lib/listAux.v.d&quot; || ( RV=$?; rm -f &quot;Lib/listAux.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Tacs/polTac.v&quot; &gt; &quot;Tacs/polTac.v.d&quot; || ( RV=$?; rm -f &quot;Tacs/polTac.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Tacs/tacticsSeq.v&quot; &gt; &quot;Tacs/tacticsSeq.v.d&quot; || ( RV=$?; rm -f &quot;Tacs/tacticsSeq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Tacs/struct_tacs.v&quot; &gt; &quot;Tacs/struct_tacs.v.d&quot; || ( RV=$?; rm -f &quot;Tacs/struct_tacs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Tacs/tacticsDed.v&quot; &gt; &quot;Tacs/tacticsDed.v.d&quot; || ( RV=$?; rm -f &quot;Tacs/tacticsDed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/struct_ex.v&quot; &gt; &quot;Kernel/struct_ex.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/struct_ex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/semLex.v&quot; &gt; &quot;Kernel/semLex.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/semLex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/apply_rule_props.v&quot; &gt; &quot;Kernel/apply_rule_props.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/apply_rule_props.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/struct_props.v&quot; &gt; &quot;Kernel/struct_props.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/struct_props.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/natDedGram.v&quot; &gt; &quot;Kernel/natDedGram.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/natDedGram.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/sequent.v&quot; &gt; &quot;Kernel/sequent.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/sequent.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/lambda_reduction.v&quot; &gt; &quot;Kernel/lambda_reduction.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/lambda_reduction.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/final_sem.v&quot; &gt; &quot;Kernel/final_sem.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/final_sem.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/lambda_bruijn.v&quot; &gt; &quot;Kernel/lambda_bruijn.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/lambda_bruijn.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/notations.v&quot; &gt; &quot;Kernel/notations.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/notations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/basics.v&quot; &gt; &quot;Kernel/basics.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/basics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/natDed.v&quot; &gt; &quot;Kernel/natDed.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/natDed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/interp_coq.v&quot; &gt; &quot;Kernel/interp_coq.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/interp_coq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/derivSem.v&quot; &gt; &quot;Kernel/derivSem.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/derivSem.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/lambda_coq.v&quot; &gt; &quot;Kernel/lambda_coq.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/lambda_coq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Kernel/logic_const.v&quot; &gt; &quot;Kernel/logic_const.v.d&quot; || ( RV=$?; rm -f &quot;Kernel/logic_const.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Meta/unaries.v&quot; &gt; &quot;Meta/unaries.v.d&quot; || ( RV=$?; rm -f &quot;Meta/unaries.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Meta/medialExtraction.v&quot; &gt; &quot;Meta/medialExtraction.v.d&quot; || ( RV=$?; rm -f &quot;Meta/medialExtraction.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Meta/seqNatDed.v&quot; &gt; &quot;Meta/seqNatDed.v.d&quot; || ( RV=$?; rm -f &quot;Meta/seqNatDed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Meta/unbounDep.v&quot; &gt; &quot;Meta/unbounDep.v.d&quot; || ( RV=$?; rm -f &quot;Meta/unbounDep.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Meta/crossDep.v&quot; &gt; &quot;Meta/crossDep.v.d&quot; || ( RV=$?; rm -f &quot;Meta/crossDep.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Meta/polarity.v&quot; &gt; &quot;Meta/polarity.v.d&quot; || ( RV=$?; rm -f &quot;Meta/polarity.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; Icharate &quot;Meta/derivedRulesNatDed.v&quot; &gt; &quot;Meta/derivedRulesNatDed.v.d&quot; || ( RV=$?; rm -f &quot;Meta/derivedRulesNatDed.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Lib/permutation
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Tacs/tacticsSeq
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Lib/listAux
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/basics
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/natDed
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/lambda_bruijn
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/apply_rule_props
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/sequent
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/natDedGram
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Tacs/struct_tacs
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/struct_props
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/struct_ex
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Meta/polarity
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Meta/unaries
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Tacs/polTac
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/notations
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/lambda_coq
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/lambda_reduction
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/logic_const
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/semLex
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Tacs/tacticsDed
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/derivSem
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/final_sem
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Kernel/interp_coq
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Meta/derivedRulesNatDed
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Meta/medialExtraction
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Examples/ex3
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Examples/ex1
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Examples/polEx
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Examples/ex1s
+     = I
+     : Set
+     = let (I_syn, J_syn, A_syn, W_syn, _, _, _, _) := lex_opaq in I_syn
+     : Set
+Record synGram : Type := mk_gramS
+  { lexic_syn : synLexicon;
+    ext_syn : extension (I_syn lexic_syn) (J_syn lexic_syn) }
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Examples/medialEx
+Record synGram : Type := mk_gramS
+  { lexic_syn : synLexicon;
+    ext_syn : extension (I_syn lexic_syn) (J_syn lexic_syn) }
+     = appl
+         ([[e --&gt; t
+          ]]: ([[e --&gt; t
+               ]]: ([[e
+                    ]]: appl (appl (@ formal W AND) (appl (% 1) (% 0)))
+                          (appl (% 2) (% 0)))))
+         ([[e
+          ]]: appl
+                (appl
+                   ([[e --&gt; t
+                    ]]: ([[e --&gt; t
+                         ]]: appl (@ formal W EXU)
+                               ([[e
+                                ]]: appl
+                                      (appl (@ formal W AND)
+                                         (appl (% 1) (% 0)))
+                                      (appl (% 2) (% 0)))))
+                   (@ normal raison 0 (e --&gt; t)))
+                (appl (@ normal ignore 0 (e --&gt; e --&gt; t)) (% 0)))
+     : lambda_terms (cst (semLex.W (lexic gram2)))
+     = [[e --&gt; t
+       ]]: ([[e
+            ]]: appl (appl (@ formal W AND) (appl (% 1) (% 0)))
+                  (appl (@ formal W EXU)
+                     ([[e
+                      ]]: appl
+                            (appl (@ formal W AND)
+                               (appl
+                                  (appl (@ normal ignore 0 (e --&gt; e --&gt; t))
+                                     (% 1)) (% 0)))
+                            (appl (@ normal raison 0 (e --&gt; t)) (% 0)))))
+     : lambda_terms (cst (semLex.W (lexic gram2)))
+     = fun (Q : E -&gt; Prop) (x : E) =&gt;
+       Q x /\
+       (exists x0 : E,
+          semW ignore 0 (e --&gt; e --&gt; t) x x0 /\ semW raison 0 (e --&gt; t) x0) /\
+       (forall x0 y : E,
+        semW ignore 0 (e --&gt; e --&gt; t) x x0 /\ semW raison 0 (e --&gt; t) x0 -&gt;
+        semW ignore 0 (e --&gt; e --&gt; t) x y /\ semW raison 0 (e --&gt; t) y -&gt;
+        x0 = y)
+     : trans_type (mapExt map (! n \1 ! n))
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Meta/crossDep
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Meta/unbounDep
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Meta/seqNatDed
+&quot;coqc&quot;  -q  -R &quot;.&quot; Icharate   Examples/dep_ex
+cd &quot;.&quot; &amp;&amp; for i in Meta/derivedRulesNatDed.vo Meta/polarity.vo Meta/crossDep.vo Meta/unbounDep.vo Meta/seqNatDed.vo Meta/medialExtraction.vo Meta/unaries.vo Kernel/logic_const.vo Kernel/lambda_coq.vo Kernel/derivSem.vo Kernel/interp_coq.vo Kernel/natDed.vo Kernel/basics.vo Kernel/notations.vo Kernel/lambda_bruijn.vo Kernel/final_sem.vo Kernel/lambda_reduction.vo Kernel/sequent.vo Kernel/natDedGram.vo Kernel/struct_props.vo Kernel/apply_rule_props.vo Kernel/semLex.vo Kernel/struct_ex.vo Tacs/tacticsDed.vo Tacs/struct_tacs.vo Tacs/tacticsSeq.vo Tacs/polTac.vo Lib/listAux.vo Lib/permutation.vo Examples/ex1s.vo Examples/dep_ex.vo Examples/ex3.vo Examples/ex1.vo Examples/polEx.vo Examples/medialEx.vo Meta/derivedRulesNatDed.v Meta/polarity.v Meta/crossDep.v Meta/unbounDep.v Meta/seqNatDed.v Meta/medialExtraction.v Meta/unaries.v Kernel/logic_const.v Kernel/lambda_coq.v Kernel/derivSem.v Kernel/interp_coq.v Kernel/natDed.v Kernel/basics.v Kernel/notations.v Kernel/lambda_bruijn.v Kernel/final_sem.v Kernel/lambda_reduction.v Kernel/sequent.v Kernel/natDedGram.v Kernel/struct_props.v Kernel/apply_rule_props.v Kernel/semLex.v Kernel/struct_ex.v Tacs/tacticsDed.v Tacs/struct_tacs.v Tacs/tacticsSeq.v Tacs/polTac.v Lib/listAux.v Lib/permutation.v Examples/ex1s.v Examples/dep_ex.v Examples/ex3.v Examples/ex1.v Examples/polEx.v Examples/medialEx.v Meta/derivedRulesNatDed.glob Meta/polarity.glob Meta/crossDep.glob Meta/unbounDep.glob Meta/seqNatDed.glob Meta/medialExtraction.glob Meta/unaries.glob Kernel/logic_const.glob Kernel/lambda_coq.glob Kernel/derivSem.glob Kernel/interp_coq.glob Kernel/natDed.glob Kernel/basics.glob Kernel/notations.glob Kernel/lambda_bruijn.glob Kernel/final_sem.glob Kernel/lambda_reduction.glob Kernel/sequent.glob Kernel/natDedGram.glob Kernel/struct_props.glob Kernel/apply_rule_props.glob Kernel/semLex.glob Kernel/struct_ex.glob Tacs/tacticsDed.glob Tacs/struct_tacs.glob Tacs/tacticsSeq.glob Tacs/polTac.glob Lib/listAux.glob Lib/permutation.glob Examples/ex1s.glob Examples/dep_ex.glob Examples/ex3.glob Examples/ex1.glob Examples/polEx.glob Examples/medialEx.glob  Meta/.coq-native/NIcharate_Meta_derivedRulesNatDed.cmi  Meta/.coq-native/NIcharate_Meta_polarity.cmi  Meta/.coq-native/NIcharate_Meta_crossDep.cmi  Meta/.coq-native/NIcharate_Meta_unbounDep.cmi  Meta/.coq-native/NIcharate_Meta_seqNatDed.cmi  Meta/.coq-native/NIcharate_Meta_medialExtraction.cmi  Meta/.coq-native/NIcharate_Meta_unaries.cmi  Kernel/.coq-native/NIcharate_Kernel_logic_const.cmi  Kernel/.coq-native/NIcharate_Kernel_lambda_coq.cmi  Kernel/.coq-native/NIcharate_Kernel_derivSem.cmi  Kernel/.coq-native/NIcharate_Kernel_interp_coq.cmi  Kernel/.coq-native/NIcharate_Kernel_natDed.cmi  Kernel/.coq-native/NIcharate_Kernel_basics.cmi  Kernel/.coq-native/NIcharate_Kernel_notations.cmi  Kernel/.coq-native/NIcharate_Kernel_lambda_bruijn.cmi  Kernel/.coq-native/NIcharate_Kernel_final_sem.cmi  Kernel/.coq-native/NIcharate_Kernel_lambda_reduction.cmi  Kernel/.coq-native/NIcharate_Kernel_sequent.cmi  Kernel/.coq-native/NIcharate_Kernel_natDedGram.cmi  Kernel/.coq-native/NIcharate_Kernel_struct_props.cmi  Kernel/.coq-native/NIcharate_Kernel_apply_rule_props.cmi  Kernel/.coq-native/NIcharate_Kernel_semLex.cmi  Kernel/.coq-native/NIcharate_Kernel_struct_ex.cmi  Tacs/.coq-native/NIcharate_Tacs_tacticsDed.cmi  Tacs/.coq-native/NIcharate_Tacs_struct_tacs.cmi  Tacs/.coq-native/NIcharate_Tacs_tacticsSeq.cmi  Tacs/.coq-native/NIcharate_Tacs_polTac.cmi  Lib/.coq-native/NIcharate_Lib_listAux.cmi  Lib/.coq-native/NIcharate_Lib_permutation.cmi  Examples/.coq-native/NIcharate_Examples_ex1s.cmi  Examples/.coq-native/NIcharate_Examples_dep_ex.cmi  Examples/.coq-native/NIcharate_Examples_ex3.cmi  Examples/.coq-native/NIcharate_Examples_ex1.cmi  Examples/.coq-native/NIcharate_Examples_polEx.cmi  Examples/.coq-native/NIcharate_Examples_medialEx.cmi                                                                        Meta/.coq-native/NIcharate_Meta_derivedRulesNatDed.cmx  Meta/.coq-native/NIcharate_Meta_polarity.cmx  Meta/.coq-native/NIcharate_Meta_crossDep.cmx  Meta/.coq-native/NIcharate_Meta_unbounDep.cmx  Meta/.coq-native/NIcharate_Meta_seqNatDed.cmx  Meta/.coq-native/NIcharate_Meta_medialExtraction.cmx  Meta/.coq-native/NIcharate_Meta_unaries.cmx  Kernel/.coq-native/NIcharate_Kernel_logic_const.cmx  Kernel/.coq-native/NIcharate_Kernel_lambda_coq.cmx  Kernel/.coq-native/NIcharate_Kernel_derivSem.cmx  Kernel/.coq-native/NIcharate_Kernel_interp_coq.cmx  Kernel/.coq-native/NIcharate_Kernel_natDed.cmx  Kernel/.coq-native/NIcharate_Kernel_basics.cmx  Kernel/.coq-native/NIcharate_Kernel_notations.cmx  Kernel/.coq-native/NIcharate_Kernel_lambda_bruijn.cmx  Kernel/.coq-native/NIcharate_Kernel_final_sem.cmx  Kernel/.coq-native/NIcharate_Kernel_lambda_reduction.cmx  Kernel/.coq-native/NIcharate_Kernel_sequent.cmx  Kernel/.coq-native/NIcharate_Kernel_natDedGram.cmx  Kernel/.coq-native/NIcharate_Kernel_struct_props.cmx  Kernel/.coq-native/NIcharate_Kernel_apply_rule_props.cmx  Kernel/.coq-native/NIcharate_Kernel_semLex.cmx  Kernel/.coq-native/NIcharate_Kernel_struct_ex.cmx  Tacs/.coq-native/NIcharate_Tacs_tacticsDed.cmx  Tacs/.coq-native/NIcharate_Tacs_struct_tacs.cmx  Tacs/.coq-native/NIcharate_Tacs_tacticsSeq.cmx  Tacs/.coq-native/NIcharate_Tacs_polTac.cmx  Lib/.coq-native/NIcharate_Lib_listAux.cmx  Lib/.coq-native/NIcharate_Lib_permutation.cmx  Examples/.coq-native/NIcharate_Examples_ex1s.cmx  Examples/.coq-native/NIcharate_Examples_dep_ex.cmx  Examples/.coq-native/NIcharate_Examples_ex3.cmx  Examples/.coq-native/NIcharate_Examples_ex1.cmx  Examples/.coq-native/NIcharate_Examples_polEx.cmx  Examples/.coq-native/NIcharate_Examples_medialEx.cmx  Meta/.coq-native/NIcharate_Meta_derivedRulesNatDed.cmxs  Meta/.coq-native/NIcharate_Meta_polarity.cmxs  Meta/.coq-native/NIcharate_Meta_crossDep.cmxs  Meta/.coq-native/NIcharate_Meta_unbounDep.cmxs  Meta/.coq-native/NIcharate_Meta_seqNatDed.cmxs  Meta/.coq-native/NIcharate_Meta_medialExtraction.cmxs  Meta/.coq-native/NIcharate_Meta_unaries.cmxs  Kernel/.coq-native/NIcharate_Kernel_logic_const.cmxs  Kernel/.coq-native/NIcharate_Kernel_lambda_coq.cmxs  Kernel/.coq-native/NIcharate_Kernel_derivSem.cmxs  Kernel/.coq-native/NIcharate_Kernel_interp_coq.cmxs  Kernel/.coq-native/NIcharate_Kernel_natDed.cmxs  Kernel/.coq-native/NIcharate_Kernel_basics.cmxs  Kernel/.coq-native/NIcharate_Kernel_notations.cmxs  Kernel/.coq-native/NIcharate_Kernel_lambda_bruijn.cmxs  Kernel/.coq-native/NIcharate_Kernel_final_sem.cmxs  Kernel/.coq-native/NIcharate_Kernel_lambda_reduction.cmxs  Kernel/.coq-native/NIcharate_Kernel_sequent.cmxs  Kernel/.coq-native/NIcharate_Kernel_natDedGram.cmxs  Kernel/.coq-native/NIcharate_Kernel_struct_props.cmxs  Kernel/.coq-native/NIcharate_Kernel_apply_rule_props.cmxs  Kernel/.coq-native/NIcharate_Kernel_semLex.cmxs  Kernel/.coq-native/NIcharate_Kernel_struct_ex.cmxs  Tacs/.coq-native/NIcharate_Tacs_tacticsDed.cmxs  Tacs/.coq-native/NIcharate_Tacs_struct_tacs.cmxs  Tacs/.coq-native/NIcharate_Tacs_tacticsSeq.cmxs  Tacs/.coq-native/NIcharate_Tacs_polTac.cmxs  Lib/.coq-native/NIcharate_Lib_listAux.cmxs  Lib/.coq-native/NIcharate_Lib_permutation.cmxs  Examples/.coq-native/NIcharate_Examples_ex1s.cmxs  Examples/.coq-native/NIcharate_Examples_dep_ex.cmxs  Examples/.coq-native/NIcharate_Examples_ex3.cmxs  Examples/.coq-native/NIcharate_Examples_ex1.cmxs  Examples/.coq-native/NIcharate_Examples_polEx.cmxs  Examples/.coq-native/NIcharate_Examples_medialEx.cmxs   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Icharate/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/Icharate/$i; \
+done
+Installing coq:contrib:icharate.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 5,489 K</p>
+            <ul>
+              <li>1,325 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_bruijn.vo</code></li>
+              <li>744 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/basics.vo</code></li>
+              <li>263 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/apply_rule_props.vo</code></li>
+              <li>244 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/derivedRulesNatDed.vo</code></li>
+              <li>192 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/struct_ex.vo</code></li>
+              <li>160 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/tacticsDed.vo</code></li>
+              <li>120 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/basics.glob</code></li>
+              <li>118 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_reduction.vo</code></li>
+              <li>110 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/apply_rule_props.glob</code></li>
+              <li>105 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/struct_ex.glob</code></li>
+              <li>103 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/derivedRulesNatDed.glob</code></li>
+              <li>89 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_bruijn.glob</code></li>
+              <li>76 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/final_sem.vo</code></li>
+              <li>74 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Lib/listAux.vo</code></li>
+              <li>71 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Lib/permutation.vo</code></li>
+              <li>66 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_coq.vo</code></li>
+              <li>65 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_reduction.glob</code></li>
+              <li>64 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/tacticsDed.glob</code></li>
+              <li>58 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex1s.vo</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/derivSem.vo</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/unaries.vo</code></li>
+              <li>49 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/struct_props.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex1.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/natDed.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/polarity.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/seqNatDed.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/crossDep.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/dep_ex.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/polEx.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/medialEx.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/sequent.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/basics.v</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/semLex.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/natDedGram.vo</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Lib/listAux.glob</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/medialExtraction.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/unbounDep.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Lib/permutation.glob</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/tacticsDed.v</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/struct_tacs.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_bruijn.v</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/apply_rule_props.v</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/natDed.glob</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/polTac.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/derivedRulesNatDed.v</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/interp_coq.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_reduction.v</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex3.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/logic_const.vo</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/struct_ex.v</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/notations.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/polarity.glob</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/sequent.glob</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/struct_props.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_coq.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex1s.glob</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/unaries.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/crossDep.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/derivSem.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/semLex.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Lib/listAux.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/final_sem.glob</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/natDedGram.glob</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/polEx.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Lib/permutation.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/seqNatDed.glob</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/medialEx.glob</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/unbounDep.glob</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/dep_ex.glob</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex1.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/lambda_coq.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/polarity.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/medialExtraction.glob</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/natDed.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/interp_coq.glob</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/unaries.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/derivSem.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/struct_props.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/struct_tacs.glob</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/crossDep.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/seqNatDed.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/final_sem.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/semLex.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/sequent.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/struct_tacs.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/logic_const.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex1s.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/natDedGram.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex1.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/unbounDep.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/polTac.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Meta/medialExtraction.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/dep_ex.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/polEx.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/medialEx.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex3.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/notations.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/notations.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/polTac.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/interp_coq.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Kernel/logic_const.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/tacticsSeq.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/tacticsSeq.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Examples/ex3.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/Icharate/Tacs/tacticsSeq.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:icharate/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:icharate.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:icharate.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:icharate.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:icharate] Fetching https://gforge.inria.fr/git/coq-contribs/icharate.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:icharate.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/Icharate
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

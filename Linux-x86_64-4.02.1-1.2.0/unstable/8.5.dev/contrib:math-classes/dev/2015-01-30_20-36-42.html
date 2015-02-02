@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.5.dev / contrib:math-classes dev</a></li>
+              <li class="active"><a href="">2015-01-30 20:36:42</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:math-classes
+              <small>
+                dev
+                <span class="label label-success">2 m 40 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-30 20:36:42 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-30 20:36:42 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:math-classes/coq:contrib:math-classes.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:math-classes.dev coq.8.5.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.5.dev).
+The following actions will be performed:
+ - install   coq:contrib:math-classes.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:math-classes.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:math-classes.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:contrib:math-classes.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:contrib:math-classes.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 m 40 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:math-classes.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:math-classes] Fetching https://gforge.inria.fr/git/coq-contribs/math-classes.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:math-classes.dev/.git/
+[master (root-commit) 5876fd6] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/math-classes
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+LICENSE
+Make
+Makefile
+README
+SConscript
+SConstruct
+categories/JMcat.v
+categories/algebras.v
+categories/categories.v
+categories/dual.v
+categories/empty.v
+categories/functors.v
+categories/orders.v
+categories/product.v
+categories/setoids.v
+categories/unit.v
+categories/varieties.v
+description
+functors/constant.v
+implementations/NType_naturals.v
+implementations/QType_rationals.v
+implementations/ZType_integers.v
+implementations/bool.v
+implementations/dyadics.v
+implementations/fast_integers.v
+implementations/fast_naturals.v
+implementations/fast_rationals.v
+implementations/field_of_fractions.v
+implementations/intfrac_rationals.v
+implementations/list.v
+implementations/list_finite_set.v
+implementations/modular_ring.v
+implementations/mset_finite_set.v
+implementations/natpair_integers.v
+implementations/ne_list.v
+implementations/nonneg_integers_naturals.v
+implementations/nonneg_semiring_elements.v
+implementations/nonzero_field_elements.v
+implementations/option.v
+implementations/peano_naturals.v
+implementations/polynomials.v
+implementations/positive_semiring_elements.v
+implementations/semiring_pairs.v
+implementations/stdlib_binary_integers.v
+implementations/stdlib_binary_naturals.v
+implementations/stdlib_rationals.v
+interfaces/abstract_algebra.v
+interfaces/additional_operations.v
+interfaces/canonical_names.v
+interfaces/finite_sets.v
+interfaces/functors.v
+interfaces/integers.v
+interfaces/monads.v
+interfaces/naturals.v
+interfaces/orders.v
+interfaces/rationals.v
+interfaces/sequences.v
+interfaces/ua_basic.v
+interfaces/universal_algebra.v
+interfaces/vectorspace.v
+misc/JMrelation.v
+misc/benchmarks_nobuild.v
+misc/decision.v
+misc/propholds.v
+misc/setoid_tactics.v
+misc/stdlib_hints.v
+misc/util.v
+misc/workaround_tactics.v
+misc/workarounds.v
+orders/dec_fields.v
+orders/integers.v
+orders/lattices.v
+orders/maps.v
+orders/minmax.v
+orders/nat_int.v
+orders/naturals.v
+orders/orders.v
+orders/rationals.v
+orders/rings.v
+orders/semirings.v
+quote/classquote.v
+site_scons/site_tools/Coq.py
+theory/abs.v
+theory/adjunctions.v
+theory/categories.v
+theory/cut_minus.v
+theory/dec_fields.v
+theory/fields.v
+theory/finite_sets.v
+theory/forget_algebra.v
+theory/forget_variety.v
+theory/functors.v
+theory/groups.v
+theory/hom_functor.v
+theory/int_abs.v
+theory/int_pow.v
+theory/int_to_nat.v
+theory/integers.v
+theory/jections.v
+theory/lattices.v
+theory/monads.v
+theory/monoid_normalization.v
+theory/nat_distance.v
+theory/nat_pow.v
+theory/naturals.v
+theory/products.v
+theory/quote_monoid.v
+theory/rationals.v
+theory/ring_congruence.v
+theory/ring_ideals.v
+theory/rings.v
+theory/sequences.v
+theory/series.v
+theory/setoids.v
+theory/shiftl.v
+theory/streams.v
+theory/strong_setoids.v
+theory/ua_congruence.v
+theory/ua_homomorphisms.v
+theory/ua_mapped_operations.v
+theory/ua_packed.v
+theory/ua_products.v
+theory/ua_subalgebra.v
+theory/ua_subalgebraT.v
+theory/ua_subvariety.v
+theory/ua_term_monad.v
+theory/ua_transference.v
+varieties/abgroup.v
+varieties/closed_terms.v
+varieties/empty.v
+varieties/groups.v
+varieties/monoids.v
+varieties/open_terms.v
+varieties/rings.v
+varieties/semigroups.v
+varieties/semirings.v
+varieties/setoids.v
+HEAD is now at b5724c1 Fixing wrong and ineffective specifications of argument levels in Notation.
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:math-classes.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;quote/classquote.v&quot; &gt; &quot;quote/classquote.v.d&quot; || ( RV=$?; rm -f &quot;quote/classquote.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/finite_sets.v&quot; &gt; &quot;interfaces/finite_sets.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/finite_sets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/abstract_algebra.v&quot; &gt; &quot;interfaces/abstract_algebra.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/abstract_algebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/functors.v&quot; &gt; &quot;interfaces/functors.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/functors.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/monads.v&quot; &gt; &quot;interfaces/monads.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/monads.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/rationals.v&quot; &gt; &quot;interfaces/rationals.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/sequences.v&quot; &gt; &quot;interfaces/sequences.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/sequences.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/universal_algebra.v&quot; &gt; &quot;interfaces/universal_algebra.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/universal_algebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/orders.v&quot; &gt; &quot;interfaces/orders.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/orders.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/ua_basic.v&quot; &gt; &quot;interfaces/ua_basic.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/ua_basic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/canonical_names.v&quot; &gt; &quot;interfaces/canonical_names.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/canonical_names.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/additional_operations.v&quot; &gt; &quot;interfaces/additional_operations.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/additional_operations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/vectorspace.v&quot; &gt; &quot;interfaces/vectorspace.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/vectorspace.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/naturals.v&quot; &gt; &quot;interfaces/naturals.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;interfaces/integers.v&quot; &gt; &quot;interfaces/integers.v.d&quot; || ( RV=$?; rm -f &quot;interfaces/integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/nonneg_integers_naturals.v&quot; &gt; &quot;implementations/nonneg_integers_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/nonneg_integers_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/semiring_pairs.v&quot; &gt; &quot;implementations/semiring_pairs.v.d&quot; || ( RV=$?; rm -f &quot;implementations/semiring_pairs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/modular_ring.v&quot; &gt; &quot;implementations/modular_ring.v.d&quot; || ( RV=$?; rm -f &quot;implementations/modular_ring.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/ne_list.v&quot; &gt; &quot;implementations/ne_list.v.d&quot; || ( RV=$?; rm -f &quot;implementations/ne_list.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/nonzero_field_elements.v&quot; &gt; &quot;implementations/nonzero_field_elements.v.d&quot; || ( RV=$?; rm -f &quot;implementations/nonzero_field_elements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/QType_rationals.v&quot; &gt; &quot;implementations/QType_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/QType_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/intfrac_rationals.v&quot; &gt; &quot;implementations/intfrac_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/intfrac_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/positive_semiring_elements.v&quot; &gt; &quot;implementations/positive_semiring_elements.v.d&quot; || ( RV=$?; rm -f &quot;implementations/positive_semiring_elements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/stdlib_rationals.v&quot; &gt; &quot;implementations/stdlib_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/stdlib_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/fast_rationals.v&quot; &gt; &quot;implementations/fast_rationals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/fast_rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/dyadics.v&quot; &gt; &quot;implementations/dyadics.v.d&quot; || ( RV=$?; rm -f &quot;implementations/dyadics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/NType_naturals.v&quot; &gt; &quot;implementations/NType_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/NType_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/stdlib_binary_integers.v&quot; &gt; &quot;implementations/stdlib_binary_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/stdlib_binary_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/peano_naturals.v&quot; &gt; &quot;implementations/peano_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/peano_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/fast_naturals.v&quot; &gt; &quot;implementations/fast_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/fast_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/option.v&quot; &gt; &quot;implementations/option.v.d&quot; || ( RV=$?; rm -f &quot;implementations/option.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/list.v&quot; &gt; &quot;implementations/list.v.d&quot; || ( RV=$?; rm -f &quot;implementations/list.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/nonneg_semiring_elements.v&quot; &gt; &quot;implementations/nonneg_semiring_elements.v.d&quot; || ( RV=$?; rm -f &quot;implementations/nonneg_semiring_elements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/polynomials.v&quot; &gt; &quot;implementations/polynomials.v.d&quot; || ( RV=$?; rm -f &quot;implementations/polynomials.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/mset_finite_set.v&quot; &gt; &quot;implementations/mset_finite_set.v.d&quot; || ( RV=$?; rm -f &quot;implementations/mset_finite_set.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/natpair_integers.v&quot; &gt; &quot;implementations/natpair_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/natpair_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/stdlib_binary_naturals.v&quot; &gt; &quot;implementations/stdlib_binary_naturals.v.d&quot; || ( RV=$?; rm -f &quot;implementations/stdlib_binary_naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/ZType_integers.v&quot; &gt; &quot;implementations/ZType_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/ZType_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/fast_integers.v&quot; &gt; &quot;implementations/fast_integers.v.d&quot; || ( RV=$?; rm -f &quot;implementations/fast_integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/bool.v&quot; &gt; &quot;implementations/bool.v.d&quot; || ( RV=$?; rm -f &quot;implementations/bool.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/field_of_fractions.v&quot; &gt; &quot;implementations/field_of_fractions.v.d&quot; || ( RV=$?; rm -f &quot;implementations/field_of_fractions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;implementations/list_finite_set.v&quot; &gt; &quot;implementations/list_finite_set.v.d&quot; || ( RV=$?; rm -f &quot;implementations/list_finite_set.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/int_to_nat.v&quot; &gt; &quot;theory/int_to_nat.v.d&quot; || ( RV=$?; rm -f &quot;theory/int_to_nat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_term_monad.v&quot; &gt; &quot;theory/ua_term_monad.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_term_monad.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/finite_sets.v&quot; &gt; &quot;theory/finite_sets.v.d&quot; || ( RV=$?; rm -f &quot;theory/finite_sets.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_subvariety.v&quot; &gt; &quot;theory/ua_subvariety.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_subvariety.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/strong_setoids.v&quot; &gt; &quot;theory/strong_setoids.v.d&quot; || ( RV=$?; rm -f &quot;theory/strong_setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/int_pow.v&quot; &gt; &quot;theory/int_pow.v.d&quot; || ( RV=$?; rm -f &quot;theory/int_pow.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/quote_monoid.v&quot; &gt; &quot;theory/quote_monoid.v.d&quot; || ( RV=$?; rm -f &quot;theory/quote_monoid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_subalgebra.v&quot; &gt; &quot;theory/ua_subalgebra.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_subalgebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/categories.v&quot; &gt; &quot;theory/categories.v.d&quot; || ( RV=$?; rm -f &quot;theory/categories.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/setoids.v&quot; &gt; &quot;theory/setoids.v.d&quot; || ( RV=$?; rm -f &quot;theory/setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/lattices.v&quot; &gt; &quot;theory/lattices.v.d&quot; || ( RV=$?; rm -f &quot;theory/lattices.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/monoid_normalization.v&quot; &gt; &quot;theory/monoid_normalization.v.d&quot; || ( RV=$?; rm -f &quot;theory/monoid_normalization.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_congruence.v&quot; &gt; &quot;theory/ua_congruence.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_congruence.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/groups.v&quot; &gt; &quot;theory/groups.v.d&quot; || ( RV=$?; rm -f &quot;theory/groups.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/functors.v&quot; &gt; &quot;theory/functors.v.d&quot; || ( RV=$?; rm -f &quot;theory/functors.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/monads.v&quot; &gt; &quot;theory/monads.v.d&quot; || ( RV=$?; rm -f &quot;theory/monads.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/cut_minus.v&quot; &gt; &quot;theory/cut_minus.v.d&quot; || ( RV=$?; rm -f &quot;theory/cut_minus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/rationals.v&quot; &gt; &quot;theory/rationals.v.d&quot; || ( RV=$?; rm -f &quot;theory/rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/sequences.v&quot; &gt; &quot;theory/sequences.v.d&quot; || ( RV=$?; rm -f &quot;theory/sequences.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_products.v&quot; &gt; &quot;theory/ua_products.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_products.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/shiftl.v&quot; &gt; &quot;theory/shiftl.v.d&quot; || ( RV=$?; rm -f &quot;theory/shiftl.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_mapped_operations.v&quot; &gt; &quot;theory/ua_mapped_operations.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_mapped_operations.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/streams.v&quot; &gt; &quot;theory/streams.v.d&quot; || ( RV=$?; rm -f &quot;theory/streams.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/rings.v&quot; &gt; &quot;theory/rings.v.d&quot; || ( RV=$?; rm -f &quot;theory/rings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/series.v&quot; &gt; &quot;theory/series.v.d&quot; || ( RV=$?; rm -f &quot;theory/series.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/products.v&quot; &gt; &quot;theory/products.v.d&quot; || ( RV=$?; rm -f &quot;theory/products.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/dec_fields.v&quot; &gt; &quot;theory/dec_fields.v.d&quot; || ( RV=$?; rm -f &quot;theory/dec_fields.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/nat_distance.v&quot; &gt; &quot;theory/nat_distance.v.d&quot; || ( RV=$?; rm -f &quot;theory/nat_distance.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/fields.v&quot; &gt; &quot;theory/fields.v.d&quot; || ( RV=$?; rm -f &quot;theory/fields.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/int_abs.v&quot; &gt; &quot;theory/int_abs.v.d&quot; || ( RV=$?; rm -f &quot;theory/int_abs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/abs.v&quot; &gt; &quot;theory/abs.v.d&quot; || ( RV=$?; rm -f &quot;theory/abs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/forget_algebra.v&quot; &gt; &quot;theory/forget_algebra.v.d&quot; || ( RV=$?; rm -f &quot;theory/forget_algebra.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_homomorphisms.v&quot; &gt; &quot;theory/ua_homomorphisms.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_homomorphisms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/forget_variety.v&quot; &gt; &quot;theory/forget_variety.v.d&quot; || ( RV=$?; rm -f &quot;theory/forget_variety.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/adjunctions.v&quot; &gt; &quot;theory/adjunctions.v.d&quot; || ( RV=$?; rm -f &quot;theory/adjunctions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ring_ideals.v&quot; &gt; &quot;theory/ring_ideals.v.d&quot; || ( RV=$?; rm -f &quot;theory/ring_ideals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_subalgebraT.v&quot; &gt; &quot;theory/ua_subalgebraT.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_subalgebraT.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/naturals.v&quot; &gt; &quot;theory/naturals.v.d&quot; || ( RV=$?; rm -f &quot;theory/naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/jections.v&quot; &gt; &quot;theory/jections.v.d&quot; || ( RV=$?; rm -f &quot;theory/jections.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ring_congruence.v&quot; &gt; &quot;theory/ring_congruence.v.d&quot; || ( RV=$?; rm -f &quot;theory/ring_congruence.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/integers.v&quot; &gt; &quot;theory/integers.v.d&quot; || ( RV=$?; rm -f &quot;theory/integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_transference.v&quot; &gt; &quot;theory/ua_transference.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_transference.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/hom_functor.v&quot; &gt; &quot;theory/hom_functor.v.d&quot; || ( RV=$?; rm -f &quot;theory/hom_functor.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/nat_pow.v&quot; &gt; &quot;theory/nat_pow.v.d&quot; || ( RV=$?; rm -f &quot;theory/nat_pow.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;theory/ua_packed.v&quot; &gt; &quot;theory/ua_packed.v.d&quot; || ( RV=$?; rm -f &quot;theory/ua_packed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/stdlib_hints.v&quot; &gt; &quot;misc/stdlib_hints.v.d&quot; || ( RV=$?; rm -f &quot;misc/stdlib_hints.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/setoid_tactics.v&quot; &gt; &quot;misc/setoid_tactics.v.d&quot; || ( RV=$?; rm -f &quot;misc/setoid_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/workaround_tactics.v&quot; &gt; &quot;misc/workaround_tactics.v.d&quot; || ( RV=$?; rm -f &quot;misc/workaround_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/workarounds.v&quot; &gt; &quot;misc/workarounds.v.d&quot; || ( RV=$?; rm -f &quot;misc/workarounds.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/propholds.v&quot; &gt; &quot;misc/propholds.v.d&quot; || ( RV=$?; rm -f &quot;misc/propholds.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/decision.v&quot; &gt; &quot;misc/decision.v.d&quot; || ( RV=$?; rm -f &quot;misc/decision.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/JMrelation.v&quot; &gt; &quot;misc/JMrelation.v.d&quot; || ( RV=$?; rm -f &quot;misc/JMrelation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;misc/util.v&quot; &gt; &quot;misc/util.v.d&quot; || ( RV=$?; rm -f &quot;misc/util.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/minmax.v&quot; &gt; &quot;orders/minmax.v.d&quot; || ( RV=$?; rm -f &quot;orders/minmax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/lattices.v&quot; &gt; &quot;orders/lattices.v.d&quot; || ( RV=$?; rm -f &quot;orders/lattices.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/maps.v&quot; &gt; &quot;orders/maps.v.d&quot; || ( RV=$?; rm -f &quot;orders/maps.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/rationals.v&quot; &gt; &quot;orders/rationals.v.d&quot; || ( RV=$?; rm -f &quot;orders/rationals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/rings.v&quot; &gt; &quot;orders/rings.v.d&quot; || ( RV=$?; rm -f &quot;orders/rings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/orders.v&quot; &gt; &quot;orders/orders.v.d&quot; || ( RV=$?; rm -f &quot;orders/orders.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/dec_fields.v&quot; &gt; &quot;orders/dec_fields.v.d&quot; || ( RV=$?; rm -f &quot;orders/dec_fields.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/nat_int.v&quot; &gt; &quot;orders/nat_int.v.d&quot; || ( RV=$?; rm -f &quot;orders/nat_int.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/semirings.v&quot; &gt; &quot;orders/semirings.v.d&quot; || ( RV=$?; rm -f &quot;orders/semirings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/naturals.v&quot; &gt; &quot;orders/naturals.v.d&quot; || ( RV=$?; rm -f &quot;orders/naturals.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;orders/integers.v&quot; &gt; &quot;orders/integers.v.d&quot; || ( RV=$?; rm -f &quot;orders/integers.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/dual.v&quot; &gt; &quot;categories/dual.v.d&quot; || ( RV=$?; rm -f &quot;categories/dual.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/product.v&quot; &gt; &quot;categories/product.v.d&quot; || ( RV=$?; rm -f &quot;categories/product.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/categories.v&quot; &gt; &quot;categories/categories.v.d&quot; || ( RV=$?; rm -f &quot;categories/categories.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/setoids.v&quot; &gt; &quot;categories/setoids.v.d&quot; || ( RV=$?; rm -f &quot;categories/setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/functors.v&quot; &gt; &quot;categories/functors.v.d&quot; || ( RV=$?; rm -f &quot;categories/functors.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/unit.v&quot; &gt; &quot;categories/unit.v.d&quot; || ( RV=$?; rm -f &quot;categories/unit.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/varieties.v&quot; &gt; &quot;categories/varieties.v.d&quot; || ( RV=$?; rm -f &quot;categories/varieties.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/JMcat.v&quot; &gt; &quot;categories/JMcat.v.d&quot; || ( RV=$?; rm -f &quot;categories/JMcat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/empty.v&quot; &gt; &quot;categories/empty.v.d&quot; || ( RV=$?; rm -f &quot;categories/empty.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/orders.v&quot; &gt; &quot;categories/orders.v.d&quot; || ( RV=$?; rm -f &quot;categories/orders.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;categories/algebras.v&quot; &gt; &quot;categories/algebras.v.d&quot; || ( RV=$?; rm -f &quot;categories/algebras.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/setoids.v&quot; &gt; &quot;varieties/setoids.v.d&quot; || ( RV=$?; rm -f &quot;varieties/setoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/groups.v&quot; &gt; &quot;varieties/groups.v.d&quot; || ( RV=$?; rm -f &quot;varieties/groups.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/open_terms.v&quot; &gt; &quot;varieties/open_terms.v.d&quot; || ( RV=$?; rm -f &quot;varieties/open_terms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/rings.v&quot; &gt; &quot;varieties/rings.v.d&quot; || ( RV=$?; rm -f &quot;varieties/rings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/empty.v&quot; &gt; &quot;varieties/empty.v.d&quot; || ( RV=$?; rm -f &quot;varieties/empty.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/closed_terms.v&quot; &gt; &quot;varieties/closed_terms.v.d&quot; || ( RV=$?; rm -f &quot;varieties/closed_terms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/monoids.v&quot; &gt; &quot;varieties/monoids.v.d&quot; || ( RV=$?; rm -f &quot;varieties/monoids.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/abgroup.v&quot; &gt; &quot;varieties/abgroup.v.d&quot; || ( RV=$?; rm -f &quot;varieties/abgroup.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/semirings.v&quot; &gt; &quot;varieties/semirings.v.d&quot; || ( RV=$?; rm -f &quot;varieties/semirings.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;varieties/semigroups.v&quot; &gt; &quot;varieties/semigroups.v.d&quot; || ( RV=$?; rm -f &quot;varieties/semigroups.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; MathClasses &quot;functors/constant.v&quot; &gt; &quot;functors/constant.v.d&quot; || ( RV=$?; rm -f &quot;functors/constant.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/stdlib_hints
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/ne_list
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/workaround_tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/JMrelation
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   quote/classquote
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/canonical_names
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/util
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/propholds
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/workarounds
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/setoid_tactics
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   misc/decision
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/abstract_algebra
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/products
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/ua_basic
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/orders
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/additional_operations
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/bool
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/polynomials
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/setoids
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/finite_sets
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/vectorspace
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/functors
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/jections
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/groups
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/empty
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/monads
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/categories
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/universal_algebra
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/strong_setoids
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/orders
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_homomorphisms
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_mapped_operations
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_packed
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_term_monad
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   functors/constant
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/varieties
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/categories
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/setoids
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/maps
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/JMcat
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/functors
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/dual
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_transference
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/hom_functor
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/adjunctions
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_products
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/functors
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/product
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/closed_terms
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/open_terms
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/setoids
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/orders
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/unit
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/monads
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   categories/algebras
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/forget_algebra
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/forget_variety
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_subalgebraT
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/list
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/option
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_congruence
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/semigroups
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/monoids
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/abgroup
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/groups
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_subalgebra
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/rings
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/lattices
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/monoid_normalization
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ua_subvariety
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/semirings
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/empty
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   varieties/rings
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/semirings
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/fields
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/lattices
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ring_congruence
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/sequences
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/list_finite_set
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/nonzero_field_elements
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/peano_naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/rings
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/integers
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/dec_fields
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/minmax
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/ring_ideals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/streams
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/sequences
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/cut_minus
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/finite_sets
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/nonneg_semiring_elements
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/semiring_pairs
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/dec_fields
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/field_of_fractions
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/nat_pow
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/abs
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/quote_monoid
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/stdlib_binary_naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/mset_finite_set
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/nat_int
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/natpair_integers
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/nat_distance
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/integers
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/int_abs
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   interfaces/rationals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/int_to_nat
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/modular_ring
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/rationals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/integers
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/nonneg_integers_naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/stdlib_binary_integers
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/int_pow
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/shiftl
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   orders/rationals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/intfrac_rationals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/NType_naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/ZType_integers
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/stdlib_rationals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   theory/series
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/fast_naturals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/positive_semiring_elements
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/dyadics
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/QType_rationals
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/fast_integers
+&quot;coqc&quot;  -q  -R &quot;.&quot; MathClasses   implementations/fast_rationals
+cd &quot;.&quot; &amp;&amp; for i in functors/constant.vo varieties/semigroups.vo varieties/semirings.vo varieties/abgroup.vo varieties/monoids.vo varieties/closed_terms.vo varieties/empty.vo varieties/rings.vo varieties/open_terms.vo varieties/groups.vo varieties/setoids.vo categories/algebras.vo categories/orders.vo categories/empty.vo categories/JMcat.vo categories/varieties.vo categories/unit.vo categories/functors.vo categories/setoids.vo categories/categories.vo categories/product.vo categories/dual.vo orders/integers.vo orders/naturals.vo orders/semirings.vo orders/nat_int.vo orders/dec_fields.vo orders/orders.vo orders/rings.vo orders/rationals.vo orders/maps.vo orders/lattices.vo orders/minmax.vo misc/util.vo misc/JMrelation.vo misc/decision.vo misc/propholds.vo misc/workarounds.vo misc/workaround_tactics.vo misc/setoid_tactics.vo misc/stdlib_hints.vo theory/ua_packed.vo theory/nat_pow.vo theory/hom_functor.vo theory/ua_transference.vo theory/integers.vo theory/ring_congruence.vo theory/jections.vo theory/naturals.vo theory/ua_subalgebraT.vo theory/ring_ideals.vo theory/adjunctions.vo theory/forget_variety.vo theory/ua_homomorphisms.vo theory/forget_algebra.vo theory/abs.vo theory/int_abs.vo theory/fields.vo theory/nat_distance.vo theory/dec_fields.vo theory/products.vo theory/series.vo theory/rings.vo theory/streams.vo theory/ua_mapped_operations.vo theory/shiftl.vo theory/ua_products.vo theory/sequences.vo theory/rationals.vo theory/cut_minus.vo theory/monads.vo theory/functors.vo theory/groups.vo theory/ua_congruence.vo theory/monoid_normalization.vo theory/lattices.vo theory/setoids.vo theory/categories.vo theory/ua_subalgebra.vo theory/quote_monoid.vo theory/int_pow.vo theory/strong_setoids.vo theory/ua_subvariety.vo theory/finite_sets.vo theory/ua_term_monad.vo theory/int_to_nat.vo implementations/list_finite_set.vo implementations/field_of_fractions.vo implementations/bool.vo implementations/fast_integers.vo implementations/ZType_integers.vo implementations/stdlib_binary_naturals.vo implementations/natpair_integers.vo implementations/mset_finite_set.vo implementations/polynomials.vo implementations/nonneg_semiring_elements.vo implementations/list.vo implementations/option.vo implementations/fast_naturals.vo implementations/peano_naturals.vo implementations/stdlib_binary_integers.vo implementations/NType_naturals.vo implementations/dyadics.vo implementations/fast_rationals.vo implementations/stdlib_rationals.vo implementations/positive_semiring_elements.vo implementations/intfrac_rationals.vo implementations/QType_rationals.vo implementations/nonzero_field_elements.vo implementations/ne_list.vo implementations/modular_ring.vo implementations/semiring_pairs.vo implementations/nonneg_integers_naturals.vo interfaces/integers.vo interfaces/naturals.vo interfaces/vectorspace.vo interfaces/additional_operations.vo interfaces/canonical_names.vo interfaces/ua_basic.vo interfaces/orders.vo interfaces/universal_algebra.vo interfaces/sequences.vo interfaces/rationals.vo interfaces/monads.vo interfaces/functors.vo interfaces/abstract_algebra.vo interfaces/finite_sets.vo quote/classquote.vo functors/constant.v varieties/semigroups.v varieties/semirings.v varieties/abgroup.v varieties/monoids.v varieties/closed_terms.v varieties/empty.v varieties/rings.v varieties/open_terms.v varieties/groups.v varieties/setoids.v categories/algebras.v categories/orders.v categories/empty.v categories/JMcat.v categories/varieties.v categories/unit.v categories/functors.v categories/setoids.v categories/categories.v categories/product.v categories/dual.v orders/integers.v orders/naturals.v orders/semirings.v orders/nat_int.v orders/dec_fields.v orders/orders.v orders/rings.v orders/rationals.v orders/maps.v orders/lattices.v orders/minmax.v misc/util.v misc/JMrelation.v misc/decision.v misc/propholds.v misc/workarounds.v misc/workaround_tactics.v misc/setoid_tactics.v misc/stdlib_hints.v theory/ua_packed.v theory/nat_pow.v theory/hom_functor.v theory/ua_transference.v theory/integers.v theory/ring_congruence.v theory/jections.v theory/naturals.v theory/ua_subalgebraT.v theory/ring_ideals.v theory/adjunctions.v theory/forget_variety.v theory/ua_homomorphisms.v theory/forget_algebra.v theory/abs.v theory/int_abs.v theory/fields.v theory/nat_distance.v theory/dec_fields.v theory/products.v theory/series.v theory/rings.v theory/streams.v theory/ua_mapped_operations.v theory/shiftl.v theory/ua_products.v theory/sequences.v theory/rationals.v theory/cut_minus.v theory/monads.v theory/functors.v theory/groups.v theory/ua_congruence.v theory/monoid_normalization.v theory/lattices.v theory/setoids.v theory/categories.v theory/ua_subalgebra.v theory/quote_monoid.v theory/int_pow.v theory/strong_setoids.v theory/ua_subvariety.v theory/finite_sets.v theory/ua_term_monad.v theory/int_to_nat.v implementations/list_finite_set.v implementations/field_of_fractions.v implementations/bool.v implementations/fast_integers.v implementations/ZType_integers.v implementations/stdlib_binary_naturals.v implementations/natpair_integers.v implementations/mset_finite_set.v implementations/polynomials.v implementations/nonneg_semiring_elements.v implementations/list.v implementations/option.v implementations/fast_naturals.v implementations/peano_naturals.v implementations/stdlib_binary_integers.v implementations/NType_naturals.v implementations/dyadics.v implementations/fast_rationals.v implementations/stdlib_rationals.v implementations/positive_semiring_elements.v implementations/intfrac_rationals.v implementations/QType_rationals.v implementations/nonzero_field_elements.v implementations/ne_list.v implementations/modular_ring.v implementations/semiring_pairs.v implementations/nonneg_integers_naturals.v interfaces/integers.v interfaces/naturals.v interfaces/vectorspace.v interfaces/additional_operations.v interfaces/canonical_names.v interfaces/ua_basic.v interfaces/orders.v interfaces/universal_algebra.v interfaces/sequences.v interfaces/rationals.v interfaces/monads.v interfaces/functors.v interfaces/abstract_algebra.v interfaces/finite_sets.v quote/classquote.v functors/constant.glob varieties/semigroups.glob varieties/semirings.glob varieties/abgroup.glob varieties/monoids.glob varieties/closed_terms.glob varieties/empty.glob varieties/rings.glob varieties/open_terms.glob varieties/groups.glob varieties/setoids.glob categories/algebras.glob categories/orders.glob categories/empty.glob categories/JMcat.glob categories/varieties.glob categories/unit.glob categories/functors.glob categories/setoids.glob categories/categories.glob categories/product.glob categories/dual.glob orders/integers.glob orders/naturals.glob orders/semirings.glob orders/nat_int.glob orders/dec_fields.glob orders/orders.glob orders/rings.glob orders/rationals.glob orders/maps.glob orders/lattices.glob orders/minmax.glob misc/util.glob misc/JMrelation.glob misc/decision.glob misc/propholds.glob misc/workarounds.glob misc/workaround_tactics.glob misc/setoid_tactics.glob misc/stdlib_hints.glob theory/ua_packed.glob theory/nat_pow.glob theory/hom_functor.glob theory/ua_transference.glob theory/integers.glob theory/ring_congruence.glob theory/jections.glob theory/naturals.glob theory/ua_subalgebraT.glob theory/ring_ideals.glob theory/adjunctions.glob theory/forget_variety.glob theory/ua_homomorphisms.glob theory/forget_algebra.glob theory/abs.glob theory/int_abs.glob theory/fields.glob theory/nat_distance.glob theory/dec_fields.glob theory/products.glob theory/series.glob theory/rings.glob theory/streams.glob theory/ua_mapped_operations.glob theory/shiftl.glob theory/ua_products.glob theory/sequences.glob theory/rationals.glob theory/cut_minus.glob theory/monads.glob theory/functors.glob theory/groups.glob theory/ua_congruence.glob theory/monoid_normalization.glob theory/lattices.glob theory/setoids.glob theory/categories.glob theory/ua_subalgebra.glob theory/quote_monoid.glob theory/int_pow.glob theory/strong_setoids.glob theory/ua_subvariety.glob theory/finite_sets.glob theory/ua_term_monad.glob theory/int_to_nat.glob implementations/list_finite_set.glob implementations/field_of_fractions.glob implementations/bool.glob implementations/fast_integers.glob implementations/ZType_integers.glob implementations/stdlib_binary_naturals.glob implementations/natpair_integers.glob implementations/mset_finite_set.glob implementations/polynomials.glob implementations/nonneg_semiring_elements.glob implementations/list.glob implementations/option.glob implementations/fast_naturals.glob implementations/peano_naturals.glob implementations/stdlib_binary_integers.glob implementations/NType_naturals.glob implementations/dyadics.glob implementations/fast_rationals.glob implementations/stdlib_rationals.glob implementations/positive_semiring_elements.glob implementations/intfrac_rationals.glob implementations/QType_rationals.glob implementations/nonzero_field_elements.glob implementations/ne_list.glob implementations/modular_ring.glob implementations/semiring_pairs.glob implementations/nonneg_integers_naturals.glob interfaces/integers.glob interfaces/naturals.glob interfaces/vectorspace.glob interfaces/additional_operations.glob interfaces/canonical_names.glob interfaces/ua_basic.glob interfaces/orders.glob interfaces/universal_algebra.glob interfaces/sequences.glob interfaces/rationals.glob interfaces/monads.glob interfaces/functors.glob interfaces/abstract_algebra.glob interfaces/finite_sets.glob quote/classquote.glob  functors/.coq-native/NMathClasses_functors_constant.cmi  varieties/.coq-native/NMathClasses_varieties_semigroups.cmi  varieties/.coq-native/NMathClasses_varieties_semirings.cmi  varieties/.coq-native/NMathClasses_varieties_abgroup.cmi  varieties/.coq-native/NMathClasses_varieties_monoids.cmi  varieties/.coq-native/NMathClasses_varieties_closed_terms.cmi  varieties/.coq-native/NMathClasses_varieties_empty.cmi  varieties/.coq-native/NMathClasses_varieties_rings.cmi  varieties/.coq-native/NMathClasses_varieties_open_terms.cmi  varieties/.coq-native/NMathClasses_varieties_groups.cmi  varieties/.coq-native/NMathClasses_varieties_setoids.cmi  categories/.coq-native/NMathClasses_categories_algebras.cmi  categories/.coq-native/NMathClasses_categories_orders.cmi  categories/.coq-native/NMathClasses_categories_empty.cmi  categories/.coq-native/NMathClasses_categories_JMcat.cmi  categories/.coq-native/NMathClasses_categories_varieties.cmi  categories/.coq-native/NMathClasses_categories_unit.cmi  categories/.coq-native/NMathClasses_categories_functors.cmi  categories/.coq-native/NMathClasses_categories_setoids.cmi  categories/.coq-native/NMathClasses_categories_categories.cmi  categories/.coq-native/NMathClasses_categories_product.cmi  categories/.coq-native/NMathClasses_categories_dual.cmi  orders/.coq-native/NMathClasses_orders_integers.cmi  orders/.coq-native/NMathClasses_orders_naturals.cmi  orders/.coq-native/NMathClasses_orders_semirings.cmi  orders/.coq-native/NMathClasses_orders_nat_int.cmi  orders/.coq-native/NMathClasses_orders_dec_fields.cmi  orders/.coq-native/NMathClasses_orders_orders.cmi  orders/.coq-native/NMathClasses_orders_rings.cmi  orders/.coq-native/NMathClasses_orders_rationals.cmi  orders/.coq-native/NMathClasses_orders_maps.cmi  orders/.coq-native/NMathClasses_orders_lattices.cmi  orders/.coq-native/NMathClasses_orders_minmax.cmi  misc/.coq-native/NMathClasses_misc_util.cmi  misc/.coq-native/NMathClasses_misc_JMrelation.cmi  misc/.coq-native/NMathClasses_misc_decision.cmi  misc/.coq-native/NMathClasses_misc_propholds.cmi  misc/.coq-native/NMathClasses_misc_workarounds.cmi  misc/.coq-native/NMathClasses_misc_workaround_tactics.cmi  misc/.coq-native/NMathClasses_misc_setoid_tactics.cmi  misc/.coq-native/NMathClasses_misc_stdlib_hints.cmi  theory/.coq-native/NMathClasses_theory_ua_packed.cmi  theory/.coq-native/NMathClasses_theory_nat_pow.cmi  theory/.coq-native/NMathClasses_theory_hom_functor.cmi  theory/.coq-native/NMathClasses_theory_ua_transference.cmi  theory/.coq-native/NMathClasses_theory_integers.cmi  theory/.coq-native/NMathClasses_theory_ring_congruence.cmi  theory/.coq-native/NMathClasses_theory_jections.cmi  theory/.coq-native/NMathClasses_theory_naturals.cmi  theory/.coq-native/NMathClasses_theory_ua_subalgebraT.cmi  theory/.coq-native/NMathClasses_theory_ring_ideals.cmi  theory/.coq-native/NMathClasses_theory_adjunctions.cmi  theory/.coq-native/NMathClasses_theory_forget_variety.cmi  theory/.coq-native/NMathClasses_theory_ua_homomorphisms.cmi  theory/.coq-native/NMathClasses_theory_forget_algebra.cmi  theory/.coq-native/NMathClasses_theory_abs.cmi  theory/.coq-native/NMathClasses_theory_int_abs.cmi  theory/.coq-native/NMathClasses_theory_fields.cmi  theory/.coq-native/NMathClasses_theory_nat_distance.cmi  theory/.coq-native/NMathClasses_theory_dec_fields.cmi  theory/.coq-native/NMathClasses_theory_products.cmi  theory/.coq-native/NMathClasses_theory_series.cmi  theory/.coq-native/NMathClasses_theory_rings.cmi  theory/.coq-native/NMathClasses_theory_streams.cmi  theory/.coq-native/NMathClasses_theory_ua_mapped_operations.cmi  theory/.coq-native/NMathClasses_theory_shiftl.cmi  theory/.coq-native/NMathClasses_theory_ua_products.cmi  theory/.coq-native/NMathClasses_theory_sequences.cmi  theory/.coq-native/NMathClasses_theory_rationals.cmi  theory/.coq-native/NMathClasses_theory_cut_minus.cmi  theory/.coq-native/NMathClasses_theory_monads.cmi  theory/.coq-native/NMathClasses_theory_functors.cmi  theory/.coq-native/NMathClasses_theory_groups.cmi  theory/.coq-native/NMathClasses_theory_ua_congruence.cmi  theory/.coq-native/NMathClasses_theory_monoid_normalization.cmi  theory/.coq-native/NMathClasses_theory_lattices.cmi  theory/.coq-native/NMathClasses_theory_setoids.cmi  theory/.coq-native/NMathClasses_theory_categories.cmi  theory/.coq-native/NMathClasses_theory_ua_subalgebra.cmi  theory/.coq-native/NMathClasses_theory_quote_monoid.cmi  theory/.coq-native/NMathClasses_theory_int_pow.cmi  theory/.coq-native/NMathClasses_theory_strong_setoids.cmi  theory/.coq-native/NMathClasses_theory_ua_subvariety.cmi  theory/.coq-native/NMathClasses_theory_finite_sets.cmi  theory/.coq-native/NMathClasses_theory_ua_term_monad.cmi  theory/.coq-native/NMathClasses_theory_int_to_nat.cmi  implementations/.coq-native/NMathClasses_implementations_list_finite_set.cmi  implementations/.coq-native/NMathClasses_implementations_field_of_fractions.cmi  implementations/.coq-native/NMathClasses_implementations_bool.cmi  implementations/.coq-native/NMathClasses_implementations_fast_integers.cmi  implementations/.coq-native/NMathClasses_implementations_ZType_integers.cmi  implementations/.coq-native/NMathClasses_implementations_stdlib_binary_naturals.cmi  implementations/.coq-native/NMathClasses_implementations_natpair_integers.cmi  implementations/.coq-native/NMathClasses_implementations_mset_finite_set.cmi  implementations/.coq-native/NMathClasses_implementations_polynomials.cmi  implementations/.coq-native/NMathClasses_implementations_nonneg_semiring_elements.cmi  implementations/.coq-native/NMathClasses_implementations_list.cmi  implementations/.coq-native/NMathClasses_implementations_option.cmi  implementations/.coq-native/NMathClasses_implementations_fast_naturals.cmi  implementations/.coq-native/NMathClasses_implementations_peano_naturals.cmi  implementations/.coq-native/NMathClasses_implementations_stdlib_binary_integers.cmi  implementations/.coq-native/NMathClasses_implementations_NType_naturals.cmi  implementations/.coq-native/NMathClasses_implementations_dyadics.cmi  implementations/.coq-native/NMathClasses_implementations_fast_rationals.cmi  implementations/.coq-native/NMathClasses_implementations_stdlib_rationals.cmi  implementations/.coq-native/NMathClasses_implementations_positive_semiring_elements.cmi  implementations/.coq-native/NMathClasses_implementations_intfrac_rationals.cmi  implementations/.coq-native/NMathClasses_implementations_QType_rationals.cmi  implementations/.coq-native/NMathClasses_implementations_nonzero_field_elements.cmi  implementations/.coq-native/NMathClasses_implementations_ne_list.cmi  implementations/.coq-native/NMathClasses_implementations_modular_ring.cmi  implementations/.coq-native/NMathClasses_implementations_semiring_pairs.cmi  implementations/.coq-native/NMathClasses_implementations_nonneg_integers_naturals.cmi  interfaces/.coq-native/NMathClasses_interfaces_integers.cmi  interfaces/.coq-native/NMathClasses_interfaces_naturals.cmi  interfaces/.coq-native/NMathClasses_interfaces_vectorspace.cmi  interfaces/.coq-native/NMathClasses_interfaces_additional_operations.cmi  interfaces/.coq-native/NMathClasses_interfaces_canonical_names.cmi  interfaces/.coq-native/NMathClasses_interfaces_ua_basic.cmi  interfaces/.coq-native/NMathClasses_interfaces_orders.cmi  interfaces/.coq-native/NMathClasses_interfaces_universal_algebra.cmi  interfaces/.coq-native/NMathClasses_interfaces_sequences.cmi  interfaces/.coq-native/NMathClasses_interfaces_rationals.cmi  interfaces/.coq-native/NMathClasses_interfaces_monads.cmi  interfaces/.coq-native/NMathClasses_interfaces_functors.cmi  interfaces/.coq-native/NMathClasses_interfaces_abstract_algebra.cmi  interfaces/.coq-native/NMathClasses_interfaces_finite_sets.cmi  quote/.coq-native/NMathClasses_quote_classquote.cmi                                                                                                                                                                                                                                                                  functors/.coq-native/NMathClasses_functors_constant.cmx  varieties/.coq-native/NMathClasses_varieties_semigroups.cmx  varieties/.coq-native/NMathClasses_varieties_semirings.cmx  varieties/.coq-native/NMathClasses_varieties_abgroup.cmx  varieties/.coq-native/NMathClasses_varieties_monoids.cmx  varieties/.coq-native/NMathClasses_varieties_closed_terms.cmx  varieties/.coq-native/NMathClasses_varieties_empty.cmx  varieties/.coq-native/NMathClasses_varieties_rings.cmx  varieties/.coq-native/NMathClasses_varieties_open_terms.cmx  varieties/.coq-native/NMathClasses_varieties_groups.cmx  varieties/.coq-native/NMathClasses_varieties_setoids.cmx  categories/.coq-native/NMathClasses_categories_algebras.cmx  categories/.coq-native/NMathClasses_categories_orders.cmx  categories/.coq-native/NMathClasses_categories_empty.cmx  categories/.coq-native/NMathClasses_categories_JMcat.cmx  categories/.coq-native/NMathClasses_categories_varieties.cmx  categories/.coq-native/NMathClasses_categories_unit.cmx  categories/.coq-native/NMathClasses_categories_functors.cmx  categories/.coq-native/NMathClasses_categories_setoids.cmx  categories/.coq-native/NMathClasses_categories_categories.cmx  categories/.coq-native/NMathClasses_categories_product.cmx  categories/.coq-native/NMathClasses_categories_dual.cmx  orders/.coq-native/NMathClasses_orders_integers.cmx  orders/.coq-native/NMathClasses_orders_naturals.cmx  orders/.coq-native/NMathClasses_orders_semirings.cmx  orders/.coq-native/NMathClasses_orders_nat_int.cmx  orders/.coq-native/NMathClasses_orders_dec_fields.cmx  orders/.coq-native/NMathClasses_orders_orders.cmx  orders/.coq-native/NMathClasses_orders_rings.cmx  orders/.coq-native/NMathClasses_orders_rationals.cmx  orders/.coq-native/NMathClasses_orders_maps.cmx  orders/.coq-native/NMathClasses_orders_lattices.cmx  orders/.coq-native/NMathClasses_orders_minmax.cmx  misc/.coq-native/NMathClasses_misc_util.cmx  misc/.coq-native/NMathClasses_misc_JMrelation.cmx  misc/.coq-native/NMathClasses_misc_decision.cmx  misc/.coq-native/NMathClasses_misc_propholds.cmx  misc/.coq-native/NMathClasses_misc_workarounds.cmx  misc/.coq-native/NMathClasses_misc_workaround_tactics.cmx  misc/.coq-native/NMathClasses_misc_setoid_tactics.cmx  misc/.coq-native/NMathClasses_misc_stdlib_hints.cmx  theory/.coq-native/NMathClasses_theory_ua_packed.cmx  theory/.coq-native/NMathClasses_theory_nat_pow.cmx  theory/.coq-native/NMathClasses_theory_hom_functor.cmx  theory/.coq-native/NMathClasses_theory_ua_transference.cmx  theory/.coq-native/NMathClasses_theory_integers.cmx  theory/.coq-native/NMathClasses_theory_ring_congruence.cmx  theory/.coq-native/NMathClasses_theory_jections.cmx  theory/.coq-native/NMathClasses_theory_naturals.cmx  theory/.coq-native/NMathClasses_theory_ua_subalgebraT.cmx  theory/.coq-native/NMathClasses_theory_ring_ideals.cmx  theory/.coq-native/NMathClasses_theory_adjunctions.cmx  theory/.coq-native/NMathClasses_theory_forget_variety.cmx  theory/.coq-native/NMathClasses_theory_ua_homomorphisms.cmx  theory/.coq-native/NMathClasses_theory_forget_algebra.cmx  theory/.coq-native/NMathClasses_theory_abs.cmx  theory/.coq-native/NMathClasses_theory_int_abs.cmx  theory/.coq-native/NMathClasses_theory_fields.cmx  theory/.coq-native/NMathClasses_theory_nat_distance.cmx  theory/.coq-native/NMathClasses_theory_dec_fields.cmx  theory/.coq-native/NMathClasses_theory_products.cmx  theory/.coq-native/NMathClasses_theory_series.cmx  theory/.coq-native/NMathClasses_theory_rings.cmx  theory/.coq-native/NMathClasses_theory_streams.cmx  theory/.coq-native/NMathClasses_theory_ua_mapped_operations.cmx  theory/.coq-native/NMathClasses_theory_shiftl.cmx  theory/.coq-native/NMathClasses_theory_ua_products.cmx  theory/.coq-native/NMathClasses_theory_sequences.cmx  theory/.coq-native/NMathClasses_theory_rationals.cmx  theory/.coq-native/NMathClasses_theory_cut_minus.cmx  theory/.coq-native/NMathClasses_theory_monads.cmx  theory/.coq-native/NMathClasses_theory_functors.cmx  theory/.coq-native/NMathClasses_theory_groups.cmx  theory/.coq-native/NMathClasses_theory_ua_congruence.cmx  theory/.coq-native/NMathClasses_theory_monoid_normalization.cmx  theory/.coq-native/NMathClasses_theory_lattices.cmx  theory/.coq-native/NMathClasses_theory_setoids.cmx  theory/.coq-native/NMathClasses_theory_categories.cmx  theory/.coq-native/NMathClasses_theory_ua_subalgebra.cmx  theory/.coq-native/NMathClasses_theory_quote_monoid.cmx  theory/.coq-native/NMathClasses_theory_int_pow.cmx  theory/.coq-native/NMathClasses_theory_strong_setoids.cmx  theory/.coq-native/NMathClasses_theory_ua_subvariety.cmx  theory/.coq-native/NMathClasses_theory_finite_sets.cmx  theory/.coq-native/NMathClasses_theory_ua_term_monad.cmx  theory/.coq-native/NMathClasses_theory_int_to_nat.cmx  implementations/.coq-native/NMathClasses_implementations_list_finite_set.cmx  implementations/.coq-native/NMathClasses_implementations_field_of_fractions.cmx  implementations/.coq-native/NMathClasses_implementations_bool.cmx  implementations/.coq-native/NMathClasses_implementations_fast_integers.cmx  implementations/.coq-native/NMathClasses_implementations_ZType_integers.cmx  implementations/.coq-native/NMathClasses_implementations_stdlib_binary_naturals.cmx  implementations/.coq-native/NMathClasses_implementations_natpair_integers.cmx  implementations/.coq-native/NMathClasses_implementations_mset_finite_set.cmx  implementations/.coq-native/NMathClasses_implementations_polynomials.cmx  implementations/.coq-native/NMathClasses_implementations_nonneg_semiring_elements.cmx  implementations/.coq-native/NMathClasses_implementations_list.cmx  implementations/.coq-native/NMathClasses_implementations_option.cmx  implementations/.coq-native/NMathClasses_implementations_fast_naturals.cmx  implementations/.coq-native/NMathClasses_implementations_peano_naturals.cmx  implementations/.coq-native/NMathClasses_implementations_stdlib_binary_integers.cmx  implementations/.coq-native/NMathClasses_implementations_NType_naturals.cmx  implementations/.coq-native/NMathClasses_implementations_dyadics.cmx  implementations/.coq-native/NMathClasses_implementations_fast_rationals.cmx  implementations/.coq-native/NMathClasses_implementations_stdlib_rationals.cmx  implementations/.coq-native/NMathClasses_implementations_positive_semiring_elements.cmx  implementations/.coq-native/NMathClasses_implementations_intfrac_rationals.cmx  implementations/.coq-native/NMathClasses_implementations_QType_rationals.cmx  implementations/.coq-native/NMathClasses_implementations_nonzero_field_elements.cmx  implementations/.coq-native/NMathClasses_implementations_ne_list.cmx  implementations/.coq-native/NMathClasses_implementations_modular_ring.cmx  implementations/.coq-native/NMathClasses_implementations_semiring_pairs.cmx  implementations/.coq-native/NMathClasses_implementations_nonneg_integers_naturals.cmx  interfaces/.coq-native/NMathClasses_interfaces_integers.cmx  interfaces/.coq-native/NMathClasses_interfaces_naturals.cmx  interfaces/.coq-native/NMathClasses_interfaces_vectorspace.cmx  interfaces/.coq-native/NMathClasses_interfaces_additional_operations.cmx  interfaces/.coq-native/NMathClasses_interfaces_canonical_names.cmx  interfaces/.coq-native/NMathClasses_interfaces_ua_basic.cmx  interfaces/.coq-native/NMathClasses_interfaces_orders.cmx  interfaces/.coq-native/NMathClasses_interfaces_universal_algebra.cmx  interfaces/.coq-native/NMathClasses_interfaces_sequences.cmx  interfaces/.coq-native/NMathClasses_interfaces_rationals.cmx  interfaces/.coq-native/NMathClasses_interfaces_monads.cmx  interfaces/.coq-native/NMathClasses_interfaces_functors.cmx  interfaces/.coq-native/NMathClasses_interfaces_abstract_algebra.cmx  interfaces/.coq-native/NMathClasses_interfaces_finite_sets.cmx  quote/.coq-native/NMathClasses_quote_classquote.cmx  functors/.coq-native/NMathClasses_functors_constant.cmxs  varieties/.coq-native/NMathClasses_varieties_semigroups.cmxs  varieties/.coq-native/NMathClasses_varieties_semirings.cmxs  varieties/.coq-native/NMathClasses_varieties_abgroup.cmxs  varieties/.coq-native/NMathClasses_varieties_monoids.cmxs  varieties/.coq-native/NMathClasses_varieties_closed_terms.cmxs  varieties/.coq-native/NMathClasses_varieties_empty.cmxs  varieties/.coq-native/NMathClasses_varieties_rings.cmxs  varieties/.coq-native/NMathClasses_varieties_open_terms.cmxs  varieties/.coq-native/NMathClasses_varieties_groups.cmxs  varieties/.coq-native/NMathClasses_varieties_setoids.cmxs  categories/.coq-native/NMathClasses_categories_algebras.cmxs  categories/.coq-native/NMathClasses_categories_orders.cmxs  categories/.coq-native/NMathClasses_categories_empty.cmxs  categories/.coq-native/NMathClasses_categories_JMcat.cmxs  categories/.coq-native/NMathClasses_categories_varieties.cmxs  categories/.coq-native/NMathClasses_categories_unit.cmxs  categories/.coq-native/NMathClasses_categories_functors.cmxs  categories/.coq-native/NMathClasses_categories_setoids.cmxs  categories/.coq-native/NMathClasses_categories_categories.cmxs  categories/.coq-native/NMathClasses_categories_product.cmxs  categories/.coq-native/NMathClasses_categories_dual.cmxs  orders/.coq-native/NMathClasses_orders_integers.cmxs  orders/.coq-native/NMathClasses_orders_naturals.cmxs  orders/.coq-native/NMathClasses_orders_semirings.cmxs  orders/.coq-native/NMathClasses_orders_nat_int.cmxs  orders/.coq-native/NMathClasses_orders_dec_fields.cmxs  orders/.coq-native/NMathClasses_orders_orders.cmxs  orders/.coq-native/NMathClasses_orders_rings.cmxs  orders/.coq-native/NMathClasses_orders_rationals.cmxs  orders/.coq-native/NMathClasses_orders_maps.cmxs  orders/.coq-native/NMathClasses_orders_lattices.cmxs  orders/.coq-native/NMathClasses_orders_minmax.cmxs  misc/.coq-native/NMathClasses_misc_util.cmxs  misc/.coq-native/NMathClasses_misc_JMrelation.cmxs  misc/.coq-native/NMathClasses_misc_decision.cmxs  misc/.coq-native/NMathClasses_misc_propholds.cmxs  misc/.coq-native/NMathClasses_misc_workarounds.cmxs  misc/.coq-native/NMathClasses_misc_workaround_tactics.cmxs  misc/.coq-native/NMathClasses_misc_setoid_tactics.cmxs  misc/.coq-native/NMathClasses_misc_stdlib_hints.cmxs  theory/.coq-native/NMathClasses_theory_ua_packed.cmxs  theory/.coq-native/NMathClasses_theory_nat_pow.cmxs  theory/.coq-native/NMathClasses_theory_hom_functor.cmxs  theory/.coq-native/NMathClasses_theory_ua_transference.cmxs  theory/.coq-native/NMathClasses_theory_integers.cmxs  theory/.coq-native/NMathClasses_theory_ring_congruence.cmxs  theory/.coq-native/NMathClasses_theory_jections.cmxs  theory/.coq-native/NMathClasses_theory_naturals.cmxs  theory/.coq-native/NMathClasses_theory_ua_subalgebraT.cmxs  theory/.coq-native/NMathClasses_theory_ring_ideals.cmxs  theory/.coq-native/NMathClasses_theory_adjunctions.cmxs  theory/.coq-native/NMathClasses_theory_forget_variety.cmxs  theory/.coq-native/NMathClasses_theory_ua_homomorphisms.cmxs  theory/.coq-native/NMathClasses_theory_forget_algebra.cmxs  theory/.coq-native/NMathClasses_theory_abs.cmxs  theory/.coq-native/NMathClasses_theory_int_abs.cmxs  theory/.coq-native/NMathClasses_theory_fields.cmxs  theory/.coq-native/NMathClasses_theory_nat_distance.cmxs  theory/.coq-native/NMathClasses_theory_dec_fields.cmxs  theory/.coq-native/NMathClasses_theory_products.cmxs  theory/.coq-native/NMathClasses_theory_series.cmxs  theory/.coq-native/NMathClasses_theory_rings.cmxs  theory/.coq-native/NMathClasses_theory_streams.cmxs  theory/.coq-native/NMathClasses_theory_ua_mapped_operations.cmxs  theory/.coq-native/NMathClasses_theory_shiftl.cmxs  theory/.coq-native/NMathClasses_theory_ua_products.cmxs  theory/.coq-native/NMathClasses_theory_sequences.cmxs  theory/.coq-native/NMathClasses_theory_rationals.cmxs  theory/.coq-native/NMathClasses_theory_cut_minus.cmxs  theory/.coq-native/NMathClasses_theory_monads.cmxs  theory/.coq-native/NMathClasses_theory_functors.cmxs  theory/.coq-native/NMathClasses_theory_groups.cmxs  theory/.coq-native/NMathClasses_theory_ua_congruence.cmxs  theory/.coq-native/NMathClasses_theory_monoid_normalization.cmxs  theory/.coq-native/NMathClasses_theory_lattices.cmxs  theory/.coq-native/NMathClasses_theory_setoids.cmxs  theory/.coq-native/NMathClasses_theory_categories.cmxs  theory/.coq-native/NMathClasses_theory_ua_subalgebra.cmxs  theory/.coq-native/NMathClasses_theory_quote_monoid.cmxs  theory/.coq-native/NMathClasses_theory_int_pow.cmxs  theory/.coq-native/NMathClasses_theory_strong_setoids.cmxs  theory/.coq-native/NMathClasses_theory_ua_subvariety.cmxs  theory/.coq-native/NMathClasses_theory_finite_sets.cmxs  theory/.coq-native/NMathClasses_theory_ua_term_monad.cmxs  theory/.coq-native/NMathClasses_theory_int_to_nat.cmxs  implementations/.coq-native/NMathClasses_implementations_list_finite_set.cmxs  implementations/.coq-native/NMathClasses_implementations_field_of_fractions.cmxs  implementations/.coq-native/NMathClasses_implementations_bool.cmxs  implementations/.coq-native/NMathClasses_implementations_fast_integers.cmxs  implementations/.coq-native/NMathClasses_implementations_ZType_integers.cmxs  implementations/.coq-native/NMathClasses_implementations_stdlib_binary_naturals.cmxs  implementations/.coq-native/NMathClasses_implementations_natpair_integers.cmxs  implementations/.coq-native/NMathClasses_implementations_mset_finite_set.cmxs  implementations/.coq-native/NMathClasses_implementations_polynomials.cmxs  implementations/.coq-native/NMathClasses_implementations_nonneg_semiring_elements.cmxs  implementations/.coq-native/NMathClasses_implementations_list.cmxs  implementations/.coq-native/NMathClasses_implementations_option.cmxs  implementations/.coq-native/NMathClasses_implementations_fast_naturals.cmxs  implementations/.coq-native/NMathClasses_implementations_peano_naturals.cmxs  implementations/.coq-native/NMathClasses_implementations_stdlib_binary_integers.cmxs  implementations/.coq-native/NMathClasses_implementations_NType_naturals.cmxs  implementations/.coq-native/NMathClasses_implementations_dyadics.cmxs  implementations/.coq-native/NMathClasses_implementations_fast_rationals.cmxs  implementations/.coq-native/NMathClasses_implementations_stdlib_rationals.cmxs  implementations/.coq-native/NMathClasses_implementations_positive_semiring_elements.cmxs  implementations/.coq-native/NMathClasses_implementations_intfrac_rationals.cmxs  implementations/.coq-native/NMathClasses_implementations_QType_rationals.cmxs  implementations/.coq-native/NMathClasses_implementations_nonzero_field_elements.cmxs  implementations/.coq-native/NMathClasses_implementations_ne_list.cmxs  implementations/.coq-native/NMathClasses_implementations_modular_ring.cmxs  implementations/.coq-native/NMathClasses_implementations_semiring_pairs.cmxs  implementations/.coq-native/NMathClasses_implementations_nonneg_integers_naturals.cmxs  interfaces/.coq-native/NMathClasses_interfaces_integers.cmxs  interfaces/.coq-native/NMathClasses_interfaces_naturals.cmxs  interfaces/.coq-native/NMathClasses_interfaces_vectorspace.cmxs  interfaces/.coq-native/NMathClasses_interfaces_additional_operations.cmxs  interfaces/.coq-native/NMathClasses_interfaces_canonical_names.cmxs  interfaces/.coq-native/NMathClasses_interfaces_ua_basic.cmxs  interfaces/.coq-native/NMathClasses_interfaces_orders.cmxs  interfaces/.coq-native/NMathClasses_interfaces_universal_algebra.cmxs  interfaces/.coq-native/NMathClasses_interfaces_sequences.cmxs  interfaces/.coq-native/NMathClasses_interfaces_rationals.cmxs  interfaces/.coq-native/NMathClasses_interfaces_monads.cmxs  interfaces/.coq-native/NMathClasses_interfaces_functors.cmxs  interfaces/.coq-native/NMathClasses_interfaces_abstract_algebra.cmxs  interfaces/.coq-native/NMathClasses_interfaces_finite_sets.cmxs  quote/.coq-native/NMathClasses_quote_classquote.cmxs   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/MathClasses/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/MathClasses/$i; \
+done
+Installing coq:contrib:math-classes.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 13,987 K</p>
+            <ul>
+              <li>503 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/monoid_normalization.vo</code></li>
+              <li>253 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/dyadics.vo</code></li>
+              <li>215 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/rationals.vo</code></li>
+              <li>198 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_pow.vo</code></li>
+              <li>184 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_rationals.vo</code></li>
+              <li>183 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/semirings.vo</code></li>
+              <li>181 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/mset_finite_set.vo</code></li>
+              <li>181 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/abstract_algebra.vo</code></li>
+              <li>177 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/finite_sets.vo</code></li>
+              <li>175 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/shiftl.vo</code></li>
+              <li>163 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/sequences.vo</code></li>
+              <li>162 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/ZType_integers.vo</code></li>
+              <li>160 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/rationals.vo</code></li>
+              <li>153 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_integers.vo</code></li>
+              <li>146 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/NType_naturals.vo</code></li>
+              <li>143 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/QType_rationals.vo</code></li>
+              <li>137 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/rings.vo</code></li>
+              <li>134 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/categories.vo</code></li>
+              <li>133 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/semirings.glob</code></li>
+              <li>129 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_naturals.vo</code></li>
+              <li>129 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/semiring_pairs.vo</code></li>
+              <li>126 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/quote_monoid.vo</code></li>
+              <li>126 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/canonical_names.vo</code></li>
+              <li>117 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/maps.vo</code></li>
+              <li>114 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/list_finite_set.vo</code></li>
+              <li>114 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/categories.vo</code></li>
+              <li>112 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_congruence.vo</code></li>
+              <li>109 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/dec_fields.vo</code></li>
+              <li>109 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/orders.vo</code></li>
+              <li>108 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/series.vo</code></li>
+              <li>108 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/cut_minus.vo</code></li>
+              <li>106 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/finite_sets.glob</code></li>
+              <li>103 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_to_nat.vo</code></li>
+              <li>100 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/integers.vo</code></li>
+              <li>99 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/field_of_fractions.vo</code></li>
+              <li>97 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/nat_pow.vo</code></li>
+              <li>97 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/integers.vo</code></li>
+              <li>94 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/rings.vo</code></li>
+              <li>92 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/monads.vo</code></li>
+              <li>91 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_binary_integers.vo</code></li>
+              <li>87 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/fields.vo</code></li>
+              <li>87 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/naturals.vo</code></li>
+              <li>86 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/adjunctions.vo</code></li>
+              <li>86 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/orders.vo</code></li>
+              <li>85 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_pow.glob</code></li>
+              <li>85 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/lattices.vo</code></li>
+              <li>84 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/natpair_integers.vo</code></li>
+              <li>84 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/canonical_names.glob</code></li>
+              <li>84 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/shiftl.glob</code></li>
+              <li>82 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/dyadics.glob</code></li>
+              <li>81 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/list.vo</code></li>
+              <li>81 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/abgroup.vo</code></li>
+              <li>79 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/lattices.vo</code></li>
+              <li>79 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_abs.vo</code></li>
+              <li>78 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/semiring_pairs.glob</code></li>
+              <li>77 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/additional_operations.vo</code></li>
+              <li>76 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/cut_minus.glob</code></li>
+              <li>76 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/decision.vo</code></li>
+              <li>73 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/naturals.vo</code></li>
+              <li>72 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/nat_int.vo</code></li>
+              <li>70 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/vectorspace.vo</code></li>
+              <li>69 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonneg_semiring_elements.vo</code></li>
+              <li>68 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/rings.glob</code></li>
+              <li>68 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonneg_integers_naturals.vo</code></li>
+              <li>68 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/universal_algebra.vo</code></li>
+              <li>68 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_rationals.vo</code></li>
+              <li>67 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/rings.vo</code></li>
+              <li>65 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/lattices.glob</code></li>
+              <li>62 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ring_ideals.vo</code></li>
+              <li>62 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/quote/classquote.vo</code></li>
+              <li>61 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/nat_distance.vo</code></li>
+              <li>61 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/abs.vo</code></li>
+              <li>61 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/rings.glob</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/peano_naturals.vo</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/closed_terms.vo</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_products.vo</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ring_congruence.vo</code></li>
+              <li>59 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/orders.glob</code></li>
+              <li>58 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/monads.vo</code></li>
+              <li>58 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/functors.vo</code></li>
+              <li>57 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/maps.glob</code></li>
+              <li>57 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/positive_semiring_elements.vo</code></li>
+              <li>56 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/option.vo</code></li>
+              <li>56 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/dec_fields.vo</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/monoids.vo</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/rationals.glob</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/monads.glob</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/groups.vo</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/semirings.vo</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/list_finite_set.glob</code></li>
+              <li>52 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_products.glob</code></li>
+              <li>51 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/integers.vo</code></li>
+              <li>50 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/semigroups.vo</code></li>
+              <li>50 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonzero_field_elements.vo</code></li>
+              <li>49 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/groups.vo</code></li>
+              <li>49 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/streams.vo</code></li>
+              <li>48 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/series.glob</code></li>
+              <li>48 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/adjunctions.glob</code></li>
+              <li>48 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/dec_fields.glob</code></li>
+              <li>48 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_binary_naturals.vo</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/functors.vo</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_term_monad.vo</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/naturals.glob</code></li>
+              <li>47 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/naturals.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/products.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subalgebra.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/strong_setoids.vo</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/list.glob</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/jections.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subvariety.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_homomorphisms.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/minmax.vo</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/categories.glob</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/product.vo</code></li>
+              <li>44 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/algebras.vo</code></li>
+              <li>44 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/abstract_algebra.glob</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/JMcat.vo</code></li>
+              <li>43 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/finite_sets.vo</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_to_nat.glob</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/rationals.glob</code></li>
+              <li>42 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/rationals.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/groups.glob</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/modular_ring.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/open_terms.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subalgebraT.vo</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_packed.vo</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/setoids.vo</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/fields.glob</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/sequences.vo</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/categories.glob</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/orders.vo</code></li>
+              <li>38 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/intfrac_rationals.vo</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_congruence.glob</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/forget_algebra.vo</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/quote/classquote.glob</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/varieties.vo</code></li>
+              <li>35 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_transference.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/lattices.glob</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/ne_list.vo</code></li>
+              <li>34 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/additional_operations.glob</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/strong_setoids.glob</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/nat_pow.glob</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/field_of_fractions.glob</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/universal_algebra.glob</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/ZType_integers.glob</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/closed_terms.glob</code></li>
+              <li>31 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/jections.glob</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/orders.glob</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/util.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/setoids.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/functors.vo</code></li>
+              <li>29 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_binary_integers.glob</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/forget_variety.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/empty.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/abgroup.glob</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_rationals.glob</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/ua_basic.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/integers.glob</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/rings.glob</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/NType_naturals.glob</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/dual.vo</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_homomorphisms.glob</code></li>
+              <li>25 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_transference.glob</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/monoids.glob</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/semirings.glob</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_abs.glob</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/polynomials.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/sequences.glob</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/semirings.v</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/quote_monoid.glob</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/groups.glob</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/semigroups.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/mset_finite_set.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/integers.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/nat_int.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/ne_list.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/QType_rationals.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/streams.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/natpair_integers.glob</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_term_monad.glob</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/hom_functor.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/functors/constant.vo</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/peano_naturals.glob</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/empty.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/setoids.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_rationals.glob</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_mapped_operations.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/vectorspace.glob</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/abs.glob</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/functors.glob</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/canonical_names.v</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/functors.glob</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ring_ideals.glob</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/naturals.glob</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/monoid_normalization.glob</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/dec_fields.glob</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/bool.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/setoid_tactics.vo</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/unit.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/dyadics.v</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/finite_sets.v</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/monads.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonneg_semiring_elements.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/decision.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/finite_sets.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/product.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_packed.glob</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_pow.v</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subvariety.glob</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/quote/classquote.v</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/option.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/open_terms.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/workarounds.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/propholds.vo</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/maps.v</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ring_congruence.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/setoids.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/util.glob</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/rings.v</code></li>
+              <li>12 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subalgebra.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/lattices.v</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/orders.v</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/shiftl.v</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonneg_integers_naturals.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/list.v</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/JMcat.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/semiring_pairs.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/abstract_algebra.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/nat_distance.glob</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/minmax.glob</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_mapped_operations.glob</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/list_finite_set.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subalgebraT.glob</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/rings.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/series.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/sequences.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/monads.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/categories.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/cut_minus.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/integers.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonzero_field_elements.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/positive_semiring_elements.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/universal_algebra.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_binary_naturals.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/ua_basic.glob</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/naturals.glob</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_congruence.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/orders.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/closed_terms.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/products.glob</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/rationals.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/naturals.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/rationals.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_products.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/dec_fields.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/dual.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/strong_setoids.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/adjunctions.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/setoids.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/JMrelation.vo</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/categories.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/varieties.glob</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/lattices.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_to_nat.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/algebras.glob</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/functors.glob</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/ZType_integers.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/nat_pow.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/groups.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_binary_integers.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/polynomials.glob</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/abgroup.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/jections.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/field_of_fractions.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/sequences.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_homomorphisms.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/fields.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/monoids.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/functors.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/integers.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/NType_naturals.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/setoids.glob</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/rings.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/JMrelation.glob</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/vectorspace.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/product.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/orders.glob</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_rationals.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/nat_int.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_integers.glob</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/forget_algebra.glob</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/semigroups.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/natpair_integers.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/semirings.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/additional_operations.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/streams.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/groups.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/decision.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/QType_rationals.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/peano_naturals.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/integers.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/quote_monoid.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/ne_list.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_rationals.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/int_abs.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/option.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/stdlib_hints.vo</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/naturals.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/functors/constant.glob</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/monoid_normalization.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/finite_sets.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_term_monad.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/empty.glob</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonneg_semiring_elements.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/ua_basic.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/modular_ring.glob</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/open_terms.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_packed.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/functors.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_transference.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/sequences.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/mset_finite_set.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ring_ideals.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/rationals.glob</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/abs.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subvariety.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subalgebra.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/dec_fields.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ring_congruence.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/util.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonneg_integers_naturals.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/nat_distance.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/stdlib_binary_naturals.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/empty.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/setoids.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_subalgebraT.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/JMcat.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/monads.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/hom_functor.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/unit.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/setoids.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/bool.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/positive_semiring_elements.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/naturals.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/setoid_tactics.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/integers.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/orders.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/varieties.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/products.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/algebras.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/functors.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/dual.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/polynomials.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/setoid_tactics.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/ua_mapped_operations.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/forget_variety.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/nonzero_field_elements.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/intfrac_rationals.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/workarounds.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/forget_algebra.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/workaround_tactics.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/setoids.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/orders/minmax.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/interfaces/rationals.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/stdlib_hints.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/workarounds.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/JMrelation.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_integers.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/functors/constant.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/stdlib_hints.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/bool.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/modular_ring.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/propholds.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/varieties/empty.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/propholds.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/hom_functor.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/empty.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/theory/forget_variety.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/categories/unit.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/workaround_tactics.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_naturals.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/intfrac_rationals.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/implementations/fast_naturals.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/MathClasses/misc/workaround_tactics.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:math-classes/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:math-classes.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:math-classes.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:math-classes.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:math-classes] Fetching https://gforge.inria.fr/git/coq-contribs/math-classes.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:math-classes.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/MathClasses
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

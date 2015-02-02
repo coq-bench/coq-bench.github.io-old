@@ -1,0 +1,3641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / contrib:area-method 8.4.dev</a></li>
+              <li class="active"><a href="">2015-01-29 16:27:40</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:area-method
+              <small>
+                8.4.dev
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-29 16:27:40 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-29 16:27:40 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:area-method/coq:contrib:area-method.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:area-method.8.4.dev coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.4.5).
+The following actions will be performed:
+ - install   coq:contrib:area-method.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:area-method.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:area-method.8.4.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 600 opam install -y --deps-only coq:contrib:area-method.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 300 opam install -y --verbose coq:contrib:area-method.8.4.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>31744</dd>
+              <dt>Duration</dt>
+              <dd>5 m 0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:area-method.8.4.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:area-method] Fetching https://gforge.inria.fr/git/coq-contribs/area-method.git#v8.4
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:area-method.8.4.dev/.git/
+[master (root-commit) 68e3242] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/area-method
+ * [new branch]      v8.4       -&gt; opam-ref
+ * [new branch]      v8.4       -&gt; origin/v8.4
+Make
+Makefile
+README
+Rgeometry_tools.v
+advanced_parallel_lemmas.v
+area_coords_constructions.v
+area_coords_elimination.v
+area_elimination_lemmas.v
+area_method.v
+basic_geometric_facts.v
+bench.log
+bench_normalization_tactics.v
+chou_gao_zhang_axioms.v
+constructed_points_elimination.v
+construction_lemmas.v
+construction_lemmas_2.v
+construction_tactics.v
+description
+elimination_prepare.v
+euclidean_constructions.v
+euclidean_constructions_2.v
+examples_1.v
+examples_2.v
+examples_3.v
+examples_4.v
+examples_5.v
+examples_6.v
+examples_centroid.v
+examples_circumcenter.v
+examples_interactive.v
+field.v
+field_general_properties.v
+field_variable_isolation_tactic.v
+free_points_elimination.v
+free_points_elimination_py.v
+freepoints.v
+general_tactics.v
+geometry_tools.v
+geometry_tools_lemmas.v
+my_field_tac.v
+parallel_lemmas.v
+py_elimination_lemmas.v
+pythagoras_difference.v
+pythagoras_difference_lemmas.v
+ratios_elimination_lemmas.v
+simplify_constructions.v
+tests_elimination_tactics_areas.v
+tests_elimination_tactics_py.v
+tests_elimination_tactics_ratios.v
+HEAD is now at af480d4 Avoid Require &quot;X&quot; forms
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:area-method.8.4.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;bench_normalization_tactics.v&quot; &gt; &quot;bench_normalization_tactics.v.d&quot; || ( RV=$?; rm -f &quot;bench_normalization_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;chou_gao_zhang_axioms.v&quot; &gt; &quot;chou_gao_zhang_axioms.v.d&quot; || ( RV=$?; rm -f &quot;chou_gao_zhang_axioms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;basic_geometric_facts.v&quot; &gt; &quot;basic_geometric_facts.v.d&quot; || ( RV=$?; rm -f &quot;basic_geometric_facts.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;construction_lemmas.v&quot; &gt; &quot;construction_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;construction_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;construction_tactics.v&quot; &gt; &quot;construction_tactics.v.d&quot; || ( RV=$?; rm -f &quot;construction_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;elimination_prepare.v&quot; &gt; &quot;elimination_prepare.v.d&quot; || ( RV=$?; rm -f &quot;elimination_prepare.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;area_elimination_lemmas.v&quot; &gt; &quot;area_elimination_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;area_elimination_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;area_coords_constructions.v&quot; &gt; &quot;area_coords_constructions.v.d&quot; || ( RV=$?; rm -f &quot;area_coords_constructions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;area_coords_elimination.v&quot; &gt; &quot;area_coords_elimination.v.d&quot; || ( RV=$?; rm -f &quot;area_coords_elimination.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;field_general_properties.v&quot; &gt; &quot;field_general_properties.v.d&quot; || ( RV=$?; rm -f &quot;field_general_properties.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;field.v&quot; &gt; &quot;field.v.d&quot; || ( RV=$?; rm -f &quot;field.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;field_variable_isolation_tactic.v&quot; &gt; &quot;field_variable_isolation_tactic.v.d&quot; || ( RV=$?; rm -f &quot;field_variable_isolation_tactic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;freepoints.v&quot; &gt; &quot;freepoints.v.d&quot; || ( RV=$?; rm -f &quot;freepoints.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;general_tactics.v&quot; &gt; &quot;general_tactics.v.d&quot; || ( RV=$?; rm -f &quot;general_tactics.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;geometry_tools_lemmas.v&quot; &gt; &quot;geometry_tools_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;geometry_tools_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;geometry_tools.v&quot; &gt; &quot;geometry_tools.v.d&quot; || ( RV=$?; rm -f &quot;geometry_tools.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;my_field_tac.v&quot; &gt; &quot;my_field_tac.v.d&quot; || ( RV=$?; rm -f &quot;my_field_tac.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;parallel_lemmas.v&quot; &gt; &quot;parallel_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;parallel_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;Rgeometry_tools.v&quot; &gt; &quot;Rgeometry_tools.v.d&quot; || ( RV=$?; rm -f &quot;Rgeometry_tools.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;area_method.v&quot; &gt; &quot;area_method.v.d&quot; || ( RV=$?; rm -f &quot;area_method.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;tests_elimination_tactics_areas.v&quot; &gt; &quot;tests_elimination_tactics_areas.v.d&quot; || ( RV=$?; rm -f &quot;tests_elimination_tactics_areas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;tests_elimination_tactics_ratios.v&quot; &gt; &quot;tests_elimination_tactics_ratios.v.d&quot; || ( RV=$?; rm -f &quot;tests_elimination_tactics_ratios.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;tests_elimination_tactics_py.v&quot; &gt; &quot;tests_elimination_tactics_py.v.d&quot; || ( RV=$?; rm -f &quot;tests_elimination_tactics_py.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_1.v&quot; &gt; &quot;examples_1.v.d&quot; || ( RV=$?; rm -f &quot;examples_1.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_2.v&quot; &gt; &quot;examples_2.v.d&quot; || ( RV=$?; rm -f &quot;examples_2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_3.v&quot; &gt; &quot;examples_3.v.d&quot; || ( RV=$?; rm -f &quot;examples_3.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_4.v&quot; &gt; &quot;examples_4.v.d&quot; || ( RV=$?; rm -f &quot;examples_4.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_5.v&quot; &gt; &quot;examples_5.v.d&quot; || ( RV=$?; rm -f &quot;examples_5.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_6.v&quot; &gt; &quot;examples_6.v.d&quot; || ( RV=$?; rm -f &quot;examples_6.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_interactive.v&quot; &gt; &quot;examples_interactive.v.d&quot; || ( RV=$?; rm -f &quot;examples_interactive.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_circumcenter.v&quot; &gt; &quot;examples_circumcenter.v.d&quot; || ( RV=$?; rm -f &quot;examples_circumcenter.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;examples_centroid.v&quot; &gt; &quot;examples_centroid.v.d&quot; || ( RV=$?; rm -f &quot;examples_centroid.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;simplify_constructions.v&quot; &gt; &quot;simplify_constructions.v.d&quot; || ( RV=$?; rm -f &quot;simplify_constructions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;constructed_points_elimination.v&quot; &gt; &quot;constructed_points_elimination.v.d&quot; || ( RV=$?; rm -f &quot;constructed_points_elimination.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;free_points_elimination.v&quot; &gt; &quot;free_points_elimination.v.d&quot; || ( RV=$?; rm -f &quot;free_points_elimination.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;advanced_parallel_lemmas.v&quot; &gt; &quot;advanced_parallel_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;advanced_parallel_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;ratios_elimination_lemmas.v&quot; &gt; &quot;ratios_elimination_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;ratios_elimination_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;construction_lemmas_2.v&quot; &gt; &quot;construction_lemmas_2.v.d&quot; || ( RV=$?; rm -f &quot;construction_lemmas_2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;euclidean_constructions.v&quot; &gt; &quot;euclidean_constructions.v.d&quot; || ( RV=$?; rm -f &quot;euclidean_constructions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;euclidean_constructions_2.v&quot; &gt; &quot;euclidean_constructions_2.v.d&quot; || ( RV=$?; rm -f &quot;euclidean_constructions_2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;pythagoras_difference.v&quot; &gt; &quot;pythagoras_difference.v.d&quot; || ( RV=$?; rm -f &quot;pythagoras_difference.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;pythagoras_difference_lemmas.v&quot; &gt; &quot;pythagoras_difference_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;pythagoras_difference_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . AreaMethod &quot;py_elimination_lemmas.v&quot; &gt; &quot;py_elimination_lemmas.v.d&quot; || ( RV=$?; rm -f &quot;py_elimination_lemmas.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R . AreaMethod   field
+&quot;coqc&quot;  -q  -R . AreaMethod   general_tactics
+&quot;coqc&quot;  -q  -R . AreaMethod   field_variable_isolation_tactic
+&quot;coqc&quot;  -q  -R . AreaMethod   chou_gao_zhang_axioms
+&quot;coqc&quot;  -q  -R . AreaMethod   field_general_properties
+&quot;coqc&quot;  -q  -R . AreaMethod   geometry_tools_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   my_field_tac
+&quot;coqc&quot;  -q  -R . AreaMethod   Rgeometry_tools
+&quot;coqc&quot;  -q  -R . AreaMethod   geometry_tools
+&quot;coqc&quot;  -q  -R . AreaMethod   basic_geometric_facts
+&quot;coqc&quot;  -q  -R . AreaMethod   bench_normalization_tactics
+&quot;coqc&quot;  -q  -R . AreaMethod   parallel_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   construction_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   advanced_parallel_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   pythagoras_difference
+&quot;coqc&quot;  -q  -R . AreaMethod   area_elimination_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   euclidean_constructions
+&quot;coqc&quot;  -q  -R . AreaMethod   ratios_elimination_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   construction_lemmas_2
+&quot;coqc&quot;  -q  -R . AreaMethod   freepoints
+&quot;coqc&quot;  -q  -R . AreaMethod   simplify_constructions
+&quot;coqc&quot;  -q  -R . AreaMethod   construction_tactics
+&quot;coqc&quot;  -q  -R . AreaMethod   free_points_elimination
+&quot;coqc&quot;  -q  -R . AreaMethod   pythagoras_difference_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   py_elimination_lemmas
+&quot;coqc&quot;  -q  -R . AreaMethod   euclidean_constructions_2
+&quot;coqc&quot;  -q  -R . AreaMethod   area_coords_constructions
+&quot;coqc&quot;  -q  -R . AreaMethod   area_coords_elimination
+&quot;coqc&quot;  -q  -R . AreaMethod   elimination_prepare
+&quot;coqc&quot;  -q  -R . AreaMethod   constructed_points_elimination
+&quot;coqc&quot;  -q  -R . AreaMethod   area_method
+simpl gauche
+simpl gauche sym
+simpl gauche
+simpl gauche
+simpl gauche sym
+simpl gauche sym
+simpl gauche sym
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_centroid
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_circumcenter
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_interactive
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_6
+Area method:
+   initialisation...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : A&#39;
+   elimination...
+   elimination of point : C
+   we need to show that:
+(Py B A M - (2 + 2) * f * S M B A - Py M A B = 0)
+   elimination of point : M
+   we need to show that:
+(Py O B C - 1 / 2 * Py C B C = 0)
+   elimination of point : O
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : A&#39;
+   we need to show that:
+(0 = 0)
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination of point : D
+   we need to show that:
+   elimination...
+(1 / 2 * S A G C + 1 / 2 * S A G B = 0)
+   elimination of point : G
+   elimination of point : C
+   we need to show that:
+(1 / 2 * (1 / (2 + 1) * S C A B) + 1 / 2 * (1 / (2 + 1) * S B A C) = 0)
+   uniformize areas...
+   we need to show that:
+(Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+ Py C B A +
+ Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+ Py C B C - 1 / 2 * Py C B C = 0)
+   uniformize areas...
+   simplification...
+   before field...
+   we need to show that:
+(Py M A M - (2 + 2) * f * S M B A -
+ (2 + 2) * f * (0 - f / (2 + 2) * Py M B M + S M B A) =
+ Py M B M - (2 + 2) * f * (0 - f / (2 + 2) * Py M B M))
+   elimination of point : M
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(1 / (2 + 1) * S H O A + 1 / (2 + 1) * S H O B + 1 / (2 + 1) * S H O C = 0)
+   elimination of point : H
+   simplification...
+   before field...
+   we need to show that:
+(1 / 2 * (1 / 2 * Py B A B) -
+ (2 + 2) * f * (0 - f / (2 + 2) * (1 / 2 * (1 / 2 * Py A B A))) =
+ 1 / 2 * (1 / 2 * Py A B A) -
+ (2 + 2) * f * (0 - f / (2 + 2) * (1 / 2 * (1 / 2 * Py A B A))))
+   uniformize areas...
+   simplification...
+   we need to show that:
+   we need to show that:
+   we need to show that:
+(A ** C / C ** B = (A ** O / O ** A + 1 / r) / (B ** O / O ** A + 1 / r))
+(A ** C / C ** B = (A ** O / O ** A + 1 / r) / (S B O A / 0))
+(A ** C / C ** B = 0)
+   elimination of point : C
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(S A B C = 2 * 2 * ((Py O A B * S E F B + Py O B A * S E F A) / Py A B A))
+   elimination of point : F
+   we need to show that:
+(1 / (2 + 1) *
+ (Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) * S O A B +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) * S O A C) +
+ 1 / (2 + 1) *
+ (Py A B C * Py A C B / (Py A B A * Py A C A - Py B A C * Py B A C) * S O B A +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) * S O B C) +
+ 1 / (2 + 1) *
+ (Py A B C * Py A C B / (Py A B A * Py A C A - Py B A C * Py B A C) * S O C A +
+  Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) * S O C B) =
+ 0)
+   elimination of point : O
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : C
+   we need to show that:
+((S A B M - f / (2 + 2) * (Py M A B - Py B A B)) *
+ (Py A B M - (2 + 2) * f * S M A B) =
+ (S A B M - f / (2 + 2) * (Py M A B - Py B A B)) *
+ (Py B A M - (2 + 2) * f * S M B A))
+   elimination of point : M
+   we need to show that:
+(S A B C =
+ 2 * 2 *
+ ((Py O A B * ((Py O A C * S B E C + Py O C A * S B E A) / Py A C A) +
+   Py O B A * (Py O A C * S A E C / Py A C A)) / Py A B A))
+   elimination of point : E
+   we need to show that:
+   we need to show that:
+(- ((A ** O / O ** A + r) / (B ** O / O ** A + r)) =
+ (0 - 1 + 1 / r) / (B ** O / O ** A + 1 / r))
+(0 = (0 - 1 + 1 / r) / (B ** O / O ** A + 1 / r))
+   we need to show that:
+((0 - f / (2 + 2) * (1 / 2 * Py B A B - Py B A B)) * (1 / 2 * Py A B A) =
+ (0 - f / (2 + 2) * (1 / 2 * Py B A B - Py B A B)) * (1 / 2 * Py B A B))
+   uniformize areas...
+   elimination of point : S
+   simplification...
+   we need to show that:
+(S A B C =
+ 2 * 2 *
+ ((Py O A B * (Py O C A * (Py O B C * S A B C / Py B C B) / Py A C A) +
+   Py O B A * (Py O A C * (Py O C B * S C A B / Py B C B) / Py A C A)) /
+  Py A B A))
+   elimination of point : O
+   before field...
+   we need to show that:
+(1 / 2 * (1 / 2 * Py A Q A + 1 / 2 * Py A Q D) +
+ 1 / 2 * (1 / 2 * Py D Q A + 1 / 2 * Py D Q D) = Py P R P)
+   elimination of point : R
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : D
+   we need to show that:
+(1 / 2 * (1 / 2 * Py A Q A + 1 / 2 * Py A Q D) +
+ 1 / 2 * (1 / 2 * Py D Q A + 1 / 2 * Py D Q D) =
+ 1 / 2 * (1 / 2 * Py D P D + 1 / 2 * Py D P C) +
+ 1 / 2 * (1 / 2 * Py C P D + 1 / 2 * Py C P C))
+   elimination of point : D
+   we need to show that:
+(0 - (Py B A C + (0 - 1) * Py B A B) = 0)
+   elimination of point : C
+   we need to show that:
+(0 - (Py B A B + (0 - 1) * Py B A B) = 0)
+   uniformize areas...
+   simplification...
+   we need to show that:
+(Py A Q A + (f * Py A Q F + (1 - f) * Py A Q B) +
+ (f * Py A Q F + (1 - f) * Py A Q B +
+  (f * (f * Py F Q F + (1 - f) * Py F Q B) +
+   (1 - f) * (f * Py B Q F + (1 - f) * Py B Q B))) =
+ f * (f * Py F P F + (1 - f) * Py F P B) +
+ (1 - f) * (f * Py B P F + (1 - f) * Py B P B) +
+ (f * Py C P F + (1 - f) * Py C P B) +
+ (f * Py C P F + (1 - f) * Py C P B + Py C P C))
+   elimination of point : F
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : D
+   we need to show that:
+(S A B C = (0 - 1) * S A C B)
+   elimination of point : C
+   we need to show that:
+(Py A Q A +
+ (f * ((Py B A C * Py A Q C + Py B C A * Py A Q A) / Py A C A) +
+  (1 - f) * Py A Q B) +
+ (f * ((Py B A C * Py A Q C + Py B C A * Py A Q A) / Py A C A) +
+  (1 - f) * Py A Q B +
+  (f *
+   (f *
+    ((Py B A C * Py B A C * Py C Q C + Py B A C * Py B C A * Py C Q A +
+      Py B A C * Py B C A * Py A Q C + Py B C A * Py B C A * Py A Q A) /
+     (Py A C A * Py A C A)) +
+    (1 - f) * ((Py B A C * Py B Q C + Py B C A * Py B Q A) / Py A C A)) +
+   (1 - f) *
+   (f * ((Py B A C * Py B Q C + Py B C A * Py B Q A) / Py A C A) +
+    (1 - f) * Py B Q B))) =
+ f *
+ (f *
+  ((Py B A C * Py B A C * Py C P C + Py B A C * Py B C A * Py C P A +
+    Py B A C * Py B C A * Py A P C + Py B C A * Py B C A * Py A P A) /
+   (Py A C A * Py A C A)) +
+  (1 - f) * ((Py B A C * Py B P C + Py B C A * Py B P A) / Py A C A)) +
+ (1 - f) *
+ (f * ((Py B A C * Py B P C + Py B C A * Py B P A) / Py A C A) +
+  (1 - f) * Py B P B) +
+ (f * ((Py B A C * Py C P C + Py B C A * Py C P A) / Py A C A) +
+  (1 - f) * Py C P B) +
+ (f * ((Py B A C * Py C P C + Py B C A * Py C P A) / Py A C A) +
+  (1 - f) * Py C P B + Py C P C))
+   elimination of point : Q
+   we need to show that:
+(0 - f / (2 + 2) * Py B A B = - ((0 - 1) * (0 - f / (2 + 2) * Py B A B)))
+   uniformize areas...
+   simplification...
+   before field...
+   we need to show that:
+(1 / (2 + 1) *
+ (Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  (Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   S A B C) +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   S A C B)) +
+ 1 / (2 + 1) *
+ (-
+  (Py A B C * Py A C B / (Py A B A * Py A C A - Py B A C * Py B A C) *
+   (Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    S A B C)) +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  (Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   S B C A)) +
+ 1 / (2 + 1) *
+ (-
+  (Py A B C * Py A C B / (Py A B A * Py A C A - Py B A C * Py B A C) *
+   (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    S A C B)) -
+  Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  (Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   S B C A)) = 0)
+   uniformize areas...
+   initialisation...
+   elimination...
+   elimination of point : I
+   we need to show that:
+   we need to show that:
+(1 = 1 / 2)
+(S A B D / (S A B C + S A C D) = 1 / 2)
+   elimination of point : D
+   we need to show that:
+(1 = 1 / 2)
+   elimination of point : C
+   we need to show that:
+(1 = 1 / 2)
+   elimination of point : D
+   we need to show that:
+(S A B C =
+ 2 * 2 *
+ (((Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    Py B A B +
+    Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    Py B A C) *
+   ((Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+     Py A C A +
+     Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+     Py A C B) *
+    ((Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+      Py C B A +
+      Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+      Py C B C) * S A B C / Py B C B) / Py A C A) +
+   (Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    Py A B A +
+    Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    Py A B C) *
+   ((Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+     Py C A B +
+     Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+     Py C A C) *
+    ((Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+      Py B C A +
+      Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+      Py B C B) * S C A B / Py B C B) / Py A C A)) / 
+  Py A B A))
+   uniformize areas...
+   we need to show that:
+(S A B C / (S A B C + (0 - 1) * S A C B) = 1 / 2)
+   elimination of point : C
+   we need to show that:
+((0 - f / (2 + 2) * Py B A B) /
+ (0 - f / (2 + 2) * Py B A B - (0 - 1) * (0 - f / (2 + 2) * Py B A B)) =
+ 1 / 2)
+   uniformize areas...
+   uniformize areas...
+   simplification...
+   simplification...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : D
+   we need to show that:
+(Py A B A = Py B C B)
+   elimination of point : C
+   we need to show that:
+(Py A B A = 0 - (2 + 2) * (0 - 1 / (2 + 2) * Py B A B))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : D
+   we need to show that:
+(Py A B A =
+ (0 - 1) * (0 - 1) * Py B C B - 2 * (0 - 1) * (0 - 1) * Py B C A +
+ (0 - 1) * (0 - 1) * Py A C A)
+   elimination of point : C
+   we need to show that:
+(Py A B A =
+ (0 - 1) * (0 - 1) * (0 - (2 + 2) * (0 - 1 / (2 + 2) * Py B A B)) -
+ 2 * (0 - 1) * (0 - 1) * Py B A B +
+ (0 - 1) * (0 - 1) * (Py B A B - (2 + 2) * (0 - 1 / (2 + 2) * Py B A B)))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : M
+   we need to show that:
+(1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+ 1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B) +
+ (f *
+  ((Py B A C *
+    (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+     1 / 2 * Py C B C) +
+    Py B C A *
+    (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+     1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B))) / 
+   Py A C A) +
+  (1 - f) *
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py A C B - 1 / 2 * Py C B C)) +
+ (f *
+  ((Py B A C *
+    (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+     1 / 2 * Py C B C) +
+    Py B C A *
+    (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+     1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B))) / 
+   Py A C A) +
+  (1 - f) *
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py A C B - 1 / 2 * Py C B C) +
+  (f *
+   (f *
+    ((Py B A C * Py B A C * (1 / 2 * (1 / 2 * Py B C B)) +
+      Py B A C * Py B C A *
+      (- (Py C B A * (1 / 2)) + Py C B A + 1 / 2 * (1 / 2) * Py C B C -
+       1 / 2 * Py C B C) +
+      Py B A C * Py B C A *
+      (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+       1 / 2 * Py C B C) +
+      Py B C A * Py B C A *
+      (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+       1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B))) /
+     (Py A C A * Py A C A)) +
+    (1 - f) *
+    ((Py B A C * (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C) +
+      Py B C A *
+      (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C A - 1 / 2 * Py C B C)) /
+     Py A C A)) +
+   (1 - f) *
+   (f *
+    ((Py B A C * (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C) +
+      Py B C A *
+      (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C A - 1 / 2 * Py C B C)) /
+     Py A C A) + (1 - f) * (1 / 2 * (1 / 2 * Py C B C))))) =
+ f *
+ (f *
+  ((Py B A C * Py B A C * Py C P C + Py B A C * Py B C A * Py C P A +
+    Py B A C * Py B C A * Py A P C + Py B C A * Py B C A * Py A P A) /
+   (Py A C A * Py A C A)) +
+  (1 - f) * ((Py B A C * Py B P C + Py B C A * Py B P A) / Py A C A)) +
+ (1 - f) *
+ (f * ((Py B A C * Py B P C + Py B C A * Py B P A) / Py A C A) +
+  (1 - f) * Py B P B) +
+ (f * ((Py B A C * Py C P C + Py B C A * Py C P A) / Py A C A) +
+  (1 - f) * Py C P B) +
+ (f * ((Py B A C * Py C P C + Py B C A * Py C P A) / Py A C A) +
+  (1 - f) * Py C P B + Py C P C))
+   elimination of point : P
+   we need to show that:
+(1 / 2 * (1 / 2 * Py C B C) =
+ 1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+ 1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B))
+   elimination of point : C
+   we need to show that:
+(1 / 2 * (1 / 2 * (Py A B A - (2 + 2) * f * (0 - f / (2 + 2) * Py A B A))) =
+ 1 / 2 * (1 / 2 * (0 - (2 + 2) * f * (0 - f / (2 + 2) * Py A B A))) +
+ 1 / 2 * (1 / 2 * Py B A B))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : H
+   we need to show that:
+(S A B C = 0 - (0 - 1) / (2 + 2) * (Py A F A - Py C F A))
+   elimination of point : F
+   simplification...
+   we need to show that:
+(S A B C =
+ 0 -
+ (0 - 1) / (2 + 2) *
+ (0 - (2 + 2) * (0 - 1 / (2 + 2) * Py A B A) - (Py A B A - (2 + 2) * S C A B)))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : N
+   we need to show that:
+(1 / 2 * Py C B H + 1 / 2 * Py C B F - Py A B C = 0)
+   elimination of point : H
+   we need to show that:
+(1 / 2 * (Py C B A - (2 + 2) * (0 - 1) * S A C B) + 1 / 2 * Py C B F -
+ Py A B C = 0)
+   elimination of point : F
+   before field...
+   we need to show that:
+(1 / 2 * (Py C B A - (2 + 2) * (0 - 1) * S A C B) +
+ 1 / 2 * (Py C B A - (2 + 2) * S A C B) - Py A B C = 0)
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : H
+   we need to show that:
+(Py F C F =
+ Py A B A - (2 + 2) * (0 - 1) * S A C B -
+ (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A + S A C B))
+   elimination of point : F
+   we need to show that:
+(Py A C A - (2 + 2) * S A B C -
+ (2 + 2) * (0 - 1 / (2 + 2) * Py A B A + S A B C) =
+ Py A B A - (2 + 2) * (0 - 1) * S A C B -
+ (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A + S A C B))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : H
+   we need to show that:
+(Py F B A - (2 + 2) * (0 - 1) * (S A F C + S A C B) -
+ (Py C B A - (2 + 2) * (0 - 1) * S A C B) = 0)
+   elimination of point : F
+   we need to show that:
+(Py A B A -
+ (2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A) + S A C B) -
+ (Py C B A - (2 + 2) * (0 - 1) * S A C B) = 0)
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(S A B C = S B D F + Py E C B * S E C B / Py B C B)
+   elimination of point : F
+   we need to show that:
+(S A B C = Py D B C * S B D C / Py B C B + Py E C B * S E C B / Py B C B)
+   elimination of point : E
+   we need to show that:
+(S A B C =
+ Py D B C * S B D C / Py B C B +
+ (0 - (2 + 2) * (0 - 1) * S C B A) * (0 - (0 - 1) / (2 + 2) * (0 - Py A C B)) /
+ Py B C B)
+   elimination of point : D
+   we need to show that:
+(S A B C =
+ (0 - (2 + 2) * S B C A) * (0 - 1 / (2 + 2) * (Py B C B - Py A C B)) /
+ Py B C B +
+ (0 - (2 + 2) * (0 - 1) * S C B A) * (0 - (0 - 1) / (2 + 2) * (0 - Py A C B)) /
+ Py B C B)
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : P
+   we need to show that:
+   we need to show that:
+(1 / 2 * (1 / 2 * Py G B G + 1 / 2 * Py G B E) +
+ 1 / 2 * (1 / 2 * Py E B G + 1 / 2 * Py E B E) =
+ 1 / 2 * (1 / 2 * Py G C G + 1 / 2 * Py G C E) +
+ 1 / 2 * (1 / 2 * Py E C G + 1 / 2 * Py E C E))
+   elimination of point : G
+(1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+ 1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B) +
+ (f *
+  ((Py B A C *
+    (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+     1 / 2 * Py C B C) +
+    Py B C A *
+    (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+     1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B))) / 
+   Py A C A) +
+  (1 - f) *
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py A C B - 1 / 2 * Py C B C)) +
+ (f *
+  ((Py B A C *
+    (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+     1 / 2 * Py C B C) +
+    Py B C A *
+    (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+     1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B))) / 
+   Py A C A) +
+  (1 - f) *
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py A C B - 1 / 2 * Py C B C) +
+  (f *
+   (f *
+    ((Py B A C * Py B A C * (1 / 2 * (1 / 2 * Py B C B)) +
+      Py B A C * Py B C A *
+      (- (Py C B A * (1 / 2)) + Py C B A + 1 / 2 * (1 / 2) * Py C B C -
+       1 / 2 * Py C B C) +
+      Py B A C * Py B C A *
+      (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+       1 / 2 * Py C B C) +
+      Py B C A * Py B C A *
+      (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+       1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B))) /
+     (Py A C A * Py A C A)) +
+    (1 - f) *
+    ((Py B A C * (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C) +
+      Py B C A *
+      (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C A - 1 / 2 * Py C B C)) /
+     Py A C A)) +
+   (1 - f) *
+   (f *
+    ((Py B A C * (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C) +
+      Py B C A *
+      (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C A - 1 / 2 * Py C B C)) /
+     Py A C A) + (1 - f) * (1 / 2 * (1 / 2 * Py C B C))))) =
+ f *
+ (f *
+  ((Py B A C * Py B A C *
+    (1 / 2 * (1 / 2 * Py B C B + 1 / 2 * Py B C A) +
+     1 / 2 * (1 / 2 * Py A C B + 1 / 2 * Py A C A)) +
+    Py B A C * Py B C A *
+    (1 / 2 * (1 / 2) * Py B A B + 1 / 2 * Py C B A - 1 / 2 * Py B A B) +
+    Py B A C * Py B C A *
+    (1 / 2 * (1 / 2) * Py B A B + 1 / 2 * Py A B C - 1 / 2 * Py B A B) +
+    Py B C A * Py B C A * (1 / 2 * (1 / 2 * Py B A B))) /
+   (Py A C A * Py A C A)) +
+  (1 - f) *
+  ((Py B A C *
+    (- (Py B A C * (1 / 2)) + Py B A C + 1 / 2 * (1 / 2) * Py B A B -
+     1 / 2 * Py B A B) +
+    Py B C A * (1 / 2 * (1 / 2) * Py B A B - 1 / 2 * Py B A B)) / 
+   Py A C A)) +
+ (1 - f) *
+ (f *
+  ((Py B A C *
+    (- (Py B A C * (1 / 2)) + Py B A C + 1 / 2 * (1 / 2) * Py B A B -
+     1 / 2 * Py B A B) +
+    Py B C A * (1 / 2 * (1 / 2) * Py B A B - 1 / 2 * Py B A B)) / 
+   Py A C A) + (1 - f) * (1 / 2 * (1 / 2 * Py A B A))) +
+ (f *
+  ((Py B A C *
+    (1 / 2 * (1 / 2 * Py B C B + 1 / 2 * Py B C A) +
+     1 / 2 * (1 / 2 * Py A C B + 1 / 2 * Py A C A)) +
+    Py B C A *
+    (1 / 2 * (1 / 2) * Py B A B + 1 / 2 * Py C B A - 1 / 2 * Py B A B)) /
+   Py A C A) +
+  (1 - f) *
+  (- (Py C A B * (1 / 2)) + Py C A B + 1 / 2 * (1 / 2) * Py B A B -
+   1 / 2 * Py B A B)) +
+ (f *
+  ((Py B A C *
+    (1 / 2 * (1 / 2 * Py B C B + 1 / 2 * Py B C A) +
+     1 / 2 * (1 / 2 * Py A C B + 1 / 2 * Py A C A)) +
+    Py B C A *
+    (1 / 2 * (1 / 2) * Py B A B + 1 / 2 * Py C B A - 1 / 2 * Py B A B)) /
+   Py A C A) +
+  (1 - f) *
+  (- (Py C A B * (1 / 2)) + Py C A B + 1 / 2 * (1 / 2) * Py B A B -
+   1 / 2 * Py B A B) +
+  (1 / 2 * (1 / 2 * Py B C B + 1 / 2 * Py B C A) +
+   1 / 2 * (1 / 2 * Py A C B + 1 / 2 * Py A C A))))
+   we need to show that:
+(1 / 2 *
+ (1 / 2 *
+  (Py C B C - (2 + 2) * (0 - 1) * S C A B -
+   (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py C A C + S C A B)) +
+  1 / 2 * (Py E B C - (2 + 2) * (0 - 1) * (S C E A + S C A B))) +
+ 1 / 2 *
+ (1 / 2 * (Py E B C - (2 + 2) * (0 - 1) * (S C E A + S C A B)) +
+  1 / 2 * Py E B E) =
+ 1 / 2 *
+ (1 / 2 * (0 - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py C A C)) +
+  1 / 2 * (0 - (2 + 2) * (0 - 1) * S C E A)) +
+ 1 / 2 * (1 / 2 * (0 - (2 + 2) * (0 - 1) * S C E A) + 1 / 2 * Py E C E))
+   elimination of point : E
+   we need to show that:
+(1 / 2 *
+ (1 / 2 *
+  (Py C B C - (2 + 2) * (0 - 1) * S C A B -
+   (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py C A C + S C A B)) +
+  1 / 2 *
+  (0 - (2 + 2) * S B C A -
+   (2 + 2) * (0 - 1) * (S A C B - 1 / (2 + 2) * Py B A C + S C A B))) +
+ 1 / 2 *
+ (1 / 2 *
+  (0 - (2 + 2) * S B C A -
+   (2 + 2) * (0 - 1) * (S A C B - 1 / (2 + 2) * Py B A C + S C A B)) +
+  1 / 2 * (0 - (2 + 2) * (0 - 1 / (2 + 2) * Py B A B))) =
+ 1 / 2 *
+ (1 / 2 * (0 - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py C A C)) +
+  1 / 2 * (0 - (2 + 2) * (0 - 1) * (S A C B - 1 / (2 + 2) * Py B A C))) +
+ 1 / 2 *
+ (1 / 2 * (0 - (2 + 2) * (0 - 1) * (S A C B - 1 / (2 + 2) * Py B A C)) +
+  1 / 2 *
+  (Py B C B - (2 + 2) * S B A C -
+   (2 + 2) * (0 - 1 / (2 + 2) * Py B A B + S B A C))))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : E
+   we need to show that:
+(Py D B G - (1 - (0 - r)) * Py G B C = 0)
+   elimination of point : G
+   we need to show that:
+(r * Py D B D + (1 - r) * Py D B C -
+ (1 - (0 - r)) * (r * Py C B D + (1 - r) * Py C B C) = 0)
+   elimination of point : B
+   elimination of point : H
+   we need to show that:
+(r * (Py C D C - (2 + 2) * (0 - 1 / (2 + 2) * Py C D C)) + (1 - r) * Py C D C -
+ (1 - (0 - r)) *
+ (r * Py C D C + (1 - r) * (0 - (2 + 2) * (0 - 1 / (2 + 2) * Py C D C))) = 0)
+   uniformize areas...
+   simplification...
+   we need to show that:
+(0 -
+ S C E B / (S C B D + S C D E) * (S D B E / (S C B D + S C D E)) * Py C D C =
+ - (S C E B / (S C B D + S C D E) * Py B D E) -
+ S D B E / (S C B D + S C D E) * Py B C E -
+ S C E B / (S C B D + S C D E) * (S D B E / (S C B D + S C D E)) * Py C D C)
+   elimination of point : D
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : R
+   we need to show that:
+(Py A C A + Py B D B =
+ 2 *
+ (Py Q S Q +
+  (1 / 2 * (1 / 2 * Py D P D + 1 / 2 * Py D P C) +
+   1 / 2 * (1 / 2 * Py C P D + 1 / 2 * Py C P C))))
+   elimination of point : S
+   we need to show that:
+(Py A C A + Py B D B =
+ 2 *
+ (1 / 2 * (1 / 2 * Py A Q A + 1 / 2 * Py A Q D) +
+  1 / 2 * (1 / 2 * Py D Q A + 1 / 2 * Py D Q D) +
+  (1 / 2 * (1 / 2 * Py D P D + 1 / 2 * Py D P C) +
+   1 / 2 * (1 / 2 * Py C P D + 1 / 2 * Py C P C))))
+   elimination of point : Q
+   we need to show that:
+(S C E B * (Py C B A * S C B A / Py A B A) *
+ (Py C B A / Py A B A * Py B A E - Py C A B * Py C B A / Py A B A) +
+ S C E B * (Py C B A / Py A B A * Py B A E - Py C A B * Py C B A / Py A B A) *
+ ((Py C A B * S E C B + Py C B A * S E C A) / Py A B A) +
+ Py C B A * S B E A / Py A B A * (Py C B A * S C B A / Py A B A) * Py B C E +
+ Py C B A * S B E A / Py A B A *
+ ((Py C A B * S E C B + Py C B A * S E C A) / Py A B A) * 
+ Py B C E = 0)
+   elimination of point : E
+   we need to show that:
+(Py A C A + Py B D B =
+ 2 *
+ (1 / 2 *
+  (1 / 2 *
+   (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+    1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)) +
+   1 / 2 *
+   (- (Py A B D * (1 / 2)) + Py A B D + 1 / 2 * (1 / 2) * Py C B C +
+    1 / 2 * Py A C D - 1 / 2 * Py C B C)) +
+  1 / 2 *
+  (1 / 2 *
+   (- (Py D B A * (1 / 2)) + Py D B A + 1 / 2 * (1 / 2) * Py C B C +
+    1 / 2 * Py D C A - 1 / 2 * Py C B C) +
+   1 / 2 *
+   (1 / 2 * (1 / 2 * Py C D C + 1 / 2 * Py C D B) +
+    1 / 2 * (1 / 2 * Py B D C + 1 / 2 * Py B D B))) +
+  (1 / 2 * (1 / 2 * Py D P D + 1 / 2 * Py D P C) +
+   1 / 2 * (1 / 2 * Py C P D + 1 / 2 * Py C P C))))
+   elimination of point : P
+   we need to show that:
+(Py A C A + Py B D B =
+ 2 *
+ (1 / 2 *
+  (1 / 2 *
+   (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+    1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)) +
+   1 / 2 *
+   (- (Py A B D * (1 / 2)) + Py A B D + 1 / 2 * (1 / 2) * Py C B C +
+    1 / 2 * Py A C D - 1 / 2 * Py C B C)) +
+  1 / 2 *
+  (1 / 2 *
+   (- (Py D B A * (1 / 2)) + Py D B A + 1 / 2 * (1 / 2) * Py C B C +
+    1 / 2 * Py D C A - 1 / 2 * Py C B C) +
+   1 / 2 *
+   (1 / 2 * (1 / 2 * Py C D C + 1 / 2 * Py C D B) +
+    1 / 2 * (1 / 2 * Py B D C + 1 / 2 * Py B D B))) +
+  (1 / 2 *
+   (1 / 2 *
+    (1 / 2 * (1 / 2 * Py B D B + 1 / 2 * Py B D A) +
+     1 / 2 * (1 / 2 * Py A D B + 1 / 2 * Py A D A)) +
+    1 / 2 *
+    (- (Py D A C * (1 / 2)) + Py D A C + 1 / 2 * (1 / 2) * Py B A B +
+     1 / 2 * Py D B C - 1 / 2 * Py B A B)) +
+   1 / 2 *
+   (1 / 2 *
+    (- (Py C A D * (1 / 2)) + Py C A D + 1 / 2 * (1 / 2) * Py B A B +
+     1 / 2 * Py C B D - 1 / 2 * Py B A B) +
+    1 / 2 *
+    (1 / 2 * (1 / 2 * Py B C B + 1 / 2 * Py B C A) +
+     1 / 2 * (1 / 2 * Py A C B + 1 / 2 * Py A C A))))))
+   uniformize areas...
+   we need to show that:
+(Py B C A * S B C A / Py A C A * Py C B A * Py C B A * S C B A *
+ (Py B A C * Py B A C / Py A C A) -
+ Py B C A * S B C A / Py A C A * Py C B A * Py C B A * S C B A * Py C A B -
+ Py B C A * S B C A / Py A C A * Py C B A * (Py B A C * Py B A C / Py A C A) *
+ Py C A B * (Py B C A * S B C A / Py A C A) -
+ -
+ (Py B C A * S B C A / Py A C A * Py C B A * Py C A B * Py C A B *
+  (Py B C A * S B C A / Py A C A)) +
+ Py C B A * Py C B A * S C B A * (Py B A C * S A B C / Py A C A) *
+ (Py B C A * Py B C A / Py A C A) -
+ Py C B A * Py C A B * (Py B C A * S B C A / Py A C A) *
+ (Py B A C * S A B C / Py A C A) * (Py B C A * Py B C A / Py A C A) = 0)
+   simplification...
+   initialisation...
+   elimination...
+   elimination of point : C1
+   simplification...
+   we need to show that:
+(Py A A1 A = Py C B X * Py C B X * Py X B X / (Py B X B * Py B X B))
+   elimination of point : A1
+   we need to show that:
+((Py A B X * Py A B X * Py X A X + Py A B X * Py A X B * Py X A B +
+  Py A B X * Py A X B * Py B A X + Py A X B * Py A X B * Py B A B) /
+ (Py B X B * Py B X B) =
+ Py C B X * Py C B X * Py X B X / (Py B X B * Py B X B))
+   elimination of point : A
+   before field...
+   before field...
+   we need to show that:
+(((0 - (2 + 2) * S B X C) * (0 - (2 + 2) * S B X C) *
+  (Py B X B - (2 + 2) * S B C X -
+   (2 + 2) * (0 - 1 / (2 + 2) * Py B C B + S B C X)) +
+  (0 - (2 + 2) * S B X C) * (Py B X B - (2 + 2) * S B C X) *
+  (Py B C B - (2 + 2) * S X B C) +
+  (0 - (2 + 2) * S B X C) * (Py B X B - (2 + 2) * S B C X) *
+  (Py B C B - (2 + 2) * S X B C) +
+  (Py B X B - (2 + 2) * S B C X) * (Py B X B - (2 + 2) * S B C X) *
+  (0 - (2 + 2) * (0 - 1 / (2 + 2) * Py B C B))) / (Py B X B * Py B X B) =
+ Py C B X * Py C B X * Py X B X / (Py B X B * Py B X B))
+   uniformize areas...
+   simplification...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(Py E A B + (0 - 1) * (0 - 1) * Py A C A -
+ (2 + 2) * (0 - 1) * (S E A C + S B A C) -
+ (Py C A B + (0 - 1) * (0 - 1) * Py A C A - (2 + 2) * (0 - 1) * S B A C) = 0)
+   elimination of point : E
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : D
+   elimination of point : C
+   we need to show that:
+((0 - 1) * (0 - 1) * Py A C A -
+ (2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (0 - Py B A C) + S B A C) -
+ (Py C A B + (0 - 1) * (0 - 1) * Py A C A - (2 + 2) * (0 - 1) * S B A C) = 0)
+   uniformize areas...
+   simplification...
+   we need to show that:
+(Py A B C * S B A C / Py B C B * Py O A C =
+ S O A C * ((Py A B C * Py B A C + Py A C B * Py B A B) / Py B C B))
+   elimination of point : O
+   before field...
+   we need to show that:
+(1 / (S A B A2 + S A A2 B2) * (S A B B2 * S I A A2) *
+ (- (S A B2 B / (S A B A2 + S A A2 B2) * Py I A2 B) -
+  S A2 B B2 / (S A B A2 + S A A2 B2) * Py I A B -
+  S A B2 B / (S A B A2 + S A A2 B2) * (S A2 B B2 / (S A B A2 + S A A2 B2)) *
+  Py A A2 A) =
+ 1 / (S A B A2 + S A A2 B2) * (S A B B2 * S B I A2 + S A2 B2 B * S B I A) *
+ (- (S A B2 B / (S A B A2 + S A A2 B2) * Py A A2 I) -
+  S A B2 B / (S A B A2 + S A A2 B2) * (S A2 B B2 / (S A B A2 + S A A2 B2)) *
+  Py A A2 A))
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : M
+   elimination of point : A2
+   we need to show that:
+(Py A B C * S B A C / Py B C B *
+ (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  Py C A B +
+  Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  Py C A C) =
+ Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+ S A C B * ((Py A B C * Py B A C + Py A C B * Py B A B) / Py B C B))
+   uniformize areas...
+   we need to show that:
+(1 / 2 * Py D C B + 1 / 2 * Py D C A - (1 / 2 * Py F C B + 1 / 2 * Py F C A) =
+ 0)
+   elimination of point : F
+   we need to show that:
+(1 / 2 * Py D C B + 1 / 2 * Py D C A -
+ 1 / 2 * (0 - (2 + 2) * (0 - 1) * S C A B) = 0)
+   elimination of point : D
+   we need to show that:
+(1 / 2 * (0 - (2 + 2) * S C B A) - 1 / 2 * (0 - (2 + 2) * (0 - 1) * S C A B) =
+ 0)
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : Q
+   simplification...
+   before field...
+   we need to show that:
+(1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+ 1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B) +
+ (- (Py A B D * (1 / 2)) + Py A B D + 1 / 2 * (1 / 2) * Py C B C +
+  1 / 2 * Py A C D - 1 / 2 * Py C B C) =
+ 1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+ 1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B) +
+ (- (Py A B D * (1 / 2)) + Py A B D + 1 / 2 * (1 / 2) * Py C B C +
+  1 / 2 * Py A C D - 1 / 2 * Py C B C))
+   uniformize areas...
+   simplification...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : F
+   we need to show that:
+(Py A C A * Py B C B =
+ 2 * 2 * Py O A O *
+ ((Py C A B * Py C A B * Py B C B + Py C A B * Py C B A * Py B C A +
+   Py C A B * Py C B A * Py A C B + Py C B A * Py C B A * Py A C A) /
+  (Py A B A * Py A B A)))
+   elimination of point : O
+   before field...
+   we need to show that:
+(-
+ ((1 - (0 - 1)) * S A B A1 * S A B B2 *
+  ((0 - 1) * S I A B + (1 - (0 - 1)) * S I A A1) * 
+  S A B2 B *
+  (- (Py I A1 B * (0 - 1)) + Py I A1 B + (0 - 1) * (0 - 1) * Py B A1 B -
+   (0 - 1) * Py B A1 B)) -
+ (1 - (0 - 1)) * S A B A1 * S A B B2 *
+ ((0 - 1) * S I A B + (1 - (0 - 1)) * S I A A1) * ((1 - (0 - 1)) * S B B2 A1) *
+ Py I A B -
+ ((0 - 1) * S B2 A B + (1 - (0 - 1)) * S B2 A A1) * S A B B2 *
+ ((0 - 1) * S I A B + (1 - (0 - 1)) * S I A A1) * S A B2 B *
+ (- (Py I A1 B * (0 - 1)) + Py I A1 B + (0 - 1) * (0 - 1) * Py B A1 B -
+  (0 - 1) * Py B A1 B) -
+ ((0 - 1) * S B2 A B + (1 - (0 - 1)) * S B2 A A1) * S A B B2 *
+ ((0 - 1) * S I A B + (1 - (0 - 1)) * S I A A1) * ((1 - (0 - 1)) * S B B2 A1) *
+ Py I A B -
+ S A B B2 * ((0 - 1) * S I A B + (1 - (0 - 1)) * S I A A1) * S A B2 B *
+ ((1 - (0 - 1)) * S B B2 A1) *
+ ((0 - 1) * ((0 - 1) * Py B A B + (1 - (0 - 1)) * Py B A A1) +
+  (1 - (0 - 1)) * ((0 - 1) * Py A1 A B + (1 - (0 - 1)) * Py A1 A A1)) =
+ -
+ ((1 - (0 - 1)) * S A B A1 * S A B B2 * S A B2 B * ((1 - (0 - 1)) * S B I A1) *
+  (- (Py A A1 I * (0 - 1)) + Py A A1 I + (0 - 1) * (0 - 1) * Py B A1 B +
+   (0 - 1) * Py A B I - (0 - 1) * Py B A1 B)) -
+ -
+ ((1 - (0 - 1)) * S A B A1 * S A B2 B * ((1 - (0 - 1)) * S B B2 A1) * S B I A *
+  (- (Py A A1 I * (0 - 1)) + Py A A1 I + (0 - 1) * (0 - 1) * Py B A1 B +
+   (0 - 1) * Py A B I - (0 - 1) * Py B A1 B)) -
+ ((0 - 1) * S B2 A B + (1 - (0 - 1)) * S B2 A A1) * S A B B2 * S A B2 B *
+ ((1 - (0 - 1)) * S B I A1) *
+ (- (Py A A1 I * (0 - 1)) + Py A A1 I + (0 - 1) * (0 - 1) * Py B A1 B +
+  (0 - 1) * Py A B I - (0 - 1) * Py B A1 B) -
+ -
+ (((0 - 1) * S B2 A B + (1 - (0 - 1)) * S B2 A A1) * S A B2 B *
+  ((1 - (0 - 1)) * S B B2 A1) * S B I A *
+  (- (Py A A1 I * (0 - 1)) + Py A A1 I + (0 - 1) * (0 - 1) * Py B A1 B +
+   (0 - 1) * Py A B I - (0 - 1) * Py B A1 B)) -
+ S A B B2 * S A B2 B * ((1 - (0 - 1)) * S B B2 A1) *
+ ((0 - 1) * ((0 - 1) * Py B A B + (1 - (0 - 1)) * Py B A A1) +
+  (1 - (0 - 1)) * ((0 - 1) * Py A1 A B + (1 - (0 - 1)) * Py A1 A A1)) *
+ ((1 - (0 - 1)) * S B I A1) -
+ -
+ (S A B2 B * ((1 - (0 - 1)) * S B B2 A1) *
+  ((0 - 1) * ((0 - 1) * Py B A B + (1 - (0 - 1)) * Py B A A1) +
+   (1 - (0 - 1)) * ((0 - 1) * Py A1 A B + (1 - (0 - 1)) * Py A1 A A1)) *
+  ((1 - (0 - 1)) * S B B2 A1) * S B I A))
+   elimination of point : A1
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : J
+   we need to show that:
+(Py A C A * Py B C B =
+ 2 * 2 *
+ (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B A B +
+   Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B A C) +
+  Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py C A B +
+   Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py C A C)) *
+ ((Py C A B * Py C A B * Py B C B + Py C A B * Py C B A * Py B C A +
+   Py C A B * Py C B A * Py A C B + Py C B A * Py C B A * Py A C A) /
+  (Py A B A * Py A B A)))
+   uniformize areas...
+   we need to show that:
+(1 / 2 * S I A D + 1 / 2 * S I A M = 1 / 2 * S I M D)
+   elimination of point : I
+   we need to show that:
+(1 / 2 * (1 / 2 * S A D F + 1 / 2 * S A D E) +
+ 1 / 2 * (1 / 2 * S A M F + 1 / 2 * S A M E) =
+ 1 / 2 * (1 / 2 * S M D F + 1 / 2 * S M D E))
+   elimination of point : F
+   we need to show that:
+(1 / 2 * (1 / 2 * (1 / 2 * S A D B) + 1 / 2 * S A D E) +
+ 1 / 2 * (1 / 2 * (1 / 2 * S A M B) + 1 / 2 * S A M E) =
+ 1 / 2 * (1 / 2 * (1 / 2 * S M D B + 1 / 2 * S M D A) + 1 / 2 * S M D E))
+   elimination of point : E
+   we need to show that:
+(1 / 2 * (1 / 2 * (1 / 2 * S A D B) + 1 / 2 * (1 / 2 * S A D C)) +
+ 1 / 2 * (1 / 2 * (1 / 2 * S A M B) + 1 / 2 * (1 / 2 * S A M C)) =
+ 1 / 2 *
+ (1 / 2 * (1 / 2 * S M D B + 1 / 2 * S M D A) +
+  1 / 2 * (1 / 2 * S M D C + 1 / 2 * S M D A)))
+   elimination of point : D
+   we need to show that:
+(1 / 2 *
+ (1 / 2 * (1 / 2 * (1 / 2 * S B A C)) + 1 / 2 * (1 / 2 * (1 / 2 * S C A B))) +
+ 1 / 2 * (1 / 2 * (1 / 2 * S A M B) + 1 / 2 * (1 / 2 * S A M C)) =
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * S B M C) + 1 / 2 * (1 / 2 * S A M C + 1 / 2 * S A M B)) +
+  1 / 2 *
+  (1 / 2 * (1 / 2 * S C M B) + 1 / 2 * (1 / 2 * S A M C + 1 / 2 * S A M B))))
+   elimination of point : M
+   simplification...
+   we need to show that:
+(1 / 2 *
+ (1 / 2 * (1 / 2 * (1 / 2 * S B A C)) + 1 / 2 * (1 / 2 * (1 / 2 * S C A B))) +
+ 1 / 2 *
+ (1 / 2 * (1 / 2 * (Py A B C * S B A C / Py B C B)) +
+  1 / 2 * (1 / 2 * (Py A C B * S C A B / Py B C B))) =
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 *
+   (1 / 2 * (Py A C B * S C A B / Py B C B) +
+    1 / 2 * (Py A B C * S B A C / Py B C B))) +
+  1 / 2 *
+  (1 / 2 *
+   (1 / 2 * (Py A C B * S C A B / Py B C B) +
+    1 / 2 * (Py A B C * S B A C / Py B C B)))))
+   uniformize areas...
+   before field...
+   simplification...
+Area method:
+   initialisation...
+   before field...
+   elimination...
+   elimination of point : C1
+   we need to show that:
+(1 / 2 * Py O B1 B + 1 / 2 * Py O B1 A -
+ (1 / 2 * Py A1 B1 B + 1 / 2 * Py A1 B1 A) = 0)
+   elimination of point : B1
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : C&#39;
+   we need to show that:
+((1 / 2 * S B&#39; M B + 1 / 2 * S B&#39; M A) *
+ (1 / 2 * Py B&#39; A&#39; B + 1 / 2 * Py B&#39; A&#39; A) =
+ (1 / 2 * S B&#39; A&#39; B + 1 / 2 * S B&#39; A&#39; A) *
+ (1 / 2 * Py B&#39; M B + 1 / 2 * Py B&#39; M A))
+   elimination of point : B&#39;
+   we need to show that:
+(1 / 2 *
+ (- (Py O A B * (1 / 2)) + Py O A B + 1 / 2 * (1 / 2) * Py C A C +
+  1 / 2 * Py O C B - 1 / 2 * Py C A C) +
+ 1 / 2 * (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * Py O C A - 1 / 2 * Py C A C) -
+ (1 / 2 *
+  (- (Py A1 A B * (1 / 2)) + Py A1 A B + 1 / 2 * (1 / 2) * Py C A C +
+   1 / 2 * Py A1 C B - 1 / 2 * Py C A C) +
+  1 / 2 * (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * Py A1 C A - 1 / 2 * Py C A C)) =
+ 0)
+   elimination of point : A1
+   we need to show that:
+((1 / 2 * (1 / 2 * S M B C + 1 / 2 * S M B A) + 1 / 2 * (1 / 2 * S M A C)) *
+ (1 / 2 * (1 / 2 * Py B A&#39; C + 1 / 2 * Py B A&#39; A) +
+  1 / 2 * (1 / 2 * Py A A&#39; C + 1 / 2 * Py A A&#39; A)) =
+ (1 / 2 * (1 / 2 * S A&#39; B C + 1 / 2 * S A&#39; B A) + 1 / 2 * (1 / 2 * S A&#39; A C)) *
+ (1 / 2 * (1 / 2 * Py B M C + 1 / 2 * Py B M A) +
+  1 / 2 * (1 / 2 * Py A M C + 1 / 2 * Py A M A)))
+   elimination of point : A&#39;
+   we need to show that:
+(1 / 2 *
+ (- (Py O A B * (1 / 2)) + Py O A B + 1 / 2 * (1 / 2) * Py C A C +
+  1 / 2 * Py O C B - 1 / 2 * Py C A C) +
+ 1 / 2 * (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * Py O C A - 1 / 2 * Py C A C) -
+ (1 / 2 *
+  (- ((1 / 2 * Py B A C + 1 / 2 * Py B A B) * (1 / 2)) +
+   (1 / 2 * Py B A C + 1 / 2 * Py B A B) + 1 / 2 * (1 / 2) * Py C A C +
+   1 / 2 * (1 / 2 * Py B C B) - 1 / 2 * Py C A C) +
+  1 / 2 *
+  (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * (1 / 2 * Py A C B) - 1 / 2 * Py C A C)) =
+ 0)
+   elimination of point : O
+   we need to show that:
+((1 / 2 * (1 / 2 * S M B C + 1 / 2 * S M B A) + 1 / 2 * (1 / 2 * S M A C)) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C) +
+   1 / 2 * (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C A - 1 / 2 * Py C B C)) +
+  1 / 2 *
+  (1 / 2 *
+   (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+    1 / 2 * Py C B C) +
+   1 / 2 *
+   (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+    1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)))) =
+ (1 / 2 * (1 / 2 * (1 / 2 * S B A C)) + 1 / 2 * (1 / 2 * (1 / 2 * S A C B))) *
+ (1 / 2 * (1 / 2 * Py B M C + 1 / 2 * Py B M A) +
+  1 / 2 * (1 / 2 * Py A M C + 1 / 2 * Py A M A)))
+   elimination of point : M
+   we need to show that:
+(1 / 2 *
+ (-
+  ((Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    Py B A B +
+    Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+    Py B A C) * (1 / 2)) +
+  (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B A B +
+   Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B A C) + 1 / 2 * (1 / 2) * Py C A C +
+  1 / 2 *
+  (Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B C A +
+   Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B C B) - 1 / 2 * Py C A C) +
+ 1 / 2 *
+ (1 / 2 * (1 / 2) * Py C A C +
+  1 / 2 *
+  (Py B C B * Py B A C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py A C A +
+   Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py A C B) - 1 / 2 * Py C A C) -
+ (1 / 2 *
+  (- ((1 / 2 * Py B A C + 1 / 2 * Py B A B) * (1 / 2)) +
+   (1 / 2 * Py B A C + 1 / 2 * Py B A B) + 1 / 2 * (1 / 2) * Py C A C +
+   1 / 2 * (1 / 2 * Py B C B) - 1 / 2 * Py C A C) +
+  1 / 2 *
+  (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * (1 / 2 * Py A C B) - 1 / 2 * Py C A C)) =
+ 0)
+   uniformize areas...
+   we need to show that:
+(-
+ ((1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * S A B B2 *
+  ((0 - 1) * S I A B) * S A B2 B *
+  (-
+   ((Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) *
+    (0 - 1)) +
+   (Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ (1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * S A B B2 *
+ ((0 - 1) * S I A B) *
+ ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+ Py I A B -
+ ((0 - 1) * S B2 A B + (1 - (0 - 1)) * (Py B A I * S B2 A I / Py I A I)) *
+ S A B B2 * ((0 - 1) * S I A B) * S A B2 B *
+ (-
+  ((Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) *
+   (0 - 1)) +
+  (Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ ((0 - 1) * S B2 A B + (1 - (0 - 1)) * (Py B A I * S B2 A I / Py I A I)) *
+ S A B B2 * ((0 - 1) * S I A B) *
+ ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+ Py I A B -
+ S A B B2 * ((0 - 1) * S I A B) * S A B2 B *
+ ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+ ((0 - 1) *
+  ((0 - 1) * Py B A B + (1 - (0 - 1)) * (Py B A I * Py B A I / Py I A I)) +
+  (1 - (0 - 1)) *
+  ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+   (1 - (0 - 1)) * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I)))) =
+ -
+ ((1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * S A B B2 * S A B2 B *
+  ((1 - (0 - 1)) * (Py B I A * S B I A / Py I A I)) *
+  (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+   (0 - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ -
+ ((1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * S A B2 B *
+  ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+  S B I A *
+  (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+   (0 - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ ((0 - 1) * S B2 A B + (1 - (0 - 1)) * (Py B A I * S B2 A I / Py I A I)) *
+ S A B B2 * S A B2 B * ((1 - (0 - 1)) * (Py B I A * S B I A / Py I A I)) *
+ (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+  (0 - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ -
+ (((0 - 1) * S B2 A B + (1 - (0 - 1)) * (Py B A I * S B2 A I / Py I A I)) *
+  S A B2 B *
+  ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+  S B I A *
+  (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+   (0 - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ S A B B2 * S A B2 B *
+ ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+ ((0 - 1) *
+  ((0 - 1) * Py B A B + (1 - (0 - 1)) * (Py B A I * Py B A I / Py I A I)) +
+  (1 - (0 - 1)) *
+  ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+   (1 - (0 - 1)) * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I)))) *
+ ((1 - (0 - 1)) * (Py B I A * S B I A / Py I A I)) -
+ -
+ (S A B2 B *
+  ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+  ((0 - 1) *
+   ((0 - 1) * Py B A B + (1 - (0 - 1)) * (Py B A I * Py B A I / Py I A I)) +
+   (1 - (0 - 1)) *
+   ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+    (1 - (0 - 1)) * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I)))) *
+  ((1 - (0 - 1)) * ((Py B I A * S B B2 A + Py B A I * S B B2 I) / Py I A I)) *
+  S B I A))
+   elimination of point : B2
+   we need to show that:
+((1 / 2 * (1 / 2 * (Py A B C * S B A C / Py B C B)) +
+  1 / 2 * (1 / 2 * (Py A C B * S A C B / Py B C B))) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C) +
+   1 / 2 * (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C A - 1 / 2 * Py C B C)) +
+  1 / 2 *
+  (1 / 2 *
+   (- (Py A B C * (1 / 2)) + Py A B C + 1 / 2 * (1 / 2) * Py C B C -
+    1 / 2 * Py C B C) +
+   1 / 2 *
+   (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+    1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)))) =
+ (1 / 2 * (1 / 2 * (1 / 2 * S B A C)) + 1 / 2 * (1 / 2 * (1 / 2 * S A C B))) *
+ (1 / 2 *
+  (1 / 2 * (0 - Py A B C * Py A C B / Py B C B) +
+   1 / 2 * (Py A B C / Py B C B * Py B C A - Py A B C * Py A C B / Py B C B)) +
+  1 / 2 *
+  (1 / 2 * (Py A C B / Py B C B * Py A B C - Py A B C * Py A C B / Py B C B) +
+   1 / 2 *
+   ((Py A B C * Py A B C * Py C A C + Py A B C * Py A C B * Py C A B +
+     Py A B C * Py A C B * Py B A C + Py A C B * Py A C B * Py B A B) /
+    (Py B C B * Py B C B)))))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : M
+   we need to show that:
+(Py H F H =
+ (2 + 2) *
+ (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+  1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)))
+   elimination of point : H
+   we need to show that:
+(Py A F A - - ((2 + 2) * S A C F) -
+ - ((2 + 2) * (0 - - (1) / (2 + 2) * Py A C A + S A C F)) =
+ (2 + 2) *
+ (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+  1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)))
+   elimination of point : F
+   we need to show that:
+((1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * ((1 - (0 - 1)) * S A B B1) *
+ ((0 - 1) * S I A B) * ((1 - (0 - 1)) * S A B B1) *
+ (-
+  ((Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) *
+   (0 - 1)) +
+  (Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ (1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * ((1 - (0 - 1)) * S A B B1) *
+ ((0 - 1) * S I A B) *
+ ((1 - (0 - 1)) *
+  ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+    Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+   Py I A I)) * Py I A B -
+ -
+ (((0 - 1) * ((1 - (0 - 1)) * S A B B1) +
+   (1 - (0 - 1)) * (Py B A I * ((1 - (0 - 1)) * S A I B1) / Py I A I)) *
+  ((1 - (0 - 1)) * S A B B1) * ((0 - 1) * S I A B) *
+  ((1 - (0 - 1)) * S A B B1) *
+  (-
+   ((Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) *
+    (0 - 1)) +
+   (Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ ((0 - 1) * ((1 - (0 - 1)) * S A B B1) +
+  (1 - (0 - 1)) * (Py B A I * ((1 - (0 - 1)) * S A I B1) / Py I A I)) *
+ ((1 - (0 - 1)) * S A B B1) * ((0 - 1) * S I A B) *
+ ((1 - (0 - 1)) *
+  ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+    Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+   Py I A I)) * Py I A B -
+ -
+ ((1 - (0 - 1)) * S A B B1 * ((0 - 1) * S I A B) * ((1 - (0 - 1)) * S A B B1) *
+  ((1 - (0 - 1)) *
+   ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+     Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+    Py I A I)) *
+  ((0 - 1) *
+   ((0 - 1) * Py B A B + (1 - (0 - 1)) * (Py B A I * Py B A I / Py I A I)) +
+   (1 - (0 - 1)) *
+   ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+    (1 - (0 - 1)) * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I))))) =
+ (1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * ((1 - (0 - 1)) * S A B B1) *
+ ((1 - (0 - 1)) * S A B B1) *
+ ((1 - (0 - 1)) * (Py B I A * S B I A / Py I A I)) *
+ (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+  (0 - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ (1 - (0 - 1)) * (Py B A I * S A B I / Py I A I) * ((1 - (0 - 1)) * S A B B1) *
+ ((1 - (0 - 1)) *
+  ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+    Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+   Py I A I)) * S B I A *
+ (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+  (0 - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ -
+ (((0 - 1) * ((1 - (0 - 1)) * S A B B1) +
+   (1 - (0 - 1)) * (Py B A I * ((1 - (0 - 1)) * S A I B1) / Py I A I)) *
+  ((1 - (0 - 1)) * S A B B1) * ((1 - (0 - 1)) * S A B B1) *
+  ((1 - (0 - 1)) * (Py B I A * S B I A / Py I A I)) *
+  (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+   (0 - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ ((0 - 1) * ((1 - (0 - 1)) * S A B B1) +
+  (1 - (0 - 1)) * (Py B A I * ((1 - (0 - 1)) * S A I B1) / Py I A I)) *
+ ((1 - (0 - 1)) * S A B B1) *
+ ((1 - (0 - 1)) *
+  ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+    Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+   Py I A I)) * S B I A *
+ (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+  (0 - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ -
+ ((1 - (0 - 1)) * S A B B1 * ((1 - (0 - 1)) * S A B B1) *
+  ((1 - (0 - 1)) *
+   ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+     Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+    Py I A I)) *
+  ((0 - 1) *
+   ((0 - 1) * Py B A B + (1 - (0 - 1)) * (Py B A I * Py B A I / Py I A I)) +
+   (1 - (0 - 1)) *
+   ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+    (1 - (0 - 1)) * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I)))) *
+  ((1 - (0 - 1)) * (Py B I A * S B I A / Py I A I))) -
+ (1 - (0 - 1)) * S A B B1 *
+ ((1 - (0 - 1)) *
+  ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+    Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+   Py I A I)) *
+ ((0 - 1) *
+  ((0 - 1) * Py B A B + (1 - (0 - 1)) * (Py B A I * Py B A I / Py I A I)) +
+  (1 - (0 - 1)) *
+  ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+   (1 - (0 - 1)) * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I)))) *
+ ((1 - (0 - 1)) *
+  ((Py B I A * ((1 - (0 - 1)) * S A B B1) +
+    Py B A I * ((0 - 1) * S I B A + (1 - (0 - 1)) * S I B B1)) / 
+   Py I A I)) * S B I A)
+   elimination of point : B1
+   we need to show that:
+(0 - (2 + 2) * (0 - 1 / (2 + 2) * Py A B A) -
+ - ((2 + 2) * (0 - 1 / (2 + 2) * (0 - Py B A C))) -
+ -
+ ((2 + 2) *
+  (0 - - (1) / (2 + 2) * Py A C A + (0 - 1 / (2 + 2) * (0 - Py B A C)))) =
+ (2 + 2) *
+ (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+  1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : N
+   we need to show that:
+(S M D A *
+ (1 / (S A B C + S A C J) * (S A B J * Py A D C + S C J B * Py A D A)) =
+ 1 / (S A B C + S A C J) * (S A B J * S A D C) * Py M D A)
+   elimination of point : M
+   simplification...
+   we need to show that:
+(1 / (S A C B + S A B J) * (S A C J * S D A B) *
+ (1 / (S A B C + S A C J) * (S A B J * Py A D C + S C J B * Py A D A)) =
+ 1 / (S A B C + S A C J) * (S A B J * S A D C) *
+ (1 / (S A C B + S A B J) * (S A C J * Py A D B + S B J C * Py A D A)))
+   elimination of point : J
+   we need to show that:
+(1 / (S A C B + f * S A B D) * (f * S A C D * S D A B) *
+ (1 / (S A B C + f * S A C D) *
+  (f * S A B D * Py A D C + (f * S B C D + (1 - f) * S B C A) * Py A D A)) =
+ 1 / (S A B C + f * S A C D) * (f * S A B D * S A D C) *
+ (1 / (S A C B + f * S A B D) *
+  (f * S A C D * Py A D B - (f * S B C D + (1 - f) * S B C A) * Py A D A)))
+   elimination of point : D
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G&#39;
+   we need to show that:
+(1 / (2 + 1) * S X G A&#39; + 1 / (2 + 1) * S X G B&#39; + 1 / (2 + 1) * S X G C&#39; = 0)
+   elimination of point : C&#39;
+   we need to show that:
+(1 / (2 + 1) * S X G A&#39; + 1 / (2 + 1) * S X G B&#39; +
+ 1 / (2 + 1) * (1 / 2 * S X G B + 1 / 2 * S X G A) = 0)
+   elimination of point : B&#39;
+   we need to show that:
+(1 / (2 + 1) * S X G A&#39; + 1 / (2 + 1) * (1 / 2 * S X G C + 1 / 2 * S X G A) +
+ 1 / (2 + 1) * (1 / 2 * S X G B + 1 / 2 * S X G A) = 0)
+   elimination of point : A&#39;
+   we need to show that:
+(1 / (2 + 1) * (1 / 2 * S X G C + 1 / 2 * S X G B) +
+ 1 / (2 + 1) * (1 / 2 * S X G C + 1 / 2 * S X G A) +
+ 1 / (2 + 1) * (1 / 2 * S X G B + 1 / 2 * S X G A) = 0)
+   elimination of point : G
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : E
+   we need to show that:
+(1 / (S A C B + f * (Py A B C * S A B C / Py B C B)) *
+ (f * (Py A C B * S A C B / Py B C B) * (Py A B C * S A B C / Py B C B)) *
+ (1 / (S A B C + f * (Py A C B * S A C B / Py B C B)) *
+  (f * (Py A B C * S A B C / Py B C B) *
+   (Py A C B / Py B C B * Py A B C - Py A B C * Py A C B / Py B C B) +
+   (1 - f) * S B C A *
+   ((Py A B C * Py A B C * Py C A C + Py A B C * Py A C B * Py C A B +
+     Py A B C * Py A C B * Py B A C + Py A C B * Py A C B * Py B A B) /
+    (Py B C B * Py B C B)))) =
+ -
+ (1 / (S A B C + f * (Py A C B * S A C B / Py B C B)) *
+  (f * (Py A B C * S A B C / Py B C B) * (Py A C B * S A C B / Py B C B)) *
+  (1 / (S A C B + f * (Py A B C * S A B C / Py B C B)) *
+   (f * (Py A C B * S A C B / Py B C B) *
+    (Py A B C / Py B C B * Py A C B - Py A B C * Py A C B / Py B C B) -
+    (1 - f) * S B C A *
+    ((Py A B C * Py A B C * Py C A C + Py A B C * Py A C B * Py C A B +
+      Py A B C * Py A C B * Py B A C + Py A C B * Py A C B * Py B A B) /
+     (Py B C B * Py B C B))))))
+   uniformize areas...
+   we need to show that:
+(1 / (2 + 1) *
+ (1 / 2 * (1 / (2 + 1) * S C X A + 1 / (2 + 1) * S C X B) +
+  1 / 2 * (1 / (2 + 1) * S B X A + 1 / (2 + 1) * S B X C)) +
+ 1 / (2 + 1) *
+ (1 / 2 * (1 / (2 + 1) * S C X A + 1 / (2 + 1) * S C X B) +
+  1 / 2 * (1 / (2 + 1) * S A X B + 1 / (2 + 1) * S A X C)) +
+ 1 / (2 + 1) *
+ (1 / 2 * (1 / (2 + 1) * S B X A + 1 / (2 + 1) * S B X C) +
+  1 / 2 * (1 / (2 + 1) * S A X B + 1 / (2 + 1) * S A X C)) = 0)
+   uniformize areas...
+   we need to show that:
+(Py B A C * Py O A C / Py A C A - Py F A O = 0)
+   elimination of point : F
+   simplification...
+   we need to show that:
+(Py B A C * Py O A C / Py A C A - Py C A B * Py O A B / Py A B A = 0)
+   elimination of point : O
+   before field...
+   we need to show that:
+(Py B A C *
+ (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  Py C A B +
+  Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  Py C A C) / Py A C A -
+ Py C A B *
+ (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  Py B A B +
+  Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  Py B A C) / Py A B A = 0)
+   uniformize areas...
+   elimination of point : G&#39;
+   we need to show that:
+(1 / (2 + 1) *
+ (1 / (2 + 1) * Py A&#39; G A&#39; + 1 / (2 + 1) * Py A&#39; G B&#39; +
+  1 / (2 + 1) * Py A&#39; G C&#39;) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) * Py B&#39; G A&#39; + 1 / (2 + 1) * Py B&#39; G B&#39; +
+  1 / (2 + 1) * Py B&#39; G C&#39;) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) * Py C&#39; G A&#39; + 1 / (2 + 1) * Py C&#39; G B&#39; +
+  1 / (2 + 1) * Py C&#39; G C&#39;) = 0)
+   elimination of point : A&#39;
+   we need to show that:
+(1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G B) +
+   1 / 2 * (1 / 2 * Py B G C + 1 / 2 * Py B G B)) +
+  1 / (2 + 1) * (1 / 2 * Py B&#39; G C + 1 / 2 * Py B&#39; G B) +
+  1 / (2 + 1) * (1 / 2 * Py C&#39; G C + 1 / 2 * Py C&#39; G B)) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) * (1 / 2 * Py B&#39; G C + 1 / 2 * Py B&#39; G B) +
+  1 / (2 + 1) * Py B&#39; G B&#39; + 1 / (2 + 1) * Py B&#39; G C&#39;) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) * (1 / 2 * Py C&#39; G C + 1 / 2 * Py C&#39; G B) +
+  1 / (2 + 1) * Py C&#39; G B&#39; + 1 / (2 + 1) * Py C&#39; G C&#39;) = 0)
+   elimination of point : B&#39;
+   simplification...
+   we need to show that:
+(1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G B) +
+   1 / 2 * (1 / 2 * Py B G C + 1 / 2 * Py B G B)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py B G C + 1 / 2 * Py B G A)) +
+  1 / (2 + 1) * (1 / 2 * Py C&#39; G C + 1 / 2 * Py C&#39; G B)) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py B G C + 1 / 2 * Py B G A)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py A G C + 1 / 2 * Py A G A)) +
+  1 / (2 + 1) * (1 / 2 * Py C&#39; G C + 1 / 2 * Py C&#39; G A)) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) * (1 / 2 * Py C&#39; G C + 1 / 2 * Py C&#39; G B) +
+  1 / (2 + 1) * (1 / 2 * Py C&#39; G C + 1 / 2 * Py C&#39; G A) +
+  1 / (2 + 1) * Py C&#39; G C&#39;) = 0)
+   elimination of point : C&#39;
+   before field...
+   we need to show that:
+(1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G B) +
+   1 / 2 * (1 / 2 * Py B G C + 1 / 2 * Py B G B)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py B G C + 1 / 2 * Py B G A)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G B + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py B G B + 1 / 2 * Py B G A))) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py B G C + 1 / 2 * Py B G A)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G C + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py A G C + 1 / 2 * Py A G A)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G B + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py A G B + 1 / 2 * Py A G A))) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G B + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py B G B + 1 / 2 * Py B G A)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C G B + 1 / 2 * Py C G A) +
+   1 / 2 * (1 / 2 * Py A G B + 1 / 2 * Py A G A)) +
+  1 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py B G B + 1 / 2 * Py B G A) +
+   1 / 2 * (1 / 2 * Py A G B + 1 / 2 * Py A G A))) = 0)
+   elimination of point : G
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : H
+   we need to show that:
+(Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+ (Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py B A B +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py B A C) +
+ Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+ (Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py C A B +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py C A C) + Py B C B = 2 * 2 * Py A O A)
+   elimination of point : O
+   we need to show that:
+(Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+ (Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py B A B +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py B A C) +
+ Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+ (Py B A C * Py B C A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py C A B +
+  Py C A B * Py C B A / (Py A B A * Py A C A - Py B A C * Py B A C) *
+  Py C A C) + Py B C B =
+ 2 * 2 *
+ (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B A B +
+   Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py B A C) +
+  Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+  (Py A C A * Py A B C / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py C A B +
+   Py A B A * Py A C B / (2 * (Py A B A * Py A C A - Py B A C * Py B A C)) *
+   Py C A C)))
+   uniformize areas...
+   simplification...
+   we need to show that:
+(2 * (Py B A I * S A B I / Py I A I) * (2 * (Py A B I * S A B I / Py I B I)) *
+ ((0 - 1) * S I A B) * (2 * (Py A B I * S A B I / Py I B I)) *
+ (-
+  ((Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) *
+   (0 - 1)) +
+  (Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ 2 * (Py B A I * S A B I / Py I A I) * (2 * (Py A B I * S A B I / Py I B I)) *
+ ((0 - 1) * S I A B) *
+ (2 *
+  ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+    Py B A I * ((0 - 1) * S I B A)) / Py I A I)) * 
+ Py I A B -
+ -
+ (((0 - 1) * (2 * (Py A B I * S A B I / Py I B I)) +
+   2 * (Py B A I * (2 * (Py A I B * S A I B / Py I B I)) / Py I A I)) *
+  (2 * (Py A B I * S A B I / Py I B I)) * ((0 - 1) * S I A B) *
+  (2 * (Py A B I * S A B I / Py I B I)) *
+  (-
+   ((Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) *
+    (0 - 1)) +
+   (Py B I A / Py I A I * Py I A B - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ ((0 - 1) * (2 * (Py A B I * S A B I / Py I B I)) +
+  2 * (Py B A I * (2 * (Py A I B * S A I B / Py I B I)) / Py I A I)) *
+ (2 * (Py A B I * S A B I / Py I B I)) * ((0 - 1) * S I A B) *
+ (2 *
+  ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+    Py B A I * ((0 - 1) * S I B A)) / Py I A I)) * 
+ Py I A B -
+ -
+ (2 * (Py A B I * S A B I / Py I B I) * ((0 - 1) * S I A B) *
+  (2 * (Py A B I * S A B I / Py I B I)) *
+  (2 *
+   ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+     Py B A I * ((0 - 1) * S I B A)) / Py I A I)) *
+  ((0 - 1) * ((0 - 1) * Py B A B + 2 * (Py B A I * Py B A I / Py I A I)) +
+   2 *
+   ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+    2 * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I))))) =
+ 2 * (Py B A I * S A B I / Py I A I) * (2 * (Py A B I * S A B I / Py I B I)) *
+ (2 * (Py A B I * S A B I / Py I B I)) *
+ (2 * (Py B I A * S B I A / Py I A I)) *
+ (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+  (0 - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ 2 * (Py B A I * S A B I / Py I A I) * (2 * (Py A B I * S A B I / Py I B I)) *
+ (2 *
+  ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+    Py B A I * ((0 - 1) * S I B A)) / Py I A I)) * 
+ S B I A *
+ (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+  (0 - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ -
+ (((0 - 1) * (2 * (Py A B I * S A B I / Py I B I)) +
+   2 * (Py B A I * (2 * (Py A I B * S A I B / Py I B I)) / Py I A I)) *
+  (2 * (Py A B I * S A B I / Py I B I)) *
+  (2 * (Py A B I * S A B I / Py I B I)) *
+  (2 * (Py B I A * S B I A / Py I A I)) *
+  (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+   (0 - Py B I A * Py B A I / Py I A I) +
+   (0 - 1) * (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+   (0 - 1) *
+   ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+     Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+    (Py I A I * Py I A I)))) -
+ ((0 - 1) * (2 * (Py A B I * S A B I / Py I B I)) +
+  2 * (Py B A I * (2 * (Py A I B * S A I B / Py I B I)) / Py I A I)) *
+ (2 * (Py A B I * S A B I / Py I B I)) *
+ (2 *
+  ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+    Py B A I * ((0 - 1) * S I B A)) / Py I A I)) * 
+ S B I A *
+ (- ((0 - Py B I A * Py B A I / Py I A I) * (0 - 1)) +
+  (0 - Py B I A * Py B A I / Py I A I) +
+  (0 - 1) * (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I)) + (0 - 1) * Py A B I -
+  (0 - 1) *
+  ((Py B I A * Py B I A * Py A B A + Py B I A * Py B A I * Py A B I +
+    Py B I A * Py B A I * Py I B A + Py B A I * Py B A I * Py I B I) /
+   (Py I A I * Py I A I))) -
+ -
+ (2 * (Py A B I * S A B I / Py I B I) * (2 * (Py A B I * S A B I / Py I B I)) *
+  (2 *
+   ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+     Py B A I * ((0 - 1) * S I B A)) / Py I A I)) *
+  ((0 - 1) * ((0 - 1) * Py B A B + 2 * (Py B A I * Py B A I / Py I A I)) +
+   2 *
+   ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+    2 * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I)))) *
+  (2 * (Py B I A * S B I A / Py I A I))) -
+ 2 * (Py A B I * S A B I / Py I B I) *
+ (2 *
+  ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+    Py B A I * ((0 - 1) * S I B A)) / Py I A I)) *
+ ((0 - 1) * ((0 - 1) * Py B A B + 2 * (Py B A I * Py B A I / Py I A I)) +
+  2 *
+  ((0 - 1) * (Py B A I * Py B A I / Py I A I) +
+   2 * (Py B A I * Py B A I * Py I A I / (Py I A I * Py I A I)))) *
+ (2 *
+  ((Py B I A * (2 * (Py A B I * S A B I / Py I B I)) +
+    Py B A I * ((0 - 1) * S I B A)) / Py I A I)) * 
+ S B I A)
+   before field...
+   simplification...
+   before field...
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_5
+   we need to show that:
+(1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A C A + 1 / (2 + 1) * Py A C B) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py B C A + 1 / (2 + 1) * Py B C B)) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C A B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py B A C - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A B A + 1 / (2 + 1) * Py A B C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C B A + 1 / (2 + 1) * Py C B C)))) +
+  1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A C A + 1 / (2 + 1) * Py A C B) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py B C A + 1 / (2 + 1) * Py B C B)) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C B A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py B A C - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * Py B C A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B))) +
+  1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py C A B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C B A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A B A + 1 / (2 + 1) * Py A B C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C B A + 1 / (2 + 1) * Py C B C)) +
+    1 / 2 *
+    (1 / (2 + 1) * Py B C A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)))) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A C A + 1 / (2 + 1) * Py A C B) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py B C A + 1 / (2 + 1) * Py B C B)) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C B A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py B A C - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * Py B C A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B))) +
+  1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A C A + 1 / (2 + 1) * Py A C B) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py B C A + 1 / (2 + 1) * Py B C B)) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C B A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py A B C - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py B A B + 1 / (2 + 1) * Py B A C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C A B + 1 / (2 + 1) * Py C A C)))) +
+  1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py C A B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C B A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py A C B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py B A B + 1 / (2 + 1) * Py B A C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C A B + 1 / (2 + 1) * Py C A C))))) +
+ 1 / (2 + 1) *
+ (1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py C A B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C B A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A B A + 1 / (2 + 1) * Py A B C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C B A + 1 / (2 + 1) * Py C B C)) +
+    1 / 2 *
+    (1 / (2 + 1) * Py B C A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B))) +
+  1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py C A B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * Py C B A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py A C B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py B A B + 1 / (2 + 1) * Py B A C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C A B + 1 / (2 + 1) * Py C A C)))) +
+  1 / (2 + 1) *
+  (1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py A B A + 1 / (2 + 1) * Py A B C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C B A + 1 / (2 + 1) * Py C B C)) +
+    1 / 2 *
+    (1 / (2 + 1) * Py B C A - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B)) +
+   1 / 2 *
+   (1 / 2 *
+    (1 / (2 + 1) * Py A C B - 1 / (2 + 1) * (1 / (2 + 1)) * Py A B A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py A C A -
+     1 / (2 + 1) * (1 / (2 + 1)) * Py B C B) +
+    1 / 2 *
+    (1 / (2 + 1) * (1 / (2 + 1) * Py B A B + 1 / (2 + 1) * Py B A C) +
+     1 / (2 + 1) * (1 / (2 + 1) * Py C A B + 1 / (2 + 1) * Py C A C))))) = 0)
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : F
+   elimination of point : F
+   elimination of point : F
+   elimination of point : C
+   we need to show that:
+(chou_gao_zhang_axioms.S A R S / chou_gao_zhang_axioms.S B R S =
+ - (A ** F / B ** F))
+   elimination of point : F
+   we need to show that:
+(chou_gao_zhang_axioms.S A R S / chou_gao_zhang_axioms.S B R S =
+ - (chou_gao_zhang_axioms.S A P Q / chou_gao_zhang_axioms.S B P Q))
+   elimination of point : S
+   we need to show that:
+(1 / (S A B P + S A P Q) * (S A B Q * S A R P) /
+ (1 / (S A B P + S A P Q) * (S A B Q * S B R P + S P Q B * S B R A)) =
+ - (S A P Q / S B P Q))
+   elimination of point : P
+   we need to show that:
+(1 / (f0 * S A B R + (f0 * S Q A R + (1 - f0) * S Q A B)) *
+ (S A B Q * ((1 - f0) * S A R B)) /
+ (1 / (f0 * S A B R + (f0 * S Q A R + (1 - f0) * S Q A B)) *
+  (f0 * S Q B R * S B R A)) =
+ - ((f0 * S Q A R + (1 - f0) * S Q A B) / (f0 * S Q B R)))
+   elimination of point : Q
+   we need to show that:
+(1 / (f0 * S A B R + (1 - f0) * (f * S A B R)) *
+ (f * S A B R * ((1 - f0) * S A R B)) /
+ (1 / (f0 * S A B R + (1 - f0) * (f * S A B R)) *
+  (f0 * ((1 - f) * S B R A) * S B R A)) =
+ - ((1 - f0) * (f * S A B R) / (f0 * ((1 - f) * S B R A))))
+   uniformize areas...
+Area method:
+   initialisation...
+   simplification...
+   elimination...
+   elimination of point : Q
+   we need to show that:
+(2 * 2 * ((0 - S B C G * S C P A) / S B A C + S P C B) =
+ (2 + 2 + 1) * ((S B A C + S B C G) * S P A C / S B A C))
+   elimination of point : P
+   before field...
+   we need to show that:
+(2 * 2 *
+ ((0 - S B C G * ((S B A C + S B C G) * S A C B / S B A C)) / S B A C +
+  (0 - S B C G * S C B A) / S B A C) =
+ (2 + 2 + 1) *
+ ((S B A C + S B C G) * ((S B A C + S B C G) * S A C B / S B A C) / S B A C))
+   elimination of point : G
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : D
+   we need to show that:
+(2 *
+ (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+  1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)) + 
+ 2 * Py F C F + 2 * Py B E B = (2 + 1) / 2 * (Py A C A + Py A B A + Py B C B))
+   elimination of point : F
+   we need to show that:
+(2 * 2 *
+ ((0 -
+   1 / (2 + 1) * S B C A *
+   ((S B A C + 1 / (2 + 1) * S B C A) * S A C B / S B A C)) / 
+  S B A C + (0 - 1 / (2 + 1) * S B C A * S C B A) / S B A C) =
+ (2 + 2 + 1) *
+ ((S B A C + 1 / (2 + 1) * S B C A) *
+  ((S B A C + 1 / (2 + 1) * S B C A) * S A C B / S B A C) / 
+  S B A C))
+   uniformize areas...
+   we need to show that:
+(2 *
+ (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+  1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)) +
+ 2 *
+ (1 / 2 * (1 / 2 * Py B C B + 1 / 2 * Py B C A) +
+  1 / 2 * (1 / 2 * Py A C B + 1 / 2 * Py A C A)) + 
+ 2 * Py B E B = (2 + 1) / 2 * (Py A C A + Py A B A + Py B C B))
+   elimination of point : E
+   simplification...
+   we need to show that:
+(2 *
+ (1 / 2 * (1 / 2 * Py C A C + 1 / 2 * Py C A B) +
+  1 / 2 * (1 / 2 * Py B A C + 1 / 2 * Py B A B)) +
+ 2 *
+ (1 / 2 * (1 / 2 * Py B C B + 1 / 2 * Py B C A) +
+  1 / 2 * (1 / 2 * Py A C B + 1 / 2 * Py A C A)) +
+ 2 *
+ (1 / 2 * (1 / 2 * Py C B C + 1 / 2 * Py C B A) +
+  1 / 2 * (1 / 2 * Py A B C + 1 / 2 * Py A B A)) =
+ (2 + 1) / 2 * (Py A C A + Py A B A + Py B C B))
+   uniformize areas...
+   before field...
+   simplification...
+   initialisation...
+   elimination...
+   elimination of point : N
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(M ** B / A ** M - S C G M / S A G M = 1)
+   elimination of point : M
+   we need to show that:
+((2 + 1) *
+ (2 / (2 + 1) * (2 / (2 + 1) * Py E A E + (1 - 2 / (2 + 1)) * Py E A B) +
+  (1 - 2 / (2 + 1)) * (2 / (2 + 1) * Py B A E + (1 - 2 / (2 + 1)) * Py B A B) +
+  (2 / (2 + 1) * (2 / (2 + 1) * Py E C E + (1 - 2 / (2 + 1)) * Py E C B) +
+   (1 - 2 / (2 + 1)) *
+   (2 / (2 + 1) * Py B C E + (1 - 2 / (2 + 1)) * Py B C B)) +
+  2 / (2 + 1) * (2 / (2 + 1) * Py E B E)) = Py A C A + Py A B A + Py B C B)
+   elimination of point : E
+   we need to show that:
+((2 + 1) *
+ (2 / (2 + 1) *
+  (2 / (2 + 1) * (1 / 2 * (1 / 2 * Py C A C)) +
+   (1 - 2 / (2 + 1)) * (1 / 2 * Py B A C)) +
+  (1 - 2 / (2 + 1)) *
+  (2 / (2 + 1) * (1 / 2 * Py B A C) + (1 - 2 / (2 + 1)) * Py B A B) +
+  (2 / (2 + 1) *
+   (2 / (2 + 1) * (1 / 2 * (1 / 2 * Py A C A)) +
+    (1 - 2 / (2 + 1)) * (1 / 2 * Py B C A)) +
+   (1 - 2 / (2 + 1)) *
+   (2 / (2 + 1) * (1 / 2 * Py B C A) + (1 - 2 / (2 + 1)) * Py B C B)) +
+  2 / (2 + 1) *
+  (2 / (2 + 1) *
+   (1 / 2 * (1 / 2 * Py C B C + 1 / 2 * Py C B A) +
+    1 / 2 * (1 / 2 * Py A B C + 1 / 2 * Py A B A)))) =
+ Py A C A + Py A B A + Py B C B)
+   uniformize areas...
+   we need to show that:
+   we need to show that:
+   we need to show that:
+(- ((B ** A / A ** B + f) / f) -
+ (f * S C G B + (1 - f) * S C G A) / (f * S A G B) = 1)
+(- (B ** A / A ** B + f) - (f * S C G B + (1 - f) * S C G A) / (f * S A G B) =
+ 1)
+(0 - (f * S C G B + (1 - f) * S C G A) / (f * S A G B) = 1)
+   elimination of point : G
+   simplification...
+   we need to show that:
+(- ((B ** A / A ** B + f) / f) -
+ (f * (1 / (2 + 1) * S B C A) + (1 - f) * (1 / (2 + 1) * S A C B)) /
+ (f * (1 / (2 + 1) * S B A C)) = 1)
+   elimination of point : G
+   before field...
+   we need to show that:
+(- (B ** A / A ** B + f) -
+ (f * (1 / (2 + 1) * S B C A) + (1 - f) * (1 / (2 + 1) * S A C B)) /
+ (f * (1 / (2 + 1) * S B A C)) = 1)
+   elimination of point : G
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(0 -
+ (f * (1 / (2 + 1) * S B C A) + (1 - f) * (1 / (2 + 1) * S A C B)) /
+ (f * (1 / (2 + 1) * S B A C)) = 1)
+   uniformize areas...
+   uniformize areas...
+   uniformize areas...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : F
+   elimination of point : F
+   we need to show that:
+((2 + 1) *
+ (2 / (2 + 1) * (2 / (2 + 1) * Py E M E + (1 - 2 / (2 + 1)) * Py E M B) +
+  (1 - 2 / (2 + 1)) * (2 / (2 + 1) * Py B M E + (1 - 2 / (2 + 1)) * Py B M B)) +
+ (2 / (2 + 1) * (2 / (2 + 1) * Py E A E + (1 - 2 / (2 + 1)) * Py E A B) +
+  (1 - 2 / (2 + 1)) * (2 / (2 + 1) * Py B A E + (1 - 2 / (2 + 1)) * Py B A B)) +
+ (2 / (2 + 1) * (2 / (2 + 1) * Py E C E + (1 - 2 / (2 + 1)) * Py E C B) +
+  (1 - 2 / (2 + 1)) * (2 / (2 + 1) * Py B C E + (1 - 2 / (2 + 1)) * Py B C B)) +
+ 2 / (2 + 1) * (2 / (2 + 1) * Py E B E) = Py A M A + Py B M B + Py C M C)
+   elimination of point : E
+   elimination of point : F
+   elimination of point : C
+   we need to show that:
+(chou_gao_zhang_axioms.S A R S / chou_gao_zhang_axioms.S B R S =
+ - (A ** F / B ** F))
+   elimination of point : F
+   simplification...
+   simplification...
+   simplification...
+   we need to show that:
+(chou_gao_zhang_axioms.S A R S / chou_gao_zhang_axioms.S B R S =
+ - (chou_gao_zhang_axioms.S A P Q / chou_gao_zhang_axioms.S B P Q))
+   elimination of point : S
+   we need to show that:
+(1 / (S A B P + S A P Q) * (S A B Q * S A R P) /
+ (1 / (S A B P + S A P Q) * (S A B Q * S B R P + S P Q B * S B R A)) =
+ - (S A P Q / S B P Q))
+   elimination of point : P
+   we need to show that:
+((2 + 1) *
+ (2 / (2 + 1) *
+  (2 / (2 + 1) *
+   (1 / 2 * (1 / 2 * Py C M C + 1 / 2 * Py C M A) +
+    1 / 2 * (1 / 2 * Py A M C + 1 / 2 * Py A M A)) +
+   (1 - 2 / (2 + 1)) * (1 / 2 * Py B M C + 1 / 2 * Py B M A)) +
+  (1 - 2 / (2 + 1)) *
+  (2 / (2 + 1) * (1 / 2 * Py B M C + 1 / 2 * Py B M A) +
+   (1 - 2 / (2 + 1)) * Py B M B)) +
+ (2 / (2 + 1) *
+  (2 / (2 + 1) * (1 / 2 * (1 / 2 * Py C A C)) +
+   (1 - 2 / (2 + 1)) * (1 / 2 * Py B A C)) +
+  (1 - 2 / (2 + 1)) *
+  (2 / (2 + 1) * (1 / 2 * Py B A C) + (1 - 2 / (2 + 1)) * Py B A B)) +
+ (2 / (2 + 1) *
+  (2 / (2 + 1) * (1 / 2 * (1 / 2 * Py A C A)) +
+   (1 - 2 / (2 + 1)) * (1 / 2 * Py B C A)) +
+  (1 - 2 / (2 + 1)) *
+  (2 / (2 + 1) * (1 / 2 * Py B C A) + (1 - 2 / (2 + 1)) * Py B C B)) +
+ 2 / (2 + 1) *
+ (2 / (2 + 1) *
+  (1 / 2 * (1 / 2 * Py C B C + 1 / 2 * Py C B A) +
+   1 / 2 * (1 / 2 * Py A B C + 1 / 2 * Py A B A))) =
+ Py A M A + Py B M B + Py C M C)
+   uniformize areas...
+   we need to show that:
+(1 / (f0 * S A B R + (f0 * S Q A R + (1 - f0) * S Q A B)) *
+ (S A B Q * ((1 - f0) * S A R B)) /
+ (1 / (f0 * S A B R + (f0 * S Q A R + (1 - f0) * S Q A B)) *
+  (f0 * S Q B R * S B R A)) =
+ - ((f0 * S Q A R + (1 - f0) * S Q A B) / (f0 * S Q B R)))
+   elimination of point : Q
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_4
+   we need to show that:
+(1 / (f0 * S A B R + (1 - f0) * (f * S A B R)) *
+ (f * S A B R * ((1 - f0) * S A R B)) /
+ (1 / (f0 * S A B R + (1 - f0) * (f * S A B R)) *
+  (f0 * ((1 - f) * S B R A) * S B R A)) =
+ - ((1 - f0) * (f * S A B R) / (f0 * ((1 - f) * S B R A))))
+   uniformize areas...
+   simplification...
+   simplification...
+   before field...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : R
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : L
+   we need to show that:
+(1 / (S B&#39; B C + S B&#39; C C&#39;) * (S B&#39; B C&#39; * S P Q C + S C C&#39; B * S P Q B&#39;) = 0)
+   elimination of point : Q
+   we need to show that:
+(1 / (S B&#39; B C + S B&#39; C C&#39;) *
+ (S B&#39; B C&#39; *
+  (1 / (S A A&#39; C&#39; + S A C&#39; C) * (S A A&#39; C * S C P C&#39; + S C&#39; C A&#39; * S C P A)) +
+  S C C&#39; B *
+  (1 / (S A A&#39; C&#39; + S A C&#39; C) * (S A A&#39; C * S B&#39; P C&#39; + S C&#39; C A&#39; * S B&#39; P A))) =
+ 0)
+   elimination of point : C
+   we need to show that:
+(Py P M P =
+ 1 / 2 * (1 / 2 * Py G Q G + 1 / 2 * Py G Q E) +
+ 1 / 2 * (1 / 2 * Py E Q G + 1 / 2 * Py E Q E))
+   elimination of point : Q
+   we need to show that:
+(1 / ((1 - f0) * S B&#39; B A + (f0 * S C&#39; B&#39; B + (1 - f0) * S C&#39; B&#39; A)) *
+ (S B&#39; B C&#39; *
+  (1 / (S A A&#39; C&#39; + f0 * S A C&#39; B) *
+   (f0 * S A A&#39; B * (f0 * S P C&#39; B + (1 - f0) * S P C&#39; A) +
+    (f0 * S A&#39; C&#39; B + (1 - f0) * S A&#39; C&#39; A) * (f0 * S P A B))) +
+  (1 - f0) * S C&#39; B A *
+  (1 / (S A A&#39; C&#39; + f0 * S A C&#39; B) *
+   (f0 * S A A&#39; B * S B&#39; P C&#39; +
+    (f0 * S A&#39; C&#39; B + (1 - f0) * S A&#39; C&#39; A) * S B&#39; P A))) = 0)
+   elimination of point : C&#39;
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : E
+   we need to show that:
+(Py B A F = Py B A C * Py C A C / Py A C A)
+   elimination of point : F
+   we need to show that:
+(Py P M P =
+ 1 / 2 *
+ (1 / 2 * (1 / 2 * (1 / 2 * Py C G C)) +
+  1 / 2 *
+  (- (Py G C E * (1 / 2)) + Py G C E + 1 / 2 * (1 / 2) * Py G C G -
+   1 / 2 * Py G C G)) +
+ 1 / 2 *
+ (1 / 2 *
+  (- (Py E C G * (1 / 2)) + Py E C G + 1 / 2 * (1 / 2) * Py G C G -
+   1 / 2 * Py G C G) +
+  1 / 2 *
+  (1 / 2 * (1 / 2 * Py G E G + 1 / 2 * Py G E C) +
+   1 / 2 * (1 / 2 * Py C E G + 1 / 2 * Py C E C))))
+   elimination of point : P
+   we need to show that:
+(Py C A B * Py B A B / Py A B A = Py B A C * Py C A C / Py A C A)
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : D
+   we need to show that:
+(1 / 2 * (1 / 2 * Py E M E + 1 / 2 * Py E M B) +
+ 1 / 2 * (1 / 2 * Py B M E + 1 / 2 * Py B M B) =
+ 1 / 2 *
+ (1 / 2 * (1 / 2 * (1 / 2 * Py C G C)) +
+  1 / 2 *
+  (- (Py G C E * (1 / 2)) + Py G C E + 1 / 2 * (1 / 2) * Py G C G -
+   1 / 2 * Py G C G)) +
+ 1 / 2 *
+ (1 / 2 *
+  (- (Py E C G * (1 / 2)) + Py E C G + 1 / 2 * (1 / 2) * Py G C G -
+   1 / 2 * Py G C G) +
+  1 / 2 *
+  (1 / 2 * (1 / 2 * Py G E G + 1 / 2 * Py G E C) +
+   1 / 2 * (1 / 2 * Py C E G + 1 / 2 * Py C E C))))
+   elimination of point : M
+   we need to show that:
+   we need to show that:
+(Py A C B * S C E B / Py B C B *
+ (Py A B C / Py B C B * Py B C F - Py A B C * Py A C B / Py B C B) =
+ Py A B C * S F B C / Py B C B *
+ (Py A C B / Py B C B * Py E B C - Py A B C * Py A C B / Py B C B))
+(1 /
+ ((1 - f0) * S B&#39; B A +
+  (f0 * ((1 - f) * S B&#39; B A&#39;) + (1 - f0) * ((1 - f) * S B&#39; A A&#39;))) *
+ ((1 - f) * S B&#39; B A&#39; *
+  (1 / (f * S A A&#39; B&#39; + f0 * (f * S B A B&#39; + (1 - f) * S B A A&#39;)) *
+   (f0 * S A A&#39; B *
+    (f0 * (f * S B P B&#39; + (1 - f) * S B P A&#39;) +
+     (1 - f0) * (f * S A P B&#39; + (1 - f) * S A P A&#39;)) +
+    (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) * (f0 * S P A B))) +
+  (1 - f0) * (f * S B A B&#39; + (1 - f) * S B A A&#39;) *
+  (1 / (f * S A A&#39; B&#39; + f0 * (f * S B A B&#39; + (1 - f) * S B A A&#39;)) *
+   (f0 * S A A&#39; B * ((1 - f) * S B&#39; P A&#39;) +
+    (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) * S B&#39; P A))) = 0)
+   elimination of point : E
+   elimination of point : P
+   we need to show that:
+(Py A C B * (Py B C A * S B C A / Py A C A) / Py B C B *
+ (Py A B C / Py B C B * Py B C F - Py A B C * Py A C B / Py B C B) =
+ Py A B C * S F B C / Py B C B *
+ (Py A C B / Py B C B *
+  ((Py B A C * Py C B C + Py B C A * Py C B A) / Py A C A) -
+  Py A B C * Py A C B / Py B C B))
+   elimination of point : F
+   we need to show that:
+(Py A C B * (Py B C A * S B C A / Py A C A) / Py B C B *
+ (Py A B C / Py B C B *
+  ((Py C A B * Py B C B + Py C B A * Py B C A) / Py A B A) -
+  Py A B C * Py A C B / Py B C B) =
+ Py A B C * (Py C B A * S B C A / Py A B A) / Py B C B *
+ (Py A C B / Py B C B *
+  ((Py B A C * Py C B C + Py B C A * Py C B A) / Py A C A) -
+  Py A B C * Py A C B / Py B C B))
+   uniformize areas...
+   we need to show that:
+(1 / 2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * Py C E C + 1 / 2 * Py C E B) +
+   1 / 2 * (1 / 2 * Py B E C + 1 / 2 * Py B E B)) +
+  1 / 2 * (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py E C B - 1 / 2 * Py C B C)) +
+ 1 / 2 *
+ (1 / 2 * (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C E - 1 / 2 * Py C B C) +
+  1 / 2 * (1 / 2 * (1 / 2 * Py C B C))) =
+ 1 / 2 *
+ (1 / 2 * (1 / 2 * (1 / 2 * Py C G C)) +
+  1 / 2 *
+  (- (Py G C E * (1 / 2)) + Py G C E + 1 / 2 * (1 / 2) * Py G C G -
+   1 / 2 * Py G C G)) +
+ 1 / 2 *
+ (1 / 2 *
+  (- (Py E C G * (1 / 2)) + Py E C G + 1 / 2 * (1 / 2) * Py G C G -
+   1 / 2 * Py G C G) +
+  1 / 2 *
+  (1 / 2 * (1 / 2 * Py G E G + 1 / 2 * Py G E C) +
+   1 / 2 * (1 / 2 * Py C E G + 1 / 2 * Py C E C))))
+   elimination of point : G
+   we need to show that:
+(1 /
+ ((1 - f0) * S B&#39; B A +
+  (f0 * ((1 - f) * S B&#39; B A&#39;) + (1 - f0) * ((1 - f) * S B&#39; A A&#39;))) *
+ ((1 - f) * S B&#39; B A&#39; *
+  (1 / (f * S A A&#39; B&#39; + f0 * (f * S B A B&#39; + (1 - f) * S B A A&#39;)) *
+   (f0 * S A A&#39; B *
+    (f0 * (f * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S B B&#39; A * S B&#39; B A&#39;))) +
+     (1 - f0) *
+     (f *
+      (1 / (S A&#39; A B + S A&#39; B B&#39;) *
+       (S A&#39; A B&#39; * S B&#39; A B + S B B&#39; A * S B&#39; A A&#39;)) +
+      (1 - f) * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S A&#39; A B&#39; * S A&#39; A B)))) +
+    (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) *
+    (f0 * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S B B&#39; A * S A B A&#39;))))) +
+  (1 - f0) * (f * S B A B&#39; + (1 - f) * S B A A&#39;) *
+  (1 / (f * S A A&#39; B&#39; + f0 * (f * S B A B&#39; + (1 - f) * S B A A&#39;)) *
+   (f0 * S A A&#39; B *
+    ((1 - f) * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S A&#39; A B&#39; * S A&#39; B&#39; B))) -
+    (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) *
+    (1 / (S A&#39; A B + S A&#39; B B&#39;) *
+     (S A&#39; A B&#39; * S B&#39; A B + S B B&#39; A * S B&#39; A A&#39;))))) = 0)
+   uniformize areas...
+   simplification...
+   before field...
+   we need to show that:
+(1 / 2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * Py C E C + 1 / 2 * Py C E B) +
+   1 / 2 * (1 / 2 * Py B E C + 1 / 2 * Py B E B)) +
+  1 / 2 * (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py E C B - 1 / 2 * Py C B C)) +
+ 1 / 2 *
+ (1 / 2 * (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C E - 1 / 2 * Py C B C) +
+  1 / 2 * (1 / 2 * (1 / 2 * Py C B C))) =
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 *
+   (1 / 2 *
+    (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)))) +
+  1 / 2 *
+  (- ((Py E C A - (2 + 2) * (0 - 1) * S A E C) * (1 / 2)) +
+   (Py E C A - (2 + 2) * (0 - 1) * S A E C) +
+   1 / 2 * (1 / 2) *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)) -
+   1 / 2 *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)))) +
+ 1 / 2 *
+ (1 / 2 *
+  (- ((Py E C A - (2 + 2) * (0 - 1) * S A E C) * (1 / 2)) +
+   (Py E C A - (2 + 2) * (0 - 1) * S A E C) +
+   1 / 2 * (1 / 2) *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)) -
+   1 / 2 *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A))) +
+  1 / 2 *
+  (1 / 2 *
+   (1 / 2 *
+    (Py A E A - (2 + 2) * (0 - 1) * S A C E -
+     (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A + S A C E)) +
+    1 / 2 * (Py C E A - (2 + 2) * (0 - 1) * S A C E)) +
+   1 / 2 *
+   (1 / 2 * (Py C E A - (2 + 2) * (0 - 1) * S A C E) + 1 / 2 * Py C E C))))
+   elimination of point : E
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(2 * Py A B C * Py B A C * Py A C B * S A B C =
+ Py A B A * Py B C B * Py A C A *
+ ((Py C A B * S E F B + Py C B A * S E F A) / Py A B A))
+   elimination of point : F
+   simplification...
+   we need to show that:
+(2 * Py A B C * Py B A C * Py A C B * S A B C =
+ Py A B A * Py B C B * Py A C A *
+ ((Py C A B * ((Py B A C * S B E C + Py B C A * S B E A) / Py A C A) +
+   Py C B A * (Py B A C * S A E C / Py A C A)) / Py A B A))
+   elimination of point : E
+   we need to show that:
+(2 * Py A B C * Py B A C * Py A C B * S A B C =
+ Py A B A * Py B C B * Py A C A *
+ ((Py C A B * (Py B C A * (Py A B C * S A B C / Py B C B) / Py A C A) +
+   Py C B A * (Py B A C * (Py A C B * S C A B / Py B C B) / Py A C A)) /
+  Py A B A))
+   uniformize areas...
+   before field...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : H
+   we need to show that:
+(2 * (S E F G + (1 / 2 * S E G A + 1 / 2 * S E G D)) = S A B C + S A C D)
+   elimination of point : G
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : T
+   we need to show that:
+(B&#39; ** R / C ** R = S B&#39; P Q / S C P Q)
+   elimination of point : R
+   we need to show that:
+(2 *
+ (1 / 2 * S E F D + 1 / 2 * S E F C +
+  (1 / 2 * (1 / 2 * S A E D + 1 / 2 * S A E C) + 1 / 2 * (1 / 2 * S D E C))) =
+ S A B C + S A C D)
+   elimination of point : F
+   we need to show that:
+(S B&#39; B C&#39; / S C B C&#39; = S B&#39; P Q / S C P Q)
+   elimination of point : Q
+   we need to show that:
+(S B&#39; B C&#39; / S C B C&#39; =
+ 1 / (S A A&#39; C&#39; + S A C&#39; C) * (S A A&#39; C * S B&#39; P C&#39; + S C&#39; C A&#39; * S B&#39; P A) /
+ (1 / (S A A&#39; C&#39; + S A C&#39; C) * (S A A&#39; C * S C P C&#39; + S C&#39; C A&#39; * S C P A)))
+   elimination of point : C
+   we need to show that:
+(2 *
+ (1 / 2 * (1 / 2 * S D E C + 1 / 2 * S D E B) + 1 / 2 * (1 / 2 * S C E B) +
+  (1 / 2 * (1 / 2 * S A E D + 1 / 2 * S A E C) + 1 / 2 * (1 / 2 * S D E C))) =
+ S A B C + S A C D)
+   elimination of point : E
+   we need to show that:
+(1 / 2 *
+ (1 / 2 *
+  (1 / 2 *
+   (1 / 2 *
+    (Py A C A - (2 + 2) * S A B C -
+     (2 + 2) * (0 - 1 / (2 + 2) * Py A B A + S A B C)) +
+    1 / 2 * (Py C A B + Py A B A - (2 + 2) * S C A B)) +
+   1 / 2 *
+   (1 / 2 * (Py B A C + Py A B A - (2 + 2) * S C A B) +
+    1 / 2 * (Py A B A - (2 + 2) * (0 - 1 / (2 + 2) * Py A B A)))) +
+  1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * (Py B C A - (2 + 2) * S A B C) -
+   1 / 2 * Py C B C)) +
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * (Py B C A - (2 + 2) * S A B C) -
+   1 / 2 * Py C B C) + 1 / 2 * (1 / 2 * (1 / 2 * Py C B C))) =
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 *
+   (1 / 2 *
+    (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)))) +
+  1 / 2 *
+  (-
+   ((Py A C A - (2 + 2) * S A B C -
+     (2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A))) * 
+    (1 / 2)) +
+   (Py A C A - (2 + 2) * S A B C -
+    (2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A))) +
+   1 / 2 * (1 / 2) *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)) -
+   1 / 2 *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)))) +
+ 1 / 2 *
+ (1 / 2 *
+  (-
+   ((Py A C A - (2 + 2) * S A B C -
+     (2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A))) * 
+    (1 / 2)) +
+   (Py A C A - (2 + 2) * S A B C -
+    (2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A))) +
+   1 / 2 * (1 / 2) *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A)) -
+   1 / 2 *
+   (Py A C A - (2 + 2) * (0 - 1) * (0 - (0 - 1) / (2 + 2) * Py A C A))) +
+  1 / 2 *
+  (1 / 2 *
+   (1 / 2 *
+    (0 - (2 + 2) * (0 - 1 / (2 + 2) * Py A B A) -
+     - ((2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A))) -
+     (2 + 2) * (0 - 1) *
+     (0 - (0 - 1) / (2 + 2) * Py A C A -
+      (0 - 1 / (2 + 2) * (Py A C A - Py B C A)))) +
+    1 / 2 *
+    (Py A B A - (2 + 2) * S C A B -
+     - ((2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A))))) +
+   1 / 2 *
+   (1 / 2 *
+    (Py A B A - (2 + 2) * S C A B -
+     - ((2 + 2) * (0 - 1) * (0 - 1 / (2 + 2) * (Py A C A - Py B C A)))) +
+    1 / 2 *
+    (Py A C A - (2 + 2) * S A B C -
+     (2 + 2) * (0 - 1 / (2 + 2) * Py A B A + S A B C))))))
+   uniformize areas...
+   we need to show that:
+(2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * S C D B + 1 / 2 * S C D A) + 1 / 2 * (1 / 2 * S B D A)) +
+  1 / 2 * (1 / 2 * (1 / 2 * S B C A)) +
+  (1 / 2 * (1 / 2 * (1 / 2 * S D A B) + 1 / 2 * (1 / 2 * S C A B)) +
+   1 / 2 * (1 / 2 * (1 / 2 * S C D B + 1 / 2 * S C D A)))) =
+ S A B C + S A C D)
+   uniformize areas...
+   simplification...
+   we need to show that:
+(S B&#39; B C&#39; / ((1 - f0) * S B C&#39; A) =
+ 1 / (S A A&#39; C&#39; + f0 * S A C&#39; B) *
+ (f0 * S A A&#39; B * S B&#39; P C&#39; +
+  (f0 * S A&#39; C&#39; B + (1 - f0) * S A&#39; C&#39; A) * S B&#39; P A) /
+ (1 / (S A A&#39; C&#39; + f0 * S A C&#39; B) *
+  (f0 * S A A&#39; B * (f0 * S P C&#39; B + (1 - f0) * S P C&#39; A) +
+   (f0 * S A&#39; C&#39; B + (1 - f0) * S A&#39; C&#39; A) * (f0 * S P A B))))
+   elimination of point : C&#39;
+   before field...
+   we need to show that:
+((1 - f) * S B&#39; B A&#39; / ((1 - f0) * (f * S A B B&#39; + (1 - f) * S A B A&#39;)) =
+ 1 / (f * S A A&#39; B&#39; - f0 * (f * S A B B&#39; + (1 - f) * S A B A&#39;)) *
+ (f0 * S A A&#39; B * ((1 - f) * S B&#39; P A&#39;) +
+  (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) * S B&#39; P A) /
+ (1 / (f * S A A&#39; B&#39; - f0 * (f * S A B B&#39; + (1 - f) * S A B A&#39;)) *
+  (f0 * S A A&#39; B *
+   (f0 * (f * S B P B&#39; + (1 - f) * S B P A&#39;) +
+    (1 - f0) * (f * S A P B&#39; + (1 - f) * S A P A&#39;)) +
+   (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) * (f0 * S P A B))))
+   elimination of point : P
+   we need to show that:
+((1 - f) * S B&#39; B A&#39; / ((1 - f0) * (f * S A B B&#39; + (1 - f) * S A B A&#39;)) =
+ 1 / (f * S A A&#39; B&#39; - f0 * (f * S A B B&#39; + (1 - f) * S A B A&#39;)) *
+ (f0 * S A A&#39; B *
+  ((1 - f) * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S A&#39; A B&#39; * S A&#39; B&#39; B))) +
+  (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) *
+  (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S A&#39; A B&#39; * S A B&#39; B + S B B&#39; A * S A B&#39; A&#39;))) /
+ (1 / (f * S A A&#39; B&#39; - f0 * (f * S A B B&#39; + (1 - f) * S A B A&#39;)) *
+  (f0 * S A A&#39; B *
+   (f0 * (f * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S B B&#39; A * S B&#39; B A&#39;))) +
+    (1 - f0) *
+    (-
+     (f *
+      (1 / (S A&#39; A B + S A&#39; B B&#39;) *
+       (S A&#39; A B&#39; * S A B&#39; B + S B B&#39; A * S A B&#39; A&#39;))) +
+     (1 - f) * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S A&#39; A B&#39; * S A&#39; A B)))) +
+   (f0 * (f * S B A&#39; B&#39;) + (1 - f0) * (f * S A A&#39; B&#39;)) *
+   (f0 * (1 / (S A&#39; A B + S A&#39; B B&#39;) * (S B B&#39; A * S A B A&#39;))))))
+   uniformize areas...
+   we need to make geometric quantities independant...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : P
+   we need to show that:
+(r * S A B M + (1 - r) * S A B N + (r * S C D M + (1 - r) * S C D N) =
+ r * S D A M + (1 - r) * S D A N + (r * S B C M + (1 - r) * S B C N))
+   elimination of point : M
+   we need to show that:
+(r * (1 / 2 * S A B D) + (1 - r) * S A B N +
+ (r * (1 / 2 * S C D B) + (1 - r) * S C D N) =
+ r * (1 / 2 * S D A B) + (1 - r) * S D A N +
+ (r * (1 / 2 * S B C D) + (1 - r) * S B C N))
+   elimination of point : N
+   we need to show that:
+(r * (1 / 2 * S A B D) + (1 - r) * (1 / 2 * S A B C) +
+ (r * (1 / 2 * S C D B) + (1 - r) * (1 / 2 * S C D A)) =
+ r * (1 / 2 * S D A B) + (1 - r) * (1 / 2 * S D A C) +
+ (r * (1 / 2 * S B C D) + (1 - r) * (1 / 2 * S B C A)))
+   uniformize areas...
+   simplification...
+   before field...
+   initialisation...
+   elimination...
+   elimination of point : O3
+   we need to show that:
+(Py O1 O2 O1 =
+ Py G O2 G - (2 + 2) * (r / (2 + 1)) * S G B O2 -
+ (2 + 2) * (r / (2 + 1)) * (0 - r / (2 + 1) / (2 + 2) * Py G B G + S G B O2))
+   elimination of point : G
+   initialisation...
+   elimination...
+   elimination of point : Y
+   we need to show that:
+(S B C D + S B D A = (2 + 2) * (1 / 2 * S W X D + 1 / 2 * S W X B))
+   elimination of point : X
+   we need to show that:
+(S B C D + S B D A =
+ (2 + 2) *
+ (1 / 2 * (1 / 2 * S D W A + 1 / 2 * S D W C) +
+  1 / 2 * (1 / 2 * S B W A + 1 / 2 * S B W C)))
+   elimination of point : W
+   we need to show that:
+(Py O1 O2 O1 =
+ 1 / 2 * (1 / 2 * Py B O2 B + 1 / 2 * Py B O2 A) +
+ 1 / 2 * (1 / 2 * Py A O2 B + 1 / 2 * Py A O2 A) -
+ (2 + 2) * (r / (2 + 1)) * (1 / 2 * S B O2 A) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py A B A)) + 1 / 2 * S B O2 A))
+   elimination of point : O1
+   simplification...
+   we need to show that:
+(S B C D + S B D A =
+ (2 + 2) *
+ (1 / 2 *
+  (1 / 2 *
+   (1 / (S B D C + S B C A) * (S B D A * S A D C + S C A D * S A D B)) +
+   1 / 2 * (1 / (S B D C + S B C A) * (S C A D * S C D B))) +
+  1 / 2 * (1 / 2 * (1 / (S B D C + S B C A) * (S B D A * S A B C)))))
+   uniformize areas...
+   we need to show that:
+(Py F O2 F - (2 + 2) * (r / (2 + 1)) * S F C O2 -
+ (2 + 2) * (r / (2 + 1)) * (0 - r / (2 + 1) / (2 + 2) * Py F C F + S F C O2) =
+ 1 / 2 * (1 / 2 * Py B O2 B + 1 / 2 * Py B O2 A) +
+ 1 / 2 * (1 / 2 * Py A O2 B + 1 / 2 * Py A O2 A) -
+ (2 + 2) * (r / (2 + 1)) * (1 / 2 * S B O2 A) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py A B A)) + 1 / 2 * S B O2 A))
+   elimination of point : F
+   simplification...
+   we need to show that:
+(1 / 2 * (1 / 2 * Py C O2 C + 1 / 2 * Py C O2 B) +
+ 1 / 2 * (1 / 2 * Py B O2 C + 1 / 2 * Py B O2 B) -
+ (2 + 2) * (r / (2 + 1)) * (1 / 2 * S C O2 B) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py B C B)) + 1 / 2 * S C O2 B) =
+ 1 / 2 * (1 / 2 * Py B O2 B + 1 / 2 * Py B O2 A) +
+ 1 / 2 * (1 / 2 * Py A O2 B + 1 / 2 * Py A O2 A) -
+ (2 + 2) * (r / (2 + 1)) * (1 / 2 * S B O2 A) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py A B A)) + 1 / 2 * S B O2 A))
+   elimination of point : O2
+   before field...
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_3
+   we need to show that:
+(1 / 2 *
+ (1 / 2 *
+  (Py E C E - (2 + 2) * (r / (2 + 1)) * S E A C -
+   (2 + 2) * (r / (2 + 1)) * (0 - r / (2 + 1) / (2 + 2) * Py E A E + S E A C)) +
+  1 / 2 *
+  (Py C E B + r / (2 + 1) * (r / (2 + 1)) * Py E A E -
+   (2 + 2) * (r / (2 + 1)) * (S C E A + S B E A))) +
+ 1 / 2 *
+ (1 / 2 *
+  (Py B E C + r / (2 + 1) * (r / (2 + 1)) * Py E A E -
+   (2 + 2) * (r / (2 + 1)) * (S B E A + S C E A)) +
+  1 / 2 *
+  (Py E B E - (2 + 2) * (r / (2 + 1)) * S E A B -
+   (2 + 2) * (r / (2 + 1)) * (0 - r / (2 + 1) / (2 + 2) * Py E A E + S E A B))) -
+ (2 + 2) * (r / (2 + 1)) *
+ (1 / 2 * (S B C E - r / (2 + 1) / (2 + 2) * (Py E B C - Py A B C))) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py B C B)) +
+  1 / 2 * (S B C E - r / (2 + 1) / (2 + 2) * (Py E B C - Py A B C))) =
+ 1 / 2 *
+ (1 / 2 *
+  (Py E B E - (2 + 2) * (r / (2 + 1)) * S E A B -
+   (2 + 2) * (r / (2 + 1)) * (0 - r / (2 + 1) / (2 + 2) * Py E A E + S E A B)) +
+  1 / 2 *
+  (Py B E A + r / (2 + 1) * (r / (2 + 1)) * Py E A E -
+   (2 + 2) * (r / (2 + 1)) * S B E A)) +
+ 1 / 2 *
+ (1 / 2 *
+  (Py A E B + r / (2 + 1) * (r / (2 + 1)) * Py E A E -
+   (2 + 2) * (r / (2 + 1)) * S B E A) +
+  1 / 2 *
+  (Py E A E -
+   (2 + 2) * (r / (2 + 1)) * (0 - r / (2 + 1) / (2 + 2) * Py E A E))) -
+ (2 + 2) * (r / (2 + 1)) *
+ (1 / 2 * (S A B E - r / (2 + 1) / (2 + 2) * Py E A B)) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py A B A)) +
+  1 / 2 * (S A B E - r / (2 + 1) / (2 + 2) * Py E A B)))
+   elimination of point : E
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : Q
+   we need to show that:
+(Py G O A - Py O A O / Py O P O * Py A O P = 0)
+   elimination of point : G
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : G
+   we need to show that:
+(1 / 2 * Py E D E - Py F D E = 0)
+   elimination of point : F
+   we need to show that:
+(Py O A O / Py O R O * Py A O R - Py O A O / Py O P O * Py A O P = 0)
+   elimination of point : R
+   we need to show that:
+(1 / 2 * Py E D E - (1 / 2 * Py E D C + 1 / 2 * Py E D B) = 0)
+   elimination of point : E
+   we need to show that:
+(1 / 2 *
+ ((Py B A C * Py B A C * Py C D C + Py B A C * Py B C A * Py C D A +
+   Py B A C * Py B C A * Py A D C + Py B C A * Py B C A * Py A D A) /
+  (Py A C A * Py A C A)) -
+ (1 / 2 * ((Py B A C * Py C D C + Py B C A * Py C D A) / Py A C A) +
+  1 / 2 * ((Py B A C * Py B D C + Py B C A * Py B D A) / Py A C A)) = 0)
+   elimination of point : D
+   we need to show that:
+(Py O A O / (Py N O N + Py N O N - 2 * Py N O N) *
+ (Py A O N + (0 - Py A O N)) - Py O A O / Py O P O * Py A O P = 0)
+   elimination of point : N
+&quot;coqc&quot;  -q  -R . AreaMethod   examples_2
+   we need to show that:
+(Py O A O /
+ (Py U O X * Py U O X * Py X O X / (Py O X O * Py O X O) +
+  Py U O X * Py U O X * Py X O X / (Py O X O * Py O X O) -
+  2 * (Py U O X * Py U O X * Py X O X / (Py O X O * Py O X O))) *
+ (Py U O X * Py A O X / Py O X O + (0 - Py U O X * Py A O X / Py O X O)) -
+ Py O A O / Py O P O * Py A O P = 0)
+   elimination of point : U
+   we need to show that:
+(1 / 2 *
+ ((Py B A C * Py B A C *
+   ((Py C A B * Py C A B * Py B C B + Py C A B * Py C B A * Py B C A +
+     Py C A B * Py C B A * Py A C B + Py C B A * Py C B A * Py A C A) /
+    (Py A B A * Py A B A)) +
+   Py B A C * Py B C A *
+   (Py C A B / Py A B A * Py C B A - Py C A B * Py C B A / Py A B A) +
+   Py B A C * Py B C A *
+   (Py C A B / Py A B A * Py A B C - Py C A B * Py C B A / Py A B A) +
+   Py B C A * Py B C A *
+   (Py C A B * Py C A B * Py B A B / (Py A B A * Py A B A))) /
+  (Py A C A * Py A C A)) -
+ (1 / 2 *
+  ((Py B A C *
+    ((Py C A B * Py C A B * Py B C B + Py C A B * Py C B A * Py B C A +
+      Py C A B * Py C B A * Py A C B + Py C B A * Py C B A * Py A C A) /
+     (Py A B A * Py A B A)) +
+    Py B C A *
+    (Py C A B / Py A B A * Py C B A - Py C A B * Py C B A / Py A B A)) /
+   Py A C A) +
+  1 / 2 *
+  ((Py B A C *
+    (Py C B A / Py A B A * Py B A C - Py C A B * Py C B A / Py A B A) +
+    Py B C A * (0 - Py C A B * Py C B A / Py A B A)) / 
+   Py A C A)) = 0)
+   uniformize areas...
+   we need to show that:
+(Py O A O /
+ (1 / 2 * Py X O P * (1 / 2 * Py X O P) * Py X O X / (Py O X O * Py O X O) +
+  1 / 2 * Py X O P * (1 / 2 * Py X O P) * Py X O X / (Py O X O * Py O X O) -
+  2 *
+  (1 / 2 * Py X O P * (1 / 2 * Py X O P) * Py X O X / (Py O X O * Py O X O))) *
+ (1 / 2 * Py X O P * Py A O X / Py O X O +
+  (0 - 1 / 2 * Py X O P * Py A O X / Py O X O)) -
+ Py O A O / Py O P O * Py A O P = 0)
+   elimination of point : P
+   we need to show that:
+(Py O A O /
+ (1 / 2 * (r * Py X O A) * (1 / 2 * (r * Py X O A)) * Py X O X /
+  (Py O X O * Py O X O) +
+  1 / 2 * (r * Py X O A) * (1 / 2 * (r * Py X O A)) * Py X O X /
+  (Py O X O * Py O X O) -
+  2 *
+  (1 / 2 * (r * Py X O A) * (1 / 2 * (r * Py X O A)) * Py X O X /
+   (Py O X O * Py O X O))) *
+ (1 / 2 * (r * Py X O A) * Py A O X / Py O X O +
+  (0 - 1 / 2 * (r * Py X O A) * Py A O X / Py O X O)) -
+ Py O A O / (r * (r * Py A O A)) * (r * Py A O A) = 0)
+   uniformize areas...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : T
+here
+   we need to show that:
+(P ** R / R ** Q = S P X Y / S Q X Y)
+   elimination of point : R
+here
+   we need to show that:
+(- (S P X Y / S Q X Y) = S P X Y / S Q X Y)
+   elimination of point : Q
+   we need to show that:
+(1 / 2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * Py A C A) -
+   (2 + 2) * (r / (2 + 1)) *
+   (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py C A C)))) +
+  1 / 2 *
+  (- (Py C A B * (1 / 2)) + Py C A B + 1 / 2 * (1 / 2) * Py C A C -
+   1 / 2 * Py C A C +
+   r / (2 + 1) * (r / (2 + 1)) * (1 / 2 * (1 / 2 * Py C A C)) -
+   (2 + 2) * (r / (2 + 1)) * (1 / 2 * S A B C))) +
+ 1 / 2 *
+ (1 / 2 *
+  (- (Py B A C * (1 / 2)) + Py B A C + 1 / 2 * (1 / 2) * Py C A C -
+   1 / 2 * Py C A C +
+   r / (2 + 1) * (r / (2 + 1)) * (1 / 2 * (1 / 2 * Py C A C)) -
+   (2 + 2) * (r / (2 + 1)) * (1 / 2 * S A B C)) +
+  1 / 2 *
+  (1 / 2 * (1 / 2 * Py C B C + 1 / 2 * Py C B A) +
+   1 / 2 * (1 / 2 * Py A B C + 1 / 2 * Py A B A) -
+   (2 + 2) * (r / (2 + 1)) * (1 / 2 * S A B C) -
+   (2 + 2) * (r / (2 + 1)) *
+   (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py C A C)) +
+    1 / 2 * S A B C))) -
+ (2 + 2) * (r / (2 + 1)) *
+ (1 / 2 *
+  (1 / 2 * S B C A -
+   r / (2 + 1) / (2 + 2) * (1 / 2 * Py C B C + 1 / 2 * Py C B A - Py A B C))) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py B C B)) +
+  1 / 2 *
+  (1 / 2 * S B C A -
+   r / (2 + 1) / (2 + 2) * (1 / 2 * Py C B C + 1 / 2 * Py C B A - Py A B C))) =
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2 * Py C B C + 1 / 2 * Py C B A) +
+   1 / 2 * (1 / 2 * Py A B C + 1 / 2 * Py A B A) -
+   (2 + 2) * (r / (2 + 1)) * (1 / 2 * S A B C) -
+   (2 + 2) * (r / (2 + 1)) *
+   (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py C A C)) +
+    1 / 2 * S A B C)) +
+  1 / 2 *
+  (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * Py B C A - 1 / 2 * Py C A C +
+   r / (2 + 1) * (r / (2 + 1)) * (1 / 2 * (1 / 2 * Py C A C)) -
+   (2 + 2) * (r / (2 + 1)) * (1 / 2 * S A B C))) +
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * Py A C B - 1 / 2 * Py C A C +
+   r / (2 + 1) * (r / (2 + 1)) * (1 / 2 * (1 / 2 * Py C A C)) -
+   (2 + 2) * (r / (2 + 1)) * (1 / 2 * S A B C)) +
+  1 / 2 *
+  (1 / 2 * (1 / 2 * Py C A C) -
+   (2 + 2) * (r / (2 + 1)) *
+   (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py C A C))))) -
+ (2 + 2) * (r / (2 + 1)) *
+ (1 / 2 * (1 / 2 * S A B C - r / (2 + 1) / (2 + 2) * (1 / 2 * Py B A C))) -
+ (2 + 2) * (r / (2 + 1)) *
+ (0 - r / (2 + 1) / (2 + 2) * (1 / 2 * (1 / 2 * Py A B A)) +
+  1 / 2 * (1 / 2 * S A B C - r / (2 + 1) / (2 + 2) * (1 / 2 * Py B A C))))
+   uniformize areas...
+   we need to show that:
+(-
+ (S P X Y /
+  (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O))) =
+ S P X Y /
+ (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O)))
+   elimination of point : P
+   simplification...
+   we need to show that:
+(-
+ (1 / (S O X A + S O A Y) * (S O X Y * S X Y A + S A Y X * S X Y O) /
+  (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O))) =
+ 1 / (S O X A + S O A Y) * (S O X Y * S X Y A + S A Y X * S X Y O) /
+ (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O)))
+   elimination of point : C
+   we need to show that:
+(-
+ (1 / (S O X A + S O A Y) * (S O X Y * S X Y A + S A Y X * S X Y O) /
+  (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O))) =
+ 1 / (S O X A + S O A Y) * (S O X Y * S X Y A + S A Y X * S X Y O) /
+ (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O)))
+   elimination of point : D
+   before field...
+   we need to show that:
+(-
+ (1 / (S O X A + S O A Y) * (S O X Y * S X Y A + S A Y X * S X Y O) /
+  (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O))) =
+ 1 / (S O X A + S O A Y) * (S O X Y * S X Y A + S A Y X * S X Y O) /
+ (1 / (S O X B + S O B Y) * (S O X Y * S X Y B + S B Y X * S X Y O)))
+   uniformize areas...
+   simplification...
+   before field...
+   simplification...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : C1
+   we need to show that:
+(S A1 C G - (0 - r) / (2 + 2) * (Py G A1 C - Py B A1 C) =
+ S A1 B1 G - (0 - r) / (2 + 2) * (Py G A1 B1 - Py B A1 B1))
+   elimination of point : G
+   before field...
+   we need to show that:
+(1 / 2 * S A1 C B + 1 / 2 * S A1 C A -
+ (0 - r) / (2 + 2) * (1 / 2 * Py C A1 B + 1 / 2 * Py C A1 A - Py B A1 C) =
+ 1 / 2 * S A1 B1 B + 1 / 2 * S A1 B1 A -
+ (0 - r) / (2 + 2) * (1 / 2 * Py B1 A1 B + 1 / 2 * Py B1 A1 A - Py B A1 B1))
+   elimination of point : A1
+   we need to show that:
+(1 / 2 * (S C B F - r / (2 + 2) * Py F C B) +
+ 1 / 2 * (S C A F - r / (2 + 2) * Py F C A) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 * (Py C F B + r * r * Py F C F - (2 + 2) * r * S B F C) +
+  1 / 2 * (Py C F A + r * r * Py F C F - (2 + 2) * r * S A F C) -
+  (Py B F C + r * r * Py F C F - (2 + 2) * r * S B F C)) =
+ 1 / 2 * (S B1 B F - r / (2 + 2) * (Py F B1 B - Py C B1 B)) +
+ 1 / 2 * (S B1 A F - r / (2 + 2) * (Py F B1 A - Py C B1 A)) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 * (Py B1 F B + r * r * Py F C F - (2 + 2) * r * (S B1 F C + S B F C)) +
+  1 / 2 * (Py B1 F A + r * r * Py F C F - (2 + 2) * r * (S B1 F C + S A F C)) -
+  (Py B F B1 + r * r * Py F C F - (2 + 2) * r * (S B F C + S B1 F C))))
+   elimination of point : F
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : F
+   we need to show that:
+(- (S A C P / S B C P * (B ** D / D ** C) * (C ** E / E ** A)) = 1)
+   elimination of point : E
+   we need to show that:
+(S A C P / S B C P * (B ** D / D ** C) * (S C B P / S A B P) = 1)
+   elimination of point : D
+   we need to show that:
+(- (S A C P / S B C P * (S B A P / S C A P) * (S C B P / S A B P)) = 1)
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : H
+   we need to show that:
+(S E D A / (S F D G + S F G A) = 1)
+   elimination of point : G
+   we need to show that:
+(S E D A / (1 / 2 * S F D C + (1 / 2 * S A F D + 1 / 2 * S A F C)) = 1)
+   elimination of point : F
+   we need to show that:
+(1 / 2 * (0 - r / (2 + 2) * (1 / 2 * Py B C B)) +
+ 1 / 2 * (1 / 2 * S C A B - r / (2 + 2) * (1 / 2 * Py A C B)) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B))) +
+  1 / 2 *
+  (- (Py C B A * (1 / 2)) + Py C B A + 1 / 2 * (1 / 2) * Py C B C -
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r * (1 / 2 * S C A B)) -
+  (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B)))) =
+ 1 / 2 *
+ (1 / 2 * S B1 B C -
+  r / (2 + 2) * (1 / 2 * Py B B1 C + 1 / 2 * Py B B1 B - Py C B1 B)) +
+ 1 / 2 *
+ (1 / 2 * S B1 A C + 1 / 2 * S B1 A B -
+  r / (2 + 2) * (1 / 2 * Py A B1 C + 1 / 2 * Py A B1 B - Py C B1 A)) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B1 C B - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B)) - (2 + 2) * r * (1 / 2 * S C B1 B)) +
+  1 / 2 *
+  (- (Py B1 B A * (1 / 2)) + Py B1 B A + 1 / 2 * (1 / 2) * Py C B C +
+   1 / 2 * Py B1 C A - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r * (1 / 2 * S C B1 B + 1 / 2 * S C A B)) -
+  (1 / 2 * (1 / 2) * Py C B C + 1 / 2 * Py B C B1 - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B)) - (2 + 2) * r * (1 / 2 * S C B1 B))))
+   elimination of point : B1
+   we need to show that:
+(S E D A /
+ (1 / 2 * (1 / 2 * S D C B) +
+  (1 / 2 * (1 / 2 * S D A C + 1 / 2 * S D A B) + 1 / 2 * (1 / 2 * S C A B))) =
+ 1)
+   elimination of point : E
+   we need to show that:
+(1 / 2 * S D A B /
+ (1 / 2 * (1 / 2 * S D C B) +
+  (1 / 2 * (1 / 2 * S D A C + 1 / 2 * S D A B) + 1 / 2 * (1 / 2 * S C A B))) =
+ 1)
+   uniformize areas...
+   we need to show that:
+(1 / 2 * (0 - r / (2 + 2) * (1 / 2 * Py B C B)) +
+ 1 / 2 * (1 / 2 * S C A B - r / (2 + 2) * (1 / 2 * Py A C B)) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B))) +
+  1 / 2 *
+  (- (Py C B A * (1 / 2)) + Py C B A + 1 / 2 * (1 / 2) * Py C B C -
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r * (1 / 2 * S C A B)) -
+  (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B)))) =
+ 1 / 2 *
+ (1 / 2 * (S B C E - r / (2 + 2) * (Py E B C - Py A B C)) -
+  r / (2 + 2) *
+  (1 / 2 * (Py B E C + r * r * Py E A E - (2 + 2) * r * (S B E A + S C E A)) +
+   1 / 2 *
+   (Py E B E - (2 + 2) * r * S E A B -
+    (2 + 2) * r * (0 - r / (2 + 2) * Py E A E + S E A B)) -
+   (Py C E B + r * r * Py E A E - (2 + 2) * r * (S C E A + S B E A)))) +
+ 1 / 2 *
+ (1 / 2 * (S A C E - r / (2 + 2) * Py E A C) +
+  1 / 2 * (S A B E - r / (2 + 2) * Py E A B) -
+  r / (2 + 2) *
+  (1 / 2 * (Py A E C + r * r * Py E A E - (2 + 2) * r * S C E A) +
+   1 / 2 * (Py A E B + r * r * Py E A E - (2 + 2) * r * S B E A) -
+   (Py C E A + r * r * Py E A E - (2 + 2) * r * S C E A))) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C +
+   1 / 2 * (Py B C E - (2 + 2) * r * (S E B A + S E A C)) - 
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r * (1 / 2 * (S B C E - r / (2 + 2) * (Py E B C - Py A B C)))) +
+  1 / 2 *
+  (- ((Py A B E - (2 + 2) * r * S E A B) * (1 / 2)) +
+   (Py A B E - (2 + 2) * r * S E A B) + 1 / 2 * (1 / 2) * Py C B C +
+   1 / 2 * (Py A C E - (2 + 2) * r * S E A C) - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r *
+   (1 / 2 * (S B C E - r / (2 + 2) * (Py E B C - Py A B C)) + 1 / 2 * S C A B)) -
+  (1 / 2 * (1 / 2) * Py C B C +
+   1 / 2 * (Py B C E - (2 + 2) * r * (S E B A + S E A C)) - 
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r * (1 / 2 * (S B C E - r / (2 + 2) * (Py E B C - Py A B C))))))
+   elimination of point : E
+   simplification...
+   before field...
+   we need to make geometric quantities independant...
+   we need to show that:
+(1 / 2 * (0 - r / (2 + 2) * (1 / 2 * Py B C B)) +
+ 1 / 2 * (1 / 2 * S C A B - r / (2 + 2) * (1 / 2 * Py A C B)) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B))) +
+  1 / 2 *
+  (- (Py C B A * (1 / 2)) + Py C B A + 1 / 2 * (1 / 2) * Py C B C -
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r * (1 / 2 * S C A B)) -
+  (1 / 2 * (1 / 2) * Py C B C - 1 / 2 * Py C B C +
+   r * r * (1 / 2 * (1 / 2 * Py B C B)))) =
+ 1 / 2 *
+ (1 / 2 *
+  (1 / 2 * S B C A -
+   r / (2 + 2) * (1 / 2 * Py C B C + 1 / 2 * Py C B A - Py A B C)) -
+  r / (2 + 2) *
+  (1 / 2 *
+   (- (Py B A C * (1 / 2)) + Py B A C + 1 / 2 * (1 / 2) * Py C A C -
+    1 / 2 * Py C A C + r * r * (1 / 2 * (1 / 2 * Py C A C)) -
+    (2 + 2) * r * (1 / 2 * S A B C)) +
+   1 / 2 *
+   (1 / 2 * (1 / 2 * Py C B C + 1 / 2 * Py C B A) +
+    1 / 2 * (1 / 2 * Py A B C + 1 / 2 * Py A B A) -
+    (2 + 2) * r * (1 / 2 * S A B C) -
+    (2 + 2) * r *
+    (0 - r / (2 + 2) * (1 / 2 * (1 / 2 * Py C A C)) + 1 / 2 * S A B C)) -
+   (- (Py C A B * (1 / 2)) + Py C A B + 1 / 2 * (1 / 2) * Py C A C -
+    1 / 2 * Py C A C + r * r * (1 / 2 * (1 / 2 * Py C A C)) -
+    (2 + 2) * r * (1 / 2 * S A B C)))) +
+ 1 / 2 *
+ (1 / 2 * (0 - r / (2 + 2) * (1 / 2 * Py C A C)) +
+  1 / 2 * (1 / 2 * S A B C - r / (2 + 2) * (1 / 2 * Py B A C)) -
+  r / (2 + 2) *
+  (1 / 2 *
+   (1 / 2 * (1 / 2) * Py C A C - 1 / 2 * Py C A C +
+    r * r * (1 / 2 * (1 / 2 * Py C A C))) +
+   1 / 2 *
+   (1 / 2 * (1 / 2) * Py C A C + 1 / 2 * Py A C B - 1 / 2 * Py C A C +
+    r * r * (1 / 2 * (1 / 2 * Py C A C)) - (2 + 2) * r * (1 / 2 * S A B C)) -
+   (1 / 2 * (1 / 2) * Py C A C - 1 / 2 * Py C A C +
+    r * r * (1 / 2 * (1 / 2 * Py C A C))))) -
+ (0 - r) / (2 + 2) *
+ (1 / 2 *
+  (1 / 2 * (1 / 2) * Py C B C +
+   1 / 2 * (1 / 2 * Py B C A - - ((2 + 2) * r * (1 / 2 * S A B C))) -
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r *
+   (1 / 2 *
+    (1 / 2 * S B C A -
+     r / (2 + 2) * (1 / 2 * Py C B C + 1 / 2 * Py C B A - Py A B C)))) +
+  1 / 2 *
+  (-
+   ((1 / 2 * Py A B C + 1 / 2 * Py A B A - (2 + 2) * r * (1 / 2 * S A B C)) *
+    (1 / 2)) +
+   (1 / 2 * Py A B C + 1 / 2 * Py A B A - (2 + 2) * r * (1 / 2 * S A B C)) +
+   1 / 2 * (1 / 2) * Py C B C + 1 / 2 * (1 / 2 * Py A C A) - 
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r *
+   (1 / 2 *
+    (1 / 2 * S B C A -
+     r / (2 + 2) * (1 / 2 * Py C B C + 1 / 2 * Py C B A - Py A B C)) +
+    1 / 2 * S C A B)) -
+  (1 / 2 * (1 / 2) * Py C B C +
+   1 / 2 * (1 / 2 * Py B C A - - ((2 + 2) * r * (1 / 2 * S A B C))) -
+   1 / 2 * Py C B C + r * r * (1 / 2 * (1 / 2 * Py B C B)) -
+   (2 + 2) * r *
+   (1 / 2 *
+    (1 / 2 * S B C A -
+     r / (2 + 2) * (1 / 2 * Py C B C + 1 / 2 * Py C B A - Py A B C))))))
+   uniformize areas...
+   initialisation...
+   elimination...
+   elimination of point : M
+   we need to show that:
+(- (S A B SS / S C B SS) + A ** N / N ** B = A ** SS / SS ** L)
+   elimination of point : N
+   we need to show that:
+(- (S A B SS / S C B SS) - S A C SS / S B C SS = A ** SS / SS ** L)
+   elimination of point : L
+   we need to show that:
+   we need to show that:
+   we need to show that:
+(0 = 0)
+(- (S A B SS / S C B SS) - S A C SS / S B C SS =
+ 1 / (S SS B C / (S A B SS + S A SS C)))
+(- (S A B SS / S C B SS) - S A C SS / S B C SS = 1)
+   uniformize areas...
+   uniformize areas...
+   uniformize areas...
+   simplification...
+   simplification...
+   simplification...
+   simplification...
+   elimination of point : P
+   we need to show that:
+   we need to show that:
+(S L X1 A / (S B X1 C + S B C A) = (1 + 2) / (2 + 2))
+(S L X2 K / (S B X2 C + S B C K) = (1 + 2) / (2 + 2))
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : L
+   we need to show that:
+(1 / 2 * S X1 A K / (S B X1 C + S B C A) = (1 + 2) / (2 + 2))
+   elimination of point : X2
+   we need to show that:
+(1 / 2 * S X1 A K / (S B X1 C + S B C A) = (1 + 2) / (2 + 2))
+   elimination of point : K
+   we need to show that:
+(1 / 2 * (1 / 2 * S X1 A C + 1 / 2 * S X1 A B) / (S B X1 C + S B C A) =
+ (1 + 2) / (2 + 2))
+   elimination of point : N
+   we need to show that:
+(1 / 2 * (1 / 2 * S X1 A C + 1 / 2 * S X1 A B) / (S B X1 C + S B C A) =
+ (1 + 2) / (2 + 2))
+   elimination of point : X1
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : F
+   we need to show that:
+(- (S A X Y / S B X Y * (B ** D / D ** C) * (C ** E / E ** A)) = - (1))
+   elimination of point : E
+   we need to show that:
+(1 / 2 * (1 / 2 * (f0 * S A C M) + 1 / 2 * (f0 * (S A C B + S A B M))) /
+ (S C B A + f0 * S C B M + S B C A) = (1 + 2) / (2 + 2))
+   elimination of point : M
+   we need to show that:
+(S A X Y / S B X Y * (B ** D / D ** C) * (S C X Y / S A X Y) = - (1))
+   elimination of point : D
+   we need to show that:
+(- (S A X Y / S B X Y * (S B X Y / S C X Y) * (S C X Y / S A X Y)) = - (1))
+   uniformize areas...
+   we need to show that:
+(1 / 2 * (1 / 2 * (f0 * (1 / 2 * S A C B)) + 1 / 2 * (f0 * S A C B)) /
+ (S C B A + f0 * (1 / 2 * S C B A) + S B C A) = (1 + 2) / (2 + 2))
+   uniformize areas...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : C&#39;
+   we need to show that:
+((0 - (S C B&#39; A&#39; + S C A&#39; A) * S B B&#39; A&#39;) / S C A&#39; B&#39; =
+ (S C A&#39; A * S B C B&#39; - (S C B&#39; A&#39; + S C A&#39; A) * S B C A&#39;) / S C A&#39; B&#39;)
+   elimination of point : C
+   simplification...
+   we need to show that:
+(-
+ ((0 - (f * S B&#39; A&#39; B + (1 - f) * S B&#39; A&#39; A + f * S A&#39; A B) * S B B&#39; A&#39;) /
+  (f * S B&#39; A&#39; B + (1 - f) * S B&#39; A&#39; A)) =
+ -
+ ((f * S A&#39; A B * ((1 - f) * S B&#39; B A) -
+   (f * S B&#39; A&#39; B + (1 - f) * S B&#39; A&#39; A + f * S A&#39; A B) *
+   ((1 - f) * S A&#39; B A)) / (f * S B&#39; A&#39; B + (1 - f) * S B&#39; A&#39; A)))
+   elimination of point : B&#39;
+   before field...
+   we need to show that:
+(-
+ ((0 - (f * S A&#39; B A + (1 - f) * (f0 * S A&#39; B A) + f * S A&#39; A B) * S A&#39; B A) /
+  (f * S A&#39; B A + (1 - f) * (f0 * S A&#39; B A))) =
+ -
+ ((f * S A&#39; A B * ((1 - f) * (f0 * S B A A&#39;)) -
+   (f * S A&#39; B A + (1 - f) * (f0 * S A&#39; B A) + f * S A&#39; A B) *
+   ((1 - f) * S A&#39; B A)) / (f * S A&#39; B A + (1 - f) * (f0 * S A&#39; B A))))
+   uniformize areas...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : L
+   simplification...
+   we need to show that:
+(1 / 2 * S X2 K A / (S B X2 C + S B C K) = (1 + 2) / (2 + 2))
+   elimination of point : X2
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : C&#39;
+   we need to show that:
+(1 / 2 * (f * (S K B A + S K A N)) / (S C B K + f * S C B N + S B C K) =
+ (1 + 2) / (2 + 2))
+   elimination of point : K
+   we need to show that:
+(S B B&#39; C = (0 - S A C A&#39; * S C B X) / S A X C)
+   elimination of point : B&#39;
+   we need to show that:
+((0 - S A B A&#39; * S C B X) / S A X B = (0 - S A C A&#39; * S C B X) / S A X C)
+   elimination of point : A&#39;
+   we need to show that:
+((0 - (1 - f) * S A B X * S C B X) / S A X B =
+ (0 - (1 - f) * S A C X * S C B X) / S A X C)
+   uniformize areas...
+   simplification...
+   we need to show that:
+(1 / 2 * (f * (1 / 2 * S B A C + (1 / 2 * S A N C + 1 / 2 * S A N B))) /
+ (f * S C B N) = (1 + 2) / (2 + 2))
+   elimination of point : N
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : F
+   we need to show that:
+(P ** D / A ** D + P ** E / B ** E + S P A B / S C A B = 1)
+   elimination of point : E
+   we need to show that:
+(P ** D / A ** D + S P A C / S B A C + S P A B / S C A B = 1)
+   elimination of point : D
+   we need to show that:
+(S P B C / S A B C + S P A C / S B A C + S P A B / S C A B = 1)
+   uniformize areas...
+   we need to show that:
+(1 / 2 * (f * (1 / 2 * S B A C + 1 / 2 * (1 / 2 * S B A C))) /
+ (f * (1 / 2 * S C B A)) = (1 + 2) / (2 + 2))
+   elimination of point : X1
+   we need to show that:
+(1 / 2 * (f * (1 / 2 * S B A C + 1 / 2 * (1 / 2 * S B A C))) /
+ (f * (1 / 2 * S C B A)) = (1 + 2) / (2 + 2))
+   elimination of point : M
+   simplification...
+   before field...
+   we need to show that:
+(1 / 2 * (f * (1 / 2 * S B A C + 1 / 2 * (1 / 2 * S B A C))) /
+ (f * (1 / 2 * S C B A)) = (1 + 2) / (2 + 2))
+   uniformize areas...
+   we need to make geometric quantities independant...
+   simplification...
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : M
+   we need to show that:
+(S A P Q / S B P Q = - (1))
+   elimination of point : Q
+   we need to show that:
+(1 / (S A B D + S A D C) * (S A B C * S A P D) /
+ (1 / (S A B D + S A D C) * (S A B C * S B P D + S D C B * S B P A)) = 
+ - (1))
+   elimination of point : D
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : Q
+   we need to show that:
+(1 / 2 * S P A C = 1 / 2 * S P B C + 1 / 2 * S P B A)
+   elimination of point : P
+   we need to show that:
+(1 / 2 * (1 / 2 * S A C D + 1 / 2 * S A C B) =
+ 1 / 2 * (1 / 2 * S B C D) + 1 / 2 * (1 / 2 * S B A D))
+   elimination of point : D
+   we need to show that:
+(1 / 2 * (1 / 2 * S A B C + 1 / 2 * S A C B) =
+ 1 / 2 * (1 / 2 * S B C A) + 1 / 2 * (1 / 2 * S B A C))
+   uniformize areas...
+   simplification...
+   we need to show that:
+(1 /
+ (S A B C + (S A B C * S C A P - (S A P B + S A B C) * S C A B) / S A B P) *
+ (S A B C * ((0 - (S A P B + S A B C) * S A P B) / S A B P)) /
+ (1 /
+  (S A B C + (S A B C * S C A P - (S A P B + S A B C) * S C A B) / S A B P) *
+  (S A B C * S C B P / S A B P * S B P A)) = - (1))
+   elimination of point : C
+   before field...
+Area method:
+   initialisation...
+   elimination...
+   elimination of point : F
+   we need to show that:
+   we need to show that:
+(0 = 0)
+((S A B O * S O E D - (S A D B + S A B O) * S O E A) / S A B D = 0)
+   elimination of point : E
+   we need to show that:
+(0 = 0)
+   elimination of point : O
+   we need to show that:
+(0 = 0)
+   elimination of point : D
+   we need to show that:
+(0 = 0)
+   elimination of point : E
+   we need to show that:
+(1 / (f * S A B P + (0 - (S A P B + f * S A B P) * (f * S A B P)) / S A B P) *
+ (f * S A B P * ((0 - (S A P B + f * S A B P) * S A P B) / S A B P)) /
+ (1 / (f * S A B P + (0 - (S A P B + f * S A B P) * (f * S A B P)) / S A B P) *
+  (f * S A B P * ((1 - f) * S B P A) / S A B P * S B P A)) = 
+ - (1))
+   uniformize areas...
+   we need to show that:
+   we need to show that:
+(0 = 0)
+((S A B O * ((S A B O * S D O C - (S A C B + S A B O) * S D O B) / S A B C) -
+  (S A D B + S A B O) *
+  ((S A B O * S A O C - (S A C B + S A B O) * S A O B) / S A B C)) / 
+ S A B D = 0)
+   elimination of point : O
+   we need to show that:
+(0 = 0)
+   elimination of point : D
+   we need to show that:
+(0 = 0)
+   elimination of point : O
+   simplification...
+   before field...
+   we need to show that:
+((1 / (S A B C + S A C D) * (S A B D * S A B C) *
+  ((1 / (S A B C + S A C D) * (S A B D * S A B C) *
+    (1 / (S A B C + S A C D) * (S C D B * S C D A)) -
+    (S A C B + 1 / (S A B C + S A C D) * (S A B D * S A B C)) *
+    (1 / (S A B C + S A C D) * (S A B D * S B D C + S C D B * S B D A))) /
+   S A B C) -
+  (S A D B + 1 / (S A B C + S A C D) * (S A B D * S A B C)) *
+  ((0 -
+    -
+    ((S A C B + 1 / (S A B C + S A C D) * (S A B D * S A B C)) *
+     (1 / (S A B C + S A C D) * (S A B D * S A B C)))) / 
+   S A B C)) / S A B D = 0)
+   elimination of point : D
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>No files were installed.</p>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>

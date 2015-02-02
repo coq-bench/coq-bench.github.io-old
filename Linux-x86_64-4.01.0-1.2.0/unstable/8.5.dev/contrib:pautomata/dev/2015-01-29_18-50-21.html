@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.5.dev / contrib:pautomata dev</a></li>
+              <li class="active"><a href="">2015-01-29 18:50:21</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:pautomata
+              <small>
+                dev
+                <span class="label label-success">19 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-01-29 18:50:21 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-01-29 18:50:21 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:pautomata/coq:contrib:pautomata.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The package is valid.
+</pre></dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:pautomata.dev coq.8.5.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+              <dt>Output</dt>
+              <dd><pre>[NOTE] Package coq is already installed (current version is 8.5.dev).
+The following actions will be performed:
+ - install   coq:contrib:pautomata.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:pautomata.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+Installing coq:contrib:pautomata.dev.
+</pre></dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:contrib:pautomata.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre></pre></dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:contrib:pautomata.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>19 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:contrib:pautomata.dev
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:pautomata] Fetching https://gforge.inria.fr/git/coq-contribs/pautomata.git#trunk
+Initialized empty Git repository in /home/bench/.opam/packages.dev/coq:contrib:pautomata.dev/.git/
+[master (root-commit) 7d5caf1] opam-git-init
+From https://gforge.inria.fr/git/coq-contribs/pautomata
+ * [new branch]      trunk      -&gt; opam-ref
+ * [new branch]      trunk      -&gt; origin/trunk
+.cvsignore
+ABRdef.v
+ABRgen.v
+AutoL.v
+AutoLMod.v
+Coercions.v
+Evenements.v
+Extract.v
+GAutomata.v
+LICENSE
+LList.v
+Make
+Makefile
+PAuto.v
+PAutoMod.v
+PAutomata.v
+PAutomataMod.v
+PGAuto.v
+PGM/Comp.v
+PGM/Map.v
+PGM/Pgm.v
+PGM/Queue.v
+PGM/String.v
+PGM/Var.v
+PGM/Vpauto.v
+Properties.v
+Time.v
+TimeSyntax.v
+Timebase.v
+Trace.v
+TransMod.v
+Transitions.v
+description
+gCSMA_CD/Block_gCSMA_CD.v
+gCSMA_CD/Bus.v
+gCSMA_CD/Contexte.v
+gCSMA_CD/Sender.v
+gCSMA_CD/preambule.v
+HEAD is now at cb53ba8 Applying &quot;Unset Standard Proposition Elimination Names&quot; for
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:contrib:pautomata.dev:
+  coq_makefile -f Make -o Makefile
+  make -j4
+  make install
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Transitions.v&quot; &gt; &quot;Transitions.v.d&quot; || ( RV=$?; rm -f &quot;Transitions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Time.v&quot; &gt; &quot;Time.v.d&quot; || ( RV=$?; rm -f &quot;Time.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;TimeSyntax.v&quot; &gt; &quot;TimeSyntax.v.d&quot; || ( RV=$?; rm -f &quot;TimeSyntax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Timebase.v&quot; &gt; &quot;Timebase.v.d&quot; || ( RV=$?; rm -f &quot;Timebase.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PAutomata.v&quot; &gt; &quot;PAutomata.v.d&quot; || ( RV=$?; rm -f &quot;PAutomata.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PAuto.v&quot; &gt; &quot;PAuto.v.d&quot; || ( RV=$?; rm -f &quot;PAuto.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Properties.v&quot; &gt; &quot;Properties.v.d&quot; || ( RV=$?; rm -f &quot;Properties.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Coercions.v&quot; &gt; &quot;Coercions.v.d&quot; || ( RV=$?; rm -f &quot;Coercions.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;AutoL.v&quot; &gt; &quot;AutoL.v.d&quot; || ( RV=$?; rm -f &quot;AutoL.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;LList.v&quot; &gt; &quot;LList.v.d&quot; || ( RV=$?; rm -f &quot;LList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Trace.v&quot; &gt; &quot;Trace.v.d&quot; || ( RV=$?; rm -f &quot;Trace.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;ABRdef.v&quot; &gt; &quot;ABRdef.v.d&quot; || ( RV=$?; rm -f &quot;ABRdef.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Evenements.v&quot; &gt; &quot;Evenements.v.d&quot; || ( RV=$?; rm -f &quot;Evenements.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;ABRgen.v&quot; &gt; &quot;ABRgen.v.d&quot; || ( RV=$?; rm -f &quot;ABRgen.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGM/Queue.v&quot; &gt; &quot;PGM/Queue.v.d&quot; || ( RV=$?; rm -f &quot;PGM/Queue.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGM/Comp.v&quot; &gt; &quot;PGM/Comp.v.d&quot; || ( RV=$?; rm -f &quot;PGM/Comp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGM/Var.v&quot; &gt; &quot;PGM/Var.v.d&quot; || ( RV=$?; rm -f &quot;PGM/Var.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGM/Map.v&quot; &gt; &quot;PGM/Map.v.d&quot; || ( RV=$?; rm -f &quot;PGM/Map.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGM/Vpauto.v&quot; &gt; &quot;PGM/Vpauto.v.d&quot; || ( RV=$?; rm -f &quot;PGM/Vpauto.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGM/String.v&quot; &gt; &quot;PGM/String.v.d&quot; || ( RV=$?; rm -f &quot;PGM/String.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGM/Pgm.v&quot; &gt; &quot;PGM/Pgm.v.d&quot; || ( RV=$?; rm -f &quot;PGM/Pgm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;GAutomata.v&quot; &gt; &quot;GAutomata.v.d&quot; || ( RV=$?; rm -f &quot;GAutomata.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;AutoLMod.v&quot; &gt; &quot;AutoLMod.v.d&quot; || ( RV=$?; rm -f &quot;AutoLMod.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PAutomataMod.v&quot; &gt; &quot;PAutomataMod.v.d&quot; || ( RV=$?; rm -f &quot;PAutomataMod.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;TransMod.v&quot; &gt; &quot;TransMod.v.d&quot; || ( RV=$?; rm -f &quot;TransMod.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PAutoMod.v&quot; &gt; &quot;PAutoMod.v.d&quot; || ( RV=$?; rm -f &quot;PAutoMod.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;PGAuto.v&quot; &gt; &quot;PGAuto.v.d&quot; || ( RV=$?; rm -f &quot;PGAuto.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;gCSMA_CD/Sender.v&quot; &gt; &quot;gCSMA_CD/Sender.v.d&quot; || ( RV=$?; rm -f &quot;gCSMA_CD/Sender.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;gCSMA_CD/Contexte.v&quot; &gt; &quot;gCSMA_CD/Contexte.v.d&quot; || ( RV=$?; rm -f &quot;gCSMA_CD/Contexte.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;gCSMA_CD/Bus.v&quot; &gt; &quot;gCSMA_CD/Bus.v.d&quot; || ( RV=$?; rm -f &quot;gCSMA_CD/Bus.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;gCSMA_CD/Block_gCSMA_CD.v&quot; &gt; &quot;gCSMA_CD/Block_gCSMA_CD.v.d&quot; || ( RV=$?; rm -f &quot;gCSMA_CD/Block_gCSMA_CD.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;gCSMA_CD/preambule.v&quot; &gt; &quot;gCSMA_CD/preambule.v.d&quot; || ( RV=$?; rm -f &quot;gCSMA_CD/preambule.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -R &quot;.&quot; PAutomata &quot;Extract.v&quot; &gt; &quot;Extract.v.d&quot; || ( RV=$?; rm -f &quot;Extract.v.d&quot;; exit ${RV} )
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Time
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   TransMod
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   gCSMA_CD/preambule
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Transitions
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGM/Comp
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGM/String
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGM/Map
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   LList
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   GAutomata
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGM/Queue
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Trace
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   TimeSyntax
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Coercions
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGM/Var
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PAutomataMod
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PAutomata
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Timebase
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   AutoLMod
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGAuto
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Evenements
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   AutoL
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Properties
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PAutoMod
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PAuto
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   ABRgen
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   Extract
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   gCSMA_CD/Contexte
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGM/Vpauto
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   ABRdef
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   gCSMA_CD/Sender
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   gCSMA_CD/Bus
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   PGM/Pgm
+&quot;coqc&quot;  -q  -R &quot;.&quot; PAutomata   gCSMA_CD/Block_gCSMA_CD
+cd &quot;.&quot; &amp;&amp; for i in Extract.vo gCSMA_CD/preambule.vo gCSMA_CD/Block_gCSMA_CD.vo gCSMA_CD/Bus.vo gCSMA_CD/Contexte.vo gCSMA_CD/Sender.vo PGAuto.vo PAutoMod.vo TransMod.vo PAutomataMod.vo AutoLMod.vo GAutomata.vo PGM/Pgm.vo PGM/String.vo PGM/Vpauto.vo PGM/Map.vo PGM/Var.vo PGM/Comp.vo PGM/Queue.vo ABRgen.vo Evenements.vo ABRdef.vo Trace.vo LList.vo AutoL.vo Coercions.vo Properties.vo PAuto.vo PAutomata.vo Timebase.vo TimeSyntax.vo Time.vo Transitions.vo Extract.v gCSMA_CD/preambule.v gCSMA_CD/Block_gCSMA_CD.v gCSMA_CD/Bus.v gCSMA_CD/Contexte.v gCSMA_CD/Sender.v PGAuto.v PAutoMod.v TransMod.v PAutomataMod.v AutoLMod.v GAutomata.v PGM/Pgm.v PGM/String.v PGM/Vpauto.v PGM/Map.v PGM/Var.v PGM/Comp.v PGM/Queue.v ABRgen.v Evenements.v ABRdef.v Trace.v LList.v AutoL.v Coercions.v Properties.v PAuto.v PAutomata.v Timebase.v TimeSyntax.v Time.v Transitions.v Extract.glob gCSMA_CD/preambule.glob gCSMA_CD/Block_gCSMA_CD.glob gCSMA_CD/Bus.glob gCSMA_CD/Contexte.glob gCSMA_CD/Sender.glob PGAuto.glob PAutoMod.glob TransMod.glob PAutomataMod.glob AutoLMod.glob GAutomata.glob PGM/Pgm.glob PGM/String.glob PGM/Vpauto.glob PGM/Map.glob PGM/Var.glob PGM/Comp.glob PGM/Queue.glob ABRgen.glob Evenements.glob ABRdef.glob Trace.glob LList.glob AutoL.glob Coercions.glob Properties.glob PAuto.glob PAutomata.glob Timebase.glob TimeSyntax.glob Time.glob Transitions.glob  ./.coq-native/NPAutomata_Extract.cmi  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_preambule.cmi  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Block_gCSMA_CD.cmi  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Bus.cmi  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Contexte.cmi  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Sender.cmi  ./.coq-native/NPAutomata_PGAuto.cmi  ./.coq-native/NPAutomata_PAutoMod.cmi  ./.coq-native/NPAutomata_TransMod.cmi  ./.coq-native/NPAutomata_PAutomataMod.cmi  ./.coq-native/NPAutomata_AutoLMod.cmi  ./.coq-native/NPAutomata_GAutomata.cmi  PGM/.coq-native/NPAutomata_PGM_Pgm.cmi  PGM/.coq-native/NPAutomata_PGM_String.cmi  PGM/.coq-native/NPAutomata_PGM_Vpauto.cmi  PGM/.coq-native/NPAutomata_PGM_Map.cmi  PGM/.coq-native/NPAutomata_PGM_Var.cmi  PGM/.coq-native/NPAutomata_PGM_Comp.cmi  PGM/.coq-native/NPAutomata_PGM_Queue.cmi  ./.coq-native/NPAutomata_ABRgen.cmi  ./.coq-native/NPAutomata_Evenements.cmi  ./.coq-native/NPAutomata_ABRdef.cmi  ./.coq-native/NPAutomata_Trace.cmi  ./.coq-native/NPAutomata_LList.cmi  ./.coq-native/NPAutomata_AutoL.cmi  ./.coq-native/NPAutomata_Coercions.cmi  ./.coq-native/NPAutomata_Properties.cmi  ./.coq-native/NPAutomata_PAuto.cmi  ./.coq-native/NPAutomata_PAutomata.cmi  ./.coq-native/NPAutomata_Timebase.cmi  ./.coq-native/NPAutomata_TimeSyntax.cmi  ./.coq-native/NPAutomata_Time.cmi  ./.coq-native/NPAutomata_Transitions.cmi                                                                    ./.coq-native/NPAutomata_Extract.cmx  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_preambule.cmx  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Block_gCSMA_CD.cmx  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Bus.cmx  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Contexte.cmx  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Sender.cmx  ./.coq-native/NPAutomata_PGAuto.cmx  ./.coq-native/NPAutomata_PAutoMod.cmx  ./.coq-native/NPAutomata_TransMod.cmx  ./.coq-native/NPAutomata_PAutomataMod.cmx  ./.coq-native/NPAutomata_AutoLMod.cmx  ./.coq-native/NPAutomata_GAutomata.cmx  PGM/.coq-native/NPAutomata_PGM_Pgm.cmx  PGM/.coq-native/NPAutomata_PGM_String.cmx  PGM/.coq-native/NPAutomata_PGM_Vpauto.cmx  PGM/.coq-native/NPAutomata_PGM_Map.cmx  PGM/.coq-native/NPAutomata_PGM_Var.cmx  PGM/.coq-native/NPAutomata_PGM_Comp.cmx  PGM/.coq-native/NPAutomata_PGM_Queue.cmx  ./.coq-native/NPAutomata_ABRgen.cmx  ./.coq-native/NPAutomata_Evenements.cmx  ./.coq-native/NPAutomata_ABRdef.cmx  ./.coq-native/NPAutomata_Trace.cmx  ./.coq-native/NPAutomata_LList.cmx  ./.coq-native/NPAutomata_AutoL.cmx  ./.coq-native/NPAutomata_Coercions.cmx  ./.coq-native/NPAutomata_Properties.cmx  ./.coq-native/NPAutomata_PAuto.cmx  ./.coq-native/NPAutomata_PAutomata.cmx  ./.coq-native/NPAutomata_Timebase.cmx  ./.coq-native/NPAutomata_TimeSyntax.cmx  ./.coq-native/NPAutomata_Time.cmx  ./.coq-native/NPAutomata_Transitions.cmx  ./.coq-native/NPAutomata_Extract.cmxs  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_preambule.cmxs  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Block_gCSMA_CD.cmxs  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Bus.cmxs  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Contexte.cmxs  gCSMA_CD/.coq-native/NPAutomata_gCSMA_CD_Sender.cmxs  ./.coq-native/NPAutomata_PGAuto.cmxs  ./.coq-native/NPAutomata_PAutoMod.cmxs  ./.coq-native/NPAutomata_TransMod.cmxs  ./.coq-native/NPAutomata_PAutomataMod.cmxs  ./.coq-native/NPAutomata_AutoLMod.cmxs  ./.coq-native/NPAutomata_GAutomata.cmxs  PGM/.coq-native/NPAutomata_PGM_Pgm.cmxs  PGM/.coq-native/NPAutomata_PGM_String.cmxs  PGM/.coq-native/NPAutomata_PGM_Vpauto.cmxs  PGM/.coq-native/NPAutomata_PGM_Map.cmxs  PGM/.coq-native/NPAutomata_PGM_Var.cmxs  PGM/.coq-native/NPAutomata_PGM_Comp.cmxs  PGM/.coq-native/NPAutomata_PGM_Queue.cmxs  ./.coq-native/NPAutomata_ABRgen.cmxs  ./.coq-native/NPAutomata_Evenements.cmxs  ./.coq-native/NPAutomata_ABRdef.cmxs  ./.coq-native/NPAutomata_Trace.cmxs  ./.coq-native/NPAutomata_LList.cmxs  ./.coq-native/NPAutomata_AutoL.cmxs  ./.coq-native/NPAutomata_Coercions.cmxs  ./.coq-native/NPAutomata_Properties.cmxs  ./.coq-native/NPAutomata_PAuto.cmxs  ./.coq-native/NPAutomata_PAutomata.cmxs  ./.coq-native/NPAutomata_Timebase.cmxs  ./.coq-native/NPAutomata_TimeSyntax.cmxs  ./.coq-native/NPAutomata_Time.cmxs  ./.coq-native/NPAutomata_Transitions.cmxs   ; do \
+ install -d &quot;`dirname &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/PAutomata/$i`&quot;; \
+ install -m 0644 $i &quot;&quot;&quot;/home/bench/.opam/system/lib/coq/user-contrib&quot;/PAutomata/$i; \
+done
+Installing coq:contrib:pautomata.dev.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 2,308 K</p>
+            <ul>
+              <li>171 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Pgm.glob</code></li>
+              <li>135 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Pgm.vo</code></li>
+              <li>115 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/ABRgen.vo</code></li>
+              <li>82 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutomataMod.vo</code></li>
+              <li>79 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Evenements.vo</code></li>
+              <li>70 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/ABRgen.glob</code></li>
+              <li>66 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Contexte.vo</code></li>
+              <li>64 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/AutoLMod.vo</code></li>
+              <li>61 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Vpauto.vo</code></li>
+              <li>60 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Timebase.vo</code></li>
+              <li>59 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Timebase.glob</code></li>
+              <li>59 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/ABRdef.vo</code></li>
+              <li>55 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Sender.vo</code></li>
+              <li>53 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutomata.vo</code></li>
+              <li>51 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/GAutomata.vo</code></li>
+              <li>50 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Properties.vo</code></li>
+              <li>50 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Vpauto.glob</code></li>
+              <li>45 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Block_gCSMA_CD.vo</code></li>
+              <li>41 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Bus.vo</code></li>
+              <li>40 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Pgm.v</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/ABRdef.glob</code></li>
+              <li>36 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/AutoL.vo</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Transitions.vo</code></li>
+              <li>30 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/ABRgen.v</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/String.vo</code></li>
+              <li>28 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutomataMod.glob</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Time.vo</code></li>
+              <li>27 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Evenements.glob</code></li>
+              <li>26 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Queue.vo</code></li>
+              <li>24 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/TransMod.vo</code></li>
+              <li>23 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/LList.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutomata.glob</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Transitions.glob</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGAuto.vo</code></li>
+              <li>22 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/GAutomata.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Sender.glob</code></li>
+              <li>21 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/TransMod.glob</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/TimeSyntax.vo</code></li>
+              <li>19 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Extract.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutoMod.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAuto.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Coercions.vo</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/AutoLMod.glob</code></li>
+              <li>18 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Timebase.v</code></li>
+              <li>17 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Vpauto.v</code></li>
+              <li>16 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Map.vo</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Var.vo</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Bus.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/LList.glob</code></li>
+              <li>11 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Var.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutomataMod.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Properties.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/ABRdef.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Time.glob</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Evenements.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/GAutomata.v</code></li>
+              <li>9 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutomata.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/TransMod.v</code></li>
+              <li>8 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Block_gCSMA_CD.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Transitions.v</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/String.glob</code></li>
+              <li>7 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Var.glob</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/preambule.vo</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/AutoL.glob</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/AutoLMod.v</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Queue.glob</code></li>
+              <li>6 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Properties.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Map.glob</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Sender.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Time.v</code></li>
+              <li>5 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/LList.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Trace.vo</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Queue.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Bus.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Map.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/AutoL.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Block_gCSMA_CD.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/String.v</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Trace.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGAuto.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Contexte.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Comp.vo</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Trace.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Comp.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGAuto.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutoMod.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAuto.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Extract.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/TimeSyntax.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/Contexte.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/preambule.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Coercions.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PGM/Comp.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/gCSMA_CD/preambule.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/TimeSyntax.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAutoMod.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/PAuto.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Coercions.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/PAutomata/Extract.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:pautomata/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:pautomata.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:pautomata.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - remove    coq:contrib:pautomata.dev
+=== 1 to remove ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:contrib:pautomata] Fetching https://gforge.inria.fr/git/coq-contribs/pautomata.git#trunk
+=-=- Removing Packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Removing coq:contrib:pautomata.dev.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/PAutomata
+</pre></dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
