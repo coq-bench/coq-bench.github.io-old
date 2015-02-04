@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.5beta1 / contrib:fsets dev</a></li>
+              <li class="active"><a href="">2015-02-03 21:08:42</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              contrib:fsets
+              <small>
+                dev
+                <span class="label label-success">2 m 24 s</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-02-03 21:08:42 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-02-03 21:08:42 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb unstable ../unstable/packages/coq:contrib:fsets/coq:contrib:fsets.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:contrib:fsets.dev coq.8.5beta1</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:contrib:fsets.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:contrib:fsets.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 m 24 s</dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>Total: 37,383 K</p>
+            <ul>
+              <li>5,126 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/demo.vo</code></li>
+              <li>4,844 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetFullAVL.vo</code></li>
+              <li>3,303 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_prog.vo</code></li>
+              <li>3,250 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_dep.vo</code></li>
+              <li>2,992 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/demo_msets.vo</code></li>
+              <li>2,699 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MSetFullAVL.vo</code></li>
+              <li>2,678 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/PowerSet.vo</code></li>
+              <li>1,802 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL0.vo</code></li>
+              <li>1,148 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/extract.vo</code></li>
+              <li>1,128 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_test.vo</code></li>
+              <li>1,039 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MSetAVL_test.vo</code></li>
+              <li>918 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetRBT.vo</code></li>
+              <li>823 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/UsualFacts.vo</code></li>
+              <li>781 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MultiSets.vo</code></li>
+              <li>677 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MultiSetsEq.vo</code></li>
+              <li>549 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FMapListEq.vo</code></li>
+              <li>475 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MapFunction.vo</code></li>
+              <li>474 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetListEq.vo</code></li>
+              <li>345 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_prog.glob</code></li>
+              <li>322 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetList0.vo</code></li>
+              <li>288 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/PrecedenceGraph/PrecedenceGraph.vo</code></li>
+              <li>250 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_dep.glob</code></li>
+              <li>200 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetRBT.glob</code></li>
+              <li>197 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetFullAVL.glob</code></li>
+              <li>141 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetList0.glob</code></li>
+              <li>108 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_dep.v</code></li>
+              <li>90 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/PrecedenceGraph/PrecedenceGraph.glob</code></li>
+              <li>79 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_prog.v</code></li>
+              <li>72 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetRBT.v</code></li>
+              <li>58 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MultiSets.glob</code></li>
+              <li>56 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL0.v</code></li>
+              <li>54 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MSetFullAVL.glob</code></li>
+              <li>50 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/PowerSet.glob</code></li>
+              <li>46 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/UsualFacts.glob</code></li>
+              <li>39 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL0.glob</code></li>
+              <li>37 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetList0.v</code></li>
+              <li>33 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetFullAVL.v</code></li>
+              <li>32 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MSetFullAVL.v</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/demo.glob</code></li>
+              <li>20 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/demo_msets.glob</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MapFunction.glob</code></li>
+              <li>15 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/PrecedenceGraph/PrecedenceGraph.v</code></li>
+              <li>14 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MultiSets.v</code></li>
+              <li>13 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/PowerSet.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/UsualFacts.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/demo_msets.v</code></li>
+              <li>10 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/demo.v</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_test.glob</code></li>
+              <li>4 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MSetAVL_test.glob</code></li>
+              <li>3 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MapFunction.v</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetListEq.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FMapListEq.glob</code></li>
+              <li>2 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MultiSetsEq.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetAVL_test.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MSetAVL_test.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FSetListEq.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/FMapListEq.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/extract.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/MultiSetsEq.v</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq/user-contrib/FSets/extract.glob</code></li>
+              <li>1 K <code>/home/bench/.opam/system/lib/coq:contrib:fsets/opam.config</code></li>
+              <li>1 K <code>/home/bench/.opam/system/install/coq:contrib:fsets.install</code></li>
+            </ul>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam remove -y coq:contrib:fsets.dev</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
