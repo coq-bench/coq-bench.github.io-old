@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Unstable</a></li>
+              <li><a href=".">8.4.5 / compcert 2.4.0</a></li>
+              <li class="active"><a href="">2015-02-04 13:50:20</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              compcert
+              <small>
+                2.4.0
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-02-04 13:50:20 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-02-04 13:50:20 UTC)</em><p>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb stable ../stable/packages/coq:compcert/coq:compcert.2.4.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --dry-run coq:compcert.2.4.0 coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:compcert.2.4.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>23 s</dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --verbose coq:compcert.2.4.0</code></dd>
+              <dt>Return code</dt>
+              <dd>31744</dd>
+              <dt>Duration</dt>
+              <dd>5 m 0 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:compcert.2.4.0
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:compcert.2.4.0] Downloading http://compcert.inria.fr/release/compcert-2.4.tgz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2390k  100 2390k    0     0   9.9M      0 --:--:-- --:--:-- --:--:--  9.9M
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Copying ~/.opam/repo/stable/packages/coq:compcert/coq:compcert.2.4.0/files/coq:compcert.install to ~/.opam/system/build/coq:compcert.2.4.0/
+Building coq:compcert.2.4.0:
+  ./configure ia32-linux
+  make -j4
+Testing assembler support for CFI directives... yes
+Testing Coq... version 8.4pl5 -- good!
+Testing OCaml... version 4.02.1 -- good!
+Testing Menhir... version 20141215 -- good!
+CompCert configuration:
+    Target architecture........... ia32
+    Hardware model................ sse2
+    Application binary interface.. standard
+    OS and development env........ linux
+    C compiler.................... gcc -m32
+    C preprocessor................ gcc -m32 -U__GNUC__ -E
+    Assembler..................... gcc -m32 -c
+    Assembler supports CFI........ true
+    Assembler for runtime lib..... gcc -m32 -c
+    Linker........................ gcc -m32
+    Math library.................. -lm
+    Binaries installed in......... /usr/local/bin
+    Runtime library provided...... true
+    Library files installed in.... /usr/local/lib/compcert
+    cchecklink tool supported..... false
+If anything above looks wrong, please edit file ./Makefile.config to correct.
+make proof
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:compcert.2.4.0&#39;
+COQC lib/Coqlib.v
+COQC lib/Axioms.v
+ocamlopt -o tools/ndfun str.cmxa tools/ndfun.ml
+COQC flocq/Core/Fcore_Zaux.v
+File &quot;tools/ndfun.ml&quot;, line 12, characters 10-23:
+Warning 3: deprecated: String.create
+Use Bytes.create instead.
+File &quot;tools/ndfun.ml&quot;, line 14, characters 4-52:
+Warning 3: deprecated: String.set
+Use Bytes.set instead.
+COQC driver/Compopts.v
+COQC cparser/validator/Alphabet.v
+COQC cparser/validator/Tuples.v
+COQC cparser/Cabs.v
+COQC lib/Wfsimpl.v
+Preprocessing ia32/SelectOp.vp
+Preprocessing backend/SelectDiv.vp
+Preprocessing backend/SelectLong.vp
+Preprocessing ia32/ConstpropOp.vp
+COQC flocq/Core/Fcore_Raux.v
+COQC flocq/Core/Fcore_digits.v
+COQC lib/Intv.v
+COQC lib/Maps.v
+COQC lib/Integers.v
+COQC lib/Iteration.v
+COQC flocq/Core/Fcore_defs.v
+COQC lib/Parmov.v
+COQC lib/UnionFind.v
+COQC lib/Postorder.v
+COQC lib/FSetAVLplus.v
+COQC lib/IntvSets.v
+COQC common/Errors.v
+Identifier &#39;do&#39; now a keyword
+Identifier &#39;assertion&#39; now a keyword
+COQC cparser/validator/Grammar.v
+COQC lib/Lattice.v
+COQC flocq/Core/Fcore_float_prop.v
+COQC flocq/Core/Fcore_rnd.v
+COQC common/Unityping.v
+COQC cparser/validator/Automaton.v
+COQC lib/Ordered.v
+COQC flocq/Calc/Fcalc_digits.v
+COQC flocq/Calc/Fcalc_bracket.v
+COQC flocq/Calc/Fcalc_ops.v
+COQC lib/Heaps.v
+COQC flocq/Core/Fcore_generic_fmt.v
+COQC cparser/validator/Interpreter.v
+COQC cparser/validator/Validator_complete.v
+Identifier &#39;do&#39; now a keyword
+COQC cparser/validator/Validator_safe.v
+COQC flocq/Core/Fcore_ulp.v
+COQC flocq/Calc/Fcalc_div.v
+COQC flocq/Calc/Fcalc_sqrt.v
+COQC flocq/Prop/Fprop_Sterbenz.v
+COQC flocq/Prop/Fprop_plus_error.v
+COQC cparser/validator/Interpreter_complete.v
+COQC cparser/validator/Interpreter_correct.v
+COQC cparser/validator/Interpreter_safe.v
+COQC flocq/Core/Fcore_rnd_ne.v
+COQC cparser/validator/Main.v
+COQC flocq/Core/Fcore_FIX.v
+COQC cparser/Parser.v
+COQC flocq/Core/Fcore_FLX.v
+COQC flocq/Core/Fcore_FLT.v
+COQC flocq/Core/Fcore_FTZ.v
+COQC flocq/Core/Fcore.v
+COQC flocq/Calc/Fcalc_round.v
+COQC flocq/Prop/Fprop_relative.v
+COQC flocq/Appli/Fappli_rnd_odd.v
+COQC flocq/Prop/Fprop_div_sqrt_error.v
+COQC flocq/Prop/Fprop_mult_error.v
+COQC flocq/Appli/Fappli_IEEE.v
+COQC backend/Kildall.v
+COQC flocq/Appli/Fappli_IEEE_bits.v
+COQC lib/Fappli_IEEE_extra.v
+COQC ia32/Archi.v
+COQC lib/Floats.v
+COQC common/AST.v
+COQC backend/Registers.v
+COQC common/Values.v
+COQC cfrontend/Ctypes.v
+COQC common/Memdata.v
+COQC common/Switch.v
+COQC common/Memtype.v
+COQC common/Memory.v
+COQC common/Globalenvs.v
+COQC cfrontend/Cop.v
+COQC cfrontend/Csyntax.v
+COQC common/Events.v
+COQC cfrontend/Initializers.v
+COQC common/Smallstep.v
+COQC ia32/Op.v
+Identifier &#39;Step&#39; now a keyword
+Identifier &#39;Star&#39; now a keyword
+Identifier &#39;Plus&#39; now a keyword
+Identifier &#39;Forever_silent&#39; now a keyword
+Identifier &#39;Forever_reactive&#39; now a keyword
+Identifier &#39;Nostep&#39; now a keyword
+COQC common/Behaviors.v
+COQC backend/Cminor.v
+COQC cfrontend/Csem.v
+COQC cfrontend/Clight.v
+COQC cfrontend/Csharpminor.v
+COQC common/Determinism.v
+COQC backend/CminorSel.v
+COQC backend/RTL.v
+COQC ia32/Machregs.v
+COQC cfrontend/Cstrategy.v
+COQC cfrontend/Initializersproof.v
+COQC cfrontend/SimplExpr.v
+COQC cfrontend/ClightBigstep.v
+COQC cfrontend/SimplLocals.v
+COQC cfrontend/Cshmgen.v
+COQC cfrontend/Cminorgen.v
+COQC ia32/SelectOp.v
+COQC backend/RTLgen.v
+COQC backend/Locations.v
+Identifier &#39;do&#39; now a keyword
+COQC backend/Inlining.v
+COQC backend/Renumber.v
+COQC backend/Liveness.v
+COQC backend/ValueDomain.v
+COQC backend/CSEdomain.v
+COQC cfrontend/Cexec.v
+COQC cfrontend/SimplExprspec.v
+Identifier &#39;check&#39; now a keyword
+COQC cfrontend/SimplLocalsproof.v
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>No files were installed.</p>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
