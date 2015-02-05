@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>About</h1>
+            <p>This is the bench system for <a href="http://coq.inria.fr/">Coq</a> packages. It installs each package on different machine configurations and Coq versions, and shares the results on this website. Coq uses <a href="http://opam.ocamlpro.com/">OPAM</a> as a package manager. This bench system is entirely written in <a href="https://www.ruby-lang.org/">Ruby</a>. All the sources, including the sources of this website, are available on <a href="https://github.com/coq-bench">GitHub</a> under <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+            <p>This bench is made to be as simple, robust and reproducible as possible. Still, some errors may not be properly caught yet. The bench tries to install each package in a fresh environment, with just OCaml, OPAM and Coq. The dependencies are not cached and are reinstalled from scratch as often as necessary.</p>
+
+            <h2>Contribute</h2>
+            <p>The main contribution we expect is CPU time. If you have a powerful computer, or are patient enough, you can run the bench on your machine using <a href="https://github.com/coq-bench/run">coq-bench/run</a>, and submit the results on GitHub. The simplest and safest way to start the benches is to use <a href="https://docker.com/">Docker</a> under Linux. Other platforms should work as well, as long as you can adapt the steps described in the <code>Dockerfile</code>.</p>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+  </body>
+</html>
