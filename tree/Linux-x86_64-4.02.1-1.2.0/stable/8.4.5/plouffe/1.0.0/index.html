@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Coq bench</title>
-    <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,11 +26,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=""><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
           </div>
           <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Stable</a></li>
+              <li class="active"><a href="">8.4.5 / plouffe 1.0.0</a></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="about.html">About</a></li>
+              <li><a href="../../../../../about.html">About</a></li>
             </ul>
           </div>
         </div>
@@ -37,33 +42,26 @@
       <div class="article">
         <div class="row">
           <div class="col-md-12">
-            <h1>Coq bench</h1>
-            <em>The new new bench system for <a href="http://coq.inria.fr/">Coq</a>.</em>
-            <p>We bench the Coq packages, not Coq itself or the contribs. The compilation times are only informative.</p>
-            <h2>Results</h2>
+            <a href="../../..">« Up</a>
+            <h1>plouffe <small>1.0.0</small></h1>
             <table class="table table-striped text-center">
               <thead>
                 <tr>
-                  <td>OS</td>
-                  <td>Machine</td>
-                  <td>OCaml</td>
-                  <td>Opam</td>
-                  <td>Stable</td>
-                  <td>Unstable</td>
+                  <td>Date</td>
+                  <td>Time</td>
+                  <td>Relative</td>
+                  <td>Status</td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Linux</td>
-                  <td>x86_64</td>
-                  <td>4.02.1</td>
-                  <td>1.2.0</td>
-                  <td><a href="Linux-x86_64-4.02.1-1.2.0/stable/">1</a></td>
-                  <td><a href="Linux-x86_64-4.02.1-1.2.0/unstable/">0</a></td>
+                  <td>2015-02-06</td>
+                  <td>13:44:35</td>
+                  <td><script>document.write(moment("2015-02-06 13:44:35 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script></td>
+                  <td class="success"><a href="2015-02-06_13-44-35.html">1 m 42 s</a></td>
                 </tr>
               </tbody>
             </table>
-            <p>The numbers in the table above are the numbers of benches ran per configuration.</p>
           </div>
         </div>
       </div>
@@ -75,6 +73,6 @@
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="bootstrap.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
   </body>
 </html>

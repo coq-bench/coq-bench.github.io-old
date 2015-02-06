@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coq bench</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../../favicon.png" />
+    <link href="../../../../../bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="../../../../../moment.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../../.."><i class="fa fa-lg fa-flag-checkered"></i> Coq bench</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="../../..">Stable</a></li>
+              <li><a href=".">8.4.5 / color 1.0.0</a></li>
+              <li class="active"><a href="">2015-02-06 13:44:35</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../../../../../about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="article">
+        <div class="row">
+          <div class="col-md-12">
+            <a href=".">« Up</a>
+            <h1>
+              color
+              <small>
+                1.0.0
+                <span class="label label-danger">Error</span>
+              </small>
+            </h1>
+            <p><em><script>document.write(moment("2015-02-06 13:44:35 +0000", "YYYY-MM-DD HH:mm:ss Z").fromNow());</script> (2015-02-06 13:44:35 UTC)</em><p>
+            <h2>Context</h2>
+            <pre># Installed packages for system:
+base-bigarray            base  Bigarray library distributed with the OCaml compi
+base-threads             base  Threads library distributed with the OCaml compil
+base-unix                base  Unix library distributed with the OCaml compiler
+camlp5                   6.12  Preprocessor-pretty-printer of OCaml
+coq                     8.4.5  Formal proof management system
+coq:coqeal:refinements  0.9.1  A refinement framework (for algebra).
+coq:coqeal:theory       0.9.1  The theory needed by the refinement framework lib
+coq:coquelicot          2.0.1  A Coq formalization of real analysis compatible w
+coq:error-handlers      1.0.0  More functions on lists.
+coq:flocq               2.4.0  A floating-point formalization for the Coq system
+coq:fpmods              0.2.0  A short constructive formalization of finitely pr
+coq:function-ninjas     1.0.0  Write readable code using simple functional combi
+coq:iterable            1.0.0  Generic definition of iterators.
+coq:list-plus           1.0.0  More functions on lists.
+coq:list-string         1.0.0  Strings implemented as lists.
+coq:math-classes        1.0.2  A library of abstract interfaces for mathematical
+coq:math-comp           1.5.0  Mathematical Components.
+coq:plouffe             1.0.0  A Coq formalization of Plouffe formula.
+coq:ssreflect           1.5.0  The Small Scale Reflection extension.
+</pre>
+            <h2>Lint</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ruby lint.rb stable ../stable/packages/coq:color/coq:color.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+            </dl>
+            <h2>Dry install</h2>
+            <p>Dry install with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>opam install -y --show-action coq:color.1.0.0 coq.8.4.5</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>1 s</dd>
+            </dl>
+            <p>Dry install without Coq, to test if the problem was incompatibility with the current Coq version:</p>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+            </dl>
+            <h2>Install dependencies</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 5m opam install -y --deps-only coq:color.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>2 s</dd>
+            </dl>
+            <h2>Install</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>ulimit -Sv 2000000; timeout 30m opam install -y --verbose coq:color.1.0.0</code></dd>
+              <dt>Return code</dt>
+              <dd>1024</dd>
+              <dt>Duration</dt>
+              <dd>5 s</dd>
+              <dt>Output</dt>
+              <dd><pre>The following actions will be performed:
+ - install   coq:color.1.0.0
+=== 1 to install ===
+=-=- Synchronizing package archives -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[coq:color.1.0.0] Downloading http://color.inria.fr/color.1.0.0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  540k  100  540k    0     0  3980k      0 --:--:-- --:--:-- --:--:-- 4007k
+200
+=-=- Installing packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Building coq:color.1.0.0:
+  make -j4
+  make install
+coq_makefile -R . CoLoR ./SemLab/ASemLab.v ./SemLab/ARootLab.v ./SemLab/AFlatCont.v ./Filter/AFilterBool.v ./Filter/AFilterPerm.v ./Filter/AProj.v ./SubtermCrit/ASimpleProj.v ./HORPO/HorpoExNonTrans.v ./HORPO/HorpoWf.v ./HORPO/Horpo.v ./HORPO/Computability.v ./HORPO/HorpoComp.v ./HORPO/HorpoExMap.v ./NonTermin/SModLoop.v ./NonTermin/AVarCond.v ./NonTermin/AModLoop.v ./NonTermin/SLoop.v ./NonTermin/ALoop.v ./DP/ADP.v ./DP/ADPUnif.v ./DP/ASCCUnion.v ./DP/ADecomp.v ./DP/AHDE.v ./DP/ADPGraph.v ./DP/AGraph.v ./ProofChecker/EmptyChecker.v ./ProofChecker/ProofChecker.v ./ProofChecker/Proof.v ./ProofChecker/IntBasedChecker.v ./ProofChecker/Problem.v ./MannaNess/ARedPair.v ./MannaNess/AMannaNess.v ./Conversion/String_of_ATerm.v ./Conversion/ATerm_of_String.v ./Conversion/VTerm_of_ATerm.v ./Conversion/AReverse.v ./RPO/VRPO_Results.v ./RPO/VPrecedence.v ./RPO/VRPO_Status.v ./RPO/VRPO_Type.v ./RPO/VLPO.v ./RPO/VRPO_Prover.v ./RPO/VMPO.v ./Term/Lambda/LAlpha.v ./Term/Lambda/LCompRewrite.v ./Term/Lambda/LComp.v ./Term/Lambda/LCompClos.v ./Term/Lambda/LAlphaAlt.v ./Term/Lambda/LCall.v ./Term/Lambda/LSystemT.v ./Term/Lambda/LCompSimple.v ./Term/Lambda/LBeta.v ./Term/Lambda/LSimple.v ./Term/Lambda/LTerm.v ./Term/Lambda/LCompInt.v ./Term/Lambda/LSubs.v ./Term/Varyadic/VSubstitution.v ./Term/Varyadic/VContext.v ./Term/Varyadic/VTrs.v ./Term/Varyadic/VSignature.v ./Term/Varyadic/VTerm.v ./Term/String/SContext.v ./Term/String/SReverse.v ./Term/String/Srs.v ./Term/WithArity/AUnary.v ./Term/WithArity/ASignature.v ./Term/WithArity/ANotvar.v ./Term/WithArity/AWFMInterpretation.v ./Term/WithArity/ADepRel.v ./Term/WithArity/ARelation.v ./Term/WithArity/AUnif.v ./Term/WithArity/ARules.v ./Term/WithArity/AMatching.v ./Term/WithArity/AReduct.v ./Term/WithArity/AContext.v ./Term/WithArity/ASubterm.v ./Term/WithArity/ATrsNorm.v ./Term/WithArity/MonAlgChecker.v ./Term/WithArity/ACompat.v ./Term/WithArity/APosition.v ./Term/WithArity/ADuplicateSymb.v ./Term/WithArity/ACalls.v ./Term/WithArity/AVariables.v ./Term/WithArity/AShift.v ./Term/WithArity/ABinary.v ./Term/WithArity/AMorphism.v ./Term/WithArity/ASubstitution.v ./Term/WithArity/AMonAlg.v ./Term/WithArity/ATrs.v ./Term/WithArity/ASN.v ./Term/WithArity/ACap.v ./Term/WithArity/AInfSeq.v ./Term/WithArity/AInterpretation.v ./Term/WithArity/ATerm.v ./Term/WithArity/ABterm.v ./Term/WithArity/ARenCap.v ./Term/SimpleType/TermsPos.v ./Term/SimpleType/TermsAlgebraic.v ./Term/SimpleType/TermsSubstConv.v ./Term/SimpleType/TermsBeta.v ./Term/SimpleType/TermsRed.v ./Term/SimpleType/TermsEnv.v ./Term/SimpleType/TermsActiveEnv.v ./Term/SimpleType/TermsLifting.v ./Term/SimpleType/TermsTyping.v ./Term/SimpleType/Terms.v ./Term/SimpleType/TermsEta.v ./Term/SimpleType/TermsDef.v ./Term/SimpleType/TermsConv.v ./Term/SimpleType/TermsSubst.v ./Term/SimpleType/TermsSig.v ./Term/SimpleType/TermsBuilding.v ./Term/SimpleType/TermsManip.v ./Util/Polynom/Polynom.v ./Util/Polynom/MonotonePolynom.v ./Util/Polynom/PositivePolynom.v ./Util/Integer/ZUtil.v ./Util/Integer/BigZUtil.v ./Util/Logic/ClassicUtil.v ./Util/Logic/DepChoice.v ./Util/Logic/LogicUtil.v ./Util/Logic/DepChoicePrf.v ./Util/Logic/EqUtil.v ./Util/FMap/FMapUtil.v ./Util/Pair/LexOrder.v ./Util/Pair/PairUtil.v ./Util/Multiset/MultisetList.v ./Util/Multiset/MultisetNat.v ./Util/Multiset/MultisetTheory.v ./Util/Multiset/MultisetOrder.v ./Util/Multiset/MultisetListOrder.v ./Util/Multiset/MultisetCore.v ./Util/Matrix/Matrix.v ./Util/FSet/FSetUtil.v ./Util/FGraph/TransClos.v ./Util/FGraph/FGraph.v ./Util/Nat/NatLeast.v ./Util/Nat/BoundNat.v ./Util/Nat/Log2.v ./Util/Nat/NatUtil.v ./Util/Nat/BigNUtil.v ./Util/Set/SetUtil.v ./Util/Option/ExcUtil.v ./Util/List/ListPermutation.v ./Util/List/ListExtras.v ./Util/List/ListSort.v ./Util/List/ListUtil.v ./Util/List/ListOccur.v ./Util/List/ListDec.v ./Util/List/ListMax.v ./Util/List/SortUtil.v ./Util/List/ListForall.v ./Util/List/ListRepeatFree.v ./Util/List/ListShrink.v ./Util/List/LexicographicOrder.v ./Util/Vector/VecArith.v ./Util/Vector/VecBool.v ./Util/Vector/VecMax.v ./Util/Vector/VecFilter.v ./Util/Vector/NaryFunction.v ./Util/Vector/VecFilterPerm.v ./Util/Vector/VecOrd.v ./Util/Vector/VecUtil.v ./Util/Bool/BoolUtil.v ./Util/Algebra/OrdSemiRing.v ./Util/Algebra/SemiRing.v ./Util/Relation/Iter.v ./Util/Relation/NotSN_IS.v ./Util/Relation/RelSub.v ./Util/Relation/Tarski.v ./Util/Relation/RelMidex.v ./Util/Relation/AccUtil.v ./Util/Relation/Total.v ./Util/Relation/SCCTopoOrdering.v ./Util/Relation/InfSeq.v ./Util/Relation/NotSN.v ./Util/Relation/Union.v ./Util/Relation/Cycle.v ./Util/Relation/RedLength.v ./Util/Relation/Path.v ./Util/Relation/RelExtras.v ./Util/Relation/SN.v ./Util/Relation/OrdUtil.v ./Util/Relation/GDomainBij.v ./Util/Relation/SCC_dec.v ./Util/Relation/SCC.v ./Util/Relation/Lexico.v ./Util/Relation/AdjMat.v ./Util/Relation/RelUtil.v ./Util/Relation/Preorder.v ./Util/Relation/RelDec.v ./MatrixInt/AArcticInt.v ./MatrixInt/ATropicalInt.v ./MatrixInt/AArcticBZInt.v ./MatrixInt/AMatrixBasedInt.v ./MatrixInt/ABigMatrixInt.v ./MatrixInt/ATropicalBasedInt.v ./MatrixInt/AArcticBasedInt.v ./MatrixInt/AMatrixInt.v ./PolyInt/APolyInt_MA.v ./PolyInt/APolyInt.v ./PolyInt/PolyChecker.v ./MPO/VMpo.v &gt; Makefile.coq
+make -r -f Makefile.coq depend
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:color.1.0.0&#39;
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MPO/VMpo.v&quot; &gt; &quot;MPO/VMpo.v.d&quot; || ( RV=$?; rm -f &quot;MPO/VMpo.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;PolyInt/PolyChecker.v&quot; &gt; &quot;PolyInt/PolyChecker.v.d&quot; || ( RV=$?; rm -f &quot;PolyInt/PolyChecker.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;PolyInt/APolyInt.v&quot; &gt; &quot;PolyInt/APolyInt.v.d&quot; || ( RV=$?; rm -f &quot;PolyInt/APolyInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;PolyInt/APolyInt_MA.v&quot; &gt; &quot;PolyInt/APolyInt_MA.v.d&quot; || ( RV=$?; rm -f &quot;PolyInt/APolyInt_MA.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/AMatrixInt.v&quot; &gt; &quot;MatrixInt/AMatrixInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/AMatrixInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/AArcticBasedInt.v&quot; &gt; &quot;MatrixInt/AArcticBasedInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/AArcticBasedInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/ATropicalBasedInt.v&quot; &gt; &quot;MatrixInt/ATropicalBasedInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/ATropicalBasedInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/ABigMatrixInt.v&quot; &gt; &quot;MatrixInt/ABigMatrixInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/ABigMatrixInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/AMatrixBasedInt.v&quot; &gt; &quot;MatrixInt/AMatrixBasedInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/AMatrixBasedInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/AArcticBZInt.v&quot; &gt; &quot;MatrixInt/AArcticBZInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/AArcticBZInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/ATropicalInt.v&quot; &gt; &quot;MatrixInt/ATropicalInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/ATropicalInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MatrixInt/AArcticInt.v&quot; &gt; &quot;MatrixInt/AArcticInt.v.d&quot; || ( RV=$?; rm -f &quot;MatrixInt/AArcticInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/RelDec.v&quot; &gt; &quot;Util/Relation/RelDec.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/RelDec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Preorder.v&quot; &gt; &quot;Util/Relation/Preorder.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Preorder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/RelUtil.v&quot; &gt; &quot;Util/Relation/RelUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/RelUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/AdjMat.v&quot; &gt; &quot;Util/Relation/AdjMat.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/AdjMat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Lexico.v&quot; &gt; &quot;Util/Relation/Lexico.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Lexico.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/SCC.v&quot; &gt; &quot;Util/Relation/SCC.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/SCC.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/SCC_dec.v&quot; &gt; &quot;Util/Relation/SCC_dec.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/SCC_dec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/GDomainBij.v&quot; &gt; &quot;Util/Relation/GDomainBij.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/GDomainBij.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/OrdUtil.v&quot; &gt; &quot;Util/Relation/OrdUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/OrdUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/SN.v&quot; &gt; &quot;Util/Relation/SN.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/SN.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/RelExtras.v&quot; &gt; &quot;Util/Relation/RelExtras.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/RelExtras.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Path.v&quot; &gt; &quot;Util/Relation/Path.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Path.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/RedLength.v&quot; &gt; &quot;Util/Relation/RedLength.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/RedLength.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Cycle.v&quot; &gt; &quot;Util/Relation/Cycle.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Cycle.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Union.v&quot; &gt; &quot;Util/Relation/Union.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Union.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/NotSN.v&quot; &gt; &quot;Util/Relation/NotSN.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/NotSN.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/InfSeq.v&quot; &gt; &quot;Util/Relation/InfSeq.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/InfSeq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/SCCTopoOrdering.v&quot; &gt; &quot;Util/Relation/SCCTopoOrdering.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/SCCTopoOrdering.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Total.v&quot; &gt; &quot;Util/Relation/Total.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Total.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/AccUtil.v&quot; &gt; &quot;Util/Relation/AccUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/AccUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/RelMidex.v&quot; &gt; &quot;Util/Relation/RelMidex.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/RelMidex.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Tarski.v&quot; &gt; &quot;Util/Relation/Tarski.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Tarski.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/RelSub.v&quot; &gt; &quot;Util/Relation/RelSub.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/RelSub.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/NotSN_IS.v&quot; &gt; &quot;Util/Relation/NotSN_IS.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/NotSN_IS.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Relation/Iter.v&quot; &gt; &quot;Util/Relation/Iter.v.d&quot; || ( RV=$?; rm -f &quot;Util/Relation/Iter.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Algebra/SemiRing.v&quot; &gt; &quot;Util/Algebra/SemiRing.v.d&quot; || ( RV=$?; rm -f &quot;Util/Algebra/SemiRing.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Algebra/OrdSemiRing.v&quot; &gt; &quot;Util/Algebra/OrdSemiRing.v.d&quot; || ( RV=$?; rm -f &quot;Util/Algebra/OrdSemiRing.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Bool/BoolUtil.v&quot; &gt; &quot;Util/Bool/BoolUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Bool/BoolUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/VecUtil.v&quot; &gt; &quot;Util/Vector/VecUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/VecUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/VecOrd.v&quot; &gt; &quot;Util/Vector/VecOrd.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/VecOrd.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/VecFilterPerm.v&quot; &gt; &quot;Util/Vector/VecFilterPerm.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/VecFilterPerm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/NaryFunction.v&quot; &gt; &quot;Util/Vector/NaryFunction.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/NaryFunction.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/VecFilter.v&quot; &gt; &quot;Util/Vector/VecFilter.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/VecFilter.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/VecMax.v&quot; &gt; &quot;Util/Vector/VecMax.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/VecMax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/VecBool.v&quot; &gt; &quot;Util/Vector/VecBool.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/VecBool.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Vector/VecArith.v&quot; &gt; &quot;Util/Vector/VecArith.v.d&quot; || ( RV=$?; rm -f &quot;Util/Vector/VecArith.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/LexicographicOrder.v&quot; &gt; &quot;Util/List/LexicographicOrder.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/LexicographicOrder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListShrink.v&quot; &gt; &quot;Util/List/ListShrink.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListShrink.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListRepeatFree.v&quot; &gt; &quot;Util/List/ListRepeatFree.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListRepeatFree.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListForall.v&quot; &gt; &quot;Util/List/ListForall.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListForall.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/SortUtil.v&quot; &gt; &quot;Util/List/SortUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/SortUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListMax.v&quot; &gt; &quot;Util/List/ListMax.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListMax.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListDec.v&quot; &gt; &quot;Util/List/ListDec.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListDec.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListOccur.v&quot; &gt; &quot;Util/List/ListOccur.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListOccur.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListUtil.v&quot; &gt; &quot;Util/List/ListUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListSort.v&quot; &gt; &quot;Util/List/ListSort.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListSort.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListExtras.v&quot; &gt; &quot;Util/List/ListExtras.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListExtras.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/List/ListPermutation.v&quot; &gt; &quot;Util/List/ListPermutation.v.d&quot; || ( RV=$?; rm -f &quot;Util/List/ListPermutation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Option/ExcUtil.v&quot; &gt; &quot;Util/Option/ExcUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Option/ExcUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Set/SetUtil.v&quot; &gt; &quot;Util/Set/SetUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Set/SetUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Nat/BigNUtil.v&quot; &gt; &quot;Util/Nat/BigNUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Nat/BigNUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Nat/NatUtil.v&quot; &gt; &quot;Util/Nat/NatUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Nat/NatUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Nat/Log2.v&quot; &gt; &quot;Util/Nat/Log2.v.d&quot; || ( RV=$?; rm -f &quot;Util/Nat/Log2.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Nat/BoundNat.v&quot; &gt; &quot;Util/Nat/BoundNat.v.d&quot; || ( RV=$?; rm -f &quot;Util/Nat/BoundNat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Nat/NatLeast.v&quot; &gt; &quot;Util/Nat/NatLeast.v.d&quot; || ( RV=$?; rm -f &quot;Util/Nat/NatLeast.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/FGraph/FGraph.v&quot; &gt; &quot;Util/FGraph/FGraph.v.d&quot; || ( RV=$?; rm -f &quot;Util/FGraph/FGraph.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/FGraph/TransClos.v&quot; &gt; &quot;Util/FGraph/TransClos.v.d&quot; || ( RV=$?; rm -f &quot;Util/FGraph/TransClos.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/FSet/FSetUtil.v&quot; &gt; &quot;Util/FSet/FSetUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/FSet/FSetUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Matrix/Matrix.v&quot; &gt; &quot;Util/Matrix/Matrix.v.d&quot; || ( RV=$?; rm -f &quot;Util/Matrix/Matrix.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Multiset/MultisetCore.v&quot; &gt; &quot;Util/Multiset/MultisetCore.v.d&quot; || ( RV=$?; rm -f &quot;Util/Multiset/MultisetCore.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Multiset/MultisetListOrder.v&quot; &gt; &quot;Util/Multiset/MultisetListOrder.v.d&quot; || ( RV=$?; rm -f &quot;Util/Multiset/MultisetListOrder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Multiset/MultisetOrder.v&quot; &gt; &quot;Util/Multiset/MultisetOrder.v.d&quot; || ( RV=$?; rm -f &quot;Util/Multiset/MultisetOrder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Multiset/MultisetTheory.v&quot; &gt; &quot;Util/Multiset/MultisetTheory.v.d&quot; || ( RV=$?; rm -f &quot;Util/Multiset/MultisetTheory.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Multiset/MultisetNat.v&quot; &gt; &quot;Util/Multiset/MultisetNat.v.d&quot; || ( RV=$?; rm -f &quot;Util/Multiset/MultisetNat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Multiset/MultisetList.v&quot; &gt; &quot;Util/Multiset/MultisetList.v.d&quot; || ( RV=$?; rm -f &quot;Util/Multiset/MultisetList.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Pair/PairUtil.v&quot; &gt; &quot;Util/Pair/PairUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Pair/PairUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Pair/LexOrder.v&quot; &gt; &quot;Util/Pair/LexOrder.v.d&quot; || ( RV=$?; rm -f &quot;Util/Pair/LexOrder.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/FMap/FMapUtil.v&quot; &gt; &quot;Util/FMap/FMapUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/FMap/FMapUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Logic/EqUtil.v&quot; &gt; &quot;Util/Logic/EqUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Logic/EqUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Logic/DepChoicePrf.v&quot; &gt; &quot;Util/Logic/DepChoicePrf.v.d&quot; || ( RV=$?; rm -f &quot;Util/Logic/DepChoicePrf.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Logic/LogicUtil.v&quot; &gt; &quot;Util/Logic/LogicUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Logic/LogicUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Logic/DepChoice.v&quot; &gt; &quot;Util/Logic/DepChoice.v.d&quot; || ( RV=$?; rm -f &quot;Util/Logic/DepChoice.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Logic/ClassicUtil.v&quot; &gt; &quot;Util/Logic/ClassicUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Logic/ClassicUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Integer/BigZUtil.v&quot; &gt; &quot;Util/Integer/BigZUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Integer/BigZUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Integer/ZUtil.v&quot; &gt; &quot;Util/Integer/ZUtil.v.d&quot; || ( RV=$?; rm -f &quot;Util/Integer/ZUtil.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Polynom/PositivePolynom.v&quot; &gt; &quot;Util/Polynom/PositivePolynom.v.d&quot; || ( RV=$?; rm -f &quot;Util/Polynom/PositivePolynom.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Polynom/MonotonePolynom.v&quot; &gt; &quot;Util/Polynom/MonotonePolynom.v.d&quot; || ( RV=$?; rm -f &quot;Util/Polynom/MonotonePolynom.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Util/Polynom/Polynom.v&quot; &gt; &quot;Util/Polynom/Polynom.v.d&quot; || ( RV=$?; rm -f &quot;Util/Polynom/Polynom.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsManip.v&quot; &gt; &quot;Term/SimpleType/TermsManip.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsManip.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsBuilding.v&quot; &gt; &quot;Term/SimpleType/TermsBuilding.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsBuilding.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsSig.v&quot; &gt; &quot;Term/SimpleType/TermsSig.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsSig.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsSubst.v&quot; &gt; &quot;Term/SimpleType/TermsSubst.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsSubst.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsConv.v&quot; &gt; &quot;Term/SimpleType/TermsConv.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsConv.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsDef.v&quot; &gt; &quot;Term/SimpleType/TermsDef.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsDef.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsEta.v&quot; &gt; &quot;Term/SimpleType/TermsEta.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsEta.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/Terms.v&quot; &gt; &quot;Term/SimpleType/Terms.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/Terms.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsTyping.v&quot; &gt; &quot;Term/SimpleType/TermsTyping.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsTyping.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsLifting.v&quot; &gt; &quot;Term/SimpleType/TermsLifting.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsLifting.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsActiveEnv.v&quot; &gt; &quot;Term/SimpleType/TermsActiveEnv.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsActiveEnv.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsEnv.v&quot; &gt; &quot;Term/SimpleType/TermsEnv.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsEnv.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsRed.v&quot; &gt; &quot;Term/SimpleType/TermsRed.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsRed.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsBeta.v&quot; &gt; &quot;Term/SimpleType/TermsBeta.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsBeta.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsSubstConv.v&quot; &gt; &quot;Term/SimpleType/TermsSubstConv.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsSubstConv.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsAlgebraic.v&quot; &gt; &quot;Term/SimpleType/TermsAlgebraic.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsAlgebraic.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/SimpleType/TermsPos.v&quot; &gt; &quot;Term/SimpleType/TermsPos.v.d&quot; || ( RV=$?; rm -f &quot;Term/SimpleType/TermsPos.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ARenCap.v&quot; &gt; &quot;Term/WithArity/ARenCap.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ARenCap.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ABterm.v&quot; &gt; &quot;Term/WithArity/ABterm.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ABterm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ATerm.v&quot; &gt; &quot;Term/WithArity/ATerm.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ATerm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AInterpretation.v&quot; &gt; &quot;Term/WithArity/AInterpretation.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AInterpretation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AInfSeq.v&quot; &gt; &quot;Term/WithArity/AInfSeq.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AInfSeq.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ACap.v&quot; &gt; &quot;Term/WithArity/ACap.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ACap.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ASN.v&quot; &gt; &quot;Term/WithArity/ASN.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ASN.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ATrs.v&quot; &gt; &quot;Term/WithArity/ATrs.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ATrs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AMonAlg.v&quot; &gt; &quot;Term/WithArity/AMonAlg.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AMonAlg.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ASubstitution.v&quot; &gt; &quot;Term/WithArity/ASubstitution.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ASubstitution.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AMorphism.v&quot; &gt; &quot;Term/WithArity/AMorphism.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AMorphism.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ABinary.v&quot; &gt; &quot;Term/WithArity/ABinary.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ABinary.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AShift.v&quot; &gt; &quot;Term/WithArity/AShift.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AShift.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AVariables.v&quot; &gt; &quot;Term/WithArity/AVariables.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AVariables.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ACalls.v&quot; &gt; &quot;Term/WithArity/ACalls.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ACalls.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ADuplicateSymb.v&quot; &gt; &quot;Term/WithArity/ADuplicateSymb.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ADuplicateSymb.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/APosition.v&quot; &gt; &quot;Term/WithArity/APosition.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/APosition.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ACompat.v&quot; &gt; &quot;Term/WithArity/ACompat.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ACompat.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/MonAlgChecker.v&quot; &gt; &quot;Term/WithArity/MonAlgChecker.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/MonAlgChecker.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ATrsNorm.v&quot; &gt; &quot;Term/WithArity/ATrsNorm.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ATrsNorm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ASubterm.v&quot; &gt; &quot;Term/WithArity/ASubterm.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ASubterm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AContext.v&quot; &gt; &quot;Term/WithArity/AContext.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AContext.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AReduct.v&quot; &gt; &quot;Term/WithArity/AReduct.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AReduct.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AMatching.v&quot; &gt; &quot;Term/WithArity/AMatching.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AMatching.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ARules.v&quot; &gt; &quot;Term/WithArity/ARules.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ARules.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AUnif.v&quot; &gt; &quot;Term/WithArity/AUnif.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AUnif.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ARelation.v&quot; &gt; &quot;Term/WithArity/ARelation.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ARelation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ADepRel.v&quot; &gt; &quot;Term/WithArity/ADepRel.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ADepRel.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AWFMInterpretation.v&quot; &gt; &quot;Term/WithArity/AWFMInterpretation.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AWFMInterpretation.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ANotvar.v&quot; &gt; &quot;Term/WithArity/ANotvar.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ANotvar.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/ASignature.v&quot; &gt; &quot;Term/WithArity/ASignature.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/ASignature.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/WithArity/AUnary.v&quot; &gt; &quot;Term/WithArity/AUnary.v.d&quot; || ( RV=$?; rm -f &quot;Term/WithArity/AUnary.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/String/Srs.v&quot; &gt; &quot;Term/String/Srs.v.d&quot; || ( RV=$?; rm -f &quot;Term/String/Srs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/String/SReverse.v&quot; &gt; &quot;Term/String/SReverse.v.d&quot; || ( RV=$?; rm -f &quot;Term/String/SReverse.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/String/SContext.v&quot; &gt; &quot;Term/String/SContext.v.d&quot; || ( RV=$?; rm -f &quot;Term/String/SContext.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Varyadic/VTerm.v&quot; &gt; &quot;Term/Varyadic/VTerm.v.d&quot; || ( RV=$?; rm -f &quot;Term/Varyadic/VTerm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Varyadic/VSignature.v&quot; &gt; &quot;Term/Varyadic/VSignature.v.d&quot; || ( RV=$?; rm -f &quot;Term/Varyadic/VSignature.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Varyadic/VTrs.v&quot; &gt; &quot;Term/Varyadic/VTrs.v.d&quot; || ( RV=$?; rm -f &quot;Term/Varyadic/VTrs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Varyadic/VContext.v&quot; &gt; &quot;Term/Varyadic/VContext.v.d&quot; || ( RV=$?; rm -f &quot;Term/Varyadic/VContext.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Varyadic/VSubstitution.v&quot; &gt; &quot;Term/Varyadic/VSubstitution.v.d&quot; || ( RV=$?; rm -f &quot;Term/Varyadic/VSubstitution.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LSubs.v&quot; &gt; &quot;Term/Lambda/LSubs.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LSubs.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LCompInt.v&quot; &gt; &quot;Term/Lambda/LCompInt.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LCompInt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LTerm.v&quot; &gt; &quot;Term/Lambda/LTerm.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LTerm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LSimple.v&quot; &gt; &quot;Term/Lambda/LSimple.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LSimple.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LBeta.v&quot; &gt; &quot;Term/Lambda/LBeta.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LBeta.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LCompSimple.v&quot; &gt; &quot;Term/Lambda/LCompSimple.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LCompSimple.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LSystemT.v&quot; &gt; &quot;Term/Lambda/LSystemT.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LSystemT.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LCall.v&quot; &gt; &quot;Term/Lambda/LCall.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LCall.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LAlphaAlt.v&quot; &gt; &quot;Term/Lambda/LAlphaAlt.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LAlphaAlt.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LCompClos.v&quot; &gt; &quot;Term/Lambda/LCompClos.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LCompClos.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LComp.v&quot; &gt; &quot;Term/Lambda/LComp.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LComp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LCompRewrite.v&quot; &gt; &quot;Term/Lambda/LCompRewrite.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LCompRewrite.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Term/Lambda/LAlpha.v&quot; &gt; &quot;Term/Lambda/LAlpha.v.d&quot; || ( RV=$?; rm -f &quot;Term/Lambda/LAlpha.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;RPO/VMPO.v&quot; &gt; &quot;RPO/VMPO.v.d&quot; || ( RV=$?; rm -f &quot;RPO/VMPO.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;RPO/VRPO_Prover.v&quot; &gt; &quot;RPO/VRPO_Prover.v.d&quot; || ( RV=$?; rm -f &quot;RPO/VRPO_Prover.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;RPO/VLPO.v&quot; &gt; &quot;RPO/VLPO.v.d&quot; || ( RV=$?; rm -f &quot;RPO/VLPO.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;RPO/VRPO_Type.v&quot; &gt; &quot;RPO/VRPO_Type.v.d&quot; || ( RV=$?; rm -f &quot;RPO/VRPO_Type.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;RPO/VRPO_Status.v&quot; &gt; &quot;RPO/VRPO_Status.v.d&quot; || ( RV=$?; rm -f &quot;RPO/VRPO_Status.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;RPO/VPrecedence.v&quot; &gt; &quot;RPO/VPrecedence.v.d&quot; || ( RV=$?; rm -f &quot;RPO/VPrecedence.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;RPO/VRPO_Results.v&quot; &gt; &quot;RPO/VRPO_Results.v.d&quot; || ( RV=$?; rm -f &quot;RPO/VRPO_Results.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Conversion/AReverse.v&quot; &gt; &quot;Conversion/AReverse.v.d&quot; || ( RV=$?; rm -f &quot;Conversion/AReverse.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Conversion/VTerm_of_ATerm.v&quot; &gt; &quot;Conversion/VTerm_of_ATerm.v.d&quot; || ( RV=$?; rm -f &quot;Conversion/VTerm_of_ATerm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Conversion/ATerm_of_String.v&quot; &gt; &quot;Conversion/ATerm_of_String.v.d&quot; || ( RV=$?; rm -f &quot;Conversion/ATerm_of_String.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Conversion/String_of_ATerm.v&quot; &gt; &quot;Conversion/String_of_ATerm.v.d&quot; || ( RV=$?; rm -f &quot;Conversion/String_of_ATerm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MannaNess/AMannaNess.v&quot; &gt; &quot;MannaNess/AMannaNess.v.d&quot; || ( RV=$?; rm -f &quot;MannaNess/AMannaNess.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;MannaNess/ARedPair.v&quot; &gt; &quot;MannaNess/ARedPair.v.d&quot; || ( RV=$?; rm -f &quot;MannaNess/ARedPair.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;ProofChecker/Problem.v&quot; &gt; &quot;ProofChecker/Problem.v.d&quot; || ( RV=$?; rm -f &quot;ProofChecker/Problem.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;ProofChecker/IntBasedChecker.v&quot; &gt; &quot;ProofChecker/IntBasedChecker.v.d&quot; || ( RV=$?; rm -f &quot;ProofChecker/IntBasedChecker.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;ProofChecker/Proof.v&quot; &gt; &quot;ProofChecker/Proof.v.d&quot; || ( RV=$?; rm -f &quot;ProofChecker/Proof.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;ProofChecker/ProofChecker.v&quot; &gt; &quot;ProofChecker/ProofChecker.v.d&quot; || ( RV=$?; rm -f &quot;ProofChecker/ProofChecker.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;ProofChecker/EmptyChecker.v&quot; &gt; &quot;ProofChecker/EmptyChecker.v.d&quot; || ( RV=$?; rm -f &quot;ProofChecker/EmptyChecker.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;DP/AGraph.v&quot; &gt; &quot;DP/AGraph.v.d&quot; || ( RV=$?; rm -f &quot;DP/AGraph.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;DP/ADPGraph.v&quot; &gt; &quot;DP/ADPGraph.v.d&quot; || ( RV=$?; rm -f &quot;DP/ADPGraph.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;DP/AHDE.v&quot; &gt; &quot;DP/AHDE.v.d&quot; || ( RV=$?; rm -f &quot;DP/AHDE.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;DP/ADecomp.v&quot; &gt; &quot;DP/ADecomp.v.d&quot; || ( RV=$?; rm -f &quot;DP/ADecomp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;DP/ASCCUnion.v&quot; &gt; &quot;DP/ASCCUnion.v.d&quot; || ( RV=$?; rm -f &quot;DP/ASCCUnion.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;DP/ADPUnif.v&quot; &gt; &quot;DP/ADPUnif.v.d&quot; || ( RV=$?; rm -f &quot;DP/ADPUnif.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;DP/ADP.v&quot; &gt; &quot;DP/ADP.v.d&quot; || ( RV=$?; rm -f &quot;DP/ADP.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;NonTermin/ALoop.v&quot; &gt; &quot;NonTermin/ALoop.v.d&quot; || ( RV=$?; rm -f &quot;NonTermin/ALoop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;NonTermin/SLoop.v&quot; &gt; &quot;NonTermin/SLoop.v.d&quot; || ( RV=$?; rm -f &quot;NonTermin/SLoop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;NonTermin/AModLoop.v&quot; &gt; &quot;NonTermin/AModLoop.v.d&quot; || ( RV=$?; rm -f &quot;NonTermin/AModLoop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;NonTermin/AVarCond.v&quot; &gt; &quot;NonTermin/AVarCond.v.d&quot; || ( RV=$?; rm -f &quot;NonTermin/AVarCond.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;NonTermin/SModLoop.v&quot; &gt; &quot;NonTermin/SModLoop.v.d&quot; || ( RV=$?; rm -f &quot;NonTermin/SModLoop.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;HORPO/HorpoExMap.v&quot; &gt; &quot;HORPO/HorpoExMap.v.d&quot; || ( RV=$?; rm -f &quot;HORPO/HorpoExMap.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;HORPO/HorpoComp.v&quot; &gt; &quot;HORPO/HorpoComp.v.d&quot; || ( RV=$?; rm -f &quot;HORPO/HorpoComp.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;HORPO/Computability.v&quot; &gt; &quot;HORPO/Computability.v.d&quot; || ( RV=$?; rm -f &quot;HORPO/Computability.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;HORPO/Horpo.v&quot; &gt; &quot;HORPO/Horpo.v.d&quot; || ( RV=$?; rm -f &quot;HORPO/Horpo.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;HORPO/HorpoWf.v&quot; &gt; &quot;HORPO/HorpoWf.v.d&quot; || ( RV=$?; rm -f &quot;HORPO/HorpoWf.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;HORPO/HorpoExNonTrans.v&quot; &gt; &quot;HORPO/HorpoExNonTrans.v.d&quot; || ( RV=$?; rm -f &quot;HORPO/HorpoExNonTrans.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;SubtermCrit/ASimpleProj.v&quot; &gt; &quot;SubtermCrit/ASimpleProj.v.d&quot; || ( RV=$?; rm -f &quot;SubtermCrit/ASimpleProj.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Filter/AProj.v&quot; &gt; &quot;Filter/AProj.v.d&quot; || ( RV=$?; rm -f &quot;Filter/AProj.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Filter/AFilterPerm.v&quot; &gt; &quot;Filter/AFilterPerm.v.d&quot; || ( RV=$?; rm -f &quot;Filter/AFilterPerm.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;Filter/AFilterBool.v&quot; &gt; &quot;Filter/AFilterBool.v.d&quot; || ( RV=$?; rm -f &quot;Filter/AFilterBool.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;SemLab/AFlatCont.v&quot; &gt; &quot;SemLab/AFlatCont.v.d&quot; || ( RV=$?; rm -f &quot;SemLab/AFlatCont.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;SemLab/ARootLab.v&quot; &gt; &quot;SemLab/ARootLab.v.d&quot; || ( RV=$?; rm -f &quot;SemLab/ARootLab.v.d&quot;; exit ${RV} )
+&quot;coqdep&quot; -c -slash -R . CoLoR &quot;SemLab/ASemLab.v&quot; &gt; &quot;SemLab/ASemLab.v.d&quot; || ( RV=$?; rm -f &quot;SemLab/ASemLab.v.d&quot;; exit ${RV} )
+make[1]: Nothing to be done for &#39;depend&#39;.
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:color.1.0.0&#39;
+make -r -f Makefile.coq
+make[1]: Entering directory &#39;/home/bench/.opam/system/build/coq:color.1.0.0&#39;
+&quot;coqc&quot;  -q  -R . CoLoR   Util/Logic/LogicUtil
+&quot;coqc&quot;  -q  -R . CoLoR   Term/SimpleType/TermsSig
+&quot;coqc&quot;  -q  -R . CoLoR   Util/Nat/NatLeast
+&quot;coqc&quot;  -q  -R . CoLoR   Util/List/ListSort
+&quot;coqc&quot;  -q  -R . CoLoR   Util/Relation/RelMidex
+&quot;coqc&quot;  -q  -R . CoLoR   Util/Bool/BoolUtil
+&quot;coqc&quot;  -q  -R . CoLoR   Util/Nat/Log2
+&quot;coqc&quot;  -q  -R . CoLoR   Util/Logic/ClassicUtil
+File &quot;/home/bench/.opam/system/build/coq:color.1.0.0/Util/Bool/BoolUtil.v&quot;, line 16, characters 19-33:
+Error: The reference orb_false_elim was not found in the current environment.
+Makefile.coq:395: recipe for target &#39;Util/Bool/BoolUtil.vo&#39; failed
+make[1]: *** [Util/Bool/BoolUtil.vo] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:color.1.0.0&#39;
+Makefile:17: recipe for target &#39;default&#39; failed
+make: *** [default] Error 2
+[ERROR] The compilation of coq:color.1.0.0 failed.
+Removing coq:color.1.0.0.
+  rm -R /home/bench/.opam/system/lib/coq/user-contrib/CoLoR
+rm: cannot remove &#39;/home/bench/.opam/system/lib/coq/user-contrib/CoLoR&#39;: No such file or directory
+#=== ERROR while installing coq:color.1.0.0 ===================================#
+# opam-version         1.2.0
+# os                   linux
+# command              make -j4
+# path                 /home/bench/.opam/system/build/coq:color.1.0.0
+# compiler             system (4.02.1)
+# exit-code            2
+# env-file             /home/bench/.opam/system/build/coq:color.1.0.0/coq:color-13445-c61e7b.env
+# stdout-file          /home/bench/.opam/system/build/coq:color.1.0.0/coq:color-13445-c61e7b.out
+# stderr-file          /home/bench/.opam/system/build/coq:color.1.0.0/coq:color-13445-c61e7b.err
+### stdout ###
+# ...[truncated]
+# &quot;coqc&quot;  -q  -R . CoLoR   Util/List/ListSort
+# &quot;coqc&quot;  -q  -R . CoLoR   Util/Relation/RelMidex
+# &quot;coqc&quot;  -q  -R . CoLoR   Util/Bool/BoolUtil
+# &quot;coqc&quot;  -q  -R . CoLoR   Util/Nat/Log2
+# &quot;coqc&quot;  -q  -R . CoLoR   Util/Logic/ClassicUtil
+# File &quot;/home/bench/.opam/system/build/coq:color.1.0.0/Util/Bool/BoolUtil.v&quot;, line 16, characters 19-33:
+# Error: The reference orb_false_elim was not found in the current environment.
+# Makefile.coq:395: recipe for target &#39;Util/Bool/BoolUtil.vo&#39; failed
+# make[1]: Leaving directory &#39;/home/bench/.opam/system/build/coq:color.1.0.0&#39;
+# Makefile:17: recipe for target &#39;default&#39; failed
+### stderr ###
+# make[1]: *** [Util/Bool/BoolUtil.vo] Error 1
+# make[1]: *** Waiting for unfinished jobs....
+# make: *** [default] Error 2
+&#39;opam install -y --verbose coq:color.1.0.0&#39; failed.
+</pre></dd>
+            </dl>
+            <h2>Installation size</h2>
+            <p>No files were installed.</p>
+            <h2>Uninstall</h2>
+            <dl class="dl-horizontal">
+              <dt>Command</dt>
+              <dd><code>true</code></dd>
+              <dt>Return code</dt>
+              <dd>0</dd>
+              <dt>Duration</dt>
+              <dd>0 s</dd>
+              <dt>Missing removes</dt>
+              <dd>
+                none
+              </dd>
+              <dt>Wrong removes</dt>
+              <dd>
+                none
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="footer">
+        <p class="text-center">
+          <small>Sources are on <a href="https://github.com/coq-bench">GitHub</a>. © Guillaume Claret.</small>
+        </p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../../../bootstrap.min.js"></script>
+  </body>
+</html>
